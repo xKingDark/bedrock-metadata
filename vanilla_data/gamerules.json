@@ -91,6 +91,11 @@
             "default_value": false
         },
         {
+            "name": "locatorBar",
+            "type": "boolean",
+            "default_value": true
+        },
+        {
             "name": "maxCommandChainLength",
             "type": "number",
             "default_value": 65535

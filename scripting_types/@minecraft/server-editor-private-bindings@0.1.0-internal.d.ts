@@ -24,6 +24,18 @@ export enum EditorRealmsServiceAvailability {
     Unknown = 5,
 }
 
+export enum PersistenceGroupType {
+    Local = 0,
+    Shared = 2,
+}
+
+export enum PersistenceScope {
+    ClientProject = 0,
+    ClientGlobal = 1,
+    ServerProject = 2,
+    ServerGlobal = 3,
+}
+
 export enum ProjectRegionAvailabilityMode {
     Loaded = 0,
     Ticking = 1,
@@ -359,11 +371,50 @@ export class InputService {
     updateKeyBindingProcessingState(contextId: string, bindingId: string, state?: number): void;
 }
 
+export class InternalPersistenceManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    deleteGroup(namespacedName: string, options: PersistenceGroupCreationOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeAllGroups(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fetchGroups(options: PersistenceQueryGroupOptions): PersistenceGroup[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getOrCreateGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
+}
+
 export class InternalPlayerServiceContext {
     private constructor();
     readonly dataStore: DataStore;
     readonly dataTransfer: DataTransferManager;
     readonly input: InputService;
+    readonly internalPersistenceManager: InternalPersistenceManager;
     readonly realmsService: RealmsService;
     readonly regionManager: ProjectRegionManager;
 }
@@ -394,6 +445,86 @@ export class MinecraftEditorInternal {
         shutdownFunction: (arg0: minecraftservereditorbindings.ExtensionContext) => void,
         options?: minecraftservereditorbindings.ExtensionOptionalParameters,
     ): minecraftservereditorbindings.Extension;
+}
+
+export class PersistenceGroup {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createItem(itemName: string, defaultJsonValue?: string): PersistenceGroupItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    deleteItem(itemName: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    dispose(): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeAllGroupItems(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeGroupItem(key: string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fetchItem(itemName: string): PersistenceGroupItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getOrCreateItem(itemName: string, defaultJsonValue?: string): PersistenceGroupItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    listItems(): string[];
+}
+
+export class PersistenceGroupItem {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commit(): void;
+    /**
+     * @throws This function can throw errors.
+     */
+    getAsJSON(): string;
+    /**
+     * @throws This function can throw errors.
+     */
+    getKey(): string;
+    /**
+     * @throws This function can throw errors.
+     */
+    getValue(): string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setValue(value: string): void;
 }
 
 export class ProjectRegion {
@@ -635,6 +766,19 @@ export interface InputBindingInfo {
     canRebind: boolean;
     label?: string;
     tooltip?: string;
+}
+
+export interface PersistenceGroupCreationOptions {
+    groupType?: PersistenceGroupType;
+    scope: PersistenceScope;
+    version?: number;
+}
+
+export interface PersistenceQueryGroupOptions {
+    namespace?: string;
+    namespacedName?: string;
+    scope?: PersistenceScope;
+    version?: number;
 }
 
 export interface ProjectRegionOptions {

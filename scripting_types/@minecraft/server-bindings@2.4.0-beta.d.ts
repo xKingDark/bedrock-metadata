@@ -654,6 +654,7 @@ export type BlockComponentTypeMap = {
     movable: BlockMovableComponent;
     piston: BlockPistonComponent;
     record_player: BlockRecordPlayerComponent;
+    redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
     "minecraft:fluid_container": BlockFluidContainerComponent;
     "minecraft:inventory": BlockInventoryComponent;
@@ -661,6 +662,7 @@ export type BlockComponentTypeMap = {
     "minecraft:movable": BlockMovableComponent;
     "minecraft:piston": BlockPistonComponent;
     "minecraft:record_player": BlockRecordPlayerComponent;
+    "minecraft:redstone_producer": BlockRedstoneProducerComponent;
     "minecraft:sign": BlockSignComponent;
 }
 
@@ -1656,6 +1658,29 @@ export class BlockRecordPlayerComponent extends BlockComponent {
 }
 
 // @ts-ignore
+export class BlockRedstoneProducerComponent extends BlockComponent {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    readonly power: number;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getConnectedFaces(): Direction[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getStronglyPoweredFace(): Direction | undefined;
+}
+
+// @ts-ignore
 export class BlockSignComponent extends BlockComponent {
     private constructor();
     /**
@@ -2368,7 +2393,7 @@ export class Dimension {
      * {@link UnloadedChunksError}
      */
     fillBlocks(
-        volume: BlockVolumeBase | CompoundBlockVolume,
+        volume: BlockVolumeBase,
         block: BlockPermutation | BlockType | string,
         options?: BlockFillOptions,
     ): ListBlockVolume;
@@ -8206,6 +8231,11 @@ export class EnchantmentTypeUnknownIdError extends Error {
 
 // @ts-ignore
 export class EntitySpawnError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidBlockComponentError extends Error {
     private constructor();
 }
 
