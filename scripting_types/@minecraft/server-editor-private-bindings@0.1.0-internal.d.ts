@@ -24,6 +24,13 @@ export enum EditorRealmsServiceAvailability {
     Unknown = 5,
 }
 
+export enum JigsawJsonType {
+    Processor = 0,
+    Structure = 1,
+    StructureSet = 2,
+    TemplatePool = 3,
+}
+
 export enum PersistenceGroupType {
     Local = 0,
     Shared = 2,
@@ -415,8 +422,44 @@ export class InternalPlayerServiceContext {
     readonly dataTransfer: DataTransferManager;
     readonly input: InputService;
     readonly internalPersistenceManager: InternalPersistenceManager;
+    readonly jigsawService: JigsawService;
     readonly realmsService: RealmsService;
     readonly regionManager: ProjectRegionManager;
+}
+
+export class JigsawService {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    generateJigsaw(
+        registryName: string,
+        startingPool: string,
+        seed: minecraftserverbindings.Vector3,
+        depth: number,
+    ): Promise<EditorJigsawSection[]>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getRegistryData(registryName: string): Record<string, EditorRegistryFile[]>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getRegistryList(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setRegistryData(
+        registryName: string,
+        processorData: EditorRegistryFile[],
+        structureData: EditorRegistryFile[],
+        structureSetData: EditorRegistryFile[],
+        templatePoolData: EditorRegistryFile[],
+    ): Promise<string[]>;
 }
 
 export class MinecraftEditorInternal {
@@ -751,6 +794,13 @@ export interface DataTransferCollectionNameData {
     uniqueId: string;
 }
 
+export interface EditorJigsawSection {
+    bounds: minecraftserverbindings.BlockBoundingBox;
+    offset: minecraftserverbindings.Vector3;
+    rotation: minecraftserverbindings.StructureRotation;
+    structureId: string;
+}
+
 export interface EditorRealmsWorld {
     id: string;
     name: string;
@@ -759,6 +809,11 @@ export interface EditorRealmsWorld {
 export interface EditorRealmsWorldSlot {
     id: number;
     name: string;
+}
+
+export interface EditorRegistryFile {
+    fileJson: string;
+    fileName: string;
 }
 
 export interface InputBindingInfo {

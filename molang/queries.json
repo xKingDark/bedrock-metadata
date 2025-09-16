@@ -49,6 +49,9 @@
             "name": "query.average_frame_time"
         },
         {
+            "name": "query.base_swing_duration"
+        },
+        {
             "name": "query.block_face"
         },
         {
@@ -716,6 +719,9 @@
         },
         {
             "name": "query.modified_move_speed"
+        },
+        {
+            "name": "query.modified_swing_duration"
         },
         {
             "name": "query.moon_brightness"

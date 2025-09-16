@@ -686,6 +686,7 @@ export type BlockComponentTypeMap = {
     map_color: BlockMapColorComponent;
     movable: BlockMovableComponent;
     piston: BlockPistonComponent;
+    precipitation_interactions: BlockPrecipitationInteractionsComponent;
     record_player: BlockRecordPlayerComponent;
     redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
@@ -694,6 +695,7 @@ export type BlockComponentTypeMap = {
     "minecraft:map_color": BlockMapColorComponent;
     "minecraft:movable": BlockMovableComponent;
     "minecraft:piston": BlockPistonComponent;
+    "minecraft:precipitation_interactions": BlockPrecipitationInteractionsComponent;
     "minecraft:record_player": BlockRecordPlayerComponent;
     "minecraft:redstone_producer": BlockRedstoneProducerComponent;
     "minecraft:sign": BlockSignComponent;
@@ -1651,6 +1653,27 @@ export class BlockPistonComponent extends BlockComponent {
      * @throws This function can throw errors.
      */
     getAttachedBlocksLocations(): Vector3[];
+}
+
+// @ts-ignore
+export class BlockPrecipitationInteractionsComponent extends BlockComponent {
+    private constructor();
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    accumulatesSnow(): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    obstructsRain(): boolean;
 }
 
 // @ts-ignore
@@ -2773,6 +2796,25 @@ export class EnchantmentTypes {
     private constructor();
     static get(enchantmentId: string): EnchantmentType | undefined;
     static getAll(): EnchantmentType[];
+}
+
+// @ts-ignore
+export class EnchantRandomEquipmentFunction extends LootItemFunction {
+    private constructor();
+    readonly chance: number;
+}
+
+// @ts-ignore
+export class EnchantRandomlyFunction extends LootItemFunction {
+    private constructor();
+    readonly treasure: boolean;
+}
+
+// @ts-ignore
+export class EnchantWithLevelsFunction extends LootItemFunction {
+    private constructor();
+    readonly levels: minecraftcommon.NumberRange;
+    readonly treasure: boolean;
 }
 
 export class Entity {
@@ -4423,6 +4465,12 @@ export class EntityWantsJockeyComponent extends EntityComponent {
     private constructor();
 }
 
+// @ts-ignore
+export class ExplorationMapFunction extends LootItemFunction {
+    private constructor();
+    readonly destination: string;
+}
+
 export class ExplosionAfterEvent {
     private constructor();
     readonly dimension: Dimension;
@@ -4469,6 +4517,11 @@ export class ExplosionBeforeEventSignal {
     unsubscribe(callback: (arg0: ExplosionBeforeEvent) => void): void;
 }
 
+// @ts-ignore
+export class ExplosionDecayFunction extends LootItemFunction {
+    private constructor();
+}
+
 export class FeedItem {
     private constructor();
     readonly healAmount: number;
@@ -4482,6 +4535,12 @@ export class FeedItemEffect {
     readonly chance: number;
     readonly duration: number;
     readonly name: string;
+}
+
+// @ts-ignore
+export class FillContainerFunction extends LootItemFunction {
+    private constructor();
+    readonly lootTable: string;
 }
 
 export class FluidContainer {
@@ -5452,13 +5511,25 @@ export class ListBlockVolume extends BlockVolumeBase {
 }
 
 // @ts-ignore
+export class LootingEnchantFunction extends LootItemFunction {
+    private constructor();
+    readonly count: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
 export class LootItem extends LootPoolEntry {
     private constructor();
+    readonly functions: LootItemFunction[];
     readonly name?: ItemType;
 }
 
 export class LootItemCondition {
     private constructor();
+}
+
+export class LootItemFunction {
+    private constructor();
+    readonly conditions: LootItemCondition[];
 }
 
 export class LootPool {
@@ -5798,7 +5869,7 @@ export class Player extends Entity {
      *
      * {@link InvalidEntityError}
      */
-    setControlScheme(controlScheme?: string): void;
+    setControlScheme(controlScheme?: ControlScheme): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6643,6 +6714,19 @@ export class ProjectileHitEntityAfterEventSignal {
 }
 
 // @ts-ignore
+export class RandomAuxValueFunction extends LootItemFunction {
+    private constructor();
+    readonly values: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class RandomBlockStateFunction extends LootItemFunction {
+    private constructor();
+    readonly blockState: string;
+    readonly values: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
 export class RandomChanceCondition extends LootItemCondition {
     private constructor();
     readonly chance: number;
@@ -6659,6 +6743,11 @@ export class RandomChanceWithLootingCondition extends LootItemCondition {
 export class RandomDifficultyChanceCondition extends LootItemCondition {
     private constructor();
     readonly chances: number[];
+}
+
+// @ts-ignore
+export class RandomDyeFunction extends LootItemFunction {
+    private constructor();
 }
 
 // @ts-ignore
@@ -6896,6 +6985,86 @@ export class ServerMessageAfterEventSignal {
     unsubscribe(callback: (arg0: MessageReceiveAfterEvent) => void): void;
 }
 
+// @ts-ignore
+export class SetArmorTrimFunction extends LootItemFunction {
+    private constructor();
+    readonly material: string;
+    readonly pattern: string;
+}
+
+// @ts-ignore
+export class SetBannerDetailsFunction extends LootItemFunction {
+    private constructor();
+    readonly "type": number;
+}
+
+// @ts-ignore
+export class SetBookContentsFunction extends LootItemFunction {
+    private constructor();
+    readonly author: string;
+    readonly pages: string[];
+    readonly title: string;
+}
+
+// @ts-ignore
+export class SetDataFromColorIndexFunction extends LootItemFunction {
+    private constructor();
+}
+
+// @ts-ignore
+export class SetItemCountFunction extends LootItemFunction {
+    private constructor();
+    readonly count: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetItemDamageFunction extends LootItemFunction {
+    private constructor();
+    readonly damage: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetItemDataFunction extends LootItemFunction {
+    private constructor();
+    readonly data: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetItemLoreFunction extends LootItemFunction {
+    private constructor();
+    readonly lore: string[];
+}
+
+// @ts-ignore
+export class SetItemNameFunction extends LootItemFunction {
+    private constructor();
+    readonly name: string;
+}
+
+// @ts-ignore
+export class SetOminousBottleFunction extends LootItemFunction {
+    private constructor();
+    readonly amplifier: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetPotionFunction extends LootItemFunction {
+    private constructor();
+    readonly id: string;
+}
+
+// @ts-ignore
+export class SetSpawnEggFunction extends LootItemFunction {
+    private constructor();
+    readonly id: string;
+}
+
+// @ts-ignore
+export class SetStewEffectFunction extends LootItemFunction {
+    private constructor();
+    readonly effects: number[];
+}
+
 export class ShutdownBeforeEventSignal {
     private constructor();
     /**
@@ -6913,6 +7082,11 @@ export class ShutdownBeforeEventSignal {
 }
 
 export class ShutdownEvent {
+    private constructor();
+}
+
+// @ts-ignore
+export class SmeltItemFunction extends LootItemFunction {
     private constructor();
 }
 
@@ -6946,6 +7120,12 @@ export class SpawnRulesRegistry {
      * {@link SpawnRulesInvalidRegistryError}
      */
     registerObstructionCallback(id: string, callback: (arg0: ObstructionCallbackArgs) => boolean): void;
+}
+
+// @ts-ignore
+export class SpecificEnchantFunction extends LootItemFunction {
+    private constructor();
+    readonly enchantments: EnchantInfo[];
 }
 
 export class StartupBeforeEventSignal {
