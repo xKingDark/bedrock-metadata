@@ -28,6 +28,18 @@ export class AsyncPlayerJoinBeforeEvent {
      *
      * {@link DisconnectedError}
      */
+    allowJoin(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DisconnectedError}
+     */
+    disallowJoin(reason?: string): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DisconnectedError}
+     */
     disconnect(reason?: string): void;
     isValid(): boolean;
 }

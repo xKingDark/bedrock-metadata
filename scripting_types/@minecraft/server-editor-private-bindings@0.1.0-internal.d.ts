@@ -443,6 +443,14 @@ export class JigsawService {
     /**
      * @remarks This function can't be called in read-only mode.
      */
+    getEmptyRegistryFiles(): Record<string, string>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getExportLocation(): string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getRegistryData(registryName: string): Record<string, EditorRegistryFile[]>;
     /**
      * @remarks This function can't be called in read-only mode.

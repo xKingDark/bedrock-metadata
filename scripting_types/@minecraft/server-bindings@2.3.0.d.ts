@@ -1793,6 +1793,16 @@ export class ContainerSlot {
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
      */
+    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link InvalidContainerSlotError}
+     *
+     * {@link minecraftcommon.UnsupportedFunctionalityError}
+     */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -2019,6 +2029,7 @@ export class Dimension {
      * @throws This function can throw errors.
      */
     getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined;
+    isChunkLoaded(location: Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2590,6 +2601,14 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     runCommand(commandString: string): CommandResult;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link InvalidEntityError}
+     */
+    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
     /**
      * @throws This function can throw errors.
      *
@@ -4565,6 +4584,14 @@ export class ItemStack {
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
      */
+    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftcommon.UnsupportedFunctionalityError}
+     */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -6339,6 +6366,12 @@ export class World {
      * @remarks This function can't be called in read-only mode.
      */
     setDifficulty(difficulty: Difficulty): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     */
+    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
     /**
      * @throws This function can throw errors.
      *

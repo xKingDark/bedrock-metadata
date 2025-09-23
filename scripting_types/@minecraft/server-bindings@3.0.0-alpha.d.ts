@@ -2946,6 +2946,12 @@ export class Entity {
      *
      * {@link InvalidEntityError}
      */
+    getAABB(): AABB;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
     getAllBlocksStandingOn(options?: GetBlocksStandingOnOptions): Block[];
     /**
      * @throws This function can throw errors.
@@ -4982,6 +4988,10 @@ export class ItemDurabilityComponent extends ItemComponent {
      */
     readonly maxDurability: number;
     /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    unbreakable: boolean;
+    /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -5724,7 +5734,7 @@ export class Player extends Entity {
      *
      * @throws This function can throw errors.
      */
-    clearPropertyOverridesForEntity(targetEntity: Entity): void;
+    clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -7825,6 +7835,11 @@ export class WorldLoadAfterEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: WorldLoadAfterEvent) => void): void;
+}
+
+export interface AABB {
+    center: Vector3;
+    extent: Vector3;
 }
 
 export interface BiomeSearchOptions {
