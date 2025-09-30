@@ -1034,7 +1034,5 @@
                 }
             ]
         }
-    ],
-    "minecraft_version": "1.21.110-preview.26",
-    "name": "script-modules"
+    ]
 }
