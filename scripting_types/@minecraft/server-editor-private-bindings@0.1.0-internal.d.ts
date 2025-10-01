@@ -437,8 +437,12 @@ export class JigsawService {
     generateJigsaw(
         registryName: string,
         startingPool: string,
+        startTarget: string,
         seed: minecraftserverbindings.Vector3,
         depth: number,
+        maxHorizontalDistanceFromCenter: number,
+        validateRegistry: boolean,
+        clipboardItem: minecraftservereditorbindings.ClipboardItem,
     ): Promise<EditorJigsawSection[]>;
     /**
      * @remarks This function can't be called in read-only mode.

@@ -1355,6 +1355,14 @@ export class BlockComponent extends Component {
 }
 
 // @ts-ignore
+export class BlockComponentBlockBreakEvent extends BlockEvent {
+    private constructor();
+    readonly blockDestructionSource?: Block;
+    readonly brokenBlockPermutation: BlockPermutation;
+    readonly entitySource?: Entity;
+}
+
+// @ts-ignore
 export class BlockComponentEntityFallOnEvent extends BlockEvent {
     private constructor();
     readonly entity?: Entity;
@@ -1837,6 +1845,12 @@ export class Camera {
      *
      * @throws This function can throw errors.
      */
+    playAnimation(splineType: CatmullRomSpline | LinearSpline, cameraAnimationOptions: AnimationOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
     setCamera(
         cameraPreset: string,
         setOptions?: 
@@ -1865,6 +1879,13 @@ export class Camera {
      * @throws This function can throw errors.
      */
     setFov(fovCameraOptions?: CameraFovOptions): void;
+}
+
+export class CatmullRomSpline {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    controlPoints: Vector3[];
 }
 
 export class ChatSendAfterEvent {
@@ -5460,6 +5481,13 @@ export class LeverActionAfterEventSignal {
     unsubscribe(callback: (arg0: LeverActionAfterEvent) => void): void;
 }
 
+export class LinearSpline {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    controlPoints: Vector3[];
+}
+
 // @ts-ignore
 export class ListBlockVolume extends BlockVolumeBase {
     constructor(locations: Vector3[]);
@@ -7842,6 +7870,11 @@ export interface AABB {
     extent: Vector3;
 }
 
+export interface AnimationOptions {
+    animation: SplineAnimation;
+    totalTimeSeconds: number;
+}
+
 export interface BiomeSearchOptions {
     boundingSize?: Vector3;
 }
@@ -7856,6 +7889,7 @@ export interface BlockCustomComponent {
         arg0: BlockComponentPlayerPlaceBeforeEvent,
         arg1: CustomComponentParameters,
     ) => void;
+    onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
     onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
@@ -8223,6 +8257,11 @@ export interface PlayerSwingEventOptions {
     heldItemOption?: HeldItemOption;
 }
 
+export interface ProgressKeyFrame {
+    alpha: number;
+    timeSeconds: number;
+}
+
 export interface ProjectileShootOptions {
     uncertainty?: number;
 }
@@ -8260,6 +8299,11 @@ export interface RGBA extends RGB {
     alpha: number;
 }
 
+export interface RotationKeyFrame {
+    rotation: Vector3;
+    timeSeconds: number;
+}
+
 export interface ScoreboardObjectiveDisplayOptions {
     objective: ScoreboardObjective;
     sortOrder?: ObjectiveSortOrder;
@@ -8273,6 +8317,11 @@ export interface SpawnEntityOptions {
     initialPersistence?: boolean;
     initialRotation?: number;
     spawnEvent?: string;
+}
+
+export interface SplineAnimation {
+    progressKeyFrames: ProgressKeyFrame[];
+    rotationKeyFrames: RotationKeyFrame[];
 }
 
 export interface StructureCreateOptions {

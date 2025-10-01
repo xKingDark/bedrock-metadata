@@ -52,6 +52,14 @@ export enum CommandPermissionLevel {
     Owner = 4,
 }
 
+export enum ContainerRulesErrorReason {
+    BannedItem = "BannedItem",
+    NestedStorageItem = "NestedStorageItem",
+    NotAllowedItem = "NotAllowedItem",
+    OverWeightLimit = "OverWeightLimit",
+    ZeroWeightItem = "ZeroWeightItem",
+}
+
 export enum CustomCommandErrorReason {
     AlreadyRegistered = "AlreadyRegistered",
     EnumDependencyMissing = "EnumDependencyMissing",
@@ -432,6 +440,7 @@ export enum ItemComponentTypes {
     Dyeable = "minecraft:dyeable",
     Enchantable = "minecraft:enchantable",
     Food = "minecraft:food",
+    Inventory = "minecraft:inventory",
 }
 
 export enum ItemLockMode {
@@ -764,6 +773,7 @@ export type ItemComponentTypeMap = {
     dyeable: ItemDyeableComponent;
     enchantable: ItemEnchantableComponent;
     food: ItemFoodComponent;
+    inventory: ItemInventoryComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -771,6 +781,7 @@ export type ItemComponentTypeMap = {
     "minecraft:dyeable": ItemDyeableComponent;
     "minecraft:enchantable": ItemEnchantableComponent;
     "minecraft:food": ItemFoodComponent;
+    "minecraft:inventory": ItemInventoryComponent;
 }
 
 export class BiomeType {
@@ -1536,6 +1547,7 @@ export class Component {
 
 export class Container {
     private constructor();
+    readonly containerRules?: ContainerRules;
     /**
      * @throws This property can throw errors.
      */
@@ -1545,6 +1557,12 @@ export class Container {
      * @throws This property can throw errors.
      */
     readonly size: number;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidContainerError}
+     */
+    readonly weight: number;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4489,6 +4507,17 @@ export class ItemFoodComponent extends ItemComponent {
     readonly usingConvertsTo: string;
 }
 
+// @ts-ignore
+export class ItemInventoryComponent extends ItemComponent {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidContainerError}
+     */
+    readonly container: Container;
+}
+
 export class ItemReleaseUseAfterEvent {
     private constructor();
     readonly itemStack?: ItemStack;
@@ -4539,6 +4568,7 @@ export class ItemStack {
     nameTag?: string;
     readonly "type": ItemType;
     readonly typeId: string;
+    readonly weight: number;
     /**
      * @throws This function can throw errors.
      */
@@ -6749,6 +6779,13 @@ export interface CameraTargetOptions {
     targetEntity: Entity;
 }
 
+export interface ContainerRules {
+    allowedItems: string[];
+    allowNestedStorageItems: boolean;
+    bannedItems: string[];
+    weightLimit?: number;
+}
+
 export interface CustomCommand {
     cheatsRequired?: boolean;
     description: string;
@@ -7142,6 +7179,10 @@ export class CommandError extends Error {
 // @ts-ignore
 export class ContainerRulesError extends Error {
     private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: ContainerRulesErrorReason;
 }
 
 // @ts-ignore
