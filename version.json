@@ -1,26 +1,26 @@
 {
     "is_stable": false,
-    "version": "1.21.120-preview.24",
+    "version": "1.21.120-preview.25",
     "metadata": {
         "branch": "r/21_u12",
-        "commit_hash": "c08214d3246e220af1680dd0b6206a9f37038275",
+        "commit_hash": "dfbaea590348071f38b1cd029c2116f00f7dd04c",
         "build_flavor": "Publish",
-        "build_id": 37440173,
+        "build_id": 37647836,
         "network_protocol": 859,
         "storage_version": 10
     },
     "platforms": [
         {
             "platform": "win32",
-            "released": "2025-10-01T15:40:56.000Z",
-            "size_in_bytes": 57660590,
-            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win-preview/bedrock-server-1.21.120.24.zip"
+            "released": "2025-10-07T15:43:13.000Z",
+            "size_in_bytes": 57704304,
+            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win-preview/bedrock-server-1.21.120.25.zip"
         },
         {
             "platform": "linux",
-            "released": "2025-10-01T15:47:11.000Z",
-            "size_in_bytes": 84209392,
-            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux-preview/bedrock-server-1.21.120.24.zip"
+            "released": "2025-10-07T15:47:03.000Z",
+            "size_in_bytes": 84272561,
+            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux-preview/bedrock-server-1.21.120.25.zip"
         }
     ]
 }
