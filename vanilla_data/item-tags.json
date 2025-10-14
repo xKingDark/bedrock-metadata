@@ -216,6 +216,9 @@
                     "name": "minecraft:copper_shovel"
                 },
                 {
+                    "name": "minecraft:copper_spear"
+                },
+                {
                     "name": "minecraft:copper_sword"
                 }
             ]
@@ -340,6 +343,9 @@
                 },
                 {
                     "name": "minecraft:diamond_shovel"
+                },
+                {
+                    "name": "minecraft:diamond_spear"
                 },
                 {
                     "name": "minecraft:diamond_sword"
@@ -548,6 +554,9 @@
                     "name": "minecraft:golden_shovel"
                 },
                 {
+                    "name": "minecraft:golden_spear"
+                },
+                {
                     "name": "minecraft:golden_sword"
                 }
             ]
@@ -700,6 +709,9 @@
                 },
                 {
                     "name": "minecraft:iron_shovel"
+                },
+                {
+                    "name": "minecraft:iron_spear"
                 },
                 {
                     "name": "minecraft:iron_sword"
@@ -1659,6 +1671,26 @@
             ]
         },
         {
+            "name": "minecraft:nautilus_armor",
+            "items": [
+                {
+                    "name": "minecraft:copper_nautilus_armor"
+                },
+                {
+                    "name": "minecraft:diamond_nautilus_armor"
+                },
+                {
+                    "name": "minecraft:golden_nautilus_armor"
+                },
+                {
+                    "name": "minecraft:iron_nautilus_armor"
+                },
+                {
+                    "name": "minecraft:netherite_nautilus_armor"
+                }
+            ]
+        },
+        {
             "name": "minecraft:netherite_tier",
             "items": [
                 {
@@ -1684,6 +1716,9 @@
                 },
                 {
                     "name": "minecraft:netherite_shovel"
+                },
+                {
+                    "name": "minecraft:netherite_spear"
                 },
                 {
                     "name": "minecraft:netherite_sword"
@@ -1957,6 +1992,9 @@
                     "name": "minecraft:mule_spawn_egg"
                 },
                 {
+                    "name": "minecraft:nautilus_spawn_egg"
+                },
+                {
                     "name": "minecraft:ocelot_spawn_egg"
                 },
                 {
@@ -2077,6 +2115,9 @@
                     "name": "minecraft:zombie_horse_spawn_egg"
                 },
                 {
+                    "name": "minecraft:zombie_nautilus_spawn_egg"
+                },
+                {
                     "name": "minecraft:zombie_pigman_spawn_egg"
                 },
                 {
@@ -2084,6 +2125,32 @@
                 },
                 {
                     "name": "minecraft:zombie_villager_spawn_egg"
+                }
+            ]
+        },
+        {
+            "name": "minecraft:spear",
+            "items": [
+                {
+                    "name": "minecraft:copper_spear"
+                },
+                {
+                    "name": "minecraft:diamond_spear"
+                },
+                {
+                    "name": "minecraft:golden_spear"
+                },
+                {
+                    "name": "minecraft:iron_spear"
+                },
+                {
+                    "name": "minecraft:netherite_spear"
+                },
+                {
+                    "name": "minecraft:stone_spear"
+                },
+                {
+                    "name": "minecraft:wooden_spear"
                 }
             ]
         },
@@ -2132,6 +2199,9 @@
                 },
                 {
                     "name": "minecraft:stone_shovel"
+                },
+                {
+                    "name": "minecraft:stone_spear"
                 },
                 {
                     "name": "minecraft:stone_sword"
@@ -2190,10 +2260,16 @@
                     "name": "minecraft:diamond_leggings"
                 },
                 {
+                    "name": "minecraft:diamond_nautilus_armor"
+                },
+                {
                     "name": "minecraft:diamond_pickaxe"
                 },
                 {
                     "name": "minecraft:diamond_shovel"
+                },
+                {
+                    "name": "minecraft:diamond_spear"
                 },
                 {
                     "name": "minecraft:diamond_sword"
@@ -2565,6 +2641,9 @@
                 },
                 {
                     "name": "minecraft:wooden_shovel"
+                },
+                {
+                    "name": "minecraft:wooden_spear"
                 },
                 {
                     "name": "minecraft:wooden_sword"

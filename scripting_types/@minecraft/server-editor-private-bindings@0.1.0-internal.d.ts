@@ -33,6 +33,7 @@ export enum JigsawJsonType {
 
 export enum PersistenceGroupType {
     Local = 0,
+    Replication = 1,
     Shared = 2,
 }
 
@@ -414,6 +415,16 @@ export class InternalPersistenceManager {
      * @throws This function can throw errors.
      */
     getOrCreateGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    requestClientGroup(
+        namespacedName: string,
+        options: PersistenceGroupCreationOptions,
+        callback: (arg0: PersistenceGroup) => void,
+    ): void;
 }
 
 export class InternalPlayerServiceContext {

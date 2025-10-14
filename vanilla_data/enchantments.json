@@ -85,6 +85,10 @@
             "max_level": 3
         },
         {
+            "name": "lunge",
+            "max_level": 3
+        },
+        {
             "name": "lure",
             "max_level": 3
         },

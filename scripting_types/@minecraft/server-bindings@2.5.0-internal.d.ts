@@ -2,13 +2,13 @@
 // Project: https://github.com/DarkGamerYT/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/DarkGamerYT>
 /**
- * @beta
+ * @internal
  * @packageDocumentation
  * Manifest Details
  * ```json
  * {
  *     "module_name": "@minecraft/server-bindings",
- *     "version": "2.4.0-beta"
+ *     "version": "2.5.0-internal"
  * }
  * ```
  */
@@ -215,6 +215,7 @@ export enum EnchantmentSlot {
     FishingRod = "FishingRod",
     Flintsteel = "Flintsteel",
     Hoe = "Hoe",
+    MeleeSpear = "MeleeSpear",
     Pickaxe = "Pickaxe",
     Shears = "Shears",
     Shield = "Shield",
@@ -339,6 +340,39 @@ export enum EntityInitializationCause {
     Loaded = "Loaded",
     Spawned = "Spawned",
     Transformed = "Transformed",
+}
+
+export enum EntitySpawnCategory {
+    Ambient = "Ambient",
+    Axolotls = "Axolotls",
+    Creature = "Creature",
+    Misc = "Misc",
+    Monster = "Monster",
+    UndergroundWaterCreature = "UndergroundWaterCreature",
+    WaterAmbient = "WaterAmbient",
+    WaterCreature = "WaterCreature",
+}
+
+export enum EntitySpawnReason {
+    Breeding = "Breeding",
+    Bucket = "Bucket",
+    ChunkGeneration = "ChunkGeneration",
+    Command = "Command",
+    Conversion = "Conversion",
+    DimensionTravel = "DimensionTravel",
+    Dispenser = "Dispenser",
+    Event = "Event",
+    Jockey = "Jockey",
+    Load = "Load",
+    MobSummoned = "MobSummoned",
+    Natural = "Natural",
+    Patrol = "Patrol",
+    Reinforcement = "Reinforcement",
+    SpawnEgg = "SpawnEgg",
+    Spawner = "Spawner",
+    Structure = "Structure",
+    TrialSpawner = "TrialSpawner",
+    Triggered = "Triggered",
 }
 
 export enum EquipmentSlot {
@@ -4320,6 +4354,25 @@ export class EntitySpawnAfterEventSignal {
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
 
+export class EntitySpawnCallbackArgs {
+    private constructor();
+    readonly dimensionLocation: DimensionLocation;
+    readonly spawnReason: EntitySpawnReason;
+    readonly spawnType: EntitySpawnType;
+}
+
+export class EntitySpawnType {
+    private constructor();
+    readonly entityId: string;
+    readonly height: number;
+    readonly isImmuneFire: boolean;
+    readonly isSummonable: boolean;
+    readonly spawnCategory: EntitySpawnCategory;
+    readonly width: number;
+    getSpawnAABB(position: Vector3): AABB;
+    isBlockDangerous(block: Block): boolean;
+}
+
 // @ts-ignore
 export class EntityStrengthComponent extends EntityComponent {
     private constructor();
@@ -5624,6 +5677,13 @@ export class MolangVariableMap {
      * @throws This function can throw errors.
      */
     setVector3(variableName: string, vector: Vector3): void;
+}
+
+export class ObstructionCallbackArgs {
+    private constructor();
+    readonly dimension: Dimension;
+    readonly entity: Entity;
+    readonly spawnType: EntitySpawnType;
 }
 
 export class PackSettingChangeAfterEvent {
@@ -7069,6 +7129,38 @@ export class SmeltItemFunction extends LootItemFunction {
     private constructor();
 }
 
+export class SpawnRulesRegistry {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     *
+     * {@link SpawnRulesInvalidRegistryError}
+     */
+    registerEntitySpawnCallback(id: string, callback: (arg0: EntitySpawnCallbackArgs) => boolean): void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     *
+     * {@link SpawnRulesInvalidRegistryError}
+     */
+    registerObstructionCallback(id: string, callback: (arg0: ObstructionCallbackArgs) => boolean): void;
+}
+
 // @ts-ignore
 export class SpecificEnchantFunction extends LootItemFunction {
     private constructor();
@@ -7105,6 +7197,12 @@ export class StartupEvent {
      * @remarks This property can be read in early-execution mode.
      */
     readonly itemComponentRegistry: ItemComponentRegistry;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    getSpawnRulesRegistry(): SpawnRulesRegistry;
 }
 
 export class Structure {
@@ -8585,12 +8683,18 @@ export class RawMessageError extends Error {
 }
 
 // @ts-ignore
+export class SpawnRulesInvalidRegistryError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class UnloadedChunksError extends Error {
     private constructor();
 }
 
 export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
+export const isInternal = true;
 export const MoonPhaseCount = 8;
 export const TicksPerDay = 24000;
 export const TicksPerSecond = 20;
