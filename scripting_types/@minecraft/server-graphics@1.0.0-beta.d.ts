@@ -103,7 +103,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMax(blendMax: number | Record<float, number>, biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    setHorizonBlendMax(blendMax: number | Record<number, number>, biomeIdentifier: minecraftserverbindings.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -112,7 +112,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setHorizonBlendMieStart(
-        blendMieStart: number | Record<float, number>,
+        blendMieStart: number | Record<number, number>,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -122,7 +122,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMin(blendMin: number | Record<float, number>, biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    setHorizonBlendMin(blendMin: number | Record<number, number>, biomeIdentifier: minecraftserverbindings.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -131,7 +131,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setHorizonBlendStart(
-        blendStart: number | Record<float, number>,
+        blendStart: number | Record<number, number>,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -142,7 +142,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setMoonMieStrength(
-        moonMieStrength: number | Record<float, number>,
+        moonMieStrength: number | Record<number, number>,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -153,7 +153,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setRayleighStrength(
-        rayleighStrength: number | Record<float, number>,
+        rayleighStrength: number | Record<number, number>,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -164,7 +164,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setSkyHorizonColor(
-        color: Record<float, minecraftserverbindings.RGB> | minecraftserverbindings.RGB,
+        color: Record<number, minecraftserverbindings.RGB> | minecraftserverbindings.RGB,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -175,7 +175,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setSkyZenithColor(
-        color: Record<float, minecraftserverbindings.RGB> | minecraftserverbindings.RGB,
+        color: Record<number, minecraftserverbindings.RGB> | minecraftserverbindings.RGB,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -186,7 +186,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setSunGlareShape(
-        sunGlareShape: number | Record<float, number>,
+        sunGlareShape: number | Record<number, number>,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
     /**
@@ -197,7 +197,7 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setSunMieStrength(
-        sunMieStrength: number | Record<float, number>,
+        sunMieStrength: number | Record<number, number>,
         biomeIdentifier: minecraftserverbindings.BiomeType,
     ): void;
 }
