@@ -928,7 +928,11 @@ export class AimAssistPreset {
     /**
      * @throws This function can throw errors.
      */
-    getExcludedTargets(): string[];
+    getExcludedBlockTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     */
+    getExcludedEntityTargets(): string[];
     /**
      * @throws This function can throw errors.
      */
@@ -950,13 +954,18 @@ export class AimAssistPresetSettings {
     handSettings?: string;
     readonly identifier: string;
     constructor(identifier: string);
-    getExcludedTargets(): string[] | undefined;
+    getExcludedBlockTargets(): string[] | undefined;
+    getExcludedEntityTargets(): string[] | undefined;
     getItemSettings(): Record<string, string>;
     getLiquidTargetingItems(): string[] | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    setExcludedTargets(targets?: string[]): void;
+    setExcludedBlockTargets(blockTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedEntityTargets(entityTargets?: string[]): void;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -3484,6 +3493,7 @@ export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
     readonly item: string;
+    readonly resultItem: string;
 }
 
 export class EntityDieAfterEvent {
@@ -4554,6 +4564,7 @@ export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
+    readonly resultItem: string;
     getEffects(): FeedItemEffect[];
 }
 

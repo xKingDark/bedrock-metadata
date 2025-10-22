@@ -337,6 +337,185 @@
             ]
         },
         {
+            "name": "minecraft:cornerable_stairs",
+            "items": [
+                {
+                    "name": "minecraft:acacia_stairs"
+                },
+                {
+                    "name": "minecraft:andesite_stairs"
+                },
+                {
+                    "name": "minecraft:bamboo_mosaic_stairs"
+                },
+                {
+                    "name": "minecraft:bamboo_stairs"
+                },
+                {
+                    "name": "minecraft:birch_stairs"
+                },
+                {
+                    "name": "minecraft:blackstone_stairs"
+                },
+                {
+                    "name": "minecraft:brick_stairs"
+                },
+                {
+                    "name": "minecraft:cherry_stairs"
+                },
+                {
+                    "name": "minecraft:cobbled_deepslate_stairs"
+                },
+                {
+                    "name": "minecraft:crimson_stairs"
+                },
+                {
+                    "name": "minecraft:cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:dark_oak_stairs"
+                },
+                {
+                    "name": "minecraft:dark_prismarine_stairs"
+                },
+                {
+                    "name": "minecraft:deepslate_brick_stairs"
+                },
+                {
+                    "name": "minecraft:deepslate_tile_stairs"
+                },
+                {
+                    "name": "minecraft:diorite_stairs"
+                },
+                {
+                    "name": "minecraft:end_brick_stairs"
+                },
+                {
+                    "name": "minecraft:exposed_cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:granite_stairs"
+                },
+                {
+                    "name": "minecraft:jungle_stairs"
+                },
+                {
+                    "name": "minecraft:mangrove_stairs"
+                },
+                {
+                    "name": "minecraft:mossy_cobblestone_stairs"
+                },
+                {
+                    "name": "minecraft:mossy_stone_brick_stairs"
+                },
+                {
+                    "name": "minecraft:mud_brick_stairs"
+                },
+                {
+                    "name": "minecraft:nether_brick_stairs"
+                },
+                {
+                    "name": "minecraft:normal_stone_stairs"
+                },
+                {
+                    "name": "minecraft:oak_stairs"
+                },
+                {
+                    "name": "minecraft:oxidized_cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:pale_oak_stairs"
+                },
+                {
+                    "name": "minecraft:polished_andesite_stairs"
+                },
+                {
+                    "name": "minecraft:polished_blackstone_brick_stairs"
+                },
+                {
+                    "name": "minecraft:polished_blackstone_stairs"
+                },
+                {
+                    "name": "minecraft:polished_deepslate_stairs"
+                },
+                {
+                    "name": "minecraft:polished_diorite_stairs"
+                },
+                {
+                    "name": "minecraft:polished_granite_stairs"
+                },
+                {
+                    "name": "minecraft:polished_tuff_stairs"
+                },
+                {
+                    "name": "minecraft:prismarine_bricks_stairs"
+                },
+                {
+                    "name": "minecraft:prismarine_stairs"
+                },
+                {
+                    "name": "minecraft:purpur_stairs"
+                },
+                {
+                    "name": "minecraft:quartz_stairs"
+                },
+                {
+                    "name": "minecraft:red_nether_brick_stairs"
+                },
+                {
+                    "name": "minecraft:red_sandstone_stairs"
+                },
+                {
+                    "name": "minecraft:resin_brick_stairs"
+                },
+                {
+                    "name": "minecraft:sandstone_stairs"
+                },
+                {
+                    "name": "minecraft:smooth_quartz_stairs"
+                },
+                {
+                    "name": "minecraft:smooth_red_sandstone_stairs"
+                },
+                {
+                    "name": "minecraft:smooth_sandstone_stairs"
+                },
+                {
+                    "name": "minecraft:spruce_stairs"
+                },
+                {
+                    "name": "minecraft:stone_brick_stairs"
+                },
+                {
+                    "name": "minecraft:stone_stairs"
+                },
+                {
+                    "name": "minecraft:tuff_brick_stairs"
+                },
+                {
+                    "name": "minecraft:tuff_stairs"
+                },
+                {
+                    "name": "minecraft:warped_stairs"
+                },
+                {
+                    "name": "minecraft:waxed_cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:waxed_exposed_cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:waxed_oxidized_cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:waxed_weathered_cut_copper_stairs"
+                },
+                {
+                    "name": "minecraft:weathered_cut_copper_stairs"
+                }
+            ]
+        },
+        {
             "name": "minecraft:crop",
             "items": [
                 {

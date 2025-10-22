@@ -74,6 +74,10 @@ export class DataStore {
     readonly menuContainer: DataStoreMenuContainer;
     readonly modalToolContainer: DataStoreModalToolContainer;
     readonly paneContainer: DataStorePaneContainer;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    sendNotificationEvent(dataTag: string, payload: string): void;
 }
 
 export class DataStoreActionBarContainer {
@@ -550,7 +554,7 @@ export class PersistenceGroup {
      *
      * @throws This function can throw errors.
      */
-    fetchItem(itemName: string): PersistenceGroupItem;
+    fetchItem(itemName: string): PersistenceGroupItem | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
