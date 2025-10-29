@@ -47,7 +47,7 @@ export class Sentry {
      *
      * {@link SentryUninitializedError}
      */
-    captureException(exception: error, captureContext?: SentryCaptureContext): void;
+    captureException(exception: unknown, captureContext?: SentryCaptureContext): void;
     /**
      * @remarks This function can be called in early-execution mode.
      *

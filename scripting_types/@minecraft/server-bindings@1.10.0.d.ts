@@ -332,31 +332,37 @@ export class Block {
     readonly y: number;
     readonly z: number;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    above(steps?: number): Block | undefined;
+    above(steps?: number = 1): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    below(steps?: number): Block | undefined;
+    below(steps?: number = 1): Block | undefined;
     bottomCenter(): Vector3;
     center(): Vector3;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    east(steps?: number): Block | undefined;
+    east(steps?: number = 1): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -366,13 +372,16 @@ export class Block {
      */
     getComponent(componentId: string): BlockComponent | undefined;
     /**
+     * @param amount Defaults to: 1
+     *
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    getItemStack(amount?: number, withData?: boolean): ItemStack | undefined;
+    getItemStack(amount?: number = 1, withData?: boolean): ItemStack | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -391,13 +400,15 @@ export class Block {
     hasTag(tag: string): boolean;
     isValid(): boolean;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    north(steps?: number): Block | undefined;
+    north(steps?: number = 1): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -417,21 +428,25 @@ export class Block {
      */
     setPermutation(permutation: BlockPermutation): void;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    south(steps?: number): Block | undefined;
+    south(steps?: number = 1): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    west(steps?: number): Block | undefined;
+    west(steps?: number = 1): Block | undefined;
 }
 
 // @ts-ignore
@@ -458,7 +473,10 @@ export class BlockInventoryComponent extends BlockComponent {
 export class BlockPermutation {
     private constructor();
     getAllStates(): Record<string, boolean | number | string>;
-    getItemStack(amount?: number): ItemStack | undefined;
+    /**
+     * @param amount Defaults to: 1
+     */
+    getItemStack(amount?: number = 1): ItemStack | undefined;
     getState(stateName: string): boolean | number | string | undefined;
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
@@ -1233,11 +1251,13 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param useEffects Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
-    extinguishFire(useEffects?: boolean): boolean;
+    extinguishFire(useEffects?: boolean = true): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -1429,11 +1449,13 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param useEffects Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
-    setOnFire(seconds: number, useEffects?: boolean): boolean;
+    setOnFire(seconds: number, useEffects?: boolean = true): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2425,7 +2447,7 @@ export class ItemStack {
     /**
      * @throws This function can throw errors.
      */
-    constructor(itemType: ItemType | string, amount?: number);
+    constructor(itemType: ItemType | string, amount?: number = 1);
     clearDynamicProperties(): void;
     clone(): ItemStack;
     /**

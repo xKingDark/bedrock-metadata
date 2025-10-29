@@ -661,9 +661,11 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param showParticles Defaults to: true
+     *
      * @throws This function can throw errors.
      */
-    addEffect(effectType: EffectType, duration: number, amplifier?: number, showParticles?: boolean): void;
+    addEffect(effectType: EffectType, duration: number, amplifier?: number, showParticles?: boolean = true): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1856,7 +1858,7 @@ export class ItemStack {
     /**
      * @throws This function can throw errors.
      */
-    constructor(itemType: ItemType | string, amount?: number, data?: number);
+    constructor(itemType: ItemType | string, amount?: number = 1, data?: number);
     getComponent(componentId: string): ItemComponent | undefined;
     getComponents(): ItemComponent[];
     getLore(): string[];

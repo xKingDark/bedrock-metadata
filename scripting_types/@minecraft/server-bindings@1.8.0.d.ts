@@ -218,31 +218,37 @@ export class Block {
     readonly y: number;
     readonly z: number;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    above(steps?: number): Block | undefined;
+    above(steps?: number = 1): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    below(steps?: number): Block | undefined;
+    below(steps?: number = 1): Block | undefined;
     bottomCenter(): Vector3;
     center(): Vector3;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    east(steps?: number): Block | undefined;
+    east(steps?: number = 1): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -269,13 +275,15 @@ export class Block {
     hasTag(tag: string): boolean;
     isValid(): boolean;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    north(steps?: number): Block | undefined;
+    north(steps?: number = 1): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -295,21 +303,25 @@ export class Block {
      */
     setPermutation(permutation: BlockPermutation): void;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    south(steps?: number): Block | undefined;
+    south(steps?: number = 1): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    west(steps?: number): Block | undefined;
+    west(steps?: number = 1): Block | undefined;
 }
 
 // @ts-ignore
@@ -1813,7 +1825,7 @@ export class ItemStack {
     /**
      * @throws This function can throw errors.
      */
-    constructor(itemType: ItemType | string, amount?: number);
+    constructor(itemType: ItemType | string, amount?: number = 1);
     clone(): ItemStack;
     /**
      * @remarks This function can't be called in read-only mode.

@@ -659,7 +659,7 @@ export class ItemStack {
     /**
      * @throws This function can throw errors.
      */
-    constructor(itemType: ItemType | string, amount?: number);
+    constructor(itemType: ItemType | string, amount?: number = 1);
     getComponent(componentId: string): ItemComponent | undefined;
     getComponents(): ItemComponent[];
     hasComponent(componentId: string): boolean;
