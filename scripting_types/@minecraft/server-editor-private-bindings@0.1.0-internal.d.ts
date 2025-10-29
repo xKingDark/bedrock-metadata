@@ -24,6 +24,25 @@ export enum EditorRealmsServiceAvailability {
     Unknown = 5,
 }
 
+export enum JigsawJsonType {
+    Processor = 0,
+    Structure = 1,
+    StructureSet = 2,
+    TemplatePool = 3,
+}
+
+export enum PersistenceGroupType {
+    Local = 0,
+    Shared = 2,
+}
+
+export enum PersistenceScope {
+    ClientProject = 0,
+    ClientGlobal = 1,
+    ServerProject = 2,
+    ServerGlobal = 3,
+}
+
 export enum ProjectRegionAvailabilityMode {
     Loaded = 0,
     Ticking = 1,
@@ -359,13 +378,100 @@ export class InputService {
     updateKeyBindingProcessingState(contextId: string, bindingId: string, state?: number): void;
 }
 
+export class InternalPersistenceManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    deleteGroup(namespacedName: string, options: PersistenceGroupCreationOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeAllGroups(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fetchGroups(options: PersistenceQueryGroupOptions): PersistenceGroup[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getOrCreateGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
+}
+
 export class InternalPlayerServiceContext {
     private constructor();
     readonly dataStore: DataStore;
     readonly dataTransfer: DataTransferManager;
     readonly input: InputService;
+    readonly internalPersistenceManager: InternalPersistenceManager;
+    readonly jigsawService: JigsawService;
     readonly realmsService: RealmsService;
     readonly regionManager: ProjectRegionManager;
+}
+
+export class JigsawService {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    generateJigsaw(
+        registryName: string,
+        startingPool: string,
+        startTarget: string,
+        seed: minecraftserverbindings.Vector3,
+        depth: number,
+        maxHorizontalDistanceFromCenter: number,
+        validateRegistry: boolean,
+        clipboardItem: minecraftservereditorbindings.ClipboardItem,
+    ): Promise<EditorJigsawSection[]>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getEmptyRegistryFiles(): Record<string, string>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getExportLocation(): string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getRegistryData(registryName: string): Record<string, EditorRegistryFile[]>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getRegistryList(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setRegistryData(
+        registryName: string,
+        processorData: EditorRegistryFile[],
+        structureData: EditorRegistryFile[],
+        structureSetData: EditorRegistryFile[],
+        templatePoolData: EditorRegistryFile[],
+    ): Promise<string[]>;
 }
 
 export class MinecraftEditorInternal {
@@ -376,13 +482,13 @@ export class MinecraftEditorInternal {
      *
      * @throws This function can throw errors.
      */
-    fireTelemetryEvent(player: minecraftserver.Player, source: string, eventName: string, metadata: string): void;
+    fireTelemetryEvent(player: minecraftserverbindings.Player, source: string, eventName: string, metadata: string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getPlayerServices(player: minecraftserver.Player): InternalPlayerServiceContext;
+    getPlayerServices(player: minecraftserverbindings.Player): InternalPlayerServiceContext;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -394,6 +500,86 @@ export class MinecraftEditorInternal {
         shutdownFunction: (arg0: minecraftservereditorbindings.ExtensionContext) => void,
         options?: minecraftservereditorbindings.ExtensionOptionalParameters,
     ): minecraftservereditorbindings.Extension;
+}
+
+export class PersistenceGroup {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createItem(itemName: string, defaultJsonValue?: string): PersistenceGroupItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    deleteItem(itemName: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    dispose(): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeAllGroupItems(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeGroupItem(key: string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fetchItem(itemName: string): PersistenceGroupItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getOrCreateItem(itemName: string, defaultJsonValue?: string): PersistenceGroupItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    listItems(): string[];
+}
+
+export class PersistenceGroupItem {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commit(): void;
+    /**
+     * @throws This function can throw errors.
+     */
+    getAsJSON(): string;
+    /**
+     * @throws This function can throw errors.
+     */
+    getKey(): string;
+    /**
+     * @throws This function can throw errors.
+     */
+    getValue(): string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setValue(value: string): void;
 }
 
 export class ProjectRegion {
@@ -414,38 +600,38 @@ export class ProjectRegion {
      * @throws This function can throw errors.
      */
     getAvailableLocationFromRay(
-        location: minecraftserver.Vector3,
-        direction: minecraftserver.Vector3,
-        options?: minecraftserver.BlockRaycastOptions,
-    ): minecraftserver.Vector3 | undefined;
+        location: minecraftserverbindings.Vector3,
+        direction: minecraftserverbindings.Vector3,
+        options?: minecraftserverbindings.BlockRaycastOptions,
+    ): minecraftserverbindings.Vector3 | undefined;
     /**
      * @throws This function can throw errors.
      */
-    getBlock(location: minecraftserver.Vector3): minecraftserver.Block | undefined;
+    getBlock(location: minecraftserverbindings.Vector3): minecraftserverbindings.Block | undefined;
     /**
      * @throws This function can throw errors.
      */
-    getBlockMapColor(location: minecraftserver.Vector3): minecraftserver.RGBA;
+    getBlockMapColor(location: minecraftserverbindings.Vector3): minecraftserverbindings.RGBA;
     /**
      * @throws This function can throw errors.
      */
-    getBlockPermutation(location: minecraftserver.Vector3): minecraftserver.BlockPermutation;
+    getBlockPermutation(location: minecraftserverbindings.Vector3): minecraftserverbindings.BlockPermutation;
     /**
      * @throws This function can throw errors.
      */
-    getBlockTypeId(location: minecraftserver.Vector3): string;
+    getBlockTypeId(location: minecraftserverbindings.Vector3): string;
     /**
      * @throws This function can throw errors.
      */
-    getBounds(): minecraftserver.BlockBoundingBox;
+    getBounds(): minecraftserverbindings.BlockBoundingBox;
     /**
      * @throws This function can throw errors.
      */
-    isAirBlock(location: minecraftserver.Vector3): boolean;
+    isAirBlock(location: minecraftserverbindings.Vector3): boolean;
     /**
      * @throws This function can throw errors.
      */
-    isAreaAvailable(boundingBox: minecraftserver.BlockBoundingBox): boolean;
+    isAreaAvailable(boundingBox: minecraftserverbindings.BlockBoundingBox): boolean;
     /**
      * @throws This function can throw errors.
      */
@@ -453,19 +639,19 @@ export class ProjectRegion {
     /**
      * @throws This function can throw errors.
      */
-    isBlockWaterLogged(location: minecraftserver.Vector3): boolean;
+    isBlockWaterLogged(location: minecraftserverbindings.Vector3): boolean;
     /**
      * @throws This function can throw errors.
      */
-    isLiquidBlock(location: minecraftserver.Vector3): boolean;
+    isLiquidBlock(location: minecraftserverbindings.Vector3): boolean;
     /**
      * @throws This function can throw errors.
      */
-    isLocationAvailable(location: minecraftserver.Vector3): boolean;
+    isLocationAvailable(location: minecraftserverbindings.Vector3): boolean;
     /**
      * @throws This function can throw errors.
      */
-    isSolidBlock(location: minecraftserver.Vector3): boolean;
+    isSolidBlock(location: minecraftserverbindings.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -473,7 +659,7 @@ export class ProjectRegion {
      */
     requestBlockOperationArea(
         volume: minecraftservereditorbindings.RelativeVolumeListBlockVolume,
-        callback: (arg0: minecraftserver.BlockLocationIterator) => void,
+        callback: (arg0: minecraftserverbindings.BlockLocationIterator) => void,
     ): Promise<void>;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -492,37 +678,37 @@ export class ProjectRegion {
      *
      * @throws This function can throw errors.
      */
-    requestMove(center: minecraftserver.Vector3): Promise<void>;
+    requestMove(center: minecraftserverbindings.Vector3): Promise<void>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    setBlockType(location: minecraftserver.Vector3, blockType: minecraftserver.BlockType | string): void;
+    setBlockType(location: minecraftserverbindings.Vector3, blockType: minecraftserverbindings.BlockType | string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    setBlockWaterlogged(location: minecraftserver.Vector3, isWaterlogged: boolean): void;
+    setBlockWaterlogged(location: minecraftserverbindings.Vector3, isWaterlogged: boolean): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserver.EntitySpawnError}
+     * {@link minecraftserverbindings.EntitySpawnError}
      *
      * {@link Error}
      *
      * {@link minecraftcommon.InvalidArgumentError}
      *
-     * {@link minecraftserver.InvalidEntityError}
+     * {@link minecraftserverbindings.InvalidEntityError}
      */
     spawnEntity(
-        identifier: minecraftserver.EntityType | string,
-        location: minecraftserver.Vector3,
+        identifier: minecraftserverbindings.EntityType | string,
+        location: minecraftserverbindings.Vector3,
         rotation?: number,
-    ): minecraftserver.Entity;
+    ): minecraftserverbindings.Entity;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -534,7 +720,7 @@ export class ProjectRegion {
      *
      * @throws This function can throw errors.
      */
-    waitUntilBoundsAvailable(boundingBox: minecraftserver.BlockBoundingBox): Promise<void>;
+    waitUntilBoundsAvailable(boundingBox: minecraftserverbindings.BlockBoundingBox): Promise<void>;
 }
 
 export class ProjectRegionManager {
@@ -620,6 +806,13 @@ export interface DataTransferCollectionNameData {
     uniqueId: string;
 }
 
+export interface EditorJigsawSection {
+    bounds: minecraftserverbindings.BlockBoundingBox;
+    offset: minecraftserverbindings.Vector3;
+    rotation: minecraftserverbindings.StructureRotation;
+    structureId: string;
+}
+
 export interface EditorRealmsWorld {
     id: string;
     name: string;
@@ -630,11 +823,29 @@ export interface EditorRealmsWorldSlot {
     name: string;
 }
 
+export interface EditorRegistryFile {
+    fileJson: string;
+    fileName: string;
+}
+
 export interface InputBindingInfo {
     actionId?: string;
     canRebind: boolean;
     label?: string;
     tooltip?: string;
+}
+
+export interface PersistenceGroupCreationOptions {
+    groupType?: PersistenceGroupType;
+    scope: PersistenceScope;
+    version?: number;
+}
+
+export interface PersistenceQueryGroupOptions {
+    namespace?: string;
+    namespacedName?: string;
+    scope?: PersistenceScope;
+    version?: number;
 }
 
 export interface ProjectRegionOptions {

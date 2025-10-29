@@ -2,24 +2,18 @@
 // Project: https://github.com/DarkGamerYT/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/DarkGamerYT>
 /**
- * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
  * {
- *     "module_name": "@minecraft/server",
- *     "version": "2.3.0-beta"
+ *     "module_name": "@minecraft/server-bindings",
+ *     "version": "1.17.0"
  * }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
-export enum AimAssistTargetMode {
-    Angle = "Angle",
-    Distance = "Distance",
-}
-
 export enum BlockComponentTypes {
-    FluidContainer = "minecraft:fluid_container",
+    FluidContainer = "minecraft:fluidContainer",
     Inventory = "minecraft:inventory",
     Piston = "minecraft:piston",
     RecordPlayer = "minecraft:record_player",
@@ -39,89 +33,9 @@ export enum BlockVolumeIntersection {
     Intersects = 2,
 }
 
-export enum BookErrorReason {
-    ExceedsMaxPageLength = "ExceedsMaxPageLength",
-    ExceedsMaxPages = "ExceedsMaxPages",
-    ExceedsTitleLength = "ExceedsTitleLength",
-}
-
-export enum ButtonState {
-    Pressed = "Pressed",
-    Released = "Released",
-}
-
-export enum CommandPermissionLevel {
-    Any = 0,
-    GameDirectors = 1,
-    Admin = 2,
-    Host = 3,
-    Owner = 4,
-}
-
-export enum CompoundBlockVolumeAction {
-    Add = 0,
-    Subtract = 1,
-}
-
-export enum CompoundBlockVolumePositionRelativity {
-    Relative = 0,
-    Absolute = 1,
-}
-
-export enum ContainerRulesErrorReason {
-    BannedItem = "BannedItem",
-    NestedStorageItem = "NestedStorageItem",
-    NotAllowedItem = "NotAllowedItem",
-    OverWeightLimit = "OverWeightLimit",
-    ZeroWeightItem = "ZeroWeightItem",
-}
-
-export enum CustomCommandErrorReason {
-    AlreadyRegistered = "AlreadyRegistered",
-    EnumDependencyMissing = "EnumDependencyMissing",
-    NamespaceMismatch = "NamespaceMismatch",
-    ParameterLimit = "ParameterLimit",
-    RegistryInvalid = "RegistryInvalid",
-    RegistryReadOnly = "RegistryReadOnly",
-    UnexpectedEnumName = "UnexpectedEnumName",
-}
-
-export enum CustomCommandParamType {
-    BlockType = "BlockType",
-    Boolean = "Boolean",
-    EntitySelector = "EntitySelector",
-    EntityType = "EntityType",
-    Enum = "Enum",
-    Float = "Float",
-    Integer = "Integer",
-    ItemType = "ItemType",
-    Location = "Location",
-    PlayerSelector = "PlayerSelector",
-    String = "String",
-}
-
-export enum CustomCommandSource {
-    Block = "Block",
-    Entity = "Entity",
-    NPCDialogue = "NPCDialogue",
-    Server = "Server",
-}
-
-export enum CustomCommandStatus {
-    Success = 0,
-    Failure = 1,
-}
-
 export enum CustomComponentNameErrorReason {
     NoNamespace = 1,
     DisallowedNamespace = 2,
-}
-
-export enum Difficulty {
-    Easy = "Easy",
-    Hard = "Hard",
-    Normal = "Normal",
-    Peaceful = "Peaceful",
 }
 
 export enum Direction {
@@ -226,14 +140,13 @@ export enum EntityComponentTypes {
     Color2 = "minecraft:color2",
     CursorInventory = "minecraft:cursor_inventory",
     Equippable = "minecraft:equippable",
-    Exhaustion = "minecraft:player.exhaustion",
     FireImmune = "minecraft:fire_immune",
     FloatsInLiquid = "minecraft:floats_in_liquid",
     FlyingSpeed = "minecraft:flying_speed",
     FrictionModifier = "minecraft:friction_modifier",
+    GroundOffset = "minecraft:ground_offset",
     Healable = "minecraft:healable",
     Health = "minecraft:health",
-    Hunger = "minecraft:player.hunger",
     Inventory = "minecraft:inventory",
     IsBaby = "minecraft:is_baby",
     IsCharged = "minecraft:is_charged",
@@ -268,13 +181,11 @@ export enum EntityComponentTypes {
     NavigationGeneric = "minecraft:navigation.generic",
     NavigationHover = "minecraft:navigation.hover",
     NavigationWalk = "minecraft:navigation.walk",
-    Npc = "minecraft:npc",
     OnFire = "minecraft:onfire",
     Projectile = "minecraft:projectile",
     PushThrough = "minecraft:push_through",
     Rideable = "minecraft:rideable",
     Riding = "minecraft:riding",
-    Saturation = "minecraft:player.saturation",
     Scale = "minecraft:scale",
     SkinId = "minecraft:skin_id",
     Strength = "minecraft:strength",
@@ -319,6 +230,7 @@ export enum EntityDamageCause {
     stalagmite = "stalagmite",
     starve = "starve",
     suffocation = "suffocation",
+    suicide = "suicide",
     temperature = "temperature",
     thorns = "thorns",
     void = "void",
@@ -334,7 +246,6 @@ export enum EntityInitializationCause {
 }
 
 export enum EquipmentSlot {
-    Body = "Body",
     Chest = "Chest",
     Feet = "Feet",
     Head = "Head",
@@ -351,10 +262,10 @@ export enum FluidType {
 }
 
 export enum GameMode {
-    Adventure = "Adventure",
-    Creative = "Creative",
-    Spectator = "Spectator",
-    Survival = "Survival",
+    adventure = "adventure",
+    creative = "creative",
+    spectator = "spectator",
+    survival = "survival",
 }
 
 export enum GameRule {
@@ -376,7 +287,6 @@ export enum GameRule {
     FreezeDamage = "freezeDamage",
     FunctionCommandLimit = "functionCommandLimit",
     KeepInventory = "keepInventory",
-    LocatorBar = "locatorBar",
     MaxCommandChainLength = "maxCommandChainLength",
     MobGriefing = "mobGriefing",
     NaturalRegeneration = "naturalRegeneration",
@@ -398,18 +308,6 @@ export enum GameRule {
     TntExplosionDropDecay = "tntExplosionDropDecay",
 }
 
-export enum GraphicsMode {
-    Deferred = "Deferred",
-    Fancy = "Fancy",
-    RayTraced = "RayTraced",
-    Simple = "Simple",
-}
-
-export enum HeldItemOption {
-    AnyItem = "AnyItem",
-    NoItem = "NoItem",
-}
-
 export enum HudElement {
     PaperDoll = 0,
     Armor = 1,
@@ -429,11 +327,6 @@ export enum HudElement {
 export enum HudVisibility {
     Hide = 0,
     Reset = 1,
-}
-
-export enum InputButton {
-    Jump = "Jump",
-    Sneak = "Sneak",
 }
 
 export enum InputMode {
@@ -458,30 +351,17 @@ export enum InputPermissionCategory {
 }
 
 export enum ItemComponentTypes {
-    Book = "minecraft:book",
     Compostable = "minecraft:compostable",
     Cooldown = "minecraft:cooldown",
     Durability = "minecraft:durability",
-    Dyeable = "minecraft:dyeable",
     Enchantable = "minecraft:enchantable",
     Food = "minecraft:food",
-    Inventory = "minecraft:inventory",
-    Potion = "minecraft:potion",
 }
 
 export enum ItemLockMode {
     inventory = "inventory",
     none = "none",
     slot = "slot",
-}
-
-export enum LiquidSettings {
-    ApplyWaterlogging = "ApplyWaterlogging",
-    IgnoreWaterlogging = "IgnoreWaterlogging",
-}
-
-export enum LiquidType {
-    Water = "Water",
 }
 
 export enum MemoryTier {
@@ -501,18 +381,6 @@ export enum MoonPhase {
     WaxingCrescent = 5,
     LastQuarter = 6,
     WaxingGibbous = 7,
-}
-
-export enum MovementType {
-    Immovable = "Immovable",
-    Popped = "Popped",
-    Push = "Push",
-    PushPull = "PushPull",
-}
-
-export enum NamespaceNameErrorReason {
-    DisallowedNamespace = "DisallowedNamespace",
-    NoNamespace = "NoNamespace",
 }
 
 export enum ObjectiveSortOrder {
@@ -545,18 +413,6 @@ export enum PlatformType {
     Mobile = "Mobile",
 }
 
-export enum PlayerInventoryType {
-    Hotbar = "Hotbar",
-    Inventory = "Inventory",
-}
-
-export enum PlayerPermissionLevel {
-    Visitor = 0,
-    Member = 1,
-    Operator = 2,
-    Custom = 3,
-}
-
 export enum ScoreboardIdentityType {
     Entity = "Entity",
     FakePlayer = "FakePlayer",
@@ -573,11 +429,6 @@ export enum ScriptEventSource {
 export enum SignSide {
     Back = "Back",
     Front = "Front",
-}
-
-export enum StickyType {
-    None = "None",
-    Same = "Same",
 }
 
 export enum StructureAnimationMode {
@@ -614,364 +465,10 @@ export enum TimeOfDay {
     Sunrise = 23000,
 }
 
-export enum TintMethod {
-    BirchFoliage = "BirchFoliage",
-    DefaultFoliage = "DefaultFoliage",
-    DryFoliage = "DryFoliage",
-    EvergreenFoliage = "EvergreenFoliage",
-    Grass = "Grass",
-    None = "None",
-    Water = "Water",
-}
-
-export enum WatchdogTerminateReason {
-    Hang = "Hang",
-    StackOverflow = "StackOverflow",
-}
-
 export enum WeatherType {
     Clear = "Clear",
     Rain = "Rain",
     Thunder = "Thunder",
-}
-
-export type BlockComponentReturnType<T extends string> = T extends keyof BlockComponentTypeMap
-    ? BlockComponentTypeMap[T]
-    : BlockComponent;
-
-export type BlockComponentTypeMap = {
-    fluid_container: BlockFluidContainerComponent;
-    inventory: BlockInventoryComponent;
-    map_color: BlockMapColorComponent;
-    movable: BlockMovableComponent;
-    piston: BlockPistonComponent;
-    record_player: BlockRecordPlayerComponent;
-    sign: BlockSignComponent;
-    "minecraft:fluid_container": BlockFluidContainerComponent;
-    "minecraft:inventory": BlockInventoryComponent;
-    "minecraft:map_color": BlockMapColorComponent;
-    "minecraft:movable": BlockMovableComponent;
-    "minecraft:piston": BlockPistonComponent;
-    "minecraft:record_player": BlockRecordPlayerComponent;
-    "minecraft:sign": BlockSignComponent;
-}
-
-export type EntityComponentReturnType<T extends string> = T extends keyof EntityComponentTypeMap
-    ? EntityComponentTypeMap[T]
-    : EntityComponent;
-
-export type EntityComponentTypeMap = {
-    addrider: EntityAddRiderComponent;
-    ageable: EntityAgeableComponent;
-    breathable: EntityBreathableComponent;
-    can_climb: EntityCanClimbComponent;
-    can_fly: EntityCanFlyComponent;
-    can_power_jump: EntityCanPowerJumpComponent;
-    color: EntityColorComponent;
-    color2: EntityColor2Component;
-    cursor_inventory: PlayerCursorInventoryComponent;
-    equippable: EntityEquippableComponent;
-    fire_immune: EntityFireImmuneComponent;
-    floats_in_liquid: EntityFloatsInLiquidComponent;
-    flying_speed: EntityFlyingSpeedComponent;
-    friction_modifier: EntityFrictionModifierComponent;
-    healable: EntityHealableComponent;
-    health: EntityHealthComponent;
-    inventory: EntityInventoryComponent;
-    is_baby: EntityIsBabyComponent;
-    is_charged: EntityIsChargedComponent;
-    is_chested: EntityIsChestedComponent;
-    is_dyeable: EntityIsDyeableComponent;
-    is_hidden_when_invisible: EntityIsHiddenWhenInvisibleComponent;
-    is_ignited: EntityIsIgnitedComponent;
-    is_illager_captain: EntityIsIllagerCaptainComponent;
-    is_saddled: EntityIsSaddledComponent;
-    is_shaking: EntityIsShakingComponent;
-    is_sheared: EntityIsShearedComponent;
-    is_stackable: EntityIsStackableComponent;
-    is_stunned: EntityIsStunnedComponent;
-    is_tamed: EntityIsTamedComponent;
-    item: EntityItemComponent;
-    lava_movement: EntityLavaMovementComponent;
-    leashable: EntityLeashableComponent;
-    mark_variant: EntityMarkVariantComponent;
-    movement: EntityMovementComponent;
-    "movement.amphibious": EntityMovementAmphibiousComponent;
-    "movement.basic": EntityMovementBasicComponent;
-    "movement.fly": EntityMovementFlyComponent;
-    "movement.generic": EntityMovementGenericComponent;
-    "movement.glide": EntityMovementGlideComponent;
-    "movement.hover": EntityMovementHoverComponent;
-    "movement.jump": EntityMovementJumpComponent;
-    "movement.skip": EntityMovementSkipComponent;
-    "movement.sway": EntityMovementSwayComponent;
-    "navigation.climb": EntityNavigationClimbComponent;
-    "navigation.float": EntityNavigationFloatComponent;
-    "navigation.fly": EntityNavigationFlyComponent;
-    "navigation.generic": EntityNavigationGenericComponent;
-    "navigation.hover": EntityNavigationHoverComponent;
-    "navigation.walk": EntityNavigationWalkComponent;
-    npc: EntityNpcComponent;
-    onfire: EntityOnFireComponent;
-    "player.exhaustion": EntityExhaustionComponent;
-    "player.hunger": EntityHungerComponent;
-    "player.saturation": EntitySaturationComponent;
-    projectile: EntityProjectileComponent;
-    push_through: EntityPushThroughComponent;
-    rideable: EntityRideableComponent;
-    riding: EntityRidingComponent;
-    scale: EntityScaleComponent;
-    skin_id: EntitySkinIdComponent;
-    strength: EntityStrengthComponent;
-    tameable: EntityTameableComponent;
-    tamemount: EntityTameMountComponent;
-    type_family: EntityTypeFamilyComponent;
-    underwater_movement: EntityUnderwaterMovementComponent;
-    variant: EntityVariantComponent;
-    wants_jockey: EntityWantsJockeyComponent;
-    "minecraft:addrider": EntityAddRiderComponent;
-    "minecraft:ageable": EntityAgeableComponent;
-    "minecraft:breathable": EntityBreathableComponent;
-    "minecraft:can_climb": EntityCanClimbComponent;
-    "minecraft:can_fly": EntityCanFlyComponent;
-    "minecraft:can_power_jump": EntityCanPowerJumpComponent;
-    "minecraft:color": EntityColorComponent;
-    "minecraft:color2": EntityColor2Component;
-    "minecraft:cursor_inventory": PlayerCursorInventoryComponent;
-    "minecraft:equippable": EntityEquippableComponent;
-    "minecraft:fire_immune": EntityFireImmuneComponent;
-    "minecraft:floats_in_liquid": EntityFloatsInLiquidComponent;
-    "minecraft:flying_speed": EntityFlyingSpeedComponent;
-    "minecraft:friction_modifier": EntityFrictionModifierComponent;
-    "minecraft:healable": EntityHealableComponent;
-    "minecraft:health": EntityHealthComponent;
-    "minecraft:inventory": EntityInventoryComponent;
-    "minecraft:is_baby": EntityIsBabyComponent;
-    "minecraft:is_charged": EntityIsChargedComponent;
-    "minecraft:is_chested": EntityIsChestedComponent;
-    "minecraft:is_dyeable": EntityIsDyeableComponent;
-    "minecraft:is_hidden_when_invisible": EntityIsHiddenWhenInvisibleComponent;
-    "minecraft:is_ignited": EntityIsIgnitedComponent;
-    "minecraft:is_illager_captain": EntityIsIllagerCaptainComponent;
-    "minecraft:is_saddled": EntityIsSaddledComponent;
-    "minecraft:is_shaking": EntityIsShakingComponent;
-    "minecraft:is_sheared": EntityIsShearedComponent;
-    "minecraft:is_stackable": EntityIsStackableComponent;
-    "minecraft:is_stunned": EntityIsStunnedComponent;
-    "minecraft:is_tamed": EntityIsTamedComponent;
-    "minecraft:item": EntityItemComponent;
-    "minecraft:lava_movement": EntityLavaMovementComponent;
-    "minecraft:leashable": EntityLeashableComponent;
-    "minecraft:mark_variant": EntityMarkVariantComponent;
-    "minecraft:movement": EntityMovementComponent;
-    "minecraft:movement.amphibious": EntityMovementAmphibiousComponent;
-    "minecraft:movement.basic": EntityMovementBasicComponent;
-    "minecraft:movement.fly": EntityMovementFlyComponent;
-    "minecraft:movement.generic": EntityMovementGenericComponent;
-    "minecraft:movement.glide": EntityMovementGlideComponent;
-    "minecraft:movement.hover": EntityMovementHoverComponent;
-    "minecraft:movement.jump": EntityMovementJumpComponent;
-    "minecraft:movement.skip": EntityMovementSkipComponent;
-    "minecraft:movement.sway": EntityMovementSwayComponent;
-    "minecraft:navigation.climb": EntityNavigationClimbComponent;
-    "minecraft:navigation.float": EntityNavigationFloatComponent;
-    "minecraft:navigation.fly": EntityNavigationFlyComponent;
-    "minecraft:navigation.generic": EntityNavigationGenericComponent;
-    "minecraft:navigation.hover": EntityNavigationHoverComponent;
-    "minecraft:navigation.walk": EntityNavigationWalkComponent;
-    "minecraft:npc": EntityNpcComponent;
-    "minecraft:onfire": EntityOnFireComponent;
-    "minecraft:player.exhaustion": EntityExhaustionComponent;
-    "minecraft:player.hunger": EntityHungerComponent;
-    "minecraft:player.saturation": EntitySaturationComponent;
-    "minecraft:projectile": EntityProjectileComponent;
-    "minecraft:push_through": EntityPushThroughComponent;
-    "minecraft:rideable": EntityRideableComponent;
-    "minecraft:riding": EntityRidingComponent;
-    "minecraft:scale": EntityScaleComponent;
-    "minecraft:skin_id": EntitySkinIdComponent;
-    "minecraft:strength": EntityStrengthComponent;
-    "minecraft:tameable": EntityTameableComponent;
-    "minecraft:tamemount": EntityTameMountComponent;
-    "minecraft:type_family": EntityTypeFamilyComponent;
-    "minecraft:underwater_movement": EntityUnderwaterMovementComponent;
-    "minecraft:variant": EntityVariantComponent;
-    "minecraft:wants_jockey": EntityWantsJockeyComponent;
-}
-
-export type ItemComponentReturnType<T extends string> = T extends keyof ItemComponentTypeMap
-    ? ItemComponentTypeMap[T]
-    : ItemComponent;
-
-export type ItemComponentTypeMap = {
-    book: ItemBookComponent;
-    compostable: ItemCompostableComponent;
-    cooldown: ItemCooldownComponent;
-    durability: ItemDurabilityComponent;
-    dyeable: ItemDyeableComponent;
-    enchantable: ItemEnchantableComponent;
-    food: ItemFoodComponent;
-    inventory: ItemInventoryComponent;
-    potion: ItemPotionComponent;
-    "minecraft:book": ItemBookComponent;
-    "minecraft:compostable": ItemCompostableComponent;
-    "minecraft:cooldown": ItemCooldownComponent;
-    "minecraft:durability": ItemDurabilityComponent;
-    "minecraft:dyeable": ItemDyeableComponent;
-    "minecraft:enchantable": ItemEnchantableComponent;
-    "minecraft:food": ItemFoodComponent;
-    "minecraft:inventory": ItemInventoryComponent;
-    "minecraft:potion": ItemPotionComponent;
-}
-
-export class AimAssistCategory {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultBlockPriority: number;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultEntityPriority: number;
-    readonly identifier: string;
-    /**
-     * @throws This function can throw errors.
-     */
-    getBlockPriorities(): Record<string, number>;
-    /**
-     * @throws This function can throw errors.
-     */
-    getEntityPriorities(): Record<string, number>;
-}
-
-export class AimAssistCategorySettings {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultBlockPriority: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultEntityPriority: number;
-    readonly identifier: string;
-    constructor(identifier: string);
-    getBlockPriorities(): Record<string, number>;
-    getEntityPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setBlockPriorities(blockPriorities: Record<string, number>): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setEntityPriorities(entityPriorities: Record<string, number>): void;
-}
-
-export class AimAssistPreset {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultItemSettings?: string;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly handSettings?: string;
-    readonly identifier: string;
-    /**
-     * @throws This function can throw errors.
-     */
-    getExcludedTargets(): string[];
-    /**
-     * @throws This function can throw errors.
-     */
-    getItemSettings(): Record<string, string>;
-    /**
-     * @throws This function can throw errors.
-     */
-    getLiquidTargetingItems(): string[];
-}
-
-export class AimAssistPresetSettings {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultItemSettings?: string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    handSettings?: string;
-    readonly identifier: string;
-    constructor(identifier: string);
-    getExcludedTargets(): string[] | undefined;
-    getItemSettings(): Record<string, string>;
-    getLiquidTargetingItems(): string[] | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setExcludedTargets(targets?: string[]): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setItemSettings(itemSettings: Record<string, string>): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setLiquidTargetingItems(items?: string[]): void;
-}
-
-export class AimAssistRegistry {
-    private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     */
-    addCategory(category: AimAssistCategorySettings): AimAssistCategory;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     */
-    addPreset(preset: AimAssistPresetSettings): AimAssistPreset;
-    getCategories(): AimAssistCategory[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getCategory(categoryId: string): AimAssistCategory | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getPreset(presetId: string): AimAssistPreset | undefined;
-    getPresets(): AimAssistPreset[];
-}
-
-export class BiomeType {
-    private constructor();
-    readonly id: string;
-}
-
-export class BiomeTypes {
-    private constructor();
-    static get(typeName: string): BiomeType | undefined;
-    static getAll(): BiomeType[];
 }
 
 export class Block {
@@ -1000,24 +497,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    readonly isSolid: boolean;
-    readonly isValid: boolean;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
     readonly isWaterlogged: boolean;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    readonly localizationKey: string;
     /**
      * @throws This property can throw errors.
      */
@@ -1066,36 +546,6 @@ export class Block {
      */
     below(steps?: number): Block | undefined;
     bottomCenter(): Vector3;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    canBeDestroyedByLiquidSpread(liquidType: LiquidType): boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    canContainLiquid(liquidType: LiquidType): boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    canPlace(blockToPlace: BlockPermutation | BlockType | string, faceToPlaceOn?: Direction): boolean;
     center(): Vector3;
     /**
      * @throws This function can throw errors.
@@ -1112,7 +562,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    getComponent<T extends string>(componentId: T): BlockComponentReturnType<T> | undefined;
+    getComponent(componentId: string): BlockComponent | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -1122,24 +572,6 @@ export class Block {
      */
     getItemStack(amount?: number, withData?: boolean): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link LocationInUnloadedChunkError}
-     */
-    getLightLevel(): number;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    getMapColor(): RGBA;
-    /**
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1147,16 +579,6 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     getRedstonePower(): number | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link LocationInUnloadedChunkError}
-     */
-    getSkyLightLevel(): number;
     /**
      * @throws This function can throw errors.
      *
@@ -1173,36 +595,7 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     hasTag(tag: string): boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    isLiquidBlocking(liquidType: LiquidType): boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    liquidCanFlowFromDirection(liquidType: LiquidType, flowDirection: Direction): boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    liquidSpreadCausesSpawn(liquidType: LiquidType): boolean;
+    isValid(): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -1270,16 +663,6 @@ export class Block {
      */
     south(steps?: number): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    trySetPermutation(permutation: BlockPermutation): boolean;
-    /**
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1287,54 +670,6 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     west(steps?: number): Block | undefined;
-}
-
-export class BlockBoundingBoxUtils {
-    private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static createValid(min: Vector3, max: Vector3): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static dilate(box: BlockBoundingBox, size: Vector3): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static equals(box: BlockBoundingBox, other: BlockBoundingBox): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static expand(box: BlockBoundingBox, other: BlockBoundingBox): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static getCenter(box: BlockBoundingBox): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static getIntersection(box: BlockBoundingBox, other: BlockBoundingBox): BlockBoundingBox | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static getSpan(box: BlockBoundingBox): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static intersects(box: BlockBoundingBox, other: BlockBoundingBox): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static isInside(box: BlockBoundingBox, pos: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static isValid(box: BlockBoundingBox): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    static translate(box: BlockBoundingBox, delta: Vector3): BlockBoundingBox;
 }
 
 // @ts-ignore
@@ -1357,9 +692,9 @@ export class BlockComponentOnPlaceEvent extends BlockEvent {
 }
 
 // @ts-ignore
-export class BlockComponentPlayerBreakEvent extends BlockEvent {
+export class BlockComponentPlayerDestroyEvent extends BlockEvent {
     private constructor();
-    readonly brokenBlockPermutation: BlockPermutation;
+    readonly destroyedBlockPermutation: BlockPermutation;
     readonly player?: Player;
 }
 
@@ -1388,8 +723,6 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 export class BlockComponentRegistry {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link BlockCustomComponentAlreadyRegisteredError}
@@ -1402,9 +735,9 @@ export class BlockComponentRegistry {
      *
      * {@link CustomComponentInvalidRegistryError}
      *
-     * {@link minecraftcommon.EngineError}
+     * {@link CustomComponentNameError}
      *
-     * {@link NamespaceNameError}
+     * {@link minecraftcommon.EngineError}
      */
     registerCustomComponent(name: string, customComponent: BlockCustomComponent): void;
 }
@@ -1424,12 +757,6 @@ export class BlockComponentStepOnEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentTickEvent extends BlockEvent {
     private constructor();
-}
-
-// @ts-ignore
-export class BlockCustomComponentInstance extends BlockComponent {
-    private constructor();
-    readonly customComponentParameters: CustomComponentParameters;
 }
 
 export class BlockEvent {
@@ -1511,73 +838,16 @@ export class BlockLocationIterator implements Iterable<Vector3> {
     private constructor();
     [Symbol.iterator](): Iterator<Vector3>;
     next(): IteratorResult<Vector3>;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    isValid(): boolean;
-}
-
-// @ts-ignore
-export class BlockMapColorComponent extends BlockComponent {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly color: RGBA;
-    readonly tintedColor: RGBA;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly tintMethod: TintMethod;
-}
-
-// @ts-ignore
-export class BlockMovableComponent extends BlockComponent {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    readonly movementType: MovementType;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    readonly stickyType: StickyType;
 }
 
 export class BlockPermutation {
     private constructor();
     readonly "type": BlockType;
-    /**
-     * @throws This function can throw errors.
-     */
-    canBeDestroyedByLiquidSpread(liquidType: LiquidType): boolean;
-    /**
-     * @throws This function can throw errors.
-     */
-    canContainLiquid(liquidType: LiquidType): boolean;
     getAllStates(): Record<string, boolean | number | string>;
     getItemStack(amount?: number): ItemStack | undefined;
     getState(stateName: string): boolean | number | string | undefined;
     getTags(): string[];
     hasTag(tag: string): boolean;
-    /**
-     * @throws This function can throw errors.
-     */
-    isLiquidBlocking(liquidType: LiquidType): boolean;
-    /**
-     * @throws This function can throw errors.
-     */
-    liquidSpreadCausesSpawn(liquidType: LiquidType): boolean;
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
      * @throws This function can throw errors.
@@ -1722,10 +992,6 @@ export class BlockVolume extends BlockVolumeBase {
 export class BlockVolumeBase {
     private constructor();
     getBlockLocationIterator(): BlockLocationIterator;
-    /**
-     * @throws This function can throw errors.
-     */
-    getBoundingBox(): BlockBoundingBox;
     getCapacity(): number;
     /**
      * @throws This function can throw errors.
@@ -1746,25 +1012,13 @@ export class ButtonPushAfterEvent extends BlockEvent {
     readonly source: Entity;
 }
 
-export class ButtonPushAfterEventSignal {
+// @ts-ignore
+export class ButtonPushAfterEventSignal extends IButtonPushAfterEventSignal {
     private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: ButtonPushAfterEvent) => void): (arg0: ButtonPushAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: ButtonPushAfterEvent) => void): void;
 }
 
 export class Camera {
     private constructor();
-    readonly isValid: boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1785,6 +1039,7 @@ export class Camera {
     setCamera(
         cameraPreset: string,
         setOptions?: 
+            | CameraDefaultOptions
             | CameraFixedBoomOptions
             | CameraSetFacingOptions
             | CameraSetLocationOptions
@@ -1792,71 +1047,6 @@ export class Camera {
             | CameraSetRotOptions
             | CameraTargetOptions,
     ): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    setCameraWithEase(cameraPreset: string, easeOptions: EaseOptions): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    setDefaultCamera(cameraPreset: string, easeOptions?: EaseOptions): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    setFov(fovCameraOptions?: CameraFovOptions): void;
-}
-
-export class ChatSendAfterEvent {
-    private constructor();
-    readonly message: string;
-    readonly sender: Player;
-    readonly targets?: Player[];
-}
-
-export class ChatSendAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: ChatSendAfterEvent) => void): (arg0: ChatSendAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: ChatSendAfterEvent) => void): void;
-}
-
-export class ChatSendBeforeEvent {
-    private constructor();
-    cancel: boolean;
-    readonly message: string;
-    readonly sender: Player;
-    readonly targets?: Player[];
-}
-
-export class ChatSendBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: ChatSendBeforeEvent) => void): (arg0: ChatSendBeforeEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: ChatSendBeforeEvent) => void): void;
 }
 
 // @ts-ignore
@@ -1873,92 +1063,20 @@ export class CommandResult {
 
 export class Component {
     private constructor();
-    readonly isValid: boolean;
     readonly typeId: string;
-}
-
-export class CompoundBlockVolume {
-    readonly capacity: number;
-    readonly items: CompoundBlockVolumeItem[];
-    readonly itemsAbsolute: CompoundBlockVolumeItem[];
-    readonly volumeCount: number;
-    constructor(origin?: Vector3);
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    clear(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getBlockLocationIterator(): BlockLocationIterator;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getBoundingBox(): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getMax(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getMin(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getOrigin(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    isEmpty(): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    isInside(worldLocation: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    peekLastVolume(forceRelativity?: CompoundBlockVolumePositionRelativity): CompoundBlockVolumeItem | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    popVolume(): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    pushVolume(item: CompoundBlockVolumeItem): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    replaceOrAddLastVolume(item: CompoundBlockVolumeItem): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setOrigin(position: Vector3, preserveExistingVolumes?: boolean): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    translateOrigin(delta: Vector3, preserveExistingVolumes?: boolean): void;
+    isValid(): boolean;
 }
 
 export class Container {
     private constructor();
-    readonly containerRules?: ContainerRules;
     /**
      * @throws This property can throw errors.
      */
     readonly emptySlotsCount: number;
-    readonly isValid: boolean;
     /**
      * @throws This property can throw errors.
      */
     readonly size: number;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    readonly weight: number;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1977,42 +1095,13 @@ export class Container {
     clearAll(): void;
     /**
      * @throws This function can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    contains(itemStack: ItemStack): boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    find(itemStack: ItemStack): number | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    findLast(itemStack: ItemStack): number | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    firstEmptySlot(): number | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    firstItem(): number | undefined;
-    /**
-     * @throws This function can throw errors.
      */
     getItem(slot: number): ItemStack | undefined;
     /**
      * @throws This function can throw errors.
      */
     getSlot(slot: number): ContainerSlot;
+    isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2067,7 +1156,6 @@ export class ContainerSlot {
      * {@link InvalidContainerSlotError}
      */
     readonly isStackable: boolean;
-    readonly isValid: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
@@ -2153,12 +1241,6 @@ export class ContainerSlot {
      *
      * {@link InvalidContainerSlotError}
      */
-    getRawLore(): RawMessage[];
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidContainerSlotError}
-     */
     getTags(): string[];
     /**
      * @throws This function can throw errors.
@@ -2178,6 +1260,7 @@ export class ContainerSlot {
      * {@link InvalidContainerSlotError}
      */
     isStackableWith(itemStack: ItemStack): boolean;
+    isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2198,16 +1281,6 @@ export class ContainerSlot {
      * {@link InvalidContainerSlotError}
      */
     setCanPlaceOn(blockIdentifiers?: string[]): void;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     *
-     * {@link InvalidContainerSlotError}
-     *
-     * {@link minecraftcommon.UnsupportedFunctionalityError}
-     */
-    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
     /**
      * @throws This function can throw errors.
      *
@@ -2240,54 +1313,6 @@ export class ContainerSlot {
      * {@link InvalidContainerSlotError}
      */
     setLore(loreList?: (RawMessage | string)[]): void;
-}
-
-export class CustomCommandOrigin {
-    private constructor();
-    readonly initiator?: Entity;
-    readonly sourceBlock?: Block;
-    readonly sourceEntity?: Entity;
-    readonly sourceType: CustomCommandSource;
-}
-
-export class CustomCommandRegistry {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link CustomCommandError}
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link NamespaceNameError}
-     */
-    registerCommand(
-        customCommand: CustomCommand,
-        callback: (origin: CustomCommandOrigin, ...args: any[]) => CustomCommandResult | undefined,
-    ): void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link CustomCommandError}
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link NamespaceNameError}
-     */
-    registerEnum(name: string, values: string[]): void;
-}
-
-export class CustomComponentParameters {
-    private constructor();
-    readonly params: unknown;
 }
 
 export class DataDrivenEntityTriggerAfterEvent {
@@ -2323,7 +1348,6 @@ export class Dimension {
      */
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
-    readonly localizationKey: string;
     /**
      * @throws This function can throw errors.
      *
@@ -2354,26 +1378,10 @@ export class Dimension {
      * {@link UnloadedChunksError}
      */
     fillBlocks(
-        volume: BlockVolumeBase | CompoundBlockVolume,
+        volume: BlockVolumeBase,
         block: BlockPermutation | BlockType | string,
         options?: BlockFillOptions,
     ): ListBlockVolume;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     */
-    findClosestBiome(pos: Vector3, biomeToFind: BiomeType | string, options?: BiomeSearchOptions): Vector3 | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    getBiome(location: Vector3): BiomeType;
     /**
      * @throws This function can throw errors.
      *
@@ -2382,14 +1390,6 @@ export class Dimension {
      * {@link LocationOutOfWorldBoundariesError}
      */
     getBlock(location: Vector3): Block | undefined;
-    /**
-     * @throws This function can throw errors.
-     */
-    getBlockAbove(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
-    /**
-     * @throws This function can throw errors.
-     */
-    getBlockBelow(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
@@ -2426,14 +1426,6 @@ export class Dimension {
     /**
      * @throws This function can throw errors.
      *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link LocationInUnloadedChunkError}
-     */
-    getLightLevel(location: Vector3): number;
-    /**
-     * @throws This function can throw errors.
-     *
      * {@link CommandError}
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -2441,40 +1433,8 @@ export class Dimension {
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
      * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link LocationInUnloadedChunkError}
-     */
-    getSkyLightLevel(location: Vector3): number;
-    /**
-     * @throws This function can throw errors.
      */
     getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined;
-    getWeather(): WeatherType;
-    isChunkLoaded(location: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link LocationInUnloadedChunkError}
-     */
-    placeFeature(featureName: string, location: Vector3, shouldThrow?: boolean): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link LocationInUnloadedChunkError}
-     */
-    placeFeatureRule(featureRuleName: string, location: Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2491,6 +1451,10 @@ export class Dimension {
      * {@link CommandError}
      */
     runCommand(commandString: string): CommandResult;
+    /**
+     * @throws This function can throw errors.
+     */
+    runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2534,7 +1498,7 @@ export class Dimension {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    spawnEntity(identifier: EntityType | string, location: Vector3, options?: SpawnEntityOptions): Entity;
+    spawnEntity(identifier: string, location: Vector3): Entity;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2555,14 +1519,6 @@ export class Dimension {
      * {@link LocationOutOfWorldBoundariesError}
      */
     spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    stopAllSounds(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    stopSound(soundId: string): void;
 }
 
 export class DimensionType {
@@ -2596,11 +1552,11 @@ export class Effect {
      * @throws This property can throw errors.
      */
     readonly duration: number;
-    readonly isValid: boolean;
     /**
      * @throws This property can throw errors.
      */
     readonly typeId: string;
+    isValid(): boolean;
 }
 
 export class EffectAddAfterEvent {
@@ -2667,11 +1623,6 @@ export class EffectTypes {
      * @remarks This function can't be called in read-only mode.
      */
     static getAll(): EffectType[];
-}
-
-// @ts-ignore
-export class EmptyLootItem extends LootPoolEntry {
-    private constructor();
 }
 
 export class EnchantmentType {
@@ -2746,13 +1697,6 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     readonly isSwimming: boolean;
-    readonly isValid: boolean;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly localizationKey: string;
     /**
      * @throws This property can throw errors.
      *
@@ -2764,12 +1708,6 @@ export class Entity {
      */
     nameTag: string;
     readonly scoreboardIdentity?: ScoreboardIdentity;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly target?: Entity;
     readonly typeId: string;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -2824,7 +1762,7 @@ export class Entity {
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
      */
-    applyKnockback(horizontalForce: VectorXZ, verticalStrength: number): void;
+    applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
      * @throws This function can throw errors.
      *
@@ -2852,30 +1790,8 @@ export class Entity {
      *
      * {@link InvalidEntityError}
      */
-    getAllBlocksStandingOn(options?: GetBlocksStandingOnOptions): Block[];
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
     getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    getBlockStandingOn(options?: GetBlocksStandingOnOptions): Block | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    getComponent<T extends string>(componentId: T): EntityComponentReturnType<T> | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
+    getComponent(componentId: string): EntityComponent | undefined;
     getComponents(): EntityComponent[];
     /**
      * @throws This function can throw errors.
@@ -2957,11 +1873,6 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     getViewDirection(): Vector3;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
     hasComponent(componentId: string): boolean;
     /**
      * @throws This function can throw errors.
@@ -2969,6 +1880,7 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     hasTag(tag: string): boolean;
+    isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2977,16 +1889,6 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     kill(): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     *
-     * {@link minecraftcommon.UnsupportedFunctionalityError}
-     */
-    lookAt(targetLocation: Vector3): void;
     /**
      * @throws This function can throw errors.
      *
@@ -3058,11 +1960,11 @@ export class Entity {
     /**
      * @throws This function can throw errors.
      *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     * {@link CommandError}
      *
      * {@link InvalidEntityError}
      */
-    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
+    runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
      * @throws This function can throw errors.
      *
@@ -3210,10 +2112,6 @@ export class EntityAttributeComponent extends EntityComponent {
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     *
-     * {@link InvalidEntityError}
      */
     setCurrentValue(value: number): boolean;
 }
@@ -3231,10 +2129,6 @@ export class EntityBaseMovementComponent extends EntityComponent {
 export class EntityBreathableComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    airSupply: number;
-    /**
      * @throws This property can throw errors.
      */
     readonly breathesAir: boolean;
@@ -3250,10 +2144,6 @@ export class EntityBreathableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly breathesWater: boolean;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly canBreathe: boolean;
     /**
      * @throws This property can throw errors.
      */
@@ -3316,11 +2206,6 @@ export class EntityColorComponent extends EntityComponent {
 // @ts-ignore
 export class EntityComponent extends Component {
     private constructor();
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
     readonly entity: Entity;
 }
 
@@ -3359,18 +2244,6 @@ export class EntityDieAfterEventSignal {
 export class EntityEquippableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly totalArmor: number;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly totalToughness: number;
-    /**
      * @throws This function can throw errors.
      */
     getEquipment(equipmentSlot: EquipmentSlot): ItemStack | undefined;
@@ -3384,11 +2257,6 @@ export class EntityEquippableComponent extends EntityComponent {
      * @throws This function can throw errors.
      */
     setEquipment(equipmentSlot: EquipmentSlot, itemStack?: ItemStack): boolean;
-}
-
-// @ts-ignore
-export class EntityExhaustionComponent extends EntityAttributeComponent {
-    private constructor();
 }
 
 // @ts-ignore
@@ -3414,9 +2282,18 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
 export class EntityFrictionModifierComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @remarks This property can't be edited in read-only mode.
      */
-    readonly value: number;
+    value: number;
+}
+
+// @ts-ignore
+export class EntityGroundOffsetComponent extends EntityComponent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    value: number;
 }
 
 // @ts-ignore
@@ -3515,11 +2392,6 @@ export class EntityHitEntityAfterEventSignal {
     unsubscribe(callback: (arg0: EntityHitEntityAfterEvent) => void): void;
 }
 
-// @ts-ignore
-export class EntityHungerComponent extends EntityAttributeComponent {
-    private constructor();
-}
-
 export class EntityHurtAfterEvent {
     private constructor();
     readonly damage: number;
@@ -3557,12 +2429,7 @@ export class EntityInventoryComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly canBeSiphonedFrom: boolean;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly container: Container;
+    readonly container?: Container;
     /**
      * @throws This property can throw errors.
      */
@@ -3733,9 +2600,9 @@ export class EntityLoadAfterEventSignal {
 export class EntityMarkVariantComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @remarks This property can't be edited in read-only mode.
      */
-    readonly value: number;
+    value: number;
 }
 
 // @ts-ignore
@@ -3916,23 +2783,6 @@ export class EntityNavigationWalkComponent extends EntityNavigationComponent {
 }
 
 // @ts-ignore
-export class EntityNpcComponent extends EntityComponent {
-    private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultScene: string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    name: string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    skinIndex: number;
-}
-
-// @ts-ignore
 export class EntityOnFireComponent extends EntityComponent {
     private constructor();
     readonly onFireTicksRemaining: number;
@@ -4009,9 +2859,9 @@ export class EntityProjectileComponent extends EntityComponent {
 export class EntityPushThroughComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @remarks This property can't be edited in read-only mode.
      */
-    readonly value: number;
+    value: number;
 }
 
 export class EntityRemoveAfterEvent {
@@ -4133,26 +2983,21 @@ export class EntityRidingComponent extends EntityComponent {
 }
 
 // @ts-ignore
-export class EntitySaturationComponent extends EntityAttributeComponent {
-    private constructor();
-}
-
-// @ts-ignore
 export class EntityScaleComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @remarks This property can't be edited in read-only mode.
      */
-    readonly value: number;
+    value: number;
 }
 
 // @ts-ignore
 export class EntitySkinIdComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @remarks This property can't be edited in read-only mode.
      */
-    readonly value: number;
+    value: number;
 }
 
 export class EntitySpawnAfterEvent {
@@ -4464,10 +3309,6 @@ export class GameRules {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    locatorBar: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     maxCommandChainLength: number;
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -4543,6 +3384,30 @@ export class GameRules {
     tntExplosionDropDecay: boolean;
 }
 
+export class IButtonPushAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: ButtonPushAfterEvent) => void): (arg0: ButtonPushAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: ButtonPushAfterEvent) => void): void;
+}
+
+export class ILeverActionAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: LeverActionAfterEvent) => void): (arg0: LeverActionAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: LeverActionAfterEvent) => void): void;
+}
+
 export class InputInfo {
     private constructor();
     /**
@@ -4559,129 +3424,42 @@ export class InputInfo {
      * {@link InvalidEntityError}
      */
     readonly touchOnlyAffectsHotbar: boolean;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link InvalidEntityError}
-     */
-    getButtonState(button: InputButton): ButtonState;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    getMovementVector(): Vector2;
 }
 
-// @ts-ignore
-export class ItemBookComponent extends ItemComponent {
+export class IPlayerJoinAfterEventSignal {
     private constructor();
     /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidItemStackError}
+     * @remarks This function can't be called in read-only mode.
      */
-    readonly author?: string;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    readonly contents: (string | undefined)[];
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    readonly isSigned: boolean;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    readonly pageCount: number;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    readonly rawContents: (RawMessage | undefined)[];
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    readonly title?: string;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    getPageContent(pageIndex: number): string | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidItemStackError}
-     */
-    getRawPageContent(pageIndex: number): RawMessage | undefined;
+    subscribe(callback: (arg0: PlayerJoinAfterEvent) => void): (arg0: PlayerJoinAfterEvent) => void;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link BookError}
-     *
-     * {@link BookPageContentError}
-     *
-     * {@link InvalidItemStackError}
      */
-    insertPage(pageIndex: number, content: (RawMessage | string)[] | RawMessage | string): void;
+    unsubscribe(callback: (arg0: PlayerJoinAfterEvent) => void): void;
+}
+
+export class IPlayerLeaveAfterEventSignal {
+    private constructor();
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidItemStackError}
      */
-    removePage(pageIndex: number): void;
+    subscribe(callback: (arg0: PlayerLeaveAfterEvent) => void): (arg0: PlayerLeaveAfterEvent) => void;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link BookError}
-     *
-     * {@link BookPageContentError}
-     *
-     * {@link InvalidItemStackError}
      */
-    setContents(contents: ((RawMessage | string)[] | RawMessage | string)[]): void;
+    unsubscribe(callback: (arg0: PlayerLeaveAfterEvent) => void): void;
+}
+
+export class IPlayerSpawnAfterEventSignal {
+    private constructor();
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link BookError}
-     *
-     * {@link BookPageContentError}
-     *
-     * {@link InvalidItemStackError}
      */
-    setPageContent(pageIndex: number, content: (RawMessage | string)[] | RawMessage | string): void;
+    subscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): (arg0: PlayerSpawnAfterEvent) => void;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link BookError}
-     *
-     * {@link InvalidEntityError}
-     *
-     * {@link InvalidItemStackError}
      */
-    signBook(title: string, author: string): void;
+    unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
 }
 
 export class ItemCompleteUseAfterEvent {
@@ -4756,11 +3534,11 @@ export class ItemComponentMineBlockEvent {
 export class ItemComponentRegistry {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CustomComponentInvalidRegistryError}
+     *
+     * {@link CustomComponentNameError}
      *
      * {@link minecraftcommon.EngineError}
      *
@@ -4771,8 +3549,6 @@ export class ItemComponentRegistry {
      * {@link ItemCustomComponentReloadNewEventError}
      *
      * {@link ItemCustomComponentReloadVersionError}
-     *
-     * {@link NamespaceNameError}
      */
     registerCustomComponent(name: string, itemCustomComponent: ItemCustomComponent): void;
 }
@@ -4831,12 +3607,6 @@ export class ItemCooldownComponent extends ItemComponent {
 }
 
 // @ts-ignore
-export class ItemCustomComponentInstance extends ItemComponent {
-    private constructor();
-    readonly customComponentParameters: CustomComponentParameters;
-}
-
-// @ts-ignore
 export class ItemDurabilityComponent extends ItemComponent {
     private constructor();
     /**
@@ -4859,19 +3629,6 @@ export class ItemDurabilityComponent extends ItemComponent {
      * @throws This function can throw errors.
      */
     getDamageChanceRange(): minecraftcommon.NumberRange;
-}
-
-// @ts-ignore
-export class ItemDyeableComponent extends ItemComponent {
-    private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    color?: RGB;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultColor?: RGB;
 }
 
 // @ts-ignore
@@ -4972,38 +3729,6 @@ export class ItemFoodComponent extends ItemComponent {
     readonly usingConvertsTo: string;
 }
 
-// @ts-ignore
-export class ItemInventoryComponent extends ItemComponent {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidContainerError}
-     */
-    readonly container: Container;
-}
-
-// @ts-ignore
-export class ItemPotionComponent extends ItemComponent {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     */
-    readonly potionDeliveryType: PotionDeliveryType;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     */
-    readonly potionEffectType: PotionEffectType;
-}
-
 export class ItemReleaseUseAfterEvent {
     private constructor();
     readonly itemStack?: ItemStack;
@@ -5038,12 +3763,6 @@ export class ItemStack {
      */
     keepOnDeath: boolean;
     /**
-     * @throws This property can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    readonly localizationKey: string;
-    /**
      * @remarks This property can't be edited in read-only mode.
      */
     lockMode: ItemLockMode;
@@ -5054,7 +3773,6 @@ export class ItemStack {
     nameTag?: string;
     readonly "type": ItemType;
     readonly typeId: string;
-    readonly weight: number;
     /**
      * @throws This function can throw errors.
      */
@@ -5069,13 +3787,12 @@ export class ItemStack {
      * @remarks This function can't be called in read-only mode.
      */
     getCanPlaceOn(): string[];
-    getComponent<T extends string>(componentId: T): ItemComponentReturnType<T> | undefined;
+    getComponent(componentId: string): ItemComponent | undefined;
     getComponents(): ItemComponent[];
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     getDynamicPropertyIds(): string[];
     getDynamicPropertyTotalByteCount(): number;
     getLore(): string[];
-    getRawLore(): RawMessage[];
     getTags(): string[];
     hasComponent(componentId: string): boolean;
     hasTag(tag: string): boolean;
@@ -5093,14 +3810,6 @@ export class ItemStack {
      * @throws This function can throw errors.
      */
     setCanPlaceOn(blockIdentifiers?: string[]): void;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     *
-     * {@link minecraftcommon.UnsupportedFunctionalityError}
-     */
-    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
     /**
      * @throws This function can throw errors.
      *
@@ -5269,6 +3978,54 @@ export class ItemUseBeforeEventSignal {
     unsubscribe(callback: (arg0: ItemUseBeforeEvent) => void): void;
 }
 
+export class ItemUseOnAfterEvent {
+    private constructor();
+    readonly block: Block;
+    readonly blockFace: Direction;
+    readonly faceLocation: Vector3;
+    readonly isFirstEvent: boolean;
+    readonly itemStack: ItemStack;
+    readonly source: Player;
+}
+
+export class ItemUseOnAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: ItemUseOnAfterEvent) => void): (arg0: ItemUseOnAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: ItemUseOnAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class ItemUseOnBeforeEvent extends ItemUseOnAfterEvent {
+    private constructor();
+    cancel: boolean;
+}
+
+export class ItemUseOnBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: ItemUseOnBeforeEvent) => void): (arg0: ItemUseOnBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: ItemUseOnBeforeEvent) => void): void;
+}
+
 export class ItemUseOnEvent {
     private constructor();
     readonly block: Block;
@@ -5284,20 +4041,9 @@ export class LeverActionAfterEvent extends BlockEvent {
     readonly player: Player;
 }
 
-export class LeverActionAfterEventSignal {
+// @ts-ignore
+export class LeverActionAfterEventSignal extends ILeverActionAfterEventSignal {
     private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: LeverActionAfterEvent) => void): (arg0: LeverActionAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: LeverActionAfterEvent) => void): void;
 }
 
 // @ts-ignore
@@ -5307,82 +4053,8 @@ export class ListBlockVolume extends BlockVolumeBase {
     remove(locations: Vector3[]): void;
 }
 
-// @ts-ignore
-export class LootItem extends LootPoolEntry {
+export class MinecraftDimensionTypes {
     private constructor();
-    readonly name?: ItemType;
-}
-
-export class LootPool {
-    private constructor();
-    readonly bonusRolls: minecraftcommon.NumberRange;
-    readonly entries: LootPoolEntry[];
-    readonly rolls: minecraftcommon.NumberRange;
-    readonly tiers?: LootPoolTiers;
-}
-
-export class LootPoolEntry {
-    private constructor();
-    readonly quality: number;
-    readonly subTable?: LootPoolEntry;
-    readonly weight: number;
-}
-
-export class LootPoolTiers {
-    private constructor();
-    readonly bonusChance: number;
-    readonly bonusRolls: number;
-    readonly initialRange: number;
-}
-
-export class LootTable {
-    private constructor();
-    readonly path: string;
-    readonly pools: LootPool[];
-}
-
-// @ts-ignore
-export class LootTableEntry extends LootPoolEntry {
-    private constructor();
-    readonly lootTable: LootTable;
-}
-
-export class LootTableManager {
-    private constructor();
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     *
-     * {@link UnloadedChunksError}
-     */
-    generateLootFromBlock(block: Block, tool?: ItemStack): ItemStack[] | undefined;
-    generateLootFromBlockPermutation(blockPermutation: BlockPermutation, tool?: ItemStack): ItemStack[] | undefined;
-    generateLootFromBlockType(scriptBlockType: BlockType, tool?: ItemStack): ItemStack[] | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    generateLootFromEntity(entity: Entity, tool?: ItemStack): ItemStack[] | undefined;
-    generateLootFromEntityType(entityType: EntityType, tool?: ItemStack): ItemStack[] | undefined;
-    generateLootFromTable(lootTable: LootTable, tool?: ItemStack): ItemStack[] | undefined;
-    getLootTable(path: string): LootTable | undefined;
-}
-
-// @ts-ignore
-export class LootTableReference extends LootPoolEntry {
-    private constructor();
-    readonly path: string;
-}
-
-export class MessageReceiveAfterEvent {
-    private constructor();
-    readonly id: string;
-    readonly message: string;
-    readonly player: Player;
 }
 
 export class MolangVariableMap {
@@ -5406,28 +4078,6 @@ export class MolangVariableMap {
      * @throws This function can throw errors.
      */
     setVector3(variableName: string, vector: Vector3): void;
-}
-
-export class PackSettingChangeAfterEvent {
-    private constructor();
-    readonly settingName: string;
-    readonly settingValue: boolean | number | string;
-}
-
-export class PackSettingChangeAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: PackSettingChangeAfterEvent) => void): (arg0: PackSettingChangeAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PackSettingChangeAfterEvent) => void): void;
 }
 
 // @ts-ignore
@@ -5464,16 +4114,6 @@ export class Player extends Entity {
      * @throws This property can throw errors.
      */
     readonly clientSystemInfo: ClientSystemInfo;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    commandPermissionLevel: CommandPermissionLevel;
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly graphicsMode: GraphicsMode;
     readonly inputInfo: InputInfo;
     readonly inputPermissions: PlayerInputPermissions;
     /**
@@ -5505,12 +4145,6 @@ export class Player extends Entity {
      */
     readonly onScreenDisplay: ScreenDisplay;
     /**
-     * @throws This property can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly playerPermissionLevel: PlayerPermissionLevel;
-    /**
      * @remarks This property can't be edited in read-only mode.
      */
     selectedSlotIndex: number;
@@ -5534,19 +4168,6 @@ export class Player extends Entity {
      * @throws This function can throw errors.
      */
     addLevels(amount: number): number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    clearPropertyOverridesForEntity(targetEntity: Entity): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    eatItem(itemStack: ItemStack): void;
-    getAimAssist(): PlayerAimAssist;
     /**
      * @throws This function can throw errors.
      */
@@ -5580,19 +4201,7 @@ export class Player extends Entity {
      *
      * @throws This function can throw errors.
      */
-    postClientMessage(id: string, value: string): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
     queueMusic(trackId: string, musicOptions?: MusicOptions): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    removePropertyOverrideForEntity(targetEntity: Entity, identifier: string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5617,12 +4226,6 @@ export class Player extends Entity {
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
-     */
-    setPropertyOverrideForEntity(targetEntity: Entity, identifier: string, value: boolean | number | string): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
      *
      * {@link Error}
      *
@@ -5633,65 +4236,14 @@ export class Player extends Entity {
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     */
-    spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
      */
     startItemCooldown(cooldownCategory: string, tickDuration: number): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    stopAllSounds(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
      */
     stopMusic(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    stopSound(soundId: string): void;
-}
-
-export class PlayerAimAssist {
-    private constructor();
-    readonly settings?: PlayerAimAssistSettings;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link InvalidEntityError}
-     *
-     * {@link NamespaceNameError}
-     */
-    set(settings?: PlayerAimAssistSettings): void;
 }
 
 // @ts-ignore
@@ -5747,32 +4299,6 @@ export class PlayerBreakBlockBeforeEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: PlayerBreakBlockBeforeEvent) => void): void;
-}
-
-export class PlayerButtonInputAfterEvent {
-    private constructor();
-    readonly button: InputButton;
-    readonly newButtonState: ButtonState;
-    readonly player: Player;
-}
-
-export class PlayerButtonInputAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(
-        callback: (arg0: PlayerButtonInputAfterEvent) => void,
-        options?: InputEventOptions,
-    ): (arg0: PlayerButtonInputAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerButtonInputAfterEvent) => void): void;
 }
 
 // @ts-ignore
@@ -5884,33 +4410,6 @@ export class PlayerGameModeChangeBeforeEventSignal {
     unsubscribe(callback: (arg0: PlayerGameModeChangeBeforeEvent) => void): void;
 }
 
-export class PlayerHotbarSelectedSlotChangeAfterEvent {
-    private constructor();
-    readonly itemStack?: ItemStack;
-    readonly newSlotSelected: number;
-    readonly player: Player;
-    readonly previousSlotSelected: number;
-}
-
-export class PlayerHotbarSelectedSlotChangeAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(
-        callback: (arg0: PlayerHotbarSelectedSlotChangeAfterEvent) => void,
-        options?: HotbarEventOptions,
-    ): (arg0: PlayerHotbarSelectedSlotChangeAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerHotbarSelectedSlotChangeAfterEvent) => void): void;
-}
-
 export class PlayerInputModeChangeAfterEvent {
     private constructor();
     readonly newInputModeUsed: InputMode;
@@ -5959,6 +4458,8 @@ export class PlayerInputPermissionCategoryChangeAfterEventSignal {
 
 export class PlayerInputPermissions {
     private constructor();
+    cameraEnabled: boolean;
+    movementEnabled: boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6075,54 +4576,15 @@ export class PlayerInteractWithEntityBeforeEventSignal {
     unsubscribe(callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void): void;
 }
 
-export class PlayerInventoryItemChangeAfterEvent {
-    private constructor();
-    readonly beforeItemStack?: ItemStack;
-    readonly inventoryType: PlayerInventoryType;
-    readonly itemStack?: ItemStack;
-    readonly player: Player;
-    readonly slot: number;
-}
-
-export class PlayerInventoryItemChangeAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(
-        callback: (arg0: PlayerInventoryItemChangeAfterEvent) => void,
-        options?: InventoryItemEventOptions,
-    ): (arg0: PlayerInventoryItemChangeAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerInventoryItemChangeAfterEvent) => void): void;
-}
-
 export class PlayerJoinAfterEvent {
     private constructor();
     readonly playerId: string;
     readonly playerName: string;
 }
 
-export class PlayerJoinAfterEventSignal {
+// @ts-ignore
+export class PlayerJoinAfterEventSignal extends IPlayerJoinAfterEventSignal {
     private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: PlayerJoinAfterEvent) => void): (arg0: PlayerJoinAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerJoinAfterEvent) => void): void;
 }
 
 export class PlayerLeaveAfterEvent {
@@ -6131,20 +4593,9 @@ export class PlayerLeaveAfterEvent {
     readonly playerName: string;
 }
 
-export class PlayerLeaveAfterEventSignal {
+// @ts-ignore
+export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
     private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: PlayerLeaveAfterEvent) => void): (arg0: PlayerLeaveAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerLeaveAfterEvent) => void): void;
 }
 
 export class PlayerLeaveBeforeEvent {
@@ -6193,35 +4644,6 @@ export class PlayerPlaceBlockAfterEventSignal {
     unsubscribe(callback: (arg0: PlayerPlaceBlockAfterEvent) => void): void;
 }
 
-// @ts-ignore
-export class PlayerPlaceBlockBeforeEvent extends BlockEvent {
-    private constructor();
-    cancel: boolean;
-    readonly face: Direction;
-    readonly faceLocation: Vector3;
-    readonly permutationToPlace: BlockPermutation;
-    readonly player: Player;
-}
-
-export class PlayerPlaceBlockBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(
-        callback: (arg0: PlayerPlaceBlockBeforeEvent) => void,
-        options?: BlockEventOptions,
-    ): (arg0: PlayerPlaceBlockBeforeEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerPlaceBlockBeforeEvent) => void): void;
-}
-
 export class PlayerSpawnAfterEvent {
     private constructor();
     /**
@@ -6234,79 +4656,9 @@ export class PlayerSpawnAfterEvent {
     player: Player;
 }
 
-export class PlayerSpawnAfterEventSignal {
+// @ts-ignore
+export class PlayerSpawnAfterEventSignal extends IPlayerSpawnAfterEventSignal {
     private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): (arg0: PlayerSpawnAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
-}
-
-export class PlayerSwingStartAfterEvent {
-    private constructor();
-    readonly heldItemStack?: ItemStack;
-    readonly player: Player;
-}
-
-export class PlayerSwingStartAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(
-        callback: (arg0: PlayerSwingStartAfterEvent) => void,
-        options?: PlayerSwingEventOptions,
-    ): (arg0: PlayerSwingStartAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: PlayerSwingStartAfterEvent) => void): void;
-}
-
-export class PotionDeliveryType {
-    private constructor();
-    readonly id: string;
-}
-
-export class PotionEffectType {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    readonly durationTicks?: number;
-    readonly id: string;
-}
-
-export class Potions {
-    private constructor();
-    static getAllDeliveryTypes(): PotionDeliveryType[];
-    static getAllEffectTypes(): PotionEffectType[];
-    static getDeliveryType(potionDeliveryId: string): PotionDeliveryType | undefined;
-    static getEffectType(potionEffectId: string): PotionEffectType | undefined;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link InvalidPotionDeliveryTypeError}
-     *
-     * {@link InvalidPotionEffectTypeError}
-     */
-    static resolve(potionEffectType: PotionEffectType | string, potionDeliveryType: PotionDeliveryType | string): ItemStack;
 }
 
 // @ts-ignore
@@ -6451,12 +4803,12 @@ export class ScoreboardIdentity {
     private constructor();
     readonly displayName: string;
     readonly id: number;
-    readonly isValid: boolean;
     readonly "type": ScoreboardIdentityType;
     /**
      * @throws This function can throw errors.
      */
     getEntity(): Entity | undefined;
+    isValid(): boolean;
 }
 
 export class ScoreboardObjective {
@@ -6469,7 +4821,6 @@ export class ScoreboardObjective {
      * @throws This property can throw errors.
      */
     readonly id: string;
-    readonly isValid: boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6492,6 +4843,7 @@ export class ScoreboardObjective {
      * @throws This function can throw errors.
      */
     hasParticipant(participant: Entity | ScoreboardIdentity | string): boolean;
+    isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6514,7 +4866,6 @@ export class ScoreboardScoreInfo {
 
 export class ScreenDisplay {
     private constructor();
-    readonly isValid: boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6539,6 +4890,7 @@ export class ScreenDisplay {
      * {@link InvalidEntityError}
      */
     isForcedHidden(hudElement: HudElement): boolean;
+    isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6546,7 +4898,7 @@ export class ScreenDisplay {
      *
      * {@link InvalidEntityError}
      */
-    resetHudElementsVisibility(): void;
+    resetHudElements(): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6627,78 +4979,9 @@ export class Seat {
     readonly seatRotation: number;
 }
 
-export class ServerMessageAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: MessageReceiveAfterEvent) => void): (arg0: MessageReceiveAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: MessageReceiveAfterEvent) => void): void;
-}
-
-export class ShutdownBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: ShutdownEvent) => void): (arg0: ShutdownEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: ShutdownEvent) => void): void;
-}
-
-export class ShutdownEvent {
-    private constructor();
-}
-
-export class StartupBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: StartupEvent) => void): (arg0: StartupEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: StartupEvent) => void): void;
-}
-
-export class StartupEvent {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly blockComponentRegistry: BlockComponentRegistry;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly customCommandRegistry: CustomCommandRegistry;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly itemComponentRegistry: ItemComponentRegistry;
-}
-
 export class Structure {
     private constructor();
     readonly id: string;
-    readonly isValid: boolean;
     /**
      * @throws This property can throw errors.
      *
@@ -6721,6 +5004,7 @@ export class Structure {
      * {@link InvalidStructureError}
      */
     getIsWaterlogged(location: Vector3): boolean;
+    isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6807,34 +5091,6 @@ export class StructureManager {
      * {@link InvalidStructureError}
      */
     place(structure: string | Structure, dimension: Dimension, location: Vector3, options?: StructurePlaceOptions): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link PlaceJigsawError}
-     */
-    placeJigsaw(
-        pool: string,
-        targetJigsaw: string,
-        maxDepth: number,
-        dimension: Dimension,
-        location: Vector3,
-        options?: JigsawPlaceOptions,
-    ): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link PlaceJigsawError}
-     */
-    placeJigsawStructure(
-        identifier: string,
-        dimension: Dimension,
-        location: Vector3,
-        options?: JigsawStructurePlaceOptions,
-    ): BlockBoundingBox;
 }
 
 export class System {
@@ -6846,15 +5102,7 @@ export class System {
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly beforeEvents: SystemBeforeEvents;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
     readonly currentTick: number;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly isEditorWorld: boolean;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -6884,16 +5132,6 @@ export class System {
      */
     runTimeout(callback: () => void, tickDelay?: number): number;
     /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     */
-    sendScriptEvent(id: string, message: string): void;
-    /**
      * @remarks This function can be called in early-execution mode.
      *
      * @throws This function can throw errors.
@@ -6909,22 +5147,6 @@ export class SystemAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly scriptEventReceive: ScriptEventCommandMessageAfterEventSignal;
-}
-
-export class SystemBeforeEvents {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly shutdown: ShutdownBeforeEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly startup: StartupBeforeEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly watchdogTerminate: WatchdogTerminateBeforeEventSignal;
 }
 
 export class SystemInfo {
@@ -6983,28 +5205,6 @@ export class TripWireTripAfterEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: TripWireTripAfterEvent) => void): void;
-}
-
-export class WatchdogTerminateBeforeEvent {
-    private constructor();
-    cancel: boolean;
-    readonly terminateReason: WatchdogTerminateReason;
-}
-
-export class WatchdogTerminateBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(callback: (arg0: WatchdogTerminateBeforeEvent) => void): (arg0: WatchdogTerminateBeforeEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: WatchdogTerminateBeforeEvent) => void): void;
 }
 
 export class WeatherChangeAfterEvent {
@@ -7068,13 +5268,8 @@ export class World {
     readonly isHardcore: boolean;
     readonly scoreboard: Scoreboard;
     readonly structureManager: StructureManager;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    broadcastClientMessage(id: string, value: string): void;
     clearDynamicProperties(): void;
     getAbsoluteTime(): number;
-    getAimAssist(): AimAssistRegistry;
     /**
      * @throws This function can throw errors.
      *
@@ -7085,7 +5280,6 @@ export class World {
     getAllPlayers(): Player[];
     getDay(): number;
     getDefaultSpawnLocation(): Vector3;
-    getDifficulty(): Difficulty;
     /**
      * @throws This function can throw errors.
      */
@@ -7097,12 +5291,7 @@ export class World {
      * @throws This function can throw errors.
      */
     getEntity(id: string): Entity | undefined;
-    getLootTableManager(): LootTableManager;
     getMoonPhase(): MoonPhase;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     */
-    getPackSettings(): Record<string, boolean | number | string>;
     /**
      * @throws This function can throw errors.
      *
@@ -7120,6 +5309,14 @@ export class World {
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
     playMusic(trackId: string, musicOptions?: MusicOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.PropertyOutOfBoundsError}
+     */
+    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -7147,16 +5344,6 @@ export class World {
      */
     setDefaultSpawnLocation(spawnLocation: Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setDifficulty(difficulty: Difficulty): void;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     */
-    setDynamicProperties(values: Record<string, boolean | number | string | Vector3>): void;
-    /**
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
@@ -7180,14 +5367,7 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly blockExplode: BlockExplodeAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
     readonly buttonPush: ButtonPushAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly chatSend: ChatSendAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7267,15 +5447,8 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly itemUseOn: ItemUseOnAfterEventSignal;
     readonly leverAction: LeverActionAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly messageReceive: ServerMessageAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly packSettingChange: PackSettingChangeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7284,10 +5457,6 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerBreakBlock: PlayerBreakBlockAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly playerButtonInput: PlayerButtonInputAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7300,10 +5469,6 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerGameModeChange: PlayerGameModeChangeAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly playerHotbarSelectedSlotChange: PlayerHotbarSelectedSlotChangeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7320,30 +5485,13 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerInteractWithEntity: PlayerInteractWithEntityAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly playerInventoryItemChange: PlayerInventoryItemChangeAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
     readonly playerJoin: PlayerJoinAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
     readonly playerLeave: PlayerLeaveAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerPlaceBlock: PlayerPlaceBlockAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
     readonly playerSpawn: PlayerSpawnAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly playerSwingStart: PlayerSwingStartAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7375,15 +5523,11 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly worldLoad: WorldLoadAfterEventSignal;
+    readonly worldInitialize: WorldInitializeAfterEventSignal;
 }
 
 export class WorldBeforeEvents {
     private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly chatSend: ChatSendBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7400,6 +5544,10 @@ export class WorldBeforeEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly itemUse: ItemUseBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly itemUseOn: ItemUseOnBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7423,55 +5571,65 @@ export class WorldBeforeEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly playerPlaceBlock: PlayerPlaceBlockBeforeEventSignal;
+    readonly weatherChange: WeatherChangeBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly weatherChange: WeatherChangeBeforeEventSignal;
+    readonly worldInitialize: WorldInitializeBeforeEventSignal;
 }
 
-export class WorldLoadAfterEvent {
+export class WorldInitializeAfterEvent {
     private constructor();
 }
 
-export class WorldLoadAfterEventSignal {
+export class WorldInitializeAfterEventSignal {
     private constructor();
     /**
      * @remarks This function can be called in early-execution mode.
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: WorldLoadAfterEvent) => void): (arg0: WorldLoadAfterEvent) => void;
+    subscribe(callback: (arg0: WorldInitializeAfterEvent) => void): (arg0: WorldInitializeAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
      * This function can't be called in read-only mode.
      */
-    unsubscribe(callback: (arg0: WorldLoadAfterEvent) => void): void;
+    unsubscribe(callback: (arg0: WorldInitializeAfterEvent) => void): void;
 }
 
-export interface BiomeSearchOptions {
-    boundingSize?: Vector3;
+export class WorldInitializeBeforeEvent {
+    private constructor();
+    readonly blockComponentRegistry: BlockComponentRegistry;
+    readonly itemComponentRegistry: ItemComponentRegistry;
 }
 
-export interface BlockBoundingBox {
-    max: Vector3;
-    min: Vector3;
+export class WorldInitializeBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: WorldInitializeBeforeEvent) => void): (arg0: WorldInitializeBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: WorldInitializeBeforeEvent) => void): void;
 }
 
 export interface BlockCustomComponent {
-    beforeOnPlayerPlace?: (
-        arg0: BlockComponentPlayerPlaceBeforeEvent,
-        arg1: CustomComponentParameters,
-    ) => void;
-    onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
-    onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
-    onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
-    onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
-    onRandomTick?: (arg0: BlockComponentRandomTickEvent, arg1: CustomComponentParameters) => void;
-    onStepOff?: (arg0: BlockComponentStepOffEvent, arg1: CustomComponentParameters) => void;
-    onStepOn?: (arg0: BlockComponentStepOnEvent, arg1: CustomComponentParameters) => void;
-    onTick?: (arg0: BlockComponentTickEvent, arg1: CustomComponentParameters) => void;
+    beforeOnPlayerPlace?: (arg0: BlockComponentPlayerPlaceBeforeEvent) => void;
+    onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent) => void;
+    onPlace?: (arg0: BlockComponentOnPlaceEvent) => void;
+    onPlayerDestroy?: (arg0: BlockComponentPlayerDestroyEvent) => void;
+    onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent) => void;
+    onRandomTick?: (arg0: BlockComponentRandomTickEvent) => void;
+    onStepOff?: (arg0: BlockComponentStepOffEvent) => void;
+    onStepOn?: (arg0: BlockComponentStepOnEvent) => void;
+    onTick?: (arg0: BlockComponentTickEvent) => void;
 }
 
 export interface BlockEventOptions {
@@ -7512,6 +5670,15 @@ export interface BlockRaycastOptions extends BlockFilter {
     maxDistance?: number;
 }
 
+export interface CameraDefaultOptions {
+    easeOptions: CameraEaseOptions;
+}
+
+export interface CameraEaseOptions {
+    easeTime?: number;
+    easeType?: EasingType;
+}
+
 export interface CameraFadeOptions {
     fadeColor?: RGB;
     fadeTime?: CameraFadeTimeOptions;
@@ -7528,30 +5695,25 @@ export interface CameraFixedBoomOptions {
     viewOffset?: Vector2;
 }
 
-export interface CameraFovOptions {
-    easeOptions?: EaseOptions;
-    fov?: number;
-}
-
 export interface CameraSetFacingOptions {
-    easeOptions?: EaseOptions;
+    easeOptions?: CameraEaseOptions;
     facingEntity: Entity;
     location?: Vector3;
 }
 
 export interface CameraSetLocationOptions {
-    easeOptions?: EaseOptions;
+    easeOptions?: CameraEaseOptions;
     location: Vector3;
 }
 
 export interface CameraSetPosOptions {
-    easeOptions?: EaseOptions;
+    easeOptions?: CameraEaseOptions;
     facingLocation: Vector3;
     location?: Vector3;
 }
 
 export interface CameraSetRotOptions {
-    easeOptions?: EaseOptions;
+    easeOptions?: CameraEaseOptions;
     location?: Vector3;
     rotation: Vector2;
 }
@@ -7561,43 +5723,9 @@ export interface CameraTargetOptions {
     targetEntity: Entity;
 }
 
-export interface CompoundBlockVolumeItem {
-    action?: CompoundBlockVolumeAction;
-    locationRelativity?: CompoundBlockVolumePositionRelativity;
-    volume: BlockVolume;
-}
-
-export interface ContainerRules {
-    allowedItems: string[];
-    allowNestedStorageItems: boolean;
-    bannedItems: string[];
-    weightLimit?: number;
-}
-
-export interface CustomCommand {
-    cheatsRequired?: boolean;
-    description: string;
-    mandatoryParameters?: CustomCommandParameter[];
-    name: string;
-    optionalParameters?: CustomCommandParameter[];
-    permissionLevel: CommandPermissionLevel;
-}
-
-export interface CustomCommandParameter {
-    enumName?: string;
-    name: string;
-    type: CustomCommandParamType;
-}
-
-export interface CustomCommandResult {
-    message?: string;
-    status: CustomCommandStatus;
-}
-
 export interface DefinitionModifier {
     addedComponentGroups: string[];
     removedComponentGroups: string[];
-    triggers: Trigger[];
 }
 
 export interface DimensionLocation {
@@ -7605,11 +5733,6 @@ export interface DimensionLocation {
     x: number;
     y: number;
     z: number;
-}
-
-export interface EaseOptions {
-    easeTime?: number;
-    easeType?: EasingType;
 }
 
 export interface Enchantment {
@@ -7730,11 +5853,6 @@ export interface ExplosionOptions {
     source?: Entity;
 }
 
-export interface GetBlocksStandingOnOptions {
-    blockFilter?: BlockFilter;
-    ignoreThinBlocks?: boolean;
-}
-
 export interface GreaterThanComparison {
     greaterThan: number;
 }
@@ -7743,49 +5861,14 @@ export interface GreaterThanOrEqualsComparison {
     greaterThanOrEquals: number;
 }
 
-export interface HotbarEventOptions {
-    allowedSlots?: number[];
-}
-
-export interface InputEventOptions {
-    buttons?: InputButton[];
-    state?: ButtonState;
-}
-
-export interface InventoryItemEventOptions {
-    allowedSlots?: number[];
-    excludeItems?: string[];
-    excludeTags?: string[];
-    ignoreQuantityChange?: boolean;
-    includeItems?: string[];
-    includeTags?: string[];
-    inventoryType?: PlayerInventoryType;
-}
-
 export interface ItemCustomComponent {
-    onBeforeDurabilityDamage?: (
-        arg0: ItemComponentBeforeDurabilityDamageEvent,
-        arg1: CustomComponentParameters,
-    ) => void;
-    onCompleteUse?: (arg0: ItemComponentCompleteUseEvent, arg1: CustomComponentParameters) => void;
-    onConsume?: (arg0: ItemComponentConsumeEvent, arg1: CustomComponentParameters) => void;
-    onHitEntity?: (arg0: ItemComponentHitEntityEvent, arg1: CustomComponentParameters) => void;
-    onMineBlock?: (arg0: ItemComponentMineBlockEvent, arg1: CustomComponentParameters) => void;
-    onUse?: (arg0: ItemComponentUseEvent, arg1: CustomComponentParameters) => void;
-    onUseOn?: (arg0: ItemComponentUseOnEvent, arg1: CustomComponentParameters) => void;
-}
-
-export interface JigsawPlaceOptions {
-    includeEntities?: boolean;
-    keepJigsaws?: boolean;
-    liquidSettings?: LiquidSettings;
-}
-
-export interface JigsawStructurePlaceOptions {
-    ignoreStartHeight?: boolean;
-    includeEntities?: boolean;
-    keepJigsaws?: boolean;
-    liquidSettings?: LiquidSettings;
+    onBeforeDurabilityDamage?: (arg0: ItemComponentBeforeDurabilityDamageEvent) => void;
+    onCompleteUse?: (arg0: ItemComponentCompleteUseEvent) => void;
+    onConsume?: (arg0: ItemComponentConsumeEvent) => void;
+    onHitEntity?: (arg0: ItemComponentHitEntityEvent) => void;
+    onMineBlock?: (arg0: ItemComponentMineBlockEvent) => void;
+    onUse?: (arg0: ItemComponentUseEvent) => void;
+    onUseOn?: (arg0: ItemComponentUseOnEvent) => void;
 }
 
 export interface LessThanComparison {
@@ -7810,25 +5893,14 @@ export interface PlayAnimationOptions {
     blendOutTime?: number;
     controller?: string;
     nextState?: string;
-    players?: Player[];
+    players?: string[];
     stopExpression?: string;
-}
-
-export interface PlayerAimAssistSettings {
-    distance?: number;
-    presetId: string;
-    targetMode?: AimAssistTargetMode;
-    viewAngle?: Vector2;
 }
 
 export interface PlayerSoundOptions {
     location?: Vector3;
     pitch?: number;
     volume?: number;
-}
-
-export interface PlayerSwingEventOptions {
-    heldItemOption?: HeldItemOption;
 }
 
 export interface ProjectileShootOptions {
@@ -7875,12 +5947,6 @@ export interface ScoreboardObjectiveDisplayOptions {
 
 export interface ScriptEventMessageFilterOptions {
     namespaces: string[];
-}
-
-export interface SpawnEntityOptions {
-    initialPersistence?: boolean;
-    initialRotation?: number;
-    spawnEvent?: string;
 }
 
 export interface StructureCreateOptions {
@@ -7958,28 +6024,6 @@ export class BlockCustomComponentReloadVersionError extends Error {
 }
 
 // @ts-ignore
-export class BookError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly reason: BookErrorReason;
-}
-
-// @ts-ignore
-export class BookPageContentError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly pageIndex: number;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly reason: BookErrorReason;
-}
-
-// @ts-ignore
 export class CommandError extends Error {
     private constructor();
 }
@@ -7987,19 +6031,6 @@ export class CommandError extends Error {
 // @ts-ignore
 export class ContainerRulesError extends Error {
     private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly reason: ContainerRulesErrorReason;
-}
-
-// @ts-ignore
-export class CustomCommandError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly reason: CustomCommandErrorReason;
 }
 
 // @ts-ignore
@@ -8037,11 +6068,6 @@ export class EntitySpawnError extends Error {
 }
 
 // @ts-ignore
-export class InvalidContainerError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
 export class InvalidContainerSlotError extends Error {
     private constructor();
 }
@@ -8060,26 +6086,7 @@ export class InvalidEntityError extends Error {
 }
 
 // @ts-ignore
-export class InvalidItemStackError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly itemType: ItemType;
-}
-
-// @ts-ignore
 export class InvalidIteratorError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
-export class InvalidPotionDeliveryTypeError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
-export class InvalidPotionEffectTypeError extends Error {
     private constructor();
 }
 
@@ -8119,20 +6126,6 @@ export class LocationOutOfWorldBoundariesError extends Error {
 }
 
 // @ts-ignore
-export class NamespaceNameError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly reason: NamespaceNameErrorReason;
-}
-
-// @ts-ignore
-export class PlaceJigsawError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
 export class RawMessageError extends Error {
     private constructor();
 }
@@ -8145,7 +6138,6 @@ export class UnloadedChunksError extends Error {
 export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
 export const MoonPhaseCount = 8;
-export const TicksPerDay = 24000;
 export const TicksPerSecond = 20;
 export const system: System;
 export const world: World;

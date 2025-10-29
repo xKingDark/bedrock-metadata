@@ -28,6 +28,18 @@ export class AsyncPlayerJoinBeforeEvent {
      *
      * {@link DisconnectedError}
      */
+    allowJoin(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DisconnectedError}
+     */
+    disallowJoin(reason?: string): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DisconnectedError}
+     */
     disconnect(reason?: string): void;
     isValid(): boolean;
 }
@@ -88,7 +100,7 @@ export class DisconnectedError extends Error {
  * @throws This function can throw errors.
  */
 export function transferPlayer(
-    player: minecraftserver.Player,
+    player: minecraftserverbindings.Player,
     options: TransferPlayerIpPortOptions | TransferPlayerNetherNetOptions,
 ): void;
 export const beforeEvents: AdminBeforeEvents;

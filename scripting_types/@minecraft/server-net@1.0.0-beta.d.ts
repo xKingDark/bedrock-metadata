@@ -81,7 +81,9 @@ export enum PacketId {
     CreatePhotoPacket = "CreatePhotoPacket",
     CreativeContentPacket = "CreativeContentPacket",
     CurrentStructureFeaturePacket = "CurrentStructureFeaturePacket",
+    DataStoreSyncPacket = "DataStoreSyncPacket",
     DeathInfoPacket = "DeathInfoPacket",
+    DebugDrawerPacket = "DebugDrawerPacket",
     DebugInfoPacket = "DebugInfoPacket",
     DimensionDataPacket = "DimensionDataPacket",
     DisconnectPacket = "DisconnectPacket",
@@ -94,6 +96,7 @@ export enum PacketId {
     GameRulesChangedPacket = "GameRulesChangedPacket",
     GameTestRequestPacket = "GameTestRequestPacket",
     GameTestResultsPacket = "GameTestResultsPacket",
+    GraphicsOverrideParameterPacket = "GraphicsOverrideParameterPacket",
     GuiDataPickItemPacket = "GuiDataPickItemPacket",
     HurtArmorPacket = "HurtArmorPacket",
     InteractPacket = "InteractPacket",
@@ -172,7 +175,6 @@ export enum PacketId {
     ServerboundLoadingScreenPacket = "ServerboundLoadingScreenPacket",
     ServerboundPackSettingChangePacket = "ServerboundPackSettingChangePacket",
     ServerPlayerPostMovePositionPacket = "ServerPlayerPostMovePositionPacket",
-    ServerScriptDebugDrawerPacket = "ServerScriptDebugDrawerPacket",
     ServerSettingsRequestPacket = "ServerSettingsRequestPacket",
     ServerSettingsResponsePacket = "ServerSettingsResponsePacket",
     ServerStatsPacket = "ServerStatsPacket",
@@ -328,14 +330,14 @@ export class PacketReceivedBeforeEvent {
     cancel: boolean;
     readonly packetId: PacketId;
     readonly packetSize: number;
-    readonly sender?: minecraftserver.Player;
+    readonly sender?: minecraftserverbindings.Player;
 }
 
 export class PacketSendBeforeEvent {
     private constructor();
     cancel: boolean;
     readonly packetId: PacketId;
-    readonly recipients: (minecraftserver.Player | undefined)[];
+    readonly recipients: (minecraftserverbindings.Player | undefined)[];
 }
 
 export class PacketSendBeforeEventSignal {
