@@ -301,6 +301,7 @@ export enum EntityDamageCause {
     campfire = "campfire",
     charging = "charging",
     contact = "contact",
+    dehydration = "dehydration",
     drowning = "drowning",
     entityAttack = "entityAttack",
     entityExplosion = "entityExplosion",
@@ -373,6 +374,18 @@ export enum EntitySpawnReason {
     Structure = "Structure",
     TrialSpawner = "TrialSpawner",
     Triggered = "Triggered",
+}
+
+export enum EntitySwingSource {
+    Attack = "Attack",
+    Build = "Build",
+    DropItem = "DropItem",
+    Event = "Event",
+    Interact = "Interact",
+    Mine = "Mine",
+    None = "None",
+    ThrowItem = "ThrowItem",
+    UseItem = "UseItem",
 }
 
 export enum EquipmentSlot {
@@ -6591,6 +6604,7 @@ export class PlayerSwingStartAfterEvent {
     private constructor();
     readonly heldItemStack?: ItemStack;
     readonly player: Player;
+    readonly swingSource: EntitySwingSource;
 }
 
 export class PlayerSwingStartAfterEventSignal {
@@ -8391,6 +8405,7 @@ export interface PlayerSoundOptions {
 
 export interface PlayerSwingEventOptions {
     heldItemOption?: HeldItemOption;
+    swingSource?: EntitySwingSource;
 }
 
 export interface ProgressKeyFrame {

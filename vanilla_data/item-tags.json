@@ -1161,6 +1161,32 @@
             ]
         },
         {
+            "name": "minecraft:is_spear",
+            "items": [
+                {
+                    "name": "minecraft:copper_spear"
+                },
+                {
+                    "name": "minecraft:diamond_spear"
+                },
+                {
+                    "name": "minecraft:golden_spear"
+                },
+                {
+                    "name": "minecraft:iron_spear"
+                },
+                {
+                    "name": "minecraft:netherite_spear"
+                },
+                {
+                    "name": "minecraft:stone_spear"
+                },
+                {
+                    "name": "minecraft:wooden_spear"
+                }
+            ]
+        },
+        {
             "name": "minecraft:is_sword",
             "items": [
                 {
@@ -1896,6 +1922,9 @@
                     "name": "minecraft:breeze_spawn_egg"
                 },
                 {
+                    "name": "minecraft:camel_husk_spawn_egg"
+                },
+                {
                     "name": "minecraft:camel_spawn_egg"
                 },
                 {
@@ -1999,6 +2028,9 @@
                 },
                 {
                     "name": "minecraft:panda_spawn_egg"
+                },
+                {
+                    "name": "minecraft:parched_spawn_egg"
                 },
                 {
                     "name": "minecraft:parrot_spawn_egg"
@@ -2125,32 +2157,6 @@
                 },
                 {
                     "name": "minecraft:zombie_villager_spawn_egg"
-                }
-            ]
-        },
-        {
-            "name": "minecraft:spear",
-            "items": [
-                {
-                    "name": "minecraft:copper_spear"
-                },
-                {
-                    "name": "minecraft:diamond_spear"
-                },
-                {
-                    "name": "minecraft:golden_spear"
-                },
-                {
-                    "name": "minecraft:iron_spear"
-                },
-                {
-                    "name": "minecraft:netherite_spear"
-                },
-                {
-                    "name": "minecraft:stone_spear"
-                },
-                {
-                    "name": "minecraft:wooden_spear"
                 }
             ]
         },
