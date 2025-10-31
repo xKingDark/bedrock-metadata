@@ -491,7 +491,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    above(steps?: number = 1): Block | undefined;
+    above(steps?: number): Block | undefined;
     /**
      * @param steps Defaults to: 1
      *
@@ -501,7 +501,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    below(steps?: number = 1): Block | undefined;
+    below(steps?: number): Block | undefined;
     bottomCenter(): Vector3;
     center(): Vector3;
     /**
@@ -513,7 +513,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    east(steps?: number = 1): Block | undefined;
+    east(steps?: number): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -532,7 +532,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    getItemStack(amount?: number = 1, withData?: boolean): ItemStack | undefined;
+    getItemStack(amount?: number, withData?: boolean): ItemStack | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -567,7 +567,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    north(steps?: number = 1): Block | undefined;
+    north(steps?: number): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -607,7 +607,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    south(steps?: number = 1): Block | undefined;
+    south(steps?: number): Block | undefined;
     /**
      * @param steps Defaults to: 1
      *
@@ -617,7 +617,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    west(steps?: number = 1): Block | undefined;
+    west(steps?: number): Block | undefined;
 }
 
 // @ts-ignore
@@ -752,7 +752,7 @@ export class BlockPermutation {
     /**
      * @param amount Defaults to: 1
      */
-    getItemStack(amount?: number = 1): ItemStack | undefined;
+    getItemStack(amount?: number): ItemStack | undefined;
     getState(stateName: string): boolean | number | string | undefined;
     getTags(): string[];
     hasTag(tag: string): boolean;
@@ -1607,7 +1607,7 @@ export class Entity {
      *
      * {@link InvalidEntityError}
      */
-    extinguishFire(useEffects?: boolean = true): boolean;
+    extinguishFire(useEffects?: boolean): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -1805,7 +1805,7 @@ export class Entity {
      *
      * {@link InvalidEntityError}
      */
-    setOnFire(seconds: number, useEffects?: boolean = true): boolean;
+    setOnFire(seconds: number, useEffects?: boolean): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -3525,7 +3525,7 @@ export class ItemStack {
     /**
      * @throws This function can throw errors.
      */
-    constructor(itemType: ItemType | string, amount?: number = 1);
+    constructor(itemType: ItemType | string, amount?: number);
     clearDynamicProperties(): void;
     clone(): ItemStack;
     /**
@@ -4685,7 +4685,7 @@ export class Structure {
      *
      * {@link InvalidStructureError}
      */
-    saveAs(identifier: string, saveMode?: StructureSaveMode = 1): Structure;
+    saveAs(identifier: string, saveMode?: StructureSaveMode): Structure;
     /**
      * @remarks This function can't be called in read-only mode.
      *

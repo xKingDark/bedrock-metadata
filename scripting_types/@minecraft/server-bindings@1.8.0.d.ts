@@ -227,7 +227,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    above(steps?: number = 1): Block | undefined;
+    above(steps?: number): Block | undefined;
     /**
      * @param steps Defaults to: 1
      *
@@ -237,7 +237,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    below(steps?: number = 1): Block | undefined;
+    below(steps?: number): Block | undefined;
     bottomCenter(): Vector3;
     center(): Vector3;
     /**
@@ -249,7 +249,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    east(steps?: number = 1): Block | undefined;
+    east(steps?: number): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -284,7 +284,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    north(steps?: number = 1): Block | undefined;
+    north(steps?: number): Block | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -312,7 +312,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    south(steps?: number = 1): Block | undefined;
+    south(steps?: number): Block | undefined;
     /**
      * @param steps Defaults to: 1
      *
@@ -322,7 +322,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    west(steps?: number = 1): Block | undefined;
+    west(steps?: number): Block | undefined;
 }
 
 // @ts-ignore
@@ -1826,7 +1826,7 @@ export class ItemStack {
     /**
      * @throws This function can throw errors.
      */
-    constructor(itemType: ItemType | string, amount?: number = 1);
+    constructor(itemType: ItemType | string, amount?: number);
     clone(): ItemStack;
     /**
      * @remarks This function can't be called in read-only mode.
