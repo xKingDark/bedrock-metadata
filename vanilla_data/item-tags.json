@@ -680,6 +680,9 @@
                 },
                 {
                     "name": "minecraft:leather_horse_armor"
+                },
+                {
+                    "name": "minecraft:netherite_horse_armor"
                 }
             ]
         },
@@ -1735,7 +1738,13 @@
                     "name": "minecraft:netherite_hoe"
                 },
                 {
+                    "name": "minecraft:netherite_horse_armor"
+                },
+                {
                     "name": "minecraft:netherite_leggings"
+                },
+                {
+                    "name": "minecraft:netherite_nautilus_armor"
                 },
                 {
                     "name": "minecraft:netherite_pickaxe"
@@ -2261,6 +2270,9 @@
                 },
                 {
                     "name": "minecraft:diamond_hoe"
+                },
+                {
+                    "name": "minecraft:diamond_horse_armor"
                 },
                 {
                     "name": "minecraft:diamond_leggings"

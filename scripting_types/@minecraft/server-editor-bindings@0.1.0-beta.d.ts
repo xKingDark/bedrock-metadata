@@ -1656,7 +1656,7 @@ export class Widget {
      */
     addClipboardComponent(
         componentName: string,
-        clipboardItem?: ClipboardItem,
+        clipboardItem?: ClipboardItem | EditorStructure,
         options?: WidgetComponentClipboardOptions,
     ): WidgetComponentClipboard;
     /**
