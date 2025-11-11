@@ -1439,13 +1439,6 @@ export class BlockComponentOnPlaceEvent extends BlockEvent {
 }
 
 // @ts-ignore
-export class BlockComponentPlayerBreakEvent extends BlockEvent {
-    private constructor();
-    readonly brokenBlockPermutation: BlockPermutation;
-    readonly player?: Player;
-}
-
-// @ts-ignore
 export class BlockComponentPlayerInteractEvent extends BlockEvent {
     private constructor();
     readonly face: Direction;
@@ -1465,6 +1458,12 @@ export class BlockComponentPlayerPlaceBeforeEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentRandomTickEvent extends BlockEvent {
     private constructor();
+}
+
+// @ts-ignore
+export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
+    private constructor();
+    readonly powerLevel: number;
 }
 
 export class BlockComponentRegistry {
@@ -8028,9 +8027,9 @@ export interface BlockCustomComponent {
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
-    onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
     onRandomTick?: (arg0: BlockComponentRandomTickEvent, arg1: CustomComponentParameters) => void;
+    onRedstoneUpdate?: (arg0: BlockComponentRedstoneUpdateEvent, arg1: CustomComponentParameters) => void;
     onStepOff?: (arg0: BlockComponentStepOffEvent, arg1: CustomComponentParameters) => void;
     onStepOn?: (arg0: BlockComponentStepOnEvent, arg1: CustomComponentParameters) => void;
     onTick?: (arg0: BlockComponentTickEvent, arg1: CustomComponentParameters) => void;

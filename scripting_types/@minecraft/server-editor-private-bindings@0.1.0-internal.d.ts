@@ -54,22 +54,6 @@ export enum PrefabInstanceInteractionEventType {
     Moved = "Moved",
 }
 
-export enum PrefabMirror {
-    Default = "Default",
-    None = "None",
-    X = "X",
-    XZ = "XZ",
-    Z = "Z",
-}
-
-export enum PrefabRotation {
-    Default = "Default",
-    None = "None",
-    Rotate180 = "Rotate180",
-    Rotate270 = "Rotate270",
-    Rotate90 = "Rotate90",
-}
-
 export enum PrefabSource {
     Global = "Global",
     Project = "Project",
@@ -923,15 +907,25 @@ export class PrefabTemplateInstance {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceMirror: PrefabMirror;
+    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceRotation: PrefabRotation;
+    instanceRotation: minecraftserverbindings.StructureRotation;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
     location: minecraftserverbindings.Vector3;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    bakeInstance(): void;
     /**
      * @throws This function can throw errors.
      *
@@ -955,11 +949,11 @@ export class PrefabTemplateInstanceStructure {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceMirror: PrefabMirror;
+    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceRotation: PrefabRotation;
+    instanceRotation: minecraftserverbindings.StructureRotation;
     /**
      * @throws This function can throw errors.
      *
@@ -985,7 +979,7 @@ export class PrefabTemplateStructure {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceMirror: PrefabMirror;
+    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
@@ -993,7 +987,7 @@ export class PrefabTemplateStructure {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceRotation: PrefabRotation;
+    instanceRotation: minecraftserverbindings.StructureRotation;
     /**
      * @throws This property can throw errors.
      *
@@ -1321,14 +1315,14 @@ export interface PrefabServiceCreateTemplateOptions {
 }
 
 export interface PrefabTemplateAddStructureOptions {
-    mirror?: PrefabMirror;
+    mirror?: minecraftserverbindings.StructureMirrorAxis;
     offset?: minecraftserverbindings.Vector3;
-    rotation?: PrefabRotation;
+    rotation?: minecraftserverbindings.StructureRotation;
 }
 
 export interface PrefabTemplateCreateInstanceOptions {
-    mirror?: PrefabMirror;
-    rotation?: PrefabRotation;
+    mirror?: minecraftserverbindings.StructureMirrorAxis;
+    rotation?: minecraftserverbindings.StructureRotation;
 }
 
 export interface PrefabTemplateMetadata {

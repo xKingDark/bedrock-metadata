@@ -451,6 +451,7 @@ export enum ItemComponentTypes {
     Enchantable = "minecraft:enchantable",
     Food = "minecraft:food",
     Inventory = "minecraft:inventory",
+    Potion = "minecraft:potion",
 }
 
 export enum ItemLockMode {
@@ -793,6 +794,7 @@ export type ItemComponentTypeMap = {
     enchantable: ItemEnchantableComponent;
     food: ItemFoodComponent;
     inventory: ItemInventoryComponent;
+    potion: ItemPotionComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -801,6 +803,7 @@ export type ItemComponentTypeMap = {
     "minecraft:enchantable": ItemEnchantableComponent;
     "minecraft:food": ItemFoodComponent;
     "minecraft:inventory": ItemInventoryComponent;
+    "minecraft:potion": ItemPotionComponent;
 }
 
 export class BiomeType {
@@ -4707,6 +4710,27 @@ export class ItemInventoryComponent extends ItemComponent {
     readonly container: Container;
 }
 
+// @ts-ignore
+export class ItemPotionComponent extends ItemComponent {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     */
+    readonly potionDeliveryType: PotionDeliveryType;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     */
+    readonly potionEffectType: PotionEffectType;
+}
+
 export class ItemReleaseUseAfterEvent {
     private constructor();
     readonly itemStack?: ItemStack;
@@ -5264,7 +5288,7 @@ export class Player extends Entity {
      *
      * @throws This function can throw errors.
      */
-    clearPropertyOverridesForEntity(targetEntity: Entity): void;
+    clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
     /**
      * @throws This function can throw errors.
      *
@@ -5910,6 +5934,40 @@ export class PlayerSpawnAfterEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
+}
+
+export class PotionDeliveryType {
+    private constructor();
+    readonly id: string;
+}
+
+export class PotionEffectType {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    readonly durationTicks?: number;
+    readonly id: string;
+}
+
+export class Potions {
+    private constructor();
+    static getAllDeliveryTypes(): PotionDeliveryType[];
+    static getAllEffectTypes(): PotionEffectType[];
+    static getDeliveryType(potionDeliveryId: string): PotionDeliveryType | undefined;
+    static getEffectType(potionEffectId: string): PotionEffectType | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidPotionDeliveryTypeError}
+     *
+     * {@link InvalidPotionEffectTypeError}
+     */
+    static resolve(potionEffectType: PotionEffectType | string, potionDeliveryType: PotionDeliveryType | string): ItemStack;
 }
 
 // @ts-ignore
@@ -7722,6 +7780,16 @@ export class InvalidItemStackError extends Error {
 
 // @ts-ignore
 export class InvalidIteratorError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidPotionDeliveryTypeError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidPotionEffectTypeError extends Error {
     private constructor();
 }
 

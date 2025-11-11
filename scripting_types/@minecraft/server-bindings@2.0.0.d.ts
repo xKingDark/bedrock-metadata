@@ -4547,7 +4547,7 @@ export class Player extends Entity {
      *
      * @throws This function can throw errors.
      */
-    clearPropertyOverridesForEntity(targetEntity: Entity): void;
+    clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
     /**
      * @throws This function can throw errors.
      */

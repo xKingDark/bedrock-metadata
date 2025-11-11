@@ -55,6 +55,11 @@ export enum BrushDirectionalPlacementMode {
     Random3Axes = 14,
 }
 
+export enum BrushElevationMode {
+    Raise = 0,
+    Lower = 1,
+}
+
 export enum ContiguousSelectionType {
     SameBlock = 0,
     SameBlockAndStates = 1,
@@ -163,6 +168,7 @@ export enum PaintMode {
     Smooth = 2,
     Roughen = 3,
     Flatten = 4,
+    Elevation = 5,
 }
 
 export enum Plane {
@@ -614,6 +620,22 @@ export class BrushShapeManager {
     /**
      * @remarks This function can't be called in read-only mode.
      */
+    setElevationBrushRadius(elevationBrushRadius: number): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setElevationFalloff(elevationFalloff: number): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setElevationMode(elevationMode: BrushElevationMode): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setElevationSampleLayers(elevationSampleLayers: number): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     setFlattenMode(flattenMode: FlattenMode): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -774,6 +796,10 @@ export class Cursor {
      * @throws This property can throw errors.
      */
     readonly isVisible: boolean;
+    /**
+     * @throws This property can throw errors.
+     */
+    readonly maxViewBlockDistance: number;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1126,25 +1152,25 @@ export class Logger {
      *
      * @throws This function can throw errors.
      */
-    debug(message: string, properties?: LogProperties): void;
+    debug(message: LocalizationEntry | string, properties?: LogProperties): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    error(message: string, properties?: LogProperties): void;
+    error(message: LocalizationEntry | string, properties?: LogProperties): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    info(message: string, properties?: LogProperties): void;
+    info(message: LocalizationEntry | string, properties?: LogProperties): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    warning(message: string, properties?: LogProperties): void;
+    warning(message: LocalizationEntry | string, properties?: LogProperties): void;
 }
 
 export class MinecraftEditor {
@@ -1373,6 +1399,22 @@ export class SelectionManager {
     private constructor();
     readonly entity: SelectionContainerEntity;
     readonly volume: SelectionContainerVolume;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    deselectBlocks(blockIdentifier: string): Promise<number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    generateManifest(): Promise<SelectionManifestData>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getCurrentManifest(): SelectionManifestData | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    replaceBlocks(fromBlockIdentifier: string, toBlockIdentifier: string): Promise<number>;
 }
 
 export class SettingsManager {
@@ -2404,10 +2446,15 @@ export interface GameOptions {
     worldName?: string;
 }
 
+export interface LocalizationEntry {
+    id: string;
+    props?: string[];
+}
+
 export interface LogProperties {
     channelMask?: LogChannel;
     player?: minecraftserverbindings.Player;
-    subMessage?: string;
+    subMessage?: LocalizationEntry | string;
     tags?: string[];
 }
 
@@ -2430,6 +2477,20 @@ export interface QuickExtrudeProperties {
     selectionDirection?: number;
     size?: number;
     startingLocation?: minecraftserverbindings.Vector3;
+}
+
+export interface SelectionManifestData {
+    entries: SelectionManifestEntry[];
+    generationId: number;
+    inProgress: boolean;
+    processedBlocks: number;
+    progress: number;
+    totalBlocks: number;
+}
+
+export interface SelectionManifestEntry {
+    blockIdentifier: string;
+    count: number;
 }
 
 export interface WeightedBlock {
