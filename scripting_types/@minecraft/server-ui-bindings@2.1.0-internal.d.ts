@@ -52,6 +52,17 @@ export class ActionFormResponse extends FormResponse {
     readonly selection?: number;
 }
 
+export class DataDrivenScreen {
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserverbindings.InvalidEntityError}
+     */
+    showScreen(player: minecraftserverbindings.Player, screenId: string): void;
+}
+
 export class DataStore {
     private constructor();
     /**
@@ -232,6 +243,14 @@ export class ModalFormResponse extends FormResponse {
 
 export class UIManager {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserverbindings.InvalidEntityError}
+     */
+    closeAllDataDrivenScreens(player: minecraftserverbindings.Player): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *

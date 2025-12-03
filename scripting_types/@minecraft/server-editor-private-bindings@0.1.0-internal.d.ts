@@ -310,12 +310,26 @@ export class DataStorePayloadAfterEventSignal {
     unsubscribe(callback: (arg0: DataStorePayloadAfterEvent) => void): void;
 }
 
+export class DataTransferCreateSettingResponse {
+    private constructor();
+    readonly success: boolean;
+}
+
 export class DataTransferManager {
     private constructor();
     /**
      * @throws This function can throw errors.
      */
     closeSession(collectionUniqueId: string): void;
+    /**
+     * @throws This function can throw errors.
+     */
+    createSetting(
+        collectionUniqueId: string,
+        identifier: string,
+        jsonData: string,
+        lockToBiome: boolean,
+    ): Promise<DataTransferCreateSettingResponse>;
     /**
      * @throws This function can throw errors.
      */
@@ -327,15 +341,25 @@ export class DataTransferManager {
     /**
      * @throws This function can throw errors.
      */
-    requestData(collectionUniqueId: string, useSnapshot?: boolean): Promise<DataTransferRequestResponse>;
+    requestData(collectionUniqueId: string, options?: DataTransferRequestDataOptions): Promise<DataTransferRequestResponse>;
     /**
      * @throws This function can throw errors.
      */
-    sendData(collectionUniqueId: string, jsonData: string): void;
+    requestIdentifiers(collectionUniqueId: string): Promise<DataTransferRequestIdentifiersResponse>;
+    /**
+     * @throws This function can throw errors.
+     */
+    sendData(collectionUniqueId: string, jsonData: string, options?: DataTransferSendDataOptions): void;
     /**
      * @throws This function can throw errors.
      */
     sendDataToClipboard(jsonData: string): void;
+}
+
+export class DataTransferRequestIdentifiersResponse {
+    private constructor();
+    readonly identifiers: string[];
+    readonly lockedToBiome: boolean;
 }
 
 export class DataTransferRequestResponse {
@@ -456,7 +480,7 @@ export class InternalPlayerServiceContext {
     readonly jigsawService: JigsawService;
     readonly prefabManager: PrefabManager;
     readonly realmsService: RealmsService;
-    readonly regionManager: ProjectRegionManager;
+    readonly regionManager: PlayerProjectRegionManager;
 }
 
 export class JigsawService {
@@ -517,6 +541,7 @@ export class JigsawService {
 export class MinecraftEditorInternal {
     private constructor();
     readonly isNewLevel: boolean;
+    readonly regionManager: ProjectRegionManager;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -620,6 +645,40 @@ export class PersistenceGroupItem {
      * @throws This function can throw errors.
      */
     setValue(value: string): void;
+}
+
+export class PlayerProjectRegionManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeAllRegions(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    disposeRegion(id: string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getCursorRegion(): ProjectRegion;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getSelectionRegion(): ProjectRegion;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    leaseRegion(options: ProjectRegionOptions): ProjectRegion;
 }
 
 export class PrefabInstanceInteractionEvent {
@@ -1164,35 +1223,26 @@ export class ProjectRegion {
 export class ProjectRegionManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
+     * @throws This property can throw errors.
      */
-    disposeAllRegions(): void;
+    readonly isProcessingChunks: boolean;
+    getChunkProcessingState(): ProjectRegionManagerChunkProcessingState | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    disposeRegion(id: string): boolean;
+    pruneRegion(dimensionId: string, boundsList: ProjectRegionExtents[]): Promise<ProjectRegionManagerChunkProcessingState>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getCursorRegion(): ProjectRegion;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getSelectionRegion(): ProjectRegion;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    leaseRegion(options: ProjectRegionOptions): ProjectRegion;
+    regenerateRegion(
+        dimensionId: string,
+        boundsList: ProjectRegionExtents[],
+        areBoundsExcluded: boolean,
+    ): Promise<ProjectRegionManagerChunkProcessingState>;
 }
 
 export class RealmsService {
@@ -1242,6 +1292,16 @@ export class RealmsService {
 export interface DataTransferCollectionNameData {
     nameStringId: string;
     uniqueId: string;
+}
+
+export interface DataTransferRequestDataOptions {
+    identifier?: string;
+    useSnapshot?: boolean;
+}
+
+export interface DataTransferSendDataOptions {
+    identifier?: string;
+    lockToBiome?: boolean;
 }
 
 export interface EditorJigsawSection {
@@ -1336,6 +1396,16 @@ export interface PrefabTemplateMetadata {
     structureReferenceCount: number;
     tags: string[];
     templateId: string;
+}
+
+export interface ProjectRegionExtents {
+    x: minecraftcommon.NumberRange;
+    z: minecraftcommon.NumberRange;
+}
+
+export interface ProjectRegionManagerChunkProcessingState {
+    chunksProcessed: number;
+    isCompleted: boolean;
 }
 
 export interface ProjectRegionOptions {

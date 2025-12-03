@@ -150,6 +150,14 @@ export enum LogChannel {
     All = 3,
 }
 
+export enum MinimapMarkerType {
+    Multiplayer = 0,
+}
+
+export enum MinimapViewType {
+    BlockView = 0,
+}
+
 export enum MouseActionCategory {
     Button = 1,
     Wheel = 2,
@@ -1073,6 +1081,7 @@ export class ExtensionContext {
     readonly cursor: Cursor;
     readonly exportManager: ExportManager;
     readonly extensionInfo: Extension;
+    readonly minimapManager: MinimapManager;
     readonly player: minecraftserverbindings.Player;
     readonly playtest: PlaytestManager;
     readonly selectionManager: SelectionManager;
@@ -1186,6 +1195,74 @@ export class MinecraftEditor {
     readonly log: Logger;
     readonly simulation: SimulationState;
     readonly worldGeneratorType?: WorldGeneratorType;
+}
+
+export class MinimapItem {
+    private constructor();
+    readonly id: string;
+    readonly isActive: boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addMarker(markerType: MinimapMarkerType): void;
+    /**
+     * @throws This function can throw errors.
+     */
+    getPlayerColor(playerId: string): minecraftserverbindings.RGBA;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeMarker(markerType: MinimapMarkerType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setActive(active: boolean): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setSize(mapWidth: number, mapHeight: number): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setViewType(viewType: MinimapViewType): void;
+}
+
+export class MinimapManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number): MinimapItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    destroyMinimap(minimapId: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getAllMinimapIds(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getMinimap(minimapId: string): MinimapItem;
 }
 
 export class ModeChangeAfterEvent {

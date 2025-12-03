@@ -202,5 +202,26 @@ export class Atmospherics {
     ): void;
 }
 
+export class Water {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetChlorophyll(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setChlorophyll(chlorophyll: number, biomeIdentifier: minecraftserverbindings.BiomeType): void;
+}
+
 export const InternalConstant = 1;
 export const atmosphere: Atmospherics;
+export const water: Water;

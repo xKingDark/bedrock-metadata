@@ -21,8 +21,12 @@ export enum AimAssistTargetMode {
 export enum BlockComponentTypes {
     FluidContainer = "minecraft:fluid_container",
     Inventory = "minecraft:inventory",
+    MapColor = "minecraft:map_color",
+    Movable = "minecraft:movable",
     Piston = "minecraft:piston",
+    PrecipitationInteractions = "minecraft:precipitation_interactions",
     RecordPlayer = "minecraft:record_player",
+    RedstoneProducer = "minecraft:redstone_producer",
     Sign = "minecraft:sign",
 }
 
@@ -224,6 +228,18 @@ export enum EnchantmentSlot {
     Sword = "Sword",
 }
 
+export enum EntityAttachPoint {
+    Body = "Body",
+    BreathingPoint = "BreathingPoint",
+    DropAttachPoint = "DropAttachPoint",
+    ExplosionPoint = "ExplosionPoint",
+    Eyes = "Eyes",
+    Feet = "Feet",
+    Head = "Head",
+    Mouth = "Mouth",
+    WeaponAttachPoint = "WeaponAttachPoint",
+}
+
 export enum EntityComponentTypes {
     AddRider = "minecraft:addrider",
     Ageable = "minecraft:ageable",
@@ -333,6 +349,12 @@ export enum EntityDamageCause {
     thorns = "thorns",
     void = "void",
     wither = "wither",
+}
+
+export enum EntityHealCause {
+    Heal = "Heal",
+    Regeneration = "Regeneration",
+    SelfHeal = "SelfHeal",
 }
 
 export enum EntityInitializationCause {
@@ -1025,6 +1047,8 @@ export class AimAssistRegistry {
 export class BiomeType {
     private constructor();
     readonly id: string;
+    getTags(): string[];
+    hasTags(tags: string[]): boolean;
 }
 
 export class BiomeTypes {
@@ -1426,6 +1450,14 @@ export class BlockComponentBlockBreakEvent extends BlockEvent {
 }
 
 // @ts-ignore
+export class BlockComponentEntityEvent extends BlockEvent {
+    private constructor();
+    readonly blockPermutation: BlockPermutation;
+    readonly entitySource?: Entity;
+    readonly name: string;
+}
+
+// @ts-ignore
 export class BlockComponentEntityFallOnEvent extends BlockEvent {
     private constructor();
     readonly entity?: Entity;
@@ -1637,6 +1669,7 @@ export class BlockMovableComponent extends BlockComponent {
 
 export class BlockPermutation {
     private constructor();
+    readonly localizationKey: string;
     readonly "type": BlockType;
     /**
      * @throws This function can throw errors.
@@ -1831,6 +1864,7 @@ export class BlockStateType {
 export class BlockType {
     private constructor();
     readonly id: string;
+    readonly localizationKey: string;
 }
 
 export class BlockTypes {
@@ -1895,6 +1929,12 @@ export class ButtonPushAfterEventSignal {
 export class Camera {
     private constructor();
     readonly isValid: boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    attachToEntity(attachCameraOptions?: CameraAttachOptions): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2473,6 +2513,18 @@ export class Dimension {
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
     readonly localizationKey: string;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     *
+     * {@link UnloadedChunksError}
+     */
+    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -3637,6 +3689,64 @@ export class EntityHealableComponent extends EntityComponent {
     getFeedItems(): FeedItem[];
 }
 
+export class EntityHealAfterEvent {
+    private constructor();
+    readonly healedEntity: Entity;
+    readonly healing: number;
+    readonly healSource: EntityHealSource;
+}
+
+export class EntityHealAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHealAfterEvent) => void,
+        options?: EntityHealEventOptions,
+    ): (arg0: EntityHealAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHealAfterEvent) => void): void;
+}
+
+export class EntityHealBeforeEvent {
+    private constructor();
+    cancel: boolean;
+    readonly healedEntity: Entity;
+    healing: number;
+    readonly healSource: EntityHealSource;
+}
+
+export class EntityHealBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHealBeforeEvent) => void,
+        options?: EntityHealEventOptions,
+    ): (arg0: EntityHealBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHealBeforeEvent) => void): void;
+}
+
+export class EntityHealSource {
+    private constructor();
+    readonly cause: EntityHealCause;
+}
+
 export class EntityHealthChangedAfterEvent {
     private constructor();
     readonly entity: Entity;
@@ -3741,7 +3851,7 @@ export class EntityHurtAfterEventSignal {
      */
     subscribe(
         callback: (arg0: EntityHurtAfterEvent) => void,
-        options?: EntityEventOptions,
+        options?: EntityHurtAfterEventOptions,
     ): (arg0: EntityHurtAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
@@ -3749,6 +3859,33 @@ export class EntityHurtAfterEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: EntityHurtAfterEvent) => void): void;
+}
+
+export class EntityHurtBeforeEvent {
+    private constructor();
+    cancel: boolean;
+    damage: number;
+    readonly damageSource: EntityDamageSource;
+    readonly hurtEntity: Entity;
+}
+
+export class EntityHurtBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHurtBeforeEvent) => void,
+        options?: EntityHurtBeforeEventOptions,
+    ): (arg0: EntityHurtBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHurtBeforeEvent) => void): void;
 }
 
 // @ts-ignore
@@ -4471,6 +4608,7 @@ export class EntityTameMountComponent extends EntityComponent {
 export class EntityType {
     private constructor();
     readonly id: string;
+    readonly localizationKey: string;
 }
 
 // @ts-ignore
@@ -5455,6 +5593,7 @@ export class ItemStopUseOnAfterEventSignal {
 export class ItemType {
     private constructor();
     readonly id: string;
+    readonly localizationKey: string;
 }
 
 export class ItemTypes {
@@ -7749,6 +7888,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityHeal: EntityHealAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly entityHealthChanged: EntityHealthChangedAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -7941,6 +8084,14 @@ export class WorldBeforeEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityHeal: EntityHealBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityHurt: EntityHurtBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly entityRemove: EntityRemoveBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -8010,6 +8161,14 @@ export interface AnimationOptions {
     totalTimeSeconds: number;
 }
 
+export interface BiomeFilter {
+    excludeBiomes?: string[];
+    excludeTags?: string[];
+    includeBiomes?: string[];
+    includeTags?: string[];
+    superset: boolean;
+}
+
 export interface BiomeSearchOptions {
     boundingSize?: Vector3;
 }
@@ -8025,6 +8184,7 @@ export interface BlockCustomComponent {
         arg1: CustomComponentParameters,
     ) => void;
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
+    onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
@@ -8071,6 +8231,11 @@ export interface BlockRaycastOptions extends BlockFilter {
     includeLiquidBlocks?: boolean;
     includePassableBlocks?: boolean;
     maxDistance?: number;
+}
+
+export interface CameraAttachOptions {
+    entity: Entity;
+    locator: EntityAttachPoint;
 }
 
 export interface CameraFadeOptions {
@@ -8231,8 +8396,25 @@ export interface EntityFilter {
     type?: string;
 }
 
+export interface EntityHealEventOptions {
+    allowedHealCauses?: EntityHealCause[];
+    entityFilter?: EntityFilter;
+}
+
 export interface EntityHitInformation {
     entity?: Entity;
+}
+
+export interface EntityHurtAfterEventOptions {
+    allowedDamageCauses?: EntityDamageCause[];
+    entities?: Entity[];
+    entityFilter?: EntityFilter;
+    entityTypes?: string[];
+}
+
+export interface EntityHurtBeforeEventOptions {
+    allowedDamageCauses?: EntityDamageCause[];
+    entityFilter?: EntityFilter;
 }
 
 // @ts-ignore
@@ -8395,6 +8577,7 @@ export interface PlayerSwingEventOptions {
 
 export interface ProgressKeyFrame {
     alpha: number;
+    easingFunc?: EasingType;
     timeSeconds: number;
 }
 
@@ -8436,6 +8619,7 @@ export interface RGBA extends RGB {
 }
 
 export interface RotationKeyFrame {
+    easingFunc?: EasingType;
     rotation: Vector3;
     timeSeconds: number;
 }
