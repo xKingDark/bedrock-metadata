@@ -215,6 +215,7 @@ export enum EnchantmentSlot {
     FishingRod = "FishingRod",
     Flintsteel = "Flintsteel",
     Hoe = "Hoe",
+    MeleeSpear = "MeleeSpear",
     Pickaxe = "Pickaxe",
     Shears = "Shears",
     Shield = "Shield",
@@ -300,6 +301,7 @@ export enum EntityDamageCause {
     campfire = "campfire",
     charging = "charging",
     contact = "contact",
+    dehydration = "dehydration",
     drowning = "drowning",
     entityAttack = "entityAttack",
     entityExplosion = "entityExplosion",
@@ -339,6 +341,18 @@ export enum EntityInitializationCause {
     Loaded = "Loaded",
     Spawned = "Spawned",
     Transformed = "Transformed",
+}
+
+export enum EntitySwingSource {
+    Attack = "Attack",
+    Build = "Build",
+    DropItem = "DropItem",
+    Event = "Event",
+    Interact = "Interact",
+    Mine = "Mine",
+    None = "None",
+    ThrowItem = "ThrowItem",
+    UseItem = "UseItem",
 }
 
 export enum EquipmentSlot {
@@ -612,6 +626,13 @@ export enum StructureSaveMode {
     World = "World",
 }
 
+export enum TickingAreaErrorReason {
+    IdentifierAlreadyExists = "IdentifierAlreadyExists",
+    OverChunkLimit = "OverChunkLimit",
+    SideLengthExceeded = "SideLengthExceeded",
+    UnknownIdentifier = "UnknownIdentifier",
+}
+
 export enum TimeOfDay {
     Day = 1000,
     Noon = 6000,
@@ -853,6 +874,10 @@ export class AimAssistCategory {
     /**
      * @throws This function can throw errors.
      */
+    getBlockTagPriorities(): Record<string, number>;
+    /**
+     * @throws This function can throw errors.
+     */
     getEntityPriorities(): Record<string, number>;
 }
 
@@ -868,11 +893,16 @@ export class AimAssistCategorySettings {
     readonly identifier: string;
     constructor(identifier: string);
     getBlockPriorities(): Record<string, number>;
+    getBlockTagPriorities(): Record<string, number>;
     getEntityPriorities(): Record<string, number>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
     setBlockPriorities(blockPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setBlockTagPriorities(blockTagPriorities: Record<string, number>): void;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -893,7 +923,15 @@ export class AimAssistPreset {
     /**
      * @throws This function can throw errors.
      */
-    getExcludedTargets(): string[];
+    getExcludedBlockTagTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     */
+    getExcludedBlockTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     */
+    getExcludedEntityTargets(): string[];
     /**
      * @throws This function can throw errors.
      */
@@ -915,13 +953,23 @@ export class AimAssistPresetSettings {
     handSettings?: string;
     readonly identifier: string;
     constructor(identifier: string);
-    getExcludedTargets(): string[] | undefined;
+    getExcludedBlockTagTargets(): string[] | undefined;
+    getExcludedBlockTargets(): string[] | undefined;
+    getExcludedEntityTargets(): string[] | undefined;
     getItemSettings(): Record<string, string>;
     getLiquidTargetingItems(): string[] | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    setExcludedTargets(targets?: string[]): void;
+    setExcludedBlockTagTargets(blockTagTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedBlockTargets(blockTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedEntityTargets(entityTargets?: string[]): void;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -1061,6 +1109,8 @@ export class Block {
     readonly y: number;
     readonly z: number;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1069,6 +1119,8 @@ export class Block {
      */
     above(steps?: number): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1109,6 +1161,8 @@ export class Block {
     canPlace(blockToPlace: BlockPermutation | BlockType | string, faceToPlaceOn?: Direction): boolean;
     center(): Vector3;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1125,6 +1179,9 @@ export class Block {
      */
     getComponent<T extends string>(componentId: T): BlockComponentReturnType<T> | undefined;
     /**
+     * @param amount Defaults to: 1
+     *
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1223,6 +1280,8 @@ export class Block {
      */
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1273,6 +1332,8 @@ export class Block {
      */
     setWaterlogged(isWaterlogged: boolean): void;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1291,6 +1352,8 @@ export class Block {
      */
     trySetPermutation(permutation: BlockPermutation): boolean;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1376,13 +1439,6 @@ export class BlockComponentOnPlaceEvent extends BlockEvent {
 }
 
 // @ts-ignore
-export class BlockComponentPlayerBreakEvent extends BlockEvent {
-    private constructor();
-    readonly brokenBlockPermutation: BlockPermutation;
-    readonly player?: Player;
-}
-
-// @ts-ignore
 export class BlockComponentPlayerInteractEvent extends BlockEvent {
     private constructor();
     readonly face: Direction;
@@ -1402,6 +1458,12 @@ export class BlockComponentPlayerPlaceBeforeEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentRandomTickEvent extends BlockEvent {
     private constructor();
+}
+
+// @ts-ignore
+export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
+    private constructor();
+    readonly powerLevel: number;
 }
 
 export class BlockComponentRegistry {
@@ -1585,6 +1647,9 @@ export class BlockPermutation {
      */
     canContainLiquid(liquidType: LiquidType): boolean;
     getAllStates(): Record<string, boolean | number | string>;
+    /**
+     * @param amount Defaults to: 1
+     */
     getItemStack(amount?: number): ItemStack | undefined;
     getState(stateName: string): boolean | number | string | undefined;
     getTags(): string[];
@@ -1681,6 +1746,8 @@ export class BlockRecordPlayerComponent extends BlockComponent {
     playRecord(): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param startPlaying Defaults to: true
      *
      * @throws This function can throw errors.
      */
@@ -2957,6 +3024,8 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param useEffects Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
@@ -3194,6 +3263,8 @@ export class Entity {
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param useEffects Defaults to: true
      *
      * @throws This function can throw errors.
      *
@@ -3449,6 +3520,7 @@ export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
     readonly item: string;
+    readonly resultItem: string;
 }
 
 export class EntityDieAfterEvent {
@@ -4500,6 +4572,7 @@ export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
+    readonly resultItem: string;
     getEffects(): FeedItemEffect[];
 }
 
@@ -6495,6 +6568,7 @@ export class PlayerSwingStartAfterEvent {
     private constructor();
     readonly heldItemStack?: ItemStack;
     readonly player: Player;
+    readonly swingSource: EntitySwingSource;
 }
 
 export class PlayerSwingStartAfterEventSignal {
@@ -7135,6 +7209,8 @@ export class Structure {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param saveMode Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -7368,6 +7444,64 @@ export class TargetBlockHitAfterEventSignal {
     unsubscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): void;
 }
 
+export class TickingAreaManager {
+    private constructor();
+    readonly chunkCount: number;
+    readonly maxChunkCount: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link TickingAreaError}
+     */
+    createTickingArea(identifier: string, options: TickingAreaOptions): Promise<TickingArea>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getAllTickingAreas(): TickingArea[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getTickingArea(identifier: string | TickingArea): TickingArea | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasCapacity(options: TickingAreaOptions): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasTickingArea(identifier: string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    removeAllTickingAreas(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link TickingAreaError}
+     */
+    removeTickingArea(identifier: string | TickingArea): void;
+}
+
 export class Trigger {
     eventName: string;
     constructor(eventName: string);
@@ -7479,6 +7613,7 @@ export class World {
     readonly isHardcore: boolean;
     readonly scoreboard: Scoreboard;
     readonly structureManager: StructureManager;
+    readonly tickingAreaManager: TickingAreaManager;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -7892,9 +8027,9 @@ export interface BlockCustomComponent {
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
-    onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
     onRandomTick?: (arg0: BlockComponentRandomTickEvent, arg1: CustomComponentParameters) => void;
+    onRedstoneUpdate?: (arg0: BlockComponentRedstoneUpdateEvent, arg1: CustomComponentParameters) => void;
     onStepOff?: (arg0: BlockComponentStepOffEvent, arg1: CustomComponentParameters) => void;
     onStepOn?: (arg0: BlockComponentStepOnEvent, arg1: CustomComponentParameters) => void;
     onTick?: (arg0: BlockComponentTickEvent, arg1: CustomComponentParameters) => void;
@@ -8255,6 +8390,7 @@ export interface PlayerSoundOptions {
 
 export interface PlayerSwingEventOptions {
     heldItemOption?: HeldItemOption;
+    swingSource?: EntitySwingSource;
 }
 
 export interface ProgressKeyFrame {
@@ -8348,6 +8484,20 @@ export interface TeleportOptions {
     facingLocation?: Vector3;
     keepVelocity?: boolean;
     rotation?: Vector2;
+}
+
+export interface TickingArea {
+    boundingBox: BlockBoundingBox;
+    chunkCount: number;
+    dimension: Dimension;
+    identifier: string;
+    isFullyLoaded: boolean;
+}
+
+export interface TickingAreaOptions {
+    dimension: Dimension;
+    from: Vector3;
+    to: Vector3;
 }
 
 export interface TitleDisplayOptions {
@@ -8581,6 +8731,15 @@ export class PlaceJigsawError extends Error {
 // @ts-ignore
 export class RawMessageError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class TickingAreaError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: TickingAreaErrorReason;
 }
 
 // @ts-ignore

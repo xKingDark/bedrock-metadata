@@ -661,6 +661,18 @@
             "name": "query.key_frame_lerp_time"
         },
         {
+            "name": "query.kinetic_weapon_damage_duration"
+        },
+        {
+            "name": "query.kinetic_weapon_delay"
+        },
+        {
+            "name": "query.kinetic_weapon_dismount_duration"
+        },
+        {
+            "name": "query.kinetic_weapon_knockback_duration"
+        },
+        {
             "name": "query.last_frame_time"
         },
         {
@@ -872,6 +884,9 @@
         },
         {
             "name": "query.texture_frame_index"
+        },
+        {
+            "name": "query.ticks_since_last_kinetic_weapon_hit"
         },
         {
             "name": "query.time_of_day"

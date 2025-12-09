@@ -121,6 +121,7 @@ export enum EnchantmentSlot {
     FishingRod = "FishingRod",
     Flintsteel = "Flintsteel",
     Hoe = "Hoe",
+    MeleeSpear = "MeleeSpear",
     Pickaxe = "Pickaxe",
     Shears = "Shears",
     Shield = "Shield",
@@ -203,6 +204,7 @@ export enum EntityDamageCause {
     campfire = "campfire",
     charging = "charging",
     contact = "contact",
+    dehydration = "dehydration",
     drowning = "drowning",
     entityAttack = "entityAttack",
     entityExplosion = "entityExplosion",
@@ -530,6 +532,8 @@ export class Block {
     readonly y: number;
     readonly z: number;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -538,6 +542,8 @@ export class Block {
      */
     above(steps?: number): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -548,6 +554,8 @@ export class Block {
     bottomCenter(): Vector3;
     center(): Vector3;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -564,6 +572,9 @@ export class Block {
      */
     getComponent(componentId: string): BlockComponent | undefined;
     /**
+     * @param amount Defaults to: 1
+     *
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -605,6 +616,8 @@ export class Block {
      */
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -655,6 +668,8 @@ export class Block {
      */
     setWaterlogged(isWaterlogged: boolean): void;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -663,6 +678,8 @@ export class Block {
      */
     south(steps?: number): Block | undefined;
     /**
+     * @param steps Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -844,6 +861,9 @@ export class BlockPermutation {
     private constructor();
     readonly "type": BlockType;
     getAllStates(): Record<string, boolean | number | string>;
+    /**
+     * @param amount Defaults to: 1
+     */
     getItemStack(amount?: number): ItemStack | undefined;
     getState(stateName: string): boolean | number | string | undefined;
     getTags(): string[];
@@ -911,6 +931,8 @@ export class BlockRecordPlayerComponent extends BlockComponent {
     playRecord(): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param startPlaying Defaults to: true
      *
      * @throws This function can throw errors.
      */
@@ -1780,6 +1802,8 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param useEffects Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
@@ -1975,6 +1999,8 @@ export class Entity {
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param useEffects Defaults to: true
      *
      * @throws This function can throw errors.
      *
@@ -5007,6 +5033,8 @@ export class Structure {
     isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param saveMode Defaults to: 1
      *
      * @throws This function can throw errors.
      *

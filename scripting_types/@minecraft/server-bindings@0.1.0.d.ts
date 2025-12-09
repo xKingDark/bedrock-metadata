@@ -27,6 +27,7 @@ export enum EntityDamageCause {
     campfire = "campfire",
     charging = "charging",
     contact = "contact",
+    dehydration = "dehydration",
     drowning = "drowning",
     entityAttack = "entity_attack",
     entityExplosion = "entity_explosion",
@@ -660,6 +661,8 @@ export class Entity {
     readonly viewVector: Vector;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param showParticles Defaults to: true
      *
      * @throws This function can throw errors.
      */

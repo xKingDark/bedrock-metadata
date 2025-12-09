@@ -256,6 +256,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param direction Defaults to: {@link minecraftserverbindings.Direction.East}
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestError}
@@ -308,6 +310,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param direction Defaults to: {@link minecraftserverbindings.Direction.East}
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestError}
@@ -337,6 +341,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param duration Defaults to: 2
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestError}
@@ -347,11 +353,15 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param duration Defaults to: 2
+     *
      * @throws This function can throw errors.
      */
     lookAtEntity(entity: minecraftserverbindings.Entity, duration?: LookDuration): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param duration Defaults to: 2
      *
      * @throws This function can throw errors.
      */
@@ -359,11 +369,15 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param speed Defaults to: 1
+     *
      * @throws This function can throw errors.
      */
     move(westEast: number, northSouth: number, speed?: number): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param speed Defaults to: 1
      *
      * @throws This function can throw errors.
      */
@@ -389,6 +403,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param speed Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestError}
@@ -398,6 +414,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     navigateToBlock(blockLocation: minecraftserverbindings.Vector3, speed?: number): NavigationResult;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param speed Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -409,6 +427,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param speed Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestError}
@@ -418,6 +438,8 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     navigateToLocation(location: minecraftserverbindings.Vector3, speed?: number): NavigationResult;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param speed Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -533,6 +555,9 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param direction Defaults to: {@link minecraftserverbindings.Direction.East}
+     *
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestError}
@@ -547,6 +572,9 @@ export class SimulatedPlayer extends minecraftserverbindings.Player {
     ): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param direction Defaults to: {@link minecraftserverbindings.Direction.East}
+     *
      *
      * @throws This function can throw errors.
      *
@@ -577,6 +605,8 @@ export class Test {
      */
     assert(condition: boolean, message: string): void;
     /**
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -600,6 +630,8 @@ export class Test {
         callback: (arg0: minecraftserverbindings.Block) => boolean,
     ): void;
     /**
+     * @param canReach Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -631,6 +663,8 @@ export class Test {
      */
     assertContainerEmpty(blockLocation: minecraftserverbindings.Vector3): void;
     /**
+     * @param hasArmor Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -646,6 +680,8 @@ export class Test {
         hasArmor?: boolean,
     ): void;
     /**
+     * @param hasComponent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -659,6 +695,8 @@ export class Test {
         hasComponent?: boolean,
     ): void;
     /**
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -671,6 +709,8 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -679,6 +719,8 @@ export class Test {
      */
     assertEntityInstancePresentInArea(entity: minecraftserverbindings.Entity, isPresent?: boolean): void;
     /**
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -692,6 +734,8 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -712,6 +756,8 @@ export class Test {
         callback: (arg0: minecraftserverbindings.Entity) => boolean,
     ): void;
     /**
+     * @param isTouching Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -724,6 +770,8 @@ export class Test {
         isTouching?: boolean,
     ): void;
     /**
+     * @param isWaterlogged Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -745,6 +793,8 @@ export class Test {
         count: number,
     ): void;
     /**
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1148,6 +1198,8 @@ export class Test {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param isPresent Defaults to: true
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1172,6 +1224,8 @@ export class Test {
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
      */
@@ -1205,6 +1259,8 @@ export class Test {
     /**
      * @remarks This function can't be called in read-only mode.
      *
+     * @param speedModifier Defaults to: 1
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1218,6 +1274,8 @@ export class Test {
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @param speedModifier Defaults to: 1
      *
      * @throws This function can throw errors.
      *

@@ -24,6 +24,11 @@ export enum EditorRealmsServiceAvailability {
     Unknown = 5,
 }
 
+export enum JigsawJointType {
+    Rollable = 0,
+    Aligned = 1,
+}
+
 export enum JigsawJsonType {
     Processor = 0,
     Structure = 1,
@@ -33,6 +38,7 @@ export enum JigsawJsonType {
 
 export enum PersistenceGroupType {
     Local = 0,
+    Replication = 1,
     Shared = 2,
 }
 
@@ -41,6 +47,17 @@ export enum PersistenceScope {
     ClientGlobal = 1,
     ServerProject = 2,
     ServerGlobal = 3,
+}
+
+export enum PrefabInstanceInteractionEventType {
+    Clicked = "Clicked",
+    Moved = "Moved",
+}
+
+export enum PrefabSource {
+    Global = "Global",
+    Project = "Project",
+    Unknown = "Unknown",
 }
 
 export enum ProjectRegionAvailabilityMode {
@@ -73,6 +90,10 @@ export class DataStore {
     readonly menuContainer: DataStoreMenuContainer;
     readonly modalToolContainer: DataStoreModalToolContainer;
     readonly paneContainer: DataStorePaneContainer;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    sendNotificationEvent(dataTag: string, payload: string): void;
 }
 
 export class DataStoreActionBarContainer {
@@ -414,6 +435,16 @@ export class InternalPersistenceManager {
      * @throws This function can throw errors.
      */
     getOrCreateGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    requestClientGroup(
+        namespacedName: string,
+        options: PersistenceGroupCreationOptions,
+        callback: (arg0: PersistenceGroup) => void,
+    ): void;
 }
 
 export class InternalPlayerServiceContext {
@@ -423,6 +454,7 @@ export class InternalPlayerServiceContext {
     readonly input: InputService;
     readonly internalPersistenceManager: InternalPersistenceManager;
     readonly jigsawService: JigsawService;
+    readonly prefabManager: PrefabManager;
     readonly realmsService: RealmsService;
     readonly regionManager: ProjectRegionManager;
 }
@@ -455,11 +487,19 @@ export class JigsawService {
     /**
      * @remarks This function can't be called in read-only mode.
      */
+    getJigsawBlockData(pos: minecraftserverbindings.Vector3): JigsawBlockData;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getRegistryData(registryName: string): Record<string, EditorRegistryFile[]>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
     getRegistryList(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setJigsawBlockData(pos: minecraftserverbindings.Vector3, jigsawData: JigsawBlockData): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -539,7 +579,7 @@ export class PersistenceGroup {
      *
      * @throws This function can throw errors.
      */
-    fetchItem(itemName: string): PersistenceGroupItem;
+    fetchItem(itemName: string): PersistenceGroupItem | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -580,6 +620,404 @@ export class PersistenceGroupItem {
      * @throws This function can throw errors.
      */
     setValue(value: string): void;
+}
+
+export class PrefabInstanceInteractionEvent {
+    private constructor();
+    readonly eventData: PrefabInstanceInteractionEventClicked | PrefabInstanceInteractionEventMoved;
+    readonly eventType: PrefabInstanceInteractionEventType;
+    readonly instance: PrefabTemplateInstance;
+}
+
+export class PrefabManager {
+    private constructor();
+    readonly instanceInteractionEvents: PrefabServiceInstanceInteractionEvent;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabServiceError}
+     */
+    beginCapturingMouseClicks(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabServiceError}
+     */
+    clearSelectedInstances(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidName}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     *
+     * {@link PrefabTemplateExists}
+     *
+     * {@link PrefabTemplateNotFound}
+     */
+    cloneTemplate(
+        templateOrMetadataToClone: PrefabTemplate | PrefabTemplateMetadata,
+        newName: string,
+        optionalNewDisplayName?: string,
+    ): PrefabTemplate;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidName}
+     *
+     * {@link PrefabErrorStringInvalidLength}
+     *
+     * {@link PrefabServiceError}
+     */
+    createTemplate(name: string, options?: PrefabServiceCreateTemplateOptions): PrefabTemplate;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    deleteInstance(instance: PrefabTemplateInstance): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidName}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     *
+     * {@link PrefabTemplateNotFound}
+     */
+    deleteTemplate(templateOrMetadata: PrefabTemplate | PrefabTemplateMetadata): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    deselectInstance(instance: PrefabTemplateInstance): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabServiceError}
+     */
+    endCapturingMouseClicks(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidName}
+     *
+     * {@link PrefabServiceError}
+     *
+     * {@link PrefabTemplateNotFound}
+     */
+    getTemplate(searchMetadata_or_fullyQualifiedName: PrefabTemplateMetadata | string): PrefabTemplate;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabServiceError}
+     */
+    getTemplateList(): PrefabTemplateMetadata[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    selectInstance(instance: PrefabTemplateInstance, append: boolean): void;
+}
+
+export class PrefabServiceInstanceInteractionEvent {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: PrefabInstanceInteractionEvent) => void): (arg0: PrefabInstanceInteractionEvent) => void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: PrefabInstanceInteractionEvent) => void): void;
+}
+
+export class PrefabTemplate {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    description: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    displayName: string;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     */
+    readonly instanceCount: number;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     */
+    readonly name: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    notes: string;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     */
+    readonly source: PrefabSource;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidStructure}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabErrorValueOutOfBounds}
+     */
+    addStructure(
+        structure: minecraftservereditorbindings.EditorStructure,
+        options?: PrefabTemplateAddStructureOptions,
+    ): PrefabTemplateStructure;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     */
+    createInstance(
+        location: minecraftserverbindings.Vector3,
+        options?: PrefabTemplateCreateInstanceOptions,
+    ): PrefabTemplateInstance;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     */
+    getMetadata(): PrefabTemplateMetadata;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     */
+    getTags(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     */
+    getTemplateStructures(): PrefabTemplateStructure[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     */
+    removeStructure(templateStructure: PrefabTemplateStructure): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidName}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     *
+     * {@link PrefabTemplateExists}
+     */
+    setName(newName: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabErrorStringInvalidLength}
+     *
+     * {@link PrefabServiceError}
+     */
+    setTags(newTags: string[]): void;
+}
+
+export class PrefabTemplateInstance {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceRotation: minecraftserverbindings.StructureRotation;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    location: minecraftserverbindings.Vector3;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    bakeInstance(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     */
+    getStructureRefs(): PrefabTemplateInstanceStructure[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     */
+    getTemplate(): PrefabTemplate;
+}
+
+export class PrefabTemplateInstanceStructure {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceRotation: minecraftserverbindings.StructureRotation;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     *
+     * {@link PrefabServiceError}
+     */
+    getTemplateStructure(): PrefabTemplateStructure;
+}
+
+export class PrefabTemplateStructure {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     */
+    readonly id: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceOffset: minecraftserverbindings.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    instanceRotation: minecraftserverbindings.StructureRotation;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     */
+    readonly structureNormalizedOrigin: minecraftserverbindings.Vector3;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     */
+    readonly structureOffset: minecraftserverbindings.Vector3;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     */
+    readonly structureSize: minecraftserverbindings.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidStructure}
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     *
+     * {@link PrefabServiceError}
+     */
+    getStructure(): minecraftservereditorbindings.EditorStructure;
 }
 
 export class ProjectRegion {
@@ -835,6 +1273,17 @@ export interface InputBindingInfo {
     tooltip?: string;
 }
 
+export interface JigsawBlockData {
+    finalBlock: string;
+    jointType: JigsawJointType;
+    jointTypeVisible: boolean;
+    name: string;
+    placementPriority: number;
+    selectionPriority: number;
+    target: string;
+    targetPool: string;
+}
+
 export interface PersistenceGroupCreationOptions {
     groupType?: PersistenceGroupType;
     scope: PersistenceScope;
@@ -848,10 +1297,113 @@ export interface PersistenceQueryGroupOptions {
     version?: number;
 }
 
+export interface PrefabInstanceInteractionEventClicked {
+    altPressed: boolean;
+    ctrlPressed: boolean;
+    shiftPressed: boolean;
+}
+
+export interface PrefabInstanceInteractionEventMoved {
+    location: minecraftserverbindings.Vector3;
+}
+
+export interface PrefabServiceCreateTemplateOptions {
+    description?: string;
+    displayName?: string;
+    notes?: string;
+    tags?: string[];
+}
+
+export interface PrefabTemplateAddStructureOptions {
+    mirror?: minecraftserverbindings.StructureMirrorAxis;
+    offset?: minecraftserverbindings.Vector3;
+    rotation?: minecraftserverbindings.StructureRotation;
+}
+
+export interface PrefabTemplateCreateInstanceOptions {
+    mirror?: minecraftserverbindings.StructureMirrorAxis;
+    rotation?: minecraftserverbindings.StructureRotation;
+}
+
+export interface PrefabTemplateMetadata {
+    description: string;
+    displayName: string;
+    instanceReferenceCount: number;
+    name: string;
+    notes: string;
+    readOnly: boolean;
+    source: PrefabSource;
+    structureReferenceCount: number;
+    tags: string[];
+    templateId: string;
+}
+
 export interface ProjectRegionOptions {
     availabilityMode?: ProjectRegionAvailabilityMode;
     extentX: minecraftcommon.NumberRange;
     extentZ: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class PrefabErrorInvalidInstance extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabErrorInvalidName extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabErrorInvalidStructure extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabErrorInvalidTemplate extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabErrorInvalidTemplateStructure extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabErrorStringInvalidLength extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly length: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxLength: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly string: string;
+}
+
+// @ts-ignore
+export class PrefabErrorValueOutOfBounds extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabServiceError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabTemplateExists extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrefabTemplateNotFound extends Error {
+    private constructor();
 }
 
 export const editorInternal: MinecraftEditorInternal;

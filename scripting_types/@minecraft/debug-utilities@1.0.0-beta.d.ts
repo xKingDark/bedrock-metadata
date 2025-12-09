@@ -19,23 +19,26 @@ export class DebugArrow extends DebugLine {
     headLength: number;
     headRadius: number;
     headSegments: number;
-    constructor(location: minecraftserverbindings.Vector3, endLocation: minecraftserverbindings.Vector3);
+    constructor(
+        location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3,
+        endLocation: minecraftserverbindings.Vector3,
+    );
 }
 
 // @ts-ignore
 export class DebugBox extends DebugShape {
     bound: minecraftserverbindings.Vector3;
-    constructor(location: minecraftserverbindings.Vector3);
+    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3);
 }
 
 // @ts-ignore
 export class DebugCircle extends DebugShape {
-    constructor(location: minecraftserverbindings.Vector3);
+    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3);
 }
 
 export class DebugDrawer {
     private constructor();
-    addShape(shape: DebugShape): void;
+    addShape(shape: DebugShape, dimension?: minecraftserverbindings.Dimension): void;
     removeAll(): void;
     removeShape(shape: DebugShape): void;
 }
@@ -43,30 +46,35 @@ export class DebugDrawer {
 // @ts-ignore
 export class DebugLine extends DebugShape {
     endLocation: minecraftserverbindings.Vector3;
-    constructor(location: minecraftserverbindings.Vector3, endLocation: minecraftserverbindings.Vector3);
+    constructor(
+        location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3,
+        endLocation: minecraftserverbindings.Vector3,
+    );
 }
 
 export class DebugShape {
     private constructor();
     color: minecraftserverbindings.RGB;
+    readonly dimension: minecraftserverbindings.Dimension;
     readonly hasDuration: boolean;
-    location: minecraftserverbindings.Vector3;
+    readonly location: minecraftserverbindings.Vector3;
     rotation: minecraftserverbindings.Vector3;
     scale: number;
     timeLeft?: number;
     readonly totalTimeLeft?: number;
     remove(): void;
+    setLocation(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3): void;
 }
 
 // @ts-ignore
 export class DebugSphere extends DebugShape {
-    constructor(location: minecraftserverbindings.Vector3);
+    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3);
 }
 
 // @ts-ignore
 export class DebugText extends DebugShape {
     text: string;
-    constructor(location: minecraftserverbindings.Vector3, text: string);
+    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3, text: string);
 }
 
 export interface HandleCounts {
