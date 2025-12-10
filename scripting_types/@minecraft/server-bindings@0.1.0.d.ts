@@ -27,7 +27,6 @@ export enum EntityDamageCause {
     campfire = "campfire",
     charging = "charging",
     contact = "contact",
-    dehydration = "dehydration",
     drowning = "drowning",
     entityAttack = "entity_attack",
     entityExplosion = "entity_explosion",
@@ -77,6 +76,9 @@ export enum ScoreboardIdentityType {
 // @ts-ignore
 export class BeforeChatEvent extends ChatEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     cancel: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -99,6 +101,9 @@ export class BeforeChatEventSignal {
 // @ts-ignore
 export class BeforeItemUseEvent extends ItemUseEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     cancel: boolean;
 }
 
@@ -117,6 +122,9 @@ export class BeforeItemUseEventSignal {
 // @ts-ignore
 export class BeforeItemUseOnEvent extends ItemUseOnEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     cancel: boolean;
 }
 
@@ -168,10 +176,25 @@ export class Block {
 }
 
 export class BlockAreaSize {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     x: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     y: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     z: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(x: number, y: number, z: number);
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     equals(other: BlockAreaSize): boolean;
 }
 
@@ -265,6 +288,9 @@ export class BlockLocation {
      * @remarks This property can't be edited in read-only mode.
      */
     z: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(x: number, y: number, z: number);
     /**
      * @remarks This function can't be called in read-only mode.
@@ -297,7 +323,13 @@ export class BlockPermutation {
      * @throws This function can throw errors.
      */
     getProperty(propertyName: string): IBlockProperty | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getTags(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     hasTag(tag: string): boolean;
 }
 
@@ -417,8 +449,17 @@ export class BoolBlockProperty extends IBlockProperty {
 
 export class ChatEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     message: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     sender: Player;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     sendToTargets: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -443,6 +484,9 @@ export class Color {
      * @remarks This property can't be edited in read-only mode.
      */
     red: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(red: number, green: number, blue: number, alpha: number);
 }
 
@@ -518,6 +562,9 @@ export class DataDrivenEntityTriggerEventSignal {
 export class DefinitionModifier {
     readonly componentGroupsToAdd: string[];
     readonly componentGroupsToRemove: string[];
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     triggers: Trigger[];
 }
 
@@ -592,14 +639,20 @@ export class Dimension {
 
 export class DynamicPropertiesDefinition {
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     defineBoolean(identifier: string, defaultValue?: boolean): DynamicPropertiesDefinition;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     defineNumber(identifier: string, defaultValue?: number): DynamicPropertiesDefinition;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     defineString(identifier: string, maxLength: number, defaultValue?: string): DynamicPropertiesDefinition;
@@ -614,6 +667,9 @@ export class Effect {
 
 export class EffectType {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getName(): string;
 }
 
@@ -679,13 +735,23 @@ export class Entity {
      * @throws This function can throw errors.
      */
     getBlockFromViewVector(options?: BlockRaycastOptions): Block | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getComponent(componentId: string): IEntityComponent | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getComponents(): IEntityComponent[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getDynamicProperty(identifier: string): boolean | number | Location | string | undefined;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getEffect(effectType: EffectType): Effect | undefined;
@@ -696,11 +762,18 @@ export class Entity {
      */
     getEntitiesFromViewVector(options?: EntityRaycastOptions): Entity[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getTags(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     hasComponent(componentId: string): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     hasTag(tag: string): boolean;
@@ -711,6 +784,8 @@ export class Entity {
      */
     kill(): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     removeDynamicProperty(identifier: string): boolean;
@@ -727,6 +802,8 @@ export class Entity {
      */
     runCommand(commandString: string): unknown;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     setDynamicProperty(identifier: string, value: boolean | number | Location | string): void;
@@ -1584,7 +1661,13 @@ export class EntityTypeIterator implements Iterable<EntityType> {
 
 export class EntityTypes {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static get(identifier: string): EntityType | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static getAll(): EntityTypeIterator;
 }
 
@@ -1857,12 +1940,26 @@ export class ItemStack {
      */
     nameTag?: string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     constructor(itemType: ItemType | string, amount?: number, data?: number);
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getComponent(componentId: string): ItemComponent | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getComponents(): ItemComponent[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getLore(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     hasComponent(componentId: string): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1915,6 +2012,9 @@ export class ItemType {
 
 export class ItemUseEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     item: ItemStack;
     readonly source: Player;
 }
@@ -1926,6 +2026,9 @@ export class ItemUseOnEvent {
      * @throws This property can throw errors.
      */
     readonly blockLocation: BlockLocation;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     item: ItemStack;
     readonly source: Player;
 }
@@ -1955,6 +2058,9 @@ export class Location {
      * @remarks This property can't be edited in read-only mode.
      */
     z: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(x: number, y: number, z: number);
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1968,7 +2074,13 @@ export class Location {
 
 export class MinecraftBlockTypes {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static get(typeName: string): BlockType | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static getAllBlockTypes(): BlockType[];
 }
 
@@ -1986,14 +2098,24 @@ export class MinecraftItemTypes {
 
 export class MolangVariableMap {
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     setColorRGB(variableName: string, color: Color): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     setColorRGBA(variableName: string, color: Color): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     setSpeedAndDirection(variableName: string, speed: number, direction: Vector): MolangVariableMap;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     setVector3(variableName: string, vector: Vector): MolangVariableMap;
 }
 
@@ -2040,6 +2162,8 @@ export class Player extends Entity {
      */
     selectedSlot: number;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getItemCooldown(cooldownCategory: string): number;
@@ -2169,8 +2293,17 @@ export class PropertyRegistry {
 
 export class Scoreboard {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getObjective(objectiveId: string): ScoreboardObjective | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getObjectives(): ScoreboardObjective[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getParticipants(): ScoreboardIdentity[];
 }
 
@@ -2180,6 +2313,8 @@ export class ScoreboardIdentity {
     readonly id: number;
     readonly "type": ScoreboardIdentityType;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getEntity(): Entity | undefined;
@@ -2196,14 +2331,20 @@ export class ScoreboardObjective {
      */
     readonly id: string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getParticipants(): ScoreboardIdentity[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getScore(participant: Entity | ScoreboardIdentity | string): number | undefined;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getScores(): ScoreboardScoreInfo[];
@@ -2267,7 +2408,13 @@ export class TickEventSignal {
 }
 
 export class Trigger {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     eventName: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(eventName: string);
 }
 
@@ -2275,14 +2422,37 @@ export class Vector {
     readonly x: number;
     readonly y: number;
     readonly z: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(x: number, y: number, z: number);
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     equals(other: Vector): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     length(): number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     normalized(): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static add(a: Vector, b: Vector): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static cross(a: Vector, b: Vector): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static distance(a: Vector, b: Vector): number;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     static divide(a: Vector, b: number | Vector): Vector;
@@ -2290,10 +2460,25 @@ export class Vector {
      * @remarks This function can't be called in read-only mode.
      */
     static lerp(a: Vector, b: Vector, t: number): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static max(a: Vector, b: Vector): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static min(a: Vector, b: Vector): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static multiply(a: Vector, b: number | Vector): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static slerp(a: Vector, b: Vector, t: number): Vector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     static subtract(a: Vector, b: Vector): Vector;
 }
 
@@ -2325,10 +2510,14 @@ export class World {
      */
     broadcastClientMessage(id: string, value: string): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getDimension(dimensionId: string): Dimension;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getDynamicProperty(identifier: string): boolean | number | Location | string | undefined;
@@ -2393,7 +2582,13 @@ export class WorldInitializeEventSignal {
 
 export class XYRotation {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     x: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     y: number;
 }
 

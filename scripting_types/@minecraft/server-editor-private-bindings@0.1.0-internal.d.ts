@@ -223,6 +223,9 @@ export class DataStoreModalToolActivationChangedEventSignal {
 export class DataStoreModalToolContainer {
     private constructor();
     readonly toolActivationChanged: DataStoreModalToolActivationChangedEventSignal;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getSelectedTool(): string | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -318,10 +321,14 @@ export class DataTransferCreateSettingResponse {
 export class DataTransferManager {
     private constructor();
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     closeSession(collectionUniqueId: string): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     createSetting(
@@ -331,26 +338,38 @@ export class DataTransferManager {
         lockToBiome: boolean,
     ): Promise<DataTransferCreateSettingResponse>;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getRegisteredAccessors(): DataTransferCollectionNameData[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     openSession(collectionUniqueId: string): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     requestData(collectionUniqueId: string, options?: DataTransferRequestDataOptions): Promise<DataTransferRequestResponse>;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     requestIdentifiers(collectionUniqueId: string): Promise<DataTransferRequestIdentifiersResponse>;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     sendData(collectionUniqueId: string, jsonData: string, options?: DataTransferSendDataOptions): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     sendDataToClipboard(jsonData: string): void;
@@ -628,14 +647,20 @@ export class PersistenceGroupItem {
      */
     commit(): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getAsJSON(): string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getKey(): string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getValue(): string;
@@ -800,6 +825,8 @@ export class PrefabManager {
      */
     getTemplate(searchMetadata_or_fullyQualifiedName: PrefabTemplateMetadata | string): PrefabTemplate;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link PrefabServiceError}
@@ -976,6 +1003,8 @@ export class PrefabTemplateInstance {
      */
     location: minecraftserverbindings.Vector3;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -986,12 +1015,16 @@ export class PrefabTemplateInstance {
      */
     bakeInstance(): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link PrefabErrorInvalidInstance}
      */
     getStructureRefs(): PrefabTemplateInstanceStructure[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link PrefabErrorInvalidInstance}
@@ -1014,6 +1047,8 @@ export class PrefabTemplateInstanceStructure {
      */
     instanceRotation: minecraftserverbindings.StructureRotation;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link PrefabErrorInvalidInstance}
@@ -1094,6 +1129,8 @@ export class ProjectRegion {
      */
     dispose(): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getAvailableLocationFromRay(
@@ -1102,50 +1139,74 @@ export class ProjectRegion {
         options?: minecraftserverbindings.BlockRaycastOptions,
     ): minecraftserverbindings.Vector3 | undefined;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getBlock(location: minecraftserverbindings.Vector3): minecraftserverbindings.Block | undefined;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getBlockMapColor(location: minecraftserverbindings.Vector3): minecraftserverbindings.RGBA;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getBlockPermutation(location: minecraftserverbindings.Vector3): minecraftserverbindings.BlockPermutation;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getBlockTypeId(location: minecraftserverbindings.Vector3): string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getBounds(): minecraftserverbindings.BlockBoundingBox;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isAirBlock(location: minecraftserverbindings.Vector3): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isAreaAvailable(boundingBox: minecraftserverbindings.BlockBoundingBox): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isAvailable(): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isBlockWaterLogged(location: minecraftserverbindings.Vector3): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isLiquidBlock(location: minecraftserverbindings.Vector3): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isLocationAvailable(location: minecraftserverbindings.Vector3): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     isSolidBlock(location: minecraftserverbindings.Vector3): boolean;
@@ -1226,6 +1287,9 @@ export class ProjectRegionManager {
      * @throws This property can throw errors.
      */
     readonly isProcessingChunks: boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getChunkProcessingState(): ProjectRegionManagerChunkProcessingState | undefined;
     /**
      * @remarks This function can't be called in read-only mode.

@@ -360,7 +360,13 @@ export enum WorldGeneratorType {
 
 export class AudioSettings {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     get(property: AudioSettingsProperty): boolean | number | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getAll(): Record<string, boolean | number>;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -378,6 +384,8 @@ export class AudioSettings {
 
 export class BlockPalette {
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
@@ -411,17 +419,33 @@ export class BlockPaletteManager {
      * @remarks This function can't be called in read-only mode.
      */
     addOrReplacePalette(paletteId: string, palette: BlockPalette): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getPalette(paletteId: string): BlockPalette | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getPaletteIdList(): string[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getPaletteItem(paletteId: string, index: number): IBlockPaletteItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getPrimaryPalette(): BlockPalette;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getSelectedBlockType(): minecraftserverbindings.BlockType;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getSelectedItem(): IBlockPaletteItem;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -952,6 +976,8 @@ export class EditorStructure {
      */
     readonly structureNamespace: string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -960,6 +986,8 @@ export class EditorStructure {
      */
     getBlockPermutation(location: minecraftserverbindings.Vector3): minecraftserverbindings.BlockPermutation | undefined;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -968,6 +996,8 @@ export class EditorStructure {
      */
     getIsWaterlogged(location: minecraftserverbindings.Vector3): boolean;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftserverbindings.InvalidStructureError}
@@ -1125,7 +1155,13 @@ export class ExtensionContextAfterEvents {
 
 export class GraphicsSettings {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     get(property: GraphicsSettingsProperty): boolean | number | string | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getAll(): Record<string, boolean | number | string>;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1143,8 +1179,17 @@ export class GraphicsSettings {
 
 export class IBlockPaletteItem {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getBlock(): minecraftserverbindings.BlockType | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getDisplayName(): string | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getType(): BlockPaletteItemType;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1208,6 +1253,8 @@ export class MinimapItem {
      */
     addMarker(markerType: MinimapMarkerType): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getPlayerColor(playerId: string): minecraftserverbindings.RGBA;
@@ -1304,6 +1351,9 @@ export class PlaytestManager {
 
 // @ts-ignore
 export class ProbabilityBlockPaletteItem extends IBlockPaletteItem {
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(displayName?: string);
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1314,6 +1364,9 @@ export class ProbabilityBlockPaletteItem extends IBlockPaletteItem {
         block: minecraftserverbindings.BlockPermutation | minecraftserverbindings.BlockType | string,
         weight: number,
     ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getBlocks(): WeightedBlock[];
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1339,6 +1392,9 @@ export class RelativeVolumeListBlockVolume extends minecraftserverbindings.Block
      */
     origin?: minecraftserverbindings.Vector3;
     readonly volumeCount: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(origin?: minecraftserverbindings.Vector3);
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1357,6 +1413,9 @@ export class RelativeVolumeListBlockVolume extends minecraftserverbindings.Block
      * @remarks This function can't be called in read-only mode.
      */
     getVolumeList(): minecraftserverbindings.BlockVolume[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     hasAdjacent(location: minecraftserverbindings.Vector3, normalizedOffset: minecraftserverbindings.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1429,8 +1488,13 @@ export class SelectionContainerVolume extends SelectionContainerBase {
      * @remarks This function can't be called in read-only mode.
      */
     clear(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     get(): RelativeVolumeListBlockVolume;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getBoundingBox(): minecraftserverbindings.BlockBoundingBox;
@@ -1504,11 +1568,17 @@ export class SettingsManager {
 
 // @ts-ignore
 export class SimpleBlockPaletteItem extends IBlockPaletteItem {
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(displayName?: string);
 }
 
 export class SimulationState {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     isPaused(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1541,7 +1611,13 @@ export class SimulationStateChangeAfterEventSignal {
 
 export class SpeedSettings {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     get(property: SpeedSettingsProperty): number | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getAll(): Record<string, number>;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1565,6 +1641,9 @@ export class ThemeSettings {
      * @throws This function can throw errors.
      */
     addNewTheme(id: string, name?: string, sourceThemeId?: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     canThemeBeModified(id: string): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1572,13 +1651,27 @@ export class ThemeSettings {
      * @throws This function can throw errors.
      */
     deleteTheme(id: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getCurrentTheme(): string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getThemeColors(id: string): Record<string, minecraftserverbindings.RGBA> | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getThemeIdList(): string[];
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     getThemeName(id: string): string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     resolveColorKey(key: ThemeSettingsColorKey): minecraftserverbindings.RGBA;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1749,13 +1842,25 @@ export class Widget {
      * {@link InvalidWidgetError}
      */
     readonly selectable: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     selected: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     showBoundingBox: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     showCollisionRadius: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
     snapToBlockLocation: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     visible: boolean;
     readonly widgetName: string;
     /**
@@ -1907,6 +2012,9 @@ export class WidgetComponentBase {
      */
     offset: minecraftserverbindings.Vector3;
     readonly valid: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     visible: boolean;
     /**
      * @throws This property can throw errors.
@@ -2007,13 +2115,37 @@ export class WidgetComponentClipboard extends WidgetComponentBase {
      * @remarks This property can't be edited in read-only mode.
      */
     clipboardOffset: minecraftserverbindings.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     highlightHullColor: minecraftserverbindings.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     highlightOutlineColor: minecraftserverbindings.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     hullColor: minecraftserverbindings.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     mirror: minecraftserverbindings.StructureMirrorAxis;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     normalizedOrigin: minecraftserverbindings.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     outlineColor: minecraftserverbindings.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     rotation: minecraftserverbindings.StructureRotation;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     showOutline: boolean;
 }
 
@@ -2037,6 +2169,9 @@ export class WidgetComponentEntity extends WidgetComponentBase {
 // @ts-ignore
 export class WidgetComponentGizmo extends WidgetComponentBase {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     activated: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -2130,6 +2265,9 @@ export class WidgetComponentRenderPrimitiveTypeAxialSphere extends WidgetCompone
      * @remarks This property can't be edited in read-only mode.
      */
     radius: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(center: minecraftserverbindings.Vector3, radius: number, color?: minecraftserverbindings.RGBA);
 }
 
@@ -2156,6 +2294,9 @@ export class WidgetComponentRenderPrimitiveTypeBox extends WidgetComponentRender
      * @remarks This property can't be edited in read-only mode.
      */
     size?: minecraftserverbindings.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(
         center: minecraftserverbindings.Vector3,
         color: minecraftserverbindings.RGBA,
@@ -2177,6 +2318,9 @@ export class WidgetComponentRenderPrimitiveTypeDisc extends WidgetComponentRende
      * @remarks This property can't be edited in read-only mode.
      */
     radius: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(center: minecraftserverbindings.Vector3, radius: number, color: minecraftserverbindings.RGBA);
 }
 
@@ -2194,6 +2338,9 @@ export class WidgetComponentRenderPrimitiveTypeLine extends WidgetComponentRende
      * @remarks This property can't be edited in read-only mode.
      */
     start: minecraftserverbindings.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(
         start: minecraftserverbindings.Vector3,
         end: minecraftserverbindings.Vector3,
