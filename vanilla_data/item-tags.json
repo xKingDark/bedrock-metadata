@@ -1632,6 +1632,20 @@
             ]
         },
         {
+            "name": "minecraft:metal_nuggets",
+            "items": [
+                {
+                    "name": "minecraft:copper_nugget"
+                },
+                {
+                    "name": "minecraft:gold_nugget"
+                },
+                {
+                    "name": "minecraft:iron_nugget"
+                }
+            ]
+        },
+        {
             "name": "minecraft:music_disc",
             "items": [
                 {

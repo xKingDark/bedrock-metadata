@@ -837,6 +837,12 @@ export class Cursor {
      *
      * @throws This function can throw errors.
      */
+    getDefaultProperties(): CursorProperties;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
     getPosition(): minecraftserverbindings.Vector3;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -867,6 +873,18 @@ export class Cursor {
      *
      * @throws This function can throw errors.
      */
+    popPropertiesById(identifier: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    pushPropertiesById(properties: CursorProperties, identifier: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
     resetToDefaultState(): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -880,10 +898,17 @@ export class Cursor {
      * @throws This function can throw errors.
      */
     show(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updatePropertiesById(properties: CursorProperties, identifier?: string): void;
 }
 
 export class CursorPropertiesChangeAfterEvent {
     private constructor();
+    readonly identifier?: string;
     readonly position?: CursorPosition;
     readonly properties: CursorProperties;
 }
@@ -1823,11 +1848,19 @@ export class Widget {
      */
     collisionType: WidgetCollisionType;
     /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    dimensionId?: string;
+    /**
      * @throws This property can throw errors.
      *
      * {@link InvalidWidgetError}
      */
     readonly group: WidgetGroup;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    ignoreEditorModeVisibilityOverride: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
@@ -2818,6 +2851,8 @@ export interface WidgetCreateOptions {
     collisionOffset?: minecraftserverbindings.Vector3;
     collisionRadius?: number;
     collisionType?: WidgetCollisionType;
+    dimensionId?: string;
+    ignoreEditorModeVisibilityOverride?: boolean;
     lockToSurface?: boolean;
     selectable?: boolean;
     snapToBlockLocation?: boolean;

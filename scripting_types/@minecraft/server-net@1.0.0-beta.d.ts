@@ -47,12 +47,14 @@ export enum PacketId {
     BlockPickRequestPacket = "BlockPickRequestPacket",
     BookEditPacket = "BookEditPacket",
     BossEventPacket = "BossEventPacket",
+    CameraAimAssistActorPriorityPacket = "CameraAimAssistActorPriorityPacket",
     CameraAimAssistPacket = "CameraAimAssistPacket",
     CameraAimAssistPresetsPacket = "CameraAimAssistPresetsPacket",
     CameraInstructionPacket = "CameraInstructionPacket",
     CameraPacket = "CameraPacket",
     CameraPresetsPacket = "CameraPresetsPacket",
     CameraShakePacket = "CameraShakePacket",
+    CameraSplinePacket = "CameraSplinePacket",
     ChangeDimensionPacket = "ChangeDimensionPacket",
     ChangeMobPropertyPacket = "ChangeMobPropertyPacket",
     ChunkRadiusUpdatedPacket = "ChunkRadiusUpdatedPacket",
@@ -64,6 +66,7 @@ export enum PacketId {
     ClientboundDataStorePacket = "ClientboundDataStorePacket",
     ClientboundDebugRendererPacket = "ClientboundDebugRendererPacket",
     ClientboundMapItemDataPacket = "ClientboundMapItemDataPacket",
+    ClientboundTextureShiftPacket = "ClientboundTextureShiftPacket",
     ClientCacheBlobStatusPacket = "ClientCacheBlobStatusPacket",
     ClientCacheMissResponsePacket = "ClientCacheMissResponsePacket",
     ClientCacheStatusPacket = "ClientCacheStatusPacket",
@@ -237,6 +240,7 @@ export enum PacketId {
     UpdateSoftEnumPacket = "UpdateSoftEnumPacket",
     UpdateSubChunkBlocksPacket = "UpdateSubChunkBlocksPacket",
     UpdateTradePacket = "UpdateTradePacket",
+    VoxelShapesPacket = "VoxelShapesPacket",
 }
 
 export class HttpClient {

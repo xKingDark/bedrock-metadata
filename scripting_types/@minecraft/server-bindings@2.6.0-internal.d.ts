@@ -932,6 +932,8 @@ export class AimAssistCategory {
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
      */
     getBlockTagPriorities(): Record<string, number>;
     /**
@@ -940,6 +942,14 @@ export class AimAssistCategory {
      * @throws This function can throw errors.
      */
     getEntityPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getEntityTypeFamilyPriorities(): Record<string, number>;
 }
 
 export class AimAssistCategorySettings {
@@ -971,6 +981,10 @@ export class AimAssistCategorySettings {
     /**
      * @remarks This function can't be called in read-only mode.
      */
+    getEntityTypeFamilyPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     setBlockPriorities(blockPriorities: Record<string, number>): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -980,6 +994,10 @@ export class AimAssistCategorySettings {
      * @remarks This function can't be called in read-only mode.
      */
     setEntityPriorities(entityPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setEntityTypeFamilyPriorities(entityTypeFamilyPriorities: Record<string, number>): void;
 }
 
 export class AimAssistPreset {
@@ -997,6 +1015,8 @@ export class AimAssistPreset {
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
      */
     getExcludedBlockTagTargets(): string[];
     /**
@@ -1011,6 +1031,14 @@ export class AimAssistPreset {
      * @throws This function can throw errors.
      */
     getExcludedEntityTargets(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getExcludedEntityTypeFamilyTargets(): string[];
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1054,6 +1082,10 @@ export class AimAssistPresetSettings {
     /**
      * @remarks This function can't be called in read-only mode.
      */
+    getExcludedEntityTypeFamilyTargets(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getItemSettings(): Record<string, string>;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1071,6 +1103,10 @@ export class AimAssistPresetSettings {
      * @remarks This function can't be called in read-only mode.
      */
     setExcludedEntityTargets(entityTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedEntityTypeFamilyTargets(entityTypeFamilyTargets?: string[]): void;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -1672,6 +1708,7 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
     private constructor();
     readonly powerLevel: number;
+    readonly previousPowerLevel: number;
 }
 
 export class BlockComponentRegistry {
@@ -4466,6 +4503,31 @@ export class EntityItemComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly itemStack: ItemStack;
+}
+
+export class EntityItemDropAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly items: Entity[];
+}
+
+export class EntityItemDropAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityItemDropAfterEvent) => void,
+        options?: EntityItemDropEventOptions,
+    ): (arg0: EntityItemDropAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityItemDropAfterEvent) => void): void;
 }
 
 export class EntityItemPickupAfterEvent {
@@ -8816,6 +8878,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityItemDrop: EntityItemDropAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly entityItemPickup: EntityItemPickupAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -9332,6 +9398,11 @@ export interface EntityHurtAfterEventOptions {
 export interface EntityHurtBeforeEventOptions {
     allowedDamageCauses?: EntityDamageCause[];
     entityFilter?: EntityFilter;
+}
+
+export interface EntityItemDropEventOptions {
+    entityFilter?: EntityFilter;
+    itemFilter?: ItemFilter;
 }
 
 export interface EntityItemPickupEventOptions {

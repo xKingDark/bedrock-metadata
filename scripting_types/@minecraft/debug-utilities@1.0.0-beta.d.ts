@@ -93,6 +93,10 @@ export class DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
+    attachedTo?: minecraftserverbindings.Entity;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     color: minecraftserverbindings.RGB;
     readonly dimension: minecraftserverbindings.Dimension;
     readonly hasDuration: boolean;
@@ -110,6 +114,10 @@ export class DebugShape {
      */
     timeLeft?: number;
     readonly totalTimeLeft?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    visibleTo: minecraftserverbindings.Player[];
     /**
      * @remarks This function can't be called in read-only mode.
      */
