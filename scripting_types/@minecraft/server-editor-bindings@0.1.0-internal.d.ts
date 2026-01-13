@@ -931,6 +931,8 @@ export class CursorPropertyChangeAfterEventSignal {
 
 export class EditorConstants {
     private constructor();
+    readonly maxBlockVolume: number;
+    readonly maxDynamicSelectionSize: minecraftserverbindings.Vector3;
     readonly maxSelectionSize: minecraftserverbindings.Vector3;
     readonly maxStructureOffset: minecraftserverbindings.Vector3;
     readonly minStructureOffset: minecraftserverbindings.Vector3;
@@ -2761,13 +2763,18 @@ export interface WidgetComponentBaseOptions {
     visible?: boolean;
 }
 
+export interface WidgetComponentBoundingBoxLimit {
+    max: minecraftserverbindings.Vector3;
+    maxBlockVolume?: number;
+    min: minecraftserverbindings.Vector3;
+}
+
 // @ts-ignore
 export interface WidgetComponentBoundingBoxOptions extends WidgetComponentBaseOptions {
     boundsOffset?: minecraftserverbindings.Vector3;
     enableResizeHandles?: Axis;
     hullColor?: minecraftserverbindings.RGBA;
-    maxSize?: minecraftserverbindings.Vector3;
-    minSize?: minecraftserverbindings.Vector3;
+    limit?: WidgetComponentBoundingBoxLimit;
     mirror?: minecraftserverbindings.StructureMirrorAxis;
     normalizedOrigin?: minecraftserverbindings.Vector3;
     outlineColor?: minecraftserverbindings.RGBA;

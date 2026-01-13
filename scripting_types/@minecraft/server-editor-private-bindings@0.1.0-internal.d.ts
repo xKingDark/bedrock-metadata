@@ -313,13 +313,30 @@ export class DataStorePayloadAfterEventSignal {
     unsubscribe(callback: (arg0: DataStorePayloadAfterEvent) => void): void;
 }
 
+export class DataTransferBiomeConfigData {
+    private constructor();
+    readonly atmospheric: string;
+    readonly colorGrading: string;
+    readonly cubemap: string;
+    readonly identifier: string;
+    readonly lightingGroup: string;
+    readonly water: string;
+}
+
 export class DataTransferCreateSettingResponse {
     private constructor();
+    readonly message: string;
     readonly success: boolean;
 }
 
 export class DataTransferManager {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    changeBiomeMapping(biomeIdentifier: string, collectionUniqueId: string, identifier: string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -349,6 +366,12 @@ export class DataTransferManager {
      * @throws This function can throw errors.
      */
     openSession(collectionUniqueId: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    requestBiomeConfig(biomeIdentifier: string): Promise<DataTransferBiomeConfigData>;
     /**
      * @remarks This function can't be called in read-only mode.
      *

@@ -202,6 +202,67 @@ export class Atmospherics {
     ): void;
 }
 
+export class ColorGrading {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetHighlightsContrast(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMidtonesContrast(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetShadowsContrast(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setHighlightsContrast(
+        highlightsContrast: minecraftserverbindings.Vector3,
+        biomeIdentifier: minecraftserverbindings.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMidtonesContrast(
+        midtonesContrast: minecraftserverbindings.Vector3,
+        biomeIdentifier: minecraftserverbindings.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setShadowsContrast(
+        shadowsContrast: minecraftserverbindings.Vector3,
+        biomeIdentifier: minecraftserverbindings.BiomeType,
+    ): void;
+}
+
 export class Water {
     private constructor();
     /**
@@ -416,4 +477,5 @@ export class Water {
 
 export const InternalConstant = 1;
 export const atmosphere: Atmospherics;
+export const colorGrading: ColorGrading;
 export const water: Water;
