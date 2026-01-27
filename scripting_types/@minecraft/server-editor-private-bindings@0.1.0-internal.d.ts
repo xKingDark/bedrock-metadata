@@ -82,6 +82,20 @@ export enum RealmsWorldUploadResult {
     WorldNameNonCompliant = 6,
 }
 
+export class CustomBiomeSource {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    destroy(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getBiomeAt(pos: minecraftserverbindings.Vector3): minecraftserverbindings.BiomeType;
+}
+
 export class DataStore {
     private constructor();
     readonly actionBarContainer: DataStoreActionBarContainer;
@@ -529,6 +543,10 @@ export class JigsawService {
     private constructor();
     /**
      * @remarks This function can't be called in read-only mode.
+     */
+    deleteRegistryData(registryName: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
@@ -584,6 +602,12 @@ export class MinecraftEditorInternal {
     private constructor();
     readonly isNewLevel: boolean;
     readonly regionManager: ProjectRegionManager;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createCustomBiomeSource(config: CustomBiomeSourceConfig): CustomBiomeSource;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1374,6 +1398,22 @@ export class RealmsService {
      * @remarks This function can't be called in read-only mode.
      */
     isRealmsServiceAvailable(): EditorRealmsServiceAvailability;
+}
+
+export interface CustomBiomeConfig {
+    name: string;
+    replacements: CustomBiomeReplacementConfig[];
+}
+
+export interface CustomBiomeReplacementConfig {
+    amount: number;
+    biomeType?: minecraftserverbindings.BiomeType;
+    frequency: number;
+}
+
+export interface CustomBiomeSourceConfig {
+    seed?: number;
+    userDefinedBiomes: CustomBiomeConfig[];
 }
 
 export interface DataTransferCollectionNameData {

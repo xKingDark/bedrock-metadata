@@ -174,6 +174,7 @@ export enum PacketId {
     ResourcePackClientResponsePacket = "ResourcePackClientResponsePacket",
     ResourcePackDataInfoPacket = "ResourcePackDataInfoPacket",
     ResourcePacksInfoPacket = "ResourcePacksInfoPacket",
+    ResourcePacksReadyForValidationPacket = "ResourcePacksReadyForValidationPacket",
     ResourcePackStackPacket = "ResourcePackStackPacket",
     RespawnPacket = "RespawnPacket",
     ScriptMessagePacket = "ScriptMessagePacket",
@@ -419,6 +420,50 @@ export class PacketSendBeforeEventSignal {
 export interface PacketEventOptions {
     ignoredPacketIds?: PacketId[];
     monitoredPacketIds?: PacketId[];
+}
+
+// @ts-ignore
+export class HttpRequestBodyTooLargeError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxBytes: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly providedBytes: number;
+}
+
+// @ts-ignore
+export class HttpRequestLimitExceededError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly inFlightRequests: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxConcurrentRequests: number;
+}
+
+// @ts-ignore
+export class HttpRequestNotAllowedError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
+}
+
+// @ts-ignore
+export class HttpsOnlyError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
 }
 
 // @ts-ignore

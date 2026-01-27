@@ -3,22 +3,22 @@
         {
             "name": "minecraft:nether",
             "height_range": {
-                "min": 0,
-                "max": 128
+                "max": 128,
+                "min": 0
             }
         },
         {
             "name": "minecraft:overworld",
             "height_range": {
-                "min": -64,
-                "max": 320
+                "max": 320,
+                "min": -64
             }
         },
         {
             "name": "minecraft:the_end",
             "height_range": {
-                "min": 0,
-                "max": 256
+                "max": 256,
+                "min": 0
             }
         }
     ]

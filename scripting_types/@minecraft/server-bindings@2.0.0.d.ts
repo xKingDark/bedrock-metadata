@@ -3106,25 +3106,6 @@ export class EntityHurtAfterEvent {
     readonly hurtEntity: Entity;
 }
 
-export class EntityHurtAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    subscribe(
-        callback: (arg0: EntityHurtAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg0: EntityHurtAfterEvent) => void;
-    /**
-     * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
-     */
-    unsubscribe(callback: (arg0: EntityHurtAfterEvent) => void): void;
-}
-
 // @ts-ignore
 export class EntityInventoryComponent extends EntityComponent {
     private constructor();
@@ -6488,10 +6469,6 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly entityHitEntity: EntityHitEntityAfterEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly entityHurt: EntityHurtAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
