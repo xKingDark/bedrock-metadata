@@ -1259,6 +1259,7 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
     private constructor();
     readonly powerLevel: number;
+    readonly previousPowerLevel: number;
 }
 
 export class BlockComponentRegistry {
@@ -2279,6 +2280,20 @@ export class Dimension {
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
     readonly localizationKey: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     *
+     * {@link UnloadedChunksError}
+     */
+    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter, isSuperset: boolean): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5136,6 +5151,10 @@ export class ItemDurabilityComponent extends ItemComponent {
      * @throws This property can throw errors.
      */
     readonly maxDurability: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    unbreakable: boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -8043,6 +8062,13 @@ export class WorldLoadAfterEventSignal {
 export interface AABB {
     center: Vector3;
     extent: Vector3;
+}
+
+export interface BiomeFilter {
+    excludeBiomes?: string[];
+    excludeTags?: string[];
+    includeBiomes?: string[];
+    includeTags?: string[];
 }
 
 export interface BlockBoundingBox {

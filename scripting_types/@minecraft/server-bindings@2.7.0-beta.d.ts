@@ -1132,6 +1132,12 @@ export class AimAssistRegistry {
     getPresets(): AimAssistPreset[];
 }
 
+export class BannerPattern {
+    private constructor();
+    readonly color: string;
+    readonly pattern: string;
+}
+
 export class BiomeType {
     private constructor();
     readonly id: string;
@@ -2865,7 +2871,7 @@ export class Dimension {
      *
      * {@link UnloadedChunksError}
      */
-    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter): boolean;
+    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter, isSuperset: boolean): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6648,6 +6654,12 @@ export class Player extends Entity {
      *
      * {@link InvalidEntityError}
      */
+    readonly partyId?: string;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
     readonly playerPermissionLevel: PlayerPermissionLevel;
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -7962,6 +7974,8 @@ export class SetArmorTrimFunction extends LootItemFunction {
 // @ts-ignore
 export class SetBannerDetailsFunction extends LootItemFunction {
     private constructor();
+    readonly baseColor: string;
+    readonly patterns: BannerPattern[];
     readonly "type": number;
 }
 
@@ -9045,7 +9059,6 @@ export interface BiomeFilter {
     excludeTags?: string[];
     includeBiomes?: string[];
     includeTags?: string[];
-    superset: boolean;
 }
 
 export interface BiomeSearchOptions {

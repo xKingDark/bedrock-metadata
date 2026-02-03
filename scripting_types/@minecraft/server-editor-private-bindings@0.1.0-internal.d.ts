@@ -346,6 +346,10 @@ export class DataTransferCreateSettingResponse {
 export class DataTransferManager {
     private constructor();
     /**
+     * @throws This property can throw errors.
+     */
+    readonly isDeferredExperimentEnabled: boolean;
+    /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.

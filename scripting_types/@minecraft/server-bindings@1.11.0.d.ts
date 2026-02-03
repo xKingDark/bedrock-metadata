@@ -276,7 +276,6 @@ export enum GameRule {
     SendCommandFeedback = "sendCommandFeedback",
     ShowBorderEffect = "showBorderEffect",
     ShowCoordinates = "showCoordinates",
-    ShowDaysPlayed = "showDaysPlayed",
     ShowDeathMessages = "showDeathMessages",
     ShowRecipeMessages = "showRecipeMessages",
     ShowTags = "showTags",
@@ -3039,10 +3038,6 @@ export class GameRules {
      * @remarks This property can't be edited in read-only mode.
      */
     showCoordinates: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    showDaysPlayed: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
