@@ -1,26 +1,26 @@
 {
     "is_stable": true,
-    "version": "1.21.130-stable",
+    "version": "1.26.0-stable",
     "metadata": {
-        "branch": "r/21_u13",
-        "commit_hash": "e672f33702ce73fed7df91a6530bc79c4f8ba656",
+        "branch": "r/26_u0",
+        "commit_hash": "e63d80ebc41e3cda3925fc89ef4d0a36a63b364d",
         "build_flavor": "Publish",
-        "build_id": 39448926,
-        "network_protocol": 898,
+        "build_id": 40538518,
+        "network_protocol": 924,
         "storage_version": 10
     },
     "platforms": [
         {
             "platform": "win32",
-            "released": "2025-12-09T16:39:09.000Z",
-            "size_in_bytes": 53625843,
-            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win/bedrock-server-1.21.130.4.zip"
+            "released": "2026-02-10T16:44:31.000Z",
+            "size_in_bytes": 55330606,
+            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win/bedrock-server-1.26.0.2.zip"
         },
         {
             "platform": "linux",
-            "released": "2025-12-09T16:41:32.000Z",
-            "size_in_bytes": 75241415,
-            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.130.4.zip"
+            "released": "2026-02-10T16:46:49.000Z",
+            "size_in_bytes": 81349384,
+            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.26.0.2.zip"
         }
     ]
 }

@@ -47,20 +47,26 @@ export enum PacketId {
     BlockPickRequestPacket = "BlockPickRequestPacket",
     BookEditPacket = "BookEditPacket",
     BossEventPacket = "BossEventPacket",
+    CameraAimAssistActorPriorityPacket = "CameraAimAssistActorPriorityPacket",
     CameraAimAssistPacket = "CameraAimAssistPacket",
     CameraAimAssistPresetsPacket = "CameraAimAssistPresetsPacket",
     CameraInstructionPacket = "CameraInstructionPacket",
     CameraPacket = "CameraPacket",
     CameraPresetsPacket = "CameraPresetsPacket",
     CameraShakePacket = "CameraShakePacket",
+    CameraSplinePacket = "CameraSplinePacket",
     ChangeDimensionPacket = "ChangeDimensionPacket",
     ChangeMobPropertyPacket = "ChangeMobPropertyPacket",
     ChunkRadiusUpdatedPacket = "ChunkRadiusUpdatedPacket",
     ClientboundCloseFormPacket = "ClientboundCloseFormPacket",
     ClientboundControlSchemeSetPacket = "ClientboundControlSchemeSetPacket",
+    ClientboundDataDrivenUICloseAllScreensPacket = "ClientboundDataDrivenUICloseAllScreensPacket",
+    ClientboundDataDrivenUIReloadPacket = "ClientboundDataDrivenUIReloadPacket",
+    ClientboundDataDrivenUIShowScreenPacket = "ClientboundDataDrivenUIShowScreenPacket",
     ClientboundDataStorePacket = "ClientboundDataStorePacket",
     ClientboundDebugRendererPacket = "ClientboundDebugRendererPacket",
     ClientboundMapItemDataPacket = "ClientboundMapItemDataPacket",
+    ClientboundTextureShiftPacket = "ClientboundTextureShiftPacket",
     ClientCacheBlobStatusPacket = "ClientCacheBlobStatusPacket",
     ClientCacheMissResponsePacket = "ClientCacheMissResponsePacket",
     ClientCacheStatusPacket = "ClientCacheStatusPacket",
@@ -234,55 +240,99 @@ export enum PacketId {
     UpdateSoftEnumPacket = "UpdateSoftEnumPacket",
     UpdateSubChunkBlocksPacket = "UpdateSubChunkBlocksPacket",
     UpdateTradePacket = "UpdateTradePacket",
+    VoxelShapesPacket = "VoxelShapesPacket",
 }
 
 export class HttpClient {
     private constructor();
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     cancelAll(reason: string): void;
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     get(uri: string): Promise<HttpResponse>;
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     request(config: HttpRequest): Promise<HttpResponse>;
 }
 
 export class HttpHeader {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     key: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     value: minecraftserveradmin.SecretString | string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(key: string, value: minecraftserveradmin.SecretString | string);
 }
 
 export class HttpRequest {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     body: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     headers: HttpHeader[];
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     method: HttpRequestMethod;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     timeout: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     uri: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(uri: string);
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     addHeader(key: string, value: minecraftserveradmin.SecretString | string): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     setBody(body: string): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     setHeaders(headers: HttpHeader[]): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     setMethod(method: HttpRequestMethod): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
      */
     setTimeout(timeout: number): HttpRequest;
 }
@@ -328,6 +378,9 @@ export class PacketReceiveBeforeEventSignal {
 
 export class PacketReceivedBeforeEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     cancel: boolean;
     readonly packetId: PacketId;
     readonly packetSize: number;
@@ -336,6 +389,9 @@ export class PacketReceivedBeforeEvent {
 
 export class PacketSendBeforeEvent {
     private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     cancel: boolean;
     readonly packetId: PacketId;
     readonly recipients: (minecraftserverbindings.Player | undefined)[];

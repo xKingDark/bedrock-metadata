@@ -24,33 +24,51 @@ export class AsyncPlayerJoinBeforeEvent {
     readonly name: string;
     readonly persistentId: string;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link DisconnectedError}
      */
     allowJoin(): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link DisconnectedError}
      */
     disallowJoin(reason?: string): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link DisconnectedError}
      */
     disconnect(reason?: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     isValid(): boolean;
 }
 
 export class AsyncPlayerJoinBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     subscribe(callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>): (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     unsubscribe(callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>): boolean;
 }
 
 export class SecretString {
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     constructor(value: string);
 }
 

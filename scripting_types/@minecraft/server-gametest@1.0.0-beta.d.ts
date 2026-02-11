@@ -118,6 +118,9 @@ export class GameTestSequence {
 export class NavigationResult {
     private constructor();
     readonly isFullPath: boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
     getPath(): minecraftserverbindings.Vector3[];
 }
 
@@ -597,6 +600,8 @@ export class Tags {
 export class Test {
     private constructor();
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -605,6 +610,8 @@ export class Test {
      */
     assert(condition: boolean, message: string): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -619,6 +626,8 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -630,6 +639,8 @@ export class Test {
         callback: (arg0: minecraftserverbindings.Block) => boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param canReach Defaults to: true
      *
      * @throws This function can throw errors.
@@ -644,6 +655,8 @@ export class Test {
         canReach?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -655,6 +668,8 @@ export class Test {
         blockLocation: minecraftserverbindings.Vector3,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -663,6 +678,8 @@ export class Test {
      */
     assertContainerEmpty(blockLocation: minecraftserverbindings.Vector3): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param hasArmor Defaults to: true
      *
      * @throws This function can throw errors.
@@ -680,6 +697,8 @@ export class Test {
         hasArmor?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param hasComponent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -695,6 +714,8 @@ export class Test {
         hasComponent?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -709,6 +730,8 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -719,6 +742,8 @@ export class Test {
      */
     assertEntityInstancePresentInArea(entity: minecraftserverbindings.Entity, isPresent?: boolean): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -734,6 +759,8 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -744,6 +771,8 @@ export class Test {
      */
     assertEntityPresentInArea(entityTypeIdentifier: string, isPresent?: boolean): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -756,6 +785,8 @@ export class Test {
         callback: (arg0: minecraftserverbindings.Entity) => boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isTouching Defaults to: true
      *
      * @throws This function can throw errors.
@@ -770,6 +801,8 @@ export class Test {
         isTouching?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isWaterlogged Defaults to: true
      *
      * @throws This function can throw errors.
@@ -780,6 +813,8 @@ export class Test {
      */
     assertIsWaterlogged(blockLocation: minecraftserverbindings.Vector3, isWaterlogged?: boolean): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -793,6 +828,8 @@ export class Test {
         count: number,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @param isPresent Defaults to: true
      *
      * @throws This function can throw errors.
@@ -808,6 +845,8 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -826,10 +865,14 @@ export class Test {
      */
     destroyBlock(blockLocation: minecraftserverbindings.Vector3, dropResources?: boolean): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     fail(errorMessage: string): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      */
     failIf(callback: () => void): void;
@@ -844,6 +887,8 @@ export class Test {
      */
     getBlock(blockLocation: minecraftserverbindings.Vector3): minecraftserverbindings.Block;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -872,6 +917,8 @@ export class Test {
      */
     getSculkSpreader(blockLocation: minecraftserverbindings.Vector3): SculkSpreader | undefined;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -954,6 +1001,8 @@ export class Test {
      */
     pulseRedstone(blockLocation: minecraftserverbindings.Vector3, duration: number): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1289,6 +1338,8 @@ export class Test {
         speedModifier?: number,
     ): void;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1297,6 +1348,8 @@ export class Test {
      */
     worldBlockLocation(relativeBlockLocation: minecraftserverbindings.Vector3): minecraftserverbindings.Vector3;
     /**
+     * @remarks This function can't be called in read-only mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}

@@ -229,6 +229,9 @@
             "name": "query.get_equipped_item_name"
         },
         {
+            "name": "query.get_level_seed_based_fraction"
+        },
+        {
             "name": "query.get_locator_offset"
         },
         {
