@@ -247,9 +247,6 @@
             "name": "variable.map_face_icon"
         },
         {
-            "name": "variable.note_color"
-        },
-        {
             "name": "variable.num_particles"
         },
         {
@@ -272,6 +269,9 @@
         },
         {
             "name": "variable.particle_multiplier"
+        },
+        {
+            "name": "variable.particlecount"
         },
         {
             "name": "variable.particlesize"

@@ -3411,6 +3411,7 @@ export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
     readonly item: string;
+    readonly resultItem?: string;
 }
 
 export class EntityDieAfterEvent {
@@ -3851,6 +3852,31 @@ export class EntityItemComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly itemStack: ItemStack;
+}
+
+export class EntityItemDropAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly items: Entity[];
+}
+
+export class EntityItemDropAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityItemDropAfterEvent) => void,
+        options?: EntityItemDropEventOptions,
+    ): (arg0: EntityItemDropAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityItemDropAfterEvent) => void): void;
 }
 
 export class EntityItemPickupAfterEvent {
@@ -4628,6 +4654,7 @@ export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
+    readonly resultItem?: string;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -7828,6 +7855,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityItemDrop: EntityItemDropAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly entityItemPickup: EntityItemPickupAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -8300,6 +8331,11 @@ export interface EntityHurtAfterEventOptions {
 export interface EntityHurtBeforeEventOptions {
     allowedDamageCauses?: EntityDamageCause[];
     entityFilter?: EntityFilter;
+}
+
+export interface EntityItemDropEventOptions {
+    entityFilter?: EntityFilter;
+    itemFilter?: ItemFilter;
 }
 
 export interface EntityItemPickupEventOptions {

@@ -4027,7 +4027,7 @@ export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
     readonly item: string;
-    readonly resultItem: string;
+    readonly resultItem?: string;
 }
 
 export class EntityDieAfterEvent {
@@ -5287,7 +5287,7 @@ export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
-    readonly resultItem: string;
+    readonly resultItem?: string;
     /**
      * @remarks This function can't be called in read-only mode.
      */
