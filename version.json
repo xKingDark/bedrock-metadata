@@ -1,5 +1,4 @@
 {
-    "is_stable": false,
     "version": "1.26.10-preview.23",
     "metadata": {
         "branch": "main",
@@ -18,8 +17,8 @@
         },
         {
             "platform": "linux",
-            "released": "1970-01-01T00:00:00.000Z",
-            "size_in_bytes": 0,
+            "released": "2026-02-11T17:01:13.000Z",
+            "size_in_bytes": 88387531,
             "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux-preview/bedrock-server-1.26.10.23.zip"
         }
     ]

@@ -1918,9 +1918,6 @@
             "name": "minecraft:spawn_egg",
             "items": [
                 {
-                    "name": "editor:map_marker_spawn_egg"
-                },
-                {
                     "name": "minecraft:allay_spawn_egg"
                 },
                 {
