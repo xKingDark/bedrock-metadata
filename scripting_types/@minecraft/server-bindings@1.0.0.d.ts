@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -111,4 +111,4 @@ export class RawMessageError extends Error {
 }
 
 export const system: System;
-export const world: World;
+export const world:  World;

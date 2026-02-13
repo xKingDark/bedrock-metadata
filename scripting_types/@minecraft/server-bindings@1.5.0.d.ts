@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -13,102 +13,102 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 export enum Direction {
-    Down = "Down",
-    East = "East",
+    Down  = "Down",
+    East  = "East",
     North = "North",
     South = "South",
-    Up = "Up",
-    West = "West",
+    Up    = "Up",
+    West  = "West",
 }
 
 export enum DisplaySlotId {
     BelowName = "BelowName",
-    List = "List",
-    Sidebar = "Sidebar",
+    List      = "List",
+    Sidebar   = "Sidebar",
 }
 
 export enum EntityDamageCause {
-    anvil = "anvil",
-    blockExplosion = "blockExplosion",
-    charging = "charging",
-    contact = "contact",
-    drowning = "drowning",
-    entityAttack = "entityAttack",
+    anvil           = "anvil",
+    blockExplosion  = "blockExplosion",
+    charging        = "charging",
+    contact         = "contact",
+    drowning        = "drowning",
+    entityAttack    = "entityAttack",
     entityExplosion = "entityExplosion",
-    fall = "fall",
-    fallingBlock = "fallingBlock",
-    fire = "fire",
-    fireTick = "fireTick",
-    fireworks = "fireworks",
-    flyIntoWall = "flyIntoWall",
-    freezing = "freezing",
-    lava = "lava",
-    lightning = "lightning",
-    magic = "magic",
-    magma = "magma",
-    none = "none",
-    override = "override",
-    piston = "piston",
-    projectile = "projectile",
-    selfDestruct = "selfDestruct",
-    stalactite = "stalactite",
-    stalagmite = "stalagmite",
-    starve = "starve",
-    suffocation = "suffocation",
-    suicide = "suicide",
-    temperature = "temperature",
-    thorns = "thorns",
-    void = "void",
-    wither = "wither",
+    fall            = "fall",
+    fallingBlock    = "fallingBlock",
+    fire            = "fire",
+    fireTick        = "fireTick",
+    fireworks       = "fireworks",
+    flyIntoWall     = "flyIntoWall",
+    freezing        = "freezing",
+    lava            = "lava",
+    lightning       = "lightning",
+    magic           = "magic",
+    magma           = "magma",
+    none            = "none",
+    override        = "override",
+    piston          = "piston",
+    projectile      = "projectile",
+    selfDestruct    = "selfDestruct",
+    stalactite      = "stalactite",
+    stalagmite      = "stalagmite",
+    starve          = "starve",
+    suffocation     = "suffocation",
+    suicide         = "suicide",
+    temperature     = "temperature",
+    thorns          = "thorns",
+    void            = "void",
+    wither          = "wither",
 }
 
 export enum EquipmentSlot {
-    Chest = "Chest",
-    Feet = "Feet",
-    Head = "Head",
-    Legs = "Legs",
+    Chest    = "Chest",
+    Feet     = "Feet",
+    Head     = "Head",
+    Legs     = "Legs",
     Mainhand = "Mainhand",
-    Offhand = "Offhand",
+    Offhand  = "Offhand",
 }
 
 export enum GameMode {
     adventure = "adventure",
-    creative = "creative",
+    creative  = "creative",
     spectator = "spectator",
-    survival = "survival",
+    survival  = "survival",
 }
 
 export enum ItemLockMode {
     inventory = "inventory",
-    none = "none",
-    slot = "slot",
+    none      = "none",
+    slot      = "slot",
 }
 
 export enum ObjectiveSortOrder {
-    Ascending = 0,
+    Ascending  = 0,
     Descending = 1,
 }
 
 export enum ScoreboardIdentityType {
-    Entity = "Entity",
+    Entity     = "Entity",
     FakePlayer = "FakePlayer",
-    Player = "Player",
+    Player     = "Player",
 }
 
 export enum ScriptEventSource {
-    Block = "Block",
-    Entity = "Entity",
+    Block       = "Block",
+    Entity      = "Entity",
     NPCDialogue = "NPCDialogue",
-    Server = "Server",
+    Server      = "Server",
 }
 
 export enum TimeOfDay {
-    Day = 1000,
-    Noon = 6000,
-    Sunset = 12000,
-    Night = 13000,
+    Day      = 1000,
+    Noon     = 6000,
+    Sunset   = 12000,
+    Night    = 13000,
     Midnight = 18000,
-    Sunrise = 23000,
+    Sunrise  = 23000,
 }
 
 export class Block {
@@ -2503,4 +2503,4 @@ export class RawMessageError extends Error {
 }
 
 export const system: System;
-export const world: World;
+export const world:  World;

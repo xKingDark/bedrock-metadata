@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -13,166 +13,166 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 export enum Direction {
-    Down = "Down",
-    East = "East",
+    Down  = "Down",
+    East  = "East",
     North = "North",
     South = "South",
-    Up = "Up",
-    West = "West",
+    Up    = "Up",
+    West  = "West",
 }
 
 export enum DisplaySlotId {
     BelowName = "BelowName",
-    List = "List",
-    Sidebar = "Sidebar",
+    List      = "List",
+    Sidebar   = "Sidebar",
 }
 
 export enum EasingType {
-    InBack = "InBack",
-    InBounce = "InBounce",
-    InCirc = "InCirc",
-    InCubic = "InCubic",
-    InElastic = "InElastic",
-    InExpo = "InExpo",
-    InOutBack = "InOutBack",
-    InOutBounce = "InOutBounce",
-    InOutCirc = "InOutCirc",
-    InOutCubic = "InOutCubic",
+    InBack       = "InBack",
+    InBounce     = "InBounce",
+    InCirc       = "InCirc",
+    InCubic      = "InCubic",
+    InElastic    = "InElastic",
+    InExpo       = "InExpo",
+    InOutBack    = "InOutBack",
+    InOutBounce  = "InOutBounce",
+    InOutCirc    = "InOutCirc",
+    InOutCubic   = "InOutCubic",
     InOutElastic = "InOutElastic",
-    InOutExpo = "InOutExpo",
-    InOutQuad = "InOutQuad",
-    InOutQuart = "InOutQuart",
-    InOutQuint = "InOutQuint",
-    InOutSine = "InOutSine",
-    InQuad = "InQuad",
-    InQuart = "InQuart",
-    InQuint = "InQuint",
-    InSine = "InSine",
-    Linear = "Linear",
-    OutBack = "OutBack",
-    OutBounce = "OutBounce",
-    OutCirc = "OutCirc",
-    OutCubic = "OutCubic",
-    OutElastic = "OutElastic",
-    OutExpo = "OutExpo",
-    OutQuad = "OutQuad",
-    OutQuart = "OutQuart",
-    OutQuint = "OutQuint",
-    OutSine = "OutSine",
-    Spring = "Spring",
+    InOutExpo    = "InOutExpo",
+    InOutQuad    = "InOutQuad",
+    InOutQuart   = "InOutQuart",
+    InOutQuint   = "InOutQuint",
+    InOutSine    = "InOutSine",
+    InQuad       = "InQuad",
+    InQuart      = "InQuart",
+    InQuint      = "InQuint",
+    InSine       = "InSine",
+    Linear       = "Linear",
+    OutBack      = "OutBack",
+    OutBounce    = "OutBounce",
+    OutCirc      = "OutCirc",
+    OutCubic     = "OutCubic",
+    OutElastic   = "OutElastic",
+    OutExpo      = "OutExpo",
+    OutQuad      = "OutQuad",
+    OutQuart     = "OutQuart",
+    OutQuint     = "OutQuint",
+    OutSine      = "OutSine",
+    Spring       = "Spring",
 }
 
 export enum EntityDamageCause {
-    anvil = "anvil",
-    blockExplosion = "blockExplosion",
-    campfire = "campfire",
-    charging = "charging",
-    contact = "contact",
-    drowning = "drowning",
-    entityAttack = "entityAttack",
+    anvil           = "anvil",
+    blockExplosion  = "blockExplosion",
+    campfire        = "campfire",
+    charging        = "charging",
+    contact         = "contact",
+    drowning        = "drowning",
+    entityAttack    = "entityAttack",
     entityExplosion = "entityExplosion",
-    fall = "fall",
-    fallingBlock = "fallingBlock",
-    fire = "fire",
-    fireTick = "fireTick",
-    fireworks = "fireworks",
-    flyIntoWall = "flyIntoWall",
-    freezing = "freezing",
-    lava = "lava",
-    lightning = "lightning",
-    maceSmash = "maceSmash",
-    magic = "magic",
-    magma = "magma",
-    none = "none",
-    override = "override",
-    piston = "piston",
-    projectile = "projectile",
-    ramAttack = "ramAttack",
-    selfDestruct = "selfDestruct",
-    sonicBoom = "sonicBoom",
-    soulCampfire = "soulCampfire",
-    stalactite = "stalactite",
-    stalagmite = "stalagmite",
-    starve = "starve",
-    suffocation = "suffocation",
-    suicide = "suicide",
-    temperature = "temperature",
-    thorns = "thorns",
-    void = "void",
-    wither = "wither",
+    fall            = "fall",
+    fallingBlock    = "fallingBlock",
+    fire            = "fire",
+    fireTick        = "fireTick",
+    fireworks       = "fireworks",
+    flyIntoWall     = "flyIntoWall",
+    freezing        = "freezing",
+    lava            = "lava",
+    lightning       = "lightning",
+    maceSmash       = "maceSmash",
+    magic           = "magic",
+    magma           = "magma",
+    none            = "none",
+    override        = "override",
+    piston          = "piston",
+    projectile      = "projectile",
+    ramAttack       = "ramAttack",
+    selfDestruct    = "selfDestruct",
+    sonicBoom       = "sonicBoom",
+    soulCampfire    = "soulCampfire",
+    stalactite      = "stalactite",
+    stalagmite      = "stalagmite",
+    starve          = "starve",
+    suffocation     = "suffocation",
+    suicide         = "suicide",
+    temperature     = "temperature",
+    thorns          = "thorns",
+    void            = "void",
+    wither          = "wither",
 }
 
 export enum EntityInitializationCause {
-    Born = "Born",
-    Event = "Event",
-    Loaded = "Loaded",
-    Spawned = "Spawned",
+    Born        = "Born",
+    Event       = "Event",
+    Loaded      = "Loaded",
+    Spawned     = "Spawned",
     Transformed = "Transformed",
 }
 
 export enum EquipmentSlot {
-    Chest = "Chest",
-    Feet = "Feet",
-    Head = "Head",
-    Legs = "Legs",
+    Chest    = "Chest",
+    Feet     = "Feet",
+    Head     = "Head",
+    Legs     = "Legs",
     Mainhand = "Mainhand",
-    Offhand = "Offhand",
+    Offhand  = "Offhand",
 }
 
 export enum GameMode {
     adventure = "adventure",
-    creative = "creative",
+    creative  = "creative",
     spectator = "spectator",
-    survival = "survival",
+    survival  = "survival",
 }
 
 export enum ItemLockMode {
     inventory = "inventory",
-    none = "none",
-    slot = "slot",
+    none      = "none",
+    slot      = "slot",
 }
 
 export enum MoonPhase {
-    FullMoon = 0,
-    WaningGibbous = 1,
-    FirstQuarter = 2,
+    FullMoon       = 0,
+    WaningGibbous  = 1,
+    FirstQuarter   = 2,
     WaningCrescent = 3,
-    NewMoon = 4,
+    NewMoon        = 4,
     WaxingCrescent = 5,
-    LastQuarter = 6,
-    WaxingGibbous = 7,
+    LastQuarter    = 6,
+    WaxingGibbous  = 7,
 }
 
 export enum ObjectiveSortOrder {
-    Ascending = 0,
+    Ascending  = 0,
     Descending = 1,
 }
 
 export enum ScoreboardIdentityType {
-    Entity = "Entity",
+    Entity     = "Entity",
     FakePlayer = "FakePlayer",
-    Player = "Player",
+    Player     = "Player",
 }
 
 export enum ScriptEventSource {
-    Block = "Block",
-    Entity = "Entity",
+    Block       = "Block",
+    Entity      = "Entity",
     NPCDialogue = "NPCDialogue",
-    Server = "Server",
+    Server      = "Server",
 }
 
 export enum TimeOfDay {
-    Day = 1000,
-    Noon = 6000,
-    Sunset = 12000,
-    Night = 13000,
+    Day      = 1000,
+    Noon     = 6000,
+    Sunset   = 12000,
+    Night    = 13000,
     Midnight = 18000,
-    Sunrise = 23000,
+    Sunrise  = 23000,
 }
 
 export enum WeatherType {
-    Clear = "Clear",
-    Rain = "Rain",
+    Clear   = "Clear",
+    Rain    = "Rain",
     Thunder = "Thunder",
 }
 
@@ -213,8 +213,6 @@ export class Block {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param steps Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -224,8 +222,6 @@ export class Block {
     above(steps?: number): Block | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param steps Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -244,8 +240,6 @@ export class Block {
     center(): Vector3;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param steps Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -270,8 +264,6 @@ export class Block {
     isValid(): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param steps Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -303,8 +295,6 @@ export class Block {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param steps Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -314,8 +304,6 @@ export class Block {
     south(steps?: number): Block | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param steps Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -2333,7 +2321,9 @@ export class PlayerDimensionChangeAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerDimensionChangeAfterEvent) => void): (arg0: PlayerDimensionChangeAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerDimensionChangeAfterEvent) => void,
+    ): (arg0: PlayerDimensionChangeAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -2358,7 +2348,9 @@ export class PlayerInteractWithBlockAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithBlockAfterEvent) => void): (arg0: PlayerInteractWithBlockAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithBlockAfterEvent) => void,
+    ): (arg0: PlayerInteractWithBlockAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -2387,7 +2379,9 @@ export class PlayerInteractWithBlockBeforeEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithBlockBeforeEvent) => void): (arg0: PlayerInteractWithBlockBeforeEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithBlockBeforeEvent) => void,
+    ): (arg0: PlayerInteractWithBlockBeforeEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -2410,7 +2404,9 @@ export class PlayerInteractWithEntityAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithEntityAfterEvent) => void): (arg0: PlayerInteractWithEntityAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithEntityAfterEvent) => void,
+    ): (arg0: PlayerInteractWithEntityAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -2437,7 +2433,9 @@ export class PlayerInteractWithEntityBeforeEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void): (arg0: PlayerInteractWithEntityBeforeEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void,
+    ): (arg0: PlayerInteractWithEntityBeforeEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -3489,5 +3487,6 @@ export class RawMessageError extends Error {
 
 export const MoonPhaseCount = 8;
 export const TicksPerSecond = 20;
+
 export const system: System;
-export const world: World;
+export const world:  World;

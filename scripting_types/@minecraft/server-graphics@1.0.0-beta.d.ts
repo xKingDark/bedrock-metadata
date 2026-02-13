@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @beta
  * @packageDocumentation
@@ -23,7 +23,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMax(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetHorizonBlendMax(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -31,7 +31,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMieStart(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetHorizonBlendMieStart(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -39,7 +39,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMin(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetHorizonBlendMin(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -47,7 +47,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendStart(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetHorizonBlendStart(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -55,7 +55,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMoonMieStrength(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetMoonMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -63,7 +63,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetRayleighStrength(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetRayleighStrength(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -71,7 +71,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSkyHorizonColor(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetSkyHorizonColor(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -79,7 +79,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSkyZenithColor(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetSkyZenithColor(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -87,7 +87,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunGlareShape(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetSunGlareShape(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -95,7 +95,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunMieStrength(biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    resetSunMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -103,7 +103,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMax(blendMax: number | Record<number, number>, biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    setHorizonBlendMax(blendMax: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -113,7 +113,7 @@ export class Atmospherics {
      */
     setHorizonBlendMieStart(
         blendMieStart: number | Record<number, number>,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
+        biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -122,7 +122,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMin(blendMin: number | Record<number, number>, biomeIdentifier: minecraftserverbindings.BiomeType): void;
+    setHorizonBlendMin(blendMin: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -130,10 +130,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendStart(
-        blendStart: number | Record<number, number>,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
-    ): void;
+    setHorizonBlendStart(blendStart: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -143,7 +140,7 @@ export class Atmospherics {
      */
     setMoonMieStrength(
         moonMieStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
+        biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -154,7 +151,7 @@ export class Atmospherics {
      */
     setRayleighStrength(
         rayleighStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
+        biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -164,8 +161,8 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setSkyHorizonColor(
-        color: Record<number, minecraftserverbindings.RGB> | minecraftserverbindings.RGB,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -175,8 +172,8 @@ export class Atmospherics {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setSkyZenithColor(
-        color: Record<number, minecraftserverbindings.RGB> | minecraftserverbindings.RGB,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -185,10 +182,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunGlareShape(
-        sunGlareShape: number | Record<number, number>,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
-    ): void;
+    setSunGlareShape(sunGlareShape: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -198,7 +192,7 @@ export class Atmospherics {
      */
     setSunMieStrength(
         sunMieStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserverbindings.BiomeType,
+        biomeIdentifier: minecraftserver.BiomeType,
     ): void;
 }
 

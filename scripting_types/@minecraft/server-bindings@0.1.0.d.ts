@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -13,63 +13,63 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 export enum Direction {
-    down = 0,
-    up = 1,
+    down  = 0,
+    up    = 1,
     north = 2,
     south = 3,
-    west = 4,
-    east = 5,
+    west  = 4,
+    east  = 5,
 }
 
 export enum EntityDamageCause {
-    anvil = "anvil",
-    blockExplosion = "block_explosion",
-    campfire = "campfire",
-    charging = "charging",
-    contact = "contact",
-    drowning = "drowning",
-    entityAttack = "entity_attack",
+    anvil           = "anvil",
+    blockExplosion  = "block_explosion",
+    campfire        = "campfire",
+    charging        = "charging",
+    contact         = "contact",
+    drowning        = "drowning",
+    entityAttack    = "entity_attack",
     entityExplosion = "entity_explosion",
-    fall = "fall",
-    fallingBlock = "falling_block",
-    fire = "fire",
-    fireTick = "fire_tick",
-    fireworks = "fireworks",
-    flyIntoWall = "fly_into_wall",
-    freezing = "freezing",
-    lava = "lava",
-    lightning = "lightning",
-    maceSmash = "mace_smash",
-    magic = "magic",
-    magma = "magma",
-    none = "none",
-    override = "override",
-    piston = "piston",
-    projectile = "projectile",
-    ramAttack = "ram_attack",
-    selfDestruct = "self_destruct",
-    sonicBoom = "sonic_boom",
-    soulCampfire = "soul_campfire",
-    stalactite = "stalactite",
-    stalagmite = "stalagmite",
-    starve = "starve",
-    suffocation = "suffocation",
-    temperature = "temperature",
-    thorns = "thorns",
-    void = "void",
-    wither = "wither",
+    fall            = "fall",
+    fallingBlock    = "falling_block",
+    fire            = "fire",
+    fireTick        = "fire_tick",
+    fireworks       = "fireworks",
+    flyIntoWall     = "fly_into_wall",
+    freezing        = "freezing",
+    lava            = "lava",
+    lightning       = "lightning",
+    maceSmash       = "mace_smash",
+    magic           = "magic",
+    magma           = "magma",
+    none            = "none",
+    override        = "override",
+    piston          = "piston",
+    projectile      = "projectile",
+    ramAttack       = "ram_attack",
+    selfDestruct    = "self_destruct",
+    sonicBoom       = "sonic_boom",
+    soulCampfire    = "soul_campfire",
+    stalactite      = "stalactite",
+    stalagmite      = "stalagmite",
+    starve          = "starve",
+    suffocation     = "suffocation",
+    temperature     = "temperature",
+    thorns          = "thorns",
+    void            = "void",
+    wither          = "wither",
 }
 
 export enum GameMode {
-    survival = 0,
-    creative = 1,
+    survival  = 0,
+    creative  = 1,
     adventure = 2,
     spectator = 6,
 }
 
 export enum ScoreboardIdentityType {
-    player = 1,
-    entity = 2,
+    player     = 1,
+    entity     = 2,
     fakePlayer = 3,
 }
 
@@ -718,8 +718,6 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param showParticles Defaults to: true
-     *
      * @throws This function can throw errors.
      */
     addEffect(effectType: EffectType, duration: number, amplifier?: number, showParticles?: boolean): void;
@@ -824,7 +822,13 @@ export class Entity {
      *
      * @throws This function can throw errors.
      */
-    teleport(location: Location, dimension: Dimension, xRotation: number, yRotation: number, keepVelocity?: boolean): void;
+    teleport(
+        location: Location,
+        dimension: Dimension,
+        xRotation: number,
+        yRotation: number,
+        keepVelocity?: boolean,
+    ): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2588,4 +2592,5 @@ export class XYRotation {
 }
 
 export const TicksPerSecond = 20;
+
 export const world: World;

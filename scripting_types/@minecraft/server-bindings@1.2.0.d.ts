@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -13,51 +13,51 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 export enum EntityDamageCause {
-    anvil = "anvil",
-    blockExplosion = "blockExplosion",
-    charging = "charging",
-    contact = "contact",
-    drowning = "drowning",
-    entityAttack = "entityAttack",
+    anvil           = "anvil",
+    blockExplosion  = "blockExplosion",
+    charging        = "charging",
+    contact         = "contact",
+    drowning        = "drowning",
+    entityAttack    = "entityAttack",
     entityExplosion = "entityExplosion",
-    fall = "fall",
-    fallingBlock = "fallingBlock",
-    fire = "fire",
-    fireTick = "fireTick",
-    fireworks = "fireworks",
-    flyIntoWall = "flyIntoWall",
-    freezing = "freezing",
-    lava = "lava",
-    lightning = "lightning",
-    magic = "magic",
-    magma = "magma",
-    none = "none",
-    override = "override",
-    piston = "piston",
-    projectile = "projectile",
-    selfDestruct = "selfDestruct",
-    stalactite = "stalactite",
-    stalagmite = "stalagmite",
-    starve = "starve",
-    suffocation = "suffocation",
-    suicide = "suicide",
-    temperature = "temperature",
-    thorns = "thorns",
-    void = "void",
-    wither = "wither",
+    fall            = "fall",
+    fallingBlock    = "fallingBlock",
+    fire            = "fire",
+    fireTick        = "fireTick",
+    fireworks       = "fireworks",
+    flyIntoWall     = "flyIntoWall",
+    freezing        = "freezing",
+    lava            = "lava",
+    lightning       = "lightning",
+    magic           = "magic",
+    magma           = "magma",
+    none            = "none",
+    override        = "override",
+    piston          = "piston",
+    projectile      = "projectile",
+    selfDestruct    = "selfDestruct",
+    stalactite      = "stalactite",
+    stalagmite      = "stalagmite",
+    starve          = "starve",
+    suffocation     = "suffocation",
+    suicide         = "suicide",
+    temperature     = "temperature",
+    thorns          = "thorns",
+    void            = "void",
+    wither          = "wither",
 }
 
 export enum GameMode {
     adventure = "adventure",
-    creative = "creative",
+    creative  = "creative",
     spectator = "spectator",
-    survival = "survival",
+    survival  = "survival",
 }
 
 export enum ItemLockMode {
     inventory = "inventory",
-    none = "none",
-    slot = "slot",
+    none      = "none",
+    slot      = "slot",
 }
 
 export class Block {
@@ -970,4 +970,4 @@ export class RawMessageError extends Error {
 }
 
 export const system: System;
-export const world: World;
+export const world:  World;

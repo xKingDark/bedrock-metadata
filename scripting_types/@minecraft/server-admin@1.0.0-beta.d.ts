@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @beta
  * @packageDocumentation
@@ -58,7 +58,9 @@ export class AsyncPlayerJoinBeforeEventSignal {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>): (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>;
+    subscribe(
+        callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>,
+    ): (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -118,9 +120,10 @@ export class DisconnectedError extends Error {
  * @throws This function can throw errors.
  */
 export function transferPlayer(
-    player: minecraftserverbindings.Player,
+    player: minecraftserver.Player,
     options: TransferPlayerIpPortOptions | TransferPlayerNetherNetOptions,
 ): void;
+
 export const beforeEvents: AdminBeforeEvents;
-export const secrets: ServerSecrets;
-export const variables: ServerVariables;
+export const secrets:      ServerSecrets;
+export const variables:    ServerVariables;

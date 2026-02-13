@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @internal
  * @packageDocumentation
@@ -16,69 +16,69 @@ import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
 import * as minecraftservereditorbindings from "@minecraft/server-editor-bindings";
 export enum EditorRealmsServiceAvailability {
-    NotLoggedIn = 0,
+    NotLoggedIn          = 0,
     NoRealmsSubscription = 1,
-    DedicatedServer = 2,
-    NotServerHost = 3,
-    Success = 4,
-    Unknown = 5,
+    DedicatedServer      = 2,
+    NotServerHost        = 3,
+    Success              = 4,
+    Unknown              = 5,
 }
 
 export enum JigsawJointType {
     Rollable = 0,
-    Aligned = 1,
+    Aligned  = 1,
 }
 
 export enum JigsawJsonType {
-    Processor = 0,
-    Structure = 1,
+    Processor    = 0,
+    Structure    = 1,
     StructureSet = 2,
     TemplatePool = 3,
 }
 
 export enum PersistenceGroupType {
-    Local = 0,
+    Local       = 0,
     Replication = 1,
-    Shared = 2,
+    Shared      = 2,
 }
 
 export enum PersistenceScope {
     ClientProject = 0,
-    ClientGlobal = 1,
+    ClientGlobal  = 1,
     ServerProject = 2,
-    ServerGlobal = 3,
+    ServerGlobal  = 3,
 }
 
 export enum PrefabInstanceInteractionEventType {
     Clicked = "Clicked",
-    Moved = "Moved",
+    Moved   = "Moved",
 }
 
 export enum PrefabSource {
-    Global = "Global",
+    Global  = "Global",
     Project = "Project",
     Unknown = "Unknown",
 }
 
 export enum ProjectRegionAvailabilityMode {
-    Loaded = 0,
+    Loaded  = 0,
     Ticking = 1,
 }
 
 export enum RealmsServiceStatus {
-    Fetching = 0,
-    Idle = 1,
+    Fetching  = 0,
+    Idle      = 1,
     Exporting = 2,
     Uploading = 3,
 }
 
 export enum RealmsWorldUploadResult {
-    Unknown = 0,
-    Success = 1,
-    ExportWorldFailure = 2,
-    UploadWorldFailure = 3,
-    EditorSystemFailure = 4,
-    WorldUploadBusy = 5,
+    Unknown               = 0,
+    Success               = 1,
+    ExportWorldFailure    = 2,
+    UploadWorldFailure    = 3,
+    EditorSystemFailure   = 4,
+    WorldUploadBusy       = 5,
     WorldNameNonCompliant = 6,
 }
 
@@ -213,7 +213,9 @@ export class DataStoreModalToolActivationChangedEventSignal {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: DataStoreModalToolActivationChangedEvent) => void): (arg0: DataStoreModalToolActivationChangedEvent) => void;
+    subscribe(
+        callback: (arg0: DataStoreModalToolActivationChangedEvent) => void,
+    ): (arg0: DataStoreModalToolActivationChangedEvent) => void;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -377,7 +379,10 @@ export class DataTransferManager {
      *
      * @throws This function can throw errors.
      */
-    requestData(collectionUniqueId: string, options?: DataTransferRequestDataOptions): Promise<DataTransferRequestResponse>;
+    requestData(
+        collectionUniqueId: string,
+        options?: DataTransferRequestDataOptions,
+    ): Promise<DataTransferRequestResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -536,7 +541,7 @@ export class JigsawService {
         registryName: string,
         startingPool: string,
         startTarget: string,
-        seed: minecraftserverbindings.Vector3,
+        seed: minecraftserver.Vector3,
         depth: number,
         maxHorizontalDistanceFromCenter: number,
         validateRegistry: boolean,
@@ -553,7 +558,7 @@ export class JigsawService {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    getJigsawBlockData(pos: minecraftserverbindings.Vector3): JigsawBlockData;
+    getJigsawBlockData(pos: minecraftserver.Vector3): JigsawBlockData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -565,7 +570,7 @@ export class JigsawService {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    setJigsawBlockData(pos: minecraftserverbindings.Vector3, jigsawData: JigsawBlockData): void;
+    setJigsawBlockData(pos: minecraftserver.Vector3, jigsawData: JigsawBlockData): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -589,13 +594,13 @@ export class MinecraftEditorInternal {
      *
      * @throws This function can throw errors.
      */
-    fireTelemetryEvent(player: minecraftserverbindings.Player, source: string, eventName: string, metadata: string): void;
+    fireTelemetryEvent(player: minecraftserver.Player, source: string, eventName: string, metadata: string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getPlayerServices(player: minecraftserverbindings.Player): InternalPlayerServiceContext;
+    getPlayerServices(player: minecraftserver.Player): InternalPlayerServiceContext;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -944,7 +949,7 @@ export class PrefabTemplate {
      * {@link PrefabServiceError}
      */
     createInstance(
-        location: minecraftserverbindings.Vector3,
+        location: minecraftserver.Vector3,
         options?: PrefabTemplateCreateInstanceOptions,
     ): PrefabTemplateInstance;
     /**
@@ -1016,15 +1021,15 @@ export class PrefabTemplateInstance {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
+    instanceMirror: minecraftserver.StructureMirrorAxis;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceRotation: minecraftserverbindings.StructureRotation;
+    instanceRotation: minecraftserver.StructureRotation;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    location: minecraftserverbindings.Vector3;
+    location: minecraftserver.Vector3;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1064,11 +1069,11 @@ export class PrefabTemplateInstanceStructure {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
+    instanceMirror: minecraftserver.StructureMirrorAxis;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceRotation: minecraftserverbindings.StructureRotation;
+    instanceRotation: minecraftserver.StructureRotation;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1096,33 +1101,33 @@ export class PrefabTemplateStructure {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceMirror: minecraftserverbindings.StructureMirrorAxis;
+    instanceMirror: minecraftserver.StructureMirrorAxis;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceOffset: minecraftserverbindings.Vector3;
+    instanceOffset: minecraftserver.Vector3;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    instanceRotation: minecraftserverbindings.StructureRotation;
+    instanceRotation: minecraftserver.StructureRotation;
     /**
      * @throws This property can throw errors.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
-    readonly structureNormalizedOrigin: minecraftserverbindings.Vector3;
+    readonly structureNormalizedOrigin: minecraftserver.Vector3;
     /**
      * @throws This property can throw errors.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
-    readonly structureOffset: minecraftserverbindings.Vector3;
+    readonly structureOffset: minecraftserver.Vector3;
     /**
      * @throws This property can throw errors.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
-    readonly structureSize: minecraftserverbindings.Vector3;
+    readonly structureSize: minecraftserver.Vector3;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1157,52 +1162,52 @@ export class ProjectRegion {
      * @throws This function can throw errors.
      */
     getAvailableLocationFromRay(
-        location: minecraftserverbindings.Vector3,
-        direction: minecraftserverbindings.Vector3,
-        options?: minecraftserverbindings.BlockRaycastOptions,
-    ): minecraftserverbindings.Vector3 | undefined;
+        location: minecraftserver.Vector3,
+        direction: minecraftserver.Vector3,
+        options?: minecraftserver.BlockRaycastOptions,
+    ): minecraftserver.Vector3 | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getBlock(location: minecraftserverbindings.Vector3): minecraftserverbindings.Block | undefined;
+    getBlock(location: minecraftserver.Vector3): minecraftserver.Block | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getBlockMapColor(location: minecraftserverbindings.Vector3): minecraftserverbindings.RGBA;
+    getBlockMapColor(location: minecraftserver.Vector3): minecraftserver.RGBA;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getBlockPermutation(location: minecraftserverbindings.Vector3): minecraftserverbindings.BlockPermutation;
+    getBlockPermutation(location: minecraftserver.Vector3): minecraftserver.BlockPermutation;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getBlockTypeId(location: minecraftserverbindings.Vector3): string;
+    getBlockTypeId(location: minecraftserver.Vector3): string;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getBounds(): minecraftserverbindings.BlockBoundingBox;
+    getBounds(): minecraftserver.BlockBoundingBox;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    isAirBlock(location: minecraftserverbindings.Vector3): boolean;
+    isAirBlock(location: minecraftserver.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    isAreaAvailable(boundingBox: minecraftserverbindings.BlockBoundingBox): boolean;
+    isAreaAvailable(boundingBox: minecraftserver.BlockBoundingBox): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1214,25 +1219,25 @@ export class ProjectRegion {
      *
      * @throws This function can throw errors.
      */
-    isBlockWaterLogged(location: minecraftserverbindings.Vector3): boolean;
+    isBlockWaterLogged(location: minecraftserver.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    isLiquidBlock(location: minecraftserverbindings.Vector3): boolean;
+    isLiquidBlock(location: minecraftserver.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    isLocationAvailable(location: minecraftserverbindings.Vector3): boolean;
+    isLocationAvailable(location: minecraftserver.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    isSolidBlock(location: minecraftserverbindings.Vector3): boolean;
+    isSolidBlock(location: minecraftserver.Vector3): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1240,7 +1245,7 @@ export class ProjectRegion {
      */
     requestBlockOperationArea(
         volume: minecraftservereditorbindings.RelativeVolumeListBlockVolume,
-        callback: (arg0: minecraftserverbindings.BlockLocationIterator) => void,
+        callback: (arg0: minecraftserver.BlockLocationIterator) => void,
     ): Promise<void>;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1259,37 +1264,37 @@ export class ProjectRegion {
      *
      * @throws This function can throw errors.
      */
-    requestMove(center: minecraftserverbindings.Vector3): Promise<void>;
+    requestMove(center: minecraftserver.Vector3): Promise<void>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    setBlockType(location: minecraftserverbindings.Vector3, blockType: minecraftserverbindings.BlockType | string): void;
+    setBlockType(location: minecraftserver.Vector3, blockType: minecraftserver.BlockType | string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    setBlockWaterlogged(location: minecraftserverbindings.Vector3, isWaterlogged: boolean): void;
+    setBlockWaterlogged(location: minecraftserver.Vector3, isWaterlogged: boolean): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.EntitySpawnError}
+     * {@link minecraftserver.EntitySpawnError}
      *
      * {@link Error}
      *
      * {@link minecraftcommon.InvalidArgumentError}
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      */
     spawnEntity(
-        identifier: minecraftserverbindings.EntityType | string,
-        location: minecraftserverbindings.Vector3,
+        identifier: minecraftserver.EntityType | string,
+        location: minecraftserver.Vector3,
         rotation?: number,
-    ): minecraftserverbindings.Entity;
+    ): minecraftserver.Entity;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1301,7 +1306,7 @@ export class ProjectRegion {
      *
      * @throws This function can throw errors.
      */
-    waitUntilBoundsAvailable(boundingBox: minecraftserverbindings.BlockBoundingBox): Promise<void>;
+    waitUntilBoundsAvailable(boundingBox: minecraftserver.BlockBoundingBox): Promise<void>;
 }
 
 export class ProjectRegionManager {
@@ -1319,7 +1324,10 @@ export class ProjectRegionManager {
      *
      * @throws This function can throw errors.
      */
-    pruneRegion(dimensionId: string, boundsList: ProjectRegionExtents[]): Promise<ProjectRegionManagerChunkProcessingState>;
+    pruneRegion(
+        dimensionId: string,
+        boundsList: ProjectRegionExtents[],
+    ): Promise<ProjectRegionManagerChunkProcessingState>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1392,9 +1400,9 @@ export interface DataTransferSendDataOptions {
 }
 
 export interface EditorJigsawSection {
-    bounds: minecraftserverbindings.BlockBoundingBox;
-    offset: minecraftserverbindings.Vector3;
-    rotation: minecraftserverbindings.StructureRotation;
+    bounds: minecraftserver.BlockBoundingBox;
+    offset: minecraftserver.Vector3;
+    rotation: minecraftserver.StructureRotation;
     structureId: string;
 }
 
@@ -1451,7 +1459,7 @@ export interface PrefabInstanceInteractionEventClicked {
 }
 
 export interface PrefabInstanceInteractionEventMoved {
-    location: minecraftserverbindings.Vector3;
+    location: minecraftserver.Vector3;
 }
 
 export interface PrefabServiceCreateTemplateOptions {
@@ -1462,14 +1470,14 @@ export interface PrefabServiceCreateTemplateOptions {
 }
 
 export interface PrefabTemplateAddStructureOptions {
-    mirror?: minecraftserverbindings.StructureMirrorAxis;
-    offset?: minecraftserverbindings.Vector3;
-    rotation?: minecraftserverbindings.StructureRotation;
+    mirror?: minecraftserver.StructureMirrorAxis;
+    offset?: minecraftserver.Vector3;
+    rotation?: minecraftserver.StructureRotation;
 }
 
 export interface PrefabTemplateCreateInstanceOptions {
-    mirror?: minecraftserverbindings.StructureMirrorAxis;
-    rotation?: minecraftserverbindings.StructureRotation;
+    mirror?: minecraftserver.StructureMirrorAxis;
+    rotation?: minecraftserver.StructureRotation;
 }
 
 export interface PrefabTemplateMetadata {
@@ -1564,3 +1572,5 @@ export class PrefabTemplateNotFound extends Error {
 }
 
 export const editorInternal: MinecraftEditorInternal;
+
+export * from "@minecraft/server-editor-bindings";

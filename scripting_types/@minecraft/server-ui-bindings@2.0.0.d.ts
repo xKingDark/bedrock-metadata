@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -14,25 +14,25 @@
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
 export enum FormCancelationReason {
-    UserBusy = "UserBusy",
+    UserBusy   = "UserBusy",
     UserClosed = "UserClosed",
 }
 
 export enum FormRejectReason {
     MalformedResponse = "MalformedResponse",
-    PlayerQuit = "PlayerQuit",
-    ServerShutdown = "ServerShutdown",
+    PlayerQuit        = "PlayerQuit",
+    ServerShutdown    = "ServerShutdown",
 }
 
 export class ActionFormData {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    body(bodyText: minecraftserverbindings.RawMessage | string): ActionFormData;
+    body(bodyText: minecraftserver.RawMessage | string): ActionFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    button(text: minecraftserverbindings.RawMessage | string, iconPath?: string): ActionFormData;
+    button(text: minecraftserver.RawMessage | string, iconPath?: string): ActionFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -40,11 +40,11 @@ export class ActionFormData {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    header(text: minecraftserverbindings.RawMessage | string): ActionFormData;
+    header(text: minecraftserver.RawMessage | string): ActionFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    label(text: minecraftserverbindings.RawMessage | string): ActionFormData;
+    label(text: minecraftserver.RawMessage | string): ActionFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -52,15 +52,15 @@ export class ActionFormData {
      *
      * {@link minecraftcommon.EngineError}
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
-     * {@link minecraftserverbindings.RawMessageError}
+     * {@link minecraftserver.RawMessageError}
      */
-    show(player: minecraftserverbindings.Player): Promise<ActionFormResponse>;
+    show(player: minecraftserver.Player): Promise<ActionFormResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    title(titleText: minecraftserverbindings.RawMessage | string): ActionFormData;
+    title(titleText: minecraftserver.RawMessage | string): ActionFormData;
 }
 
 // @ts-ignore
@@ -79,15 +79,15 @@ export class MessageFormData {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    body(bodyText: minecraftserverbindings.RawMessage | string): MessageFormData;
+    body(bodyText: minecraftserver.RawMessage | string): MessageFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    button1(text: minecraftserverbindings.RawMessage | string): MessageFormData;
+    button1(text: minecraftserver.RawMessage | string): MessageFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    button2(text: minecraftserverbindings.RawMessage | string): MessageFormData;
+    button2(text: minecraftserver.RawMessage | string): MessageFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -95,15 +95,15 @@ export class MessageFormData {
      *
      * {@link minecraftcommon.EngineError}
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
-     * {@link minecraftserverbindings.RawMessageError}
+     * {@link minecraftserver.RawMessageError}
      */
-    show(player: minecraftserverbindings.Player): Promise<MessageFormResponse>;
+    show(player: minecraftserver.Player): Promise<MessageFormResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    title(titleText: minecraftserverbindings.RawMessage | string): MessageFormData;
+    title(titleText: minecraftserver.RawMessage | string): MessageFormData;
 }
 
 // @ts-ignore
@@ -121,18 +121,18 @@ export class ModalFormData {
      * @remarks This function can't be called in read-only mode.
      */
     dropdown(
-        label: minecraftserverbindings.RawMessage | string,
-        items: (minecraftserverbindings.RawMessage | string)[],
+        label: minecraftserver.RawMessage | string,
+        items: (minecraftserver.RawMessage | string)[],
         dropdownOptions?: ModalFormDataDropdownOptions,
     ): ModalFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    header(text: minecraftserverbindings.RawMessage | string): ModalFormData;
+    header(text: minecraftserver.RawMessage | string): ModalFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    label(text: minecraftserverbindings.RawMessage | string): ModalFormData;
+    label(text: minecraftserver.RawMessage | string): ModalFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -140,16 +140,16 @@ export class ModalFormData {
      *
      * {@link minecraftcommon.EngineError}
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
-     * {@link minecraftserverbindings.RawMessageError}
+     * {@link minecraftserver.RawMessageError}
      */
-    show(player: minecraftserverbindings.Player): Promise<ModalFormResponse>;
+    show(player: minecraftserver.Player): Promise<ModalFormResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
     slider(
-        label: minecraftserverbindings.RawMessage | string,
+        label: minecraftserver.RawMessage | string,
         minimumValue: number,
         maximumValue: number,
         sliderOptions?: ModalFormDataSliderOptions,
@@ -157,23 +157,23 @@ export class ModalFormData {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    submitButton(submitButtonText: minecraftserverbindings.RawMessage | string): ModalFormData;
+    submitButton(submitButtonText: minecraftserver.RawMessage | string): ModalFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
     textField(
-        label: minecraftserverbindings.RawMessage | string,
-        placeholderText: minecraftserverbindings.RawMessage | string,
+        label: minecraftserver.RawMessage | string,
+        placeholderText: minecraftserver.RawMessage | string,
         textFieldOptions?: ModalFormDataTextFieldOptions,
     ): ModalFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    title(titleText: minecraftserverbindings.RawMessage | string): ModalFormData;
+    title(titleText: minecraftserver.RawMessage | string): ModalFormData;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    toggle(label: minecraftserverbindings.RawMessage | string, toggleOptions?: ModalFormDataToggleOptions): ModalFormData;
+    toggle(label: minecraftserver.RawMessage | string, toggleOptions?: ModalFormDataToggleOptions): ModalFormData;
 }
 
 // @ts-ignore
@@ -189,28 +189,28 @@ export class UIManager {
      *
      * @throws This function can throw errors.
      */
-    closeAllForms(player: minecraftserverbindings.Player): void;
+    closeAllForms(player: minecraftserver.Player): void;
 }
 
 export interface ModalFormDataDropdownOptions {
     defaultValueIndex?: number;
-    tooltip?: minecraftserverbindings.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
 }
 
 export interface ModalFormDataSliderOptions {
     defaultValue?: number;
-    tooltip?: minecraftserverbindings.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
     valueStep?: number;
 }
 
 export interface ModalFormDataTextFieldOptions {
-    defaultValue?: minecraftserverbindings.RawMessage | string;
-    tooltip?: minecraftserverbindings.RawMessage | string;
+    defaultValue?: minecraftserver.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
 }
 
 export interface ModalFormDataToggleOptions {
     defaultValue?: boolean;
-    tooltip?: minecraftserverbindings.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
 }
 
 // @ts-ignore
