@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -27,7 +27,7 @@ export class ActionFormData {
      *
      * @throws This function can throw errors.
      */
-    show(player: minecraftserverbindings.Player): Promise<ActionFormResponse>;
+    show(player: mojangminecraft.Player): Promise<ActionFormResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -63,7 +63,7 @@ export class MessageFormData {
      *
      * @throws This function can throw errors.
      */
-    show(player: minecraftserverbindings.Player): Promise<MessageFormResponse>;
+    show(player: mojangminecraft.Player): Promise<MessageFormResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -90,7 +90,7 @@ export class ModalFormData {
      *
      * @throws This function can throw errors.
      */
-    show(player: minecraftserverbindings.Player): Promise<ModalFormResponse>;
+    show(player: mojangminecraft.Player): Promise<ModalFormResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      */

@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @internal
  * @packageDocumentation
@@ -21,17 +21,17 @@ export class DataDrivenScreen {
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      */
-    showScreen(player: minecraftserverbindings.Player, screenId: string): void;
+    showScreen(player: minecraftserver.Player, screenId: string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      */
-    static closeAllScreens(player: minecraftserverbindings.Player): void;
+    static closeAllScreens(player: minecraftserver.Player): void;
 }
 
 export class DataStore {
@@ -41,20 +41,20 @@ export class DataStore {
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      */
-    getProperty(player: minecraftserverbindings.Player, dataStoreName: string, property: string): string | undefined;
+    getProperty(player: minecraftserver.Player, dataStoreName: string, property: string): string | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
      * {@link InvalidPathError}
      */
     getPropertyPath(
-        player: minecraftserverbindings.Player,
+        player: minecraftserver.Player,
         dataStoreName: string,
         property: string,
         path: string,
@@ -62,16 +62,14 @@ export class DataStore {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param isWritable Defaults to: true
-     *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
      * {@link InvalidPathError}
      */
     setClientWritable(
-        player: minecraftserverbindings.Player,
+        player: minecraftserver.Player,
         dataStoreName: string,
         property: string,
         path: string,
@@ -84,20 +82,20 @@ export class DataStore {
      *
      * {@link minecraftcommon.EngineError}
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      */
-    setProperty(player: minecraftserverbindings.Player, dataStoreName: string, property: string, data: string): void;
+    setProperty(player: minecraftserver.Player, dataStoreName: string, property: string, data: string): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
      * {@link InvalidPathError}
      */
     setPropertyPath(
-        player: minecraftserverbindings.Player,
+        player: minecraftserver.Player,
         dataStoreName: string,
         property: string,
         path: string,
@@ -108,12 +106,12 @@ export class DataStore {
      *
      * @throws This function can throw errors.
      *
-     * {@link minecraftserverbindings.InvalidEntityError}
+     * {@link minecraftserver.InvalidEntityError}
      *
      * {@link InvalidPathError}
      */
     subscribe(
-        player: minecraftserverbindings.Player,
+        player: minecraftserver.Player,
         dataStoreName: string,
         property: string,
         path: string,
@@ -135,4 +133,7 @@ export class InvalidPathError extends Error {
 }
 
 export const testConstant = 5;
+
 export const ddui: DataStore;
+
+export * from "@minecraft/server-ui-bindings";

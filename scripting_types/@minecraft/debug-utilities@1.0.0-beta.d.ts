@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @beta
  * @packageDocumentation
@@ -32,8 +32,8 @@ export class DebugArrow extends DebugLine {
      * @remarks This function can't be called in read-only mode.
      */
     constructor(
-        location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3,
-        endLocation: minecraftserverbindings.Vector3,
+        location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
+        endLocation: minecraftserver.Vector3,
     );
 }
 
@@ -42,11 +42,11 @@ export class DebugBox extends DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    bound: minecraftserverbindings.Vector3;
+    bound: minecraftserver.Vector3;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3);
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 // @ts-ignore
@@ -54,7 +54,7 @@ export class DebugCircle extends DebugShape {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3);
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 export class DebugDrawer {
@@ -62,7 +62,7 @@ export class DebugDrawer {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    addShape(shape: DebugShape, dimension?: minecraftserverbindings.Dimension): void;
+    addShape(shape: DebugShape, dimension?: minecraftserver.Dimension): void;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -78,13 +78,13 @@ export class DebugLine extends DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    endLocation: minecraftserverbindings.Vector3;
+    endLocation: minecraftserver.Vector3;
     /**
      * @remarks This function can't be called in read-only mode.
      */
     constructor(
-        location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3,
-        endLocation: minecraftserverbindings.Vector3,
+        location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
+        endLocation: minecraftserver.Vector3,
     );
 }
 
@@ -93,18 +93,18 @@ export class DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    attachedTo?: minecraftserverbindings.Entity;
+    attachedTo?: minecraftserver.Entity;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    color: minecraftserverbindings.RGB;
-    readonly dimension: minecraftserverbindings.Dimension;
+    color: minecraftserver.RGB;
+    readonly dimension: minecraftserver.Dimension;
     readonly hasDuration: boolean;
-    readonly location: minecraftserverbindings.Vector3;
+    readonly location: minecraftserver.Vector3;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    rotation: minecraftserverbindings.Vector3;
+    rotation: minecraftserver.Vector3;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
@@ -117,7 +117,7 @@ export class DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    visibleTo: minecraftserverbindings.Player[];
+    visibleTo: minecraftserver.Player[];
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -125,7 +125,7 @@ export class DebugShape {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    setLocation(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3): void;
+    setLocation(location: minecraftserver.DimensionLocation | minecraftserver.Vector3): void;
 }
 
 // @ts-ignore
@@ -133,7 +133,7 @@ export class DebugSphere extends DebugShape {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3);
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 // @ts-ignore
@@ -145,7 +145,7 @@ export class DebugText extends DebugShape {
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    constructor(location: minecraftserverbindings.DimensionLocation | minecraftserverbindings.Vector3, text: string);
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3, text: string);
 }
 
 export interface HandleCounts {
@@ -186,14 +186,17 @@ export interface RuntimeStats {
  * @remarks This function can't be called in read-only mode.
  */
 export function collectPluginStats(): PluginStats;
+
 /**
  * @remarks This function can't be called in read-only mode.
  */
 export function collectRuntimeStats(): RuntimeStats;
+
 /**
  * @remarks This function can't be called in read-only mode.
  *
  * @throws This function can throw errors.
  */
 export function disableWatchdogTimingWarnings(disable: boolean): void;
+
 export const debugDrawer: DebugDrawer;

@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -14,6 +14,6 @@
 import * as minecraftcommon from "@minecraft/common";
 import * as mojangminecraft from "mojang-minecraft";
 // @ts-ignore
-export class SimulatedPlayer extends minecraftserverbindings.Player {
+export class SimulatedPlayer extends mojangminecraft.Player {
     private constructor();
 }

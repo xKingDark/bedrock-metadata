@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -12,9 +12,9 @@
  * ```
  */
 export enum InvalidArgumentErrorType {
-    Duplicate = "Duplicate",
-    Empty = "Empty",
-    Unknown = "Unknown",
+    Duplicate   = "Duplicate",
+    Empty       = "Empty",
+    Unknown     = "Unknown",
     Unspecified = "Unspecified",
 }
 

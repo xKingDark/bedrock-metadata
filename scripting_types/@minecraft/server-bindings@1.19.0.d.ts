@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @packageDocumentation
  * Manifest Details
@@ -14,372 +14,372 @@
 import * as minecraftcommon from "@minecraft/common";
 export enum BlockComponentTypes {
     FluidContainer = "minecraft:fluidContainer",
-    Inventory = "minecraft:inventory",
-    Piston = "minecraft:piston",
-    RecordPlayer = "minecraft:record_player",
-    Sign = "minecraft:sign",
+    Inventory      = "minecraft:inventory",
+    Piston         = "minecraft:piston",
+    RecordPlayer   = "minecraft:record_player",
+    Sign           = "minecraft:sign",
 }
 
 export enum BlockPistonState {
-    Expanded = "Expanded",
-    Expanding = "Expanding",
-    Retracted = "Retracted",
+    Expanded   = "Expanded",
+    Expanding  = "Expanding",
+    Retracted  = "Retracted",
     Retracting = "Retracting",
 }
 
 export enum BlockVolumeIntersection {
-    Disjoint = 0,
-    Contains = 1,
+    Disjoint   = 0,
+    Contains   = 1,
     Intersects = 2,
 }
 
 export enum ButtonState {
-    Pressed = "Pressed",
+    Pressed  = "Pressed",
     Released = "Released",
 }
 
 export enum CustomComponentNameErrorReason {
-    NoNamespace = 1,
+    NoNamespace         = 1,
     DisallowedNamespace = 2,
 }
 
 export enum Difficulty {
-    Easy = "Easy",
-    Hard = "Hard",
-    Normal = "Normal",
+    Easy     = "Easy",
+    Hard     = "Hard",
+    Normal   = "Normal",
     Peaceful = "Peaceful",
 }
 
 export enum Direction {
-    Down = "Down",
-    East = "East",
+    Down  = "Down",
+    East  = "East",
     North = "North",
     South = "South",
-    Up = "Up",
-    West = "West",
+    Up    = "Up",
+    West  = "West",
 }
 
 export enum DisplaySlotId {
     BelowName = "BelowName",
-    List = "List",
-    Sidebar = "Sidebar",
+    List      = "List",
+    Sidebar   = "Sidebar",
 }
 
 export enum DyeColor {
-    Black = "Black",
-    Blue = "Blue",
-    Brown = "Brown",
-    Cyan = "Cyan",
-    Gray = "Gray",
-    Green = "Green",
+    Black     = "Black",
+    Blue      = "Blue",
+    Brown     = "Brown",
+    Cyan      = "Cyan",
+    Gray      = "Gray",
+    Green     = "Green",
     LightBlue = "LightBlue",
-    Lime = "Lime",
-    Magenta = "Magenta",
-    Orange = "Orange",
-    Pink = "Pink",
-    Purple = "Purple",
-    Red = "Red",
-    Silver = "Silver",
-    White = "White",
-    Yellow = "Yellow",
+    Lime      = "Lime",
+    Magenta   = "Magenta",
+    Orange    = "Orange",
+    Pink      = "Pink",
+    Purple    = "Purple",
+    Red       = "Red",
+    Silver    = "Silver",
+    White     = "White",
+    Yellow    = "Yellow",
 }
 
 export enum EasingType {
-    InBack = "InBack",
-    InBounce = "InBounce",
-    InCirc = "InCirc",
-    InCubic = "InCubic",
-    InElastic = "InElastic",
-    InExpo = "InExpo",
-    InOutBack = "InOutBack",
-    InOutBounce = "InOutBounce",
-    InOutCirc = "InOutCirc",
-    InOutCubic = "InOutCubic",
+    InBack       = "InBack",
+    InBounce     = "InBounce",
+    InCirc       = "InCirc",
+    InCubic      = "InCubic",
+    InElastic    = "InElastic",
+    InExpo       = "InExpo",
+    InOutBack    = "InOutBack",
+    InOutBounce  = "InOutBounce",
+    InOutCirc    = "InOutCirc",
+    InOutCubic   = "InOutCubic",
     InOutElastic = "InOutElastic",
-    InOutExpo = "InOutExpo",
-    InOutQuad = "InOutQuad",
-    InOutQuart = "InOutQuart",
-    InOutQuint = "InOutQuint",
-    InOutSine = "InOutSine",
-    InQuad = "InQuad",
-    InQuart = "InQuart",
-    InQuint = "InQuint",
-    InSine = "InSine",
-    Linear = "Linear",
-    OutBack = "OutBack",
-    OutBounce = "OutBounce",
-    OutCirc = "OutCirc",
-    OutCubic = "OutCubic",
-    OutElastic = "OutElastic",
-    OutExpo = "OutExpo",
-    OutQuad = "OutQuad",
-    OutQuart = "OutQuart",
-    OutQuint = "OutQuint",
-    OutSine = "OutSine",
-    Spring = "Spring",
+    InOutExpo    = "InOutExpo",
+    InOutQuad    = "InOutQuad",
+    InOutQuart   = "InOutQuart",
+    InOutQuint   = "InOutQuint",
+    InOutSine    = "InOutSine",
+    InQuad       = "InQuad",
+    InQuart      = "InQuart",
+    InQuint      = "InQuint",
+    InSine       = "InSine",
+    Linear       = "Linear",
+    OutBack      = "OutBack",
+    OutBounce    = "OutBounce",
+    OutCirc      = "OutCirc",
+    OutCubic     = "OutCubic",
+    OutElastic   = "OutElastic",
+    OutExpo      = "OutExpo",
+    OutQuad      = "OutQuad",
+    OutQuart     = "OutQuart",
+    OutQuint     = "OutQuint",
+    OutSine      = "OutSine",
+    Spring       = "Spring",
 }
 
 export enum EnchantmentSlot {
-    ArmorFeet = "ArmorFeet",
-    ArmorHead = "ArmorHead",
-    ArmorLegs = "ArmorLegs",
-    ArmorTorso = "ArmorTorso",
-    Axe = "Axe",
-    Bow = "Bow",
-    CarrotStick = "CarrotStick",
+    ArmorFeet    = "ArmorFeet",
+    ArmorHead    = "ArmorHead",
+    ArmorLegs    = "ArmorLegs",
+    ArmorTorso   = "ArmorTorso",
+    Axe          = "Axe",
+    Bow          = "Bow",
+    CarrotStick  = "CarrotStick",
     CosmeticHead = "CosmeticHead",
-    Crossbow = "Crossbow",
-    Elytra = "Elytra",
-    FishingRod = "FishingRod",
-    Flintsteel = "Flintsteel",
-    Hoe = "Hoe",
-    MeleeSpear = "MeleeSpear",
-    Pickaxe = "Pickaxe",
-    Shears = "Shears",
-    Shield = "Shield",
-    Shovel = "Shovel",
-    Spear = "Spear",
-    Sword = "Sword",
+    Crossbow     = "Crossbow",
+    Elytra       = "Elytra",
+    FishingRod   = "FishingRod",
+    Flintsteel   = "Flintsteel",
+    Hoe          = "Hoe",
+    MeleeSpear   = "MeleeSpear",
+    Pickaxe      = "Pickaxe",
+    Shears       = "Shears",
+    Shield       = "Shield",
+    Shovel       = "Shovel",
+    Spear        = "Spear",
+    Sword        = "Sword",
 }
 
 export enum EntityComponentTypes {
-    AddRider = "minecraft:addrider",
-    Ageable = "minecraft:ageable",
-    Breathable = "minecraft:breathable",
-    CanClimb = "minecraft:can_climb",
-    CanFly = "minecraft:can_fly",
-    CanPowerJump = "minecraft:can_power_jump",
-    Color = "minecraft:color",
-    Color2 = "minecraft:color2",
-    CursorInventory = "minecraft:cursor_inventory",
-    Equippable = "minecraft:equippable",
-    FireImmune = "minecraft:fire_immune",
-    FloatsInLiquid = "minecraft:floats_in_liquid",
-    FlyingSpeed = "minecraft:flying_speed",
-    FrictionModifier = "minecraft:friction_modifier",
-    GroundOffset = "minecraft:ground_offset",
-    Healable = "minecraft:healable",
-    Health = "minecraft:health",
-    Inventory = "minecraft:inventory",
-    IsBaby = "minecraft:is_baby",
-    IsCharged = "minecraft:is_charged",
-    IsChested = "minecraft:is_chested",
-    IsDyeable = "minecraft:is_dyeable",
+    AddRider              = "minecraft:addrider",
+    Ageable               = "minecraft:ageable",
+    Breathable            = "minecraft:breathable",
+    CanClimb              = "minecraft:can_climb",
+    CanFly                = "minecraft:can_fly",
+    CanPowerJump          = "minecraft:can_power_jump",
+    Color                 = "minecraft:color",
+    Color2                = "minecraft:color2",
+    CursorInventory       = "minecraft:cursor_inventory",
+    Equippable            = "minecraft:equippable",
+    FireImmune            = "minecraft:fire_immune",
+    FloatsInLiquid        = "minecraft:floats_in_liquid",
+    FlyingSpeed           = "minecraft:flying_speed",
+    FrictionModifier      = "minecraft:friction_modifier",
+    GroundOffset          = "minecraft:ground_offset",
+    Healable              = "minecraft:healable",
+    Health                = "minecraft:health",
+    Inventory             = "minecraft:inventory",
+    IsBaby                = "minecraft:is_baby",
+    IsCharged             = "minecraft:is_charged",
+    IsChested             = "minecraft:is_chested",
+    IsDyeable             = "minecraft:is_dyeable",
     IsHiddenWhenInvisible = "minecraft:is_hidden_when_invisible",
-    IsIgnited = "minecraft:is_ignited",
-    IsIllagerCaptain = "minecraft:is_illager_captain",
-    IsSaddled = "minecraft:is_saddled",
-    IsShaking = "minecraft:is_shaking",
-    IsSheared = "minecraft:is_sheared",
-    IsStackable = "minecraft:is_stackable",
-    IsStunned = "minecraft:is_stunned",
-    IsTamed = "minecraft:is_tamed",
-    Item = "minecraft:item",
-    LavaMovement = "minecraft:lava_movement",
-    Leashable = "minecraft:leashable",
-    MarkVariant = "minecraft:mark_variant",
-    Movement = "minecraft:movement",
-    MovementAmphibious = "minecraft:movement.amphibious",
-    MovementBasic = "minecraft:movement.basic",
-    MovementFly = "minecraft:movement.fly",
-    MovementGeneric = "minecraft:movement.generic",
-    MovementGlide = "minecraft:movement.glide",
-    MovementHover = "minecraft:movement.hover",
-    MovementJump = "minecraft:movement.jump",
-    MovementSkip = "minecraft:movement.skip",
-    MovementSway = "minecraft:movement.sway",
-    NavigationClimb = "minecraft:navigation.climb",
-    NavigationFloat = "minecraft:navigation.float",
-    NavigationFly = "minecraft:navigation.fly",
-    NavigationGeneric = "minecraft:navigation.generic",
-    NavigationHover = "minecraft:navigation.hover",
-    NavigationWalk = "minecraft:navigation.walk",
-    OnFire = "minecraft:onfire",
-    Projectile = "minecraft:projectile",
-    PushThrough = "minecraft:push_through",
-    Rideable = "minecraft:rideable",
-    Riding = "minecraft:riding",
-    Scale = "minecraft:scale",
-    SkinId = "minecraft:skin_id",
-    Strength = "minecraft:strength",
-    Tameable = "minecraft:tameable",
-    TameMount = "minecraft:tamemount",
-    TypeFamily = "minecraft:type_family",
-    UnderwaterMovement = "minecraft:underwater_movement",
-    Variant = "minecraft:variant",
-    WantsJockey = "minecraft:wants_jockey",
+    IsIgnited             = "minecraft:is_ignited",
+    IsIllagerCaptain      = "minecraft:is_illager_captain",
+    IsSaddled             = "minecraft:is_saddled",
+    IsShaking             = "minecraft:is_shaking",
+    IsSheared             = "minecraft:is_sheared",
+    IsStackable           = "minecraft:is_stackable",
+    IsStunned             = "minecraft:is_stunned",
+    IsTamed               = "minecraft:is_tamed",
+    Item                  = "minecraft:item",
+    LavaMovement          = "minecraft:lava_movement",
+    Leashable             = "minecraft:leashable",
+    MarkVariant           = "minecraft:mark_variant",
+    Movement              = "minecraft:movement",
+    MovementAmphibious    = "minecraft:movement.amphibious",
+    MovementBasic         = "minecraft:movement.basic",
+    MovementFly           = "minecraft:movement.fly",
+    MovementGeneric       = "minecraft:movement.generic",
+    MovementGlide         = "minecraft:movement.glide",
+    MovementHover         = "minecraft:movement.hover",
+    MovementJump          = "minecraft:movement.jump",
+    MovementSkip          = "minecraft:movement.skip",
+    MovementSway          = "minecraft:movement.sway",
+    NavigationClimb       = "minecraft:navigation.climb",
+    NavigationFloat       = "minecraft:navigation.float",
+    NavigationFly         = "minecraft:navigation.fly",
+    NavigationGeneric     = "minecraft:navigation.generic",
+    NavigationHover       = "minecraft:navigation.hover",
+    NavigationWalk        = "minecraft:navigation.walk",
+    OnFire                = "minecraft:onfire",
+    Projectile            = "minecraft:projectile",
+    PushThrough           = "minecraft:push_through",
+    Rideable              = "minecraft:rideable",
+    Riding                = "minecraft:riding",
+    Scale                 = "minecraft:scale",
+    SkinId                = "minecraft:skin_id",
+    Strength              = "minecraft:strength",
+    Tameable              = "minecraft:tameable",
+    TameMount             = "minecraft:tamemount",
+    TypeFamily            = "minecraft:type_family",
+    UnderwaterMovement    = "minecraft:underwater_movement",
+    Variant               = "minecraft:variant",
+    WantsJockey           = "minecraft:wants_jockey",
 }
 
 export enum EntityDamageCause {
-    anvil = "anvil",
-    blockExplosion = "blockExplosion",
-    campfire = "campfire",
-    charging = "charging",
-    contact = "contact",
-    drowning = "drowning",
-    entityAttack = "entityAttack",
+    anvil           = "anvil",
+    blockExplosion  = "blockExplosion",
+    campfire        = "campfire",
+    charging        = "charging",
+    contact         = "contact",
+    drowning        = "drowning",
+    entityAttack    = "entityAttack",
     entityExplosion = "entityExplosion",
-    fall = "fall",
-    fallingBlock = "fallingBlock",
-    fire = "fire",
-    fireTick = "fireTick",
-    fireworks = "fireworks",
-    flyIntoWall = "flyIntoWall",
-    freezing = "freezing",
-    lava = "lava",
-    lightning = "lightning",
-    maceSmash = "maceSmash",
-    magic = "magic",
-    magma = "magma",
-    none = "none",
-    override = "override",
-    piston = "piston",
-    projectile = "projectile",
-    ramAttack = "ramAttack",
-    selfDestruct = "selfDestruct",
-    sonicBoom = "sonicBoom",
-    soulCampfire = "soulCampfire",
-    stalactite = "stalactite",
-    stalagmite = "stalagmite",
-    starve = "starve",
-    suffocation = "suffocation",
-    suicide = "suicide",
-    temperature = "temperature",
-    thorns = "thorns",
-    void = "void",
-    wither = "wither",
+    fall            = "fall",
+    fallingBlock    = "fallingBlock",
+    fire            = "fire",
+    fireTick        = "fireTick",
+    fireworks       = "fireworks",
+    flyIntoWall     = "flyIntoWall",
+    freezing        = "freezing",
+    lava            = "lava",
+    lightning       = "lightning",
+    maceSmash       = "maceSmash",
+    magic           = "magic",
+    magma           = "magma",
+    none            = "none",
+    override        = "override",
+    piston          = "piston",
+    projectile      = "projectile",
+    ramAttack       = "ramAttack",
+    selfDestruct    = "selfDestruct",
+    sonicBoom       = "sonicBoom",
+    soulCampfire    = "soulCampfire",
+    stalactite      = "stalactite",
+    stalagmite      = "stalagmite",
+    starve          = "starve",
+    suffocation     = "suffocation",
+    suicide         = "suicide",
+    temperature     = "temperature",
+    thorns          = "thorns",
+    void            = "void",
+    wither          = "wither",
 }
 
 export enum EntityInitializationCause {
-    Born = "Born",
-    Event = "Event",
-    Loaded = "Loaded",
-    Spawned = "Spawned",
+    Born        = "Born",
+    Event       = "Event",
+    Loaded      = "Loaded",
+    Spawned     = "Spawned",
     Transformed = "Transformed",
 }
 
 export enum EquipmentSlot {
-    Chest = "Chest",
-    Feet = "Feet",
-    Head = "Head",
-    Legs = "Legs",
+    Chest    = "Chest",
+    Feet     = "Feet",
+    Head     = "Head",
+    Legs     = "Legs",
     Mainhand = "Mainhand",
-    Offhand = "Offhand",
+    Offhand  = "Offhand",
 }
 
 export enum FluidType {
-    Lava = "Lava",
-    Potion = "Potion",
+    Lava       = "Lava",
+    Potion     = "Potion",
     PowderSnow = "PowderSnow",
-    Water = "Water",
+    Water      = "Water",
 }
 
 export enum GameMode {
     adventure = "adventure",
-    creative = "creative",
+    creative  = "creative",
     spectator = "spectator",
-    survival = "survival",
+    survival  = "survival",
 }
 
 export enum GameRule {
-    CommandBlockOutput = "commandBlockOutput",
-    CommandBlocksEnabled = "commandBlocksEnabled",
-    DoDayLightCycle = "doDayLightCycle",
-    DoEntityDrops = "doEntityDrops",
-    DoFireTick = "doFireTick",
-    DoImmediateRespawn = "doImmediateRespawn",
-    DoInsomnia = "doInsomnia",
-    DoLimitedCrafting = "doLimitedCrafting",
-    DoMobLoot = "doMobLoot",
-    DoMobSpawning = "doMobSpawning",
-    DoTileDrops = "doTileDrops",
-    DoWeatherCycle = "doWeatherCycle",
-    DrowningDamage = "drowningDamage",
-    FallDamage = "fallDamage",
-    FireDamage = "fireDamage",
-    FreezeDamage = "freezeDamage",
-    FunctionCommandLimit = "functionCommandLimit",
-    KeepInventory = "keepInventory",
-    MaxCommandChainLength = "maxCommandChainLength",
-    MobGriefing = "mobGriefing",
-    NaturalRegeneration = "naturalRegeneration",
+    CommandBlockOutput        = "commandBlockOutput",
+    CommandBlocksEnabled      = "commandBlocksEnabled",
+    DoDayLightCycle           = "doDayLightCycle",
+    DoEntityDrops             = "doEntityDrops",
+    DoFireTick                = "doFireTick",
+    DoImmediateRespawn        = "doImmediateRespawn",
+    DoInsomnia                = "doInsomnia",
+    DoLimitedCrafting         = "doLimitedCrafting",
+    DoMobLoot                 = "doMobLoot",
+    DoMobSpawning             = "doMobSpawning",
+    DoTileDrops               = "doTileDrops",
+    DoWeatherCycle            = "doWeatherCycle",
+    DrowningDamage            = "drowningDamage",
+    FallDamage                = "fallDamage",
+    FireDamage                = "fireDamage",
+    FreezeDamage              = "freezeDamage",
+    FunctionCommandLimit      = "functionCommandLimit",
+    KeepInventory             = "keepInventory",
+    MaxCommandChainLength     = "maxCommandChainLength",
+    MobGriefing               = "mobGriefing",
+    NaturalRegeneration       = "naturalRegeneration",
     PlayersSleepingPercentage = "playersSleepingPercentage",
     ProjectilesCanBreakBlocks = "projectilesCanBreakBlocks",
-    Pvp = "pvp",
-    RandomTickSpeed = "randomTickSpeed",
-    RecipesUnlock = "recipesUnlock",
-    RespawnBlocksExplode = "respawnBlocksExplode",
-    SendCommandFeedback = "sendCommandFeedback",
-    ShowBorderEffect = "showBorderEffect",
-    ShowCoordinates = "showCoordinates",
-    ShowDaysPlayed = "showDaysPlayed",
-    ShowDeathMessages = "showDeathMessages",
-    ShowRecipeMessages = "showRecipeMessages",
-    ShowTags = "showTags",
-    SpawnRadius = "spawnRadius",
-    TntExplodes = "tntExplodes",
-    TntExplosionDropDecay = "tntExplosionDropDecay",
+    Pvp                       = "pvp",
+    RandomTickSpeed           = "randomTickSpeed",
+    RecipesUnlock             = "recipesUnlock",
+    RespawnBlocksExplode      = "respawnBlocksExplode",
+    SendCommandFeedback       = "sendCommandFeedback",
+    ShowBorderEffect          = "showBorderEffect",
+    ShowCoordinates           = "showCoordinates",
+    ShowDaysPlayed            = "showDaysPlayed",
+    ShowDeathMessages         = "showDeathMessages",
+    ShowRecipeMessages        = "showRecipeMessages",
+    ShowTags                  = "showTags",
+    SpawnRadius               = "spawnRadius",
+    TntExplodes               = "tntExplodes",
+    TntExplosionDropDecay     = "tntExplosionDropDecay",
 }
 
 export enum HudElement {
-    PaperDoll = 0,
-    Armor = 1,
-    ToolTips = 2,
+    PaperDoll     = 0,
+    Armor         = 1,
+    ToolTips      = 2,
     TouchControls = 3,
-    Crosshair = 4,
-    Hotbar = 5,
-    Health = 6,
-    ProgressBar = 7,
-    Hunger = 8,
-    AirBubbles = 9,
-    HorseHealth = 10,
+    Crosshair     = 4,
+    Hotbar        = 5,
+    Health        = 6,
+    ProgressBar   = 7,
+    Hunger        = 8,
+    AirBubbles    = 9,
+    HorseHealth   = 10,
     StatusEffects = 11,
-    ItemText = 12,
+    ItemText      = 12,
 }
 
 export enum HudVisibility {
-    Hide = 0,
+    Hide  = 0,
     Reset = 1,
 }
 
 export enum InputButton {
-    Jump = "Jump",
+    Jump  = "Jump",
     Sneak = "Sneak",
 }
 
 export enum InputMode {
-    Gamepad = "Gamepad",
+    Gamepad          = "Gamepad",
     KeyboardAndMouse = "KeyboardAndMouse",
     MotionController = "MotionController",
-    Touch = "Touch",
+    Touch            = "Touch",
 }
 
 export enum InputPermissionCategory {
-    Camera = 1,
-    Movement = 2,
+    Camera          = 1,
+    Movement        = 2,
     LateralMovement = 4,
-    Sneak = 5,
-    Jump = 6,
-    Mount = 7,
-    Dismount = 8,
-    MoveForward = 9,
-    MoveBackward = 10,
-    MoveLeft = 11,
-    MoveRight = 12,
+    Sneak           = 5,
+    Jump            = 6,
+    Mount           = 7,
+    Dismount        = 8,
+    MoveForward     = 9,
+    MoveBackward    = 10,
+    MoveLeft        = 11,
+    MoveRight       = 12,
 }
 
 export enum ItemComponentTypes {
     Compostable = "minecraft:compostable",
-    Cooldown = "minecraft:cooldown",
-    Durability = "minecraft:durability",
+    Cooldown    = "minecraft:cooldown",
+    Durability  = "minecraft:durability",
     Enchantable = "minecraft:enchantable",
-    Food = "minecraft:food",
+    Food        = "minecraft:food",
 }
 
 export enum ItemLockMode {
     inventory = "inventory",
-    none = "none",
-    slot = "slot",
+    none      = "none",
+    slot      = "slot",
 }
 
 export enum LiquidType {
@@ -387,120 +387,121 @@ export enum LiquidType {
 }
 
 export enum MemoryTier {
-    SuperLow = 0,
-    Low = 1,
-    Mid = 2,
-    High = 3,
+    SuperLow  = 0,
+    Low       = 1,
+    Mid       = 2,
+    High      = 3,
     SuperHigh = 4,
 }
 
 export enum MoonPhase {
-    FullMoon = 0,
-    WaningGibbous = 1,
-    FirstQuarter = 2,
+    FullMoon       = 0,
+    WaningGibbous  = 1,
+    FirstQuarter   = 2,
     WaningCrescent = 3,
-    NewMoon = 4,
+    NewMoon        = 4,
     WaxingCrescent = 5,
-    LastQuarter = 6,
-    WaxingGibbous = 7,
+    LastQuarter    = 6,
+    WaxingGibbous  = 7,
 }
 
 export enum NamespaceNameErrorReason {
     DisallowedNamespace = "DisallowedNamespace",
-    NoNamespace = "NoNamespace",
+    NoNamespace         = "NoNamespace",
 }
 
 export enum ObjectiveSortOrder {
-    Ascending = 0,
+    Ascending  = 0,
     Descending = 1,
 }
 
 export enum PaletteColor {
-    White = 0,
-    Orange = 1,
-    Magenta = 2,
+    White     = 0,
+    Orange    = 1,
+    Magenta   = 2,
     LightBlue = 3,
-    Yellow = 4,
-    Lime = 5,
-    Pink = 6,
-    Gray = 7,
-    Silver = 8,
-    Cyan = 9,
-    Purple = 10,
-    Blue = 11,
-    Brown = 12,
-    Green = 13,
-    Red = 14,
-    Black = 15,
+    Yellow    = 4,
+    Lime      = 5,
+    Pink      = 6,
+    Gray      = 7,
+    Silver    = 8,
+    Cyan      = 9,
+    Purple    = 10,
+    Blue      = 11,
+    Brown     = 12,
+    Green     = 13,
+    Red       = 14,
+    Black     = 15,
 }
 
 export enum PlatformType {
     Console = "Console",
     Desktop = "Desktop",
-    Mobile = "Mobile",
+    Mobile  = "Mobile",
 }
 
 export enum ScoreboardIdentityType {
-    Entity = "Entity",
+    Entity     = "Entity",
     FakePlayer = "FakePlayer",
-    Player = "Player",
+    Player     = "Player",
 }
 
 export enum ScriptEventSource {
-    Block = "Block",
-    Entity = "Entity",
+    Block       = "Block",
+    Entity      = "Entity",
     NPCDialogue = "NPCDialogue",
-    Server = "Server",
+    Server      = "Server",
 }
 
 export enum SignSide {
-    Back = "Back",
+    Back  = "Back",
     Front = "Front",
 }
 
 export enum StructureAnimationMode {
     Blocks = "Blocks",
     Layers = "Layers",
-    None = "None",
+    None   = "None",
 }
 
 export enum StructureMirrorAxis {
     None = "None",
-    X = "X",
-    XZ = "XZ",
-    Z = "Z",
+    X    = "X",
+    XZ   = "XZ",
+    Z    = "Z",
 }
 
 export enum StructureRotation {
-    None = "None",
+    None      = "None",
     Rotate180 = "Rotate180",
     Rotate270 = "Rotate270",
-    Rotate90 = "Rotate90",
+    Rotate90  = "Rotate90",
 }
 
 export enum StructureSaveMode {
     Memory = "Memory",
-    World = "World",
+    World  = "World",
 }
 
 export enum TimeOfDay {
-    Day = 1000,
-    Noon = 6000,
-    Sunset = 12000,
-    Night = 13000,
+    Day      = 1000,
+    Noon     = 6000,
+    Sunset   = 12000,
+    Night    = 13000,
     Midnight = 18000,
-    Sunrise = 23000,
+    Sunrise  = 23000,
 }
 
 export enum WeatherType {
-    Clear = "Clear",
-    Rain = "Rain",
+    Clear   = "Clear",
+    Rain    = "Rain",
     Thunder = "Thunder",
 }
 
-export type BlockComponentReturnType<T extends string> = T extends keyof BlockComponentTypeMap
-    ? BlockComponentTypeMap[T]
-    : BlockComponent;
+export type BlockComponentReturnType<T extends string> =
+    T extends keyof BlockComponentTypeMap
+        ? BlockComponentTypeMap[T]
+        : BlockComponent;
 
 export type BlockComponentTypeMap = {
     fluidContainer: BlockFluidContainerComponent;
@@ -515,9 +516,10 @@ export type BlockComponentTypeMap = {
     "minecraft:sign": BlockSignComponent;
 }
 
-export type EntityComponentReturnType<T extends string> = T extends keyof EntityComponentTypeMap
-    ? EntityComponentTypeMap[T]
-    : EntityComponent;
+export type EntityComponentReturnType<T extends string> =
+    T extends keyof EntityComponentTypeMap
+        ? EntityComponentTypeMap[T]
+        : EntityComponent;
 
 export type EntityComponentTypeMap = {
     addrider: EntityAddRiderComponent;
@@ -652,9 +654,10 @@ export type EntityComponentTypeMap = {
     "minecraft:wants_jockey": EntityWantsJockeyComponent;
 }
 
-export type ItemComponentReturnType<T extends string> = T extends keyof ItemComponentTypeMap
-    ? ItemComponentTypeMap[T]
-    : ItemComponent;
+export type ItemComponentReturnType<T extends string> =
+    T extends keyof ItemComponentTypeMap
+        ? ItemComponentTypeMap[T]
+        : ItemComponent;
 
 export type ItemComponentTypeMap = {
     compostable: ItemCompostableComponent;
@@ -730,8 +733,6 @@ export class Block {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param steps Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -741,8 +742,6 @@ export class Block {
     above(steps?: number): Block | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param steps Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -786,8 +785,6 @@ export class Block {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param steps Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -807,9 +804,6 @@ export class Block {
     getComponent<T extends string>(componentId: T): BlockComponentReturnType<T> | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param amount Defaults to: 1
-     *
      *
      * @throws This function can throw errors.
      *
@@ -901,8 +895,6 @@ export class Block {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param steps Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -957,8 +949,6 @@ export class Block {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param steps Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -968,8 +958,6 @@ export class Block {
     south(steps?: number): Block | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param steps Defaults to: 1
      *
      * @throws This function can throw errors.
      *
@@ -1177,8 +1165,6 @@ export class BlockPermutation {
     getAllStates(): Record<string, boolean | number | string>;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param amount Defaults to: 1
      */
     getItemStack(amount?: number): ItemStack | undefined;
     /**
@@ -1283,8 +1269,6 @@ export class BlockRecordPlayerComponent extends BlockComponent {
     playRecord(): void;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param startPlaying Defaults to: true
      *
      * @throws This function can throw errors.
      */
@@ -2320,8 +2304,6 @@ export class Entity {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param useEffects Defaults to: true
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
@@ -2563,8 +2545,6 @@ export class Entity {
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
      * @remarks This function can't be called in read-only mode.
-     *
-     * @param useEffects Defaults to: true
      *
      * @throws This function can throw errors.
      *
@@ -5147,7 +5127,9 @@ export class PlayerDimensionChangeAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerDimensionChangeAfterEvent) => void): (arg0: PlayerDimensionChangeAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerDimensionChangeAfterEvent) => void,
+    ): (arg0: PlayerDimensionChangeAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5222,7 +5204,9 @@ export class PlayerGameModeChangeBeforeEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerGameModeChangeBeforeEvent) => void): (arg0: PlayerGameModeChangeBeforeEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerGameModeChangeBeforeEvent) => void,
+    ): (arg0: PlayerGameModeChangeBeforeEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5245,7 +5229,9 @@ export class PlayerInputModeChangeAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInputModeChangeAfterEvent) => void): (arg0: PlayerInputModeChangeAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInputModeChangeAfterEvent) => void,
+    ): (arg0: PlayerInputModeChangeAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5268,7 +5254,9 @@ export class PlayerInputPermissionCategoryChangeAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void): (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void,
+    ): (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5319,7 +5307,9 @@ export class PlayerInteractWithBlockAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithBlockAfterEvent) => void): (arg0: PlayerInteractWithBlockAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithBlockAfterEvent) => void,
+    ): (arg0: PlayerInteractWithBlockAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5349,7 +5339,9 @@ export class PlayerInteractWithBlockBeforeEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithBlockBeforeEvent) => void): (arg0: PlayerInteractWithBlockBeforeEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithBlockBeforeEvent) => void,
+    ): (arg0: PlayerInteractWithBlockBeforeEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5373,7 +5365,9 @@ export class PlayerInteractWithEntityAfterEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithEntityAfterEvent) => void): (arg0: PlayerInteractWithEntityAfterEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithEntityAfterEvent) => void,
+    ): (arg0: PlayerInteractWithEntityAfterEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5400,7 +5394,9 @@ export class PlayerInteractWithEntityBeforeEventSignal {
      *
      * This function can't be called in read-only mode.
      */
-    subscribe(callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void): (arg0: PlayerInteractWithEntityBeforeEvent) => void;
+    subscribe(
+        callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void,
+    ): (arg0: PlayerInteractWithEntityBeforeEvent) => void;
     /**
      * @remarks This function can be called in early-execution mode.
      *
@@ -5879,8 +5875,6 @@ export class Structure {
     /**
      * @remarks This function can't be called in read-only mode.
      *
-     * @param saveMode Defaults to: 1
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -5963,7 +5957,12 @@ export class StructureManager {
      *
      * {@link InvalidStructureError}
      */
-    place(structure: string | Structure, dimension: Dimension, location: Vector3, options?: StructurePlaceOptions): void;
+    place(
+        structure: string | Structure,
+        dimension: Dimension,
+        location: Vector3,
+        options?: StructurePlaceOptions,
+    ): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -7163,9 +7162,10 @@ export class UnloadedChunksError extends Error {
     private constructor();
 }
 
-export const HudElementsCount = 13;
+export const HudElementsCount   = 13;
 export const HudVisibilityCount = 2;
-export const MoonPhaseCount = 8;
-export const TicksPerSecond = 20;
+export const MoonPhaseCount     = 8;
+export const TicksPerSecond     = 20;
+
 export const system: System;
-export const world: World;
+export const world:  World;

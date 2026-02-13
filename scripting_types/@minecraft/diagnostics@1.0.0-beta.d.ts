@@ -1,6 +1,6 @@
-// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://github.com/DarkGamerYT/bedrock-metadata
-// Definitions by: xKingDark <https://github.com/DarkGamerYT>
+// Type definitions for Minecraft Bedrock Edition Script APIs
+// Project: https://github.com/xKingDark/bedrock-metadata
+// Definitions by: xKingDark <https://github.com/xKingDark>
 /**
  * @beta
  * @packageDocumentation
@@ -15,10 +15,10 @@
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserveradmin from "@minecraft/server-admin";
 export enum SentryEventLevel {
-    debug = "debug",
-    error = "error",
-    fatal = "fatal",
-    info = "info",
+    debug   = "debug",
+    error   = "error",
+    fatal   = "fatal",
+    info    = "info",
     warning = "warning",
 }
 
