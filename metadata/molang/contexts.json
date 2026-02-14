@@ -1,13 +1,7 @@
 {
     "data_items": [
-        {
-            "name": "context.block_face"
-        },
-        {
-            "name": "context.cardinal_block_face_placed_on"
-        },
-        {
-            "name": "context.other"
-        }
+        { "name": "context.block_face" },
+        { "name": "context.cardinal_block_face_placed_on" },
+        { "name": "context.other" }
     ]
 }
