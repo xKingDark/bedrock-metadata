@@ -1,0 +1,82 @@
+{
+    "data_items": [
+        {
+            "name": "minecraft:chorusfruit",
+            "items": [
+                {
+                    "name": "minecraft:chorus_fruit",
+                    "ticks": 20
+                }
+            ]
+        },
+        {
+            "name": "minecraft:spear",
+            "items": [
+                {
+                    "name": "minecraft:copper_spear",
+                    "ticks": 17
+                },
+                {
+                    "name": "minecraft:diamond_spear",
+                    "ticks": 21
+                },
+                {
+                    "name": "minecraft:golden_spear",
+                    "ticks": 19
+                },
+                {
+                    "name": "minecraft:iron_spear",
+                    "ticks": 19
+                },
+                {
+                    "name": "minecraft:netherite_spear",
+                    "ticks": 23
+                },
+                {
+                    "name": "minecraft:stone_spear",
+                    "ticks": 15
+                },
+                {
+                    "name": "minecraft:wooden_spear",
+                    "ticks": 13
+                }
+            ]
+        },
+        {
+            "name": "minecraft:ender_pearl",
+            "items": [
+                {
+                    "name": "minecraft:ender_pearl",
+                    "ticks": 20
+                }
+            ]
+        },
+        {
+            "name": "minecraft:goat_horn",
+            "items": [
+                {
+                    "name": "minecraft:goat_horn",
+                    "ticks": 140
+                }
+            ]
+        },
+        {
+            "name": "minecraft:shield",
+            "items": [
+                {
+                    "name": "minecraft:shield",
+                    "ticks": 100
+                }
+            ]
+        },
+        {
+            "name": "minecraft:wind_charge",
+            "items": [
+                {
+                    "name": "minecraft:wind_charge",
+                    "ticks": 10
+                }
+            ]
+        }
+    ]
+}
