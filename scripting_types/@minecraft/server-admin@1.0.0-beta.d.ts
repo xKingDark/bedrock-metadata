@@ -228,6 +228,6 @@ export function transferPlayer(
 ): void;
 
 export const beforeEvents:    AdminBeforeEvents;
-export const dedicatedServer: optional;
+export const dedicatedServer: DedicatedServerUtils | undefined;
 export const secrets:         ServerSecrets;
 export const variables:       ServerVariables;
