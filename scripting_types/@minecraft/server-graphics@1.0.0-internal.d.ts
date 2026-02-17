@@ -229,6 +229,14 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
+    resetHighlightsMin(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
     resetHighlightsOffset(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -309,6 +317,14 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
+    resetShadowsMax(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
     resetShadowsOffset(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -318,6 +334,14 @@ export class ColorGrading {
      * {@link minecraftcommon.EngineError}
      */
     resetShadowsSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetTemperature(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -345,6 +369,14 @@ export class ColorGrading {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setHighlightsGamma(highlightsGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setHighlightsMin(highlightsMin: number, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -438,6 +470,14 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
+    setShadowsMax(shadowsMax: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
     setShadowsOffset(shadowsOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -447,6 +487,14 @@ export class ColorGrading {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setShadowsSaturation(shadowsSaturation: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setTemperature(temperature: number, biomeIdentifier: minecraftserver.BiomeType): void;
 }
 
 export class Water {

@@ -1373,6 +1373,16 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
+    getParts(): Block[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
     getRedstonePower(): number | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1612,7 +1622,7 @@ export class BlockComponentBlockBreakEvent extends BlockEvent {
 export class BlockComponentEntityEvent extends BlockEvent {
     private constructor();
     readonly blockPermutation: BlockPermutation;
-    readonly entitySource?: Entity;
+    readonly entitySource: Entity;
     readonly name: string;
 }
 
@@ -3400,6 +3410,20 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): Effect | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link ContainerRulesError}
+     *
+     * {@link Error}
+     *
+     * {@link InvalidEntityComponentError}
+     *
+     * {@link InvalidEntityError}
+     */
+    addItem(itemStack: ItemStack): ItemStack | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -9723,6 +9747,11 @@ export class InvalidContainerError extends Error {
 
 // @ts-ignore
 export class InvalidContainerSlotError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidEntityComponentError extends Error {
     private constructor();
 }
 

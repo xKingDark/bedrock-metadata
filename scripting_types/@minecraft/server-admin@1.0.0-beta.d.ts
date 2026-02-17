@@ -19,6 +19,50 @@ export class AdminBeforeEvents {
     readonly asyncPlayerJoin: AsyncPlayerJoinBeforeEventSignal;
 }
 
+export class AllowList {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    enabled: boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link AllowListModificationError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    add(player: minecraftserver.Player | string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    contains(player: minecraftserver.Player | string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link AllowListFileReloadError}
+     */
+    reloadFile(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link AllowListModificationError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    remove(player: minecraftserver.Player | string): void;
+}
+
 export class AsyncPlayerJoinBeforeEvent {
     private constructor();
     readonly name: string;
@@ -67,6 +111,50 @@ export class AsyncPlayerJoinBeforeEventSignal {
     unsubscribe(callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>): boolean;
 }
 
+export class DedicatedServerUtils {
+    private constructor();
+    readonly allowList: AllowList;
+    readonly levelStorage: LevelStorage;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    stopServer(): void;
+}
+
+export class LevelStorage {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LevelStorageSaveStateChangeError}
+     */
+    saveHold(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LevelStorageSaveStateChangeError}
+     */
+    saveQuery(): LevelStorageQuerySnapshotFile[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LevelStorageSaveStateChangeError}
+     */
+    saveResume(): void;
+}
+
+export class LevelStorageQuerySnapshotFile {
+    private constructor();
+    readonly fileName: string;
+    readonly fileSize: number;
+}
+
 export class SecretString {
     /**
      * @remarks This function can't be called in read-only mode.
@@ -106,12 +194,27 @@ export interface TransferPlayerNetherNetOptions {
 }
 
 // @ts-ignore
+export class AllowListFileReloadError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class AllowListModificationError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class DisconnectedError extends Error {
     private constructor();
     /**
      * @remarks This property can be read in early-execution mode.
      */
     readonly id: string;
+}
+
+// @ts-ignore
+export class LevelStorageSaveStateChangeError extends Error {
+    private constructor();
 }
 
 /**
@@ -124,6 +227,7 @@ export function transferPlayer(
     options: TransferPlayerIpPortOptions | TransferPlayerNetherNetOptions,
 ): void;
 
-export const beforeEvents: AdminBeforeEvents;
-export const secrets:      ServerSecrets;
-export const variables:    ServerVariables;
+export const beforeEvents:    AdminBeforeEvents;
+export const dedicatedServer: optional;
+export const secrets:         ServerSecrets;
+export const variables:       ServerVariables;

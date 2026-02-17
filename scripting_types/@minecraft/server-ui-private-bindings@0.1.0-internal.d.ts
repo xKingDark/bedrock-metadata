@@ -15,15 +15,48 @@
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
 import * as minecraftserveruibindings from "@minecraft/server-ui-bindings";
+export enum DataDrivenScreenClosedReason {
+    ClientCanceled       = "ClientCanceled",
+    InvalidForm          = "InvalidForm",
+    ProgrammaticClose    = "ProgrammaticClose",
+    ProgrammaticCloseAll = "ProgrammaticCloseAll",
+    UserBusy             = "UserBusy",
+}
+
+export enum DataDrivenScreenRejectReason {
+    PlayerLeave    = "PlayerLeave",
+    ServerShutdown = "ServerShutdown",
+}
+
 export class DataDrivenScreen {
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(player: minecraftserver.Player, screenId: string);
     /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftserver.InvalidEntityError}
      */
-    showScreen(player: minecraftserver.Player, screenId: string): void;
+    hideScreen(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    showScreen(): Promise<DataDrivenScreenResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -32,6 +65,11 @@ export class DataDrivenScreen {
      * {@link minecraftserver.InvalidEntityError}
      */
     static closeAllScreens(player: minecraftserver.Player): void;
+}
+
+export class DataDrivenScreenResponse {
+    private constructor();
+    readonly closedReason: DataDrivenScreenClosedReason;
 }
 
 export class DataStore {
@@ -121,6 +159,15 @@ export class DataStore {
      * @remarks This function can't be called in read-only mode.
      */
     unsubscribe(onChange: (arg0: string) => void): boolean;
+}
+
+// @ts-ignore
+export class DataDrivenScreenRejectError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: DataDrivenScreenRejectReason;
 }
 
 // @ts-ignore

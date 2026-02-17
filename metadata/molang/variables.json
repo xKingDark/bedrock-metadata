@@ -82,6 +82,7 @@
         { "name": "variable.lieonplayer" },
         { "name": "variable.lifetime" },
         { "name": "variable.map_face_icon" },
+        { "name": "variable.note_color" },
         { "name": "variable.num_particles" },
         { "name": "variable.offer_flower_tick" },
         { "name": "variable.open_mouth" },

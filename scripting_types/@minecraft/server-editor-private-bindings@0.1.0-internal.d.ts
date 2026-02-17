@@ -84,6 +84,7 @@ export enum RealmsWorldUploadResult {
 
 export class CustomBiomeSource {
     private constructor();
+    readonly id: string;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -94,6 +95,18 @@ export class CustomBiomeSource {
      * @throws This function can throw errors.
      */
     getBiomeAt(pos: minecraftserver.Vector3): minecraftserver.BiomeType;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    recalculateBiomes(newBiomes: CustomBiomeConfig[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateColor(biomeName: string, color: minecraftserver.RGBA): void;
 }
 
 export class DataStore {
@@ -1415,6 +1428,7 @@ export class RealmsService {
 export interface CustomBiomeConfig {
     name: string;
     replacements: CustomBiomeReplacementConfig[];
+    visualizationColor: minecraftserver.RGB;
 }
 
 export interface CustomBiomeReplacementConfig {

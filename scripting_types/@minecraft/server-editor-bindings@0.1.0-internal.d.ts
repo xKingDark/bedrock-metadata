@@ -155,7 +155,8 @@ export enum MinimapMarkerType {
 }
 
 export enum MinimapViewType {
-    BlockView = 0,
+    BlockView       = 0,
+    CustomBiomeView = 1,
 }
 
 export enum MouseActionCategory {
@@ -1335,7 +1336,7 @@ export class MinimapManager {
      *
      * @throws This function can throw errors.
      */
-    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number): MinimapItem;
+    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number, dataId?: string): MinimapItem;
     /**
      * @remarks This function can't be called in read-only mode.
      *
