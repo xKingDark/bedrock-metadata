@@ -6,7 +6,11 @@
         "build_flavor": "Publish",
         "build_id": 41259094,
         "network_protocol": 941,
-        "storage_version": 10
+        "level": {
+            "storage_version": 10,
+            "chunk_format": 42,
+            "subchunk_format": 9
+        }
     },
     "platforms": [
         {

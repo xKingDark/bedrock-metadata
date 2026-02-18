@@ -28,6 +28,15 @@
             ]
         },
         {
+            "name": "minecraft:ice_bomb",
+            "items": [
+                {
+                    "name": "minecraft:ice_bomb",
+                    "ticks": 10
+                }
+            ]
+        },
+        {
             "name": "minecraft:shield",
             "items": [
                 {
