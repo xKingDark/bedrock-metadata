@@ -10,6 +10,42 @@
             ]
         },
         {
+            "name": "minecraft:ender_pearl",
+            "items": [
+                {
+                    "name": "minecraft:ender_pearl",
+                    "ticks": 20
+                }
+            ]
+        },
+        {
+            "name": "minecraft:goat_horn",
+            "items": [
+                {
+                    "name": "minecraft:goat_horn",
+                    "ticks": 140
+                }
+            ]
+        },
+        {
+            "name": "minecraft:ice_bomb",
+            "items": [
+                {
+                    "name": "minecraft:ice_bomb",
+                    "ticks": 10
+                }
+            ]
+        },
+        {
+            "name": "minecraft:shield",
+            "items": [
+                {
+                    "name": "minecraft:shield",
+                    "ticks": 100
+                }
+            ]
+        },
+        {
             "name": "minecraft:spear",
             "items": [
                 {
@@ -39,33 +75,6 @@
                 {
                     "name": "minecraft:wooden_spear",
                     "ticks": 13
-                }
-            ]
-        },
-        {
-            "name": "minecraft:ender_pearl",
-            "items": [
-                {
-                    "name": "minecraft:ender_pearl",
-                    "ticks": 20
-                }
-            ]
-        },
-        {
-            "name": "minecraft:goat_horn",
-            "items": [
-                {
-                    "name": "minecraft:goat_horn",
-                    "ticks": 140
-                }
-            ]
-        },
-        {
-            "name": "minecraft:shield",
-            "items": [
-                {
-                    "name": "minecraft:shield",
-                    "ticks": 100
                 }
             ]
         },

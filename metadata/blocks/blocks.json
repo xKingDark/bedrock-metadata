@@ -13332,7 +13332,7 @@
                     "default_value": false
                 }
             ],
-            "localization_key": "tile.tnt.name"
+            "localization_key": "tile.underwater_tnt.name"
         },
         {
             "name": "minecraft:underwater_torch",

@@ -185,6 +185,10 @@
             "localization_key": "item.baked_potato.name"
         },
         {
+            "name": "minecraft:balloon",
+            "localization_key": "item.balloon.white.name"
+        },
+        {
             "name": "minecraft:bamboo",
             "localization_key": "tile.bamboo.name"
         },
@@ -487,6 +491,10 @@
         {
             "name": "minecraft:blaze_spawn_egg",
             "localization_key": "item.spawn_egg.entity.blaze.name"
+        },
+        {
+            "name": "minecraft:bleach",
+            "localization_key": "item.bleach.name"
         },
         {
             "name": "minecraft:blue_bundle",
@@ -837,6 +845,10 @@
             "localization_key": "item.charcoal.name"
         },
         {
+            "name": "minecraft:chemical_heat",
+            "localization_key": "tile.chemical_heat.name"
+        },
+        {
             "name": "minecraft:cherry_boat",
             "localization_key": "item.boat.cherry.name"
         },
@@ -1069,6 +1081,22 @@
             "localization_key": "item.spawn_egg.entity.cod.name"
         },
         {
+            "name": "minecraft:colored_torch_blue",
+            "localization_key": "tile.colored_torch.blue.name"
+        },
+        {
+            "name": "minecraft:colored_torch_green",
+            "localization_key": "tile.colored_torch.green.name"
+        },
+        {
+            "name": "minecraft:colored_torch_purple",
+            "localization_key": "tile.colored_torch.purple.name"
+        },
+        {
+            "name": "minecraft:colored_torch_red",
+            "localization_key": "tile.colored_torch.red.name"
+        },
+        {
             "name": "minecraft:command_block",
             "localization_key": "tile.command_block.name"
         },
@@ -1087,6 +1115,14 @@
         {
             "name": "minecraft:composter",
             "localization_key": "tile.composter.name"
+        },
+        {
+            "name": "minecraft:compound",
+            "localization_key": "item.compound.salt.name"
+        },
+        {
+            "name": "minecraft:compound_creator",
+            "localization_key": "tile.compoundcreator.name"
         },
         {
             "name": "minecraft:conduit",
@@ -1841,6 +1877,486 @@
             "localization_key": "item.spawn_egg.entity.elder_guardian.name"
         },
         {
+            "name": "minecraft:element_0",
+            "localization_key": "tile.element.unknown.name"
+        },
+        {
+            "name": "minecraft:element_1",
+            "localization_key": "tile.element.h.name"
+        },
+        {
+            "name": "minecraft:element_10",
+            "localization_key": "tile.element.ne.name"
+        },
+        {
+            "name": "minecraft:element_100",
+            "localization_key": "tile.element.fm.name"
+        },
+        {
+            "name": "minecraft:element_101",
+            "localization_key": "tile.element.md.name"
+        },
+        {
+            "name": "minecraft:element_102",
+            "localization_key": "tile.element.no.name"
+        },
+        {
+            "name": "minecraft:element_103",
+            "localization_key": "tile.element.lr.name"
+        },
+        {
+            "name": "minecraft:element_104",
+            "localization_key": "tile.element.rf.name"
+        },
+        {
+            "name": "minecraft:element_105",
+            "localization_key": "tile.element.db.name"
+        },
+        {
+            "name": "minecraft:element_106",
+            "localization_key": "tile.element.sg.name"
+        },
+        {
+            "name": "minecraft:element_107",
+            "localization_key": "tile.element.bh.name"
+        },
+        {
+            "name": "minecraft:element_108",
+            "localization_key": "tile.element.hs.name"
+        },
+        {
+            "name": "minecraft:element_109",
+            "localization_key": "tile.element.mt.name"
+        },
+        {
+            "name": "minecraft:element_11",
+            "localization_key": "tile.element.na.name"
+        },
+        {
+            "name": "minecraft:element_110",
+            "localization_key": "tile.element.ds.name"
+        },
+        {
+            "name": "minecraft:element_111",
+            "localization_key": "tile.element.rg.name"
+        },
+        {
+            "name": "minecraft:element_112",
+            "localization_key": "tile.element.cn.name"
+        },
+        {
+            "name": "minecraft:element_113",
+            "localization_key": "tile.element.nh.name"
+        },
+        {
+            "name": "minecraft:element_114",
+            "localization_key": "tile.element.fl.name"
+        },
+        {
+            "name": "minecraft:element_115",
+            "localization_key": "tile.element.mc.name"
+        },
+        {
+            "name": "minecraft:element_116",
+            "localization_key": "tile.element.lv.name"
+        },
+        {
+            "name": "minecraft:element_117",
+            "localization_key": "tile.element.ts.name"
+        },
+        {
+            "name": "minecraft:element_118",
+            "localization_key": "tile.element.og.name"
+        },
+        {
+            "name": "minecraft:element_12",
+            "localization_key": "tile.element.mg.name"
+        },
+        {
+            "name": "minecraft:element_13",
+            "localization_key": "tile.element.al.name"
+        },
+        {
+            "name": "minecraft:element_14",
+            "localization_key": "tile.element.si.name"
+        },
+        {
+            "name": "minecraft:element_15",
+            "localization_key": "tile.element.p.name"
+        },
+        {
+            "name": "minecraft:element_16",
+            "localization_key": "tile.element.s.name"
+        },
+        {
+            "name": "minecraft:element_17",
+            "localization_key": "tile.element.cl.name"
+        },
+        {
+            "name": "minecraft:element_18",
+            "localization_key": "tile.element.ar.name"
+        },
+        {
+            "name": "minecraft:element_19",
+            "localization_key": "tile.element.k.name"
+        },
+        {
+            "name": "minecraft:element_2",
+            "localization_key": "tile.element.he.name"
+        },
+        {
+            "name": "minecraft:element_20",
+            "localization_key": "tile.element.ca.name"
+        },
+        {
+            "name": "minecraft:element_21",
+            "localization_key": "tile.element.sc.name"
+        },
+        {
+            "name": "minecraft:element_22",
+            "localization_key": "tile.element.ti.name"
+        },
+        {
+            "name": "minecraft:element_23",
+            "localization_key": "tile.element.v.name"
+        },
+        {
+            "name": "minecraft:element_24",
+            "localization_key": "tile.element.cr.name"
+        },
+        {
+            "name": "minecraft:element_25",
+            "localization_key": "tile.element.mn.name"
+        },
+        {
+            "name": "minecraft:element_26",
+            "localization_key": "tile.element.fe.name"
+        },
+        {
+            "name": "minecraft:element_27",
+            "localization_key": "tile.element.co.name"
+        },
+        {
+            "name": "minecraft:element_28",
+            "localization_key": "tile.element.ni.name"
+        },
+        {
+            "name": "minecraft:element_29",
+            "localization_key": "tile.element.cu.name"
+        },
+        {
+            "name": "minecraft:element_3",
+            "localization_key": "tile.element.li.name"
+        },
+        {
+            "name": "minecraft:element_30",
+            "localization_key": "tile.element.zn.name"
+        },
+        {
+            "name": "minecraft:element_31",
+            "localization_key": "tile.element.ga.name"
+        },
+        {
+            "name": "minecraft:element_32",
+            "localization_key": "tile.element.ge.name"
+        },
+        {
+            "name": "minecraft:element_33",
+            "localization_key": "tile.element.as.name"
+        },
+        {
+            "name": "minecraft:element_34",
+            "localization_key": "tile.element.se.name"
+        },
+        {
+            "name": "minecraft:element_35",
+            "localization_key": "tile.element.br.name"
+        },
+        {
+            "name": "minecraft:element_36",
+            "localization_key": "tile.element.kr.name"
+        },
+        {
+            "name": "minecraft:element_37",
+            "localization_key": "tile.element.rb.name"
+        },
+        {
+            "name": "minecraft:element_38",
+            "localization_key": "tile.element.sr.name"
+        },
+        {
+            "name": "minecraft:element_39",
+            "localization_key": "tile.element.y.name"
+        },
+        {
+            "name": "minecraft:element_4",
+            "localization_key": "tile.element.be.name"
+        },
+        {
+            "name": "minecraft:element_40",
+            "localization_key": "tile.element.zr.name"
+        },
+        {
+            "name": "minecraft:element_41",
+            "localization_key": "tile.element.nb.name"
+        },
+        {
+            "name": "minecraft:element_42",
+            "localization_key": "tile.element.mo.name"
+        },
+        {
+            "name": "minecraft:element_43",
+            "localization_key": "tile.element.tc.name"
+        },
+        {
+            "name": "minecraft:element_44",
+            "localization_key": "tile.element.ru.name"
+        },
+        {
+            "name": "minecraft:element_45",
+            "localization_key": "tile.element.rh.name"
+        },
+        {
+            "name": "minecraft:element_46",
+            "localization_key": "tile.element.pd.name"
+        },
+        {
+            "name": "minecraft:element_47",
+            "localization_key": "tile.element.ag.name"
+        },
+        {
+            "name": "minecraft:element_48",
+            "localization_key": "tile.element.cd.name"
+        },
+        {
+            "name": "minecraft:element_49",
+            "localization_key": "tile.element.in.name"
+        },
+        {
+            "name": "minecraft:element_5",
+            "localization_key": "tile.element.b.name"
+        },
+        {
+            "name": "minecraft:element_50",
+            "localization_key": "tile.element.sn.name"
+        },
+        {
+            "name": "minecraft:element_51",
+            "localization_key": "tile.element.sb.name"
+        },
+        {
+            "name": "minecraft:element_52",
+            "localization_key": "tile.element.te.name"
+        },
+        {
+            "name": "minecraft:element_53",
+            "localization_key": "tile.element.i.name"
+        },
+        {
+            "name": "minecraft:element_54",
+            "localization_key": "tile.element.xe.name"
+        },
+        {
+            "name": "minecraft:element_55",
+            "localization_key": "tile.element.cs.name"
+        },
+        {
+            "name": "minecraft:element_56",
+            "localization_key": "tile.element.ba.name"
+        },
+        {
+            "name": "minecraft:element_57",
+            "localization_key": "tile.element.la.name"
+        },
+        {
+            "name": "minecraft:element_58",
+            "localization_key": "tile.element.ce.name"
+        },
+        {
+            "name": "minecraft:element_59",
+            "localization_key": "tile.element.pr.name"
+        },
+        {
+            "name": "minecraft:element_6",
+            "localization_key": "tile.element.c.name"
+        },
+        {
+            "name": "minecraft:element_60",
+            "localization_key": "tile.element.nd.name"
+        },
+        {
+            "name": "minecraft:element_61",
+            "localization_key": "tile.element.pm.name"
+        },
+        {
+            "name": "minecraft:element_62",
+            "localization_key": "tile.element.sm.name"
+        },
+        {
+            "name": "minecraft:element_63",
+            "localization_key": "tile.element.eu.name"
+        },
+        {
+            "name": "minecraft:element_64",
+            "localization_key": "tile.element.gd.name"
+        },
+        {
+            "name": "minecraft:element_65",
+            "localization_key": "tile.element.tb.name"
+        },
+        {
+            "name": "minecraft:element_66",
+            "localization_key": "tile.element.dy.name"
+        },
+        {
+            "name": "minecraft:element_67",
+            "localization_key": "tile.element.ho.name"
+        },
+        {
+            "name": "minecraft:element_68",
+            "localization_key": "tile.element.er.name"
+        },
+        {
+            "name": "minecraft:element_69",
+            "localization_key": "tile.element.tm.name"
+        },
+        {
+            "name": "minecraft:element_7",
+            "localization_key": "tile.element.n.name"
+        },
+        {
+            "name": "minecraft:element_70",
+            "localization_key": "tile.element.yb.name"
+        },
+        {
+            "name": "minecraft:element_71",
+            "localization_key": "tile.element.lu.name"
+        },
+        {
+            "name": "minecraft:element_72",
+            "localization_key": "tile.element.hf.name"
+        },
+        {
+            "name": "minecraft:element_73",
+            "localization_key": "tile.element.ta.name"
+        },
+        {
+            "name": "minecraft:element_74",
+            "localization_key": "tile.element.w.name"
+        },
+        {
+            "name": "minecraft:element_75",
+            "localization_key": "tile.element.re.name"
+        },
+        {
+            "name": "minecraft:element_76",
+            "localization_key": "tile.element.os.name"
+        },
+        {
+            "name": "minecraft:element_77",
+            "localization_key": "tile.element.ir.name"
+        },
+        {
+            "name": "minecraft:element_78",
+            "localization_key": "tile.element.pt.name"
+        },
+        {
+            "name": "minecraft:element_79",
+            "localization_key": "tile.element.au.name"
+        },
+        {
+            "name": "minecraft:element_8",
+            "localization_key": "tile.element.o.name"
+        },
+        {
+            "name": "minecraft:element_80",
+            "localization_key": "tile.element.hg.name"
+        },
+        {
+            "name": "minecraft:element_81",
+            "localization_key": "tile.element.tl.name"
+        },
+        {
+            "name": "minecraft:element_82",
+            "localization_key": "tile.element.pb.name"
+        },
+        {
+            "name": "minecraft:element_83",
+            "localization_key": "tile.element.bi.name"
+        },
+        {
+            "name": "minecraft:element_84",
+            "localization_key": "tile.element.po.name"
+        },
+        {
+            "name": "minecraft:element_85",
+            "localization_key": "tile.element.at.name"
+        },
+        {
+            "name": "minecraft:element_86",
+            "localization_key": "tile.element.rn.name"
+        },
+        {
+            "name": "minecraft:element_87",
+            "localization_key": "tile.element.fr.name"
+        },
+        {
+            "name": "minecraft:element_88",
+            "localization_key": "tile.element.ra.name"
+        },
+        {
+            "name": "minecraft:element_89",
+            "localization_key": "tile.element.ac.name"
+        },
+        {
+            "name": "minecraft:element_9",
+            "localization_key": "tile.element.f.name"
+        },
+        {
+            "name": "minecraft:element_90",
+            "localization_key": "tile.element.th.name"
+        },
+        {
+            "name": "minecraft:element_91",
+            "localization_key": "tile.element.pa.name"
+        },
+        {
+            "name": "minecraft:element_92",
+            "localization_key": "tile.element.u.name"
+        },
+        {
+            "name": "minecraft:element_93",
+            "localization_key": "tile.element.np.name"
+        },
+        {
+            "name": "minecraft:element_94",
+            "localization_key": "tile.element.pu.name"
+        },
+        {
+            "name": "minecraft:element_95",
+            "localization_key": "tile.element.am.name"
+        },
+        {
+            "name": "minecraft:element_96",
+            "localization_key": "tile.element.cm.name"
+        },
+        {
+            "name": "minecraft:element_97",
+            "localization_key": "tile.element.bk.name"
+        },
+        {
+            "name": "minecraft:element_98",
+            "localization_key": "tile.element.cf.name"
+        },
+        {
+            "name": "minecraft:element_99",
+            "localization_key": "tile.element.es.name"
+        },
+        {
+            "name": "minecraft:element_constructor",
+            "localization_key": "tile.elementconstructor.name"
+        },
+        {
             "name": "minecraft:elytra",
             "localization_key": "item.elytra.name"
         },
@@ -2181,6 +2697,10 @@
             "localization_key": "item.spawn_egg.entity.glow_squid.name"
         },
         {
+            "name": "minecraft:glow_stick",
+            "localization_key": "item.glow_stick.black.name"
+        },
+        {
             "name": "minecraft:glowstone",
             "localization_key": "tile.glowstone.name"
         },
@@ -2433,6 +2953,142 @@
             "localization_key": "item.spawn_egg.entity.happy_ghast.name"
         },
         {
+            "name": "minecraft:hard_black_stained_glass",
+            "localization_key": "tile.hard_stained_glass.black.name"
+        },
+        {
+            "name": "minecraft:hard_black_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.black.name"
+        },
+        {
+            "name": "minecraft:hard_blue_stained_glass",
+            "localization_key": "tile.hard_stained_glass.blue.name"
+        },
+        {
+            "name": "minecraft:hard_blue_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.blue.name"
+        },
+        {
+            "name": "minecraft:hard_brown_stained_glass",
+            "localization_key": "tile.hard_stained_glass.brown.name"
+        },
+        {
+            "name": "minecraft:hard_brown_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.brown.name"
+        },
+        {
+            "name": "minecraft:hard_cyan_stained_glass",
+            "localization_key": "tile.hard_stained_glass.cyan.name"
+        },
+        {
+            "name": "minecraft:hard_cyan_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.cyan.name"
+        },
+        {
+            "name": "minecraft:hard_glass",
+            "localization_key": "tile.hard_glass.name"
+        },
+        {
+            "name": "minecraft:hard_glass_pane",
+            "localization_key": "tile.hard_glass_pane.name"
+        },
+        {
+            "name": "minecraft:hard_gray_stained_glass",
+            "localization_key": "tile.hard_stained_glass.gray.name"
+        },
+        {
+            "name": "minecraft:hard_gray_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.gray.name"
+        },
+        {
+            "name": "minecraft:hard_green_stained_glass",
+            "localization_key": "tile.hard_stained_glass.green.name"
+        },
+        {
+            "name": "minecraft:hard_green_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.green.name"
+        },
+        {
+            "name": "minecraft:hard_light_blue_stained_glass",
+            "localization_key": "tile.hard_stained_glass.light_blue.name"
+        },
+        {
+            "name": "minecraft:hard_light_blue_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.light_blue.name"
+        },
+        {
+            "name": "minecraft:hard_light_gray_stained_glass",
+            "localization_key": "tile.hard_stained_glass.silver.name"
+        },
+        {
+            "name": "minecraft:hard_light_gray_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.silver.name"
+        },
+        {
+            "name": "minecraft:hard_lime_stained_glass",
+            "localization_key": "tile.hard_stained_glass.lime.name"
+        },
+        {
+            "name": "minecraft:hard_lime_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.lime.name"
+        },
+        {
+            "name": "minecraft:hard_magenta_stained_glass",
+            "localization_key": "tile.hard_stained_glass.magenta.name"
+        },
+        {
+            "name": "minecraft:hard_magenta_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.magenta.name"
+        },
+        {
+            "name": "minecraft:hard_orange_stained_glass",
+            "localization_key": "tile.hard_stained_glass.orange.name"
+        },
+        {
+            "name": "minecraft:hard_orange_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.orange.name"
+        },
+        {
+            "name": "minecraft:hard_pink_stained_glass",
+            "localization_key": "tile.hard_stained_glass.pink.name"
+        },
+        {
+            "name": "minecraft:hard_pink_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.pink.name"
+        },
+        {
+            "name": "minecraft:hard_purple_stained_glass",
+            "localization_key": "tile.hard_stained_glass.purple.name"
+        },
+        {
+            "name": "minecraft:hard_purple_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.purple.name"
+        },
+        {
+            "name": "minecraft:hard_red_stained_glass",
+            "localization_key": "tile.hard_stained_glass.red.name"
+        },
+        {
+            "name": "minecraft:hard_red_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.red.name"
+        },
+        {
+            "name": "minecraft:hard_white_stained_glass",
+            "localization_key": "tile.hard_stained_glass.white.name"
+        },
+        {
+            "name": "minecraft:hard_white_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.white.name"
+        },
+        {
+            "name": "minecraft:hard_yellow_stained_glass",
+            "localization_key": "tile.hard_stained_glass.yellow.name"
+        },
+        {
+            "name": "minecraft:hard_yellow_stained_glass_pane",
+            "localization_key": "tile.hard_stained_glass_pane.yellow.name"
+        },
+        {
             "name": "minecraft:hardened_clay",
             "localization_key": "tile.hardened_clay.name"
         },
@@ -2519,6 +3175,10 @@
         {
             "name": "minecraft:ice",
             "localization_key": "tile.ice.name"
+        },
+        {
+            "name": "minecraft:ice_bomb",
+            "localization_key": "item.ice_bomb.name"
         },
         {
             "name": "minecraft:infested_chiseled_stone_bricks",
@@ -2719,6 +3379,10 @@
         {
             "name": "minecraft:kelp",
             "localization_key": "item.kelp.name"
+        },
+        {
+            "name": "minecraft:lab_table",
+            "localization_key": "tile.labtable.name"
         },
         {
             "name": "minecraft:ladder",
@@ -3191,6 +3855,14 @@
         {
             "name": "minecraft:mangrove_wood",
             "localization_key": "tile.mangrove_wood.name"
+        },
+        {
+            "name": "minecraft:material_reducer",
+            "localization_key": "tile.materialreducer.name"
+        },
+        {
+            "name": "minecraft:medicine",
+            "localization_key": "item.medicine.blindness.name"
         },
         {
             "name": "minecraft:medium_amethyst_bud",
@@ -4317,6 +4989,10 @@
             "localization_key": "item.raiser_armor_trim_smithing_template.name"
         },
         {
+            "name": "minecraft:rapid_fertilizer",
+            "localization_key": "item.rapid_fertilizer.name"
+        },
+        {
             "name": "minecraft:ravager_spawn_egg",
             "localization_key": "item.spawn_egg.entity.ravager.name"
         },
@@ -4809,6 +5485,10 @@
             "localization_key": "tile.soul_torch.name"
         },
         {
+            "name": "minecraft:sparkler",
+            "localization_key": "item.sparkler.black.name"
+        },
+        {
             "name": "minecraft:spider_eye",
             "localization_key": "item.spider_eye.name"
         },
@@ -5275,6 +5955,14 @@
         {
             "name": "minecraft:twisting_vines",
             "localization_key": "tile.twisting_vines.name"
+        },
+        {
+            "name": "minecraft:underwater_tnt",
+            "localization_key": "tile.underwater_tnt.name"
+        },
+        {
+            "name": "minecraft:underwater_torch",
+            "localization_key": "tile.underwater_torch.name"
         },
         {
             "name": "minecraft:undyed_shulker_box",
