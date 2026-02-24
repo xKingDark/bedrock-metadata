@@ -3140,6 +3140,11 @@ export class InvalidWidgetGroupError extends Error {
     private constructor();
 }
 
+// @ts-ignore
+export class TransactionManagerNoChangesError extends Error {
+    private constructor();
+}
+
 export const isInternal = true;
 
 export const editor: MinecraftEditor;

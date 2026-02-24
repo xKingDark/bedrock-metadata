@@ -12,11 +12,6 @@
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
-export enum AimAssistTargetMode {
-    Angle    = "Angle",
-    Distance = "Distance",
-}
-
 export enum BlockComponentTypes {
     FluidContainer            = "minecraft:fluid_container",
     Inventory                 = "minecraft:inventory",
@@ -214,6 +209,18 @@ export enum EnchantmentSlot {
     Shovel       = "Shovel",
     Spear        = "Spear",
     Sword        = "Sword",
+}
+
+export enum EntityAttachPoint {
+    Body              = "Body",
+    BreathingPoint    = "BreathingPoint",
+    DropAttachPoint   = "DropAttachPoint",
+    ExplosionPoint    = "ExplosionPoint",
+    Eyes              = "Eyes",
+    Feet              = "Feet",
+    Head              = "Head",
+    Mouth             = "Mouth",
+    WeaponAttachPoint = "WeaponAttachPoint",
 }
 
 export enum EntityComponentTypes {
@@ -621,6 +628,13 @@ export enum StructureSaveMode {
     World  = "World",
 }
 
+export enum TickingAreaErrorReason {
+    IdentifierAlreadyExists = "IdentifierAlreadyExists",
+    OverChunkLimit          = "OverChunkLimit",
+    SideLengthExceeded      = "SideLengthExceeded",
+    UnknownIdentifier       = "UnknownIdentifier",
+}
+
 export enum TimeOfDay {
     Day      = 1000,
     Noon     = 6000,
@@ -838,260 +852,6 @@ export type ItemComponentTypeMap = {
     "minecraft:food": ItemFoodComponent;
     "minecraft:inventory": ItemInventoryComponent;
     "minecraft:potion": ItemPotionComponent;
-}
-
-export class AimAssistCategory {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultBlockPriority: number;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultEntityPriority: number;
-    readonly identifier: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getBlockPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    getBlockTagPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getEntityPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    getEntityTypeFamilyPriorities(): Record<string, number>;
-}
-
-export class AimAssistCategorySettings {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultBlockPriority: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultEntityPriority: number;
-    readonly identifier: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    constructor(identifier: string);
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getBlockPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getBlockTagPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getEntityPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getEntityTypeFamilyPriorities(): Record<string, number>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setBlockPriorities(blockPriorities: Record<string, number>): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setBlockTagPriorities(blockTagPriorities: Record<string, number>): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setEntityPriorities(entityPriorities: Record<string, number>): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setEntityTypeFamilyPriorities(entityTypeFamilyPriorities: Record<string, number>): void;
-}
-
-export class AimAssistPreset {
-    private constructor();
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly defaultItemSettings?: string;
-    /**
-     * @throws This property can throw errors.
-     */
-    readonly handSettings?: string;
-    readonly identifier: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    getExcludedBlockTagTargets(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getExcludedBlockTargets(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getExcludedEntityTargets(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     */
-    getExcludedEntityTypeFamilyTargets(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getItemSettings(): Record<string, string>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getLiquidTargetingItems(): string[];
-}
-
-export class AimAssistPresetSettings {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    defaultItemSettings?: string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
-    handSettings?: string;
-    readonly identifier: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    constructor(identifier: string);
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getExcludedBlockTagTargets(): string[] | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getExcludedBlockTargets(): string[] | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getExcludedEntityTargets(): string[] | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getExcludedEntityTypeFamilyTargets(): string[] | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getItemSettings(): Record<string, string>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getLiquidTargetingItems(): string[] | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setExcludedBlockTagTargets(blockTagTargets?: string[]): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setExcludedBlockTargets(blockTargets?: string[]): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setExcludedEntityTargets(entityTargets?: string[]): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setExcludedEntityTypeFamilyTargets(entityTypeFamilyTargets?: string[]): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setItemSettings(itemSettings: Record<string, string>): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    setLiquidTargetingItems(items?: string[]): void;
-}
-
-export class AimAssistRegistry {
-    private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     */
-    addCategory(category: AimAssistCategorySettings): AimAssistCategory;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     */
-    addPreset(preset: AimAssistPresetSettings): AimAssistPreset;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getCategories(): AimAssistCategory[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getCategory(categoryId: string): AimAssistCategory | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getPreset(presetId: string): AimAssistPreset | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getPresets(): AimAssistPreset[];
 }
 
 export class BiomeType {
@@ -2041,6 +1801,12 @@ export class Camera {
      *
      * @throws This function can throw errors.
      */
+    attachToEntity(attachCameraOptions?: CameraAttachOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
     clear(): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -2048,6 +1814,12 @@ export class Camera {
      * @throws This function can throw errors.
      */
     fade(fadeCameraOptions?: CameraFadeOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    playAnimation(splineType: CatmullRomSpline | LinearSpline, cameraAnimationOptions: AnimationOptions): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2075,6 +1847,13 @@ export class Camera {
      * @throws This function can throw errors.
      */
     setFov(fovCameraOptions?: CameraFovOptions): void;
+}
+
+export class CatmullRomSpline {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    controlPoints: Vector3[];
 }
 
 // @ts-ignore
@@ -5967,6 +5746,13 @@ export class LeverActionAfterEventSignal {
     unsubscribe(callback: (arg0: LeverActionAfterEvent) => void): void;
 }
 
+export class LinearSpline {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    controlPoints: Vector3[];
+}
+
 // @ts-ignore
 export class ListBlockVolume extends BlockVolumeBase {
     /**
@@ -6253,10 +6039,6 @@ export class Player extends Entity {
     clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
     /**
      * @remarks This function can't be called in read-only mode.
-     */
-    getAimAssist(): PlayerAimAssist;
-    /**
-     * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
@@ -6385,29 +6167,6 @@ export class Player extends Entity {
      * @throws This function can throw errors.
      */
     stopMusic(): void;
-}
-
-export class PlayerAimAssist {
-    private constructor();
-    readonly settings?: PlayerAimAssistSettings;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link InvalidEntityError}
-     *
-     * {@link NamespaceNameError}
-     */
-    set(settings?: PlayerAimAssistSettings): void;
 }
 
 // @ts-ignore
@@ -7857,6 +7616,64 @@ export class TargetBlockHitAfterEventSignal {
     unsubscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): void;
 }
 
+export class TickingAreaManager {
+    private constructor();
+    readonly chunkCount: number;
+    readonly maxChunkCount: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link TickingAreaError}
+     */
+    createTickingArea(identifier: string, options: TickingAreaOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getAllTickingAreas(): TickingArea[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getTickingArea(identifier: string | TickingArea): TickingArea | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasCapacity(options: TickingAreaOptions): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasTickingArea(identifier: string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    removeAllTickingAreas(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link TickingAreaError}
+     */
+    removeTickingArea(identifier: string | TickingArea): void;
+}
+
 export class Trigger {
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -7962,6 +7779,7 @@ export class World {
     readonly scoreboard: Scoreboard;
     readonly seed: string;
     readonly structureManager: StructureManager;
+    readonly tickingAreaManager: TickingAreaManager;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -7970,10 +7788,6 @@ export class World {
      * @remarks This function can't be called in read-only mode.
      */
     getAbsoluteTime(): number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
-    getAimAssist(): AimAssistRegistry;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -8395,6 +8209,11 @@ export interface AABB {
     extent: Vector3;
 }
 
+export interface AnimationOptions {
+    animation: SplineAnimation;
+    totalTimeSeconds: number;
+}
+
 export interface BiomeFilter {
     excludeBiomes?: string[];
     excludeTags?: string[];
@@ -8461,6 +8280,11 @@ export interface BlockRaycastOptions extends BlockFilter {
     includeLiquidBlocks?: boolean;
     includePassableBlocks?: boolean;
     maxDistance?: number;
+}
+
+export interface CameraAttachOptions {
+    entity: Entity;
+    locator: EntityAttachPoint;
 }
 
 export interface CameraFadeOptions {
@@ -8788,13 +8612,6 @@ export interface PlayAnimationOptions {
     stopExpression?: string;
 }
 
-export interface PlayerAimAssistSettings {
-    distance?: number;
-    presetId: string;
-    targetMode?: AimAssistTargetMode;
-    viewAngle?: Vector2;
-}
-
 export interface PlayerSoundOptions {
     location?: Vector3;
     pitch?: number;
@@ -8804,6 +8621,12 @@ export interface PlayerSoundOptions {
 export interface PlayerSwingEventOptions {
     heldItemOption?: HeldItemOption;
     swingSource?: EntitySwingSource;
+}
+
+export interface ProgressKeyFrame {
+    alpha: number;
+    easingFunc?: EasingType;
+    timeSeconds: number;
 }
 
 export interface ProjectileShootOptions {
@@ -8843,6 +8666,12 @@ export interface RGBA extends RGB {
     alpha: number;
 }
 
+export interface RotationKeyFrame {
+    easingFunc?: EasingType;
+    rotation: Vector3;
+    timeSeconds: number;
+}
+
 export interface ScoreboardObjectiveDisplayOptions {
     objective: ScoreboardObjective;
     sortOrder?: ObjectiveSortOrder;
@@ -8856,6 +8685,11 @@ export interface SpawnEntityOptions {
     initialPersistence?: boolean;
     initialRotation?: number;
     spawnEvent?: string;
+}
+
+export interface SplineAnimation {
+    progressKeyFrames: ProgressKeyFrame[];
+    rotationKeyFrames: RotationKeyFrame[];
 }
 
 export interface StructureCreateOptions {
@@ -8882,6 +8716,20 @@ export interface TeleportOptions {
     facingLocation?: Vector3;
     keepVelocity?: boolean;
     rotation?: Vector2;
+}
+
+export interface TickingArea {
+    boundingBox: BlockBoundingBox;
+    chunkCount: number;
+    dimension: Dimension;
+    identifier: string;
+    isFullyLoaded: boolean;
+}
+
+export interface TickingAreaOptions {
+    dimension: Dimension;
+    from: Vector3;
+    to: Vector3;
 }
 
 export interface TitleDisplayOptions {
@@ -9115,6 +8963,15 @@ export class PlaceJigsawError extends Error {
 // @ts-ignore
 export class RawMessageError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class TickingAreaError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: TickingAreaErrorReason;
 }
 
 // @ts-ignore

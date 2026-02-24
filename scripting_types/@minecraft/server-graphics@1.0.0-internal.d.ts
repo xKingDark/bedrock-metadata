@@ -497,6 +497,153 @@ export class ColorGrading {
     setTemperature(temperature: number, biomeIdentifier: minecraftserver.BiomeType): void;
 }
 
+export class Lighting {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetAmbientColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetAmbientIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetFlashColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetFlashIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMoonColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMoonIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSunColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSunIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setAmbientColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setAmbientIlluminance(
+        illuminance: number | Record<number, number>,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setFlashColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setFlashIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMoonColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMoonIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSunColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSunIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+}
+
 export class Water {
     private constructor();
     /**
@@ -713,4 +860,5 @@ export const InternalConstant = 1;
 
 export const atmosphere:   Atmospherics;
 export const colorGrading: ColorGrading;
+export const lighting:     Lighting;
 export const water:        Water;
