@@ -204,6 +204,11 @@ export class AllowListModificationError extends Error {
 }
 
 // @ts-ignore
+export class CannotKickPlayerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class DisconnectedError extends Error {
     private constructor();
     /**
@@ -216,6 +221,19 @@ export class DisconnectedError extends Error {
 export class LevelStorageSaveStateChangeError extends Error {
     private constructor();
 }
+
+/**
+ * @remarks This function can't be called in read-only mode.
+ *
+ * @throws This function can throw errors.
+ *
+ * {@link CannotKickPlayerError}
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ */
+export function kickPlayer(player: minecraftserver.Player, reason?: string): void;
 
 /**
  * @remarks This function can't be called in read-only mode.

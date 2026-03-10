@@ -522,6 +522,14 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
+    resetEmissiveDesaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
     resetFlashColor(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -547,6 +555,22 @@ export class Lighting {
      * {@link minecraftcommon.EngineError}
      */
     resetMoonIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetOrbitalOffsetDegrees(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSkyIntensity(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -592,6 +616,14 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
+    setEmissiveDesaturation(value: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
     setFlashColor(
         color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
         biomeIdentifier: minecraftserver.BiomeType,
@@ -623,6 +655,22 @@ export class Lighting {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     setMoonIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setOrbitalOffsetDegrees(degrees: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSkyIntensity(intensity: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *

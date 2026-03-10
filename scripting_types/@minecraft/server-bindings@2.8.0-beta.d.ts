@@ -2,13 +2,13 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @alpha
+ * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
  * {
  *     "module_name": "@minecraft/server-bindings",
- *     "version": "3.0.0-alpha"
+ *     "version": "2.8.0-beta"
  * }
  * ```
  */
@@ -483,6 +483,7 @@ export enum InputButton {
 export enum InputMode {
     Gamepad          = "Gamepad",
     KeyboardAndMouse = "KeyboardAndMouse",
+    MotionController = "MotionController",
     Touch            = "Touch",
 }
 
@@ -1653,6 +1654,13 @@ export class BlockComponentEntityFallOnEvent extends BlockEvent {
 export class BlockComponentOnPlaceEvent extends BlockEvent {
     private constructor();
     readonly previousBlock: BlockPermutation;
+}
+
+// @ts-ignore
+export class BlockComponentPlayerBreakEvent extends BlockEvent {
+    private constructor();
+    readonly brokenBlockPermutation: BlockPermutation;
+    readonly player?: Player;
 }
 
 // @ts-ignore
@@ -9491,6 +9499,7 @@ export interface BlockCustomComponent {
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
+    onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
     onRandomTick?: (arg0: BlockComponentRandomTickEvent, arg1: CustomComponentParameters) => void;
     onRedstoneUpdate?: (arg0: BlockComponentRedstoneUpdateEvent, arg1: CustomComponentParameters) => void;
@@ -10311,8 +10320,6 @@ export class UnloadedChunksError extends Error {
 
 export const HudElementsCount   = 13;
 export const HudVisibilityCount = 2;
-export const isAlpha            = true;
-export const isInternal         = true;
 export const MoonPhaseCount     = 8;
 export const TicksPerDay        = 24000;
 export const TicksPerSecond     = 20;

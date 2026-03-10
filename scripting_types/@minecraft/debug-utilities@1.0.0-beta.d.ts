@@ -97,7 +97,7 @@ export class DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    color: minecraftserver.RGB;
+    color: minecraftserver.RGBA;
     readonly dimension: minecraftserver.Dimension;
     readonly hasDuration: boolean;
     readonly location: minecraftserver.Vector3;
@@ -141,11 +141,27 @@ export class DebugText extends DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
-    text: string;
+    backgroundColorOverride?: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    depthTest: boolean;
+    readonly text: minecraftserver.RawMessage | string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    useRotation: boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      */
-    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3, text: string);
+    constructor(
+        location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
+        text: minecraftserver.RawMessage | string,
+    );
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setText(text: minecraftserver.RawMessage | string): void;
 }
 
 export interface HandleCounts {

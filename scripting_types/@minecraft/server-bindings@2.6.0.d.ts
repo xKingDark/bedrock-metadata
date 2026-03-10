@@ -12,6 +12,11 @@
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
+export enum AimAssistTargetMode {
+    Angle    = "Angle",
+    Distance = "Distance",
+}
+
 export enum BlockComponentTypes {
     FluidContainer            = "minecraft:fluid_container",
     Inventory                 = "minecraft:inventory",
@@ -852,6 +857,260 @@ export type ItemComponentTypeMap = {
     "minecraft:food": ItemFoodComponent;
     "minecraft:inventory": ItemInventoryComponent;
     "minecraft:potion": ItemPotionComponent;
+}
+
+export class AimAssistCategory {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     */
+    readonly defaultBlockPriority: number;
+    /**
+     * @throws This property can throw errors.
+     */
+    readonly defaultEntityPriority: number;
+    readonly identifier: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getBlockPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getBlockTagPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getEntityPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getEntityTypeFamilyPriorities(): Record<string, number>;
+}
+
+export class AimAssistCategorySettings {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    defaultBlockPriority: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    defaultEntityPriority: number;
+    readonly identifier: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(identifier: string);
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getBlockPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getBlockTagPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getEntityPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getEntityTypeFamilyPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setBlockPriorities(blockPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setBlockTagPriorities(blockTagPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setEntityPriorities(entityPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setEntityTypeFamilyPriorities(entityTypeFamilyPriorities: Record<string, number>): void;
+}
+
+export class AimAssistPreset {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     */
+    readonly defaultItemSettings?: string;
+    /**
+     * @throws This property can throw errors.
+     */
+    readonly handSettings?: string;
+    readonly identifier: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getExcludedBlockTagTargets(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getExcludedBlockTargets(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getExcludedEntityTargets(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getExcludedEntityTypeFamilyTargets(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getItemSettings(): Record<string, string>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getLiquidTargetingItems(): string[];
+}
+
+export class AimAssistPresetSettings {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    defaultItemSettings?: string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    handSettings?: string;
+    readonly identifier: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(identifier: string);
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getExcludedBlockTagTargets(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getExcludedBlockTargets(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getExcludedEntityTargets(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getExcludedEntityTypeFamilyTargets(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getItemSettings(): Record<string, string>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getLiquidTargetingItems(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedBlockTagTargets(blockTagTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedBlockTargets(blockTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedEntityTargets(entityTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setExcludedEntityTypeFamilyTargets(entityTypeFamilyTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setItemSettings(itemSettings: Record<string, string>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setLiquidTargetingItems(items?: string[]): void;
+}
+
+export class AimAssistRegistry {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     */
+    addCategory(category: AimAssistCategorySettings): AimAssistCategory;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     */
+    addPreset(preset: AimAssistPresetSettings): AimAssistPreset;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getCategories(): AimAssistCategory[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getCategory(categoryId: string): AimAssistCategory | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getPreset(presetId: string): AimAssistPreset | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getPresets(): AimAssistPreset[];
 }
 
 export class BiomeType {
@@ -6039,6 +6298,10 @@ export class Player extends Entity {
     clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
     /**
      * @remarks This function can't be called in read-only mode.
+     */
+    getAimAssist(): PlayerAimAssist;
+    /**
+     * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
@@ -6167,6 +6430,29 @@ export class Player extends Entity {
      * @throws This function can throw errors.
      */
     stopMusic(): void;
+}
+
+export class PlayerAimAssist {
+    private constructor();
+    readonly settings?: PlayerAimAssistSettings;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link InvalidEntityError}
+     *
+     * {@link NamespaceNameError}
+     */
+    set(settings?: PlayerAimAssistSettings): void;
 }
 
 // @ts-ignore
@@ -7790,6 +8076,10 @@ export class World {
     getAbsoluteTime(): number;
     /**
      * @remarks This function can't be called in read-only mode.
+     */
+    getAimAssist(): AimAssistRegistry;
+    /**
+     * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
@@ -8610,6 +8900,13 @@ export interface PlayAnimationOptions {
     nextState?: string;
     players?: Player[];
     stopExpression?: string;
+}
+
+export interface PlayerAimAssistSettings {
+    distance?: number;
+    presetId: string;
+    targetMode?: AimAssistTargetMode;
+    viewAngle?: Vector2;
 }
 
 export interface PlayerSoundOptions {

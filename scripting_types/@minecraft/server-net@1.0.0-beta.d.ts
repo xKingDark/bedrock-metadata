@@ -91,7 +91,6 @@ export enum PacketId {
     CreativeContentPacket                    = "CreativeContentPacket",
     CurrentStructureFeaturePacket            = "CurrentStructureFeaturePacket",
     DeathInfoPacket                          = "DeathInfoPacket",
-    DebugDrawerPacket                        = "DebugDrawerPacket",
     DebugInfoPacket                          = "DebugInfoPacket",
     DimensionDataPacket                      = "DimensionDataPacket",
     DisconnectPacket                         = "DisconnectPacket",
@@ -164,6 +163,7 @@ export enum PacketId {
     PlayStatusPacket                         = "PlayStatusPacket",
     PositionTrackingDBClientRequestPacket    = "PositionTrackingDBClientRequestPacket",
     PositionTrackingDBServerBroadcastPacket  = "PositionTrackingDBServerBroadcastPacket",
+    PrimitiveShapesPacket                    = "PrimitiveShapesPacket",
     PurchaseReceiptPacket                    = "PurchaseReceiptPacket",
     RefreshEntitlementsPacket                = "RefreshEntitlementsPacket",
     RemoveActorPacket                        = "RemoveActorPacket",
@@ -429,19 +429,6 @@ export interface PacketEventOptions {
 }
 
 // @ts-ignore
-export class HttpRequestBodyTooLargeError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly maxBytes: number;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly providedBytes: number;
-}
-
-// @ts-ignore
 export class HttpRequestLimitExceededError extends Error {
     private constructor();
     /**
@@ -452,24 +439,6 @@ export class HttpRequestLimitExceededError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly maxConcurrentRequests: number;
-}
-
-// @ts-ignore
-export class HttpRequestNotAllowedError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly uri: string;
-}
-
-// @ts-ignore
-export class HttpsOnlyError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly uri: string;
 }
 
 // @ts-ignore
@@ -486,8 +455,39 @@ export class InternalHttpRequestError extends Error {
 }
 
 // @ts-ignore
-export class MalformedHttpRequestError extends Error {
+export class MalformedUriError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class RequestBodyTooLargeError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxBytes: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly providedBytes: number;
+}
+
+// @ts-ignore
+export class TLSOnlyError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
+}
+
+// @ts-ignore
+export class UriNotAllowedError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
 }
 
 export const beforeEvents: NetworkBeforeEvents;
