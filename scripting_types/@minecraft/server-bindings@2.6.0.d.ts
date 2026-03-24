@@ -7,17 +7,21 @@
  * ```json
  * {
  *     "module_name": "@minecraft/server-bindings",
- *     "version": "2.3.0"
+ *     "version": "2.6.0"
  * }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
 export enum BlockComponentTypes {
-    FluidContainer = "minecraft:fluid_container",
-    Inventory      = "minecraft:inventory",
-    Piston         = "minecraft:piston",
-    RecordPlayer   = "minecraft:record_player",
-    Sign           = "minecraft:sign",
+    FluidContainer            = "minecraft:fluid_container",
+    Inventory                 = "minecraft:inventory",
+    MapColor                  = "minecraft:map_color",
+    Movable                   = "minecraft:movable",
+    Piston                    = "minecraft:piston",
+    PrecipitationInteractions = "minecraft:precipitation_interactions",
+    RecordPlayer              = "minecraft:record_player",
+    RedstoneProducer          = "minecraft:redstone_producer",
+    Sign                      = "minecraft:sign",
 }
 
 export enum BlockPistonState {
@@ -58,6 +62,14 @@ export enum ContainerRulesErrorReason {
     NotAllowedItem    = "NotAllowedItem",
     OverWeightLimit   = "OverWeightLimit",
     ZeroWeightItem    = "ZeroWeightItem",
+}
+
+export enum ControlScheme {
+    CameraRelative             = "CameraRelative",
+    CameraRelativeStrafe       = "CameraRelativeStrafe",
+    LockedPlayerRelativeStrafe = "LockedPlayerRelativeStrafe",
+    PlayerRelative             = "PlayerRelative",
+    PlayerRelativeStrafe       = "PlayerRelativeStrafe",
 }
 
 export enum CustomCommandErrorReason {
@@ -199,6 +211,18 @@ export enum EnchantmentSlot {
     Sword        = "Sword",
 }
 
+export enum EntityAttachPoint {
+    Body              = "Body",
+    BreathingPoint    = "BreathingPoint",
+    DropAttachPoint   = "DropAttachPoint",
+    ExplosionPoint    = "ExplosionPoint",
+    Eyes              = "Eyes",
+    Feet              = "Feet",
+    Head              = "Head",
+    Mouth             = "Mouth",
+    WeaponAttachPoint = "WeaponAttachPoint",
+}
+
 export enum EntityComponentTypes {
     AddRider              = "minecraft:addrider",
     Ageable               = "minecraft:ageable",
@@ -308,12 +332,30 @@ export enum EntityDamageCause {
     wither          = "wither",
 }
 
+export enum EntityHealCause {
+    Heal         = "Heal",
+    Regeneration = "Regeneration",
+    SelfHeal     = "SelfHeal",
+}
+
 export enum EntityInitializationCause {
     Born        = "Born",
     Event       = "Event",
     Loaded      = "Loaded",
     Spawned     = "Spawned",
     Transformed = "Transformed",
+}
+
+export enum EntitySwingSource {
+    Attack    = "Attack",
+    Build     = "Build",
+    DropItem  = "DropItem",
+    Event     = "Event",
+    Interact  = "Interact",
+    Mine      = "Mine",
+    None      = "None",
+    ThrowItem = "ThrowItem",
+    UseItem   = "UseItem",
 }
 
 export enum EquipmentSlot {
@@ -386,6 +428,11 @@ export enum GraphicsMode {
     Simple    = "Simple",
 }
 
+export enum HeldItemOption {
+    AnyItem = "AnyItem",
+    NoItem  = "NoItem",
+}
+
 export enum HudElement {
     PaperDoll     = 0,
     Armor         = 1,
@@ -442,12 +489,18 @@ export enum ItemComponentTypes {
     Enchantable = "minecraft:enchantable",
     Food        = "minecraft:food",
     Inventory   = "minecraft:inventory",
+    Potion      = "minecraft:potion",
 }
 
 export enum ItemLockMode {
     inventory = "inventory",
     none      = "none",
     slot      = "slot",
+}
+
+export enum LiquidSettings {
+    ApplyWaterlogging  = "ApplyWaterlogging",
+    IgnoreWaterlogging = "IgnoreWaterlogging",
 }
 
 export enum LiquidType {
@@ -575,6 +628,13 @@ export enum StructureSaveMode {
     World  = "World",
 }
 
+export enum TickingAreaErrorReason {
+    IdentifierAlreadyExists = "IdentifierAlreadyExists",
+    OverChunkLimit          = "OverChunkLimit",
+    SideLengthExceeded      = "SideLengthExceeded",
+    UnknownIdentifier       = "UnknownIdentifier",
+}
+
 export enum TimeOfDay {
     Day      = 1000,
     Noon     = 6000,
@@ -611,14 +671,18 @@ export type BlockComponentTypeMap = {
     map_color: BlockMapColorComponent;
     movable: BlockMovableComponent;
     piston: BlockPistonComponent;
+    precipitation_interactions: BlockPrecipitationInteractionsComponent;
     record_player: BlockRecordPlayerComponent;
+    redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
     "minecraft:fluid_container": BlockFluidContainerComponent;
     "minecraft:inventory": BlockInventoryComponent;
     "minecraft:map_color": BlockMapColorComponent;
     "minecraft:movable": BlockMovableComponent;
     "minecraft:piston": BlockPistonComponent;
+    "minecraft:precipitation_interactions": BlockPrecipitationInteractionsComponent;
     "minecraft:record_player": BlockRecordPlayerComponent;
+    "minecraft:redstone_producer": BlockRedstoneProducerComponent;
     "minecraft:sign": BlockSignComponent;
 }
 
@@ -778,6 +842,7 @@ export type ItemComponentTypeMap = {
     enchantable: ItemEnchantableComponent;
     food: ItemFoodComponent;
     inventory: ItemInventoryComponent;
+    potion: ItemPotionComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -786,6 +851,7 @@ export type ItemComponentTypeMap = {
     "minecraft:enchantable": ItemEnchantableComponent;
     "minecraft:food": ItemFoodComponent;
     "minecraft:inventory": ItemInventoryComponent;
+    "minecraft:potion": ItemPotionComponent;
 }
 
 export class BiomeType {
@@ -941,6 +1007,16 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
+    getComponents(): BlockComponent[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
     getItemStack(amount?: number, withData?: boolean): ItemStack | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -982,6 +1058,16 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     getTags(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    hasComponent(componentId: string): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1121,6 +1207,22 @@ export class BlockComponent extends Component {
 }
 
 // @ts-ignore
+export class BlockComponentBlockBreakEvent extends BlockEvent {
+    private constructor();
+    readonly blockDestructionSource?: Block;
+    readonly brokenBlockPermutation: BlockPermutation;
+    readonly entitySource?: Entity;
+}
+
+// @ts-ignore
+export class BlockComponentEntityEvent extends BlockEvent {
+    private constructor();
+    readonly blockPermutation: BlockPermutation;
+    readonly entitySource: Entity;
+    readonly name: string;
+}
+
+// @ts-ignore
 export class BlockComponentEntityFallOnEvent extends BlockEvent {
     private constructor();
     readonly entity?: Entity;
@@ -1172,6 +1274,7 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
     private constructor();
     readonly powerLevel: number;
+    readonly previousPowerLevel: number;
 }
 
 export class BlockComponentRegistry {
@@ -1341,6 +1444,7 @@ export class BlockMovableComponent extends BlockComponent {
 
 export class BlockPermutation {
     private constructor();
+    readonly localizationKey: string;
     readonly "type": BlockType;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1430,6 +1534,31 @@ export class BlockPistonComponent extends BlockComponent {
 }
 
 // @ts-ignore
+export class BlockPrecipitationInteractionsComponent extends BlockComponent {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    accumulatesSnow(): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    obstructsRain(): boolean;
+}
+
+// @ts-ignore
 export class BlockRecordPlayerComponent extends BlockComponent {
     private constructor();
     /**
@@ -1468,6 +1597,33 @@ export class BlockRecordPlayerComponent extends BlockComponent {
      * @throws This function can throw errors.
      */
     setRecord(recordItemType?: ItemType | string, startPlaying?: boolean): void;
+}
+
+// @ts-ignore
+export class BlockRedstoneProducerComponent extends BlockComponent {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    readonly power: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getConnectedFaces(): Direction[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getStronglyPoweredFace(): Direction | undefined;
 }
 
 // @ts-ignore
@@ -1536,6 +1692,7 @@ export class BlockStateType {
 export class BlockType {
     private constructor();
     readonly id: string;
+    readonly localizationKey: string;
 }
 
 export class BlockTypes {
@@ -1644,6 +1801,12 @@ export class Camera {
      *
      * @throws This function can throw errors.
      */
+    attachToEntity(attachCameraOptions?: CameraAttachOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
     clear(): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -1651,6 +1814,12 @@ export class Camera {
      * @throws This function can throw errors.
      */
     fade(fadeCameraOptions?: CameraFadeOptions): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    playAnimation(splineType: CatmullRomSpline | LinearSpline, cameraAnimationOptions: AnimationOptions): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1678,6 +1847,13 @@ export class Camera {
      * @throws This function can throw errors.
      */
     setFov(fovCameraOptions?: CameraFovOptions): void;
+}
+
+export class CatmullRomSpline {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    controlPoints: Vector3[];
 }
 
 // @ts-ignore
@@ -2091,6 +2267,12 @@ export class CustomComponentParameters {
     readonly params: unknown;
 }
 
+// @ts-ignore
+export class DamagedByEntityCondition extends LootItemCondition {
+    private constructor();
+    readonly entityType: string;
+}
+
 export class DataDrivenEntityTriggerAfterEvent {
     private constructor();
     readonly entity: Entity;
@@ -2128,6 +2310,20 @@ export class Dimension {
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
     readonly localizationKey: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     *
+     * {@link UnloadedChunksError}
+     */
+    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter, isSuperset: boolean): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2501,6 +2697,17 @@ export class EffectTypes {
     static getAll(): EffectType[];
 }
 
+// @ts-ignore
+export class EmptyLootItem extends LootPoolEntry {
+    private constructor();
+}
+
+export class EnchantInfo {
+    private constructor();
+    readonly enchantment: string;
+    readonly range: minecraftcommon.NumberRange;
+}
+
 export class EnchantmentType {
     readonly id: string;
     readonly maxLevel: number;
@@ -2522,6 +2729,25 @@ export class EnchantmentTypes {
      * @remarks This function can't be called in read-only mode.
      */
     static getAll(): EnchantmentType[];
+}
+
+// @ts-ignore
+export class EnchantRandomEquipmentFunction extends LootItemFunction {
+    private constructor();
+    readonly chance: number;
+}
+
+// @ts-ignore
+export class EnchantRandomlyFunction extends LootItemFunction {
+    private constructor();
+    readonly treasure: boolean;
+}
+
+// @ts-ignore
+export class EnchantWithLevelsFunction extends LootItemFunction {
+    private constructor();
+    readonly levels: minecraftcommon.NumberRange;
+    readonly treasure: boolean;
 }
 
 export class Entity {
@@ -2685,7 +2911,31 @@ export class Entity {
      *
      * {@link InvalidEntityError}
      */
+    getAABB(): AABB;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getAllBlocksStandingOn(options?: GetBlocksStandingOnOptions): Block[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
     getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getBlockStandingOn(options?: GetBlocksStandingOnOptions): Block | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -3187,6 +3437,7 @@ export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
     readonly item: string;
+    readonly resultItem?: string;
 }
 
 export class EntityDieAfterEvent {
@@ -3283,6 +3534,18 @@ export class EntityFrictionModifierComponent extends EntityComponent {
 }
 
 // @ts-ignore
+export class EntityHasMarkVariantCondition extends LootItemCondition {
+    private constructor();
+    readonly value: number;
+}
+
+// @ts-ignore
+export class EntityHasVariantCondition extends LootItemCondition {
+    private constructor();
+    readonly value: number;
+}
+
+// @ts-ignore
 export class EntityHealableComponent extends EntityComponent {
     private constructor();
     /**
@@ -3295,6 +3558,70 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This function can throw errors.
      */
     getFeedItems(): FeedItem[];
+}
+
+export class EntityHealAfterEvent {
+    private constructor();
+    readonly healedEntity: Entity;
+    readonly healing: number;
+    readonly healSource: EntityHealSource;
+}
+
+export class EntityHealAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHealAfterEvent) => void,
+        options?: EntityHealEventOptions,
+    ): (arg0: EntityHealAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHealAfterEvent) => void): void;
+}
+
+export class EntityHealBeforeEvent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    cancel: boolean;
+    readonly healedEntity: Entity;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    healing: number;
+    readonly healSource: EntityHealSource;
+}
+
+export class EntityHealBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHealBeforeEvent) => void,
+        options?: EntityHealEventOptions,
+    ): (arg0: EntityHealBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHealBeforeEvent) => void): void;
+}
+
+export class EntityHealSource {
+    private constructor();
+    readonly cause: EntityHealCause;
 }
 
 export class EntityHealthChangedAfterEvent {
@@ -3390,6 +3717,58 @@ export class EntityHurtAfterEvent {
     readonly damage: number;
     readonly damageSource: EntityDamageSource;
     readonly hurtEntity: Entity;
+}
+
+export class EntityHurtAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHurtAfterEvent) => void,
+        options?: EntityHurtAfterEventOptions,
+    ): (arg0: EntityHurtAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHurtAfterEvent) => void): void;
+}
+
+export class EntityHurtBeforeEvent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    cancel: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    damage: number;
+    readonly damageSource: EntityDamageSource;
+    readonly hurtEntity: Entity;
+}
+
+export class EntityHurtBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityHurtBeforeEvent) => void,
+        options?: EntityHurtBeforeEventOptions,
+    ): (arg0: EntityHurtBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityHurtBeforeEvent) => void): void;
 }
 
 // @ts-ignore
@@ -3499,6 +3878,91 @@ export class EntityItemComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly itemStack: ItemStack;
+}
+
+export class EntityItemDropAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly items: Entity[];
+}
+
+export class EntityItemDropAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityItemDropAfterEvent) => void,
+        options?: EntityItemDropEventOptions,
+    ): (arg0: EntityItemDropAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityItemDropAfterEvent) => void): void;
+}
+
+export class EntityItemPickupAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly items: ItemStack[];
+}
+
+export class EntityItemPickupAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityItemPickupAfterEvent) => void,
+        options?: EntityItemPickupEventOptions,
+    ): (arg0: EntityItemPickupAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityItemPickupAfterEvent) => void): void;
+}
+
+export class EntityItemPickupBeforeEvent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    cancel: boolean;
+    readonly entity: Entity;
+    readonly item: Entity;
+}
+
+export class EntityItemPickupBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: EntityItemPickupBeforeEvent) => void,
+        options?: EntityItemPickupEventOptions,
+    ): (arg0: EntityItemPickupBeforeEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: EntityItemPickupBeforeEvent) => void): void;
+}
+
+// @ts-ignore
+export class EntityKilledCondition extends LootItemCondition {
+    private constructor();
+    readonly entityType: string;
 }
 
 // @ts-ignore
@@ -4095,6 +4559,7 @@ export class EntityTameMountComponent extends EntityComponent {
 export class EntityType {
     private constructor();
     readonly id: string;
+    readonly localizationKey: string;
 }
 
 // @ts-ignore
@@ -4143,6 +4608,12 @@ export class EntityVariantComponent extends EntityComponent {
 // @ts-ignore
 export class EntityWantsJockeyComponent extends EntityComponent {
     private constructor();
+}
+
+// @ts-ignore
+export class ExplorationMapFunction extends LootItemFunction {
+    private constructor();
+    readonly destination: string;
 }
 
 export class ExplosionAfterEvent {
@@ -4200,10 +4671,16 @@ export class ExplosionBeforeEventSignal {
     unsubscribe(callback: (arg0: ExplosionBeforeEvent) => void): void;
 }
 
+// @ts-ignore
+export class ExplosionDecayFunction extends LootItemFunction {
+    private constructor();
+}
+
 export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
+    readonly resultItem?: string;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -4216,6 +4693,12 @@ export class FeedItemEffect {
     readonly chance: number;
     readonly duration: number;
     readonly name: string;
+}
+
+// @ts-ignore
+export class FillContainerFunction extends LootItemFunction {
+    private constructor();
+    readonly lootTable: string;
 }
 
 export class FluidContainer {
@@ -4430,6 +4913,11 @@ export class InputInfo {
      * {@link InvalidEntityError}
      */
     getMovementVector(): Vector2;
+}
+
+// @ts-ignore
+export class IsBabyCondition extends LootItemCondition {
+    private constructor();
 }
 
 // @ts-ignore
@@ -4717,6 +5205,10 @@ export class ItemDurabilityComponent extends ItemComponent {
      */
     readonly maxDurability: number;
     /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    unbreakable: boolean;
+    /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -4858,6 +5350,27 @@ export class ItemInventoryComponent extends ItemComponent {
      * {@link InvalidContainerError}
      */
     readonly container: Container;
+}
+
+// @ts-ignore
+export class ItemPotionComponent extends ItemComponent {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     */
+    readonly potionDeliveryType: PotionDeliveryType;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     */
+    readonly potionEffectType: PotionEffectType;
 }
 
 export class ItemReleaseUseAfterEvent {
@@ -5121,6 +5634,7 @@ export class ItemStopUseOnAfterEventSignal {
 export class ItemType {
     private constructor();
     readonly id: string;
+    readonly localizationKey: string;
 }
 
 export class ItemTypes {
@@ -5194,6 +5708,22 @@ export class ItemUseOnEvent {
 }
 
 // @ts-ignore
+export class KilledByEntityCondition extends LootItemCondition {
+    private constructor();
+    readonly entityType: string;
+}
+
+// @ts-ignore
+export class KilledByPlayerCondition extends LootItemCondition {
+    private constructor();
+}
+
+// @ts-ignore
+export class KilledByPlayerOrPetsCondition extends LootItemCondition {
+    private constructor();
+}
+
+// @ts-ignore
 export class LeverActionAfterEvent extends BlockEvent {
     private constructor();
     readonly isPowered: boolean;
@@ -5216,6 +5746,13 @@ export class LeverActionAfterEventSignal {
     unsubscribe(callback: (arg0: LeverActionAfterEvent) => void): void;
 }
 
+export class LinearSpline {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    controlPoints: Vector3[];
+}
+
 // @ts-ignore
 export class ListBlockVolume extends BlockVolumeBase {
     /**
@@ -5230,6 +5767,63 @@ export class ListBlockVolume extends BlockVolumeBase {
      * @remarks This function can't be called in read-only mode.
      */
     remove(locations: Vector3[]): void;
+}
+
+// @ts-ignore
+export class LootingEnchantFunction extends LootItemFunction {
+    private constructor();
+    readonly count: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class LootItem extends LootPoolEntry {
+    private constructor();
+    readonly functions: LootItemFunction[];
+    readonly name?: ItemType;
+}
+
+export class LootItemCondition {
+    private constructor();
+}
+
+export class LootItemFunction {
+    private constructor();
+    readonly conditions: LootItemCondition[];
+}
+
+export class LootPool {
+    private constructor();
+    readonly bonusRolls: minecraftcommon.NumberRange;
+    readonly conditions: LootItemCondition[];
+    readonly entries: LootPoolEntry[];
+    readonly rolls: minecraftcommon.NumberRange;
+    readonly tiers?: LootPoolTiers;
+}
+
+export class LootPoolEntry {
+    private constructor();
+    readonly quality: number;
+    readonly subTable?: LootPoolEntry;
+    readonly weight: number;
+}
+
+export class LootPoolTiers {
+    private constructor();
+    readonly bonusChance: number;
+    readonly bonusRolls: number;
+    readonly initialRange: number;
+}
+
+export class LootTable {
+    private constructor();
+    readonly path: string;
+    readonly pools: LootPool[];
+}
+
+// @ts-ignore
+export class LootTableEntry extends LootPoolEntry {
+    private constructor();
+    readonly lootTable: LootTable;
 }
 
 export class LootTableManager {
@@ -5266,6 +5860,32 @@ export class LootTableManager {
      * @remarks This function can't be called in read-only mode.
      */
     generateLootFromEntityType(entityType: EntityType, tool?: ItemStack): ItemStack[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    generateLootFromTable(lootTable: LootTable, tool?: ItemStack): ItemStack[] | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getLootTable(path: string): LootTable | undefined;
+}
+
+// @ts-ignore
+export class LootTableReference extends LootPoolEntry {
+    private constructor();
+    readonly path: string;
+}
+
+// @ts-ignore
+export class MatchToolCondition extends LootItemCondition {
+    private constructor();
+    readonly count: minecraftcommon.NumberRange;
+    readonly durability: minecraftcommon.NumberRange;
+    readonly enchantments: EnchantInfo[];
+    readonly itemName: string;
+    readonly itemTagsAll: string[];
+    readonly itemTagsAny: string[];
+    readonly itemTagsNone: string[];
 }
 
 export class MolangVariableMap {
@@ -5299,6 +5919,12 @@ export class MolangVariableMap {
      * @throws This function can throw errors.
      */
     setVector3(variableName: string, vector: Vector3): void;
+}
+
+// @ts-ignore
+export class PassengerOfEntityCondition extends LootItemCondition {
+    private constructor();
+    readonly entityType: string;
 }
 
 // @ts-ignore
@@ -5415,6 +6041,14 @@ export class Player extends Entity {
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getControlScheme(): ControlScheme;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
      */
     getGameMode(): GameMode;
     /**
@@ -5475,6 +6109,18 @@ export class Player extends Entity {
      * {@link RawMessageError}
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link InvalidEntityError}
+     */
+    setControlScheme(controlScheme?: ControlScheme): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6084,6 +6730,83 @@ export class PlayerSpawnAfterEventSignal {
     unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
 }
 
+export class PlayerSwingStartAfterEvent {
+    private constructor();
+    readonly heldItemStack?: ItemStack;
+    readonly player: Player;
+    readonly swingSource: EntitySwingSource;
+}
+
+export class PlayerSwingStartAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerSwingStartAfterEvent) => void,
+        options?: PlayerSwingEventOptions,
+    ): (arg0: PlayerSwingStartAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: PlayerSwingStartAfterEvent) => void): void;
+}
+
+export class PotionDeliveryType {
+    private constructor();
+    readonly id: string;
+}
+
+export class PotionEffectType {
+    private constructor();
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    readonly durationTicks?: number;
+    readonly id: string;
+}
+
+export class Potions {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    static getAllDeliveryTypes(): PotionDeliveryType[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    static getAllEffectTypes(): PotionEffectType[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    static getDeliveryType(potionDeliveryId: string): PotionDeliveryType | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    static getEffectType(potionEffectId: string): PotionEffectType | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidPotionDeliveryTypeError}
+     *
+     * {@link InvalidPotionEffectTypeError}
+     */
+    static resolve(
+        potionEffectType: PotionEffectType | string,
+        potionDeliveryType: PotionDeliveryType | string,
+    ): ItemStack;
+}
+
 // @ts-ignore
 export class PressurePlatePopAfterEvent extends BlockEvent {
     private constructor();
@@ -6187,6 +6910,49 @@ export class ProjectileHitEntityAfterEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: ProjectileHitEntityAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class RandomAuxValueFunction extends LootItemFunction {
+    private constructor();
+    readonly values: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class RandomBlockStateFunction extends LootItemFunction {
+    private constructor();
+    readonly blockState: string;
+    readonly values: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class RandomChanceCondition extends LootItemCondition {
+    private constructor();
+    readonly chance: number;
+}
+
+// @ts-ignore
+export class RandomChanceWithLootingCondition extends LootItemCondition {
+    private constructor();
+    readonly chance: number;
+    readonly lootingMultiplier: number;
+}
+
+// @ts-ignore
+export class RandomDifficultyChanceCondition extends LootItemCondition {
+    private constructor();
+    readonly chances: number[];
+}
+
+// @ts-ignore
+export class RandomDyeFunction extends LootItemFunction {
+    private constructor();
+}
+
+// @ts-ignore
+export class RandomRegionalDifficultyChanceCondition extends LootItemCondition {
+    private constructor();
+    readonly maxChance: number;
 }
 
 export class Scoreboard {
@@ -6424,6 +7190,86 @@ export class Seat {
     readonly seatRotation: number;
 }
 
+// @ts-ignore
+export class SetArmorTrimFunction extends LootItemFunction {
+    private constructor();
+    readonly material: string;
+    readonly pattern: string;
+}
+
+// @ts-ignore
+export class SetBannerDetailsFunction extends LootItemFunction {
+    private constructor();
+    readonly "type": number;
+}
+
+// @ts-ignore
+export class SetBookContentsFunction extends LootItemFunction {
+    private constructor();
+    readonly author: string;
+    readonly pages: string[];
+    readonly title: string;
+}
+
+// @ts-ignore
+export class SetDataFromColorIndexFunction extends LootItemFunction {
+    private constructor();
+}
+
+// @ts-ignore
+export class SetItemCountFunction extends LootItemFunction {
+    private constructor();
+    readonly count: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetItemDamageFunction extends LootItemFunction {
+    private constructor();
+    readonly damage: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetItemDataFunction extends LootItemFunction {
+    private constructor();
+    readonly data: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetItemLoreFunction extends LootItemFunction {
+    private constructor();
+    readonly lore: string[];
+}
+
+// @ts-ignore
+export class SetItemNameFunction extends LootItemFunction {
+    private constructor();
+    readonly name: string;
+}
+
+// @ts-ignore
+export class SetOminousBottleFunction extends LootItemFunction {
+    private constructor();
+    readonly amplifier: minecraftcommon.NumberRange;
+}
+
+// @ts-ignore
+export class SetPotionFunction extends LootItemFunction {
+    private constructor();
+    readonly id: string;
+}
+
+// @ts-ignore
+export class SetSpawnEggFunction extends LootItemFunction {
+    private constructor();
+    readonly id: string;
+}
+
+// @ts-ignore
+export class SetStewEffectFunction extends LootItemFunction {
+    private constructor();
+    readonly effects: number[];
+}
+
 export class ShutdownBeforeEventSignal {
     private constructor();
     /**
@@ -6442,6 +7288,17 @@ export class ShutdownBeforeEventSignal {
 
 export class ShutdownEvent {
     private constructor();
+}
+
+// @ts-ignore
+export class SmeltItemFunction extends LootItemFunction {
+    private constructor();
+}
+
+// @ts-ignore
+export class SpecificEnchantFunction extends LootItemFunction {
+    private constructor();
+    readonly enchantments: EnchantInfo[];
 }
 
 export class StartupBeforeEventSignal {
@@ -6759,6 +7616,64 @@ export class TargetBlockHitAfterEventSignal {
     unsubscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): void;
 }
 
+export class TickingAreaManager {
+    private constructor();
+    readonly chunkCount: number;
+    readonly maxChunkCount: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link TickingAreaError}
+     */
+    createTickingArea(identifier: string, options: TickingAreaOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getAllTickingAreas(): TickingArea[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getTickingArea(identifier: string | TickingArea): TickingArea | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasCapacity(options: TickingAreaOptions): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasTickingArea(identifier: string): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    removeAllTickingAreas(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link TickingAreaError}
+     */
+    removeTickingArea(identifier: string | TickingArea): void;
+}
+
 export class Trigger {
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -6862,7 +7777,9 @@ export class World {
     readonly gameRules: GameRules;
     readonly isHardcore: boolean;
     readonly scoreboard: Scoreboard;
+    readonly seed: string;
     readonly structureManager: StructureManager;
+    readonly tickingAreaManager: TickingAreaManager;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -7032,6 +7949,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityHeal: EntityHealAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly entityHealthChanged: EntityHealthChangedAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -7041,6 +7962,18 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly entityHitEntity: EntityHitEntityAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityHurt: EntityHurtAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityItemDrop: EntityItemDropAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityItemPickup: EntityItemPickupAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7160,6 +8093,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly playerSwingStart: PlayerSwingStartAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly pressurePlatePop: PressurePlatePopAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -7197,6 +8134,18 @@ export class WorldBeforeEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly effectAdd: EffectAddBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityHeal: EntityHealBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityHurt: EntityHurtBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityItemPickup: EntityItemPickupBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -7255,6 +8204,23 @@ export class WorldLoadAfterEventSignal {
     unsubscribe(callback: (arg0: WorldLoadAfterEvent) => void): void;
 }
 
+export interface AABB {
+    center: Vector3;
+    extent: Vector3;
+}
+
+export interface AnimationOptions {
+    animation: SplineAnimation;
+    totalTimeSeconds: number;
+}
+
+export interface BiomeFilter {
+    excludeBiomes?: string[];
+    excludeTags?: string[];
+    includeBiomes?: string[];
+    includeTags?: string[];
+}
+
 export interface BlockBoundingBox {
     max: Vector3;
     min: Vector3;
@@ -7265,6 +8231,8 @@ export interface BlockCustomComponent {
         arg0: BlockComponentPlayerPlaceBeforeEvent,
         arg1: CustomComponentParameters,
     ) => void;
+    onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
+    onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
     onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
@@ -7312,6 +8280,11 @@ export interface BlockRaycastOptions extends BlockFilter {
     includeLiquidBlocks?: boolean;
     includePassableBlocks?: boolean;
     maxDistance?: number;
+}
+
+export interface CameraAttachOptions {
+    entity: Entity;
+    locator: EntityAttachPoint;
 }
 
 export interface CameraFadeOptions {
@@ -7464,8 +8437,35 @@ export interface EntityFilter {
     type?: string;
 }
 
+export interface EntityHealEventOptions {
+    allowedHealCauses?: EntityHealCause[];
+    entityFilter?: EntityFilter;
+}
+
 export interface EntityHitInformation {
     entity?: Entity;
+}
+
+export interface EntityHurtAfterEventOptions {
+    allowedDamageCauses?: EntityDamageCause[];
+    entities?: Entity[];
+    entityFilter?: EntityFilter;
+    entityTypes?: string[];
+}
+
+export interface EntityHurtBeforeEventOptions {
+    allowedDamageCauses?: EntityDamageCause[];
+    entityFilter?: EntityFilter;
+}
+
+export interface EntityItemDropEventOptions {
+    entityFilter?: EntityFilter;
+    itemFilter?: ItemFilter;
+}
+
+export interface EntityItemPickupEventOptions {
+    entityFilter?: EntityFilter;
+    itemFilter?: ItemFilter;
 }
 
 // @ts-ignore
@@ -7524,6 +8524,11 @@ export interface ExplosionOptions {
     source?: Entity;
 }
 
+export interface GetBlocksStandingOnOptions {
+    blockFilter?: BlockFilter;
+    ignoreThinBlocks?: boolean;
+}
+
 export interface GreaterThanComparison {
     greaterThan: number;
 }
@@ -7564,15 +8569,21 @@ export interface ItemCustomComponent {
     onUseOn?: (arg0: ItemComponentUseOnEvent, arg1: CustomComponentParameters) => void;
 }
 
+export interface ItemFilter {
+    includeTypes?: (ItemType | string)[];
+}
+
 export interface JigsawPlaceOptions {
     includeEntities?: boolean;
     keepJigsaws?: boolean;
+    liquidSettings?: LiquidSettings;
 }
 
 export interface JigsawStructurePlaceOptions {
     ignoreStartHeight?: boolean;
     includeEntities?: boolean;
     keepJigsaws?: boolean;
+    liquidSettings?: LiquidSettings;
 }
 
 export interface LessThanComparison {
@@ -7605,6 +8616,17 @@ export interface PlayerSoundOptions {
     location?: Vector3;
     pitch?: number;
     volume?: number;
+}
+
+export interface PlayerSwingEventOptions {
+    heldItemOption?: HeldItemOption;
+    swingSource?: EntitySwingSource;
+}
+
+export interface ProgressKeyFrame {
+    alpha: number;
+    easingFunc?: EasingType;
+    timeSeconds: number;
 }
 
 export interface ProjectileShootOptions {
@@ -7644,6 +8666,12 @@ export interface RGBA extends RGB {
     alpha: number;
 }
 
+export interface RotationKeyFrame {
+    easingFunc?: EasingType;
+    rotation: Vector3;
+    timeSeconds: number;
+}
+
 export interface ScoreboardObjectiveDisplayOptions {
     objective: ScoreboardObjective;
     sortOrder?: ObjectiveSortOrder;
@@ -7657,6 +8685,11 @@ export interface SpawnEntityOptions {
     initialPersistence?: boolean;
     initialRotation?: number;
     spawnEvent?: string;
+}
+
+export interface SplineAnimation {
+    progressKeyFrames: ProgressKeyFrame[];
+    rotationKeyFrames: RotationKeyFrame[];
 }
 
 export interface StructureCreateOptions {
@@ -7683,6 +8716,20 @@ export interface TeleportOptions {
     facingLocation?: Vector3;
     keepVelocity?: boolean;
     rotation?: Vector2;
+}
+
+export interface TickingArea {
+    boundingBox: BlockBoundingBox;
+    chunkCount: number;
+    dimension: Dimension;
+    identifier: string;
+    isFullyLoaded: boolean;
+}
+
+export interface TickingAreaOptions {
+    dimension: Dimension;
+    from: Vector3;
+    to: Vector3;
 }
 
 export interface TitleDisplayOptions {
@@ -7813,6 +8860,11 @@ export class EntitySpawnError extends Error {
 }
 
 // @ts-ignore
+export class InvalidBlockComponentError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class InvalidContainerError extends Error {
     private constructor();
 }
@@ -7846,6 +8898,16 @@ export class InvalidItemStackError extends Error {
 
 // @ts-ignore
 export class InvalidIteratorError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidPotionDeliveryTypeError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidPotionEffectTypeError extends Error {
     private constructor();
 }
 
@@ -7901,6 +8963,15 @@ export class PlaceJigsawError extends Error {
 // @ts-ignore
 export class RawMessageError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class TickingAreaError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: TickingAreaErrorReason;
 }
 
 // @ts-ignore

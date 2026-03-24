@@ -82,6 +82,33 @@ export enum RealmsWorldUploadResult {
     WorldNameNonCompliant = 6,
 }
 
+export class CustomBiomeSource {
+    private constructor();
+    readonly id: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    destroy(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getBiomeAt(pos: minecraftserver.Vector3): minecraftserver.BiomeType;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    recalculateBiomes(newBiomes: CustomBiomeConfig[]): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateColor(biomeName: string, color: minecraftserver.RGBA): void;
+}
+
 export class DataStore {
     private constructor();
     readonly actionBarContainer: DataStoreActionBarContainer;
@@ -334,6 +361,10 @@ export class DataTransferCreateSettingResponse {
 export class DataTransferManager {
     private constructor();
     /**
+     * @throws This property can throw errors.
+     */
+    readonly isDeferredExperimentEnabled: boolean;
+    /**
      * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -534,6 +565,10 @@ export class JigsawService {
     private constructor();
     /**
      * @remarks This function can't be called in read-only mode.
+     */
+    deleteRegistryData(registryName: string): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
@@ -589,6 +624,12 @@ export class MinecraftEditorInternal {
     private constructor();
     readonly isNewLevel: boolean;
     readonly regionManager: ProjectRegionManager;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createCustomBiomeSource(config: CustomBiomeSourceConfig): CustomBiomeSource;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1382,6 +1423,23 @@ export class RealmsService {
      * @remarks This function can't be called in read-only mode.
      */
     isRealmsServiceAvailable(): EditorRealmsServiceAvailability;
+}
+
+export interface CustomBiomeConfig {
+    name: string;
+    replacements: CustomBiomeReplacementConfig[];
+    visualizationColor: minecraftserver.RGB;
+}
+
+export interface CustomBiomeReplacementConfig {
+    amount: number;
+    biomeType?: minecraftserver.BiomeType;
+    frequency: number;
+}
+
+export interface CustomBiomeSourceConfig {
+    seed?: number;
+    userDefinedBiomes: CustomBiomeConfig[];
 }
 
 export interface DataTransferCollectionNameData {

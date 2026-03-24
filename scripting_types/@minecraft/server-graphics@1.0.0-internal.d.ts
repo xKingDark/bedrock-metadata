@@ -213,6 +213,46 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
+    resetHighlightsGain(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetHighlightsGamma(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetHighlightsMin(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetHighlightsOffset(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetHighlightsSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
     resetMidtonesContrast(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -221,7 +261,87 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
+    resetMidtonesGain(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMidtonesGamma(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMidtonesOffset(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMidtonesSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
     resetShadowsContrast(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetShadowsGain(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetShadowsGamma(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetShadowsMax(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetShadowsOffset(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetShadowsSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetTemperature(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -240,6 +360,49 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
+    setHighlightsGain(highlightsGain: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setHighlightsGamma(highlightsGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setHighlightsMin(highlightsMin: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setHighlightsOffset(highlightsOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setHighlightsSaturation(
+        highlightsSaturation: minecraftserver.Vector3,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
     setMidtonesContrast(midtonesContrast: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
      * @remarks This function can't be called in read-only mode.
@@ -248,7 +411,237 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
+    setMidtonesGain(midtonesGain: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMidtonesGamma(midtonesGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMidtonesOffset(midtonesOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMidtonesSaturation(
+        midtonesSaturation: minecraftserver.Vector3,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
     setShadowsContrast(shadowsContrast: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setShadowsGain(shadowsGain: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setShadowsGamma(shadowsGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setShadowsMax(shadowsMax: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setShadowsOffset(shadowsOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setShadowsSaturation(shadowsSaturation: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setTemperature(temperature: number, biomeIdentifier: minecraftserver.BiomeType): void;
+}
+
+export class Lighting {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetAmbientColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetAmbientIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetFlashColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetFlashIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMoonColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetMoonIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSunColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSunIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setAmbientColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setAmbientIlluminance(
+        illuminance: number | Record<number, number>,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setFlashColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setFlashIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMoonColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setMoonIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSunColor(
+        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
+        biomeIdentifier: minecraftserver.BiomeType,
+    ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSunIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
 }
 
 export class Water {
@@ -467,4 +860,5 @@ export const InternalConstant = 1;
 
 export const atmosphere:   Atmospherics;
 export const colorGrading: ColorGrading;
+export const lighting:     Lighting;
 export const water:        Water;

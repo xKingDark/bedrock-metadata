@@ -683,6 +683,14 @@
             ]
         },
         {
+            "name": "minecraft:multi_block_part",
+            "type": "number",
+            "values": {
+                "min": 0,
+                "max": 3
+            }
+        },
+        {
             "name": "minecraft:vertical_half",
             "type": "string",
             "values": [

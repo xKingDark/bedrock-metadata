@@ -155,7 +155,8 @@ export enum MinimapMarkerType {
 }
 
 export enum MinimapViewType {
-    BlockView = 0,
+    BlockView       = 0,
+    CustomBiomeView = 1,
 }
 
 export enum MouseActionCategory {
@@ -207,6 +208,11 @@ export enum PrimitiveType {
     Line        = 2,
     Disc        = 4,
     AxialSphere = 5,
+    Cylinder    = 7,
+    Pyramid     = 8,
+    Ellipsoid   = 9,
+    Cuboid      = 10,
+    Cone        = 11,
 }
 
 export enum ProjectExportType {
@@ -1330,7 +1336,7 @@ export class MinimapManager {
      *
      * @throws This function can throw errors.
      */
-    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number): MinimapItem;
+    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number, dataId?: string): MinimapItem;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1977,8 +1983,13 @@ export class Widget {
         primitiveType: 
             | WidgetComponentRenderPrimitiveTypeAxialSphere
             | WidgetComponentRenderPrimitiveTypeBox
+            | WidgetComponentRenderPrimitiveTypeCone
+            | WidgetComponentRenderPrimitiveTypeCuboid
+            | WidgetComponentRenderPrimitiveTypeCylinder
             | WidgetComponentRenderPrimitiveTypeDisc
-            | WidgetComponentRenderPrimitiveTypeLine,
+            | WidgetComponentRenderPrimitiveTypeEllipsoid
+            | WidgetComponentRenderPrimitiveTypeLine
+            | WidgetComponentRenderPrimitiveTypePyramid,
         options?: WidgetComponentRenderPrimitiveOptions,
     ): WidgetComponentRenderPrimitive;
     /**
@@ -2304,8 +2315,13 @@ export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
         primitive: 
             | WidgetComponentRenderPrimitiveTypeAxialSphere
             | WidgetComponentRenderPrimitiveTypeBox
+            | WidgetComponentRenderPrimitiveTypeCone
+            | WidgetComponentRenderPrimitiveTypeCuboid
+            | WidgetComponentRenderPrimitiveTypeCylinder
             | WidgetComponentRenderPrimitiveTypeDisc
-            | WidgetComponentRenderPrimitiveTypeLine,
+            | WidgetComponentRenderPrimitiveTypeEllipsoid
+            | WidgetComponentRenderPrimitiveTypeLine
+            | WidgetComponentRenderPrimitiveTypePyramid,
     ): void;
 }
 
@@ -2359,6 +2375,143 @@ export class WidgetComponentRenderPrimitiveTypeBox extends WidgetComponentRender
 }
 
 // @ts-ignore
+export class WidgetComponentRenderPrimitiveTypeCone extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    height: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    numSegments?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    radiusX: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    radiusZ: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(
+        center: minecraftserver.Vector3,
+        radiusX: number,
+        radiusZ: number,
+        height: number,
+        color: minecraftserver.RGBA,
+        numSegments?: number,
+        rotation?: minecraftserver.Vector3,
+        alpha?: number,
+    );
+}
+
+// @ts-ignore
+export class WidgetComponentRenderPrimitiveTypeCuboid extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    lengthX: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    lengthY: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    lengthZ: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(
+        center: minecraftserver.Vector3,
+        lengthX: number,
+        lengthY: number,
+        lengthZ: number,
+        color: minecraftserver.RGBA,
+        rotation?: minecraftserver.Vector3,
+        alpha?: number,
+    );
+}
+
+// @ts-ignore
+export class WidgetComponentRenderPrimitiveTypeCylinder extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    height: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    radiusX: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    radiusZ: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(
+        center: minecraftserver.Vector3,
+        radiusX: number,
+        radiusZ: number,
+        height: number,
+        color: minecraftserver.RGBA,
+        rotation?: minecraftserver.Vector3,
+        alpha?: number,
+    );
+}
+
+// @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeDisc extends WidgetComponentRenderPrimitiveTypeBase {
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -2379,6 +2532,40 @@ export class WidgetComponentRenderPrimitiveTypeDisc extends WidgetComponentRende
 }
 
 // @ts-ignore
+export class WidgetComponentRenderPrimitiveTypeEllipsoid extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    radii: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(
+        center: minecraftserver.Vector3,
+        radii: minecraftserver.Vector3,
+        color: minecraftserver.RGBA,
+        rotation?: minecraftserver.Vector3,
+        alpha?: number,
+    );
+}
+
+// @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeLine extends WidgetComponentRenderPrimitiveTypeBase {
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -2396,6 +2583,50 @@ export class WidgetComponentRenderPrimitiveTypeLine extends WidgetComponentRende
      * @remarks This function can't be called in read-only mode.
      */
     constructor(start: minecraftserver.Vector3, end: minecraftserver.Vector3, color: minecraftserver.RGBA);
+}
+
+// @ts-ignore
+export class WidgetComponentRenderPrimitiveTypePyramid extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    height: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    widthX: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    widthZ?: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    constructor(
+        center: minecraftserver.Vector3,
+        widthX: number,
+        height: number,
+        color: minecraftserver.RGBA,
+        widthZ?: number,
+        rotation?: minecraftserver.Vector3,
+        alpha?: number,
+    );
 }
 
 // @ts-ignore
@@ -2690,6 +2921,7 @@ export interface GameOptions {
     immediateRespawn?: boolean;
     insomnia?: boolean;
     keepInventory?: boolean;
+    keepPlayerData?: boolean;
     lanVisibility?: boolean;
     limitedCrafting?: boolean;
     locatorBar?: boolean;
@@ -2905,6 +3137,11 @@ export class InvalidWidgetError extends Error {
 
 // @ts-ignore
 export class InvalidWidgetGroupError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class TransactionManagerNoChangesError extends Error {
     private constructor();
 }
 

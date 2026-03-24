@@ -526,6 +526,12 @@ export enum LiquidType {
     Water = "Water",
 }
 
+export enum LocatorBarErrorReason {
+    WaypointAlreadyExists = "WaypointAlreadyExists",
+    WaypointLimitExceeded = "WaypointLimitExceeded",
+    WaypointNotFound      = "WaypointNotFound",
+}
+
 export enum MemoryTier {
     SuperLow  = 0,
     Low       = 1,
@@ -676,6 +682,13 @@ export enum TintMethod {
 export enum WatchdogTerminateReason {
     Hang          = "Hang",
     StackOverflow = "StackOverflow",
+}
+
+export enum WaypointTexture {
+    Circle      = "minecraft:circle",
+    SmallSquare = "minecraft:small_square",
+    SmallStar   = "minecraft:small_star",
+    Square      = "minecraft:square",
 }
 
 export enum WeatherType {
@@ -1134,6 +1147,12 @@ export class AimAssistRegistry {
     getPresets(): AimAssistPreset[];
 }
 
+export class BannerPattern {
+    private constructor();
+    readonly color: string;
+    readonly pattern: string;
+}
+
 export class BiomeType {
     private constructor();
     readonly id: string;
@@ -1358,6 +1377,16 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     getMapColor(): RGBA;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    getParts(): Block[] | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1606,7 +1635,7 @@ export class BlockComponentBlockBreakEvent extends BlockEvent {
 export class BlockComponentEntityEvent extends BlockEvent {
     private constructor();
     readonly blockPermutation: BlockPermutation;
-    readonly entitySource?: Entity;
+    readonly entitySource: Entity;
     readonly name: string;
 }
 
@@ -2841,7 +2870,7 @@ export class Dimension {
      *
      * {@link UnloadedChunksError}
      */
-    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter): boolean;
+    containsBiomes(volume: BlockVolumeBase, biomeFilter: BiomeFilter, isSuperset: boolean): boolean;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -3394,6 +3423,20 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): Effect | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link ContainerRulesError}
+     *
+     * {@link Error}
+     *
+     * {@link InvalidEntityComponentError}
+     *
+     * {@link InvalidEntityError}
+     */
+    addItem(itemStack: ItemStack): ItemStack | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4001,7 +4044,7 @@ export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
     readonly item: string;
-    readonly resultItem: string;
+    readonly resultItem?: string;
 }
 
 export class EntityDieAfterEvent {
@@ -5192,6 +5235,39 @@ export class EntityWantsJockeyComponent extends EntityComponent {
 }
 
 // @ts-ignore
+export class EntityWaypoint extends Waypoint {
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidWaypointError}
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    readonly entity: Entity;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidWaypointError}
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    readonly entityRules: EntityVisibilityRules;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    constructor(
+        entity: Entity,
+        textureSelector: WaypointTextureSelector,
+        entityRules: EntityVisibilityRules,
+        color?: RGB,
+    );
+}
+
+// @ts-ignore
 export class ExplorationMapFunction extends LootItemFunction {
     private constructor();
     readonly destination: string;
@@ -5261,7 +5337,7 @@ export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
-    readonly resultItem: string;
+    readonly resultItem?: string;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -6355,6 +6431,66 @@ export class ListBlockVolume extends BlockVolumeBase {
 }
 
 // @ts-ignore
+export class LocationWaypoint extends Waypoint {
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    constructor(dimensionLocation: DimensionLocation, textureSelector: WaypointTextureSelector, color?: RGB);
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setDimensionLocation(dimensionLocation: DimensionLocation): void;
+}
+
+export class LocatorBar {
+    private constructor();
+    readonly count: number;
+    readonly maxCount: number;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidWaypointError}
+     *
+     * {@link LocatorBarError}
+     */
+    addWaypoint(waypoint: Waypoint): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getAllWaypoints(): Waypoint[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasWaypoint(waypoint: Waypoint): boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    removeAllWaypoints(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link LocatorBarError}
+     */
+    removeWaypoint(waypoint: Waypoint): void;
+}
+
+// @ts-ignore
 export class LootingEnchantFunction extends LootItemFunction {
     private constructor();
     readonly count: minecraftcommon.NumberRange;
@@ -6607,6 +6743,7 @@ export class Player extends Entity {
      * @throws This property can throw errors.
      */
     readonly level: number;
+    readonly locatorBar: LocatorBar;
     /**
      * @throws This property can throw errors.
      */
@@ -6615,6 +6752,12 @@ export class Player extends Entity {
      * @throws This property can throw errors.
      */
     readonly onScreenDisplay: ScreenDisplay;
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly partyId?: string;
     /**
      * @throws This property can throw errors.
      *
@@ -7493,6 +7636,31 @@ export class PlayerUseNameTagAfterEventSignal {
     unsubscribe(callback: (arg0: PlayerUseNameTagAfterEvent) => void): void;
 }
 
+// @ts-ignore
+export class PlayerWaypoint extends EntityWaypoint {
+    /**
+     * @throws This property can throw errors.
+     *
+     * {@link InvalidWaypointError}
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    readonly playerRules: PlayerVisibilityRules;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    constructor(
+        player: Player,
+        textureSelector: WaypointTextureSelector,
+        playerRules: PlayerVisibilityRules,
+        color?: RGB,
+    );
+}
+
 export class PotionDeliveryType {
     private constructor();
     readonly id: string;
@@ -7953,6 +8121,8 @@ export class SetArmorTrimFunction extends LootItemFunction {
 // @ts-ignore
 export class SetBannerDetailsFunction extends LootItemFunction {
     private constructor();
+    readonly baseColor: string;
+    readonly patterns: BannerPattern[];
     readonly "type": number;
 }
 
@@ -8386,7 +8556,7 @@ export class TickingAreaManager {
      *
      * {@link TickingAreaError}
      */
-    createTickingArea(identifier: string, options: TickingAreaOptions): Promise<TickingArea>;
+    createTickingArea(identifier: string, options: TickingAreaOptions): Promise<void>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -8488,6 +8658,37 @@ export class WatchdogTerminateBeforeEventSignal {
      * This function can't be called in read-only mode.
      */
     unsubscribe(callback: (arg0: WatchdogTerminateBeforeEvent) => void): void;
+}
+
+export class Waypoint {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    color?: RGB;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    isEnabled: boolean;
+    readonly isValid: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    textureSelector: WaypointTextureSelector;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidWaypointError}
+     *
+     * {@link InvalidWaypointTextureSelectorError}
+     */
+    getDimensionLocation(): DimensionLocation;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    remove(): void;
 }
 
 export class WeatherChangeAfterEvent {
@@ -9039,7 +9240,6 @@ export interface BiomeFilter {
     excludeTags?: string[];
     includeBiomes?: string[];
     includeTags?: string[];
-    superset: boolean;
 }
 
 export interface BiomeSearchOptions {
@@ -9345,6 +9545,12 @@ export interface EntityRaycastOptions extends EntityFilter {
     maxDistance?: number;
 }
 
+export interface EntityVisibilityRules {
+    showDead?: boolean;
+    showInvisible?: boolean;
+    showSneaking?: boolean;
+}
+
 export interface EqualsComparison {
     equals: boolean | number | string;
 }
@@ -9460,6 +9666,13 @@ export interface PlayerSoundOptions {
 export interface PlayerSwingEventOptions {
     heldItemOption?: HeldItemOption;
     swingSource?: EntitySwingSource;
+}
+
+// @ts-ignore
+export interface PlayerVisibilityRules extends EntityVisibilityRules {
+    showHidden?: boolean;
+    showSpectator?: boolean;
+    showSpectatorToSpectator?: boolean;
 }
 
 export interface ProgressKeyFrame {
@@ -9594,6 +9807,16 @@ export interface VectorXZ {
     z: number;
 }
 
+export interface WaypointTextureBounds {
+    lowerBound: number;
+    texture: WaypointTexture;
+    upperBound?: number;
+}
+
+export interface WaypointTextureSelector {
+    textureBoundsList: WaypointTextureBounds[];
+}
+
 export interface WorldSoundOptions {
     pitch?: number;
     volume?: number;
@@ -9714,6 +9937,11 @@ export class InvalidContainerSlotError extends Error {
 }
 
 // @ts-ignore
+export class InvalidEntityComponentError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class InvalidEntityError extends Error {
     private constructor();
     /**
@@ -9756,6 +9984,16 @@ export class InvalidStructureError extends Error {
 }
 
 // @ts-ignore
+export class InvalidWaypointError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidWaypointTextureSelectorError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class ItemCustomComponentAlreadyRegisteredError extends Error {
     private constructor();
 }
@@ -9783,6 +10021,15 @@ export class LocationInUnloadedChunkError extends Error {
 // @ts-ignore
 export class LocationOutOfWorldBoundariesError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class LocatorBarError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: LocatorBarErrorReason;
 }
 
 // @ts-ignore

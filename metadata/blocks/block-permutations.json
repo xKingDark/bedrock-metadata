@@ -220726,6 +220726,13 @@
             "hash": 2144082742
         },
         {
+            "name": "minecraft:golden_dandelion",
+            "states": {
+                
+            },
+            "hash": 3536154713
+        },
+        {
             "name": "minecraft:golden_rail",
             "states": {
                 "rail_data_bit": false,
