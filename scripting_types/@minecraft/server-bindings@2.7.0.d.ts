@@ -1116,6 +1116,26 @@ export class AimAssistRegistry {
 export class BiomeType {
     private constructor();
     readonly id: string;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getTags(): string[];
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    hasTags(tags: string[]): boolean;
+}
+
+export class BiomeTypes {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    static get(typeName: string): BiomeType | undefined;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    static getAll(): BiomeType[];
 }
 
 export class Block {

@@ -56,7 +56,7 @@ export class DataDrivenScreen {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    showScreen(): Promise<DataDrivenScreenResponse>;
+    showScreen(instanceId?: number): Promise<DataDrivenScreenResponse>;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -74,6 +74,10 @@ export class DataDrivenScreenResponse {
 
 export class DataStore {
     private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    getInstanceIdOverride(): number | undefined;
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -113,6 +117,10 @@ export class DataStore {
         path: string,
         isWritable?: boolean,
     ): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    setInstanceIdOverride(instanceId?: number): void;
     /**
      * @remarks This function can't be called in read-only mode.
      *

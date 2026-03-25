@@ -117,6 +117,30 @@ export class DedicatedServerUtils {
     readonly levelStorage: LevelStorage;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    reloadCDNConfig(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    reloadPermissions(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    reloadScriptingConfig(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
      */
     stopServer(): void;
 }
@@ -204,6 +228,11 @@ export class AllowListModificationError extends Error {
 }
 
 // @ts-ignore
+export class CannotDeopPlayerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class CannotKickPlayerError extends Error {
     private constructor();
 }
@@ -222,6 +251,24 @@ export class LevelStorageSaveStateChangeError extends Error {
     private constructor();
 }
 
+// @ts-ignore
+export class PlayerAlreadyOpError extends Error {
+    private constructor();
+}
+
+/**
+ * @remarks This function can't be called in read-only mode.
+ *
+ * @throws This function can throw errors.
+ *
+ * {@link CannotDeopPlayerError}
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ */
+export function deopPlayer(player: minecraftserver.Player): void;
+
 /**
  * @remarks This function can't be called in read-only mode.
  *
@@ -234,6 +281,19 @@ export class LevelStorageSaveStateChangeError extends Error {
  * {@link minecraftcommon.InvalidArgumentError}
  */
 export function kickPlayer(player: minecraftserver.Player, reason?: string): void;
+
+/**
+ * @remarks This function can't be called in read-only mode.
+ *
+ * @throws This function can throw errors.
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ *
+ * {@link PlayerAlreadyOpError}
+ */
+export function opPlayer(player: minecraftserver.Player): void;
 
 /**
  * @remarks This function can't be called in read-only mode.

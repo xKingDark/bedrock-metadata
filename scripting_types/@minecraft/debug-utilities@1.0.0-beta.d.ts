@@ -141,12 +141,20 @@ export class DebugText extends DebugShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
+    backfaceVisible: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     backgroundColorOverride?: minecraftserver.RGBA;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
     depthTest: boolean;
     readonly text: minecraftserver.RawMessage | string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    textBackfaceVisible: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
      */

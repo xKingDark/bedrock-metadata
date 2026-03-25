@@ -188,9 +188,11 @@ export enum PacketId {
     ServerboundLoadingScreenPacket           = "ServerboundLoadingScreenPacket",
     ServerboundPackSettingChangePacket       = "ServerboundPackSettingChangePacket",
     ServerPlayerPostMovePositionPacket       = "ServerPlayerPostMovePositionPacket",
+    ServerPresenceInfoPacket                 = "ServerPresenceInfoPacket",
     ServerSettingsRequestPacket              = "ServerSettingsRequestPacket",
     ServerSettingsResponsePacket             = "ServerSettingsResponsePacket",
     ServerStatsPacket                        = "ServerStatsPacket",
+    ServerStoreInfoPacket                    = "ServerStoreInfoPacket",
     ServerToClientHandshakePacket            = "ServerToClientHandshakePacket",
     SetActorDataPacket                       = "SetActorDataPacket",
     SetActorLinkPacket                       = "SetActorLinkPacket",
@@ -248,6 +250,22 @@ export enum PacketId {
     UpdateSubChunkBlocksPacket               = "UpdateSubChunkBlocksPacket",
     UpdateTradePacket                        = "UpdateTradePacket",
     VoxelShapesPacket                        = "VoxelShapesPacket",
+}
+
+export class CloseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(callback: (arg0: WebSocketClientCloseAfterEvent) => void): (arg0: WebSocketClientCloseAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: WebSocketClientCloseAfterEvent) => void): void;
 }
 
 export class HttpClient {
@@ -352,6 +370,24 @@ export class HttpResponse {
     readonly status: number;
 }
 
+export class MessageAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    subscribe(
+        callback: (arg0: WebSocketClientReceiveAfterEvent) => void,
+    ): (arg0: WebSocketClientReceiveAfterEvent) => void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * This function can't be called in read-only mode.
+     */
+    unsubscribe(callback: (arg0: WebSocketClientReceiveAfterEvent) => void): void;
+}
+
 export class NetworkBeforeEvents {
     private constructor();
     /**
@@ -423,6 +459,59 @@ export class PacketSendBeforeEventSignal {
     unsubscribe(callback: (arg0: PacketSendBeforeEvent) => void): void;
 }
 
+export class WebSocket {
+    private constructor();
+    /**
+     * @remarks This function can't be called in read-only mode.
+     */
+    connect(uri: string): Promise<WebSocketClient>;
+}
+
+export class WebSocketClient {
+    private constructor();
+    readonly afterEvents: WebSocketClientAfterEvents;
+    readonly isOpen: boolean;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WebSocketNotConnectedError}
+     */
+    close(): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link RequestBodyTooLargeError}
+     *
+     * {@link WebSocketNotConnectedError}
+     */
+    send(payload: string): void;
+}
+
+export class WebSocketClientAfterEvents {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly close: CloseAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly message: MessageAfterEventSignal;
+}
+
+export class WebSocketClientCloseAfterEvent {
+    private constructor();
+}
+
+export class WebSocketClientReceiveAfterEvent {
+    private constructor();
+    readonly message: string;
+}
+
 export interface PacketEventOptions {
     ignoredPacketIds?: PacketId[];
     monitoredPacketIds?: PacketId[];
@@ -447,11 +536,24 @@ export class InternalHttpRequestError extends Error {
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly code: number;
+    readonly errorCode: number;
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly message: string;
+    readonly errorMessage: string;
+}
+
+// @ts-ignore
+export class InternalWebSocketError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly errorCode: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly errorMessage: string;
 }
 
 // @ts-ignore
@@ -490,5 +592,37 @@ export class UriNotAllowedError extends Error {
     readonly uri: string;
 }
 
+// @ts-ignore
+export class WebSocketConnectionFailedError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly errorCode: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
+}
+
+// @ts-ignore
+export class WebSocketLimitExceededError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly connectedSockets: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxConcurrentConnections: number;
+}
+
+// @ts-ignore
+export class WebSocketNotConnectedError extends Error {
+    private constructor();
+}
+
 export const beforeEvents: NetworkBeforeEvents;
 export const http:         HttpClient;
+export const websocket:    WebSocket;

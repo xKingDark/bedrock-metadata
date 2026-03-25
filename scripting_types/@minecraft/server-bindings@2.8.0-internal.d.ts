@@ -2439,6 +2439,7 @@ export class ChatSendBeforeEventSignal {
 // @ts-ignore
 export class ClientSystemInfo extends SystemInfo {
     private constructor();
+    readonly locale: string;
     readonly maxRenderDistance: number;
     readonly platformType: PlatformType;
 }
@@ -7968,6 +7969,10 @@ export class PrimitiveShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
+    maximumRenderDistance?: number;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     rotation: Vector3;
     /**
      * @remarks This property can't be edited in read-only mode.
@@ -7994,8 +7999,15 @@ export class PrimitiveShape {
 
 export class PrimitiveShapesManager {
     private constructor();
+    readonly maxShapes: number;
     /**
      * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link PrimitiveShapeError}
      */
     addText(text: TextPrimitive, dimension?: Dimension): void;
     /**
@@ -8839,12 +8851,20 @@ export class TextPrimitive extends PrimitiveShape {
     /**
      * @remarks This property can't be edited in read-only mode.
      */
+    backfaceVisible: boolean;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
     backgroundColorOverride?: RGBA;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
     depthTest: boolean;
     readonly text: RawMessage | string;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    textBackfaceVisible: boolean;
     /**
      * @remarks This property can't be edited in read-only mode.
      */
@@ -9073,6 +9093,10 @@ export class World {
      * @remarks This property can be read in early-execution mode.
      */
     readonly afterEvents: WorldAfterEvents;
+    /**
+     * @remarks This property can't be edited in read-only mode.
+     */
+    allowCheats: boolean;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -9744,6 +9768,12 @@ export interface CustomCommandResult {
     status: CustomCommandStatus;
 }
 
+export interface CustomTexture {
+    iconHeight: number;
+    iconWidth: number;
+    path: string;
+}
+
 export interface DefinitionModifier {
     addedComponentGroups: string[];
     removedComponentGroups: string[];
@@ -10165,7 +10195,7 @@ export interface VectorXZ {
 
 export interface WaypointTextureBounds {
     lowerBound: number;
-    texture: WaypointTexture;
+    texture: CustomTexture | WaypointTexture;
     upperBound?: number;
 }
 
@@ -10399,6 +10429,11 @@ export class NamespaceNameError extends Error {
 
 // @ts-ignore
 export class PlaceJigsawError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrimitiveShapeError extends Error {
     private constructor();
 }
 

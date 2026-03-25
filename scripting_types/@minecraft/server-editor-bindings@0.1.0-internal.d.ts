@@ -1355,6 +1355,18 @@ export class MinimapManager {
      * @throws This function can throw errors.
      */
     getMinimap(minimapId: string): MinimapItem;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setVanillaBiomeColorMap(colorMap: Record<string, minecraftserver.RGB>): void;
+    /**
+     * @remarks This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateVanillaColorMap(biomeType: minecraftserver.BiomeType, color: minecraftserver.RGB): void;
 }
 
 export class ModeChangeAfterEvent {
@@ -2843,6 +2855,7 @@ export interface BlockMaskList {
 }
 
 export interface ClipboardWriteOptions {
+    excludeAirBlocks?: boolean;
     mirror?: minecraftserver.StructureMirrorAxis;
     normalizedOrigin?: minecraftserver.Vector3;
     offset?: minecraftserver.Vector3;
