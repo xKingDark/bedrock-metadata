@@ -1746,6 +1746,8 @@ export class FeedItemEffect {
 
 export class FluidContainer {
     private constructor();
+    static readonly maxFillLevel = 6;
+    static readonly minFillLevel = 0;
 }
 
 export class IBlockProperty {
@@ -2073,6 +2075,8 @@ export class Location {
 
 export class MinecraftBlockTypes {
     private constructor();
+    static readonly air: BlockType;
+    static readonly barrier: BlockType;
     /**
      * @remarks This function can't be called in read-only mode.
      */
@@ -2085,14 +2089,26 @@ export class MinecraftBlockTypes {
 
 export class MinecraftDimensionTypes {
     private constructor();
+    static readonly nether = "minecraft:nether";
+    static readonly overworld = "minecraft:overworld";
+    static readonly theEnd = "minecraft:the_end";
 }
 
 export class MinecraftEffectTypes {
     private constructor();
+    static readonly healthBoost: EffectType;
+    static readonly jumpBoost: EffectType;
+    static readonly levitation: EffectType;
+    static readonly regeneration: EffectType;
+    static readonly saturation: EffectType;
+    static readonly slowFalling: EffectType;
+    static readonly slowness: EffectType;
+    static readonly speed: EffectType;
 }
 
 export class MinecraftItemTypes {
     private constructor();
+    static readonly air: ItemType;
 }
 
 export class MolangVariableMap {
@@ -2421,6 +2437,14 @@ export class Vector {
     readonly x: number;
     readonly y: number;
     readonly z: number;
+    static readonly back: Vector;
+    static readonly down: Vector;
+    static readonly forward: Vector;
+    static readonly left: Vector;
+    static readonly one: Vector;
+    static readonly right: Vector;
+    static readonly up: Vector;
+    static readonly zero: Vector;
     /**
      * @remarks This function can't be called in read-only mode.
      */

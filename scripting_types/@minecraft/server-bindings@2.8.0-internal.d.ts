@@ -1138,6 +1138,8 @@ export class AimAssistPresetSettings {
 
 export class AimAssistRegistry {
     private constructor();
+    static readonly DefaultCategoryId = "minecraft:default";
+    static readonly DefaultPresetId = "minecraft:aim_assist_default";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1876,6 +1878,7 @@ export class BlockFluidContainerComponent extends BlockComponent {
      * @remarks This property can't be edited in read-only mode.
      */
     fluidColor: RGBA;
+    static readonly componentId = "minecraft:fluid_container";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -1909,6 +1912,7 @@ export class BlockInventoryComponent extends BlockComponent {
      * @throws This property can throw errors.
      */
     readonly container?: Container;
+    static readonly componentId = "minecraft:inventory";
 }
 
 export class BlockLocationIterator implements Iterable<Vector3> {
@@ -1937,6 +1941,7 @@ export class BlockMapColorComponent extends BlockComponent {
      * @throws This property can throw errors.
      */
     readonly tintMethod: TintMethod;
+    static readonly componentId = "minecraft:map_color";
 }
 
 // @ts-ignore
@@ -1958,6 +1963,7 @@ export class BlockMovableComponent extends BlockComponent {
      * {@link LocationOutOfWorldBoundariesError}
      */
     readonly stickyType: StickyType;
+    static readonly componentId = "minecraft:movable";
 }
 
 export class BlockPermutation {
@@ -2037,6 +2043,7 @@ export class BlockPistonComponent extends BlockComponent {
      * @throws This property can throw errors.
      */
     readonly state: BlockPistonState;
+    static readonly componentId = "minecraft:piston";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2054,6 +2061,7 @@ export class BlockPistonComponent extends BlockComponent {
 // @ts-ignore
 export class BlockPrecipitationInteractionsComponent extends BlockComponent {
     private constructor();
+    static readonly componentId = "minecraft:precipitation_interactions";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2079,6 +2087,7 @@ export class BlockPrecipitationInteractionsComponent extends BlockComponent {
 // @ts-ignore
 export class BlockRecordPlayerComponent extends BlockComponent {
     private constructor();
+    static readonly componentId = "minecraft:record_player";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2126,6 +2135,7 @@ export class BlockRedstoneProducerComponent extends BlockComponent {
      * {@link InvalidBlockComponentError}
      */
     readonly power: number;
+    static readonly componentId = "minecraft:redstone_producer";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -2151,6 +2161,7 @@ export class BlockSignComponent extends BlockComponent {
      * @throws This property can throw errors.
      */
     readonly isWaxed: boolean;
+    static readonly componentId = "minecraft:sign";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -3951,6 +3962,7 @@ export class EntityAddRiderComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly spawnEvent: string;
+    static readonly componentId = "minecraft:addrider";
 }
 
 // @ts-ignore
@@ -3968,6 +3980,7 @@ export class EntityAgeableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly transformToItem: string;
+    static readonly componentId = "minecraft:ageable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4083,6 +4096,7 @@ export class EntityBreathableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly totalSupply: number;
+    static readonly componentId = "minecraft:breathable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4100,16 +4114,19 @@ export class EntityBreathableComponent extends EntityComponent {
 // @ts-ignore
 export class EntityCanClimbComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:can_climb";
 }
 
 // @ts-ignore
 export class EntityCanFlyComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:can_fly";
 }
 
 // @ts-ignore
 export class EntityCanPowerJumpComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:can_power_jump";
 }
 
 // @ts-ignore
@@ -4119,6 +4136,7 @@ export class EntityColor2Component extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: PaletteColor;
+    static readonly componentId = "minecraft:color2";
 }
 
 // @ts-ignore
@@ -4128,6 +4146,7 @@ export class EntityColorComponent extends EntityComponent {
      * @remarks This property can't be edited in read-only mode.
      */
     value: number;
+    static readonly componentId = "minecraft:color";
 }
 
 // @ts-ignore
@@ -4232,6 +4251,7 @@ export class EntityEnderInventoryComponent extends EntityComponent {
      * {@link InvalidEntityError}
      */
     readonly container: Container;
+    static readonly componentId = "minecraft:ender_inventory";
 }
 
 // @ts-ignore
@@ -4249,6 +4269,7 @@ export class EntityEquippableComponent extends EntityComponent {
      * {@link InvalidEntityError}
      */
     readonly totalToughness: number;
+    static readonly componentId = "minecraft:equippable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4272,16 +4293,19 @@ export class EntityEquippableComponent extends EntityComponent {
 // @ts-ignore
 export class EntityExhaustionComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:player.exhaustion";
 }
 
 // @ts-ignore
 export class EntityFireImmuneComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:fire_immune";
 }
 
 // @ts-ignore
 export class EntityFloatsInLiquidComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:floats_in_liquid";
 }
 
 // @ts-ignore
@@ -4291,6 +4315,7 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
      * @remarks This property can't be edited in read-only mode.
      */
     value: number;
+    static readonly componentId = "minecraft:flying_speed";
 }
 
 // @ts-ignore
@@ -4300,6 +4325,7 @@ export class EntityFrictionModifierComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:friction_modifier";
 }
 
 // @ts-ignore
@@ -4321,6 +4347,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly forceUse: boolean;
+    static readonly componentId = "minecraft:healable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4422,6 +4449,7 @@ export class EntityHealthChangedAfterEventSignal {
 // @ts-ignore
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:health";
 }
 
 export class EntityHitBlockAfterEvent {
@@ -4479,6 +4507,7 @@ export class EntityHitEntityAfterEventSignal {
 // @ts-ignore
 export class EntityHungerComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:player.hunger";
 }
 
 export class EntityHurtAfterEvent {
@@ -4573,71 +4602,85 @@ export class EntityInventoryComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly restrictToOwner: boolean;
+    static readonly componentId = "minecraft:inventory";
 }
 
 // @ts-ignore
 export class EntityIsBabyComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_baby";
 }
 
 // @ts-ignore
 export class EntityIsChargedComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_charged";
 }
 
 // @ts-ignore
 export class EntityIsChestedComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_chested";
 }
 
 // @ts-ignore
 export class EntityIsDyeableComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_dyeable";
 }
 
 // @ts-ignore
 export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_hidden_when_invisible";
 }
 
 // @ts-ignore
 export class EntityIsIgnitedComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_ignited";
 }
 
 // @ts-ignore
 export class EntityIsIllagerCaptainComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_illager_captain";
 }
 
 // @ts-ignore
 export class EntityIsSaddledComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_saddled";
 }
 
 // @ts-ignore
 export class EntityIsShakingComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_shaking";
 }
 
 // @ts-ignore
 export class EntityIsShearedComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_sheared";
 }
 
 // @ts-ignore
 export class EntityIsStackableComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_stackable";
 }
 
 // @ts-ignore
 export class EntityIsStunnedComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_stunned";
 }
 
 // @ts-ignore
 export class EntityIsTamedComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:is_tamed";
 }
 
 // @ts-ignore
@@ -4647,6 +4690,7 @@ export class EntityItemComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly itemStack: ItemStack;
+    static readonly componentId = "minecraft:item";
 }
 
 export class EntityItemDropAfterEvent {
@@ -4737,6 +4781,7 @@ export class EntityKilledCondition extends LootItemCondition {
 // @ts-ignore
 export class EntityLavaMovementComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:lava_movement";
 }
 
 // @ts-ignore
@@ -4770,6 +4815,7 @@ export class EntityLeashableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly softDistance: number;
+    static readonly componentId = "minecraft:leashable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -4815,31 +4861,37 @@ export class EntityMarkVariantComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:mark_variant";
 }
 
 // @ts-ignore
 export class EntityMovementAmphibiousComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.amphibious";
 }
 
 // @ts-ignore
 export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.basic";
 }
 
 // @ts-ignore
 export class EntityMovementComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement";
 }
 
 // @ts-ignore
 export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.fly";
 }
 
 // @ts-ignore
 export class EntityMovementGenericComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.generic";
 }
 
 // @ts-ignore
@@ -4853,21 +4905,25 @@ export class EntityMovementGlideComponent extends EntityBaseMovementComponent {
      * @throws This property can throw errors.
      */
     readonly startSpeed: number;
+    static readonly componentId = "minecraft:movement.glide";
 }
 
 // @ts-ignore
 export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.hover";
 }
 
 // @ts-ignore
 export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.jump";
 }
 
 // @ts-ignore
 export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
     private constructor();
+    static readonly componentId = "minecraft:movement.skip";
 }
 
 // @ts-ignore
@@ -4881,11 +4937,13 @@ export class EntityMovementSwayComponent extends EntityBaseMovementComponent {
      * @throws This property can throw errors.
      */
     readonly swayFrequency: number;
+    static readonly componentId = "minecraft:movement.sway";
 }
 
 // @ts-ignore
 export class EntityNavigationClimbComponent extends EntityNavigationComponent {
     private constructor();
+    static readonly componentId = "minecraft:navigation.climb";
 }
 
 // @ts-ignore
@@ -4972,26 +5030,31 @@ export class EntityNavigationComponent extends EntityComponent {
 // @ts-ignore
 export class EntityNavigationFloatComponent extends EntityNavigationComponent {
     private constructor();
+    static readonly componentId = "minecraft:navigation.float";
 }
 
 // @ts-ignore
 export class EntityNavigationFlyComponent extends EntityNavigationComponent {
     private constructor();
+    static readonly componentId = "minecraft:navigation.fly";
 }
 
 // @ts-ignore
 export class EntityNavigationGenericComponent extends EntityNavigationComponent {
     private constructor();
+    static readonly componentId = "minecraft:navigation.generic";
 }
 
 // @ts-ignore
 export class EntityNavigationHoverComponent extends EntityNavigationComponent {
     private constructor();
+    static readonly componentId = "minecraft:navigation.hover";
 }
 
 // @ts-ignore
 export class EntityNavigationWalkComponent extends EntityNavigationComponent {
     private constructor();
+    static readonly componentId = "minecraft:navigation.walk";
 }
 
 // @ts-ignore
@@ -5009,12 +5072,14 @@ export class EntityNpcComponent extends EntityComponent {
      * @remarks This property can't be edited in read-only mode.
      */
     skinIndex: number;
+    static readonly componentId = "minecraft:npc";
 }
 
 // @ts-ignore
 export class EntityOnFireComponent extends EntityComponent {
     private constructor();
     readonly onFireTicksRemaining: number;
+    static readonly componentId = "minecraft:onfire";
 }
 
 // @ts-ignore
@@ -5076,6 +5141,7 @@ export class EntityProjectileComponent extends EntityComponent {
      * @remarks This property can't be edited in read-only mode.
      */
     stopOnHit: boolean;
+    static readonly componentId = "minecraft:projectile";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5091,6 +5157,7 @@ export class EntityPushThroughComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:push_through";
 }
 
 export class EntityRemoveAfterEvent {
@@ -5170,6 +5237,7 @@ export class EntityRideableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly seatCount: number;
+    static readonly componentId = "minecraft:rideable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5215,11 +5283,13 @@ export class EntityRidingComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly entityRidingOn: Entity;
+    static readonly componentId = "minecraft:riding";
 }
 
 // @ts-ignore
 export class EntitySaturationComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:player.saturation";
 }
 
 // @ts-ignore
@@ -5229,6 +5299,7 @@ export class EntityScaleComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:scale";
 }
 
 // @ts-ignore
@@ -5238,6 +5309,7 @@ export class EntitySkinIdComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:skin_id";
 }
 
 export class EntitySpawnAfterEvent {
@@ -5301,6 +5373,7 @@ export class EntityStrengthComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:strength";
 }
 
 // @ts-ignore
@@ -5326,6 +5399,7 @@ export class EntityTameableComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly tamedToPlayerId?: string;
+    static readonly componentId = "minecraft:tameable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5353,6 +5427,7 @@ export class EntityTameMountComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly tamedToPlayerId?: string;
+    static readonly componentId = "minecraft:tamemount";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5376,6 +5451,7 @@ export class EntityType {
 // @ts-ignore
 export class EntityTypeFamilyComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:type_family";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -5405,6 +5481,7 @@ export class EntityTypes {
 // @ts-ignore
 export class EntityUnderwaterMovementComponent extends EntityAttributeComponent {
     private constructor();
+    static readonly componentId = "minecraft:underwater_movement";
 }
 
 // @ts-ignore
@@ -5414,11 +5491,13 @@ export class EntityVariantComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly value: number;
+    static readonly componentId = "minecraft:variant";
 }
 
 // @ts-ignore
 export class EntityWantsJockeyComponent extends EntityComponent {
     private constructor();
+    static readonly componentId = "minecraft:wants_jockey";
 }
 
 // @ts-ignore
@@ -5547,6 +5626,8 @@ export class FillContainerFunction extends LootItemFunction {
 
 export class FluidContainer {
     private constructor();
+    static readonly maxFillLevel = 6;
+    static readonly minFillLevel = 0;
 }
 
 export class GameRuleChangeAfterEvent {
@@ -5807,6 +5888,7 @@ export class ItemBookComponent extends ItemComponent {
      * {@link InvalidItemStackError}
      */
     readonly title?: string;
+    static readonly componentId = "minecraft:book";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6002,6 +6084,7 @@ export class ItemCompostableComponent extends ItemComponent {
      * @throws This property can throw errors.
      */
     readonly compostingChance: number;
+    static readonly componentId = "minecraft:compostable";
 }
 
 // @ts-ignore
@@ -6015,6 +6098,7 @@ export class ItemCooldownComponent extends ItemComponent {
      * @throws This property can throw errors.
      */
     readonly cooldownTicks: number;
+    static readonly componentId = "minecraft:cooldown";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6056,6 +6140,7 @@ export class ItemDurabilityComponent extends ItemComponent {
      * @remarks This property can't be edited in read-only mode.
      */
     unbreakable: boolean;
+    static readonly componentId = "minecraft:durability";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6081,6 +6166,7 @@ export class ItemDyeableComponent extends ItemComponent {
      * @throws This property can throw errors.
      */
     readonly defaultColor?: RGB;
+    static readonly componentId = "minecraft:dyeable";
 }
 
 // @ts-ignore
@@ -6090,6 +6176,7 @@ export class ItemEnchantableComponent extends ItemComponent {
      * @throws This property can throw errors.
      */
     readonly slots: EnchantmentSlot[];
+    static readonly componentId = "minecraft:enchantable";
     /**
      * @remarks This function can't be called in read-only mode.
      *
@@ -6187,6 +6274,7 @@ export class ItemFoodComponent extends ItemComponent {
      * @throws This property can throw errors.
      */
     readonly usingConvertsTo: string;
+    static readonly componentId = "minecraft:food";
 }
 
 // @ts-ignore
@@ -6198,6 +6286,7 @@ export class ItemInventoryComponent extends ItemComponent {
      * {@link InvalidContainerError}
      */
     readonly container: Container;
+    static readonly componentId = "minecraft:inventory";
 }
 
 // @ts-ignore
@@ -6219,6 +6308,7 @@ export class ItemPotionComponent extends ItemComponent {
      * {@link Error}
      */
     readonly potionEffectType: PotionEffectType;
+    static readonly componentId = "minecraft:potion";
 }
 
 export class ItemReleaseUseAfterEvent {
@@ -7269,6 +7359,7 @@ export class PlayerCursorInventoryComponent extends EntityComponent {
      * @throws This property can throw errors.
      */
     readonly item?: ItemStack;
+    static readonly componentId = "minecraft:cursor_inventory";
     /**
      * @remarks This function can't be called in read-only mode.
      *
