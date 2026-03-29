@@ -564,6 +564,11 @@ export class SimulatedPlayer extends minecraftserver.Player {
 
 export class Tags {
     private constructor();
+    static readonly suiteAll = "suite:all";
+    static readonly suiteDebug = "suite:debug";
+    static readonly suiteDefault = "suite:default";
+    static readonly suiteDisabled = "suite:disabled";
+    static readonly suiteNextUpdate = "suite:nextupdate";
 }
 
 export class Test {

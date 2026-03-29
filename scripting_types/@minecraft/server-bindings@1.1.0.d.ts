@@ -173,6 +173,9 @@ export class Entity {
 
 export class MinecraftDimensionTypes {
     private constructor();
+    static readonly nether = "minecraft:nether";
+    static readonly overworld = "minecraft:overworld";
+    static readonly theEnd = "minecraft:the_end";
 }
 
 // @ts-ignore
