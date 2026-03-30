@@ -305,7 +305,7 @@ export function transferPlayer(
     options: TransferPlayerIpPortOptions | TransferPlayerNetherNetOptions,
 ): void;
 
-export const beforeEvents:    AdminBeforeEvents;
+export const beforeEvents: AdminBeforeEvents;
 export const dedicatedServer: DedicatedServerUtils | undefined;
-export const secrets:         ServerSecrets;
-export const variables:       ServerVariables;
+export const secrets: ServerSecrets;
+export const variables: ServerVariables;

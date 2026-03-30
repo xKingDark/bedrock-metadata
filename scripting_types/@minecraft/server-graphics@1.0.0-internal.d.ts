@@ -906,7 +906,7 @@ export class Water {
 
 export const InternalConstant = 1;
 
-export const atmosphere:   Atmospherics;
+export const atmosphere: Atmospherics;
 export const colorGrading: ColorGrading;
-export const lighting:     Lighting;
-export const water:        Water;
+export const lighting: Lighting;
+export const water: Water;

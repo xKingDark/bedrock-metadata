@@ -7849,11 +7849,11 @@ export class UnloadedChunksError extends Error {
     private constructor();
 }
 
-export const HudElementsCount   = 13;
+export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
-export const MoonPhaseCount     = 8;
-export const TicksPerDay        = 24000;
-export const TicksPerSecond     = 20;
+export const MoonPhaseCount = 8;
+export const TicksPerDay = 24000;
+export const TicksPerSecond = 20;
 
 export const system: System;
-export const world:  World;
+export const world: World;

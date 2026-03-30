@@ -114,4 +114,4 @@ export class RawMessageError extends Error {
 }
 
 export const system: System;
-export const world:  World;
+export const world: World;

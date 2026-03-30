@@ -624,5 +624,5 @@ export class WebSocketNotConnectedError extends Error {
 }
 
 export const beforeEvents: NetworkBeforeEvents;
-export const http:         HttpClient;
-export const websocket:    WebSocket;
+export const http: HttpClient;
+export const websocket: WebSocket;
