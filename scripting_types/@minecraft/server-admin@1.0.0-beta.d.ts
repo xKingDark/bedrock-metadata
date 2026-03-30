@@ -22,12 +22,10 @@ export class AdminBeforeEvents {
 export class AllowList {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     enabled: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link AllowListModificationError}
@@ -36,24 +34,18 @@ export class AllowList {
      */
     add(player: minecraftserver.Player | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftserver.InvalidEntityError}
      */
     contains(player: minecraftserver.Player | string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link AllowListFileReloadError}
      */
     reloadFile(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link AllowListModificationError}
@@ -68,46 +60,31 @@ export class AsyncPlayerJoinBeforeEvent {
     readonly name: string;
     readonly persistentId: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link DisconnectedError}
      */
     allowJoin(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link DisconnectedError}
      */
     disallowJoin(reason?: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link DisconnectedError}
      */
     disconnect(reason?: string): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
 }
 
 export class AsyncPlayerJoinBeforeEventSignal {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     subscribe(
         callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>,
     ): (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     unsubscribe(callback: (arg0: AsyncPlayerJoinBeforeEvent) => Promise<void>): boolean;
 }
 
@@ -116,56 +93,41 @@ export class DedicatedServerUtils {
     readonly allowList: AllowList;
     readonly levelStorage: LevelStorage;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadCDNConfig(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadPermissions(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadScriptingConfig(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     stopServer(): void;
 }
 
 export class LevelStorage {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
      */
     saveHold(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
      */
     saveQuery(): LevelStorageQuerySnapshotFile[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
@@ -180,9 +142,6 @@ export class LevelStorageQuerySnapshotFile {
 }
 
 export class SecretString {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(value: string);
 }
 
@@ -190,9 +149,9 @@ export class ServerSecrets {
     private constructor();
     readonly names: string[];
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     get(name: string): SecretString | undefined;
 }
@@ -201,9 +160,9 @@ export class ServerVariables {
     private constructor();
     readonly names: string[];
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     get(name: string): unknown | undefined;
 }
@@ -257,7 +216,7 @@ export class PlayerAlreadyOpError extends Error {
 }
 
 /**
- * @remarks This function can't be called in read-only mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
  *
@@ -270,7 +229,7 @@ export class PlayerAlreadyOpError extends Error {
 export function deopPlayer(player: minecraftserver.Player): void;
 
 /**
- * @remarks This function can't be called in read-only mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
  *
@@ -283,7 +242,7 @@ export function deopPlayer(player: minecraftserver.Player): void;
 export function kickPlayer(player: minecraftserver.Player, reason?: string): void;
 
 /**
- * @remarks This function can't be called in read-only mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
  *
@@ -296,7 +255,7 @@ export function kickPlayer(player: minecraftserver.Player, reason?: string): voi
 export function opPlayer(player: minecraftserver.Player): void;
 
 /**
- * @remarks This function can't be called in read-only mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
  */

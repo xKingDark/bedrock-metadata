@@ -16,21 +16,9 @@ import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
 // @ts-ignore
 export class DebugArrow extends DebugLine {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     headLength: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     headRadius: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     headSegments: number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
         endLocation: minecraftserver.Vector3,
@@ -39,49 +27,25 @@ export class DebugArrow extends DebugLine {
 
 // @ts-ignore
 export class DebugBox extends DebugShape {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     bound: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 // @ts-ignore
 export class DebugCircle extends DebugShape {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 export class DebugDrawer {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     addShape(shape: DebugShape, dimension?: minecraftserver.Dimension): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     removeAll(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     removeShape(shape: DebugShape): void;
 }
 
 // @ts-ignore
 export class DebugLine extends DebugShape {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     endLocation: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
         endLocation: minecraftserver.Vector3,
@@ -90,85 +54,37 @@ export class DebugLine extends DebugShape {
 
 export class DebugShape {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     attachedTo?: minecraftserver.Entity;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     color: minecraftserver.RGBA;
     readonly dimension: minecraftserver.Dimension;
     readonly hasDuration: boolean;
     readonly location: minecraftserver.Vector3;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     rotation: minecraftserver.Vector3;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     scale: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     timeLeft?: number;
     readonly totalTimeLeft?: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     visibleTo: minecraftserver.Player[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     remove(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     setLocation(location: minecraftserver.DimensionLocation | minecraftserver.Vector3): void;
 }
 
 // @ts-ignore
 export class DebugSphere extends DebugShape {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 // @ts-ignore
 export class DebugText extends DebugShape {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     backfaceVisible: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     backgroundColorOverride?: minecraftserver.RGBA;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     depthTest: boolean;
     readonly text: minecraftserver.RawMessage | string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     textBackfaceVisible: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     useRotation: boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
         text: minecraftserver.RawMessage | string,
     );
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     setText(text: minecraftserver.RawMessage | string): void;
 }
 
@@ -206,19 +122,11 @@ export interface RuntimeStats {
     stringSize: number;
 }
 
-/**
- * @remarks This function can't be called in read-only mode.
- */
 export function collectPluginStats(): PluginStats;
 
-/**
- * @remarks This function can't be called in read-only mode.
- */
 export function collectRuntimeStats(): RuntimeStats;
 
 /**
- * @remarks This function can't be called in read-only mode.
- *
  * @throws This function can throw errors.
  */
 export function disableWatchdogTimingWarnings(disable: boolean): void;

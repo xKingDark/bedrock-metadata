@@ -366,22 +366,16 @@ export enum WorldGeneratorType {
 
 export class AudioSettings {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     get(property: AudioSettingsProperty): boolean | number | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getAll(): Record<string, boolean | number>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     set(property: AudioSettingsProperty, value: boolean | number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -390,15 +384,13 @@ export class AudioSettings {
 
 export class BlockPalette {
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
      */
     getItem(index: number): IBlockPaletteItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -406,11 +398,11 @@ export class BlockPalette {
      */
     removeItemAt(index: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     removeItems(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -422,57 +414,41 @@ export class BlockPalette {
 export class BlockPaletteManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     addOrReplacePalette(paletteId: string, palette: BlockPalette): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getPalette(paletteId: string): BlockPalette | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getPaletteIdList(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getPaletteItem(paletteId: string, index: number): IBlockPaletteItem;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getPrimaryPalette(): BlockPalette;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getSelectedBlockType(): minecraftserver.BlockType;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getSelectedItem(): IBlockPaletteItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     removePalette(paletteId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setPaletteItem(paletteId: string, index: number, item: IBlockPaletteItem): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setPrimaryPalette(paletteId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -487,17 +463,17 @@ export class BlockPaletteSelectedItemChangeAfterEvent {
 export class BlockPaletteSelectedItemChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: BlockPaletteSelectedItemChangeAfterEvent) => void,
     ): (arg0: BlockPaletteSelectedItemChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: BlockPaletteSelectedItemChangeAfterEvent) => void): void;
 }
@@ -505,7 +481,7 @@ export class BlockPaletteSelectedItemChangeAfterEventSignal {
 export class BlockUtilities {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -517,37 +493,37 @@ export class BlockUtilities {
         block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     findObscuredBlocksWithinVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
     ): RelativeVolumeListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getContiguousSelection(properties?: ContiguousSelectionProperties): minecraftserver.CompoundBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getDimensionLocationBoundingBox(): minecraftserver.BlockBoundingBox;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getDimensionMaxLocation(): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getDimensionMinLocation(): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getFacePreviewSelection(properties?: QuickExtrudeProperties): minecraftserver.ListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isLocationInsideCurrentDimensionBounds(
         locationOrVolumeOrBounds: 
@@ -557,19 +533,19 @@ export class BlockUtilities {
             | minecraftserver.Vector3,
     ): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     quickExtrude(properties?: QuickExtrudeProperties): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     shrinkWrapVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
     ): RelativeVolumeListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -586,127 +562,127 @@ export class BrushShapeManager {
     private constructor();
     readonly activeBrushVolume?: RelativeVolumeListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     activateBrushTool(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     beginPainting(onComplete: (arg0: PaintCompletionState) => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     clearBlockStateOverrides(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     deactivateBrushTool(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     disableItemPlacement(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     enableItemPlacement(itemType: minecraftserver.ItemType, data?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     endPainting(cancelled: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getBrushShapeOffset(): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getDirectionalPlacementMode(): BrushDirectionalPlacementMode;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getInverseEraseMode(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isBrushPaintBusy(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     pushBlockStateOverride(stateName: string, stateValue: boolean | number | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setBlockFacePlacementBasedOnCamera(enabled: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setBrushMask(mask: BlockMaskList): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setBrushShape(shape: minecraftserver.Vector3[] | RelativeVolumeListBlockVolume): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setBrushShapeOffset(offset: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setBrushShapeVisible(visible: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setDirectionalPlacementMode(directionalPlacementMode: BrushDirectionalPlacementMode): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setElevationBrushRadius(elevationBrushRadius: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setElevationFalloff(elevationFalloff: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setElevationMode(elevationMode: BrushElevationMode): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setElevationSampleLayers(elevationSampleLayers: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setFlattenMode(flattenMode: FlattenMode): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setFlattenSmoothing(flattenSmoothing: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setFloorBlockOverride(floorBlockOverride: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setInverseEraseMode(inverseEraseMode: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setTerrainStrength(terrainStrength: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     singlePaint(onComplete: (arg0: PaintCompletionState) => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     switchBrushPaintMode(paintMode: PaintMode): void;
 }
@@ -720,15 +696,15 @@ export class ClipboardChangeAfterEvent {
 export class ClipboardChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ClipboardChangeAfterEvent) => void): (arg0: ClipboardChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ClipboardChangeAfterEvent) => void): void;
 }
@@ -741,13 +717,13 @@ export class ClipboardItem {
     readonly originalWorldLocation: minecraftserver.Vector3;
     readonly size: minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     clear(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -756,19 +732,19 @@ export class ClipboardItem {
         options?: ClipboardWriteOptions,
     ): RelativeVolumeListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     readFromStructure(structure: EditorStructure): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     readFromWorld(source: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -778,11 +754,11 @@ export class ClipboardItem {
 export class ClipboardManager {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly clipboard: ClipboardItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -797,15 +773,15 @@ export class CurrentThemeChangeAfterEvent {
 export class CurrentThemeChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: CurrentThemeChangeAfterEvent) => void): (arg0: CurrentThemeChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: CurrentThemeChangeAfterEvent) => void): void;
 }
@@ -819,17 +795,17 @@ export class CurrentThemeColorChangeAfterEvent {
 export class CurrentThemeColorChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: CurrentThemeColorChangeAfterEvent) => void,
     ): (arg0: CurrentThemeColorChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: CurrentThemeColorChangeAfterEvent) => void): void;
 }
@@ -837,85 +813,85 @@ export class CurrentThemeColorChangeAfterEventSignal {
 export class Cursor {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly faceDirection: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isVisible: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly maxViewBlockDistance: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getDefaultProperties(): CursorProperties;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getPosition(): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getProperties(): CursorProperties;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getRay(): CursorRay;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     hide(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     moveBy(offset: minecraftserver.Vector3): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     popPropertiesById(identifier: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     pushPropertiesById(properties: CursorProperties, identifier: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     resetToDefaultState(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setProperties(properties: CursorProperties): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     show(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -932,17 +908,17 @@ export class CursorPropertiesChangeAfterEvent {
 export class CursorPropertyChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: CursorPropertiesChangeAfterEvent) => void,
     ): (arg0: CursorPropertiesChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: CursorPropertiesChangeAfterEvent) => void): void;
 }
@@ -959,13 +935,13 @@ export class EditorConstants {
 export class EditorStructure {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly description: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
@@ -973,56 +949,54 @@ export class EditorStructure {
     readonly id: string;
     readonly isValid: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly normalizedOrigin: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly notes: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly offset: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly originalWorldLocation: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly size: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly structureFullName: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly structureName: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     readonly structureNamespace: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -1031,8 +1005,6 @@ export class EditorStructure {
      */
     getBlockPermutation(location: minecraftserver.Vector3): minecraftserver.BlockPermutation | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -1041,15 +1013,13 @@ export class EditorStructure {
      */
     getIsWaterlogged(location: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftserver.InvalidStructureError}
      */
     getTags(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1063,7 +1033,7 @@ export class EditorStructure {
         waterlogged?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1075,37 +1045,37 @@ export class EditorStructure {
 export class EditorStructureManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createEmpty(fullName: string, size: minecraftserver.Vector3): EditorStructure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createFromClipboardItem(item: ClipboardItem, fullName: string): EditorStructure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     deleteStructure(id: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getExistingTags(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getStructure(id: string): EditorStructure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1115,23 +1085,23 @@ export class EditorStructureManager {
 export class ExportManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     beginExportProject(options: GameOptions): Promise<ExportResult>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     canExportProject(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getGameOptions(useDefault?: boolean): GameOptions;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1200,22 +1170,16 @@ export class ExtensionContextAfterEvents {
 
 export class GraphicsSettings {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     get(property: GraphicsSettingsProperty): boolean | number | string | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getAll(): Record<string, boolean | number | string>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     set(property: GraphicsSettingsProperty, value: boolean | number | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1224,20 +1188,11 @@ export class GraphicsSettings {
 
 export class IBlockPaletteItem {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getBlock(): minecraftserver.BlockType | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDisplayName(): string | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getType(): BlockPaletteItemType;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1247,25 +1202,25 @@ export class IBlockPaletteItem {
 export class Logger {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     debug(message: LocalizationEntry | string, properties?: LogProperties): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     error(message: LocalizationEntry | string, properties?: LogProperties): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     info(message: LocalizationEntry | string, properties?: LogProperties): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1280,7 +1235,7 @@ export class MinecraftEditor {
     readonly afterEvents: ProjectAfterEvents;
     readonly constants: EditorConstants;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly log: Logger;
     readonly simulation: SimulationState;
@@ -1292,37 +1247,35 @@ export class MinimapItem {
     readonly id: string;
     readonly isActive: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addMarker(markerType: MinimapMarkerType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getPlayerColor(playerId: string): minecraftserver.RGBA;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     removeMarker(markerType: MinimapMarkerType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setActive(active: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setSize(mapWidth: number, mapHeight: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1332,37 +1285,37 @@ export class MinimapItem {
 export class MinimapManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number, dataId?: string): MinimapItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     destroyMinimap(minimapId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getAllMinimapIds(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getMinimap(minimapId: string): MinimapItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setVanillaBiomeColorMap(colorMap: Record<string, minecraftserver.RGB>): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1377,15 +1330,15 @@ export class ModeChangeAfterEvent {
 export class ModeChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ModeChangeAfterEvent) => void): (arg0: ModeChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ModeChangeAfterEvent) => void): void;
 }
@@ -1393,13 +1346,13 @@ export class ModeChangeAfterEventSignal {
 export class PlaytestManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     beginPlaytest(options: GameOptions): Promise<PlaytestSessionResult>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1408,22 +1361,16 @@ export class PlaytestManager {
 
 // @ts-ignore
 export class ProbabilityBlockPaletteItem extends IBlockPaletteItem {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(displayName?: string);
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addBlock(block: minecraftserver.BlockPermutation | minecraftserver.BlockType | string, weight: number): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getBlocks(): WeightedBlock[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1442,16 +1389,13 @@ export class ProjectAfterEvents {
 export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBase {
     readonly isEmpty: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     origin?: minecraftserver.Vector3;
     readonly volumeCount: number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(origin?: minecraftserver.Vector3);
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     add(
         toAdd: 
@@ -1462,23 +1406,20 @@ export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBa
             | minecraftserver.Vector3,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     clear(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getVolumeList(): minecraftserver.BlockVolume[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     hasAdjacent(location: minecraftserver.Vector3, normalizedOffset: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     moveTo(location: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     remove(
         toRemove: 
@@ -1489,7 +1430,7 @@ export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBa
             | minecraftserver.Vector3,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     set(
         toSet: 
@@ -1500,7 +1441,7 @@ export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBa
             | minecraftserver.Vector3,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     translate(offset: minecraftserver.Vector3): void;
 }
@@ -1508,15 +1449,15 @@ export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBa
 export class SelectionChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: SelectionEventAfterEvent) => void): (arg0: SelectionEventAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: SelectionEventAfterEvent) => void): void;
 }
@@ -1536,7 +1477,7 @@ export class SelectionContainerVolume extends SelectionContainerBase {
     readonly isEmpty: boolean;
     readonly volumeCount: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     add(
         volume: 
@@ -1547,25 +1488,20 @@ export class SelectionContainerVolume extends SelectionContainerBase {
             | minecraftserver.Vector3,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     clear(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     get(): RelativeVolumeListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBoundingBox(): minecraftserver.BlockBoundingBox;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     moveTo(location: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     remove(
         volume: 
@@ -1576,7 +1512,7 @@ export class SelectionContainerVolume extends SelectionContainerBase {
             | minecraftserver.Vector3,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     set(
         volume: 
@@ -1587,7 +1523,7 @@ export class SelectionContainerVolume extends SelectionContainerBase {
             | minecraftserver.Vector3,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     translate(offset: minecraftserver.Vector3): void;
 }
@@ -1607,19 +1543,19 @@ export class SelectionManager {
     readonly entity: SelectionContainerEntity;
     readonly volume: SelectionContainerVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     deselectBlocks(blockIdentifier: string): Promise<number>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     generateManifest(): Promise<SelectionManifestData>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getCurrentManifest(): SelectionManifestData | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     replaceBlocks(fromBlockIdentifier: string, toBlockIdentifier: string): Promise<number>;
 }
@@ -1634,20 +1570,14 @@ export class SettingsManager {
 
 // @ts-ignore
 export class SimpleBlockPaletteItem extends IBlockPaletteItem {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(displayName?: string);
 }
 
 export class SimulationState {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isPaused(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1662,37 +1592,31 @@ export class SimulationStateAfterEvent {
 export class SimulationStateChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: SimulationStateAfterEvent) => void): (arg0: SimulationStateAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: SimulationStateAfterEvent) => void): void;
 }
 
 export class SpeedSettings {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     get(property: SpeedSettingsProperty): number | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getAll(): Record<string, number>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     set(property: SpeedSettingsProperty, value: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1702,57 +1626,40 @@ export class SpeedSettings {
 export class ThemeSettings {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addNewTheme(id: string, name?: string, sourceThemeId?: string): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     canThemeBeModified(id: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     deleteTheme(id: string): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getCurrentTheme(): string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getThemeColors(id: string): Record<string, minecraftserver.RGBA> | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getThemeIdList(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getThemeName(id: string): string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     resolveColorKey(key: ThemeSettingsColorKey): minecraftserver.RGBA;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setCurrentTheme(id: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setThemeName(id: string, name: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1762,13 +1669,13 @@ export class ThemeSettings {
 export class TransactionManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addEntityOperation(entity: minecraftserver.Entity, type: EntityOperationType): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1778,19 +1685,19 @@ export class TransactionManager {
         operationName?: string,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     commitOpenTransaction(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     commitTrackedChanges(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1799,67 +1706,67 @@ export class TransactionManager {
         redoClosure: (arg0: string) => void,
     ): UserDefinedTransactionHandlerId;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     discardOpenTransaction(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     discardTrackedChanges(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     isBusy(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     openTransaction(name: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     redo(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     redoSize(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     trackBlockChangeArea(from: minecraftserver.Vector3, to: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     trackBlockChangeList(locations: minecraftserver.Vector3[]): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     trackBlockChangeVolume(blockVolume: minecraftserver.BlockVolumeBase): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     undo(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1873,72 +1780,57 @@ export class UserDefinedTransactionHandlerId {
 export class Widget {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     bindPositionToBlockCursor: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     collisionOffset: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     collisionRadius: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     collisionType: WidgetCollisionType;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     dimensionId?: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetError}
      */
     readonly group: WidgetGroup;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     ignoreEditorModeVisibilityOverride: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     location: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lockPositionToSurface: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetError}
      */
     readonly selectable: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     selected: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     showBoundingBox: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     showCollisionRadius: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     snapToBlockLocation: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     visible: boolean;
     readonly widgetName: string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1948,7 +1840,7 @@ export class Widget {
         options?: WidgetComponentBoundingBoxOptions,
     ): WidgetComponentBoundingBox;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1958,7 +1850,7 @@ export class Widget {
         options?: WidgetComponentClipboardOptions,
     ): WidgetComponentClipboard;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1968,25 +1860,25 @@ export class Widget {
         options?: WidgetComponentEntityOptions,
     ): WidgetComponentEntity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addGizmoComponent(componentName: string, options?: WidgetComponentGizmoOptions): WidgetComponentGizmo;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addGridComponent(componentName: string, options?: WidgetComponentGridOptions): WidgetComponentGrid;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addGuideComponent(componentName: string, options?: WidgetComponentGuideOptions): WidgetComponentGuide;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -2005,19 +1897,19 @@ export class Widget {
         options?: WidgetComponentRenderPrimitiveOptions,
     ): WidgetComponentRenderPrimitive;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addSplineComponent(componentName: string, options?: WidgetComponentSplineOptions): WidgetComponentSpline;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addTextComponent(componentName: string, label: string, options?: WidgetComponentTextOptions): WidgetComponentText;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -2027,25 +1919,25 @@ export class Widget {
         options?: WidgetComponentVolumeOutlineOptions,
     ): WidgetComponentVolumeOutline;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     delete(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     deleteComponent(componentOrName: string | WidgetComponentBase): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getComponent(componentName: string): WidgetComponentBase;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2053,7 +1945,7 @@ export class Widget {
      */
     getComponents(): WidgetComponentBase[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2065,44 +1957,41 @@ export class Widget {
 export class WidgetComponentBase {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      */
     readonly componentType: WidgetComponentType;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      */
     readonly location: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lockToSurface: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      */
     readonly name: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     offset: minecraftserver.Vector3;
     readonly valid: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     visible: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      */
     readonly widget: Widget;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2115,53 +2004,53 @@ export class WidgetComponentBase {
 export class WidgetComponentBoundingBox extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     boundsOffset: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     enableResizeHandles: Axis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     hullColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     mirror: minecraftserver.StructureMirrorAxis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     normalizedOrigin: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     outlineColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation: minecraftserver.StructureRotation;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showWorldIntersections: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     size: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      */
     readonly transformedWorldVolume: minecraftserver.BlockVolume;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     visibleHull: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2169,7 +2058,7 @@ export class WidgetComponentBoundingBox extends WidgetComponentBase {
      */
     deactivateHandles(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2191,40 +2080,16 @@ export class WidgetComponentBoundingBoxStateChangeEventParameters {
 export class WidgetComponentClipboard extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     clipboardOffset: minecraftserver.Vector3;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     highlightHullColor: minecraftserver.RGBA;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     highlightOutlineColor: minecraftserver.RGBA;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     hullColor: minecraftserver.RGBA;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     mirror: minecraftserver.StructureMirrorAxis;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     normalizedOrigin: minecraftserver.Vector3;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     outlineColor: minecraftserver.RGBA;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     rotation: minecraftserver.StructureRotation;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     showOutline: boolean;
 }
 
@@ -2232,11 +2097,11 @@ export class WidgetComponentClipboard extends WidgetComponentBase {
 export class WidgetComponentEntity extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     clickable: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2248,20 +2113,17 @@ export class WidgetComponentEntity extends WidgetComponentBase {
 // @ts-ignore
 export class WidgetComponentGizmo extends WidgetComponentBase {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     activated: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     enabledAxes: Axis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     normalizedOffsetOverride?: minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2281,19 +2143,19 @@ export class WidgetComponentGizmoStateChangeEventParameters {
 export class WidgetComponentGrid extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     gridColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     gridCount: minecraftserver.Vector2;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     gridSize: minecraftserver.Vector2;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     plane: Plane;
 }
@@ -2307,7 +2169,7 @@ export class WidgetComponentGuide extends WidgetComponentBase {
 export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      *
@@ -2315,7 +2177,7 @@ export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
      */
     readonly primitiveType: PrimitiveType;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2340,20 +2202,17 @@ export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeAxialSphere extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color?: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radius: number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(center: minecraftserver.Vector3, radius: number, color?: minecraftserver.RGBA);
 }
 
@@ -2361,7 +2220,7 @@ export class WidgetComponentRenderPrimitiveTypeBase {
     private constructor();
     readonly primitiveType: PrimitiveType;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     renderPriority: number;
 }
@@ -2369,60 +2228,54 @@ export class WidgetComponentRenderPrimitiveTypeBase {
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeBox extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     size?: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(center: minecraftserver.Vector3, color: minecraftserver.RGBA, size?: minecraftserver.Vector3);
 }
 
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeCone extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     alpha?: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     height: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     numSegments?: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radiusX: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radiusZ: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation?: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         center: minecraftserver.Vector3,
         radiusX: number,
@@ -2438,36 +2291,33 @@ export class WidgetComponentRenderPrimitiveTypeCone extends WidgetComponentRende
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeCuboid extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     alpha?: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lengthX: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lengthY: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lengthZ: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation?: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         center: minecraftserver.Vector3,
         lengthX: number,
@@ -2482,36 +2332,33 @@ export class WidgetComponentRenderPrimitiveTypeCuboid extends WidgetComponentRen
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeCylinder extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     alpha?: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     height: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radiusX: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radiusZ: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation?: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         center: minecraftserver.Vector3,
         radiusX: number,
@@ -2526,48 +2373,42 @@ export class WidgetComponentRenderPrimitiveTypeCylinder extends WidgetComponentR
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeDisc extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radius: number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(center: minecraftserver.Vector3, radius: number, color: minecraftserver.RGBA);
 }
 
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeEllipsoid extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     alpha?: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     radii: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation?: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         center: minecraftserver.Vector3,
         radii: minecraftserver.Vector3,
@@ -2580,56 +2421,50 @@ export class WidgetComponentRenderPrimitiveTypeEllipsoid extends WidgetComponent
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypeLine extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     end: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     start: minecraftserver.Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(start: minecraftserver.Vector3, end: minecraftserver.Vector3, color: minecraftserver.RGBA);
 }
 
 // @ts-ignore
 export class WidgetComponentRenderPrimitiveTypePyramid extends WidgetComponentRenderPrimitiveTypeBase {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     alpha?: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     center: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     height: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation?: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     widthX: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     widthZ?: number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(
         center: minecraftserver.Vector3,
         widthX: number,
@@ -2645,11 +2480,11 @@ export class WidgetComponentRenderPrimitiveTypePyramid extends WidgetComponentRe
 export class WidgetComponentSpline extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     splineType: SplineType;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2661,13 +2496,13 @@ export class WidgetComponentSpline extends WidgetComponentBase {
      */
     getControlPoints(): Widget[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getInterpolatedPoints(maxPointsPerControlSegment?: number): minecraftserver.Vector3[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2682,11 +2517,11 @@ export class WidgetComponentSpline extends WidgetComponentBase {
 export class WidgetComponentText extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     color: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     label: string;
 }
@@ -2695,53 +2530,53 @@ export class WidgetComponentText extends WidgetComponentBase {
 export class WidgetComponentVolumeOutline extends WidgetComponentBase {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     highlightHullColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     highlightOutlineColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     hullColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     mirror: minecraftserver.StructureMirrorAxis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     normalizedOrigin: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     outlineColor: minecraftserver.RGBA;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     rotation: minecraftserver.StructureRotation;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showHighlightOutline: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showOutline: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetComponentError}
      */
     readonly transformedWorldVolume: minecraftserver.BlockVolume;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     volumeOffset: minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2749,7 +2584,7 @@ export class WidgetComponentVolumeOutline extends WidgetComponentBase {
      */
     getVolume(): RelativeVolumeListBlockVolume | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2768,37 +2603,37 @@ export class WidgetComponentVolumeOutline extends WidgetComponentBase {
 export class WidgetGroup {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidWidgetGroupError}
      */
     readonly selectedWidgetCount: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     visible: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     visibleBounds: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createWidget(location: minecraftserver.Vector3, options?: WidgetCreateOptions): Widget;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     delete(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     deleteWidget(widgetToDelete: Widget): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2806,7 +2641,7 @@ export class WidgetGroup {
      */
     deselectAllWidgets(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2818,13 +2653,13 @@ export class WidgetGroup {
 export class WidgetManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createGroup(options?: WidgetGroupCreateOptions): WidgetGroup;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */

@@ -17,7 +17,7 @@ import * as minecraftserver from "@minecraft/server";
 export class Atmospherics {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -25,7 +25,7 @@ export class Atmospherics {
      */
     resetHorizonBlendMax(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -33,7 +33,7 @@ export class Atmospherics {
      */
     resetHorizonBlendMieStart(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -41,7 +41,7 @@ export class Atmospherics {
      */
     resetHorizonBlendMin(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -49,7 +49,7 @@ export class Atmospherics {
      */
     resetHorizonBlendStart(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -57,7 +57,7 @@ export class Atmospherics {
      */
     resetMoonMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -65,7 +65,7 @@ export class Atmospherics {
      */
     resetRayleighStrength(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -73,7 +73,7 @@ export class Atmospherics {
      */
     resetSkyHorizonColor(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -81,7 +81,7 @@ export class Atmospherics {
      */
     resetSkyZenithColor(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -89,7 +89,7 @@ export class Atmospherics {
      */
     resetSunGlareShape(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -97,7 +97,7 @@ export class Atmospherics {
      */
     resetSunMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -105,7 +105,7 @@ export class Atmospherics {
      */
     setHorizonBlendMax(blendMax: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -116,7 +116,7 @@ export class Atmospherics {
         biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -124,7 +124,7 @@ export class Atmospherics {
      */
     setHorizonBlendMin(blendMin: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -132,7 +132,7 @@ export class Atmospherics {
      */
     setHorizonBlendStart(blendStart: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -143,7 +143,7 @@ export class Atmospherics {
         biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -154,7 +154,7 @@ export class Atmospherics {
         biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -165,7 +165,7 @@ export class Atmospherics {
         biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -176,7 +176,7 @@ export class Atmospherics {
         biomeIdentifier: minecraftserver.BiomeType,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -184,7 +184,7 @@ export class Atmospherics {
      */
     setSunGlareShape(sunGlareShape: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *

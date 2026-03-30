@@ -26,28 +26,13 @@ export enum FormRejectReason {
 }
 
 export class ActionFormData {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     body(bodyText: minecraftserver.RawMessage | string): ActionFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     button(text: minecraftserver.RawMessage | string, iconPath?: string): ActionFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     divider(): ActionFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     header(text: minecraftserver.RawMessage | string): ActionFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     label(text: minecraftserver.RawMessage | string): ActionFormData;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -58,9 +43,6 @@ export class ActionFormData {
      * {@link minecraftserver.RawMessageError}
      */
     show(player: minecraftserver.Player): Promise<ActionFormResponse>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     title(titleText: minecraftserver.RawMessage | string): ActionFormData;
 }
 
@@ -77,20 +59,11 @@ export class FormResponse {
 }
 
 export class MessageFormData {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     body(bodyText: minecraftserver.RawMessage | string): MessageFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     button1(text: minecraftserver.RawMessage | string): MessageFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     button2(text: minecraftserver.RawMessage | string): MessageFormData;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -101,9 +74,6 @@ export class MessageFormData {
      * {@link minecraftserver.RawMessageError}
      */
     show(player: minecraftserver.Player): Promise<MessageFormResponse>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     title(titleText: minecraftserver.RawMessage | string): MessageFormData;
 }
 
@@ -114,28 +84,16 @@ export class MessageFormResponse extends FormResponse {
 }
 
 export class ModalFormData {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     divider(): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     dropdown(
         label: minecraftserver.RawMessage | string,
         items: (minecraftserver.RawMessage | string)[],
         dropdownOptions?: ModalFormDataDropdownOptions,
     ): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     header(text: minecraftserver.RawMessage | string): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     label(text: minecraftserver.RawMessage | string): ModalFormData;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -146,34 +104,19 @@ export class ModalFormData {
      * {@link minecraftserver.RawMessageError}
      */
     show(player: minecraftserver.Player): Promise<ModalFormResponse>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     slider(
         label: minecraftserver.RawMessage | string,
         minimumValue: number,
         maximumValue: number,
         sliderOptions?: ModalFormDataSliderOptions,
     ): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     submitButton(submitButtonText: minecraftserver.RawMessage | string): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     textField(
         label: minecraftserver.RawMessage | string,
         placeholderText: minecraftserver.RawMessage | string,
         textFieldOptions?: ModalFormDataTextFieldOptions,
     ): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     title(titleText: minecraftserver.RawMessage | string): ModalFormData;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     toggle(label: minecraftserver.RawMessage | string, toggleOptions?: ModalFormDataToggleOptions): ModalFormData;
 }
 
@@ -186,7 +129,7 @@ export class ModalFormResponse extends FormResponse {
 export class UIManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */

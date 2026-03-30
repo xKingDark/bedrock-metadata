@@ -82,35 +82,35 @@ export class FenceConnectivity {
 export class GameTestSequence {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenExecute(callback: () => void): GameTestSequence;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenExecuteAfter(delayTicks: number, callback: () => void): GameTestSequence;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenExecuteFor(tickCount: number, callback: () => void): GameTestSequence;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenFail(errorMessage: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenIdle(delayTicks: number): GameTestSequence;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenSucceed(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenWait(callback: () => void): GameTestSequence;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     thenWaitAfter(delayTicks: number, callback: () => void): GameTestSequence;
 }
@@ -118,66 +118,63 @@ export class GameTestSequence {
 export class NavigationResult {
     private constructor();
     readonly isFullPath: boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getPath(): minecraftserver.Vector3[];
 }
 
 export class RegistrationBuilder {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     batch(batchName: string): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     maxAttempts(attemptCount: number): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     maxTicks(tickCount: number): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     padding(paddingBlocks: number): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     required(isRequired: boolean): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     requiredSuccessfulAttempts(attemptCount: number): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     rotateTest(rotate: boolean): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     setupTicks(tickCount: number): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -190,15 +187,15 @@ export class RegistrationBuilder {
         structureDimension?: minecraftserver.DimensionType | string,
     ): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     structureName(structureName: string): RegistrationBuilder;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     tag(tag: string): RegistrationBuilder;
 }
@@ -206,27 +203,27 @@ export class RegistrationBuilder {
 export class SculkSpreader {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly maxCharge: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     addCursorsWithOffset(offset: minecraftserver.Vector3, charge: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getCursorPosition(index: number): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getNumberOfCursors(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -237,27 +234,27 @@ export class SculkSpreader {
 export class SimulatedPlayer extends minecraftserver.Player {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly headRotation: minecraftserver.Vector2;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     isSprinting: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     attack(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     attackEntity(entity: minecraftserver.Entity): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -267,49 +264,49 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     breakBlock(blockLocation: minecraftserver.Vector3, direction?: minecraftserver.Direction): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     chat(message: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     disconnect(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     dropSelectedItem(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     fly(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     giveItem(itemStack: minecraftserver.ItemStack, selectSlot?: boolean): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     glide(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     interact(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -319,7 +316,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     interactWithBlock(blockLocation: minecraftserver.Vector3, direction?: minecraftserver.Direction): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -329,13 +326,13 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     interactWithEntity(entity: minecraftserver.Entity): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     jump(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -345,37 +342,37 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     lookAtBlock(blockLocation: minecraftserver.Vector3, duration?: LookDuration): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     lookAtEntity(entity: minecraftserver.Entity, duration?: LookDuration): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     lookAtLocation(location: minecraftserver.Vector3, duration?: LookDuration): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     move(westEast: number, northSouth: number, speed?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     moveRelative(leftRight: number, backwardForward: number, speed?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     moveToBlock(blockLocation: minecraftserver.Vector3, options?: MoveToOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -387,7 +384,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     moveToLocation(location: minecraftserver.Vector3, options?: MoveToOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -397,7 +394,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     navigateToBlock(blockLocation: minecraftserver.Vector3, speed?: number): NavigationResult;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -407,7 +404,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     navigateToEntity(entity: minecraftserver.Entity, speed?: number): NavigationResult;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -417,7 +414,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     navigateToLocation(location: minecraftserver.Vector3, speed?: number): NavigationResult;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -427,31 +424,31 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     navigateToLocations(locations: minecraftserver.Vector3[], speed?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     respawn(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     rotateBody(angleInDegrees: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setBodyRotation(angleInDegrees: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setItem(itemStack: minecraftserver.ItemStack, slot: number, selectSlot?: boolean): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -459,79 +456,79 @@ export class SimulatedPlayer extends minecraftserver.Player {
      */
     setSkin(options: PlayerSkinData): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     startBuild(slot?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopBreakingBlock(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopBuild(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopFlying(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopGliding(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopInteracting(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopMoving(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopSwimming(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     stopUsingItem(): minecraftserver.ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     swim(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     useItem(itemStack: minecraftserver.ItemStack): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     useItemInSlot(slot: number): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -546,7 +543,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
         faceLocation?: minecraftserver.Vector3,
     ): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -574,8 +571,6 @@ export class Tags {
 export class Test {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -584,8 +579,6 @@ export class Test {
      */
     assert(condition: boolean, message: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -598,8 +591,6 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -608,8 +599,6 @@ export class Test {
      */
     assertBlockState(blockLocation: minecraftserver.Vector3, callback: (arg0: minecraftserver.Block) => boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -622,8 +611,6 @@ export class Test {
         canReach?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -632,8 +619,6 @@ export class Test {
      */
     assertContainerContains(itemStack: minecraftserver.ItemStack, blockLocation: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -642,8 +627,6 @@ export class Test {
      */
     assertContainerEmpty(blockLocation: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -659,8 +642,6 @@ export class Test {
         hasArmor?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -674,8 +655,6 @@ export class Test {
         hasComponent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -688,8 +667,6 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -698,8 +675,6 @@ export class Test {
      */
     assertEntityInstancePresentInArea(entity: minecraftserver.Entity, isPresent?: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -713,8 +688,6 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -723,8 +696,6 @@ export class Test {
      */
     assertEntityPresentInArea(entityTypeIdentifier: string, isPresent?: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -737,8 +708,6 @@ export class Test {
         callback: (arg0: minecraftserver.Entity) => boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -747,8 +716,6 @@ export class Test {
      */
     assertEntityTouching(entityTypeIdentifier: string, location: minecraftserver.Vector3, isTouching?: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -757,8 +724,6 @@ export class Test {
      */
     assertIsWaterlogged(blockLocation: minecraftserver.Vector3, isWaterlogged?: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -772,8 +737,6 @@ export class Test {
         count: number,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -787,8 +750,6 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -797,7 +758,7 @@ export class Test {
      */
     assertRedstonePower(blockLocation: minecraftserver.Vector3, power: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -807,19 +768,15 @@ export class Test {
      */
     destroyBlock(blockLocation: minecraftserver.Vector3, dropResources?: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     fail(errorMessage: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     failIf(callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -829,8 +786,6 @@ export class Test {
      */
     getBlock(blockLocation: minecraftserver.Vector3): minecraftserver.Block;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -839,7 +794,7 @@ export class Test {
      */
     getDimension(): minecraftserver.Dimension;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -849,7 +804,7 @@ export class Test {
      */
     getFenceConnectivity(blockLocation: minecraftserver.Vector3): FenceConnectivity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -859,15 +814,13 @@ export class Test {
      */
     getSculkSpreader(blockLocation: minecraftserver.Vector3): SculkSpreader | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
      */
     getTestDirection(): minecraftserver.Direction;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -875,15 +828,15 @@ export class Test {
      */
     idle(tickDelay: number): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isCleaningUp(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isCompleted(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -893,7 +846,7 @@ export class Test {
      */
     killAllEntities(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -903,7 +856,7 @@ export class Test {
      */
     onPlayerJump(mob: minecraftserver.Entity, jumpAmount: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -913,7 +866,7 @@ export class Test {
      */
     pressButton(blockLocation: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -923,7 +876,7 @@ export class Test {
      */
     print(text: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -933,7 +886,7 @@ export class Test {
      */
     pullLever(blockLocation: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -943,8 +896,6 @@ export class Test {
      */
     pulseRedstone(blockLocation: minecraftserver.Vector3, duration: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -953,7 +904,7 @@ export class Test {
      */
     relativeBlockLocation(worldBlockLocation: minecraftserver.Vector3): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -963,7 +914,7 @@ export class Test {
      */
     relativeLocation(worldLocation: minecraftserver.Vector3): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -971,7 +922,7 @@ export class Test {
      */
     removeSimulatedPlayer(simulatedPlayer: SimulatedPlayer): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -981,7 +932,7 @@ export class Test {
      */
     rotateDirection(direction: minecraftserver.Direction): minecraftserver.Direction;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -991,19 +942,19 @@ export class Test {
      */
     rotateVector(vector: minecraftserver.Vector3): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     runAfterDelay(delayTicks: number, callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     runAtTickTime(tick: number, callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1013,7 +964,7 @@ export class Test {
      */
     runOnFinish(callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1023,7 +974,7 @@ export class Test {
      */
     setBlockPermutation(blockData: minecraftserver.BlockPermutation, blockLocation: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1033,7 +984,7 @@ export class Test {
      */
     setBlockType(blockType: minecraftserver.BlockType | string, blockLocation: minecraftserver.Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1043,7 +994,7 @@ export class Test {
      */
     setFluidContainer(location: minecraftserver.Vector3, type: minecraftserver.FluidType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1053,7 +1004,7 @@ export class Test {
      */
     setTntFuse(entity: minecraftserver.Entity, fuseLength: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1063,7 +1014,7 @@ export class Test {
      */
     spawn(entityTypeIdentifier: string, blockLocation: minecraftserver.Vector3): minecraftserver.Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1073,7 +1024,7 @@ export class Test {
      */
     spawnAtLocation(entityTypeIdentifier: string, location: minecraftserver.Vector3): minecraftserver.Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1083,7 +1034,7 @@ export class Test {
      */
     spawnItem(itemStack: minecraftserver.ItemStack, location: minecraftserver.Vector3): minecraftserver.Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1097,7 +1048,7 @@ export class Test {
         gameMode?: minecraftserver.GameMode,
     ): SimulatedPlayer;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1107,7 +1058,7 @@ export class Test {
      */
     spawnWithoutBehaviors(entityTypeIdentifier: string, blockLocation: minecraftserver.Vector3): minecraftserver.Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1120,7 +1071,7 @@ export class Test {
         location: minecraftserver.Vector3,
     ): minecraftserver.Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1134,7 +1085,7 @@ export class Test {
         direction: minecraftserver.Direction,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1142,37 +1093,37 @@ export class Test {
      */
     startSequence(): GameTestSequence;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     succeed(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     succeedIf(callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     succeedOnTick(tick: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     succeedOnTickWhen(tick: number, callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     succeedWhen(callback: () => void): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1186,7 +1137,7 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1197,7 +1148,7 @@ export class Test {
         hasComponent: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1207,7 +1158,7 @@ export class Test {
         isPresent?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1217,7 +1168,7 @@ export class Test {
      */
     triggerInternalBlockEvent(blockLocation: minecraftserver.Vector3, event: string, eventParameters?: number[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1225,7 +1176,7 @@ export class Test {
      */
     until(callback: () => void): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1235,7 +1186,7 @@ export class Test {
      */
     walkTo(mob: minecraftserver.Entity, blockLocation: minecraftserver.Vector3, speedModifier?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1245,8 +1196,6 @@ export class Test {
      */
     walkToLocation(mob: minecraftserver.Entity, location: minecraftserver.Vector3, speedModifier?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1255,8 +1204,6 @@ export class Test {
      */
     worldBlockLocation(relativeBlockLocation: minecraftserver.Vector3): minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link GameTestCompletedError}
@@ -1318,7 +1265,7 @@ export class GameTestError extends Error {
 }
 
 /**
- * @remarks This function can't be called in read-only mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
  *
@@ -1329,9 +1276,9 @@ export class GameTestError extends Error {
 export function getPlayerSkin(player: minecraftserver.Player): PlayerSkinData;
 
 /**
- * @remarks This function can be called in early-execution mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
- * This function can't be called in read-only mode.
+ * This function can be called in early-execution mode.
  */
 export function register(
     testClassName: string,
@@ -1340,9 +1287,9 @@ export function register(
 ): RegistrationBuilder;
 
 /**
- * @remarks This function can be called in early-execution mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
- * This function can't be called in read-only mode.
+ * This function can be called in early-execution mode.
  */
 export function registerAsync(
     testClassName: string,
@@ -1351,9 +1298,9 @@ export function registerAsync(
 ): RegistrationBuilder;
 
 /**
- * @remarks This function can be called in early-execution mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
- * This function can't be called in read-only mode.
+ * This function can be called in early-execution mode.
  *
  * @throws This function can throw errors.
  *
@@ -1362,9 +1309,9 @@ export function registerAsync(
 export function setAfterBatchCallback(batchName: string, batchCallback: () => void): void;
 
 /**
- * @remarks This function can be called in early-execution mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
- * This function can't be called in read-only mode.
+ * This function can be called in early-execution mode.
  *
  * @throws This function can throw errors.
  *
@@ -1373,7 +1320,7 @@ export function setAfterBatchCallback(batchName: string, batchCallback: () => vo
 export function setBeforeBatchCallback(batchName: string, batchCallback: () => void): void;
 
 /**
- * @remarks This function can't be called in read-only mode.
+ * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
  *
