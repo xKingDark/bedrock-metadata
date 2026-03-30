@@ -254,92 +254,49 @@ export class HttpClient {
     private constructor();
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     cancelAll(reason: string): void;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     get(uri: string): Promise<HttpResponse>;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     request(config: HttpRequest): Promise<HttpResponse>;
 }
 
 export class HttpHeader {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     key: string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     value: minecraftserveradmin.SecretString | string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(key: string, value: minecraftserveradmin.SecretString | string);
 }
 
 export class HttpRequest {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     body: string;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     headers: HttpHeader[];
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     method: HttpRequestMethod;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     timeout: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     uri: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(uri: string);
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     addHeader(key: string, value: minecraftserveradmin.SecretString | string): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     setBody(body: string): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     setHeaders(headers: HttpHeader[]): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     setMethod(method: HttpRequestMethod): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     setTimeout(timeout: number): HttpRequest;
 }
@@ -367,27 +324,24 @@ export class NetworkBeforeEvents {
 export class PacketReceiveBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PacketReceivedBeforeEvent) => void,
         options?: PacketEventOptions,
     ): (arg0: PacketReceivedBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PacketReceivedBeforeEvent) => void): void;
 }
 
 export class PacketReceivedBeforeEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
     readonly packetId: PacketId;
     readonly packetSize: number;
@@ -396,9 +350,6 @@ export class PacketReceivedBeforeEvent {
 
 export class PacketSendBeforeEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
     readonly packetId: PacketId;
     readonly recipients: (minecraftserver.Player | undefined)[];
@@ -407,18 +358,18 @@ export class PacketSendBeforeEvent {
 export class PacketSendBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PacketSendBeforeEvent) => void,
         options?: PacketEventOptions,
     ): (arg0: PacketSendBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PacketSendBeforeEvent) => void): void;
 }
@@ -491,4 +442,4 @@ export class MalformedHttpRequestError extends Error {
 }
 
 export const beforeEvents: NetworkBeforeEvents;
-export const http:         HttpClient;
+export const http: HttpClient;

@@ -29,12 +29,9 @@ export enum DataDrivenScreenRejectReason {
 }
 
 export class DataDrivenScreen {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(player: minecraftserver.Player, screenId: string);
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -44,11 +41,11 @@ export class DataDrivenScreen {
      */
     hideScreen(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isShowing(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -58,7 +55,7 @@ export class DataDrivenScreen {
      */
     showScreen(): Promise<DataDrivenScreenResponse>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -75,7 +72,7 @@ export class DataDrivenScreenResponse {
 export class DataStore {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -83,7 +80,7 @@ export class DataStore {
      */
     getProperty(player: minecraftserver.Player, dataStoreName: string, property: string): string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -98,7 +95,7 @@ export class DataStore {
         path: string,
     ): string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -114,7 +111,7 @@ export class DataStore {
         isWritable?: boolean,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -124,7 +121,7 @@ export class DataStore {
      */
     setProperty(player: minecraftserver.Player, dataStoreName: string, property: string, data: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -140,7 +137,7 @@ export class DataStore {
         data: boolean | number | string,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -156,7 +153,7 @@ export class DataStore {
         onChange: (arg0: string) => void,
     ): (arg0: string) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(onChange: (arg0: string) => void): boolean;
 }

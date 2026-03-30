@@ -23,11 +23,11 @@ export class Block {
     private constructor();
     readonly dimension: Dimension;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly location: Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -38,7 +38,7 @@ export class Block {
     readonly y: number;
     readonly z: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -51,13 +51,8 @@ export class Block {
 
 export class BlockPermutation {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     static resolve(blockName: string, states?: Record<string, boolean | number | string>): BlockPermutation;
@@ -72,8 +67,6 @@ export class Dimension {
     private constructor();
     readonly id: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -82,8 +75,6 @@ export class Dimension {
      */
     getBlock(location: Vector3): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -91,13 +82,8 @@ export class Dimension {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     getEntities(options?: EntityQueryOptions): Entity[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getEntitiesAtBlockLocation(location: Vector3): Entity[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -106,8 +92,6 @@ export class Dimension {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
@@ -116,7 +100,7 @@ export class Dimension {
 export class Entity {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftcommon.EngineError}
      *
@@ -125,43 +109,35 @@ export class Entity {
     readonly dimension: Dimension;
     readonly id: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly location: Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     nameTag: string;
     readonly typeId: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getHeadLocation(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getVelocity(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getViewDirection(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -182,12 +158,10 @@ export class MinecraftDimensionTypes {
 export class Player extends Entity {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly name: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
@@ -205,26 +179,18 @@ export class System {
     readonly currentTick: number;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     clearRun(runId: number): void;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     run(callback: () => void): number;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     runInterval(callback: () => void, tickInterval?: number): number;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     runTimeout(callback: () => void, tickDelay?: number): number;
 }
@@ -232,8 +198,6 @@ export class System {
 export class World {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -242,14 +206,10 @@ export class World {
      */
     getAllPlayers(): Player[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getDimension(dimensionId: string): Dimension;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -258,8 +218,6 @@ export class World {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
@@ -354,4 +312,4 @@ export class RawMessageError extends Error {
 }
 
 export const system: System;
-export const world:  World;
+export const world: World;

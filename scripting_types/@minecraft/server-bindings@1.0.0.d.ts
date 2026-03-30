@@ -21,8 +21,6 @@ export class Dimension {
     private constructor();
     readonly id: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
@@ -33,8 +31,6 @@ export class Entity {
     readonly id: string;
     readonly typeId: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -55,7 +51,7 @@ export class MinecraftDimensionTypes {
 export class Player extends Entity {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly name: string;
 }
@@ -64,8 +60,6 @@ export class System {
     private constructor();
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     run(callback: () => void): number;
 }
@@ -73,8 +67,6 @@ export class System {
 export class World {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -83,8 +75,6 @@ export class World {
      */
     getAllPlayers(): Player[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getDimension(dimensionId: string): Dimension;
@@ -114,4 +104,4 @@ export class RawMessageError extends Error {
 }
 
 export const system: System;
-export const world:  World;
+export const world: World;

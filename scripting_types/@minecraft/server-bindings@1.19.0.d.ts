@@ -676,7 +676,7 @@ export class Block {
     private constructor();
     readonly dimension: Dimension;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -684,7 +684,7 @@ export class Block {
      */
     readonly isAir: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -692,7 +692,7 @@ export class Block {
      */
     readonly isLiquid: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -700,11 +700,11 @@ export class Block {
      */
     readonly isWaterlogged: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly location: Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -712,7 +712,7 @@ export class Block {
      */
     readonly permutation: BlockPermutation;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -720,7 +720,7 @@ export class Block {
      */
     readonly "type": BlockType;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link LocationInUnloadedChunkError}
      *
@@ -731,8 +731,6 @@ export class Block {
     readonly y: number;
     readonly z: number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -741,8 +739,6 @@ export class Block {
      */
     above(steps?: number): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -750,13 +746,8 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     below(steps?: number): Block | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     bottomCenter(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -767,8 +758,6 @@ export class Block {
      */
     canBeDestroyedByLiquidSpread(liquidType: LiquidType): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -778,13 +767,8 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     canContainLiquid(liquidType: LiquidType): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     center(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -793,8 +777,6 @@ export class Block {
      */
     east(steps?: number): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -803,8 +785,6 @@ export class Block {
      */
     getComponent<T extends string>(componentId: T): BlockComponentReturnType<T> | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -813,8 +793,6 @@ export class Block {
      */
     getItemStack(amount?: number, withData?: boolean): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -823,8 +801,6 @@ export class Block {
      */
     getRedstonePower(): number | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -833,8 +809,6 @@ export class Block {
      */
     getTags(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -843,8 +817,6 @@ export class Block {
      */
     hasTag(tag: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -854,13 +826,8 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     isLiquidBlocking(liquidType: LiquidType): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -871,8 +838,6 @@ export class Block {
      */
     liquidCanFlowFromDirection(liquidType: LiquidType, flowDirection: Direction): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -883,8 +848,6 @@ export class Block {
      */
     liquidSpreadCausesSpawn(liquidType: LiquidType): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -893,8 +856,6 @@ export class Block {
      */
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -903,8 +864,6 @@ export class Block {
      */
     north(steps?: number): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -913,7 +872,7 @@ export class Block {
      */
     offset(offset: Vector3): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -923,7 +882,7 @@ export class Block {
      */
     setPermutation(permutation: BlockPermutation): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -935,7 +894,7 @@ export class Block {
      */
     setType(blockType: BlockType | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -947,8 +906,6 @@ export class Block {
      */
     setWaterlogged(isWaterlogged: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -957,8 +914,6 @@ export class Block {
      */
     south(steps?: number): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1005,14 +960,8 @@ export class BlockComponentPlayerInteractEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentPlayerPlaceBeforeEvent extends BlockEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
     readonly face: Direction;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     permutationToPlace: BlockPermutation;
     readonly player?: Player;
 }
@@ -1025,8 +974,6 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 export class BlockComponentRegistry {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link BlockCustomComponentAlreadyRegisteredError}
@@ -1079,15 +1026,15 @@ export class BlockExplodeAfterEvent extends BlockEvent {
 export class BlockExplodeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: BlockExplodeAfterEvent) => void): (arg0: BlockExplodeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: BlockExplodeAfterEvent) => void): void;
 }
@@ -1096,34 +1043,34 @@ export class BlockExplodeAfterEventSignal {
 export class BlockFluidContainerComponent extends BlockComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     fillLevel: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     fluidColor: RGBA;
     static readonly componentId = "minecraft:fluidContainer";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addDye(dye: ItemType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getFluidType(): FluidType;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setFluidType(fluidType: FluidType): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1134,7 +1081,7 @@ export class BlockFluidContainerComponent extends BlockComponent {
 export class BlockInventoryComponent extends BlockComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly container?: Container;
     static readonly componentId = "minecraft:inventory";
@@ -1142,7 +1089,13 @@ export class BlockInventoryComponent extends BlockComponent {
 
 export class BlockLocationIterator implements Iterable<Vector3> {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     [Symbol.iterator](): Iterator<Vector3>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     next(): IteratorResult<Vector3>;
 }
 
@@ -1150,62 +1103,32 @@ export class BlockPermutation {
     private constructor();
     readonly "type": BlockType;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     canBeDestroyedByLiquidSpread(liquidType: LiquidType): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     canContainLiquid(liquidType: LiquidType): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getAllStates(): Record<string, boolean | number | string>;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getItemStack(amount?: number): ItemStack | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getState(stateName: string): boolean | number | string | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getTags(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     hasTag(tag: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isLiquidBlocking(liquidType: LiquidType): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     liquidSpreadCausesSpawn(liquidType: LiquidType): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     withState(name: string, value: boolean | number | string): BlockPermutation;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     static resolve(blockName: string, states?: Record<string, boolean | number | string>): BlockPermutation;
@@ -1215,23 +1138,19 @@ export class BlockPermutation {
 export class BlockPistonComponent extends BlockComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isMoving: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly state: BlockPistonState;
     static readonly componentId = "minecraft:piston";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getAttachedBlocks(): Block[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getAttachedBlocksLocations(): Vector3[];
@@ -1242,37 +1161,33 @@ export class BlockRecordPlayerComponent extends BlockComponent {
     private constructor();
     static readonly componentId = "minecraft:record_player";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     ejectRecord(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getRecord(): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isPlaying(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     pauseRecord(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     playRecord(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1283,42 +1198,36 @@ export class BlockRecordPlayerComponent extends BlockComponent {
 export class BlockSignComponent extends BlockComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isWaxed: boolean;
     static readonly componentId = "minecraft:sign";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getRawText(side?: SignSide): RawText | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getText(side?: SignSide): string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getTextDyeColor(side?: SignSide): DyeColor | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setText(message: RawMessage | string, side?: SignSide): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setTextDyeColor(color?: DyeColor, side?: SignSide): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1327,13 +1236,7 @@ export class BlockSignComponent extends BlockComponent {
 
 export class BlockStates {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static get(stateName: string): BlockStateType | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static getAll(): BlockStateType[];
 }
 
@@ -1350,77 +1253,34 @@ export class BlockType {
 
 export class BlockTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static get(typeName: string): BlockType | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static getAll(): BlockType[];
 }
 
 // @ts-ignore
 export class BlockVolume extends BlockVolumeBase {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     "from": Vector3;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     to: Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(from: Vector3, to: Vector3);
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     doesLocationTouchFaces(pos: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     doesVolumeTouchFaces(other: BlockVolume): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     intersects(other: BlockVolume): BlockVolumeIntersection;
 }
 
 export class BlockVolumeBase {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getBlockLocationIterator(): BlockLocationIterator;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getCapacity(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getMax(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getMin(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getSpan(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isInside(location: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     translate(delta: Vector3): void;
 }
 
@@ -1438,19 +1298,19 @@ export class ButtonPushAfterEventSignal extends IButtonPushAfterEventSignal {
 export class Camera {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     clear(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     fade(fadeCameraOptions?: CameraFadeOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1482,24 +1342,21 @@ export class CommandResult {
 export class Component {
     private constructor();
     readonly typeId: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
 }
 
 export class Container {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly emptySlotsCount: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly size: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1509,29 +1366,22 @@ export class Container {
      */
     addItem(itemStack: ItemStack): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     clearAll(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getItem(slot: number): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getSlot(slot: number): ContainerSlot;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1541,7 +1391,7 @@ export class Container {
      */
     moveItem(fromSlot: number, toSlot: number, toContainer: Container): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1551,7 +1401,7 @@ export class Container {
      */
     setItem(slot: number, itemStack?: ItemStack): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1561,7 +1411,7 @@ export class Container {
      */
     swapItems(slot: number, otherSlot: number, otherContainer: Container): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1575,35 +1425,35 @@ export class Container {
 export class ContainerSlot {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     amount: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidContainerSlotError}
      */
     readonly isStackable: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     keepOnDeath: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lockMode: ItemLockMode;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidContainerSlotError}
      */
     readonly maxAmount: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     nameTag?: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftcommon.EngineError}
      *
@@ -1611,113 +1461,86 @@ export class ContainerSlot {
      */
     readonly "type": ItemType;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidContainerSlotError}
      */
     readonly typeId: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     clearDynamicProperties(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getCanDestroy(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getCanPlaceOn(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getDynamicPropertyTotalByteCount(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getItem(): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getLore(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     getTags(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     hasItem(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     hasTag(tag: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidContainerSlotError}
      */
     isStackableWith(itemStack: ItemStack): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1727,7 +1550,7 @@ export class ContainerSlot {
      */
     setCanDestroy(blockIdentifiers?: string[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1737,8 +1560,6 @@ export class ContainerSlot {
      */
     setCanPlaceOn(blockIdentifiers?: string[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
@@ -1749,7 +1570,7 @@ export class ContainerSlot {
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1759,7 +1580,7 @@ export class ContainerSlot {
      */
     setItem(itemStack?: ItemStack): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1776,27 +1597,24 @@ export class DataDrivenEntityTriggerAfterEvent {
     private constructor();
     readonly entity: Entity;
     readonly eventId: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getModifiers(): DefinitionModifier[];
 }
 
 export class DataDrivenEntityTriggerAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: DataDrivenEntityTriggerAfterEvent) => void,
         options?: EntityDataDrivenTriggerEventOptions,
     ): (arg0: DataDrivenEntityTriggerAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: DataDrivenEntityTriggerAfterEvent) => void): void;
 }
@@ -1804,13 +1622,11 @@ export class DataDrivenEntityTriggerAfterEventSignal {
 export class Dimension {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -1819,7 +1635,7 @@ export class Dimension {
      */
     containsBlock(volume: BlockVolumeBase, filter: BlockFilter, allowUnloadedChunks?: boolean): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1829,7 +1645,7 @@ export class Dimension {
      */
     createExplosion(location: Vector3, radius: number, explosionOptions?: ExplosionOptions): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1845,8 +1661,6 @@ export class Dimension {
         options?: BlockFillOptions,
     ): ListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link LocationInUnloadedChunkError}
@@ -1855,14 +1669,10 @@ export class Dimension {
      */
     getBlock(location: Vector3): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBlockFromRay(location: Vector3, direction: Vector3, options?: BlockRaycastOptions): BlockRaycastHit | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -1871,8 +1681,6 @@ export class Dimension {
      */
     getBlocks(volume: BlockVolumeBase, filter: BlockFilter, allowUnloadedChunks?: boolean): ListBlockVolume;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -1880,13 +1688,8 @@ export class Dimension {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     getEntities(options?: EntityQueryOptions): Entity[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getEntitiesAtBlockLocation(location: Vector3): Entity[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -1899,8 +1702,6 @@ export class Dimension {
      */
     getEntitiesFromRay(location: Vector3, direction: Vector3, options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -1909,13 +1710,11 @@ export class Dimension {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getTopmostBlock(locationXZ: VectorXZ, minHeight?: number): Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1927,7 +1726,7 @@ export class Dimension {
      */
     placeFeature(featureName: string, location: Vector3, shouldThrow?: boolean): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1937,7 +1736,7 @@ export class Dimension {
      */
     placeFeatureRule(featureRuleName: string, location: Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1945,7 +1744,7 @@ export class Dimension {
      */
     playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1953,13 +1752,11 @@ export class Dimension {
      */
     runCommand(commandString: string): CommandResult;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1969,7 +1766,7 @@ export class Dimension {
      */
     setBlockPermutation(location: Vector3, permutation: BlockPermutation): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1981,13 +1778,13 @@ export class Dimension {
      */
     setBlockType(location: Vector3, blockType: BlockType | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setWeather(weatherType: WeatherType, duration?: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2003,7 +1800,7 @@ export class Dimension {
      */
     spawnEntity(identifier: string, location: Vector3): Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2013,7 +1810,7 @@ export class Dimension {
      */
     spawnItem(itemStack: ItemStack, location: Vector3): Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2033,14 +1830,10 @@ export class DimensionTypes {
     private constructor();
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     static get(dimensionTypeId: string): DimensionType | undefined;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     static getAll(): DimensionType[];
 }
@@ -2048,24 +1841,21 @@ export class DimensionTypes {
 export class Effect {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly amplifier: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly displayName: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly duration: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly typeId: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
 }
 
@@ -2078,31 +1868,25 @@ export class EffectAddAfterEvent {
 export class EffectAddAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EffectAddAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EffectAddAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EffectAddAfterEvent) => void): void;
 }
 
 export class EffectAddBeforeEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     duration: number;
     readonly effectType: string;
     readonly entity: Entity;
@@ -2111,35 +1895,32 @@ export class EffectAddBeforeEvent {
 export class EffectAddBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: EffectAddBeforeEvent) => void): (arg0: EffectAddBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EffectAddBeforeEvent) => void): void;
 }
 
 export class EffectType {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getName(): string;
 }
 
 export class EffectTypes {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     static get(identifier: string): EffectType | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     static getAll(): EffectType[];
 }
@@ -2148,8 +1929,6 @@ export class EnchantmentType {
     readonly id: string;
     readonly maxLevel: number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     constructor(enchantmentType: string);
@@ -2157,20 +1936,14 @@ export class EnchantmentType {
 
 export class EnchantmentTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static get(enchantmentId: string): EnchantmentType | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static getAll(): EnchantmentType[];
 }
 
 export class Entity {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftcommon.EngineError}
      *
@@ -2179,65 +1952,65 @@ export class Entity {
     readonly dimension: Dimension;
     readonly id: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isClimbing: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isFalling: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isInWater: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isOnGround: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isSleeping: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     isSneaking: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isSprinting: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly isSwimming: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly location: Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     nameTag: string;
     readonly scoreboardIdentity?: ScoreboardIdentity;
     readonly typeId: string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2249,7 +2022,7 @@ export class Entity {
      */
     addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): Effect | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2259,7 +2032,7 @@ export class Entity {
      */
     addTag(tag: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2271,7 +2044,7 @@ export class Entity {
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2281,7 +2054,7 @@ export class Entity {
      */
     applyImpulse(vector: Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2291,15 +2064,13 @@ export class Entity {
      */
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     clearDynamicProperties(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2307,7 +2078,7 @@ export class Entity {
      */
     clearVelocity(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2315,48 +2086,32 @@ export class Entity {
      */
     extinguishFire(useEffects?: boolean): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getComponent<T extends string>(componentId: T): EntityComponentReturnType<T> | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getComponents(): EntityComponent[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getDynamicPropertyTotalByteCount(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -2365,16 +2120,12 @@ export class Entity {
      */
     getEffect(effectType: EffectType | string): Effect | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getEffects(): Effect[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -2387,71 +2138,51 @@ export class Entity {
      */
     getEntitiesFromViewDirection(options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getHeadLocation(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getProperty(identifier: string): boolean | number | string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getRotation(): Vector2;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getTags(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getVelocity(): Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     getViewDirection(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     hasComponent(componentId: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     hasTag(tag: string): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2459,8 +2190,6 @@ export class Entity {
      */
     kill(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -2471,7 +2200,7 @@ export class Entity {
      */
     matches(options: EntityQueryOptions): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2479,7 +2208,7 @@ export class Entity {
      */
     playAnimation(animationName: string, options?: PlayAnimationOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2489,7 +2218,7 @@ export class Entity {
      */
     remove(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2499,7 +2228,7 @@ export class Entity {
      */
     removeEffect(effectType: EffectType | string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2507,7 +2236,7 @@ export class Entity {
      */
     removeTag(tag: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2519,7 +2248,7 @@ export class Entity {
      */
     resetProperty(identifier: string): boolean | number | string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2529,8 +2258,6 @@ export class Entity {
      */
     runCommand(commandString: string): CommandResult;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -2539,8 +2266,6 @@ export class Entity {
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
@@ -2549,7 +2274,7 @@ export class Entity {
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2557,7 +2282,7 @@ export class Entity {
      */
     setOnFire(seconds: number, useEffects?: boolean): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2569,7 +2294,7 @@ export class Entity {
      */
     setProperty(identifier: string, value: boolean | number | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2577,7 +2302,7 @@ export class Entity {
      */
     setRotation(rotation: Vector2): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2587,7 +2312,7 @@ export class Entity {
      */
     teleport(location: Vector3, teleportOptions?: TeleportOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2597,7 +2322,7 @@ export class Entity {
      */
     triggerEvent(eventName: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -2612,11 +2337,11 @@ export class Entity {
 export class EntityAddRiderComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly entityType: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly spawnEvent: string;
     static readonly componentId = "minecraft:addrider";
@@ -2626,27 +2351,23 @@ export class EntityAddRiderComponent extends EntityComponent {
 export class EntityAgeableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly duration: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly growUp: Trigger;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly transformToItem: string;
     static readonly componentId = "minecraft:ageable";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getDropItems(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getFeedItems(): EntityDefinitionFeedItem[];
@@ -2656,41 +2377,41 @@ export class EntityAgeableComponent extends EntityComponent {
 export class EntityAttributeComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly currentValue: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly defaultValue: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly effectiveMax: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly effectiveMin: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     resetToDefaultValue(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     resetToMaxValue(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     resetToMinValue(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -2701,7 +2422,7 @@ export class EntityAttributeComponent extends EntityComponent {
 export class EntityBaseMovementComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly maxTurn: number;
 }
@@ -2710,47 +2431,43 @@ export class EntityBaseMovementComponent extends EntityComponent {
 export class EntityBreathableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly breathesAir: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly breathesLava: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly breathesSolids: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly breathesWater: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly generatesBubbles: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly inhaleTime: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly suffocateTime: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly totalSupply: number;
     static readonly componentId = "minecraft:breathable";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBreatheBlocks(): BlockPermutation[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getNonBreatheBlocks(): BlockPermutation[];
@@ -2778,7 +2495,7 @@ export class EntityCanPowerJumpComponent extends EntityComponent {
 export class EntityColor2Component extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly value: PaletteColor;
     static readonly componentId = "minecraft:color2";
@@ -2788,7 +2505,7 @@ export class EntityColor2Component extends EntityComponent {
 export class EntityColorComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:color";
@@ -2815,18 +2532,18 @@ export class EntityDieAfterEvent {
 export class EntityDieAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EntityDieAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EntityDieAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityDieAfterEvent) => void): void;
 }
@@ -2836,19 +2553,15 @@ export class EntityEquippableComponent extends EntityComponent {
     private constructor();
     static readonly componentId = "minecraft:equippable";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getEquipment(equipmentSlot: EquipmentSlot): ItemStack | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getEquipmentSlot(equipmentSlot: EquipmentSlot): ContainerSlot;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -2871,7 +2584,7 @@ export class EntityFloatsInLiquidComponent extends EntityComponent {
 export class EntityFlyingSpeedComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:flying_speed";
@@ -2881,7 +2594,7 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
 export class EntityFrictionModifierComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:friction_modifier";
@@ -2891,7 +2604,7 @@ export class EntityFrictionModifierComponent extends EntityComponent {
 export class EntityGroundOffsetComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:ground_offset";
@@ -2901,13 +2614,11 @@ export class EntityGroundOffsetComponent extends EntityComponent {
 export class EntityHealableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
     static readonly componentId = "minecraft:healable";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getFeedItems(): FeedItem[];
@@ -2923,18 +2634,18 @@ export class EntityHealthChangedAfterEvent {
 export class EntityHealthChangedAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EntityHealthChangedAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EntityHealthChangedAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityHealthChangedAfterEvent) => void): void;
 }
@@ -2956,18 +2667,18 @@ export class EntityHitBlockAfterEvent {
 export class EntityHitBlockAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EntityHitBlockAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EntityHitBlockAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityHitBlockAfterEvent) => void): void;
 }
@@ -2981,18 +2692,18 @@ export class EntityHitEntityAfterEvent {
 export class EntityHitEntityAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EntityHitEntityAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EntityHitEntityAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityHitEntityAfterEvent) => void): void;
 }
@@ -3007,18 +2718,18 @@ export class EntityHurtAfterEvent {
 export class EntityHurtAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EntityHurtAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EntityHurtAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityHurtAfterEvent) => void): void;
 }
@@ -3027,28 +2738,28 @@ export class EntityHurtAfterEventSignal {
 export class EntityInventoryComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly additionalSlotsPerStrength: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canBeSiphonedFrom: boolean;
     readonly container?: Container;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly containerType: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly inventorySize: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly "private": boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly restrictToOwner: boolean;
     static readonly componentId = "minecraft:inventory";
@@ -3136,7 +2847,7 @@ export class EntityIsTamedComponent extends EntityComponent {
 export class EntityItemComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly itemStack: ItemStack;
     static readonly componentId = "minecraft:item";
@@ -3152,42 +2863,42 @@ export class EntityLavaMovementComponent extends EntityAttributeComponent {
 export class EntityLeashableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canBeStolen: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly hardDistance: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isLeashed: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly leashHolder?: Entity;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly leashHolderEntityId?: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly maxDistance: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly softDistance: number;
     static readonly componentId = "minecraft:leashable";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     leashTo(leashHolder: Entity): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -3197,7 +2908,7 @@ export class EntityLeashableComponent extends EntityComponent {
 export class EntityLoadAfterEvent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     entity: Entity;
 }
@@ -3205,15 +2916,15 @@ export class EntityLoadAfterEvent {
 export class EntityLoadAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: EntityLoadAfterEvent) => void): (arg0: EntityLoadAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityLoadAfterEvent) => void): void;
 }
@@ -3222,7 +2933,7 @@ export class EntityLoadAfterEventSignal {
 export class EntityMarkVariantComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:mark_variant";
@@ -3262,11 +2973,11 @@ export class EntityMovementGenericComponent extends EntityBaseMovementComponent 
 export class EntityMovementGlideComponent extends EntityBaseMovementComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly speedWhenTurning: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly startSpeed: number;
     static readonly componentId = "minecraft:movement.glide";
@@ -3294,11 +3005,11 @@ export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
 export class EntityMovementSwayComponent extends EntityBaseMovementComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly swayAmplitude: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly swayFrequency: number;
     static readonly componentId = "minecraft:movement.sway";
@@ -3314,79 +3025,79 @@ export class EntityNavigationClimbComponent extends EntityNavigationComponent {
 export class EntityNavigationComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly avoidDamageBlocks: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly avoidPortals: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly avoidSun: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly avoidWater: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canBreach: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canBreakDoors: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canFloat: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canJump: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canOpenDoors: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canOpenIronDoors: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canPassDoors: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canPathFromAir: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canPathOverLava: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canPathOverWater: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canSink: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canSwim: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canWalk: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canWalkInLava: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isAmphibious: boolean;
 }
@@ -3432,64 +3143,64 @@ export class EntityOnFireComponent extends EntityComponent {
 export class EntityProjectileComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     airInertia: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     catchFireOnHurt: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     critParticlesOnProjectileHurt: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     destroyOnProjectileHurt: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     gravity: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     hitEntitySound?: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     hitGroundSound?: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     hitParticle?: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lightningStrikeOnHit: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     liquidInertia: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     onFireTime: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     owner?: Entity;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     shouldBounceOnHit: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     stopOnHit: boolean;
     static readonly componentId = "minecraft:projectile";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -3500,7 +3211,7 @@ export class EntityProjectileComponent extends EntityComponent {
 export class EntityPushThroughComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:push_through";
@@ -3515,18 +3226,18 @@ export class EntityRemoveAfterEvent {
 export class EntityRemoveAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: EntityRemoveAfterEvent) => void,
         options?: EntityEventOptions,
     ): (arg0: EntityRemoveAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityRemoveAfterEvent) => void): void;
 }
@@ -3539,15 +3250,15 @@ export class EntityRemoveBeforeEvent {
 export class EntityRemoveBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: EntityRemoveBeforeEvent) => void): (arg0: EntityRemoveBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityRemoveBeforeEvent) => void): void;
 }
@@ -3556,67 +3267,61 @@ export class EntityRemoveBeforeEventSignal {
 export class EntityRideableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly controllingSeat: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly crouchingSkipInteract: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly interactText: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly passengerMaxWidth: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly pullInEntities: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly riderCanInteract: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly seatCount: number;
     static readonly componentId = "minecraft:rideable";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addRider(rider: Entity): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     ejectRider(rider: Entity): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     ejectRiders(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getFamilyTypes(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getRiders(): Entity[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getSeats(): Seat[];
@@ -3626,7 +3331,7 @@ export class EntityRideableComponent extends EntityComponent {
 export class EntityRidingComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly entityRidingOn: Entity;
     static readonly componentId = "minecraft:riding";
@@ -3636,7 +3341,7 @@ export class EntityRidingComponent extends EntityComponent {
 export class EntityScaleComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:scale";
@@ -3646,7 +3351,7 @@ export class EntityScaleComponent extends EntityComponent {
 export class EntitySkinIdComponent extends EntityComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     value: number;
     static readonly componentId = "minecraft:skin_id";
@@ -3656,7 +3361,7 @@ export class EntitySpawnAfterEvent {
     private constructor();
     readonly cause: EntityInitializationCause;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     entity: Entity;
 }
@@ -3664,15 +3369,15 @@ export class EntitySpawnAfterEvent {
 export class EntitySpawnAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: EntitySpawnAfterEvent) => void): (arg0: EntitySpawnAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
@@ -3681,11 +3386,11 @@ export class EntitySpawnAfterEventSignal {
 export class EntityStrengthComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly max: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly value: number;
     static readonly componentId = "minecraft:strength";
@@ -3695,28 +3400,28 @@ export class EntityStrengthComponent extends EntityComponent {
 export class EntityTameableComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly getTameItems: ItemStack[];
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isTamed: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly probability: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly tamedToPlayer?: Player;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly tamedToPlayerId?: string;
     static readonly componentId = "minecraft:tameable";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -3727,30 +3432,30 @@ export class EntityTameableComponent extends EntityComponent {
 export class EntityTameMountComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isTamed: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isTamedToPlayer: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly tamedToPlayer?: Player;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly tamedToPlayerId?: string;
     static readonly componentId = "minecraft:tamemount";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     tame(showParticles: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -3767,14 +3472,10 @@ export class EntityTypeFamilyComponent extends EntityComponent {
     private constructor();
     static readonly componentId = "minecraft:type_family";
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getTypeFamilies(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     hasTypeFamily(typeFamily: string): boolean;
@@ -3782,13 +3483,7 @@ export class EntityTypeFamilyComponent extends EntityComponent {
 
 export class EntityTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static get(identifier: string): EntityType | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static getAll(): EntityType[];
 }
 
@@ -3802,7 +3497,7 @@ export class EntityUnderwaterMovementComponent extends EntityAttributeComponent 
 export class EntityVariantComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly value: number;
     static readonly componentId = "minecraft:variant";
@@ -3818,24 +3513,21 @@ export class ExplosionAfterEvent {
     private constructor();
     readonly dimension: Dimension;
     readonly source?: Entity;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getImpactedBlocks(): Block[];
 }
 
 export class ExplosionAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ExplosionAfterEvent) => void): (arg0: ExplosionAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ExplosionAfterEvent) => void): void;
 }
@@ -3843,28 +3535,22 @@ export class ExplosionAfterEventSignal {
 // @ts-ignore
 export class ExplosionBeforeEvent extends ExplosionAfterEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     setImpactedBlocks(blocks: Block[]): void;
 }
 
 export class ExplosionBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ExplosionBeforeEvent) => void): (arg0: ExplosionBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ExplosionBeforeEvent) => void): void;
 }
@@ -3873,9 +3559,6 @@ export class FeedItem {
     private constructor();
     readonly healAmount: number;
     readonly item: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getEffects(): FeedItemEffect[];
 }
 
@@ -3902,15 +3585,15 @@ export class GameRuleChangeAfterEvent {
 export class GameRuleChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: GameRuleChangeAfterEvent) => void): (arg0: GameRuleChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: GameRuleChangeAfterEvent) => void): void;
 }
@@ -3918,151 +3601,151 @@ export class GameRuleChangeAfterEventSignal {
 export class GameRules {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     commandBlockOutput: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     commandBlocksEnabled: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doDayLightCycle: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doEntityDrops: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doFireTick: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doImmediateRespawn: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doInsomnia: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doLimitedCrafting: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doMobLoot: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doMobSpawning: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doTileDrops: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     doWeatherCycle: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     drowningDamage: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     fallDamage: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     fireDamage: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     freezeDamage: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     functionCommandLimit: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     keepInventory: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     maxCommandChainLength: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     mobGriefing: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     naturalRegeneration: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     playersSleepingPercentage: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     projectilesCanBreakBlocks: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     pvp: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     randomTickSpeed: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     recipesUnlock: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     respawnBlocksExplode: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     sendCommandFeedback: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showBorderEffect: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showCoordinates: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showDaysPlayed: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showDeathMessages: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showRecipeMessages: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     showTags: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     spawnRadius: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     tntExplodes: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     tntExplosionDropDecay: boolean;
 }
@@ -4070,11 +3753,11 @@ export class GameRules {
 export class IButtonPushAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(callback: (arg0: ButtonPushAfterEvent) => void): (arg0: ButtonPushAfterEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: ButtonPushAfterEvent) => void): void;
 }
@@ -4082,11 +3765,11 @@ export class IButtonPushAfterEventSignal {
 export class ILeverActionAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(callback: (arg0: LeverActionAfterEvent) => void): (arg0: LeverActionAfterEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: LeverActionAfterEvent) => void): void;
 }
@@ -4094,7 +3777,7 @@ export class ILeverActionAfterEventSignal {
 export class InputInfo {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link minecraftcommon.EngineError}
      *
@@ -4102,14 +3785,12 @@ export class InputInfo {
      */
     readonly lastInputModeUsed: InputMode;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidEntityError}
      */
     readonly touchOnlyAffectsHotbar: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -4118,8 +3799,6 @@ export class InputInfo {
      */
     getButtonState(button: InputButton): ButtonState;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
@@ -4130,11 +3809,11 @@ export class InputInfo {
 export class IPlayerJoinAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(callback: (arg0: PlayerJoinAfterEvent) => void): (arg0: PlayerJoinAfterEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerJoinAfterEvent) => void): void;
 }
@@ -4142,11 +3821,11 @@ export class IPlayerJoinAfterEventSignal {
 export class IPlayerLeaveAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(callback: (arg0: PlayerLeaveAfterEvent) => void): (arg0: PlayerLeaveAfterEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerLeaveAfterEvent) => void): void;
 }
@@ -4154,11 +3833,11 @@ export class IPlayerLeaveAfterEventSignal {
 export class IPlayerSpawnAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): (arg0: PlayerSpawnAfterEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
 }
@@ -4173,15 +3852,15 @@ export class ItemCompleteUseAfterEvent {
 export class ItemCompleteUseAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemCompleteUseAfterEvent) => void): (arg0: ItemCompleteUseAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemCompleteUseAfterEvent) => void): void;
 }
@@ -4200,14 +3879,8 @@ export class ItemComponent extends Component {
 export class ItemComponentBeforeDurabilityDamageEvent {
     private constructor();
     readonly attackingEntity: Entity;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     durabilityDamage: number;
     readonly hitEntity: Entity;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     itemStack?: ItemStack;
 }
 
@@ -4241,8 +3914,6 @@ export class ItemComponentMineBlockEvent {
 export class ItemComponentRegistry {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CustomComponentInvalidRegistryError}
@@ -4279,7 +3950,7 @@ export class ItemComponentUseOnEvent extends ItemUseOnEvent {
 export class ItemCompostableComponent extends ItemComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly compostingChance: number;
     static readonly componentId = "minecraft:compostable";
@@ -4289,28 +3960,28 @@ export class ItemCompostableComponent extends ItemComponent {
 export class ItemCooldownComponent extends ItemComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly cooldownCategory: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly cooldownTicks: number;
     static readonly componentId = "minecraft:cooldown";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getCooldownTicksRemaining(player: Player): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     isCooldownCategory(cooldownCategory: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -4321,22 +3992,22 @@ export class ItemCooldownComponent extends ItemComponent {
 export class ItemDurabilityComponent extends ItemComponent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     damage: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly maxDurability: number;
     static readonly componentId = "minecraft:durability";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getDamageChance(unbreakingEnchantmentLevel?: number): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -4347,12 +4018,12 @@ export class ItemDurabilityComponent extends ItemComponent {
 export class ItemEnchantableComponent extends ItemComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly slots: EnchantmentSlot[];
     static readonly componentId = "minecraft:enchantable";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -4366,7 +4037,7 @@ export class ItemEnchantableComponent extends ItemComponent {
      */
     addEnchantment(enchantment: Enchantment): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -4380,8 +4051,6 @@ export class ItemEnchantableComponent extends ItemComponent {
      */
     addEnchantments(enchantments: Enchantment[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link EnchantmentLevelOutOfBoundsError}
@@ -4390,35 +4059,29 @@ export class ItemEnchantableComponent extends ItemComponent {
      */
     canAddEnchantment(enchantment: Enchantment): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link EnchantmentTypeUnknownIdError}
      */
     getEnchantment(enchantmentType: EnchantmentType | string): Enchantment | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getEnchantments(): Enchantment[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link EnchantmentTypeUnknownIdError}
      */
     hasEnchantment(enchantmentType: EnchantmentType | string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     removeAllEnchantments(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -4433,19 +4096,19 @@ export class ItemEnchantableComponent extends ItemComponent {
 export class ItemFoodComponent extends ItemComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly canAlwaysEat: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly nutrition: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly saturationModifier: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly usingConvertsTo: string;
     static readonly componentId = "minecraft:food";
@@ -4461,121 +4124,78 @@ export class ItemReleaseUseAfterEvent {
 export class ItemReleaseUseAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemReleaseUseAfterEvent) => void): (arg0: ItemReleaseUseAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemReleaseUseAfterEvent) => void): void;
 }
 
 export class ItemStack {
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     amount: number;
     readonly isStackable: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     keepOnDeath: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     lockMode: ItemLockMode;
     readonly maxAmount: number;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     nameTag?: string;
     readonly "type": ItemType;
     readonly typeId: string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     constructor(itemType: ItemType | string, amount?: number);
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     clearDynamicProperties(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     clone(): ItemStack;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getCanDestroy(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getCanPlaceOn(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getComponent<T extends string>(componentId: T): ItemComponentReturnType<T> | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getComponents(): ItemComponent[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDynamicPropertyIds(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDynamicPropertyTotalByteCount(): number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getLore(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getTags(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     hasComponent(componentId: string): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     hasTag(tag: string): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isStackableWith(itemStack: ItemStack): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     matches(itemName: string, states?: Record<string, boolean | number | string>): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setCanDestroy(blockIdentifiers?: string[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setCanPlaceOn(blockIdentifiers?: string[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
@@ -4584,7 +4204,7 @@ export class ItemStack {
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -4605,15 +4225,15 @@ export class ItemStartUseAfterEvent {
 export class ItemStartUseAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemStartUseAfterEvent) => void): (arg0: ItemStartUseAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemStartUseAfterEvent) => void): void;
 }
@@ -4629,15 +4249,15 @@ export class ItemStartUseOnAfterEvent {
 export class ItemStartUseOnAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemStartUseOnAfterEvent) => void): (arg0: ItemStartUseOnAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemStartUseOnAfterEvent) => void): void;
 }
@@ -4652,15 +4272,15 @@ export class ItemStopUseAfterEvent {
 export class ItemStopUseAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemStopUseAfterEvent) => void): (arg0: ItemStopUseAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemStopUseAfterEvent) => void): void;
 }
@@ -4675,15 +4295,15 @@ export class ItemStopUseOnAfterEvent {
 export class ItemStopUseOnAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemStopUseOnAfterEvent) => void): (arg0: ItemStopUseOnAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemStopUseOnAfterEvent) => void): void;
 }
@@ -4695,21 +4315,12 @@ export class ItemType {
 
 export class ItemTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static get(itemId: string): ItemType | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     static getAll(): ItemType[];
 }
 
 export class ItemUseAfterEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     itemStack: ItemStack;
     readonly source: Player;
 }
@@ -4717,15 +4328,15 @@ export class ItemUseAfterEvent {
 export class ItemUseAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemUseAfterEvent) => void): (arg0: ItemUseAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemUseAfterEvent) => void): void;
 }
@@ -4733,24 +4344,21 @@ export class ItemUseAfterEventSignal {
 // @ts-ignore
 export class ItemUseBeforeEvent extends ItemUseAfterEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
 }
 
 export class ItemUseBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemUseBeforeEvent) => void): (arg0: ItemUseBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemUseBeforeEvent) => void): void;
 }
@@ -4768,15 +4376,15 @@ export class ItemUseOnAfterEvent {
 export class ItemUseOnAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemUseOnAfterEvent) => void): (arg0: ItemUseOnAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemUseOnAfterEvent) => void): void;
 }
@@ -4784,24 +4392,21 @@ export class ItemUseOnAfterEventSignal {
 // @ts-ignore
 export class ItemUseOnBeforeEvent extends ItemUseOnAfterEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
 }
 
 export class ItemUseOnBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ItemUseOnBeforeEvent) => void): (arg0: ItemUseOnBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ItemUseOnBeforeEvent) => void): void;
 }
@@ -4828,17 +4433,8 @@ export class LeverActionAfterEventSignal extends ILeverActionAfterEventSignal {
 
 // @ts-ignore
 export class ListBlockVolume extends BlockVolumeBase {
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(locations: Vector3[]);
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     add(locations: Vector3[]): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     remove(locations: Vector3[]): void;
 }
 
@@ -4851,32 +4447,22 @@ export class MinecraftDimensionTypes {
 
 export class MolangVariableMap {
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     setColorRGB(variableName: string, color: RGB): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     setColorRGBA(variableName: string, color: RGBA): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     setFloat(variableName: string, number: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     setSpeedAndDirection(variableName: string, speed: number, direction: Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     setVector3(variableName: string, vector: Vector3): void;
@@ -4892,15 +4478,15 @@ export class PistonActivateAfterEvent extends BlockEvent {
 export class PistonActivateAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: PistonActivateAfterEvent) => void): (arg0: PistonActivateAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PistonActivateAfterEvent) => void): void;
 }
@@ -4909,130 +4495,120 @@ export class PistonActivateAfterEventSignal {
 export class Player extends Entity {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly camera: Camera;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly clientSystemInfo: ClientSystemInfo;
     readonly inputInfo: InputInfo;
     readonly inputPermissions: PlayerInputPermissions;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isEmoting: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isFlying: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isGliding: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isJumping: boolean;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly level: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly name: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly onScreenDisplay: ScreenDisplay;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     selectedSlotIndex: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly totalXpNeededForNextLevel: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly xpEarnedAtCurrentLevel: number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addExperience(amount: number): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addLevels(amount: number): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getGameMode(): GameMode;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getItemCooldown(cooldownCategory: string): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getSpawnPoint(): DimensionLocation | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getTotalXp(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     playMusic(trackId: string, musicOptions?: MusicOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     queueMusic(trackId: string, musicOptions?: MusicOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     removePropertyOverrideForEntity(targetEntity: Entity, identifier: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     resetLevel(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
@@ -5041,19 +4617,19 @@ export class Player extends Entity {
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setGameMode(gameMode?: GameMode): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setPropertyOverrideForEntity(targetEntity: Entity, identifier: string, value: boolean | number | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5063,7 +4639,7 @@ export class Player extends Entity {
      */
     setSpawnPoint(spawnPoint?: DimensionLocation): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5075,13 +4651,13 @@ export class Player extends Entity {
      */
     spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     startItemCooldown(cooldownCategory: string, tickDuration: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -5100,18 +4676,18 @@ export class PlayerBreakBlockAfterEvent extends BlockEvent {
 export class PlayerBreakBlockAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerBreakBlockAfterEvent) => void,
         options?: BlockEventOptions,
     ): (arg0: PlayerBreakBlockAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerBreakBlockAfterEvent) => void): void;
 }
@@ -5119,13 +4695,7 @@ export class PlayerBreakBlockAfterEventSignal {
 // @ts-ignore
 export class PlayerBreakBlockBeforeEvent extends BlockEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     itemStack?: ItemStack;
     readonly player: Player;
 }
@@ -5133,18 +4703,18 @@ export class PlayerBreakBlockBeforeEvent extends BlockEvent {
 export class PlayerBreakBlockBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerBreakBlockBeforeEvent) => void,
         options?: BlockEventOptions,
     ): (arg0: PlayerBreakBlockBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerBreakBlockBeforeEvent) => void): void;
 }
@@ -5159,18 +4729,18 @@ export class PlayerButtonInputAfterEvent {
 export class PlayerButtonInputAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerButtonInputAfterEvent) => void,
         options?: InputEventOptions,
     ): (arg0: PlayerButtonInputAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerButtonInputAfterEvent) => void): void;
 }
@@ -5179,12 +4749,12 @@ export class PlayerButtonInputAfterEventSignal {
 export class PlayerCursorInventoryComponent extends EntityComponent {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly item?: ItemStack;
     static readonly componentId = "minecraft:cursor_inventory";
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -5203,17 +4773,17 @@ export class PlayerDimensionChangeAfterEvent {
 export class PlayerDimensionChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerDimensionChangeAfterEvent) => void,
     ): (arg0: PlayerDimensionChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerDimensionChangeAfterEvent) => void): void;
 }
@@ -5227,15 +4797,15 @@ export class PlayerEmoteAfterEvent {
 export class PlayerEmoteAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: PlayerEmoteAfterEvent) => void): (arg0: PlayerEmoteAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerEmoteAfterEvent) => void): void;
 }
@@ -5250,47 +4820,41 @@ export class PlayerGameModeChangeAfterEvent {
 export class PlayerGameModeChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: PlayerGameModeChangeAfterEvent) => void): (arg0: PlayerGameModeChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerGameModeChangeAfterEvent) => void): void;
 }
 
 export class PlayerGameModeChangeBeforeEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
     readonly fromGameMode: GameMode;
     readonly player: Player;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     toGameMode: GameMode;
 }
 
 export class PlayerGameModeChangeBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerGameModeChangeBeforeEvent) => void,
     ): (arg0: PlayerGameModeChangeBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerGameModeChangeBeforeEvent) => void): void;
 }
@@ -5305,17 +4869,17 @@ export class PlayerInputModeChangeAfterEvent {
 export class PlayerInputModeChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerInputModeChangeAfterEvent) => void,
     ): (arg0: PlayerInputModeChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerInputModeChangeAfterEvent) => void): void;
 }
@@ -5330,39 +4894,33 @@ export class PlayerInputPermissionCategoryChangeAfterEvent {
 export class PlayerInputPermissionCategoryChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void,
     ): (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerInputPermissionCategoryChangeAfterEvent) => void): void;
 }
 
 export class PlayerInputPermissions {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cameraEnabled: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     movementEnabled: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     isPermissionCategoryEnabled(permissionCategory: InputPermissionCategory): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -5383,17 +4941,17 @@ export class PlayerInteractWithBlockAfterEvent {
 export class PlayerInteractWithBlockAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerInteractWithBlockAfterEvent) => void,
     ): (arg0: PlayerInteractWithBlockAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerInteractWithBlockAfterEvent) => void): void;
 }
@@ -5402,9 +4960,6 @@ export class PlayerInteractWithBlockBeforeEvent {
     private constructor();
     readonly block: Block;
     readonly blockFace: Direction;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
     readonly faceLocation: Vector3;
     readonly isFirstEvent: boolean;
@@ -5415,17 +4970,17 @@ export class PlayerInteractWithBlockBeforeEvent {
 export class PlayerInteractWithBlockBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerInteractWithBlockBeforeEvent) => void,
     ): (arg0: PlayerInteractWithBlockBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerInteractWithBlockBeforeEvent) => void): void;
 }
@@ -5441,26 +4996,23 @@ export class PlayerInteractWithEntityAfterEvent {
 export class PlayerInteractWithEntityAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerInteractWithEntityAfterEvent) => void,
     ): (arg0: PlayerInteractWithEntityAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerInteractWithEntityAfterEvent) => void): void;
 }
 
 export class PlayerInteractWithEntityBeforeEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
     readonly itemStack?: ItemStack;
     readonly player: Player;
@@ -5470,17 +5022,17 @@ export class PlayerInteractWithEntityBeforeEvent {
 export class PlayerInteractWithEntityBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void,
     ): (arg0: PlayerInteractWithEntityBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerInteractWithEntityBeforeEvent) => void): void;
 }
@@ -5515,15 +5067,15 @@ export class PlayerLeaveBeforeEvent {
 export class PlayerLeaveBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: PlayerLeaveBeforeEvent) => void): (arg0: PlayerLeaveBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerLeaveBeforeEvent) => void): void;
 }
@@ -5537,18 +5089,18 @@ export class PlayerPlaceBlockAfterEvent extends BlockEvent {
 export class PlayerPlaceBlockAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: PlayerPlaceBlockAfterEvent) => void,
         options?: BlockEventOptions,
     ): (arg0: PlayerPlaceBlockAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerPlaceBlockAfterEvent) => void): void;
 }
@@ -5556,11 +5108,11 @@ export class PlayerPlaceBlockAfterEventSignal {
 export class PlayerSpawnAfterEvent {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     initialSpawn: boolean;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     player: Player;
 }
@@ -5580,15 +5132,15 @@ export class PressurePlatePopAfterEvent extends BlockEvent {
 export class PressurePlatePopAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: PressurePlatePopAfterEvent) => void): (arg0: PressurePlatePopAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PressurePlatePopAfterEvent) => void): void;
 }
@@ -5604,15 +5156,15 @@ export class PressurePlatePushAfterEvent extends BlockEvent {
 export class PressurePlatePushAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: PressurePlatePushAfterEvent) => void): (arg0: PressurePlatePushAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PressurePlatePushAfterEvent) => void): void;
 }
@@ -5625,7 +5177,7 @@ export class ProjectileHitBlockAfterEvent {
     readonly projectile: Entity;
     readonly source?: Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getBlockHit(): BlockHitInformation;
 }
@@ -5633,15 +5185,15 @@ export class ProjectileHitBlockAfterEvent {
 export class ProjectileHitBlockAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ProjectileHitBlockAfterEvent) => void): (arg0: ProjectileHitBlockAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ProjectileHitBlockAfterEvent) => void): void;
 }
@@ -5654,7 +5206,7 @@ export class ProjectileHitEntityAfterEvent {
     readonly projectile: Entity;
     readonly source?: Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getEntityHit(): EntityHitInformation;
 }
@@ -5662,15 +5214,15 @@ export class ProjectileHitEntityAfterEvent {
 export class ProjectileHitEntityAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: ProjectileHitEntityAfterEvent) => void): (arg0: ProjectileHitEntityAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ProjectileHitEntityAfterEvent) => void): void;
 }
@@ -5678,39 +5230,27 @@ export class ProjectileHitEntityAfterEventSignal {
 export class Scoreboard {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addObjective(objectiveId: string, displayName?: string): ScoreboardObjective;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     clearObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjective | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getObjective(objectiveId: string): ScoreboardObjective | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjectiveDisplayOptions | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getObjectives(): ScoreboardObjective[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getParticipants(): ScoreboardIdentity[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     removeObjective(objectiveId: ScoreboardObjective | string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -5726,69 +5266,53 @@ export class ScoreboardIdentity {
     readonly id: number;
     readonly "type": ScoreboardIdentityType;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getEntity(): Entity | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
 }
 
 export class ScoreboardObjective {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly displayName: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly id: string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     addScore(participant: Entity | ScoreboardIdentity | string, scoreToAdd: number): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getParticipants(): ScoreboardIdentity[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getScore(participant: Entity | ScoreboardIdentity | string): number | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getScores(): ScoreboardScoreInfo[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     hasParticipant(participant: Entity | ScoreboardIdentity | string): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     removeParticipant(participant: Entity | ScoreboardIdentity | string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -5804,7 +5328,7 @@ export class ScoreboardScoreInfo {
 export class ScreenDisplay {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5812,7 +5336,7 @@ export class ScreenDisplay {
      */
     getHiddenHudElements(): HudElement[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5820,19 +5344,16 @@ export class ScreenDisplay {
      */
     hideAllExcept(hudElements?: HudElement[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
      * {@link InvalidEntityError}
      */
     isForcedHidden(hudElement: HudElement): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5840,7 +5361,7 @@ export class ScreenDisplay {
      */
     resetHudElements(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5850,7 +5371,7 @@ export class ScreenDisplay {
      */
     setActionBar(text: (RawMessage | string)[] | RawMessage | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5858,7 +5379,7 @@ export class ScreenDisplay {
      */
     setHudVisibility(visible: HudVisibility, hudElements?: HudElement[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5870,7 +5391,7 @@ export class ScreenDisplay {
      */
     setTitle(title: (RawMessage | string)[] | RawMessage | string, options?: TitleDisplayOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5894,18 +5415,18 @@ export class ScriptEventCommandMessageAfterEvent {
 export class ScriptEventCommandMessageAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(
         callback: (arg0: ScriptEventCommandMessageAfterEvent) => void,
         options?: ScriptEventMessageFilterOptions,
     ): (arg0: ScriptEventCommandMessageAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ScriptEventCommandMessageAfterEvent) => void): void;
 }
@@ -5923,14 +5444,12 @@ export class Structure {
     private constructor();
     readonly id: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link InvalidStructureError}
      */
     readonly size: Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -5939,8 +5458,6 @@ export class Structure {
      */
     getBlockPermutation(location: Vector3): BlockPermutation | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -5948,12 +5465,9 @@ export class Structure {
      * {@link InvalidStructureError}
      */
     getIsWaterlogged(location: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     isValid(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5965,7 +5479,7 @@ export class Structure {
      */
     saveAs(identifier: string, saveMode?: StructureSaveMode): Structure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5973,7 +5487,7 @@ export class Structure {
      */
     saveToWorld(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5987,7 +5501,7 @@ export class Structure {
 export class StructureManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -5997,7 +5511,7 @@ export class StructureManager {
      */
     createEmpty(identifier: string, size: Vector3, saveMode?: StructureSaveMode): Structure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6011,7 +5525,7 @@ export class StructureManager {
         options?: StructureCreateOptions,
     ): Structure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6019,15 +5533,15 @@ export class StructureManager {
      */
     delete(structure: string | Structure): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     get(identifier: string): Structure | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getWorldStructureIds(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6044,7 +5558,7 @@ export class StructureManager {
         options?: StructurePlaceOptions,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6059,7 +5573,7 @@ export class StructureManager {
         options?: JigsawPlaceOptions,
     ): BlockBoundingBox;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6089,43 +5603,29 @@ export class System {
     readonly serverSystemInfo: SystemInfo;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     clearJob(jobId: number): void;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     clearRun(runId: number): void;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     run(callback: () => void): number;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     runInterval(callback: () => void, tickInterval?: number): number;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     runJob(generator: Generator<void, void, void>): number;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      */
     runTimeout(callback: () => void, tickDelay?: number): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -6137,8 +5637,6 @@ export class System {
     sendScriptEvent(id: string, message: string): void;
     /**
      * @remarks This function can be called in early-execution mode.
-     *
-     * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      *
@@ -6172,27 +5670,21 @@ export class TargetBlockHitAfterEvent extends BlockEvent {
 export class TargetBlockHitAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): (arg0: TargetBlockHitAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): void;
 }
 
 export class Trigger {
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     eventName: string;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     constructor(eventName: string);
 }
 
@@ -6206,15 +5698,15 @@ export class TripWireTripAfterEvent extends BlockEvent {
 export class TripWireTripAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: TripWireTripAfterEvent) => void): (arg0: TripWireTripAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: TripWireTripAfterEvent) => void): void;
 }
@@ -6229,32 +5721,23 @@ export class WeatherChangeAfterEvent {
 export class WeatherChangeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: WeatherChangeAfterEvent) => void): (arg0: WeatherChangeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: WeatherChangeAfterEvent) => void): void;
 }
 
 export class WeatherChangeBeforeEvent {
     private constructor();
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     cancel: boolean;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     duration: number;
-    /**
-     * @remarks This property can't be edited in read-only mode.
-     */
     newWeather: WeatherType;
     readonly previousWeather: WeatherType;
 }
@@ -6262,15 +5745,15 @@ export class WeatherChangeBeforeEvent {
 export class WeatherChangeBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: WeatherChangeBeforeEvent) => void): (arg0: WeatherChangeBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: WeatherChangeBeforeEvent) => void): void;
 }
@@ -6289,17 +5772,9 @@ export class World {
     readonly isHardcore: boolean;
     readonly scoreboard: Scoreboard;
     readonly structureManager: StructureManager;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     clearDynamicProperties(): void;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getAbsoluteTime(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -6307,49 +5782,22 @@ export class World {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     getAllPlayers(): Player[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDay(): number;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDefaultSpawnLocation(): Vector3;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDifficulty(): Difficulty;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getDimension(dimensionId: string): Dimension;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDynamicPropertyIds(): string[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getDynamicPropertyTotalByteCount(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getEntity(id: string): Entity | undefined;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getMoonPhase(): MoonPhase;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link CommandError}
@@ -6357,12 +5805,9 @@ export class World {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     getPlayers(options?: EntityQueryOptions): Player[];
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getTimeOfDay(): number;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6370,7 +5815,7 @@ export class World {
      */
     playMusic(trackId: string, musicOptions?: MusicOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6378,7 +5823,7 @@ export class World {
      */
     playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6386,17 +5831,15 @@ export class World {
      */
     queueMusic(trackId: string, musicOptions?: MusicOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setAbsoluteTime(absoluteTime: number): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -6406,25 +5849,23 @@ export class World {
      */
     setDefaultSpawnLocation(spawnLocation: Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setDifficulty(difficulty: Difficulty): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setTimeOfDay(timeOfDay: number | TimeOfDay): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     stopMusic(): void;
 }
@@ -6657,15 +6098,15 @@ export class WorldInitializeAfterEvent {
 export class WorldInitializeAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: WorldInitializeAfterEvent) => void): (arg0: WorldInitializeAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: WorldInitializeAfterEvent) => void): void;
 }
@@ -6679,15 +6120,15 @@ export class WorldInitializeBeforeEvent {
 export class WorldInitializeBeforeEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: WorldInitializeBeforeEvent) => void): (arg0: WorldInitializeBeforeEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: WorldInitializeBeforeEvent) => void): void;
 }
@@ -7242,10 +6683,10 @@ export class UnloadedChunksError extends Error {
     private constructor();
 }
 
-export const HudElementsCount   = 13;
+export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
-export const MoonPhaseCount     = 8;
-export const TicksPerSecond     = 20;
+export const MoonPhaseCount = 8;
+export const TicksPerSecond = 20;
 
 export const system: System;
-export const world:  World;
+export const world: World;

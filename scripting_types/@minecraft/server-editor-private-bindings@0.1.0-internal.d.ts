@@ -86,23 +86,21 @@ export class CustomBiomeSource {
     private constructor();
     readonly id: string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     destroy(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBiomeAt(pos: minecraftserver.Vector3): minecraftserver.BiomeType;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     recalculateBiomes(newBiomes: CustomBiomeConfig[]): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -118,7 +116,7 @@ export class DataStore {
     readonly modalToolContainer: DataStoreModalToolContainer;
     readonly paneContainer: DataStorePaneContainer;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     sendNotificationEvent(dataTag: string, payload: string): void;
 }
@@ -126,41 +124,41 @@ export class DataStore {
 export class DataStoreActionBarContainer {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getItemPayload(id: string): string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getItemProperty(id: string, property: string): boolean | number | string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     hasItemPayload(id: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     hasItemProperty(id: string, property: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     registerItem(id: string, payload: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     unregisterItem(id: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     updateRegisteredItem(id: string, payload: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -170,13 +168,13 @@ export class DataStoreActionBarContainer {
 export class DataStoreActionContainer {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     bindActionToControl(controlId: string, actionPayload: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -194,35 +192,35 @@ export class DataStoreAfterEvents {
 export class DataStoreMenuContainer {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createItem(id: string, payload: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     destroyItem(id: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getPayload(id: string): string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getProperty(id: string, property: string): boolean | number | string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     hasPayload(id: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     hasProperty(id: string, property: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -238,13 +236,13 @@ export class DataStoreModalToolActivationChangedEvent {
 export class DataStoreModalToolActivationChangedEventSignal {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(
         callback: (arg0: DataStoreModalToolActivationChangedEvent) => void,
     ): (arg0: DataStoreModalToolActivationChangedEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: DataStoreModalToolActivationChangedEvent) => void): void;
 }
@@ -252,52 +250,49 @@ export class DataStoreModalToolActivationChangedEventSignal {
 export class DataStoreModalToolContainer {
     private constructor();
     readonly toolActivationChanged: DataStoreModalToolActivationChangedEventSignal;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getSelectedTool(): string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getToolPayload(id: string): string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getToolProperty(id: string, property: string): boolean | number | string | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     hasToolPayload(id: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     hasToolProperty(id: string, property: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     registerTool(id: string, payload: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     unregisterTool(id: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     updateRegisteredTool(id: string, payload: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     updateRegisteredToolProperty(id: string, payload: string, property: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -307,13 +302,13 @@ export class DataStoreModalToolContainer {
 export class DataStorePaneContainer {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createPane(id: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -329,15 +324,15 @@ export class DataStorePayloadAfterEvent {
 export class DataStorePayloadAfterEventSignal {
     private constructor();
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     subscribe(callback: (arg0: DataStorePayloadAfterEvent) => void): (arg0: DataStorePayloadAfterEvent) => void;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: DataStorePayloadAfterEvent) => void): void;
 }
@@ -361,24 +356,18 @@ export class DataTransferCreateSettingResponse {
 export class DataTransferManager {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isDeferredExperimentEnabled: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     changeBiomeMapping(biomeIdentifier: string, collectionUniqueId: string, identifier: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     closeSession(collectionUniqueId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     createSetting(
@@ -388,26 +377,18 @@ export class DataTransferManager {
         lockToBiome: boolean,
     ): Promise<DataTransferCreateSettingResponse>;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getRegisteredAccessors(): DataTransferCollectionNameData[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     openSession(collectionUniqueId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     requestBiomeConfig(biomeIdentifier: string): Promise<DataTransferBiomeConfigData>;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     requestData(
@@ -415,20 +396,14 @@ export class DataTransferManager {
         options?: DataTransferRequestDataOptions,
     ): Promise<DataTransferRequestResponse>;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     requestIdentifiers(collectionUniqueId: string): Promise<DataTransferRequestIdentifiersResponse>;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     sendData(collectionUniqueId: string, jsonData: string, options?: DataTransferSendDataOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     sendDataToClipboard(jsonData: string): void;
@@ -450,17 +425,17 @@ export class DataTransferRequestResponse {
 export class InputService {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     focusViewport(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getKeyBindingProcessingState(contextId: string, bindingId: string): number | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -472,7 +447,7 @@ export class InputService {
         info: InputBindingInfo,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -482,19 +457,19 @@ export class InputService {
         mouseAction: minecraftservereditorbindings.MouseActionCategory,
     ): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     unregisterKeyBinding(contextId: string, bindingId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     unregisterMouseBinding(contextId: string, bindingId: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -504,41 +479,41 @@ export class InputService {
 export class InternalPersistenceManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     deleteGroup(namespacedName: string, options: PersistenceGroupCreationOptions): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     disposeAllGroups(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     fetchGroups(options: PersistenceQueryGroupOptions): PersistenceGroup[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getOrCreateGroup(namespacedName: string, options: PersistenceGroupCreationOptions): PersistenceGroup;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -564,11 +539,11 @@ export class InternalPlayerServiceContext {
 export class JigsawService {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     deleteRegistryData(registryName: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -583,31 +558,31 @@ export class JigsawService {
         clipboardItem: minecraftservereditorbindings.ClipboardItem,
     ): Promise<EditorJigsawSection[]>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getEmptyRegistryFiles(): Record<string, string>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getExportLocation(): string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getJigsawBlockData(pos: minecraftserver.Vector3): JigsawBlockData;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getRegistryData(registryName: string): Record<string, EditorRegistryFile[]>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getRegistryList(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     setJigsawBlockData(pos: minecraftserver.Vector3, jigsawData: JigsawBlockData): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -625,27 +600,27 @@ export class MinecraftEditorInternal {
     readonly isNewLevel: boolean;
     readonly regionManager: ProjectRegionManager;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createCustomBiomeSource(config: CustomBiomeSourceConfig): CustomBiomeSource;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     fireTelemetryEvent(player: minecraftserver.Player, source: string, eventName: string, metadata: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getPlayerServices(player: minecraftserver.Player): InternalPlayerServiceContext;
     /**
-     * @remarks This function can be called in early-execution mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
-     * This function can't be called in read-only mode.
+     * This function can be called in early-execution mode.
      */
     registerExtension(
         extensionName: string,
@@ -658,49 +633,49 @@ export class MinecraftEditorInternal {
 export class PersistenceGroup {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     createItem(itemName: string, defaultJsonValue?: string): PersistenceGroupItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     deleteItem(itemName: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     dispose(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     disposeAllGroupItems(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     disposeGroupItem(key: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     fetchItem(itemName: string): PersistenceGroupItem | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getOrCreateItem(itemName: string, defaultJsonValue?: string): PersistenceGroupItem;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -710,31 +685,25 @@ export class PersistenceGroup {
 export class PersistenceGroupItem {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     commit(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getAsJSON(): string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getKey(): string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getValue(): string;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -744,31 +713,31 @@ export class PersistenceGroupItem {
 export class PlayerProjectRegionManager {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     disposeAllRegions(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     disposeRegion(id: string): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getCursorRegion(): ProjectRegion;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getSelectionRegion(): ProjectRegion;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -786,7 +755,7 @@ export class PrefabManager {
     private constructor();
     readonly instanceInteractionEvents: PrefabServiceInstanceInteractionEvent;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -794,7 +763,7 @@ export class PrefabManager {
      */
     beginCapturingMouseClicks(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -802,7 +771,7 @@ export class PrefabManager {
      */
     clearSelectedInstances(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -824,7 +793,7 @@ export class PrefabManager {
         optionalNewDisplayName?: string,
     ): PrefabTemplate;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -838,7 +807,7 @@ export class PrefabManager {
      */
     createTemplate(name: string, options?: PrefabServiceCreateTemplateOptions): PrefabTemplate;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -848,7 +817,7 @@ export class PrefabManager {
      */
     deleteInstance(instance: PrefabTemplateInstance): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -862,7 +831,7 @@ export class PrefabManager {
      */
     deleteTemplate(templateOrMetadata: PrefabTemplate | PrefabTemplateMetadata): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -872,7 +841,7 @@ export class PrefabManager {
      */
     deselectInstance(instance: PrefabTemplateInstance): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -880,7 +849,7 @@ export class PrefabManager {
      */
     endCapturingMouseClicks(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -894,15 +863,13 @@ export class PrefabManager {
      */
     getTemplate(searchMetadata_or_fullyQualifiedName: PrefabTemplateMetadata | string): PrefabTemplate;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link PrefabServiceError}
      */
     getTemplateList(): PrefabTemplateMetadata[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -916,11 +883,11 @@ export class PrefabManager {
 export class PrefabServiceInstanceInteractionEvent {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     subscribe(callback: (arg0: PrefabInstanceInteractionEvent) => void): (arg0: PrefabInstanceInteractionEvent) => void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: PrefabInstanceInteractionEvent) => void): void;
 }
@@ -928,15 +895,15 @@ export class PrefabServiceInstanceInteractionEvent {
 export class PrefabTemplate {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     description: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     displayName: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplate}
      *
@@ -944,23 +911,23 @@ export class PrefabTemplate {
      */
     readonly instanceCount: number;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplate}
      */
     readonly name: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     notes: string;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplate}
      */
     readonly source: PrefabSource;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -977,7 +944,7 @@ export class PrefabTemplate {
         options?: PrefabTemplateAddStructureOptions,
     ): PrefabTemplateStructure;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -994,7 +961,7 @@ export class PrefabTemplate {
         options?: PrefabTemplateCreateInstanceOptions,
     ): PrefabTemplateInstance;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1002,7 +969,7 @@ export class PrefabTemplate {
      */
     getMetadata(): PrefabTemplateMetadata;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1010,7 +977,7 @@ export class PrefabTemplate {
      */
     getTags(): string[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1020,7 +987,7 @@ export class PrefabTemplate {
      */
     getTemplateStructures(): PrefabTemplateStructure[];
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1030,7 +997,7 @@ export class PrefabTemplate {
      */
     removeStructure(templateStructure: PrefabTemplateStructure): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1044,7 +1011,7 @@ export class PrefabTemplate {
      */
     setName(newName: string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1060,20 +1027,18 @@ export class PrefabTemplate {
 export class PrefabTemplateInstance {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceMirror: minecraftserver.StructureMirrorAxis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceRotation: minecraftserver.StructureRotation;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     location: minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -1084,16 +1049,12 @@ export class PrefabTemplateInstance {
      */
     bakeInstance(): void;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link PrefabErrorInvalidInstance}
      */
     getStructureRefs(): PrefabTemplateInstanceStructure[];
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link PrefabErrorInvalidInstance}
@@ -1108,16 +1069,14 @@ export class PrefabTemplateInstance {
 export class PrefabTemplateInstanceStructure {
     private constructor();
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceMirror: minecraftserver.StructureMirrorAxis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceRotation: minecraftserver.StructureRotation;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link PrefabErrorInvalidInstance}
@@ -1134,43 +1093,43 @@ export class PrefabTemplateInstanceStructure {
 export class PrefabTemplateStructure {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
     readonly id: string;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceMirror: minecraftserver.StructureMirrorAxis;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceOffset: minecraftserver.Vector3;
     /**
-     * @remarks This property can't be edited in read-only mode.
+     * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceRotation: minecraftserver.StructureRotation;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
     readonly structureNormalizedOrigin: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
     readonly structureOffset: minecraftserver.Vector3;
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      *
      * {@link PrefabErrorInvalidTemplateStructure}
      */
     readonly structureSize: minecraftserver.Vector3;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1186,20 +1145,18 @@ export class PrefabTemplateStructure {
 export class ProjectRegion {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly availabilityMode: ProjectRegionAvailabilityMode;
     readonly id: string;
     readonly isValid: boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     dispose(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getAvailableLocationFromRay(
@@ -1208,79 +1165,55 @@ export class ProjectRegion {
         options?: minecraftserver.BlockRaycastOptions,
     ): minecraftserver.Vector3 | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBlock(location: minecraftserver.Vector3): minecraftserver.Block | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBlockMapColor(location: minecraftserver.Vector3): minecraftserver.RGBA;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBlockPermutation(location: minecraftserver.Vector3): minecraftserver.BlockPermutation;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBlockTypeId(location: minecraftserver.Vector3): string;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     getBounds(): minecraftserver.BlockBoundingBox;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isAirBlock(location: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isAreaAvailable(boundingBox: minecraftserver.BlockBoundingBox): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isAvailable(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isBlockWaterLogged(location: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isLiquidBlock(location: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isLocationAvailable(location: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
-     *
      * @throws This function can throw errors.
      */
     isSolidBlock(location: minecraftserver.Vector3): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1289,37 +1222,37 @@ export class ProjectRegion {
         callback: (arg0: minecraftserver.BlockLocationIterator) => void,
     ): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     requestExpandToContain(extentX: minecraftcommon.NumberRange, extentZ: minecraftcommon.NumberRange): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     requestExtentsUpdate(extentX: minecraftcommon.NumberRange, extentZ: minecraftcommon.NumberRange): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     requestMove(center: minecraftserver.Vector3): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setBlockType(location: minecraftserver.Vector3, blockType: minecraftserver.BlockType | string): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     setBlockWaterlogged(location: minecraftserver.Vector3, isWaterlogged: boolean): void;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      *
@@ -1337,13 +1270,13 @@ export class ProjectRegion {
         rotation?: number,
     ): minecraftserver.Entity;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     waitUntilAvailable(): Promise<void>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1353,15 +1286,12 @@ export class ProjectRegion {
 export class ProjectRegionManager {
     private constructor();
     /**
-     * @throws This property can throw errors.
+     * @throws This property can throw when used.
      */
     readonly isProcessingChunks: boolean;
-    /**
-     * @remarks This function can't be called in read-only mode.
-     */
     getChunkProcessingState(): ProjectRegionManagerChunkProcessingState | undefined;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1370,7 +1300,7 @@ export class ProjectRegionManager {
         boundsList: ProjectRegionExtents[],
     ): Promise<ProjectRegionManagerChunkProcessingState>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1384,13 +1314,13 @@ export class ProjectRegionManager {
 export class RealmsService {
     private constructor();
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     beginDownloadFromRealms(realmsWorldId: string, slotId: number): Promise<string>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
@@ -1400,27 +1330,27 @@ export class RealmsService {
         gameOptions: minecraftservereditorbindings.GameOptions,
     ): Promise<RealmsWorldUploadResult>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     canUploadWorld(): boolean;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getRealmWorldlist(): Promise<EditorRealmsWorld[]>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     getServiceStatus(): RealmsServiceStatus;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
     getSlots(worldId: string): Promise<EditorRealmsWorldSlot[]>;
     /**
-     * @remarks This function can't be called in read-only mode.
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isRealmsServiceAvailable(): EditorRealmsServiceAvailability;
 }
