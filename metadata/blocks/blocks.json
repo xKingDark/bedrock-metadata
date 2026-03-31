@@ -184,7 +184,15 @@
                 },
                 {
                     "name": "sapling_type",
-                    "default_value": "acacia"
+                    "default_value": "acacia",
+                    "values": [
+                        { "value": "oak" },
+                        { "value": "spruce" },
+                        { "value": "birch" },
+                        { "value": "jungle" },
+                        { "value": "acacia" },
+                        { "value": "dark_oak" }
+                    ]
                 }
             ],
             "localization_key": "tile.sapling.acacia.name"
@@ -312,7 +320,11 @@
                 },
                 {
                     "name": "rail_direction",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 5
+                    }
                 }
             ],
             "localization_key": "tile.activator_rail.name"
@@ -1171,7 +1183,15 @@
                 },
                 {
                     "name": "sapling_type",
-                    "default_value": "birch"
+                    "default_value": "birch",
+                    "values": [
+                        { "value": "oak" },
+                        { "value": "spruce" },
+                        { "value": "birch" },
+                        { "value": "jungle" },
+                        { "value": "acacia" },
+                        { "value": "dark_oak" }
+                    ]
                 }
             ],
             "localization_key": "tile.sapling.birch.name"
@@ -2735,7 +2755,11 @@
             "states": [
                 {
                     "name": "age",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 5
+                    }
                 }
             ],
             "localization_key": "tile.chorus_flower.name"
@@ -3085,7 +3109,11 @@
             "states": [
                 {
                     "name": "age",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 2
+                    }
                 },
                 {
                     "name": "direction",
@@ -4176,7 +4204,15 @@
                 },
                 {
                     "name": "sapling_type",
-                    "default_value": "dark_oak"
+                    "default_value": "dark_oak",
+                    "values": [
+                        { "value": "oak" },
+                        { "value": "spruce" },
+                        { "value": "birch" },
+                        { "value": "jungle" },
+                        { "value": "acacia" },
+                        { "value": "dark_oak" }
+                    ]
                 }
             ],
             "localization_key": "tile.sapling.big_oak.name"
@@ -4994,7 +5030,11 @@
                 },
                 {
                     "name": "rail_direction",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 5
+                    }
                 }
             ],
             "localization_key": "tile.detector_rail.name"
@@ -6508,7 +6548,11 @@
             "states": [
                 {
                     "name": "age",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 3
+                    }
                 }
             ],
             "localization_key": "tile.frosted_ice.name"
@@ -6615,7 +6659,11 @@
                 },
                 {
                     "name": "rail_direction",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 5
+                    }
                 }
             ],
             "localization_key": "tile.golden_rail.name"
@@ -7875,7 +7923,15 @@
                 },
                 {
                     "name": "sapling_type",
-                    "default_value": "jungle"
+                    "default_value": "jungle",
+                    "values": [
+                        { "value": "oak" },
+                        { "value": "spruce" },
+                        { "value": "birch" },
+                        { "value": "jungle" },
+                        { "value": "acacia" },
+                        { "value": "dark_oak" }
+                    ]
                 }
             ],
             "localization_key": "tile.sapling.jungle.name"
@@ -9720,7 +9776,11 @@
             "states": [
                 {
                     "name": "age",
-                    "default_value": 0
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 3
+                    }
                 }
             ],
             "localization_key": "tile.nether_wart.name"
@@ -9915,7 +9975,15 @@
                 },
                 {
                     "name": "sapling_type",
-                    "default_value": "oak"
+                    "default_value": "oak",
+                    "values": [
+                        { "value": "oak" },
+                        { "value": "spruce" },
+                        { "value": "birch" },
+                        { "value": "jungle" },
+                        { "value": "acacia" },
+                        { "value": "dark_oak" }
+                    ]
                 }
             ],
             "localization_key": "tile.sapling.oak.name"
@@ -13678,7 +13746,15 @@
                 },
                 {
                     "name": "sapling_type",
-                    "default_value": "spruce"
+                    "default_value": "spruce",
+                    "values": [
+                        { "value": "oak" },
+                        { "value": "spruce" },
+                        { "value": "birch" },
+                        { "value": "jungle" },
+                        { "value": "acacia" },
+                        { "value": "dark_oak" }
+                    ]
                 }
             ],
             "localization_key": "tile.sapling.spruce.name"

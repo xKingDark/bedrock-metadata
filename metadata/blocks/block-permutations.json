@@ -6511,14 +6511,6 @@
         {
             "name": "minecraft:acacia_sapling",
             "states": {
-                "age_bit": false,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 317490384
-        },
-        {
-            "name": "minecraft:acacia_sapling",
-            "states": {
                 "age_bit": true,
                 "sapling_type": "oak"
             },
@@ -6563,14 +6555,6 @@
                 "sapling_type": "dark_oak"
             },
             "hash": 4145081769
-        },
-        {
-            "name": "minecraft:acacia_sapling",
-            "states": {
-                "age_bit": true,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 3034220817
         },
         {
             "name": "minecraft:acacia_shelf",
@@ -7769,38 +7753,6 @@
         {
             "name": "minecraft:activator_rail",
             "states": {
-                "rail_data_bit": false,
-                "rail_direction": 6
-            },
-            "hash": 2725840755
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 7
-            },
-            "hash": 2787315578
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 8
-            },
-            "hash": 3094689693
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 9
-            },
-            "hash": 3156164516
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
                 "rail_data_bit": true,
                 "rail_direction": 0
             },
@@ -7845,38 +7797,6 @@
                 "rail_direction": 5
             },
             "hash": 1033899345
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 6
-            },
-            "hash": 972424522
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 7
-            },
-            "hash": 910949699
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 8
-            },
-            "hash": 1341273460
-        },
-        {
-            "name": "minecraft:activator_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 9
-            },
-            "hash": 1279798637
         },
         {
             "name": "minecraft:air",
@@ -52760,14 +52680,6 @@
         {
             "name": "minecraft:birch_sapling",
             "states": {
-                "age_bit": false,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 1942572901
-        },
-        {
-            "name": "minecraft:birch_sapling",
-            "states": {
                 "age_bit": true,
                 "sapling_type": "oak"
             },
@@ -52812,14 +52724,6 @@
                 "sapling_type": "dark_oak"
             },
             "hash": 1835572160
-        },
-        {
-            "name": "minecraft:birch_sapling",
-            "states": {
-                "age_bit": true,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 2392351156
         },
         {
             "name": "minecraft:birch_shelf",
@@ -100746,56 +100650,6 @@
             "hash": 1755881354
         },
         {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 6 },
-            "hash": 1817356177
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 7 },
-            "hash": 1878831000
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 8 },
-            "hash": 1940305823
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 9 },
-            "hash": 2001780646
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 10 },
-            "hash": 2063255469
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 11 },
-            "hash": 2124730292
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 12 },
-            "hash": 2186205115
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 13 },
-            "hash": 2247679938
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 14 },
-            "hash": 2309154761
-        },
-        {
-            "name": "minecraft:chorus_flower",
-            "states": { "age": 15 },
-            "hash": 2370629584
-        },
-        {
             "name": "minecraft:chorus_plant",
             "states": {
                 
@@ -134406,422 +134260,6 @@
             "hash": 1277147766
         },
         {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 3,
-                "direction": 0
-            },
-            "hash": 3209083380
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 3,
-                "direction": 1
-            },
-            "hash": 3147608557
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 3,
-                "direction": 2
-            },
-            "hash": 3086133734
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 3,
-                "direction": 3
-            },
-            "hash": 3024658911
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 4,
-                "direction": 0
-            },
-            "hash": 1485553663
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 4,
-                "direction": 1
-            },
-            "hash": 1547028486
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 4,
-                "direction": 2
-            },
-            "hash": 1608503309
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 4,
-                "direction": 3
-            },
-            "hash": 1669978132
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 5,
-                "direction": 0
-            },
-            "hash": 540212910
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 5,
-                "direction": 1
-            },
-            "hash": 478738087
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 5,
-                "direction": 2
-            },
-            "hash": 663162556
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 5,
-                "direction": 3
-            },
-            "hash": 601687733
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 6,
-                "direction": 0
-            },
-            "hash": 242081521
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 6,
-                "direction": 1
-            },
-            "hash": 303556344
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 6,
-                "direction": 2
-            },
-            "hash": 119131875
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 6,
-                "direction": 3
-            },
-            "hash": 180606698
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 7,
-                "direction": 0
-            },
-            "hash": 148242728
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 7,
-                "direction": 1
-            },
-            "hash": 86767905
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 7,
-                "direction": 2
-            },
-            "hash": 25293082
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 7,
-                "direction": 3
-            },
-            "hash": 4258785555
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 8,
-                "direction": 0
-            },
-            "hash": 1123364115
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 8,
-                "direction": 1
-            },
-            "hash": 1184838938
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 8,
-                "direction": 2
-            },
-            "hash": 1246313761
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 8,
-                "direction": 3
-            },
-            "hash": 1307788584
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 9,
-                "direction": 0
-            },
-            "hash": 2545700626
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 9,
-                "direction": 1
-            },
-            "hash": 2484225803
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 9,
-                "direction": 2
-            },
-            "hash": 2668650272
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 9,
-                "direction": 3
-            },
-            "hash": 2607175449
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 10,
-                "direction": 0
-            },
-            "hash": 638799269
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 10,
-                "direction": 1
-            },
-            "hash": 700274092
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 10,
-                "direction": 2
-            },
-            "hash": 515849623
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 10,
-                "direction": 3
-            },
-            "hash": 577324446
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 11,
-                "direction": 0
-            },
-            "hash": 3052226140
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 11,
-                "direction": 1
-            },
-            "hash": 2990751317
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 11,
-                "direction": 2
-            },
-            "hash": 2929276494
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 11,
-                "direction": 3
-            },
-            "hash": 2867801671
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 12,
-                "direction": 0
-            },
-            "hash": 193288487
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 12,
-                "direction": 1
-            },
-            "hash": 254763310
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 12,
-                "direction": 2
-            },
-            "hash": 316238133
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 12,
-                "direction": 3
-            },
-            "hash": 377712956
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 13,
-                "direction": 0
-            },
-            "hash": 617265494
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 13,
-                "direction": 1
-            },
-            "hash": 555790671
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 13,
-                "direction": 2
-            },
-            "hash": 740215140
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 13,
-                "direction": 3
-            },
-            "hash": 678740317
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 14,
-                "direction": 0
-            },
-            "hash": 2880425625
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 14,
-                "direction": 1
-            },
-            "hash": 2941900448
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 14,
-                "direction": 2
-            },
-            "hash": 2757475979
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 14,
-                "direction": 3
-            },
-            "hash": 2818950802
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 15,
-                "direction": 0
-            },
-            "hash": 3608001072
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 15,
-                "direction": 1
-            },
-            "hash": 3546526249
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 15,
-                "direction": 2
-            },
-            "hash": 3485051426
-        },
-        {
-            "name": "minecraft:cocoa",
-            "states": {
-                "age": 15,
-                "direction": 3
-            },
-            "hash": 3423576603
-        },
-        {
             "name": "minecraft:colored_torch_blue",
             "states": {
                 "color_bit": false,
@@ -153632,14 +153070,6 @@
         {
             "name": "minecraft:dark_oak_sapling",
             "states": {
-                "age_bit": false,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 3132728710
-        },
-        {
-            "name": "minecraft:dark_oak_sapling",
-            "states": {
                 "age_bit": true,
                 "sapling_type": "oak"
             },
@@ -153684,14 +153114,6 @@
                 "sapling_type": "dark_oak"
             },
             "hash": 769089463
-        },
-        {
-            "name": "minecraft:dark_oak_sapling",
-            "states": {
-                "age_bit": true,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 2780315719
         },
         {
             "name": "minecraft:dark_oak_shelf",
@@ -162332,38 +161754,6 @@
         {
             "name": "minecraft:detector_rail",
             "states": {
-                "rail_data_bit": false,
-                "rail_direction": 6
-            },
-            "hash": 2420796259
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 7
-            },
-            "hash": 2482271082
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 8
-            },
-            "hash": 2789645197
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 9
-            },
-            "hash": 2851120020
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
                 "rail_data_bit": true,
                 "rail_direction": 0
             },
@@ -162408,38 +161798,6 @@
                 "rail_direction": 5
             },
             "hash": 3254566785
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 6
-            },
-            "hash": 3193091962
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 7
-            },
-            "hash": 3131617139
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 8
-            },
-            "hash": 3561940900
-        },
-        {
-            "name": "minecraft:detector_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 9
-            },
-            "hash": 3500466077
         },
         {
             "name": "minecraft:diamond_block",
@@ -223649,66 +223007,6 @@
             "hash": 725165163
         },
         {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 4 },
-            "hash": 663690340
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 5 },
-            "hash": 602215517
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 6 },
-            "hash": 540740694
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 7 },
-            "hash": 479265871
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 8 },
-            "hash": 417791048
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 9 },
-            "hash": 356316225
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 10 },
-            "hash": 294841402
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 11 },
-            "hash": 233366579
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 12 },
-            "hash": 171891756
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 13 },
-            "hash": 110416933
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 14 },
-            "hash": 48942110
-        },
-        {
-            "name": "minecraft:frosted_ice",
-            "states": { "age": 15 },
-            "hash": 4282434583
-        },
-        {
             "name": "minecraft:furnace",
             "states": {
                 "facing_direction": 0,
@@ -224543,38 +223841,6 @@
         {
             "name": "minecraft:golden_rail",
             "states": {
-                "rail_data_bit": false,
-                "rail_direction": 6
-            },
-            "hash": 914691978
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 7
-            },
-            "hash": 853217155
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 8
-            },
-            "hash": 1283540916
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": false,
-                "rail_direction": 9
-            },
-            "hash": 1222066093
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
                 "rail_data_bit": true,
                 "rail_direction": 0
             },
@@ -224619,38 +223885,6 @@
                 "rail_direction": 5
             },
             "hash": 2184455112
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 6
-            },
-            "hash": 2000030643
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 7
-            },
-            "hash": 2061505466
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 8
-            },
-            "hash": 2368879581
-        },
-        {
-            "name": "minecraft:golden_rail",
-            "states": {
-                "rail_data_bit": true,
-                "rail_direction": 9
-            },
-            "hash": 2430354404
         },
         {
             "name": "minecraft:granite",
@@ -266086,14 +265320,6 @@
         {
             "name": "minecraft:jungle_sapling",
             "states": {
-                "age_bit": false,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 3917446589
-        },
-        {
-            "name": "minecraft:jungle_sapling",
-            "states": {
                 "age_bit": true,
                 "sapling_type": "oak"
             },
@@ -266138,14 +265364,6 @@
                 "sapling_type": "dark_oak"
             },
             "hash": 4238312152
-        },
-        {
-            "name": "minecraft:jungle_sapling",
-            "states": {
-                "age_bit": true,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 2091782284
         },
         {
             "name": "minecraft:jungle_shelf",
@@ -367244,66 +366462,6 @@
             "hash": 2326645885
         },
         {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 4 },
-            "hash": 2511070354
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 5 },
-            "hash": 2449595531
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 6 },
-            "hash": 2634020000
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 7 },
-            "hash": 2572545177
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 8 },
-            "hash": 1773372478
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 9 },
-            "hash": 1711897655
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 10 },
-            "hash": 1896322124
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 11 },
-            "hash": 1834847301
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 12 },
-            "hash": 2019271770
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 13 },
-            "hash": 1957796947
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 14 },
-            "hash": 2142221416
-        },
-        {
-            "name": "minecraft:nether_wart",
-            "states": { "age": 15 },
-            "hash": 2080746593
-        },
-        {
             "name": "minecraft:nether_wart_block",
             "states": {
                 
@@ -372169,14 +371327,6 @@
         {
             "name": "minecraft:oak_sapling",
             "states": {
-                "age_bit": false,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 2523227758
-        },
-        {
-            "name": "minecraft:oak_sapling",
-            "states": {
                 "age_bit": true,
                 "sapling_type": "oak"
             },
@@ -372221,14 +371371,6 @@
                 "sapling_type": "dark_oak"
             },
             "hash": 473768799
-        },
-        {
-            "name": "minecraft:oak_sapling",
-            "states": {
-                "age_bit": true,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 1981374479
         },
         {
             "name": "minecraft:oak_shelf",
@@ -532910,14 +532052,6 @@
         {
             "name": "minecraft:spruce_sapling",
             "states": {
-                "age_bit": false,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 1667765540
-        },
-        {
-            "name": "minecraft:spruce_sapling",
-            "states": {
                 "age_bit": true,
                 "sapling_type": "oak"
             },
@@ -532962,14 +532096,6 @@
                 "sapling_type": "dark_oak"
             },
             "hash": 905010661
-        },
-        {
-            "name": "minecraft:spruce_sapling",
-            "states": {
-                "age_bit": true,
-                "sapling_type": "pale_oak"
-            },
-            "hash": 3415097173
         },
         {
             "name": "minecraft:spruce_shelf",
