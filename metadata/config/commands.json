@@ -1,7 +1,6 @@
 {
     "default_permission_level": "admin",
     "permission_levels": {
-        "ability": "game_directors",
         "agent": "game_directors",
         "aimassist": "game_directors",
         "allowlist": "owner",
@@ -33,11 +32,9 @@
         "give": "game_directors",
         "help": "any",
         "hud": "game_directors",
-        "immutableworld": "game_directors",
         "inputpermission": "game_directors",
         "kick": "game_directors",
         "kill": "game_directors",
-        "lesson": "game_directors",
         "list": "any",
         "listd": "host",
         "locate": "game_directors",
@@ -90,7 +87,6 @@
         "toggledownfall": "game_directors",
         "transfer": "owner",
         "weather": "game_directors",
-        "worldbuilder": "game_directors",
         "wsserver": "admin",
         "xp": "game_directors"
     }
