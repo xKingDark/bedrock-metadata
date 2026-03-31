@@ -118,6 +118,10 @@ export class DataStore {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    sendNetworkEvent(dataTag: string, payload: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     sendNotificationEvent(dataTag: string, payload: string): void;
 }
 

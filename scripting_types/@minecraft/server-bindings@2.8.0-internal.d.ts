@@ -352,9 +352,10 @@ export enum EntityDamageCause {
 }
 
 export enum EntityHealCause {
-    Heal         = "Heal",
-    Regeneration = "Regeneration",
-    SelfHeal     = "SelfHeal",
+    Heal           = "Heal",
+    Regeneration   = "Regeneration",
+    SelfHeal       = "SelfHeal",
+    TotemOfUndying = "TotemOfUndying",
 }
 
 export enum EntityInitializationCause {
@@ -1545,6 +1546,12 @@ export class BlockComponentBlockBreakEvent extends BlockEvent {
 }
 
 // @ts-ignore
+export class BlockComponentBlockStateChangeEvent extends BlockEvent {
+    private constructor();
+    readonly previousPermutation: BlockPermutation;
+}
+
+// @ts-ignore
 export class BlockComponentEntityEvent extends BlockEvent {
     private constructor();
     readonly blockPermutation: BlockPermutation;
@@ -1597,6 +1604,7 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
     private constructor();
+    readonly firstUpdate: boolean;
     readonly powerLevel: number;
     readonly previousPowerLevel: number;
 }
@@ -1906,6 +1914,14 @@ export class BlockPrecipitationInteractionsComponent extends BlockComponent {
      * {@link LocationOutOfWorldBoundariesError}
      */
     accumulatesSnow(): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    isSnowLoggable(): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -2936,6 +2952,16 @@ export class Dimension {
     spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    spawnXp(location: Vector3, amount: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
      */
     stopAllSounds(): void;
     /**
@@ -3163,6 +3189,14 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     readonly location: Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    nameplateDepthTested: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    nameplateRenderDistance: number;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -6408,6 +6442,24 @@ export class Player extends Entity {
     readonly camera: Camera;
     /**
      * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly chatDisplayName: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    chatMessagePrefix?: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    chatNamePrefix?: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    chatNameSuffix?: string;
+    /**
+     * @throws This property can throw when used.
      */
     readonly clientSystemInfo: ClientSystemInfo;
     /**
@@ -6456,7 +6508,7 @@ export class Player extends Entity {
      *
      * {@link InvalidEntityError}
      */
-    readonly partyId?: string;
+    readonly partyInfo?: PartyInfo;
     /**
      * @throws This property can throw when used.
      *
@@ -8909,6 +8961,7 @@ export interface BlockCustomComponent {
         arg0: BlockComponentPlayerPlaceBeforeEvent,
         arg1: CustomComponentParameters,
     ) => void;
+    onBlockStateChange?: (arg0: BlockComponentBlockStateChangeEvent, arg1: CustomComponentParameters) => void;
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
@@ -9313,6 +9366,11 @@ export interface MusicOptions {
 
 export interface NotEqualsComparison {
     notEquals: boolean | number | string;
+}
+
+export interface PartyInfo {
+    isLeader: boolean;
+    partyId: string;
 }
 
 export interface PlayAnimationOptions {

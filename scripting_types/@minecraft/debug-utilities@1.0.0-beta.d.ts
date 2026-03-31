@@ -59,6 +59,7 @@ export class DebugShape {
     readonly dimension: minecraftserver.Dimension;
     readonly hasDuration: boolean;
     readonly location: minecraftserver.Vector3;
+    maximumRenderDistance?: number;
     rotation: minecraftserver.Vector3;
     scale: number;
     timeLeft?: number;
@@ -85,6 +86,11 @@ export class DebugText extends DebugShape {
         location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
         text: minecraftserver.RawMessage | string,
     );
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.RawMessageError}
+     */
     setText(text: minecraftserver.RawMessage | string): void;
 }
 

@@ -28,6 +28,12 @@ export enum DataDrivenScreenRejectReason {
     ServerShutdown = "ServerShutdown",
 }
 
+export enum InternalTextFilteringError {
+    DisabledByPlayer                = "DisabledByPlayer",
+    TextProcessorServiceUnreachable = "TextProcessorServiceUnreachable",
+    Unknown                         = "Unknown",
+}
+
 export class DataDrivenScreen {
     constructor(player: minecraftserver.Player, screenId: string);
     /**
@@ -71,6 +77,16 @@ export class DataDrivenScreenResponse {
 
 export class DataStore {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    getFilteredText(player: minecraftserver.Player, text: string): Promise<InternalTextFilteringError[] | string>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */

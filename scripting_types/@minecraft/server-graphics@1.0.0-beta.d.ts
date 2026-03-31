@@ -14,7 +14,7 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
-export class Atmospherics {
+export class BiomeAtmospherics {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -23,7 +23,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMax(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendMax(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -31,7 +31,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMieStart(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendMieStart(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -39,7 +39,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMin(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendMin(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -47,7 +47,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendStart(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendStart(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -55,7 +55,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMoonMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMoonMieStrength(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -63,7 +63,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetRayleighStrength(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetRayleighStrength(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -71,7 +71,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSkyHorizonColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSkyHorizonColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -79,7 +79,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSkyZenithColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSkyZenithColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -87,7 +87,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunGlareShape(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSunGlareShape(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -95,7 +95,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSunMieStrength(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -103,7 +103,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMax(blendMax: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHorizonBlendMax(blendMax: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -111,10 +111,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMieStart(
-        blendMieStart: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setHorizonBlendMieStart(blendMieStart: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -122,7 +119,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMin(blendMin: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHorizonBlendMin(blendMin: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -130,7 +127,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendStart(blendStart: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHorizonBlendStart(blendStart: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -138,10 +135,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMoonMieStrength(
-        moonMieStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setMoonMieStrength(moonMieStrength: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -149,10 +143,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setRayleighStrength(
-        rayleighStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setRayleighStrength(rayleighStrength: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -160,10 +151,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSkyHorizonColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setSkyHorizonColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -171,10 +159,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSkyZenithColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setSkyZenithColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -182,7 +167,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunGlareShape(sunGlareShape: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setSunGlareShape(sunGlareShape: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -190,10 +175,10 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunMieStrength(
-        sunMieStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setSunMieStrength(sunMieStrength: number | Record<number, number>): void;
 }
 
-export const atmosphere: Atmospherics;
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getBiomeAtmospherics(biome: minecraftserver.BiomeType): BiomeAtmospherics;

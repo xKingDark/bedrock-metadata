@@ -2808,6 +2808,20 @@ export class Entity {
      *
      * @throws This function can throw errors.
      *
+     * {@link ContainerRulesError}
+     *
+     * {@link Error}
+     *
+     * {@link InvalidEntityComponentError}
+     *
+     * {@link InvalidEntityError}
+     */
+    addItem(itemStack: ItemStack): ItemStack | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
      * {@link minecraftcommon.ArgumentOutOfBoundsError}
      *
      * {@link InvalidEntityError}
@@ -8571,6 +8585,11 @@ export class InvalidContainerError extends Error {
 
 // @ts-ignore
 export class InvalidContainerSlotError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class InvalidEntityComponentError extends Error {
     private constructor();
 }
 
