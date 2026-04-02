@@ -5,10 +5,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/common",
- *     "version": "1.0.0"
- * }
+ * { "module_name": "@minecraft/common", "version": "1.0.0" }
  * ```
  */
 // @ts-ignore

@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-gametest",
- *     "version": "1.0.0-beta"
- * }
+ * { "module_name": "@minecraft/server-gametest", "version": "1.0.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

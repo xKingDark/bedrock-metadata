@@ -5,10 +5,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "mojang-minecraft",
- *     "version": "0.1.0"
- * }
+ * { "module_name": "mojang-minecraft", "version": "0.1.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

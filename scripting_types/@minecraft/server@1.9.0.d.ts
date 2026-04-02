@@ -5,10 +5,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server",
- *     "version": "1.9.0"
- * }
+ * { "module_name": "@minecraft/server", "version": "1.9.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

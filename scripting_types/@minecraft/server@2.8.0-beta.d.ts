@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server",
- *     "version": "2.8.0-beta"
- * }
+ * { "module_name": "@minecraft/server", "version": "2.8.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
