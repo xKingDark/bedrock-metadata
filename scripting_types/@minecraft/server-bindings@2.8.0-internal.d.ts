@@ -2967,6 +2967,28 @@ export class Dimension {
     stopSound(soundId: string): void;
 }
 
+export class DimensionRegistry {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link CustomDimensionAlreadyRegisteredError}
+     *
+     * {@link CustomDimensionInvalidRegistryError}
+     *
+     * {@link CustomDimensionNameError}
+     *
+     * {@link CustomDimensionReloadNewDimensionError}
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link NamespaceNameError}
+     */
+    registerCustomDimension(typeId: string): void;
+}
+
 export class DimensionType {
     private constructor();
     readonly typeId: string;
@@ -7992,6 +8014,10 @@ export class StartupEvent {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly dimensionRegistry: DimensionRegistry;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly itemComponentRegistry: ItemComponentRegistry;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -8283,6 +8309,8 @@ export class TextPrimitive extends PrimitiveShape {
     constructor(location: DimensionLocation | Vector3, text: RawMessage | string);
     /**
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
      *
      * {@link RawMessageError}
      */
@@ -9627,6 +9655,26 @@ export class CustomComponentNameError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly reason: CustomComponentNameErrorReason;
+}
+
+// @ts-ignore
+export class CustomDimensionAlreadyRegisteredError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CustomDimensionInvalidRegistryError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CustomDimensionNameError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CustomDimensionReloadNewDimensionError extends Error {
+    private constructor();
 }
 
 // @ts-ignore

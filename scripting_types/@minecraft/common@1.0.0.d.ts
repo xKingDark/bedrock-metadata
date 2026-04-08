@@ -30,6 +30,15 @@ export class ArgumentOutOfBoundsError extends Error {
 }
 
 // @ts-ignore
+export class ContainerSizeOutOfBoundsError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxValue: number;
+}
+
+// @ts-ignore
 export class InvalidArgumentError extends Error {
     private constructor();
     /**

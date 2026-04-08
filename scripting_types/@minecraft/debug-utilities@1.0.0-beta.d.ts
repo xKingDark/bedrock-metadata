@@ -86,6 +86,8 @@ export class DebugText extends DebugShape {
     /**
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
      * {@link minecraftserver.RawMessageError}
      */
     setText(text: minecraftserver.RawMessage | string): void;
