@@ -2915,12 +2915,10 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 }
 
 // @ts-ignore
-export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {
-}
+export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {}
 
 // @ts-ignore
-export interface WidgetComponentRenderPrimitiveOptions extends WidgetComponentBaseOptions {
-}
+export interface WidgetComponentRenderPrimitiveOptions extends WidgetComponentBaseOptions {}
 
 // @ts-ignore
 export interface WidgetComponentSplineOptions extends WidgetComponentBaseOptions {

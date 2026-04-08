@@ -11,7 +11,6 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
-import * as minecraftserveruibindings from "@minecraft/server-ui-bindings";
 export enum DataDrivenScreenClosedReason {
     ClientCanceled       = "ClientCanceled",
     InvalidForm          = "InvalidForm",
@@ -200,5 +199,3 @@ export class InvalidPathError extends Error {
 export const testConstant = 5;
 
 export const ddui: DataStore;
-
-export * from "@minecraft/server-ui-bindings";
