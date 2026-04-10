@@ -11,6 +11,12 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
+export declare enum DataDrivenScreenClosedReason {
+    ServerClose = "ServerClose",
+    UserBusy    = "UserBusy",
+    UserClose   = "UserClose",
+}
+
 export enum FormCancelationReason {
     UserBusy   = "UserBusy",
     UserClosed = "UserClosed",
@@ -20,12 +26,6 @@ export enum FormRejectReason {
     MalformedResponse = "MalformedResponse",
     PlayerQuit        = "PlayerQuit",
     ServerShutdown    = "ServerShutdown",
-}
-
-export declare enum DataDrivenScreenClosedReason {
-    ServerClose = "ServerClose",
-    UserBusy    = "UserBusy",
-    UserClose   = "UserClose",
 }
 
 export declare enum TextFilteringError {

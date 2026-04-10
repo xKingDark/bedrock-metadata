@@ -11,6 +11,12 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
+export declare enum DataDrivenScreenClosedReason {
+    ServerClose = "ServerClose",
+    UserBusy    = "UserBusy",
+    UserClose   = "UserClose",
+}
+
 export enum DataDrivenScreenClosedReason {
     ClientCanceled       = "ClientCanceled",
     InvalidForm          = "InvalidForm",
