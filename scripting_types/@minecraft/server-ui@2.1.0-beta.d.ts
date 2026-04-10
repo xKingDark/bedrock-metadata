@@ -61,10 +61,84 @@ export class ActionFormResponse extends FormResponse {
     readonly selection?: number;
 }
 
+export declare class CustomForm {
+    button(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        onClick: () => void,
+        buttonOptions?: ButtonOptions,
+    ): CustomForm;
+    close(): void;
+    closeButton(): CustomForm;
+    divider(dividerOptions?: DividerOptions): CustomForm;
+    dropdown(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        arg1: Observable<number>,
+        items: DropdownItem[],
+        dropdownOptions?: DropdownOptions,
+    ): CustomForm;
+    header(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        textOptions?: TextOptions,
+    ): CustomForm;
+    isShowing(): boolean;
+    label(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        textOptions?: TextOptions,
+    ): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    show(): Promise<DataDrivenScreenClosedReason>;
+    slider(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        arg1: Observable<number>,
+        arg2: Observable<number> | number,
+        arg3: Observable<number> | number,
+        sliderOptions?: SliderOptions,
+    ): CustomForm;
+    spacer(spacingOptions?: SpacingOptions): CustomForm;
+    textField(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        arg1: Observable<string>,
+        textFieldOptions?: TextFieldOptions,
+    ): CustomForm;
+    toggle(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        arg1: Observable<boolean>,
+        toggleOptions?: ToggleOptions,
+    ): CustomForm;
+    static create(
+        player: minecraftserver.Player,
+        tooltip: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+    ): CustomForm;
+}
+
 export class FormResponse {
     private constructor();
     readonly cancelationReason?: FormCancelationReason;
     readonly canceled: boolean;
+}
+
+export declare class MessageBox {
+    body(bodyText: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage): MessageBox;
+    button1(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        arg1?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+    ): MessageBox;
+    button2(
+        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        arg1?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+    ): MessageBox;
+    close(): void;
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    show(): Promise<MessageBoxResult>;
+    static create(
+        player: minecraftserver.Player,
+        tooltip: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+    ): MessageBox;
 }
 
 export class MessageFormData {
@@ -135,90 +209,6 @@ export class ModalFormResponse extends FormResponse {
     readonly formValues?: (boolean | number | string | undefined)[];
 }
 
-export class UIManager {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    closeAllForms(player: minecraftserver.Player): void;
-}
-
-export declare class CustomForm {
-    button(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        onClick: () => void,
-        buttonOptions?: ButtonOptions,
-    ): CustomForm;
-    close(): void;
-    closeButton(): CustomForm;
-    divider(dividerOptions?: DividerOptions): CustomForm;
-    dropdown(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<number>,
-        items: DropdownItem[],
-        dropdownOptions?: DropdownOptions,
-    ): CustomForm;
-    header(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        textOptions?: TextOptions,
-    ): CustomForm;
-    isShowing(): boolean;
-    label(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        textOptions?: TextOptions,
-    ): CustomForm;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    show(): Promise<DataDrivenScreenClosedReason>;
-    slider(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<number>,
-        arg2: Observable<number> | number,
-        arg3: Observable<number> | number,
-        sliderOptions?: SliderOptions,
-    ): CustomForm;
-    spacer(spacingOptions?: SpacingOptions): CustomForm;
-    textField(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<string>,
-        textFieldOptions?: TextFieldOptions,
-    ): CustomForm;
-    toggle(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<boolean>,
-        toggleOptions?: ToggleOptions,
-    ): CustomForm;
-    static create(
-        player: minecraftserver.Player,
-        tooltip: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-    ): CustomForm;
-}
-
-export declare class MessageBox {
-    body(bodyText: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage): MessageBox;
-    button1(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-    ): MessageBox;
-    button2(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-    ): MessageBox;
-    close(): void;
-    isShowing(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    show(): Promise<MessageBoxResult>;
-    static create(
-        player: minecraftserver.Player,
-        tooltip: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-    ): MessageBox;
-}
-
 export declare class Observable<T extends boolean | string | UIRawMessage | number> {
     getData(): T;
     getFilteredText(player: minecraftserver.Player): Promise<string | TextFilteringError[]>;
@@ -232,25 +222,14 @@ export declare class Observable<T extends boolean | string | UIRawMessage | numb
     ): Observable<T>;
 }
 
-export interface ModalFormDataDropdownOptions {
-    defaultValueIndex?: number;
-    tooltip?: minecraftserver.RawMessage | string;
-}
-
-export interface ModalFormDataSliderOptions {
-    defaultValue?: number;
-    tooltip?: minecraftserver.RawMessage | string;
-    valueStep?: number;
-}
-
-export interface ModalFormDataTextFieldOptions {
-    defaultValue?: minecraftserver.RawMessage | string;
-    tooltip?: minecraftserver.RawMessage | string;
-}
-
-export interface ModalFormDataToggleOptions {
-    defaultValue?: boolean;
-    tooltip?: minecraftserver.RawMessage | string;
+export class UIManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    closeAllForms(player: minecraftserver.Player): void;
 }
 
 export interface ButtonOptions {
@@ -278,6 +257,27 @@ export interface DropdownOptions {
 export interface MessageBoxResult {
     closeReason: DataDrivenScreenClosedReason;
     selection?: number;
+}
+
+export interface ModalFormDataDropdownOptions {
+    defaultValueIndex?: number;
+    tooltip?: minecraftserver.RawMessage | string;
+}
+
+export interface ModalFormDataSliderOptions {
+    defaultValue?: number;
+    tooltip?: minecraftserver.RawMessage | string;
+    valueStep?: number;
+}
+
+export interface ModalFormDataTextFieldOptions {
+    defaultValue?: minecraftserver.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
+}
+
+export interface ModalFormDataToggleOptions {
+    defaultValue?: boolean;
+    tooltip?: minecraftserver.RawMessage | string;
 }
 
 export interface ObservableOptions {
@@ -319,6 +319,9 @@ export interface UIRawMessage {
 }
 
 // @ts-ignore
+export declare class FormCloseError extends Error {}
+
+// @ts-ignore
 export class FormRejectError extends Error {
     private constructor();
     /**
@@ -326,9 +329,6 @@ export class FormRejectError extends Error {
      */
     readonly reason: FormRejectReason;
 }
-
-// @ts-ignore
-export declare class FormCloseError extends Error {}
 
 // @ts-ignore
 export declare class PlayerLeftError extends Error {}
