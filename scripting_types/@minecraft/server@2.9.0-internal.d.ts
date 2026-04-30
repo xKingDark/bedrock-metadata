@@ -6,7 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server", "version": "2.8.0-internal" }
+ * { "module_name": "@minecraft/server", "version": "2.9.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -451,11 +451,11 @@ export enum GameRule {
     FreezeDamage              = "freezeDamage",
     FunctionCommandLimit      = "functionCommandLimit",
     KeepInventory             = "keepInventory",
-    LocatorBar                = "locatorBar",
     MaxCommandChainLength     = "maxCommandChainLength",
     MobGriefing               = "mobGriefing",
     NaturalRegeneration       = "naturalRegeneration",
     PlayersSleepingPercentage = "playersSleepingPercentage",
+    PlayerWaypoints           = "playerWaypoints",
     ProjectilesCanBreakBlocks = "projectilesCanBreakBlocks",
     Pvp                       = "pvp",
     RandomTickSpeed           = "randomTickSpeed",
@@ -636,6 +636,11 @@ export enum PlayerPermissionLevel {
     Member   = 1,
     Operator = 2,
     Custom   = 3,
+}
+
+export enum PlayerWaypointsMode {
+    Everyone = "Everyone",
+    Off      = "Off",
 }
 
 export enum ScoreboardIdentityType {
@@ -2872,9 +2877,11 @@ export class Dimension {
      *
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
+    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -5090,6 +5097,32 @@ export class EntityUnderwaterMovementComponent extends EntityAttributeComponent 
     static readonly componentId = "minecraft:underwater_movement";
 }
 
+export class EntityUpgradeAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly upgradeId: string;
+    getModifiers(): DefinitionModifier[];
+}
+
+export class EntityUpgradeAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityUpgradeAfterEvent) => void,
+        options?: EntityDataDrivenTriggerEventOptions,
+    ): (arg0: EntityUpgradeAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityUpgradeAfterEvent) => void): void;
+}
+
 // @ts-ignore
 export class EntityVariantComponent extends EntityComponent {
     private constructor();
@@ -5321,10 +5354,6 @@ export class GameRules {
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
-    locatorBar: boolean;
-    /**
-     * @remarks This property can't be edited in restricted-execution mode.
-     */
     maxCommandChainLength: number;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
@@ -5338,6 +5367,10 @@ export class GameRules {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     playersSleepingPercentage: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    playerWaypoints: PlayerWaypointsMode;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -6535,6 +6568,14 @@ export class Player extends Entity {
      */
     readonly playerPermissionLevel: PlayerPermissionLevel;
     /**
+     * @throws This property can throw when used.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly playfabId: string;
+    /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
     selectedSlotIndex: number;
@@ -6586,6 +6627,16 @@ export class Player extends Entity {
      */
     getItemCooldown(cooldownCategory: string): number;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     */
+    getPing(): number;
+    /**
      * @throws This function can throw errors.
      */
     getSpawnPoint(): DimensionLocation | undefined;
@@ -6603,8 +6654,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -7947,6 +8002,14 @@ export class SmeltItemFunction extends LootItemFunction {
     private constructor();
 }
 
+export class SoundInstance {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    stop(): void;
+}
+
 export class SpawnRulesRegistry {
     private constructor();
     /**
@@ -8712,6 +8775,10 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly entitySpawn: EntitySpawnAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityUpgrade: EntityUpgradeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */

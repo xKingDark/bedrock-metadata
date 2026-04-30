@@ -899,6 +899,16 @@
             ]
         },
         {
+            "name": "potent_sulfur_state",
+            "type": "string",
+            "values": [
+                { "value": "dry" },
+                { "value": "wet" },
+                { "value": "dormant" },
+                { "value": "erupting" }
+            ]
+        },
+        {
             "name": "powered_bit",
             "type": "boolean",
             "values": [

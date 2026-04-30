@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @alpha
+ * @internal
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-bindings", "version": "3.0.0-alpha" }
+ * { "module_name": "@minecraft/server-bindings", "version": "2.9.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -363,6 +363,39 @@ export enum EntityInitializationCause {
     Transformed = "Transformed",
 }
 
+export enum EntitySpawnCategory {
+    Ambient                  = "Ambient",
+    Axolotls                 = "Axolotls",
+    Creature                 = "Creature",
+    Misc                     = "Misc",
+    Monster                  = "Monster",
+    UndergroundWaterCreature = "UndergroundWaterCreature",
+    WaterAmbient             = "WaterAmbient",
+    WaterCreature            = "WaterCreature",
+}
+
+export enum EntitySpawnReason {
+    Breeding        = "Breeding",
+    Bucket          = "Bucket",
+    ChunkGeneration = "ChunkGeneration",
+    Command         = "Command",
+    Conversion      = "Conversion",
+    DimensionTravel = "DimensionTravel",
+    Dispenser       = "Dispenser",
+    Event           = "Event",
+    Jockey          = "Jockey",
+    Load            = "Load",
+    MobSummoned     = "MobSummoned",
+    Natural         = "Natural",
+    Patrol          = "Patrol",
+    Reinforcement   = "Reinforcement",
+    SpawnEgg        = "SpawnEgg",
+    Spawner         = "Spawner",
+    Structure       = "Structure",
+    TrialSpawner    = "TrialSpawner",
+    Triggered       = "Triggered",
+}
+
 export enum EntitySwingSource {
     Attack    = "Attack",
     Build     = "Build",
@@ -481,6 +514,7 @@ export enum InputButton {
 export enum InputMode {
     Gamepad          = "Gamepad",
     KeyboardAndMouse = "KeyboardAndMouse",
+    MotionController = "MotionController",
     Touch            = "Touch",
 }
 
@@ -1538,6 +1572,13 @@ export class BlockComponentEntityFallOnEvent extends BlockEvent {
 export class BlockComponentOnPlaceEvent extends BlockEvent {
     private constructor();
     readonly previousBlock: BlockPermutation;
+}
+
+// @ts-ignore
+export class BlockComponentPlayerBreakEvent extends BlockEvent {
+    private constructor();
+    readonly brokenBlockPermutation: BlockPermutation;
+    readonly player?: Player;
 }
 
 // @ts-ignore
@@ -4925,6 +4966,25 @@ export class EntitySpawnAfterEventSignal {
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
 
+export class EntitySpawnCallbackArgs {
+    private constructor();
+    readonly dimensionLocation: DimensionLocation;
+    readonly spawnReason: EntitySpawnReason;
+    readonly spawnType: EntitySpawnType;
+}
+
+export class EntitySpawnType {
+    private constructor();
+    readonly entityId: string;
+    readonly height: number;
+    readonly isImmuneFire: boolean;
+    readonly isSummonable: boolean;
+    readonly spawnCategory: EntitySpawnCategory;
+    readonly width: number;
+    getSpawnAABB(position: Vector3): AABB;
+    isBlockDangerous(block: Block): boolean;
+}
+
 // @ts-ignore
 export class EntityStrengthComponent extends EntityComponent {
     private constructor();
@@ -6365,6 +6425,13 @@ export class MolangVariableMap {
      * @throws This function can throw errors.
      */
     setVector3(variableName: string, vector: Vector3): void;
+}
+
+export class ObstructionCallbackArgs {
+    private constructor();
+    readonly dimension: Dimension;
+    readonly entity: Entity;
+    readonly spawnType: EntitySpawnType;
 }
 
 export class PackSettingChangeAfterEvent {
@@ -7943,6 +8010,38 @@ export class SoundInstance {
     stop(): void;
 }
 
+export class SpawnRulesRegistry {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     *
+     * {@link SpawnRulesInvalidRegistryError}
+     */
+    registerEntitySpawnCallback(id: string, callback: (arg0: EntitySpawnCallbackArgs) => boolean): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     *
+     * {@link SpawnRulesInvalidRegistryError}
+     */
+    registerObstructionCallback(id: string, callback: (arg0: ObstructionCallbackArgs) => boolean): void;
+}
+
 // @ts-ignore
 export class SpecificEnchantFunction extends LootItemFunction {
     private constructor();
@@ -7983,6 +8082,12 @@ export class StartupEvent {
      * @remarks This property can be read in early-execution mode.
      */
     readonly itemComponentRegistry: ItemComponentRegistry;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    getSpawnRulesRegistry(): SpawnRulesRegistry;
 }
 
 export class Structure {
@@ -8953,6 +9058,7 @@ export interface BlockCustomComponent {
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
+    onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
     onRandomTick?: (arg0: BlockComponentRandomTickEvent, arg1: CustomComponentParameters) => void;
     onRedstoneUpdate?: (arg0: BlockComponentRedstoneUpdateEvent, arg1: CustomComponentParameters) => void;
@@ -9794,6 +9900,11 @@ export class RawMessageError extends Error {
 }
 
 // @ts-ignore
+export class SpawnRulesInvalidRegistryError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class TickingAreaError extends Error {
     private constructor();
     /**
@@ -9809,7 +9920,6 @@ export class UnloadedChunksError extends Error {
 
 export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
-export const isAlpha = true;
 export const isInternal = true;
 export const MoonPhaseCount = 8;
 export const TicksPerDay = 24000;

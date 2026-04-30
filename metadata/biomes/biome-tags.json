@@ -100,7 +100,8 @@
             "items": [
                 { "name": "minecraft:deep_dark" },
                 { "name": "minecraft:dripstone_caves" },
-                { "name": "minecraft:lush_caves" }
+                { "name": "minecraft:lush_caves" },
+                { "name": "minecraft:sulfur_caves" }
             ]
         },
         {
@@ -443,6 +444,7 @@
                 { "name": "minecraft:snowy_slopes" },
                 { "name": "minecraft:stone_beach" },
                 { "name": "minecraft:stony_peaks" },
+                { "name": "minecraft:sulfur_caves" },
                 { "name": "minecraft:sunflower_plains" },
                 { "name": "minecraft:swampland" },
                 { "name": "minecraft:swampland_mutated" },
@@ -619,6 +621,7 @@
                 { "name": "minecraft:snowy_slopes" },
                 { "name": "minecraft:stone_beach" },
                 { "name": "minecraft:stony_peaks" },
+                { "name": "minecraft:sulfur_caves" },
                 { "name": "minecraft:sunflower_plains" },
                 { "name": "minecraft:swampland" },
                 { "name": "minecraft:taiga" },
@@ -1004,6 +1007,12 @@
                 { "name": "minecraft:mesa_plateau_mutated" },
                 { "name": "minecraft:mesa_plateau_stone" },
                 { "name": "minecraft:stone_beach" }
+            ]
+        },
+        {
+            "name": "sulfur_caves",
+            "items": [
+                { "name": "minecraft:sulfur_caves" }
             ]
         },
         {

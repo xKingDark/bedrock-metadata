@@ -41,6 +41,23 @@ export enum FormRejectReason {
     ServerShutdown    = "ServerShutdown",
 }
 
+export enum InternalDataDrivenScreenClosedReason {
+    ClientClosed = "ClientClosed",
+    ServerClosed = "ServerClosed",
+    UserBusy     = "UserBusy",
+}
+
+export enum InternalFormVisibilityErrorReason {
+    AlreadyShowing = "AlreadyShowing",
+    NotShowing     = "NotShowing",
+}
+
+export enum InternalTextFilteringError {
+    DisabledByPlayer                = "DisabledByPlayer",
+    TextProcessorServiceUnreachable = "TextProcessorServiceUnreachable",
+    Unknown                         = "Unknown",
+}
+
 export enum InternalTextFilteringError {
     DisabledByPlayer                = "DisabledByPlayer",
     TextProcessorServiceUnreachable = "TextProcessorServiceUnreachable",
@@ -286,6 +303,225 @@ export class FormResponse {
     readonly canceled: boolean;
 }
 
+export class InternalCustomForm {
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    constructor(
+        player: minecraftserver.Player,
+        title: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+    );
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    button(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        onClick: () => void,
+        options?: InternalButtonOptions,
+    ): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InternalFormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    close(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    closeButton(): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    divider(options?: InternalDividerOptions): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    dropdown(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        value: ObservableNumber,
+        items: InternalDropdownItemData[],
+        options?: InternalDropdownOptions,
+    ): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    header(
+        text: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        options?: InternalTextOptions,
+    ): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    label(
+        text: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        options?: InternalTextOptions,
+    ): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InternalFormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    show(): Promise<InternalDataDrivenScreenClosedReason>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    slider(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        value: ObservableNumber,
+        min: number | ObservableNumber,
+        max: number | ObservableNumber,
+        options?: InternalSliderOptions,
+    ): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    spacer(options?: InternalSpacingOptions): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    textField(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        text: ObservableString,
+        options?: InternalTextFieldOptions,
+    ): InternalCustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    toggle(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        toggled: ObservableBoolean,
+        options?: InternalToggleOptions,
+    ): InternalCustomForm;
+}
+
+export class InternalMessageBox {
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    constructor(
+        player: minecraftserver.Player,
+        title: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+    );
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    body(body: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string): InternalMessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    button1(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        tooltip?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+    ): InternalMessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InternalInvalidFormModificationError}
+     */
+    button2(
+        label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+        tooltip?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string,
+    ): InternalMessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InternalFormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    close(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InternalFormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    show(): Promise<InternalMessageBoxResult>;
+}
+
 export declare class MessageBox {
     body(bodyText: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage): MessageBox;
     button1(
@@ -395,7 +631,7 @@ export declare class Observable<T extends boolean | string | UIRawMessage | numb
 }
 
 export class ObservableBoolean {
-    constructor(data: boolean);
+    constructor(data: boolean, options?: InternalObservableOptions);
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -422,7 +658,7 @@ export declare class ObservableCallback {
 }
 
 export class ObservableNumber {
-    constructor(data: number);
+    constructor(data: number, options?: InternalObservableOptions);
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -442,11 +678,21 @@ export class ObservableNumber {
 }
 
 export class ObservableString {
-    constructor(data: string);
+    constructor(data: string, options?: InternalObservableOptions);
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
     getData(): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    getFilteredText(player: minecraftserver.Player): Promise<InternalTextFilteringError[] | string>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -459,6 +705,26 @@ export class ObservableString {
      * @remarks This function can't be called in restricted-execution mode.
      */
     unsubscribe(callback: (arg0: string) => void): boolean;
+}
+
+export class ObservableUIRawMessage {
+    constructor(data: InternalUIRawMessage, options?: InternalObservableOptions);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getData(): InternalUIRawMessage;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setData(data: InternalUIRawMessage): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    subscribe(callback: (arg0: InternalUIRawMessage) => void): (arg0: InternalUIRawMessage) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    unsubscribe(callback: (arg0: InternalUIRawMessage) => void): boolean;
 }
 
 export class UIManager {
@@ -491,6 +757,71 @@ export interface DropdownOptions {
     description?: Observable<string> | string | UIRawMessage;
     disabled?: Observable<boolean> | boolean;
     visible?: Observable<boolean> | boolean;
+}
+
+export interface InternalButtonOptions {
+    disabled?: boolean | ObservableBoolean;
+    tooltip?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalDividerOptions {
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalDropdownItemData {
+    description?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    label: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    value: number;
+}
+
+export interface InternalDropdownOptions {
+    description?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    disabled?: boolean | ObservableBoolean;
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalMessageBoxResult {
+    closeReason: InternalDataDrivenScreenClosedReason;
+    selection?: number;
+}
+
+export interface InternalObservableOptions {
+    clientWritable: boolean;
+}
+
+export interface InternalSliderOptions {
+    description?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    disabled?: boolean | ObservableBoolean;
+    step?: number | ObservableNumber;
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalSpacingOptions {
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalTextFieldOptions {
+    description?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    disabled?: boolean | ObservableBoolean;
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalTextOptions {
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalToggleOptions {
+    description?: InternalUIRawMessage | ObservableString | ObservableUIRawMessage | string;
+    disabled?: boolean | ObservableBoolean;
+    visible?: boolean | ObservableBoolean;
+}
+
+export interface InternalUIRawMessage {
+    rawtext?: InternalUIRawMessage[];
+    text?: string;
+    translate?: string;
+    with?: string[] | InternalUIRawMessage;
 }
 
 export interface MessageBoxResult {
@@ -576,6 +907,46 @@ export class FormRejectError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly reason: FormRejectReason;
+}
+
+// @ts-ignore
+export class InternalFormVisibilityError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: InternalFormVisibilityErrorReason;
+}
+
+// @ts-ignore
+export class InternalInvalidFormError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+}
+
+// @ts-ignore
+export class InternalInvalidFormModificationError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+}
+
+// @ts-ignore
+export class InternalPlayerLeftError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
 }
 
 // @ts-ignore

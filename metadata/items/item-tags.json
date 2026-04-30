@@ -869,6 +869,7 @@
                 { "name": "minecraft:squid_spawn_egg" },
                 { "name": "minecraft:stray_spawn_egg" },
                 { "name": "minecraft:strider_spawn_egg" },
+                { "name": "minecraft:sulfur_cube_spawn_egg" },
                 { "name": "minecraft:tadpole_spawn_egg" },
                 { "name": "minecraft:trader_llama_spawn_egg" },
                 { "name": "minecraft:tropical_fish_spawn_egg" },
@@ -994,6 +995,12 @@
             ]
         },
         {
+            "name": "minecraft:sulfur_cube_archetype_explosive",
+            "items": [
+                { "name": "minecraft:tnt" }
+            ]
+        },
+        {
             "name": "minecraft:sulfur_cube_archetype_fast_flat",
             "items": [
                 { "name": "minecraft:brain_coral_block" },
@@ -1084,6 +1091,7 @@
                 { "name": "minecraft:brown_glazed_terracotta" },
                 { "name": "minecraft:brown_terracotta" },
                 { "name": "minecraft:calcite" },
+                { "name": "minecraft:chiseled_cinnabar" },
                 { "name": "minecraft:chiseled_deepslate" },
                 { "name": "minecraft:chiseled_nether_bricks" },
                 { "name": "minecraft:chiseled_polished_blackstone" },
@@ -1091,8 +1099,11 @@
                 { "name": "minecraft:chiseled_red_sandstone" },
                 { "name": "minecraft:chiseled_sandstone" },
                 { "name": "minecraft:chiseled_stone_bricks" },
+                { "name": "minecraft:chiseled_sulfur" },
                 { "name": "minecraft:chiseled_tuff" },
                 { "name": "minecraft:chiseled_tuff_bricks" },
+                { "name": "minecraft:cinnabar" },
+                { "name": "minecraft:cinnabar_bricks" },
                 { "name": "minecraft:clay" },
                 { "name": "minecraft:coal_block" },
                 { "name": "minecraft:coal_ore" },
@@ -1185,9 +1196,11 @@
                 { "name": "minecraft:polished_basalt" },
                 { "name": "minecraft:polished_blackstone" },
                 { "name": "minecraft:polished_blackstone_bricks" },
+                { "name": "minecraft:polished_cinnabar" },
                 { "name": "minecraft:polished_deepslate" },
                 { "name": "minecraft:polished_diorite" },
                 { "name": "minecraft:polished_granite" },
+                { "name": "minecraft:polished_sulfur" },
                 { "name": "minecraft:polished_tuff" },
                 { "name": "minecraft:prismarine" },
                 { "name": "minecraft:prismarine_bricks" },
@@ -1222,6 +1235,8 @@
                 { "name": "minecraft:smooth_stone" },
                 { "name": "minecraft:stone" },
                 { "name": "minecraft:stone_bricks" },
+                { "name": "minecraft:sulfur" },
+                { "name": "minecraft:sulfur_bricks" },
                 { "name": "minecraft:tuff" },
                 { "name": "minecraft:tuff_bricks" },
                 { "name": "minecraft:warped_nylium" },

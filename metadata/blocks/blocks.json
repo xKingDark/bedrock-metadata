@@ -11775,7 +11775,12 @@
         {
             "id": 1363,
             "name": "minecraft:potent_sulfur",
-            "states": [],
+            "states": [
+                {
+                    "name": "potent_sulfur_state",
+                    "default_value": "dry"
+                }
+            ],
             "localization_key": "tile.potent_sulfur.name"
         },
         {
@@ -14503,6 +14508,21 @@
                 }
             ],
             "localization_key": "tile.sulfur_slab.name"
+        },
+        {
+            "id": 1380,
+            "name": "minecraft:sulfur_spike",
+            "states": [
+                {
+                    "name": "dripstone_thickness",
+                    "default_value": "tip"
+                },
+                {
+                    "name": "hanging",
+                    "default_value": true
+                }
+            ],
+            "localization_key": "tile.sulfur_spike.name"
         },
         {
             "id": 1350,

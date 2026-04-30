@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @internal
+ * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-bindings", "version": "2.8.0-internal" }
+ * { "module_name": "@minecraft/server-bindings", "version": "2.9.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -363,39 +363,6 @@ export enum EntityInitializationCause {
     Transformed = "Transformed",
 }
 
-export enum EntitySpawnCategory {
-    Ambient                  = "Ambient",
-    Axolotls                 = "Axolotls",
-    Creature                 = "Creature",
-    Misc                     = "Misc",
-    Monster                  = "Monster",
-    UndergroundWaterCreature = "UndergroundWaterCreature",
-    WaterAmbient             = "WaterAmbient",
-    WaterCreature            = "WaterCreature",
-}
-
-export enum EntitySpawnReason {
-    Breeding        = "Breeding",
-    Bucket          = "Bucket",
-    ChunkGeneration = "ChunkGeneration",
-    Command         = "Command",
-    Conversion      = "Conversion",
-    DimensionTravel = "DimensionTravel",
-    Dispenser       = "Dispenser",
-    Event           = "Event",
-    Jockey          = "Jockey",
-    Load            = "Load",
-    MobSummoned     = "MobSummoned",
-    Natural         = "Natural",
-    Patrol          = "Patrol",
-    Reinforcement   = "Reinforcement",
-    SpawnEgg        = "SpawnEgg",
-    Spawner         = "Spawner",
-    Structure       = "Structure",
-    TrialSpawner    = "TrialSpawner",
-    Triggered       = "Triggered",
-}
-
 export enum EntitySwingSource {
     Attack    = "Attack",
     Build     = "Build",
@@ -451,11 +418,11 @@ export enum GameRule {
     FreezeDamage              = "freezeDamage",
     FunctionCommandLimit      = "functionCommandLimit",
     KeepInventory             = "keepInventory",
-    LocatorBar                = "locatorBar",
     MaxCommandChainLength     = "maxCommandChainLength",
     MobGriefing               = "mobGriefing",
     NaturalRegeneration       = "naturalRegeneration",
     PlayersSleepingPercentage = "playersSleepingPercentage",
+    PlayerWaypoints           = "playerWaypoints",
     ProjectilesCanBreakBlocks = "projectilesCanBreakBlocks",
     Pvp                       = "pvp",
     RandomTickSpeed           = "randomTickSpeed",
@@ -636,6 +603,11 @@ export enum PlayerPermissionLevel {
     Member   = 1,
     Operator = 2,
     Custom   = 3,
+}
+
+export enum PlayerWaypointsMode {
+    Everyone = "Everyone",
+    Off      = "Off",
 }
 
 export enum ScoreboardIdentityType {
@@ -2872,9 +2844,11 @@ export class Dimension {
      *
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
+    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -4959,25 +4933,6 @@ export class EntitySpawnAfterEventSignal {
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
 
-export class EntitySpawnCallbackArgs {
-    private constructor();
-    readonly dimensionLocation: DimensionLocation;
-    readonly spawnReason: EntitySpawnReason;
-    readonly spawnType: EntitySpawnType;
-}
-
-export class EntitySpawnType {
-    private constructor();
-    readonly entityId: string;
-    readonly height: number;
-    readonly isImmuneFire: boolean;
-    readonly isSummonable: boolean;
-    readonly spawnCategory: EntitySpawnCategory;
-    readonly width: number;
-    getSpawnAABB(position: Vector3): AABB;
-    isBlockDangerous(block: Block): boolean;
-}
-
 // @ts-ignore
 export class EntityStrengthComponent extends EntityComponent {
     private constructor();
@@ -5088,6 +5043,32 @@ export class EntityTypes {
 export class EntityUnderwaterMovementComponent extends EntityAttributeComponent {
     private constructor();
     static readonly componentId = "minecraft:underwater_movement";
+}
+
+export class EntityUpgradeAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly upgradeId: string;
+    getModifiers(): DefinitionModifier[];
+}
+
+export class EntityUpgradeAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityUpgradeAfterEvent) => void,
+        options?: EntityDataDrivenTriggerEventOptions,
+    ): (arg0: EntityUpgradeAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityUpgradeAfterEvent) => void): void;
 }
 
 // @ts-ignore
@@ -5321,10 +5302,6 @@ export class GameRules {
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
-    locatorBar: boolean;
-    /**
-     * @remarks This property can't be edited in restricted-execution mode.
-     */
     maxCommandChainLength: number;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
@@ -5338,6 +5315,10 @@ export class GameRules {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     playersSleepingPercentage: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    playerWaypoints: PlayerWaypointsMode;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -6394,13 +6375,6 @@ export class MolangVariableMap {
     setVector3(variableName: string, vector: Vector3): void;
 }
 
-export class ObstructionCallbackArgs {
-    private constructor();
-    readonly dimension: Dimension;
-    readonly entity: Entity;
-    readonly spawnType: EntitySpawnType;
-}
-
 export class PackSettingChangeAfterEvent {
     private constructor();
     readonly settingName: string;
@@ -6535,6 +6509,14 @@ export class Player extends Entity {
      */
     readonly playerPermissionLevel: PlayerPermissionLevel;
     /**
+     * @throws This property can throw when used.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly playfabId: string;
+    /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
     selectedSlotIndex: number;
@@ -6586,6 +6568,16 @@ export class Player extends Entity {
      */
     getItemCooldown(cooldownCategory: string): number;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     */
+    getPing(): number;
+    /**
      * @throws This function can throw errors.
      */
     getSpawnPoint(): DimensionLocation | undefined;
@@ -6603,8 +6595,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -7947,36 +7943,12 @@ export class SmeltItemFunction extends LootItemFunction {
     private constructor();
 }
 
-export class SpawnRulesRegistry {
+export class SoundInstance {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     *
-     * {@link SpawnRulesInvalidRegistryError}
      */
-    registerEntitySpawnCallback(id: string, callback: (arg0: EntitySpawnCallbackArgs) => boolean): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     *
-     * {@link SpawnRulesInvalidRegistryError}
-     */
-    registerObstructionCallback(id: string, callback: (arg0: ObstructionCallbackArgs) => boolean): void;
+    stop(): void;
 }
 
 // @ts-ignore
@@ -8019,12 +7991,6 @@ export class StartupEvent {
      * @remarks This property can be read in early-execution mode.
      */
     readonly itemComponentRegistry: ItemComponentRegistry;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     */
-    getSpawnRulesRegistry(): SpawnRulesRegistry;
 }
 
 export class Structure {
@@ -8712,6 +8678,10 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly entitySpawn: EntitySpawnAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityUpgrade: EntityUpgradeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -9833,11 +9803,6 @@ export class RawMessageError extends Error {
 }
 
 // @ts-ignore
-export class SpawnRulesInvalidRegistryError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
 export class TickingAreaError extends Error {
     private constructor();
     /**
@@ -9853,7 +9818,6 @@ export class UnloadedChunksError extends Error {
 
 export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
-export const isInternal = true;
 export const MoonPhaseCount = 8;
 export const TicksPerDay = 24000;
 export const TicksPerSecond = 20;

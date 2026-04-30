@@ -149,6 +149,13 @@ export enum LogChannel {
 
 export enum MinimapMarkerType {
     Multiplayer = 0,
+    Location    = 1,
+    Custom      = 2,
+}
+
+export enum MinimapTrackingMode {
+    FollowPlayer = 0,
+    FreeCenter   = 1,
 }
 
 export enum MinimapViewType {
@@ -200,22 +207,24 @@ export enum PlaytestSessionResult {
 }
 
 export enum PrimitiveType {
-    Text        = 0,
-    Box         = 1,
-    Line        = 2,
-    Disc        = 4,
-    AxialSphere = 5,
-    Cylinder    = 7,
-    Pyramid     = 8,
-    Ellipsoid   = 9,
-    Cuboid      = 10,
-    Cone        = 11,
+    Text          = 0,
+    Box           = 1,
+    Line          = 2,
+    Disc          = 4,
+    AxialSphere   = 5,
+    Cylinder      = 7,
+    Pyramid       = 8,
+    Ellipsoid     = 9,
+    Cuboid        = 10,
+    Cone          = 11,
+    WireframeMesh = 12,
 }
 
 export enum ProjectExportType {
-    PlayableWorld = 0,
-    ProjectBackup = 1,
-    WorldTemplate = 2,
+    PlayableWorld  = 0,
+    ProjectBackup  = 1,
+    WorldTemplate  = 2,
+    ShareableWorld = 3,
 }
 
 export enum SelectionVolumeEventType {
@@ -1241,24 +1250,59 @@ export class MinecraftEditor {
 
 export class MinimapItem {
     private constructor();
+    readonly freeCenter: minecraftserver.VectorXZ;
     readonly id: string;
     readonly isActive: boolean;
+    readonly yLevel: number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
-    addMarker(markerType: MinimapMarkerType): void;
+    addCustomMarker(iconIdentifier: string, data: MinimapMarkerData[], dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addLocationMarker(data: MinimapMarkerData[], dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addMultiplayerMarker(): void;
+    getMarkerTypes(): MinimapMarkerType[];
     /**
      * @throws This function can throw errors.
      */
     getPlayerColor(playerId: string): minecraftserver.RGBA;
+    hasCustomGroup(iconIdentifier: string): boolean;
+    hasMarkerOfType(type: MinimapMarkerType): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
-    removeMarker(markerType: MinimapMarkerType): void;
+    removeAllCustomMarkers(dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeCustomMarker(iconIdentifier: string, dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeLocationMarker(dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeMultiplayerMarker(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1270,13 +1314,31 @@ export class MinimapItem {
      *
      * @throws This function can throw errors.
      */
+    setFreeCenter(center: minecraftserver.VectorXZ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     setSize(mapWidth: number, mapHeight: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
+    setTrackingMode(mode: MinimapTrackingMode): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     setViewType(viewType: MinimapViewType): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setYLevel(yLevel: number): void;
 }
 
 export class MinimapManager {
@@ -1286,7 +1348,12 @@ export class MinimapManager {
      *
      * @throws This function can throw errors.
      */
-    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number, dataId?: string): MinimapItem;
+    createMinimap(
+        viewType: MinimapViewType,
+        mapWidth: number,
+        mapHeight: number,
+        options?: MinimapCreateOptions,
+    ): MinimapItem;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1890,7 +1957,8 @@ export class Widget {
             | WidgetComponentRenderPrimitiveTypeDisc
             | WidgetComponentRenderPrimitiveTypeEllipsoid
             | WidgetComponentRenderPrimitiveTypeLine
-            | WidgetComponentRenderPrimitiveTypePyramid,
+            | WidgetComponentRenderPrimitiveTypePyramid
+            | WidgetComponentRenderPrimitiveTypeWireframeMesh,
         options?: WidgetComponentRenderPrimitiveOptions,
     ): WidgetComponentRenderPrimitive;
     /**
@@ -2192,7 +2260,8 @@ export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
             | WidgetComponentRenderPrimitiveTypeDisc
             | WidgetComponentRenderPrimitiveTypeEllipsoid
             | WidgetComponentRenderPrimitiveTypeLine
-            | WidgetComponentRenderPrimitiveTypePyramid,
+            | WidgetComponentRenderPrimitiveTypePyramid
+            | WidgetComponentRenderPrimitiveTypeWireframeMesh,
     ): void;
 }
 
@@ -2470,6 +2539,40 @@ export class WidgetComponentRenderPrimitiveTypePyramid extends WidgetComponentRe
         widthZ?: number,
         rotation?: minecraftserver.Vector3,
         alpha?: number,
+    );
+}
+
+// @ts-ignore
+export class WidgetComponentRenderPrimitiveTypeWireframeMesh extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    meshId: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    scale?: minecraftserver.Vector3;
+    constructor(
+        center: minecraftserver.Vector3,
+        meshId: string,
+        color: minecraftserver.RGBA,
+        options?: WireframeMeshOptions,
     );
 }
 
@@ -2769,7 +2872,6 @@ export interface GameOptions {
     keepPlayerData?: boolean;
     lanVisibility?: boolean;
     limitedCrafting?: boolean;
-    locatorBar?: boolean;
     maxCommandChainLength?: number;
     mobGriefing?: boolean;
     mobLoot?: boolean;
@@ -2778,6 +2880,7 @@ export interface GameOptions {
     naturalRegeneration?: boolean;
     playerAccess?: GamePublishSetting;
     playerPermissions?: minecraftserver.PlayerPermissionLevel;
+    playerWaypoints?: minecraftserver.PlayerWaypointsMode;
     randomTickSpeed?: number;
     recipeUnlocking?: boolean;
     respawnBlocksExplode?: boolean;
@@ -2809,6 +2912,22 @@ export interface LogProperties {
     player?: minecraftserver.Player;
     subMessage?: LocalizationEntry | string;
     tags?: string[];
+}
+
+export interface MinimapCreateOptions {
+    dataId?: string;
+    freeCenter?: minecraftserver.VectorXZ;
+    trackingMode?: MinimapTrackingMode;
+    yLevel?: number;
+}
+
+export interface MinimapMarkerData {
+    clickable: boolean;
+    color: minecraftserver.RGBA;
+    label: string;
+    position: minecraftserver.Vector3;
+    rotation: number;
+    tooltip: string;
 }
 
 export interface ProjectExportOptions {
@@ -2966,6 +3085,12 @@ export interface WidgetGroupCreateOptions {
     groupSelectionMode?: WidgetGroupSelectionMode;
     showBounds?: boolean;
     visible?: boolean;
+}
+
+export interface WireframeMeshOptions {
+    alpha?: number;
+    rotation?: minecraftserver.Vector3;
+    scale?: minecraftserver.Vector3;
 }
 
 // @ts-ignore

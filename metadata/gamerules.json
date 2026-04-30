@@ -91,11 +91,6 @@
             "default_value": false
         },
         {
-            "name": "locatorBar",
-            "type": "boolean",
-            "default_value": true
-        },
-        {
             "name": "maxCommandChainLength",
             "type": "number",
             "default_value": 65535
@@ -109,6 +104,11 @@
             "name": "naturalRegeneration",
             "type": "boolean",
             "default_value": true
+        },
+        {
+            "name": "playerWaypoints",
+            "type": "string",
+            "default_value": "Everyone"
         },
         {
             "name": "playersSleepingPercentage",
