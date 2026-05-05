@@ -5,10 +5,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-bindings",
- *     "version": "2.2.0"
- * }
+ * { "module_name": "@minecraft/server-bindings", "version": "2.2.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

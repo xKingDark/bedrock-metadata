@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-editor-bindings",
- *     "version": "0.1.0-beta"
- * }
+ * { "module_name": "@minecraft/server-editor-bindings", "version": "0.1.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -1308,6 +1305,18 @@ export class MinimapManager {
      * @throws This function can throw errors.
      */
     getMinimap(minimapId: string): MinimapItem;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setVanillaBiomeColorMap(colorMap: Record<string, minecraftserver.RGB>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateVanillaColorMap(biomeType: minecraftserver.BiomeType, color: minecraftserver.RGB): void;
 }
 
 export class ModeChangeAfterEvent {
@@ -2678,6 +2687,7 @@ export interface BlockMaskList {
 }
 
 export interface ClipboardWriteOptions {
+    excludeAirBlocks?: boolean;
     mirror?: minecraftserver.StructureMirrorAxis;
     normalizedOrigin?: minecraftserver.Vector3;
     offset?: minecraftserver.Vector3;
@@ -2905,12 +2915,10 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 }
 
 // @ts-ignore
-export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {
-}
+export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {}
 
 // @ts-ignore
-export interface WidgetComponentRenderPrimitiveOptions extends WidgetComponentBaseOptions {
-}
+export interface WidgetComponentRenderPrimitiveOptions extends WidgetComponentBaseOptions {}
 
 // @ts-ignore
 export interface WidgetComponentSplineOptions extends WidgetComponentBaseOptions {

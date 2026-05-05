@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-admin",
- *     "version": "1.0.0-beta"
- * }
+ * { "module_name": "@minecraft/server-admin", "version": "1.0.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -92,6 +89,24 @@ export class DedicatedServerUtils {
     private constructor();
     readonly allowList: AllowList;
     readonly levelStorage: LevelStorage;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    reloadCDNConfig(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    reloadPermissions(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    reloadScriptingConfig(): void;
     stopServer(): void;
 }
 
@@ -169,6 +184,16 @@ export class AllowListModificationError extends Error {
 }
 
 // @ts-ignore
+export class CannotDeopPlayerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CannotKickPlayerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
 export class DisconnectedError extends Error {
     private constructor();
     /**
@@ -181,6 +206,50 @@ export class DisconnectedError extends Error {
 export class LevelStorageSaveStateChangeError extends Error {
     private constructor();
 }
+
+// @ts-ignore
+export class PlayerAlreadyOpError extends Error {
+    private constructor();
+}
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ *
+ * @throws This function can throw errors.
+ *
+ * {@link CannotDeopPlayerError}
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ */
+export function deopPlayer(player: minecraftserver.Player): void;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ *
+ * @throws This function can throw errors.
+ *
+ * {@link CannotKickPlayerError}
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ */
+export function kickPlayer(player: minecraftserver.Player, reason?: string): void;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ *
+ * @throws This function can throw errors.
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ *
+ * {@link PlayerAlreadyOpError}
+ */
+export function opPlayer(player: minecraftserver.Player): void;
 
 /**
  * @remarks This function can't be called in restricted-execution mode.

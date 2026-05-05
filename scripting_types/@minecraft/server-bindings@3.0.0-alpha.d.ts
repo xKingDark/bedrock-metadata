@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-bindings",
- *     "version": "3.0.0-alpha"
- * }
+ * { "module_name": "@minecraft/server-bindings", "version": "3.0.0-alpha" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -250,6 +247,7 @@ export enum EntityComponentTypes {
     Color                 = "minecraft:color",
     Color2                = "minecraft:color2",
     CursorInventory       = "minecraft:cursor_inventory",
+    EnderInventory        = "minecraft:ender_inventory",
     Equippable            = "minecraft:equippable",
     Exhaustion            = "minecraft:player.exhaustion",
     FireImmune            = "minecraft:fire_immune",
@@ -351,9 +349,10 @@ export enum EntityDamageCause {
 }
 
 export enum EntityHealCause {
-    Heal         = "Heal",
-    Regeneration = "Regeneration",
-    SelfHeal     = "SelfHeal",
+    Heal           = "Heal",
+    Regeneration   = "Regeneration",
+    SelfHeal       = "SelfHeal",
+    TotemOfUndying = "TotemOfUndying",
 }
 
 export enum EntityInitializationCause {
@@ -738,6 +737,7 @@ export type EntityComponentTypeMap = {
     color: EntityColorComponent;
     color2: EntityColor2Component;
     cursor_inventory: PlayerCursorInventoryComponent;
+    ender_inventory: EntityEnderInventoryComponent;
     equippable: EntityEquippableComponent;
     fire_immune: EntityFireImmuneComponent;
     floats_in_liquid: EntityFloatsInLiquidComponent;
@@ -806,6 +806,7 @@ export type EntityComponentTypeMap = {
     "minecraft:color": EntityColorComponent;
     "minecraft:color2": EntityColor2Component;
     "minecraft:cursor_inventory": PlayerCursorInventoryComponent;
+    "minecraft:ender_inventory": EntityEnderInventoryComponent;
     "minecraft:equippable": EntityEquippableComponent;
     "minecraft:fire_immune": EntityFireImmuneComponent;
     "minecraft:floats_in_liquid": EntityFloatsInLiquidComponent;
@@ -1508,6 +1509,12 @@ export class BlockComponentBlockBreakEvent extends BlockEvent {
 }
 
 // @ts-ignore
+export class BlockComponentBlockStateChangeEvent extends BlockEvent {
+    private constructor();
+    readonly previousPermutation: BlockPermutation;
+}
+
+// @ts-ignore
 export class BlockComponentEntityEvent extends BlockEvent {
     private constructor();
     readonly blockPermutation: BlockPermutation;
@@ -1553,6 +1560,7 @@ export class BlockComponentRandomTickEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentRedstoneUpdateEvent extends BlockEvent {
     private constructor();
+    readonly firstUpdate: boolean;
     readonly powerLevel: number;
     readonly previousPowerLevel: number;
 }
@@ -1596,6 +1604,62 @@ export class BlockComponentStepOnEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentTickEvent extends BlockEvent {
     private constructor();
+}
+
+// @ts-ignore
+export class BlockContainerClosedAfterEvent extends BlockEvent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    closeSource: ContainerAccessSource;
+}
+
+export class BlockContainerClosedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: BlockContainerClosedAfterEvent) => void,
+        options?: BlockContainerAccessEventOptions,
+    ): (arg0: BlockContainerClosedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: BlockContainerClosedAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class BlockContainerOpenedAfterEvent extends BlockEvent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    openSource: ContainerAccessSource;
+}
+
+export class BlockContainerOpenedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: BlockContainerOpenedAfterEvent) => void,
+        options?: BlockContainerAccessEventOptions,
+    ): (arg0: BlockContainerOpenedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: BlockContainerOpenedAfterEvent) => void): void;
 }
 
 // @ts-ignore
@@ -1806,6 +1870,14 @@ export class BlockPrecipitationInteractionsComponent extends BlockComponent {
      * {@link LocationOutOfWorldBoundariesError}
      */
     accumulatesSnow(): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    isSnowLoggable(): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -2114,6 +2186,7 @@ export class ChatSendBeforeEventSignal {
 // @ts-ignore
 export class ClientSystemInfo extends SystemInfo {
     private constructor();
+    readonly locale: string;
     readonly maxRenderDistance: number;
     readonly platformType: PlatformType;
 }
@@ -2835,12 +2908,44 @@ export class Dimension {
     spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    spawnXp(location: Vector3, amount: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
      */
     stopAllSounds(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
     stopSound(soundId: string): void;
+}
+
+export class DimensionRegistry {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link CustomDimensionAlreadyRegisteredError}
+     *
+     * {@link CustomDimensionInvalidRegistryError}
+     *
+     * {@link CustomDimensionNameError}
+     *
+     * {@link CustomDimensionReloadNewDimensionError}
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link NamespaceNameError}
+     */
+    registerCustomDimension(typeId: string): void;
 }
 
 export class DimensionType {
@@ -3062,6 +3167,14 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     readonly location: Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    nameplateDepthTested: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    nameplateRenderDistance: number;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -3655,6 +3768,56 @@ export class EntityComponent extends Component {
     readonly entity: Entity;
 }
 
+export class EntityContainerClosedAfterEvent {
+    private constructor();
+    readonly closeSource: ContainerAccessSource;
+    readonly entity: Entity;
+}
+
+export class EntityContainerClosedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityContainerClosedAfterEvent) => void,
+        options?: EntityContainerAccessEventOptions,
+    ): (arg0: EntityContainerClosedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityContainerClosedAfterEvent) => void): void;
+}
+
+export class EntityContainerOpenedAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly openSource: ContainerAccessSource;
+}
+
+export class EntityContainerOpenedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityContainerOpenedAfterEvent) => void,
+        options?: EntityContainerAccessEventOptions,
+    ): (arg0: EntityContainerOpenedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityContainerOpenedAfterEvent) => void): void;
+}
+
 export class EntityDefinitionFeedItem {
     private constructor();
     readonly growth: number;
@@ -3685,6 +3848,18 @@ export class EntityDieAfterEventSignal {
      * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: EntityDieAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class EntityEnderInventoryComponent extends EntityComponent {
+    private constructor();
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly container: Container;
+    static readonly componentId = "minecraft:ender_inventory";
 }
 
 // @ts-ignore
@@ -6219,6 +6394,24 @@ export class Player extends Entity {
     readonly camera: Camera;
     /**
      * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly chatDisplayName: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    chatMessagePrefix?: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    chatNamePrefix?: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    chatNameSuffix?: string;
+    /**
+     * @throws This property can throw when used.
      */
     readonly clientSystemInfo: ClientSystemInfo;
     /**
@@ -6267,7 +6460,7 @@ export class Player extends Entity {
      *
      * {@link InvalidEntityError}
      */
-    readonly partyId?: string;
+    readonly partyInfo?: PartyInfo;
     /**
      * @throws This property can throw when used.
      *
@@ -7218,6 +7411,38 @@ export class PressurePlatePushAfterEventSignal {
     unsubscribe(callback: (arg0: PressurePlatePushAfterEvent) => void): void;
 }
 
+export class PrimitiveShape {
+    private constructor();
+    attachedTo?: Entity;
+    color: RGBA;
+    readonly dimension: Dimension;
+    readonly hasDuration: boolean;
+    readonly location: Vector3;
+    maximumRenderDistance?: number;
+    rotation: Vector3;
+    scale: number;
+    timeLeft?: number;
+    readonly totalTimeLeft?: number;
+    visibleTo: Player[];
+    remove(): void;
+    setLocation(location: DimensionLocation | Vector3): void;
+}
+
+export class PrimitiveShapesManager {
+    private constructor();
+    readonly maxShapes: number;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link PrimitiveShapeError}
+     */
+    addText(text: TextPrimitive, dimension?: Dimension): void;
+    removeAll(): void;
+    removeText(text: TextPrimitive): void;
+}
+
 export class ProjectileHitBlockAfterEvent {
     private constructor();
     readonly dimension: Dimension;
@@ -7690,6 +7915,10 @@ export class StartupEvent {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly dimensionRegistry: DimensionRegistry;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly itemComponentRegistry: ItemComponentRegistry;
 }
 
@@ -7789,6 +8018,10 @@ export class StructureManager {
      * @remarks This function can't be called in restricted-execution mode.
      */
     get(identifier: string): Structure | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getPackStructureIds(): string[];
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -7958,6 +8191,25 @@ export class TargetBlockHitAfterEventSignal {
      * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class TextPrimitive extends PrimitiveShape {
+    backfaceVisible: boolean;
+    backgroundColorOverride?: RGBA;
+    depthTest: boolean;
+    readonly text: RawMessage | string;
+    textBackfaceVisible: boolean;
+    useRotation: boolean;
+    constructor(location: DimensionLocation | Vector3, text: RawMessage | string);
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link RawMessageError}
+     */
+    setText(text: RawMessage | string): void;
 }
 
 export class TickingAreaManager {
@@ -8153,11 +8405,16 @@ export class World {
      */
     readonly afterEvents: WorldAfterEvents;
     /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    allowCheats: boolean;
+    /**
      * @remarks This property can be read in early-execution mode.
      */
     readonly beforeEvents: WorldBeforeEvents;
     readonly gameRules: GameRules;
     readonly isHardcore: boolean;
+    readonly primitiveShapesManager: PrimitiveShapesManager;
     readonly scoreboard: Scoreboard;
     readonly seed: string;
     readonly structureManager: StructureManager;
@@ -8273,6 +8530,14 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly blockContainerClosed: BlockContainerClosedAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly blockContainerOpened: BlockContainerOpenedAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly blockExplode: BlockExplodeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -8290,6 +8555,14 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly effectAdd: EffectAddAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityContainerClosed: EntityContainerClosedAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityContainerOpened: EntityContainerOpenedAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -8598,11 +8871,17 @@ export interface BlockBoundingBox {
     min: Vector3;
 }
 
+export interface BlockContainerAccessEventOptions {
+    accessSourceFilter?: ContainerAccessSourceFilter;
+    blockFilter?: BlockFilter;
+}
+
 export interface BlockCustomComponent {
     beforeOnPlayerPlace?: (
         arg0: BlockComponentPlayerPlaceBeforeEvent,
         arg1: CustomComponentParameters,
     ) => void;
+    onBlockStateChange?: (arg0: BlockComponentBlockStateChangeEvent, arg1: CustomComponentParameters) => void;
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
@@ -8713,6 +8992,14 @@ export interface CompoundBlockVolumeItem {
     volume: BlockVolume;
 }
 
+export interface ContainerAccessSource {
+    entity?: Entity;
+}
+
+export interface ContainerAccessSourceFilter {
+    entityFilter?: EntityFilter;
+}
+
 export interface ContainerRules {
     allowedItems: string[];
     allowNestedStorageItems: boolean;
@@ -8738,6 +9025,12 @@ export interface CustomCommandParameter {
 export interface CustomCommandResult {
     message?: string;
     status: CustomCommandStatus;
+}
+
+export interface CustomTexture {
+    iconHeight: number;
+    iconWidth: number;
+    path: string;
 }
 
 export interface DefinitionModifier {
@@ -8771,6 +9064,11 @@ export interface EntityApplyDamageByProjectileOptions {
 export interface EntityApplyDamageOptions {
     cause: EntityDamageCause;
     damagingEntity?: Entity;
+}
+
+export interface EntityContainerAccessEventOptions {
+    accessSourceFilter?: ContainerAccessSourceFilter;
+    entityFilter?: EntityFilter;
 }
 
 export interface EntityDamageSource {
@@ -8989,6 +9287,11 @@ export interface NotEqualsComparison {
     notEquals: boolean | number | string;
 }
 
+export interface PartyInfo {
+    isLeader: boolean;
+    partyId: string;
+}
+
 export interface PlayAnimationOptions {
     blendOutTime?: number;
     controller?: string;
@@ -9156,7 +9459,7 @@ export interface VectorXZ {
 
 export interface WaypointTextureBounds {
     lowerBound: number;
-    texture: WaypointTexture;
+    texture: CustomTexture | WaypointTexture;
     upperBound?: number;
 }
 
@@ -9246,6 +9549,26 @@ export class CustomComponentNameError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly reason: CustomComponentNameErrorReason;
+}
+
+// @ts-ignore
+export class CustomDimensionAlreadyRegisteredError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CustomDimensionInvalidRegistryError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CustomDimensionNameError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class CustomDimensionReloadNewDimensionError extends Error {
+    private constructor();
 }
 
 // @ts-ignore
@@ -9390,6 +9713,11 @@ export class NamespaceNameError extends Error {
 
 // @ts-ignore
 export class PlaceJigsawError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrimitiveShapeError extends Error {
     private constructor();
 }
 

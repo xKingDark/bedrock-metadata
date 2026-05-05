@@ -6,15 +6,12 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-graphics",
- *     "version": "1.0.0-internal"
- * }
+ * { "module_name": "@minecraft/server-graphics", "version": "1.0.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
-export class Atmospherics {
+export class BiomeAtmospherics {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -23,7 +20,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMax(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendMax(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -31,7 +28,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMieStart(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendMieStart(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -39,7 +36,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendMin(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendMin(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -47,7 +44,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHorizonBlendStart(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHorizonBlendStart(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -55,7 +52,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMoonMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMoonMieStrength(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -63,7 +60,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetRayleighStrength(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetRayleighStrength(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -71,7 +68,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSkyHorizonColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSkyHorizonColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -79,7 +76,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSkyZenithColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSkyZenithColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -87,7 +84,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunGlareShape(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSunGlareShape(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -95,7 +92,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunMieStrength(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSunMieStrength(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -103,7 +100,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMax(blendMax: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHorizonBlendMax(blendMax: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -111,10 +108,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMieStart(
-        blendMieStart: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setHorizonBlendMieStart(blendMieStart: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -122,7 +116,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendMin(blendMin: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHorizonBlendMin(blendMin: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -130,7 +124,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHorizonBlendStart(blendStart: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHorizonBlendStart(blendStart: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -138,10 +132,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMoonMieStrength(
-        moonMieStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setMoonMieStrength(moonMieStrength: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -149,10 +140,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setRayleighStrength(
-        rayleighStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setRayleighStrength(rayleighStrength: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -160,10 +148,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSkyHorizonColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setSkyHorizonColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -171,10 +156,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSkyZenithColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setSkyZenithColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -182,7 +164,7 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunGlareShape(sunGlareShape: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setSunGlareShape(sunGlareShape: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -190,13 +172,10 @@ export class Atmospherics {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunMieStrength(
-        sunMieStrength: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setSunMieStrength(sunMieStrength: number | Record<number, number>): void;
 }
 
-export class ColorGrading {
+export class BiomeColorGrading {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -205,7 +184,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHighlightsContrast(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHighlightsContrast(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -213,7 +192,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHighlightsGain(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHighlightsGain(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -221,7 +200,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHighlightsGamma(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHighlightsGamma(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -229,7 +208,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHighlightsMin(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHighlightsMin(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -237,7 +216,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHighlightsOffset(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHighlightsOffset(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -245,7 +224,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetHighlightsSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetHighlightsSaturation(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -253,7 +232,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMidtonesContrast(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMidtonesContrast(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -261,7 +240,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMidtonesGain(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMidtonesGain(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -269,7 +248,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMidtonesGamma(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMidtonesGamma(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -277,7 +256,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMidtonesOffset(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMidtonesOffset(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -285,7 +264,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMidtonesSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMidtonesSaturation(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -293,7 +272,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetShadowsContrast(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetShadowsContrast(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -301,7 +280,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetShadowsGain(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetShadowsGain(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -309,7 +288,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetShadowsGamma(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetShadowsGamma(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -317,7 +296,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetShadowsMax(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetShadowsMax(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -325,7 +304,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetShadowsOffset(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetShadowsOffset(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -333,7 +312,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetShadowsSaturation(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetShadowsSaturation(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -341,7 +320,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetTemperature(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetTemperature(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -349,10 +328,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHighlightsContrast(
-        highlightsContrast: minecraftserver.Vector3,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setHighlightsContrast(highlightsContrast: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -360,7 +336,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHighlightsGain(highlightsGain: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHighlightsGain(highlightsGain: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -368,7 +344,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHighlightsGamma(highlightsGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHighlightsGamma(highlightsGamma: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -376,7 +352,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHighlightsMin(highlightsMin: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHighlightsMin(highlightsMin: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -384,7 +360,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHighlightsOffset(highlightsOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setHighlightsOffset(highlightsOffset: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -392,10 +368,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setHighlightsSaturation(
-        highlightsSaturation: minecraftserver.Vector3,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setHighlightsSaturation(highlightsSaturation: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -403,7 +376,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMidtonesContrast(midtonesContrast: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setMidtonesContrast(midtonesContrast: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -411,7 +384,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMidtonesGain(midtonesGain: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setMidtonesGain(midtonesGain: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -419,7 +392,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMidtonesGamma(midtonesGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setMidtonesGamma(midtonesGamma: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -427,7 +400,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMidtonesOffset(midtonesOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setMidtonesOffset(midtonesOffset: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -435,10 +408,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMidtonesSaturation(
-        midtonesSaturation: minecraftserver.Vector3,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setMidtonesSaturation(midtonesSaturation: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -446,7 +416,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setShadowsContrast(shadowsContrast: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setShadowsContrast(shadowsContrast: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -454,7 +424,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setShadowsGain(shadowsGain: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setShadowsGain(shadowsGain: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -462,7 +432,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setShadowsGamma(shadowsGamma: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setShadowsGamma(shadowsGamma: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -470,7 +440,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setShadowsMax(shadowsMax: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setShadowsMax(shadowsMax: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -478,7 +448,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setShadowsOffset(shadowsOffset: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setShadowsOffset(shadowsOffset: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -486,7 +456,7 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setShadowsSaturation(shadowsSaturation: minecraftserver.Vector3, biomeIdentifier: minecraftserver.BiomeType): void;
+    setShadowsSaturation(shadowsSaturation: minecraftserver.Vector3): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -494,10 +464,10 @@ export class ColorGrading {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setTemperature(temperature: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setTemperature(temperature: number): void;
 }
 
-export class Lighting {
+export class BiomeLighting {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -506,7 +476,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetAmbientColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetAmbientColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -514,7 +484,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetAmbientIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetAmbientIlluminance(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -522,7 +492,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetFlashColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetEmissiveDesaturation(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -530,7 +500,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetFlashIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetFlashColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -538,7 +508,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMoonColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetFlashIlluminance(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -546,7 +516,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetMoonIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMoonColor(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -554,7 +524,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunColor(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetMoonIlluminance(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -562,7 +532,31 @@ export class Lighting {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSunIlluminance(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetOrbitalOffsetDegrees(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSkyIntensity(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSunColor(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    resetSunIlluminance(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -570,10 +564,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setAmbientColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setAmbientColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -581,10 +572,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setAmbientIlluminance(
-        illuminance: number | Record<number, number>,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setAmbientIlluminance(illuminance: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -592,10 +580,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setFlashColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setEmissiveDesaturation(value: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -603,7 +588,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setFlashIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setFlashColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -611,10 +596,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMoonColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setFlashIlluminance(illuminance: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -622,7 +604,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setMoonIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setMoonColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -630,10 +612,7 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunColor(
-        color: Record<number, minecraftserver.RGB> | minecraftserver.RGB,
-        biomeIdentifier: minecraftserver.BiomeType,
-    ): void;
+    setMoonIlluminance(illuminance: number | Record<number, number>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -641,10 +620,34 @@ export class Lighting {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSunIlluminance(illuminance: number | Record<number, number>, biomeIdentifier: minecraftserver.BiomeType): void;
+    setOrbitalOffsetDegrees(degrees: number | Record<number, number>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSkyIntensity(intensity: number | Record<number, number>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSunColor(color: Record<number, minecraftserver.RGB> | minecraftserver.RGB): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    setSunIlluminance(illuminance: number | Record<number, number>): void;
 }
 
-export class Water {
+export class BiomeWater {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -653,7 +656,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetCDOM(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetCDOM(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -661,7 +664,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetChlorophyll(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetChlorophyll(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -669,7 +672,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetSuspendedSediment(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetSuspendedSediment(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -677,7 +680,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesDepth(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesDepth(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -685,7 +688,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesDirectionIncrement(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesDirectionIncrement(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -693,7 +696,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesFrequency(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesFrequency(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -701,7 +704,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesFrequencyScaling(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesFrequencyScaling(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -709,7 +712,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesMix(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesMix(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -717,7 +720,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesOctaves(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesOctaves(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -725,7 +728,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesPull(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesPull(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -733,7 +736,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesShape(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesShape(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -741,7 +744,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesSpeed(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesSpeed(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -749,7 +752,7 @@ export class Water {
      *
      * {@link minecraftcommon.EngineError}
      */
-    resetWavesSpeedScaling(biomeIdentifier: minecraftserver.BiomeType): void;
+    resetWavesSpeedScaling(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -757,7 +760,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setCDOM(cdom: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setCDOM(cdom: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -765,7 +768,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setChlorophyll(chlorophyll: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setChlorophyll(chlorophyll: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -773,7 +776,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setSuspendedSediment(suspendedSediment: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setSuspendedSediment(suspendedSediment: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -781,7 +784,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesDepth(wavesDepth: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesDepth(wavesDepth: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -789,7 +792,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesDirectionIncrement(wavesDirectionIncrement: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesDirectionIncrement(wavesDirectionIncrement: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -797,7 +800,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesFrequency(wavesFrequency: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesFrequency(wavesFrequency: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -805,7 +808,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesFrequencyScaling(wavesFrequencyScaling: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesFrequencyScaling(wavesFrequencyScaling: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -813,7 +816,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesMix(wavesMix: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesMix(wavesMix: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -821,7 +824,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesOctaves(wavesOctaves: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesOctaves(wavesOctaves: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -829,7 +832,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesPull(wavesPull: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesPull(wavesPull: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -837,7 +840,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesShape(wavesShape: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesShape(wavesShape: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -845,7 +848,7 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesSpeed(wavesSpeed: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesSpeed(wavesSpeed: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -853,12 +856,27 @@ export class Water {
      *
      * {@link minecraftcommon.InvalidArgumentError}
      */
-    setWavesSpeedScaling(wavesSpeedScaling: number, biomeIdentifier: minecraftserver.BiomeType): void;
+    setWavesSpeedScaling(wavesSpeedScaling: number): void;
 }
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getBiomeAtmospherics(biome: minecraftserver.BiomeType): BiomeAtmospherics;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getBiomeColorGrading(biome: minecraftserver.BiomeType): BiomeColorGrading;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getBiomeLighting(biome: minecraftserver.BiomeType): BiomeLighting;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getBiomeWater(biome: minecraftserver.BiomeType): BiomeWater;
 
 export const InternalConstant = 1;
-
-export const atmosphere: Atmospherics;
-export const colorGrading: ColorGrading;
-export const lighting: Lighting;
-export const water: Water;

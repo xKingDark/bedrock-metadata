@@ -6,15 +6,11 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-ui-private-bindings",
- *     "version": "0.1.0-internal"
- * }
+ * { "module_name": "@minecraft/server-ui-private-bindings", "version": "0.1.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
-import * as minecraftserveruibindings from "@minecraft/server-ui-bindings";
 export enum DataDrivenScreenClosedReason {
     ClientCanceled       = "ClientCanceled",
     InvalidForm          = "InvalidForm",
@@ -26,6 +22,12 @@ export enum DataDrivenScreenClosedReason {
 export enum DataDrivenScreenRejectReason {
     PlayerLeave    = "PlayerLeave",
     ServerShutdown = "ServerShutdown",
+}
+
+export enum InternalTextFilteringError {
+    DisabledByPlayer                = "DisabledByPlayer",
+    TextProcessorServiceUnreachable = "TextProcessorServiceUnreachable",
+    Unknown                         = "Unknown",
 }
 
 export class DataDrivenScreen {
@@ -53,7 +55,7 @@ export class DataDrivenScreen {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    showScreen(): Promise<DataDrivenScreenResponse>;
+    showScreen(instanceId?: number): Promise<DataDrivenScreenResponse>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -71,6 +73,20 @@ export class DataDrivenScreenResponse {
 
 export class DataStore {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    getFilteredText(player: minecraftserver.Player, text: string): Promise<InternalTextFilteringError[] | string>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInstanceIdOverride(): number | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -110,6 +126,10 @@ export class DataStore {
         path: string,
         isWritable?: boolean,
     ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setInstanceIdOverride(instanceId?: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -179,5 +199,3 @@ export class InvalidPathError extends Error {
 export const testConstant = 5;
 
 export const ddui: DataStore;
-
-export * from "@minecraft/server-ui-bindings";

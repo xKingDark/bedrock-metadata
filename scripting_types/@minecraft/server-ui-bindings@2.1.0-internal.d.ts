@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-ui-bindings",
- *     "version": "2.1.0-internal"
- * }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.1.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -124,6 +121,66 @@ export class ModalFormData {
 export class ModalFormResponse extends FormResponse {
     private constructor();
     readonly formValues?: (boolean | number | string | undefined)[];
+}
+
+export class ObservableBoolean {
+    constructor(data: boolean);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getData(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setData(data: boolean): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    subscribe(callback: (arg0: boolean) => void): (arg0: boolean) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    unsubscribe(callback: (arg0: boolean) => void): boolean;
+}
+
+export class ObservableNumber {
+    constructor(data: number);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getData(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setData(data: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    subscribe(callback: (arg0: number) => void): (arg0: number) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    unsubscribe(callback: (arg0: number) => void): boolean;
+}
+
+export class ObservableString {
+    constructor(data: string);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getData(): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setData(data: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    subscribe(callback: (arg0: string) => void): (arg0: string) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    unsubscribe(callback: (arg0: string) => void): boolean;
 }
 
 export class UIManager {

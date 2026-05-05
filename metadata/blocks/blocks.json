@@ -2648,6 +2648,12 @@
             "localization_key": "tile.chiseled_bookshelf.name"
         },
         {
+            "id": 1379,
+            "name": "minecraft:chiseled_cinnabar",
+            "states": [],
+            "localization_key": "tile.chiseled_cinnabar.name"
+        },
+        {
             "id": 1015,
             "name": "minecraft:chiseled_copper",
             "states": [],
@@ -2726,6 +2732,12 @@
             "localization_key": "tile.stonebrick.chiseled.name"
         },
         {
+            "id": 1362,
+            "name": "minecraft:chiseled_sulfur",
+            "states": [],
+            "localization_key": "tile.chiseled_sulfur.name"
+        },
+        {
             "id": 1008,
             "name": "minecraft:chiseled_tuff",
             "states": [],
@@ -2757,6 +2769,146 @@
             "name": "minecraft:chorus_plant",
             "states": [],
             "localization_key": "tile.chorus_plant.name"
+        },
+        {
+            "id": 1364,
+            "name": "minecraft:cinnabar",
+            "states": [],
+            "localization_key": "tile.cinnabar.name"
+        },
+        {
+            "id": 1376,
+            "name": "minecraft:cinnabar_brick_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cinnabar_brick_double_slab.name"
+        },
+        {
+            "id": 1375,
+            "name": "minecraft:cinnabar_brick_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cinnabar_brick_slab.name"
+        },
+        {
+            "id": 1377,
+            "name": "minecraft:cinnabar_brick_stairs",
+            "states": [
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.cinnabar_brick_stairs.name"
+        },
+        {
+            "id": 1378,
+            "name": "minecraft:cinnabar_brick_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.cinnabar_brick_wall.name"
+        },
+        {
+            "id": 1374,
+            "name": "minecraft:cinnabar_bricks",
+            "states": [],
+            "localization_key": "tile.cinnabar_bricks.name"
+        },
+        {
+            "id": 1366,
+            "name": "minecraft:cinnabar_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cinnabar_double_slab.name"
+        },
+        {
+            "id": 1365,
+            "name": "minecraft:cinnabar_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cinnabar_slab.name"
+        },
+        {
+            "id": 1367,
+            "name": "minecraft:cinnabar_stairs",
+            "states": [
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.cinnabar_stairs.name"
+        },
+        {
+            "id": 1368,
+            "name": "minecraft:cinnabar_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.cinnabar_wall.name"
         },
         {
             "id": 82,
@@ -11172,6 +11324,76 @@
             "localization_key": "tile.polished_blackstone_wall.name"
         },
         {
+            "id": 1369,
+            "name": "minecraft:polished_cinnabar",
+            "states": [],
+            "localization_key": "tile.polished_cinnabar.name"
+        },
+        {
+            "id": 1371,
+            "name": "minecraft:polished_cinnabar_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_cinnabar_double_slab.name"
+        },
+        {
+            "id": 1370,
+            "name": "minecraft:polished_cinnabar_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_cinnabar_slab.name"
+        },
+        {
+            "id": 1372,
+            "name": "minecraft:polished_cinnabar_stairs",
+            "states": [
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.polished_cinnabar_stairs.name"
+        },
+        {
+            "id": 1373,
+            "name": "minecraft:polished_cinnabar_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.polished_cinnabar_wall.name"
+        },
+        {
             "id": 638,
             "name": "minecraft:polished_deepslate",
             "states": [],
@@ -11378,6 +11600,76 @@
             "localization_key": "tile.polished_granite_stairs.name"
         },
         {
+            "id": 1352,
+            "name": "minecraft:polished_sulfur",
+            "states": [],
+            "localization_key": "tile.polished_sulfur.name"
+        },
+        {
+            "id": 1354,
+            "name": "minecraft:polished_sulfur_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_sulfur_double_slab.name"
+        },
+        {
+            "id": 1353,
+            "name": "minecraft:polished_sulfur_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_sulfur_slab.name"
+        },
+        {
+            "id": 1355,
+            "name": "minecraft:polished_sulfur_stairs",
+            "states": [
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.polished_sulfur_stairs.name"
+        },
+        {
+            "id": 1356,
+            "name": "minecraft:polished_sulfur_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.polished_sulfur_wall.name"
+        },
+        {
             "id": 1003,
             "name": "minecraft:polished_tuff",
             "states": [],
@@ -11479,6 +11771,12 @@
                 }
             ],
             "localization_key": "tile.potatoes.name"
+        },
+        {
+            "id": 1363,
+            "name": "minecraft:potent_sulfur",
+            "states": [],
+            "localization_key": "tile.potent_sulfur.name"
         },
         {
             "id": 561,
@@ -14107,6 +14405,146 @@
                 }
             ],
             "localization_key": "tile.structure_void.name"
+        },
+        {
+            "id": 1347,
+            "name": "minecraft:sulfur",
+            "states": [],
+            "localization_key": "tile.sulfur.name"
+        },
+        {
+            "id": 1359,
+            "name": "minecraft:sulfur_brick_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.sulfur_brick_double_slab.name"
+        },
+        {
+            "id": 1358,
+            "name": "minecraft:sulfur_brick_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.sulfur_brick_slab.name"
+        },
+        {
+            "id": 1360,
+            "name": "minecraft:sulfur_brick_stairs",
+            "states": [
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.sulfur_brick_stairs.name"
+        },
+        {
+            "id": 1361,
+            "name": "minecraft:sulfur_brick_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.sulfur_brick_wall.name"
+        },
+        {
+            "id": 1357,
+            "name": "minecraft:sulfur_bricks",
+            "states": [],
+            "localization_key": "tile.sulfur_bricks.name"
+        },
+        {
+            "id": 1349,
+            "name": "minecraft:sulfur_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.sulfur_double_slab.name"
+        },
+        {
+            "id": 1348,
+            "name": "minecraft:sulfur_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.sulfur_slab.name"
+        },
+        {
+            "id": 1350,
+            "name": "minecraft:sulfur_stairs",
+            "states": [
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.sulfur_stairs.name"
+        },
+        {
+            "id": 1351,
+            "name": "minecraft:sulfur_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.sulfur_wall.name"
         },
         {
             "id": 175,

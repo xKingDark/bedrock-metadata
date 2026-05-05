@@ -5,10 +5,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/common",
- *     "version": "1.2.0"
- * }
+ * { "module_name": "@minecraft/common", "version": "1.2.0" }
  * ```
  */
 export enum InvalidArgumentErrorType {
@@ -42,6 +39,15 @@ export class ArgumentOutOfBoundsError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly value?: number;
+}
+
+// @ts-ignore
+export class ContainerSizeOutOfBoundsError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxValue: number;
 }
 
 // @ts-ignore

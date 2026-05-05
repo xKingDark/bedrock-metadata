@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/debug-utilities",
- *     "version": "1.0.0-beta"
- * }
+ * { "module_name": "@minecraft/debug-utilities", "version": "1.0.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -55,10 +52,11 @@ export class DebugLine extends DebugShape {
 export class DebugShape {
     private constructor();
     attachedTo?: minecraftserver.Entity;
-    color: minecraftserver.RGB;
+    color: minecraftserver.RGBA;
     readonly dimension: minecraftserver.Dimension;
     readonly hasDuration: boolean;
     readonly location: minecraftserver.Vector3;
+    maximumRenderDistance?: number;
     rotation: minecraftserver.Vector3;
     scale: number;
     timeLeft?: number;
@@ -75,8 +73,24 @@ export class DebugSphere extends DebugShape {
 
 // @ts-ignore
 export class DebugText extends DebugShape {
-    text: string;
-    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3, text: string);
+    backfaceVisible: boolean;
+    backgroundColorOverride?: minecraftserver.RGBA;
+    depthTest: boolean;
+    readonly text: minecraftserver.RawMessage | string;
+    textBackfaceVisible: boolean;
+    useRotation: boolean;
+    constructor(
+        location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
+        text: minecraftserver.RawMessage | string,
+    );
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftserver.RawMessageError}
+     */
+    setText(text: minecraftserver.RawMessage | string): void;
 }
 
 export interface HandleCounts {

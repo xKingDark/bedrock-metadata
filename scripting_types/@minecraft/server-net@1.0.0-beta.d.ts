@@ -6,10 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-net",
- *     "version": "1.0.0-beta"
- * }
+ * { "module_name": "@minecraft/server-net", "version": "1.0.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -91,7 +88,6 @@ export enum PacketId {
     CreativeContentPacket                    = "CreativeContentPacket",
     CurrentStructureFeaturePacket            = "CurrentStructureFeaturePacket",
     DeathInfoPacket                          = "DeathInfoPacket",
-    DebugDrawerPacket                        = "DebugDrawerPacket",
     DebugInfoPacket                          = "DebugInfoPacket",
     DimensionDataPacket                      = "DimensionDataPacket",
     DisconnectPacket                         = "DisconnectPacket",
@@ -164,6 +160,7 @@ export enum PacketId {
     PlayStatusPacket                         = "PlayStatusPacket",
     PositionTrackingDBClientRequestPacket    = "PositionTrackingDBClientRequestPacket",
     PositionTrackingDBServerBroadcastPacket  = "PositionTrackingDBServerBroadcastPacket",
+    PrimitiveShapesPacket                    = "PrimitiveShapesPacket",
     PurchaseReceiptPacket                    = "PurchaseReceiptPacket",
     RefreshEntitlementsPacket                = "RefreshEntitlementsPacket",
     RemoveActorPacket                        = "RemoveActorPacket",
@@ -188,9 +185,11 @@ export enum PacketId {
     ServerboundLoadingScreenPacket           = "ServerboundLoadingScreenPacket",
     ServerboundPackSettingChangePacket       = "ServerboundPackSettingChangePacket",
     ServerPlayerPostMovePositionPacket       = "ServerPlayerPostMovePositionPacket",
+    ServerPresenceInfoPacket                 = "ServerPresenceInfoPacket",
     ServerSettingsRequestPacket              = "ServerSettingsRequestPacket",
     ServerSettingsResponsePacket             = "ServerSettingsResponsePacket",
     ServerStatsPacket                        = "ServerStatsPacket",
+    ServerStoreInfoPacket                    = "ServerStoreInfoPacket",
     ServerToClientHandshakePacket            = "ServerToClientHandshakePacket",
     SetActorDataPacket                       = "SetActorDataPacket",
     SetActorLinkPacket                       = "SetActorLinkPacket",
@@ -250,6 +249,22 @@ export enum PacketId {
     VoxelShapesPacket                        = "VoxelShapesPacket",
 }
 
+export class CloseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: WebSocketClientCloseAfterEvent) => void): (arg0: WebSocketClientCloseAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WebSocketClientCloseAfterEvent) => void): void;
+}
+
 export class HttpClient {
     private constructor();
     /**
@@ -307,6 +322,24 @@ export class HttpResponse {
     readonly headers: HttpHeader[];
     readonly request: HttpRequest;
     readonly status: number;
+}
+
+export class MessageAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: WebSocketClientReceiveAfterEvent) => void,
+    ): (arg0: WebSocketClientReceiveAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WebSocketClientReceiveAfterEvent) => void): void;
 }
 
 export class NetworkBeforeEvents {
@@ -374,22 +407,62 @@ export class PacketSendBeforeEventSignal {
     unsubscribe(callback: (arg0: PacketSendBeforeEvent) => void): void;
 }
 
-export interface PacketEventOptions {
-    ignoredPacketIds?: PacketId[];
-    monitoredPacketIds?: PacketId[];
+export class WebSocket {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    connect(uri: string): Promise<WebSocketClient>;
 }
 
-// @ts-ignore
-export class HttpRequestBodyTooLargeError extends Error {
+export class WebSocketClient {
+    private constructor();
+    readonly afterEvents: WebSocketClientAfterEvents;
+    readonly isOpen: boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WebSocketNotConnectedError}
+     */
+    close(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link RequestBodyTooLargeError}
+     *
+     * {@link WebSocketNotConnectedError}
+     */
+    send(payload: string): void;
+}
+
+export class WebSocketClientAfterEvents {
     private constructor();
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly maxBytes: number;
+    readonly close: CloseAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly providedBytes: number;
+    readonly message: MessageAfterEventSignal;
+}
+
+export class WebSocketClientCloseAfterEvent {
+    private constructor();
+}
+
+export class WebSocketClientReceiveAfterEvent {
+    private constructor();
+    readonly message: string;
+}
+
+export interface PacketEventOptions {
+    ignoredPacketIds?: PacketId[];
+    monitoredPacketIds?: PacketId[];
 }
 
 // @ts-ignore
@@ -406,40 +479,98 @@ export class HttpRequestLimitExceededError extends Error {
 }
 
 // @ts-ignore
-export class HttpRequestNotAllowedError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly uri: string;
-}
-
-// @ts-ignore
-export class HttpsOnlyError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly uri: string;
-}
-
-// @ts-ignore
 export class InternalHttpRequestError extends Error {
     private constructor();
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly code: number;
+    readonly errorCode: number;
     /**
      * @remarks This property can be read in early-execution mode.
      */
-    readonly message: string;
+    readonly errorMessage: string;
 }
 
 // @ts-ignore
-export class MalformedHttpRequestError extends Error {
+export class InternalWebSocketError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly errorCode: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly errorMessage: string;
+}
+
+// @ts-ignore
+export class MalformedUriError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class RequestBodyTooLargeError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxBytes: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly providedBytes: number;
+}
+
+// @ts-ignore
+export class TLSOnlyError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
+}
+
+// @ts-ignore
+export class UriNotAllowedError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
+}
+
+// @ts-ignore
+export class WebSocketConnectionFailedError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly errorCode: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly uri: string;
+}
+
+// @ts-ignore
+export class WebSocketLimitExceededError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly connectedSockets: number;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly maxConcurrentConnections: number;
+}
+
+// @ts-ignore
+export class WebSocketNotConnectedError extends Error {
     private constructor();
 }
 
 export const beforeEvents: NetworkBeforeEvents;
 export const http: HttpClient;
+export const websocket: WebSocket;

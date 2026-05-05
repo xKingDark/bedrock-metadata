@@ -5,13 +5,15 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * {
- *     "module_name": "@minecraft/server-bindings",
- *     "version": "2.6.0"
- * }
+ * { "module_name": "@minecraft/server-bindings", "version": "2.6.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
+export enum AimAssistTargetMode {
+    Angle    = "Angle",
+    Distance = "Distance",
+}
+
 export enum BlockComponentTypes {
     FluidContainer            = "minecraft:fluid_container",
     Inventory                 = "minecraft:inventory",
@@ -852,6 +854,200 @@ export type ItemComponentTypeMap = {
     "minecraft:food": ItemFoodComponent;
     "minecraft:inventory": ItemInventoryComponent;
     "minecraft:potion": ItemPotionComponent;
+}
+
+export class AimAssistCategory {
+    private constructor();
+    /**
+     * @throws This property can throw when used.
+     */
+    readonly defaultBlockPriority: number;
+    /**
+     * @throws This property can throw when used.
+     */
+    readonly defaultEntityPriority: number;
+    readonly identifier: string;
+    /**
+     * @throws This function can throw errors.
+     */
+    getBlockPriorities(): Record<string, number>;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getBlockTagPriorities(): Record<string, number>;
+    /**
+     * @throws This function can throw errors.
+     */
+    getEntityPriorities(): Record<string, number>;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getEntityTypeFamilyPriorities(): Record<string, number>;
+}
+
+export class AimAssistCategorySettings {
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    defaultBlockPriority: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    defaultEntityPriority: number;
+    readonly identifier: string;
+    constructor(identifier: string);
+    getBlockPriorities(): Record<string, number>;
+    getBlockTagPriorities(): Record<string, number>;
+    getEntityPriorities(): Record<string, number>;
+    getEntityTypeFamilyPriorities(): Record<string, number>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setBlockPriorities(blockPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setBlockTagPriorities(blockTagPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setEntityPriorities(entityPriorities: Record<string, number>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setEntityTypeFamilyPriorities(entityTypeFamilyPriorities: Record<string, number>): void;
+}
+
+export class AimAssistPreset {
+    private constructor();
+    /**
+     * @throws This property can throw when used.
+     */
+    readonly defaultItemSettings?: string;
+    /**
+     * @throws This property can throw when used.
+     */
+    readonly handSettings?: string;
+    readonly identifier: string;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getExcludedBlockTagTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     */
+    getExcludedBlockTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     */
+    getExcludedEntityTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getExcludedEntityTypeFamilyTargets(): string[];
+    /**
+     * @throws This function can throw errors.
+     */
+    getItemSettings(): Record<string, string>;
+    /**
+     * @throws This function can throw errors.
+     */
+    getLiquidTargetingItems(): string[];
+}
+
+export class AimAssistPresetSettings {
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    defaultItemSettings?: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    handSettings?: string;
+    readonly identifier: string;
+    constructor(identifier: string);
+    getExcludedBlockTagTargets(): string[] | undefined;
+    getExcludedBlockTargets(): string[] | undefined;
+    getExcludedEntityTargets(): string[] | undefined;
+    getExcludedEntityTypeFamilyTargets(): string[] | undefined;
+    getItemSettings(): Record<string, string>;
+    getLiquidTargetingItems(): string[] | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setExcludedBlockTagTargets(blockTagTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setExcludedBlockTargets(blockTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setExcludedEntityTargets(entityTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setExcludedEntityTypeFamilyTargets(entityTypeFamilyTargets?: string[]): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setItemSettings(itemSettings: Record<string, string>): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setLiquidTargetingItems(items?: string[]): void;
+}
+
+export class AimAssistRegistry {
+    private constructor();
+    static readonly DefaultCategoryId = "minecraft:default";
+    static readonly DefaultPresetId = "minecraft:aim_assist_default";
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     */
+    addCategory(category: AimAssistCategorySettings): AimAssistCategory;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link NamespaceNameError}
+     */
+    addPreset(preset: AimAssistPresetSettings): AimAssistPreset;
+    getCategories(): AimAssistCategory[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getCategory(categoryId: string): AimAssistCategory | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getPreset(presetId: string): AimAssistPreset | undefined;
+    getPresets(): AimAssistPreset[];
 }
 
 export class BiomeType {
@@ -5645,6 +5841,7 @@ export class Player extends Entity {
      * @throws This function can throw errors.
      */
     clearPropertyOverridesForEntity(targetEntity: Entity | string): void;
+    getAimAssist(): PlayerAimAssist;
     /**
      * @throws This function can throw errors.
      *
@@ -5763,6 +5960,29 @@ export class Player extends Entity {
      * @throws This function can throw errors.
      */
     stopMusic(): void;
+}
+
+export class PlayerAimAssist {
+    private constructor();
+    readonly settings?: PlayerAimAssistSettings;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link InvalidEntityError}
+     *
+     * {@link NamespaceNameError}
+     */
+    set(settings?: PlayerAimAssistSettings): void;
 }
 
 // @ts-ignore
@@ -7290,6 +7510,7 @@ export class World {
     readonly tickingAreaManager: TickingAreaManager;
     clearDynamicProperties(): void;
     getAbsoluteTime(): number;
+    getAimAssist(): AimAssistRegistry;
     /**
      * @throws This function can throw errors.
      *
@@ -8071,6 +8292,13 @@ export interface PlayAnimationOptions {
     nextState?: string;
     players?: Player[];
     stopExpression?: string;
+}
+
+export interface PlayerAimAssistSettings {
+    distance?: number;
+    presetId: string;
+    targetMode?: AimAssistTargetMode;
+    viewAngle?: Vector2;
 }
 
 export interface PlayerSoundOptions {
