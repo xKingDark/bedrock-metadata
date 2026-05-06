@@ -1738,6 +1738,14 @@ export class BlockPrecipitationInteractionsComponent extends BlockComponent {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
+    isSnowLoggable(): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
     obstructsRain(): boolean;
 }
 

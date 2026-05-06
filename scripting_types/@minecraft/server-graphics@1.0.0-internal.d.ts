@@ -879,4 +879,30 @@ export function getBiomeLighting(biome: minecraftserver.BiomeType): BiomeLightin
  */
 export function getBiomeWater(biome: minecraftserver.BiomeType): BiomeWater;
 
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getPlayerAtmospherics(
+    biome: minecraftserver.BiomeType,
+    player: minecraftserver.Player,
+): BiomeAtmospherics;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getPlayerColorGrading(
+    biome: minecraftserver.BiomeType,
+    player: minecraftserver.Player,
+): BiomeColorGrading;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getPlayerLighting(biome: minecraftserver.BiomeType, player: minecraftserver.Player): BiomeLighting;
+
+/**
+ * @remarks This function can't be called in restricted-execution mode.
+ */
+export function getPlayerWater(biome: minecraftserver.BiomeType, player: minecraftserver.Player): BiomeWater;
+
 export const InternalConstant = 1;

@@ -1036,6 +1036,7 @@ export class DataStore {
     readonly actionBarContainer: DataStoreActionBarContainer;
     readonly actionContainer: DataStoreActionContainer;
     readonly afterEvents: DataStoreAfterEvents;
+    readonly contentBadgeContainer: DataStoreContentBadgeContainer;
     readonly menuContainer: DataStoreMenuContainer;
     readonly modalToolContainer: DataStoreModalToolContainer;
     readonly paneContainer: DataStorePaneContainer;
@@ -1115,6 +1116,22 @@ export class DataStoreAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly payloadReceived: DataStorePayloadAfterEventSignal;
+}
+
+export class DataStoreContentBadgeContainer {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    registerBadge(id: string, iteration: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unregisterBadge(id: string): void;
 }
 
 export class DataStoreMenuContainer {

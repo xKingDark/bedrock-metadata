@@ -11,10 +11,10 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
-export declare enum DataDrivenScreenClosedReason {
-    ServerClose = "ServerClose",
-    UserBusy    = "UserBusy",
-    UserClose   = "UserClose",
+export enum DataDrivenScreenClosedReason {
+    ClientClosed = "ClientClosed",
+    ServerClosed = "ServerClosed",
+    UserBusy     = "UserBusy",
 }
 
 export enum FormCancelationReason {
@@ -28,7 +28,12 @@ export enum FormRejectReason {
     ServerShutdown    = "ServerShutdown",
 }
 
-export declare enum TextFilteringError {
+export enum FormVisibilityErrorReason {
+    AlreadyShowing = "AlreadyShowing",
+    NotShowing     = "NotShowing",
+}
+
+export enum TextFilteringError {
     DisabledByPlayer                = "DisabledByPlayer",
     TextProcessorServiceUnreachable = "TextProcessorServiceUnreachable",
     Unknown                         = "Unknown",
@@ -61,55 +66,146 @@ export class ActionFormResponse extends FormResponse {
     readonly selection?: number;
 }
 
-export declare class CustomForm {
+export class CustomForm {
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    constructor(
+        player: minecraftserver.Player,
+        title: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+    );
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     button(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
         onClick: () => void,
-        buttonOptions?: ButtonOptions,
-    ): CustomForm;
-    close(): void;
-    closeButton(): CustomForm;
-    divider(dividerOptions?: DividerOptions): CustomForm;
-    dropdown(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<number>,
-        items: DropdownItem[],
-        dropdownOptions?: DropdownOptions,
-    ): CustomForm;
-    header(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        textOptions?: TextOptions,
-    ): CustomForm;
-    isShowing(): boolean;
-    label(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        textOptions?: TextOptions,
+        options?: ButtonOptions,
     ): CustomForm;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link FormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    close(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    closeButton(): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    divider(options?: DividerOptions): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    dropdown(
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        value: ObservableNumber,
+        items: DropdownItemData[],
+        options?: DropdownOptions,
+    ): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    header(text: ObservableString | ObservableUIRawMessage | string | UIRawMessage, options?: TextOptions): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    label(text: ObservableString | ObservableUIRawMessage | string | UIRawMessage, options?: TextOptions): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link FormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
      */
     show(): Promise<DataDrivenScreenClosedReason>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     slider(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<number>,
-        arg2: Observable<number> | number,
-        arg3: Observable<number> | number,
-        sliderOptions?: SliderOptions,
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        value: ObservableNumber,
+        min: number | ObservableNumber,
+        max: number | ObservableNumber,
+        options?: SliderOptions,
     ): CustomForm;
-    spacer(spacingOptions?: SpacingOptions): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    spacer(options?: SpacingOptions): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     textField(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<string>,
-        textFieldOptions?: TextFieldOptions,
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        text: ObservableString,
+        options?: TextFieldOptions,
     ): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     toggle(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1: Observable<boolean>,
-        toggleOptions?: ToggleOptions,
-    ): CustomForm;
-    static create(
-        player: minecraftserver.Player,
-        tooltip: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        toggled: ObservableBoolean,
+        options?: ToggleOptions,
     ): CustomForm;
 }
 
@@ -119,26 +215,74 @@ export class FormResponse {
     readonly canceled: boolean;
 }
 
-export declare class MessageBox {
-    body(bodyText: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage): MessageBox;
+export class MessageBox {
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    constructor(
+        player: minecraftserver.Player,
+        title: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+    );
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    body(body: ObservableString | ObservableUIRawMessage | string | UIRawMessage): MessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     button1(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
     ): MessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     button2(
-        label: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-        arg1?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
     ): MessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link FormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
     close(): void;
-    isShowing(): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link FormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
     show(): Promise<MessageBoxResult>;
-    static create(
-        player: minecraftserver.Player,
-        tooltip: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage,
-    ): MessageBox;
 }
 
 export class MessageFormData {
@@ -209,17 +353,146 @@ export class ModalFormResponse extends FormResponse {
     readonly formValues?: (boolean | number | string | undefined)[];
 }
 
-export declare class Observable<T extends boolean | string | UIRawMessage | number> {
-    getData(): T;
-    getFilteredText(player: minecraftserver.Player): Promise<string | TextFilteringError[]>;
-    setData(arg0: T): void;
-    subscribe(callback: (arg0: T) => void): (arg0: T) => void;
-    toJSON(): unknown;
-    unsubscribe(callback: (arg0: T) => void): void;
-    static create<T extends boolean | string | UIRawMessage | number>(
-        arg0: T,
-        observableOptions?: ObservableOptions,
-    ): Observable<T>;
+export class ObservableBoolean {
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    constructor(data: boolean, options?: ObservableOptions);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    getData(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    setData(data: boolean): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: boolean) => void): (arg0: boolean) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: boolean) => void): boolean;
+}
+
+export class ObservableNumber {
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    constructor(data: number, options?: ObservableOptions);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    getData(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    setData(data: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: number) => void): (arg0: number) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: number) => void): boolean;
+}
+
+export class ObservableString {
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    constructor(data: string, options?: ObservableOptions);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    getData(): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    getFilteredText(player: minecraftserver.Player): Promise<TextFilteringError[] | string>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    setData(data: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: string) => void): (arg0: string) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: string) => void): boolean;
+}
+
+export class ObservableUIRawMessage {
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    constructor(data: UIRawMessage, options?: ObservableOptions);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    getData(): UIRawMessage;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    setData(data: UIRawMessage): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: UIRawMessage) => void): (arg0: UIRawMessage) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: UIRawMessage) => void): boolean;
 }
 
 export class UIManager {
@@ -233,25 +506,25 @@ export class UIManager {
 }
 
 export interface ButtonOptions {
-    disabled?: Observable<boolean> | boolean;
-    tooltip?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage;
-    visible?: Observable<boolean> | boolean;
+    disabled?: boolean | ObservableBoolean;
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface DividerOptions {
-    visible?: Observable<boolean> | boolean;
+    visible?: boolean | ObservableBoolean;
 }
 
-export interface DropdownItem {
-    description?: UIRawMessage | string;
-    label: UIRawMessage | string;
+export interface DropdownItemData {
+    description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    label: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     value: number;
 }
 
 export interface DropdownOptions {
-    description?: Observable<string> | string | UIRawMessage;
-    disabled?: Observable<boolean> | boolean;
-    visible?: Observable<boolean> | boolean;
+    description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    disabled?: boolean | ObservableBoolean;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface MessageBoxResult {
@@ -281,34 +554,34 @@ export interface ModalFormDataToggleOptions {
 }
 
 export interface ObservableOptions {
-    clientWritable?: boolean;
+    clientWritable: boolean;
 }
 
 export interface SliderOptions {
-    description?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage;
-    disabled?: Observable<boolean> | boolean;
-    step?: Observable<number> | number;
-    visible?: Observable<boolean> | boolean;
+    description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    disabled?: boolean | ObservableBoolean;
+    step?: number | ObservableNumber;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface SpacingOptions {
-    visible?: Observable<boolean> | boolean;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface TextFieldOptions {
-    description?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage;
-    disabled?: Observable<boolean> | boolean;
-    visible?: Observable<boolean> | boolean;
+    description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    disabled?: boolean | ObservableBoolean;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface TextOptions {
-    visible?: Observable<boolean> | boolean;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface ToggleOptions {
-    description?: Observable<string> | Observable<UIRawMessage> | string | UIRawMessage;
-    disabled?: Observable<boolean> | boolean;
-    visible?: Observable<boolean> | boolean;
+    description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    disabled?: boolean | ObservableBoolean;
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface UIRawMessage {
@@ -317,9 +590,6 @@ export interface UIRawMessage {
     translate?: string;
     with?: string[] | UIRawMessage;
 }
-
-// @ts-ignore
-export declare class FormCloseError extends Error {}
 
 // @ts-ignore
 export class FormRejectError extends Error {
@@ -331,9 +601,43 @@ export class FormRejectError extends Error {
 }
 
 // @ts-ignore
-export declare class PlayerLeftError extends Error {}
+export class FormVisibilityError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: FormVisibilityErrorReason;
+}
 
 // @ts-ignore
-export declare class ServerShutdownError extends Error {}
+export class InvalidFormError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+}
+
+// @ts-ignore
+export class InvalidFormModificationError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+}
+
+// @ts-ignore
+export class PlayerLeftError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly formId: string;
+}
 
 export const uiManager: UIManager;

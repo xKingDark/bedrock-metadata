@@ -4985,6 +4985,30 @@ export class EntitySpawnType {
     isBlockDangerous(block: Block): boolean;
 }
 
+export class EntityStartSneakingAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+}
+
+export class EntityStartSneakingAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityStartSneakingAfterEvent) => void,
+        options?: EntitySneakingChangedEventOptions,
+    ): (arg0: EntityStartSneakingAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityStartSneakingAfterEvent) => void): void;
+}
+
 // @ts-ignore
 export class EntityStrengthComponent extends EntityComponent {
     private constructor();
@@ -8778,6 +8802,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityStartSneaking: EntityStartSneakingAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly entityUpgrade: EntityUpgradeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -9361,6 +9389,10 @@ export interface EntityRaycastOptions extends EntityFilter {
     includeLiquidBlocks?: boolean;
     includePassableBlocks?: boolean;
     maxDistance?: number;
+}
+
+export interface EntitySneakingChangedEventOptions {
+    entityFilter?: EntityFilter;
 }
 
 export interface EntityVisibilityRules {
