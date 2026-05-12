@@ -336,9 +336,10 @@ export enum EntityDamageCause {
 }
 
 export enum EntityHealCause {
-    Heal         = "Heal",
-    Regeneration = "Regeneration",
-    SelfHeal     = "SelfHeal",
+    Heal           = "Heal",
+    Regeneration   = "Regeneration",
+    SelfHeal       = "SelfHeal",
+    TotemOfUndying = "TotemOfUndying",
 }
 
 export enum EntityInitializationCause {
@@ -1373,6 +1374,12 @@ export class BlockComponentBlockBreakEvent extends BlockEvent {
     readonly blockDestructionSource?: Block;
     readonly brokenBlockPermutation: BlockPermutation;
     readonly entitySource?: Entity;
+}
+
+// @ts-ignore
+export class BlockComponentBlockStateChangeEvent extends BlockEvent {
+    private constructor();
+    readonly previousPermutation: BlockPermutation;
 }
 
 // @ts-ignore
@@ -4673,6 +4680,13 @@ export class EntityUnderwaterMovementComponent extends EntityAttributeComponent 
     static readonly componentId = "minecraft:underwater_movement";
 }
 
+export class EntityUpgradeAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+    readonly upgradeId: string;
+    getModifiers(): DefinitionModifier[];
+}
+
 // @ts-ignore
 export class EntityVariantComponent extends EntityComponent {
     private constructor();
@@ -6791,6 +6805,38 @@ export class PressurePlatePushAfterEventSignal {
     unsubscribe(callback: (arg0: PressurePlatePushAfterEvent) => void): void;
 }
 
+export class PrimitiveShape {
+    private constructor();
+    attachedTo?: Entity;
+    color: RGBA;
+    readonly dimension: Dimension;
+    readonly hasDuration: boolean;
+    readonly location: Vector3;
+    maximumRenderDistance?: number;
+    rotation: Vector3;
+    scale: number;
+    timeLeft?: number;
+    readonly totalTimeLeft?: number;
+    visibleTo: Player[];
+    remove(): void;
+    setLocation(location: DimensionLocation | Vector3): void;
+}
+
+export class PrimitiveShapesManager {
+    private constructor();
+    readonly maxShapes: number;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link PrimitiveShapeError}
+     */
+    addText(text: TextPrimitive, dimension?: Dimension): void;
+    removeAll(): void;
+    removeText(text: TextPrimitive): void;
+}
+
 export class ProjectileHitBlockAfterEvent {
     private constructor();
     readonly dimension: Dimension;
@@ -7515,6 +7561,25 @@ export class TargetBlockHitAfterEventSignal {
     unsubscribe(callback: (arg0: TargetBlockHitAfterEvent) => void): void;
 }
 
+// @ts-ignore
+export class TextPrimitive extends PrimitiveShape {
+    backfaceVisible: boolean;
+    backgroundColorOverride?: RGBA;
+    depthTest: boolean;
+    readonly text: RawMessage | string;
+    textBackfaceVisible: boolean;
+    useRotation: boolean;
+    constructor(location: DimensionLocation | Vector3, text: RawMessage | string);
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link RawMessageError}
+     */
+    setText(text: RawMessage | string): void;
+}
+
 export class TickingAreaManager {
     private constructor();
     readonly chunkCount: number;
@@ -7660,6 +7725,7 @@ export class World {
     readonly beforeEvents: WorldBeforeEvents;
     readonly gameRules: GameRules;
     readonly isHardcore: boolean;
+    readonly primitiveShapesManager: PrimitiveShapesManager;
     readonly scoreboard: Scoreboard;
     readonly seed: string;
     readonly structureManager: StructureManager;
@@ -7691,6 +7757,10 @@ export class World {
     getEntity(id: string): Entity | undefined;
     getLootTableManager(): LootTableManager;
     getMoonPhase(): MoonPhase;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     */
+    getPackSettings(): Record<string, boolean | number | string>;
     /**
      * @throws This function can throw errors.
      *
@@ -8090,6 +8160,7 @@ export interface BlockCustomComponent {
         arg0: BlockComponentPlayerPlaceBeforeEvent,
         arg1: CustomComponentParameters,
     ) => void;
+    onBlockStateChange?: (arg0: BlockComponentBlockStateChangeEvent, arg1: CustomComponentParameters) => void;
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
@@ -8841,6 +8912,11 @@ export class NamespaceNameError extends Error {
 
 // @ts-ignore
 export class PlaceJigsawError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class PrimitiveShapeError extends Error {
     private constructor();
 }
 

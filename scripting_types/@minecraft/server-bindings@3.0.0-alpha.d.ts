@@ -16,6 +16,7 @@ export enum AimAssistTargetMode {
 }
 
 export enum BlockComponentTypes {
+    DynamicProperties         = "minecraft:dynamic_properties",
     FluidContainer            = "minecraft:fluid_container",
     Inventory                 = "minecraft:inventory",
     MapColor                  = "minecraft:map_color",
@@ -707,6 +708,7 @@ export type BlockComponentReturnType<T extends string> =
         : BlockComponent;
 
 export type BlockComponentTypeMap = {
+    dynamic_properties: BlockDynamicPropertiesComponent;
     fluid_container: BlockFluidContainerComponent;
     inventory: BlockInventoryComponent;
     map_color: BlockMapColorComponent;
@@ -716,6 +718,7 @@ export type BlockComponentTypeMap = {
     record_player: BlockRecordPlayerComponent;
     redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
+    "minecraft:dynamic_properties": BlockDynamicPropertiesComponent;
     "minecraft:fluid_container": BlockFluidContainerComponent;
     "minecraft:inventory": BlockInventoryComponent;
     "minecraft:map_color": BlockMapColorComponent;
@@ -1671,6 +1674,50 @@ export class BlockContainerOpenedAfterEventSignal {
 export class BlockCustomComponentInstance extends BlockComponent {
     private constructor();
     readonly customComponentParameters: CustomComponentParameters;
+}
+
+// @ts-ignore
+export class BlockDynamicPropertiesComponent extends BlockComponent {
+    private constructor();
+    static readonly componentId = "minecraft:dynamic_properties";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    get(key: string): boolean | number | string | Vector3 | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    set(key: string, value?: boolean | number | string | Vector3): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    totalByteCount(): number;
 }
 
 export class BlockEvent {
@@ -6270,6 +6317,7 @@ export class LootingEnchantFunction extends LootItemFunction {
 // @ts-ignore
 export class LootItem extends LootPoolEntry {
     private constructor();
+    readonly conditions: LootItemCondition[];
     readonly functions: LootItemFunction[];
     readonly name?: ItemType;
 }
@@ -6512,12 +6560,6 @@ export class Player extends Entity {
      * @throws This property can throw when used.
      */
     readonly onScreenDisplay: ScreenDisplay;
-    /**
-     * @throws This property can throw when used.
-     *
-     * {@link InvalidEntityError}
-     */
-    readonly partyInfo?: PartyInfo;
     /**
      * @throws This property can throw when used.
      *
@@ -7319,6 +7361,34 @@ export class PlayerSpawnAfterEventSignal {
      * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class PlayerStartBreakingBlockAfterEvent extends BlockEvent {
+    private constructor();
+    readonly blockPermutation: BlockPermutation;
+    readonly face: Direction;
+    readonly heldItemStack?: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerStartBreakingBlockAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerStartBreakingBlockAfterEvent) => void,
+        options?: PlayerBreakingBlockEventOptions,
+    ): (arg0: PlayerStartBreakingBlockAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerStartBreakingBlockAfterEvent) => void): void;
 }
 
 export class PlayerSwingStartAfterEvent {
@@ -8817,6 +8887,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly playerStartBreakingBlock: PlayerStartBreakingBlockAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly playerSwingStart: PlayerSwingStartAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -9386,11 +9460,6 @@ export interface NotEqualsComparison {
     notEquals: boolean | number | string;
 }
 
-export interface PartyInfo {
-    isLeader: boolean;
-    partyId: string;
-}
-
 export interface PlayAnimationOptions {
     blendOutTime?: number;
     controller?: string;
@@ -9404,6 +9473,11 @@ export interface PlayerAimAssistSettings {
     presetId: string;
     targetMode?: AimAssistTargetMode;
     viewAngle?: Vector2;
+}
+
+export interface PlayerBreakingBlockEventOptions {
+    blockFilter?: BlockFilter;
+    playerFilter?: EntityFilter;
 }
 
 export interface PlayerSoundOptions {

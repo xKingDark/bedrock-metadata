@@ -113964,6 +113964,11 @@
             "hash": 2782319079
         },
         {
+            "name": "minecraft:potent_sulfur",
+            "states": { "potent_sulfur_state": "continuous" },
+            "hash": 1688575440
+        },
+        {
             "name": "minecraft:powder_snow",
             "states": {},
             "hash": 196630051

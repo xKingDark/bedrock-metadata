@@ -691,6 +691,28 @@
             }
         },
         {
+            "name": "minecraft:sixteen_way_rotation",
+            "type": "string",
+            "values": [
+                { "value": "down" },
+                { "value": "up" },
+                { "value": "north" },
+                { "value": "south" },
+                { "value": "west" },
+                { "value": "east" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" },
+                { "value": "down" }
+            ]
+        },
+        {
             "name": "minecraft:vertical_half",
             "type": "string",
             "values": [
@@ -905,7 +927,8 @@
                 { "value": "dry" },
                 { "value": "wet" },
                 { "value": "dormant" },
-                { "value": "erupting" }
+                { "value": "erupting" },
+                { "value": "continuous" }
             ]
         },
         {

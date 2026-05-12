@@ -190,6 +190,14 @@ export enum MouseActionCategory {
     Drag   = 3,
 }
 
+export enum MouseCursorIconType {
+    Crosshair  = "Crosshair",
+    Default    = "Default",
+    Move       = "Move",
+    NotAllowed = "NotAllowed",
+    Wait       = "Wait",
+}
+
 export enum PaintCompletionState {
     Success  = 0,
     Canceled = 1,
@@ -294,6 +302,14 @@ export enum RealmsWorldUploadResult {
     WorldNameNonCompliant = 6,
 }
 
+export enum RenderPlaneGridResolution {
+    EightBlocks   = "EightBlocks",
+    FourBlocks    = "FourBlocks",
+    None          = "None",
+    OneBlock      = "OneBlock",
+    SixteenBlocks = "SixteenBlocks",
+}
+
 export enum SelectionVolumeEventType {
     Set       = 1,
     Add       = 2,
@@ -363,6 +379,7 @@ export enum ThemeSettingsColorKey {
     PrefillVolumeBorder          = "PrefillVolumeBorder",
     PrefillVolumeFill            = "PrefillVolumeFill",
     PrimaryActive                = "PrimaryActive",
+    PrimaryAttention             = "PrimaryAttention",
     PrimaryBackground1           = "PrimaryBackground1",
     PrimaryBackground2           = "PrimaryBackground2",
     PrimaryBackground3           = "PrimaryBackground3",
@@ -372,6 +389,7 @@ export enum ThemeSettingsColorKey {
     PrimaryMute                  = "PrimaryMute",
     ScrollBar                    = "ScrollBar",
     SecondaryActive              = "SecondaryActive",
+    SecondaryAttention           = "SecondaryAttention",
     SecondaryBackground1         = "SecondaryBackground1",
     SecondaryBackground2         = "SecondaryBackground2",
     SecondaryBackground3         = "SecondaryBackground3",
@@ -400,6 +418,7 @@ export enum WidgetComponentType {
     Gizmo         = "Gizmo",
     Grid          = "Grid",
     Guide         = "Guide",
+    RenderPlane   = "RenderPlane",
     RenderPrim    = "RenderPrim",
     Spline        = "Spline",
     Text          = "Text",
@@ -1031,6 +1050,26 @@ export class CustomBiomeSource {
     updateColor(biomeName: string, color: minecraftserver.RGBA): void;
 }
 
+export class CustomDimensionManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addDimension(dimensionName: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getCustomDimensionIds(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeDimension(dimensionName: string): void;
+}
+
 export class DataStore {
     private constructor();
     readonly actionBarContainer: DataStoreActionBarContainer;
@@ -1580,6 +1619,7 @@ export class ExtensionContext {
     readonly cursor: Cursor;
     readonly exportManager: ExportManager;
     readonly extensionInfo: Extension;
+    readonly guidePlaneManager: GuidePlaneManager;
     readonly minimapManager: MinimapManager;
     readonly player: minecraftserver.Player;
     readonly playtest: PlaytestManager;
@@ -1640,6 +1680,68 @@ export class GraphicsSettings {
     setAll(properties: Record<string, boolean | number | string>): void;
 }
 
+export class GuidePlaneManager {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    allPlanesVisible: boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addPlane(
+        origin: minecraftserver.Vector3,
+        normal: minecraftserver.Vector3,
+        visible: boolean,
+        outlineColor: minecraftserver.RGBA,
+        fillColor: minecraftserver.RGBA,
+    ): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getPlane(planeId: string): GuidePlane | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getPlanes(): GuidePlane[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removePlane(planeId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneColors(planeId: string, outlineColor: minecraftserver.RGBA, fillColor: minecraftserver.RGBA): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneNormal(planeId: string, normal: minecraftserver.Vector3): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneOrigin(planeId: string, origin: minecraftserver.Vector3): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneVisibility(planeId: string, visible: boolean): void;
+}
+
 export class IBlockPaletteItem {
     private constructor();
     getBlock(): minecraftserver.BlockType | undefined;
@@ -1683,6 +1785,12 @@ export class InputService {
      * @throws This function can throw errors.
      */
     registerMouseBinding(contextId: string, bindingId: string, mouseAction: MouseActionCategory): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setMouseIcon(contextId: string, mouseIcon?: MouseCursorIconType): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1889,6 +1997,7 @@ export class MinecraftEditor {
 
 export class MinecraftEditorInternal {
     private constructor();
+    readonly customDimensionManager: CustomDimensionManager;
     readonly isNewLevel: boolean;
     readonly regionManager: ProjectRegionManager;
     /**
@@ -1931,6 +2040,12 @@ export class MinecraftEditorInternal {
         shutdownFunction: (arg0: ExtensionContext) => void,
         options?: ExtensionOptionalParameters,
     ): Extension;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    reloadEditor(): void;
 }
 
 export class MinimapItem {
@@ -3353,6 +3468,15 @@ export class Widget {
      *
      * @throws This function can throw errors.
      */
+    addRenderPlaneComponent(
+        componentName: string,
+        options?: WidgetComponentRenderPlaneOptions,
+    ): WidgetComponentRenderPlane;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     addRenderPrimitiveComponent(
         componentName: string,
         primitiveType: 
@@ -3635,6 +3759,31 @@ export class WidgetComponentGrid extends WidgetComponentBase {
 // @ts-ignore
 export class WidgetComponentGuide extends WidgetComponentBase {
     private constructor();
+}
+
+// @ts-ignore
+export class WidgetComponentRenderPlane extends WidgetComponentBase {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    fillColor: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    gridResolution: RenderPlaneGridResolution;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    maxSizeChunks: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    normal: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    outlineColor: minecraftserver.RGBA;
 }
 
 // @ts-ignore
@@ -4376,6 +4525,15 @@ export interface GameOptions {
     worldName?: string;
 }
 
+export interface GuidePlane {
+    fillColor: minecraftserver.RGBA;
+    normal: minecraftserver.Vector3;
+    origin: minecraftserver.Vector3;
+    outlineColor: minecraftserver.RGBA;
+    planeId: string;
+    visible: boolean;
+}
+
 export interface InputBindingInfo {
     actionId?: string;
     canRebind: boolean;
@@ -4611,6 +4769,15 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 
 // @ts-ignore
 export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {}
+
+// @ts-ignore
+export interface WidgetComponentRenderPlaneOptions extends WidgetComponentBaseOptions {
+    fillColor?: minecraftserver.RGBA;
+    gridResolution?: RenderPlaneGridResolution;
+    maxSizeChunks?: number;
+    normal?: minecraftserver.Vector3;
+    outlineColor?: minecraftserver.RGBA;
+}
 
 // @ts-ignore
 export interface WidgetComponentRenderPrimitiveOptions extends WidgetComponentBaseOptions {}

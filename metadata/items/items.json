@@ -3532,7 +3532,7 @@
         },
         {
             "name": "minecraft:end_crystal",
-            "id": 843,
+            "id": 844,
             "max_size": 64,
             "localization_key": "item.end_crystal.name"
         },
@@ -3952,7 +3952,7 @@
         },
         {
             "name": "minecraft:glow_berries",
-            "id": 844,
+            "id": 845,
             "max_size": 64,
             "localization_key": "item.glow_berries.name"
         },
@@ -5906,6 +5906,12 @@
         {
             "name": "minecraft:music_disc_blocks",
             "id": 575,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_bounce",
+            "id": 833,
             "max_size": 1,
             "localization_key": "item.record.name"
         },

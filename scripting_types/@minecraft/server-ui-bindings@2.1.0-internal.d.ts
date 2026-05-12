@@ -122,6 +122,8 @@ export class CustomForm {
      * @throws This function can throw errors.
      *
      * {@link InvalidFormModificationError}
+     *
+     * {@link InvalidObservableError}
      */
     dropdown(
         label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
@@ -167,6 +169,8 @@ export class CustomForm {
      * @throws This function can throw errors.
      *
      * {@link InvalidFormModificationError}
+     *
+     * {@link InvalidObservableError}
      */
     slider(
         label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
@@ -189,6 +193,8 @@ export class CustomForm {
      * @throws This function can throw errors.
      *
      * {@link InvalidFormModificationError}
+     *
+     * {@link InvalidObservableError}
      */
     textField(
         label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
@@ -201,6 +207,8 @@ export class CustomForm {
      * @throws This function can throw errors.
      *
      * {@link InvalidFormModificationError}
+     *
+     * {@link InvalidObservableError}
      */
     toggle(
         label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
@@ -629,6 +637,11 @@ export class InvalidFormModificationError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly formId: string;
+}
+
+// @ts-ignore
+export class InvalidObservableError extends Error {
+    private constructor();
 }
 
 // @ts-ignore
