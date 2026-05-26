@@ -364,7 +364,7 @@ export class HttpHeader {
 }
 
 export class HttpRequest {
-    body: string;
+    body: minecraftserver.ISerializable | string;
     headers: HttpHeader[];
     method: HttpRequestMethod;
     timeout: number;
@@ -377,7 +377,7 @@ export class HttpRequest {
     /**
      * @remarks This function can be called in early-execution mode.
      */
-    setBody(body: string): HttpRequest;
+    setBody(body: minecraftserver.ISerializable | string): HttpRequest;
     /**
      * @remarks This function can be called in early-execution mode.
      */
@@ -398,6 +398,14 @@ export class HttpResponse {
     readonly headers: HttpHeader[];
     readonly request: HttpRequest;
     readonly status: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link SerializableParseError}
+     */
+    deserialize(identifier: string): minecraftserver.ISerializable;
 }
 
 export class MessageAfterEventSignal {
@@ -597,6 +605,11 @@ export class RequestBodyTooLargeError extends Error {
      * @remarks This property can be read in early-execution mode.
      */
     readonly providedBytes: number;
+}
+
+// @ts-ignore
+export class SerializableParseError extends Error {
+    private constructor();
 }
 
 // @ts-ignore

@@ -113,6 +113,12 @@ export enum ExportResult {
     EditorSystemFailure         = 7,
 }
 
+export enum FilePickerError {
+    AccessDenied = "access-denied",
+    Cancelled    = "cancelled",
+    FileTooLarge = "file-too-large",
+}
+
 export enum FlattenMode {
     Both = 0,
     Down = 1,
@@ -125,6 +131,23 @@ export enum GamePublishSetting {
     FriendsOnly      = 2,
     FriendsOfFriends = 3,
     Public           = 4,
+}
+
+export enum GeneralInputBindingCategory {
+    Undo           = 0,
+    Redo           = 1,
+    Cut            = 2,
+    Copy           = 3,
+    Paste          = 4,
+    Delete         = 5,
+    Clear          = 6,
+    Fill           = 7,
+    ApplyFlood     = 8,
+    OpenChatWindow = 9,
+    Reload         = 10,
+    ShowGameMenu   = 11,
+    ToggleMode     = 12,
+    ShowLogPanel   = 13,
 }
 
 export enum GraphicsSettingsProperty {
@@ -166,6 +189,30 @@ export enum LogChannel {
     Message = 1,
     Toast   = 2,
     All     = 3,
+}
+
+export enum MeshLoadError {
+    AccessDenied     = "access-denied",
+    EmptyFile        = "empty-file",
+    FileTooLarge     = "file-too-large",
+    InternalError    = "internal-error",
+    MeshNotFound     = "mesh-not-found",
+    MissingMaterials = "missing-materials",
+    TooManyTriangles = "too-many-triangles",
+    UnknownFormat    = "unknown-format",
+}
+
+export enum MeshPlacementError {
+    Cancelled           = "cancelled",
+    CommitInProgress    = "commit-in-progress",
+    GridAxisExceeded    = "grid-axis-exceeded",
+    GridVolumeExceeded  = "grid-volume-exceeded",
+    InvalidBlockType    = "invalid-block-type",
+    InvalidParameters   = "invalid-parameters",
+    NoBlocks            = "no-blocks",
+    NoTransaction       = "no-transaction",
+    PlayerUnavailable   = "player-unavailable",
+    VoxelizationTimeout = "voxelization-timeout",
 }
 
 export enum MinimapMarkerType {
@@ -1392,6 +1439,10 @@ export class DataTransferManager {
     /**
      * @throws This function can throw errors.
      */
+    requestDefaultBiomeConfig(biomeIdentifier: string): Promise<DataTransferBiomeConfigData>;
+    /**
+     * @throws This function can throw errors.
+     */
     requestIdentifiers(collectionUniqueId: string): Promise<DataTransferRequestIdentifiersResponse>;
     /**
      * @throws This function can throw errors.
@@ -1772,6 +1823,12 @@ export class InputService {
      *
      * @throws This function can throw errors.
      */
+    registerBindingCategory(id: string, label: string, order: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     registerKeyBinding(
         contextId: string,
         bindingId: string,
@@ -1791,6 +1848,16 @@ export class InputService {
      * @throws This function can throw errors.
      */
     setMouseIcon(contextId: string, mouseIcon?: MouseCursorIconType): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    tryGetBindingCategoryInfo(id: string): BindingCategoryInfo | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unregisterBindingCategory(id: string): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1962,6 +2029,18 @@ export class Logger {
 
 export class MeshCacheManager {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    cancelPlacement(requestId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commitToWorld(meshId: string, options: MeshPlacementOptions): Promise<MeshPlacementResult>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -4340,6 +4419,11 @@ export class WidgetStateChangeEventData {
     readonly widget: Widget;
 }
 
+export interface BindingCategoryInfo {
+    label: string;
+    order: number;
+}
+
 export interface BiomeFillOptions {
     biomeFilter?: minecraftserver.BiomeFilter;
     includeContainedPositions?: boolean;
@@ -4536,6 +4620,8 @@ export interface GuidePlane {
 
 export interface InputBindingInfo {
     actionId?: string;
+    bindingCategory?: string;
+    bindingPriority?: number;
     canRebind: boolean;
     label?: string;
     tooltip?: string;
@@ -4576,6 +4662,21 @@ export interface MeshInfo {
 
 export interface MeshLoadOptions {
     maxTriangleCount?: number;
+}
+
+export interface MeshPlacementOptions {
+    blockType: string;
+    location: minecraftserver.Vector3;
+    requestId?: string;
+    rotation: minecraftserver.Vector3;
+    rotationPivot?: minecraftserver.Vector3;
+    scaleFactor: number;
+}
+
+export interface MeshPlacementResult {
+    blockCount: number;
+    errorMessage: string;
+    requestId: string;
 }
 
 export interface MinimapCreateOptions {

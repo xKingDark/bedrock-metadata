@@ -254,6 +254,7 @@ export enum EntityComponentTypes {
     FireImmune            = "minecraft:fire_immune",
     FloatsInLiquid        = "minecraft:floats_in_liquid",
     FlyingSpeed           = "minecraft:flying_speed",
+    Fog                   = "minecraft:player.fog",
     FrictionModifier      = "minecraft:friction_modifier",
     Healable              = "minecraft:healable",
     Health                = "minecraft:health",
@@ -824,6 +825,7 @@ export type EntityComponentTypeMap = {
     npc: EntityNpcComponent;
     onfire: EntityOnFireComponent;
     "player.exhaustion": EntityExhaustionComponent;
+    "player.fog": EntityFogComponent;
     "player.hunger": EntityHungerComponent;
     "player.saturation": EntitySaturationComponent;
     projectile: EntityProjectileComponent;
@@ -893,6 +895,7 @@ export type EntityComponentTypeMap = {
     "minecraft:npc": EntityNpcComponent;
     "minecraft:onfire": EntityOnFireComponent;
     "minecraft:player.exhaustion": EntityExhaustionComponent;
+    "minecraft:player.fog": EntityFogComponent;
     "minecraft:player.hunger": EntityHungerComponent;
     "minecraft:player.saturation": EntitySaturationComponent;
     "minecraft:projectile": EntityProjectileComponent;
@@ -4018,6 +4021,64 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
 }
 
 // @ts-ignore
+export class EntityFogComponent extends EntityComponent {
+    private constructor();
+    static readonly componentId = "minecraft:player.fog";
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link EntityFogComponentError}
+     *
+     * {@link InvalidEntityError}
+     */
+    applyStack(fogIds: string[], tag?: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getStack(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getTags(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    pop(tag?: string): string | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link EntityFogComponentError}
+     *
+     * {@link InvalidEntityError}
+     */
+    push(fogId: string, tag?: string): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    remove(tag?: string): boolean;
+}
+
+// @ts-ignore
 export class EntityFrictionModifierComponent extends EntityComponent {
     private constructor();
     /**
@@ -5541,6 +5602,10 @@ export class IsBabyCondition extends LootItemCondition {
     private constructor();
 }
 
+export class ISerializable {
+    private constructor();
+}
+
 // @ts-ignore
 export class ItemBookComponent extends ItemComponent {
     private constructor();
@@ -6939,6 +7004,35 @@ export class PlayerButtonInputAfterEventSignal {
 }
 
 // @ts-ignore
+export class PlayerCancelBreakingBlockAfterEvent extends BlockEvent {
+    private constructor();
+    readonly blockPermutation: BlockPermutation;
+    readonly breakProgress: number;
+    readonly face: Direction;
+    readonly heldItemStack?: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerCancelBreakingBlockAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerCancelBreakingBlockAfterEvent) => void,
+        options?: PlayerBreakingBlockEventOptions,
+    ): (arg0: PlayerCancelBreakingBlockAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerCancelBreakingBlockAfterEvent) => void): void;
+}
+
+// @ts-ignore
 export class PlayerCursorInventoryComponent extends EntityComponent {
     private constructor();
     /**
@@ -8184,7 +8278,8 @@ export class StartupEvent {
     getSpawnRulesRegistry(): SpawnRulesRegistry;
 }
 
-export class Structure {
+// @ts-ignore
+export class Structure extends ISerializable {
     private constructor();
     readonly id: string;
     readonly isValid: boolean;
@@ -8937,6 +9032,10 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerButtonInput: PlayerButtonInputAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly playerCancelBreakingBlock: PlayerCancelBreakingBlockAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -9862,6 +9961,11 @@ export class EnchantmentTypeNotCompatibleError extends Error {
 
 // @ts-ignore
 export class EnchantmentTypeUnknownIdError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class EntityFogComponentError extends Error {
     private constructor();
 }
 

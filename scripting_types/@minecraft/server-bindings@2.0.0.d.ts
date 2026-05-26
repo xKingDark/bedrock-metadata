@@ -3890,6 +3890,10 @@ export class InputInfo {
     getMovementVector(): Vector2;
 }
 
+export class ISerializable {
+    private constructor();
+}
+
 export class ItemCompleteUseAfterEvent {
     private constructor();
     readonly itemStack: ItemStack;
@@ -5551,7 +5555,8 @@ export class StartupEvent {
     readonly itemComponentRegistry: ItemComponentRegistry;
 }
 
-export class Structure {
+// @ts-ignore
+export class Structure extends ISerializable {
     private constructor();
     readonly id: string;
     readonly isValid: boolean;

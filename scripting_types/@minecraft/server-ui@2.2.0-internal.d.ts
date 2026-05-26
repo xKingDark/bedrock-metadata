@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @beta
+ * @internal
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui-bindings", "version": "2.1.0-beta" }
+ * { "module_name": "@minecraft/server-ui", "version": "2.2.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -215,6 +215,33 @@ export class CustomForm {
         toggled: ObservableBoolean,
         options?: ToggleOptions,
     ): CustomForm;
+}
+
+export class DataStore {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    getProperty(player: minecraftserver.Player, dataStoreName: string, property: string): string | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     *
+     * {@link InvalidPathError}
+     */
+    getPropertyPath(
+        player: minecraftserver.Player,
+        dataStoreName: string,
+        property: string,
+        path: string,
+    ): string | undefined;
 }
 
 export class FormResponse {
@@ -645,6 +672,15 @@ export class InvalidObservableError extends Error {
 }
 
 // @ts-ignore
+export class InvalidPathError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly path: string;
+}
+
+// @ts-ignore
 export class PlayerLeftError extends Error {
     private constructor();
     /**
@@ -653,4 +689,7 @@ export class PlayerLeftError extends Error {
     readonly formId: string;
 }
 
+export const testConstant = 5;
+
+export const ddui: DataStore;
 export const uiManager: UIManager;

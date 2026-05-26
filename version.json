@@ -1,11 +1,11 @@
 {
-    "version": "1.26.30-preview.28",
+    "version": "1.26.30-preview.31",
     "metadata": {
-        "branch": "main",
-        "commit_hash": "248ba1d991417d3a77cf467947fdcb960d56e722",
+        "branch": "preview/hotfix_26u3-5",
+        "commit_hash": "4f39a5e0a1cafd745e1d23f4c77bfcc400ff73f6",
         "build_flavor": "Publish",
-        "build_id": 44731585,
-        "network_protocol": 998,
+        "build_id": 45270295,
+        "network_protocol": 1001,
         "level": {
             "storage_version": 10,
             "chunk_format": 42,
@@ -15,15 +15,15 @@
     "platforms": [
         {
             "platform": "win32",
-            "released": "2026-05-12T15:42:09.000Z",
-            "size_in_bytes": 80087654,
-            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win-preview/bedrock-server-1.26.30.28.zip"
+            "released": "2026-05-21T17:12:50.000Z",
+            "size_in_bytes": 92716657,
+            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win-preview/bedrock-server-1.26.30.31.zip"
         },
         {
             "platform": "linux",
-            "released": "2026-05-12T15:38:34.000Z",
-            "size_in_bytes": 89464311,
-            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux-preview/bedrock-server-1.26.30.28.zip"
+            "released": "2026-05-21T17:12:58.000Z",
+            "size_in_bytes": 89990732,
+            "download_url": "https://www.minecraft.net/bedrockdedicatedserver/bin-linux-preview/bedrock-server-1.26.30.31.zip"
         }
     ]
 }

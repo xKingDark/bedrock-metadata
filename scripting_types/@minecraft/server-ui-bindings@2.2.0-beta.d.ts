@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @internal
+ * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui-bindings", "version": "2.1.0-internal" }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.2.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
