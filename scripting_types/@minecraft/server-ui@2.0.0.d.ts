@@ -15,10 +15,42 @@ export enum FormCancelationReason {
     UserClosed = "UserClosed",
 }
 
+export enum FormCancelationReason {
+    UserBusy   = "UserBusy",
+    UserClosed = "UserClosed",
+}
+
 export enum FormRejectReason {
     MalformedResponse = "MalformedResponse",
     PlayerQuit        = "PlayerQuit",
     ServerShutdown    = "ServerShutdown",
+}
+
+export enum FormRejectReason {
+    MalformedResponse = "MalformedResponse",
+    PlayerQuit        = "PlayerQuit",
+    ServerShutdown    = "ServerShutdown",
+}
+
+export class ActionFormData {
+    body(bodyText: minecraftserver.RawMessage | string): ActionFormData;
+    button(text: minecraftserver.RawMessage | string, iconPath?: string): ActionFormData;
+    divider(): ActionFormData;
+    header(text: minecraftserver.RawMessage | string): ActionFormData;
+    label(text: minecraftserver.RawMessage | string): ActionFormData;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     *
+     * {@link minecraftserver.RawMessageError}
+     */
+    show(player: minecraftserver.Player): Promise<ActionFormResponse>;
+    title(titleText: minecraftserver.RawMessage | string): ActionFormData;
 }
 
 export class ActionFormData {
@@ -48,6 +80,18 @@ export class ActionFormResponse extends FormResponse {
     readonly selection?: number;
 }
 
+// @ts-ignore
+export class ActionFormResponse extends FormResponse {
+    private constructor();
+    readonly selection?: number;
+}
+
+export class FormResponse {
+    private constructor();
+    readonly cancelationReason?: FormCancelationReason;
+    readonly canceled: boolean;
+}
+
 export class FormResponse {
     private constructor();
     readonly cancelationReason?: FormCancelationReason;
@@ -71,6 +115,31 @@ export class MessageFormData {
      */
     show(player: minecraftserver.Player): Promise<MessageFormResponse>;
     title(titleText: minecraftserver.RawMessage | string): MessageFormData;
+}
+
+export class MessageFormData {
+    body(bodyText: minecraftserver.RawMessage | string): MessageFormData;
+    button1(text: minecraftserver.RawMessage | string): MessageFormData;
+    button2(text: minecraftserver.RawMessage | string): MessageFormData;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     *
+     * {@link minecraftserver.RawMessageError}
+     */
+    show(player: minecraftserver.Player): Promise<MessageFormResponse>;
+    title(titleText: minecraftserver.RawMessage | string): MessageFormData;
+}
+
+// @ts-ignore
+export class MessageFormResponse extends FormResponse {
+    private constructor();
+    readonly selection?: number;
 }
 
 // @ts-ignore
@@ -116,10 +185,63 @@ export class ModalFormData {
     toggle(label: minecraftserver.RawMessage | string, toggleOptions?: ModalFormDataToggleOptions): ModalFormData;
 }
 
+export class ModalFormData {
+    divider(): ModalFormData;
+    dropdown(
+        label: minecraftserver.RawMessage | string,
+        items: (minecraftserver.RawMessage | string)[],
+        dropdownOptions?: ModalFormDataDropdownOptions,
+    ): ModalFormData;
+    header(text: minecraftserver.RawMessage | string): ModalFormData;
+    label(text: minecraftserver.RawMessage | string): ModalFormData;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     *
+     * {@link minecraftserver.RawMessageError}
+     */
+    show(player: minecraftserver.Player): Promise<ModalFormResponse>;
+    slider(
+        label: minecraftserver.RawMessage | string,
+        minimumValue: number,
+        maximumValue: number,
+        sliderOptions?: ModalFormDataSliderOptions,
+    ): ModalFormData;
+    submitButton(submitButtonText: minecraftserver.RawMessage | string): ModalFormData;
+    textField(
+        label: minecraftserver.RawMessage | string,
+        placeholderText: minecraftserver.RawMessage | string,
+        textFieldOptions?: ModalFormDataTextFieldOptions,
+    ): ModalFormData;
+    title(titleText: minecraftserver.RawMessage | string): ModalFormData;
+    toggle(label: minecraftserver.RawMessage | string, toggleOptions?: ModalFormDataToggleOptions): ModalFormData;
+}
+
 // @ts-ignore
 export class ModalFormResponse extends FormResponse {
     private constructor();
     readonly formValues?: (boolean | number | string | undefined)[];
+}
+
+// @ts-ignore
+export class ModalFormResponse extends FormResponse {
+    private constructor();
+    readonly formValues?: (boolean | number | string | undefined)[];
+}
+
+export class UIManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    closeAllForms(player: minecraftserver.Player): void;
 }
 
 export class UIManager {
@@ -137,6 +259,17 @@ export interface ModalFormDataDropdownOptions {
     tooltip?: minecraftserver.RawMessage | string;
 }
 
+export interface ModalFormDataDropdownOptions {
+    defaultValueIndex?: number;
+    tooltip?: minecraftserver.RawMessage | string;
+}
+
+export interface ModalFormDataSliderOptions {
+    defaultValue?: number;
+    tooltip?: minecraftserver.RawMessage | string;
+    valueStep?: number;
+}
+
 export interface ModalFormDataSliderOptions {
     defaultValue?: number;
     tooltip?: minecraftserver.RawMessage | string;
@@ -145,6 +278,16 @@ export interface ModalFormDataSliderOptions {
 
 export interface ModalFormDataTextFieldOptions {
     defaultValue?: minecraftserver.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
+}
+
+export interface ModalFormDataTextFieldOptions {
+    defaultValue?: minecraftserver.RawMessage | string;
+    tooltip?: minecraftserver.RawMessage | string;
+}
+
+export interface ModalFormDataToggleOptions {
+    defaultValue?: boolean;
     tooltip?: minecraftserver.RawMessage | string;
 }
 
@@ -162,4 +305,14 @@ export class FormRejectError extends Error {
     readonly reason: FormRejectReason;
 }
 
+// @ts-ignore
+export class FormRejectError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: FormRejectReason;
+}
+
+export const uiManager: UIManager;
 export const uiManager: UIManager;
