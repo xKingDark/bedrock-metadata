@@ -1010,8 +1010,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @throws This function can throw errors.
      *
@@ -1058,6 +1062,10 @@ export class PlayerSpawnAfterEvent {
 
 // @ts-ignore
 export class PlayerSpawnAfterEventSignal extends IPlayerSpawnAfterEventSignal {
+    private constructor();
+}
+
+export class SoundInstance {
     private constructor();
 }
 

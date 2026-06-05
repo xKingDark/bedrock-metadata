@@ -23,6 +23,8 @@ export class AllowList {
      */
     enabled: boolean;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link AllowListModificationError}
@@ -31,18 +33,26 @@ export class AllowList {
      */
     add(player: minecraftserver.Player | string): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    clear(): void;
+    /**
      * @throws This function can throw errors.
      *
      * {@link minecraftserver.InvalidEntityError}
      */
     contains(player: minecraftserver.Player | string): boolean;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link AllowListFileReloadError}
      */
     reloadFile(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link AllowListModificationError}
@@ -90,41 +100,56 @@ export class DedicatedServerUtils {
     readonly allowList: AllowList;
     readonly levelStorage: LevelStorage;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadCDNConfig(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadPermissions(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadScriptingConfig(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     stopServer(): void;
 }
 
 export class LevelStorage {
     private constructor();
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
      */
     saveHold(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
      */
     saveQuery(): LevelStorageQuerySnapshotFile[];
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
