@@ -373,10 +373,12 @@ export enum RealmsWorldUploadResult {
 }
 
 export declare enum registerEditorExtension {
-    ControlPanel    = 1,
-    LogPanel        = 2,
-    UpdateInfoPanel = 3,
-    ControlHelp     = 4,
+    ControlPanel     = 1,
+    LogPanel         = 2,
+    UpdateInfoPanel  = 3,
+    ControlHelp      = 4,
+    StructurePanel   = 5,
+    KeyboardSettings = 6,
 }
 
 export enum RenderPlaneGridResolution {

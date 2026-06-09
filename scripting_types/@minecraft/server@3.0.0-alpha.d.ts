@@ -260,7 +260,6 @@ export enum EntityComponentTypes {
     FireImmune            = "minecraft:fire_immune",
     FloatsInLiquid        = "minecraft:floats_in_liquid",
     FlyingSpeed           = "minecraft:flying_speed",
-    Fog                   = "minecraft:player.fog",
     FrictionModifier      = "minecraft:friction_modifier",
     Healable              = "minecraft:healable",
     Health                = "minecraft:health",
@@ -613,6 +612,13 @@ export enum PlayerPermissionLevel {
     Custom   = 3,
 }
 
+export enum PlayerSplitScreenSlot {
+    First  = "First",
+    Fourth = "Fourth",
+    Second = "Second",
+    Third  = "Third",
+}
+
 export enum PlayerWaypointsMode {
     Everyone = "Everyone",
     Off      = "Off",
@@ -800,7 +806,6 @@ export type EntityComponentTypeMap = {
     npc: EntityNpcComponent;
     onfire: EntityOnFireComponent;
     "player.exhaustion": EntityExhaustionComponent;
-    "player.fog": EntityFogComponent;
     "player.hunger": EntityHungerComponent;
     "player.saturation": EntitySaturationComponent;
     projectile: EntityProjectileComponent;
@@ -870,7 +875,6 @@ export type EntityComponentTypeMap = {
     "minecraft:npc": EntityNpcComponent;
     "minecraft:onfire": EntityOnFireComponent;
     "minecraft:player.exhaustion": EntityExhaustionComponent;
-    "minecraft:player.fog": EntityFogComponent;
     "minecraft:player.hunger": EntityHungerComponent;
     "minecraft:player.saturation": EntitySaturationComponent;
     "minecraft:projectile": EntityProjectileComponent;
@@ -2126,6 +2130,18 @@ export class BlockVolumeBase {
      */
     getBoundingBox(): BlockBoundingBox;
     getCapacity(): number;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     */
+    getClosest(count: number, location: Vector3): Vector3[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     */
+    getFarthest(count: number, location: Vector3): Vector3[];
     /**
      * @throws This function can throw errors.
      */
@@ -4047,64 +4063,6 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
 }
 
 // @ts-ignore
-export class EntityFogComponent extends EntityComponent {
-    private constructor();
-    static readonly componentId = "minecraft:player.fog";
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link EntityFogComponentError}
-     *
-     * {@link InvalidEntityError}
-     */
-    applyStack(fogIds: string[], tag?: string): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    getStack(): string[];
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    getTags(): string[];
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    pop(tag?: string): string | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link EntityFogComponentError}
-     *
-     * {@link InvalidEntityError}
-     */
-    push(fogId: string, tag?: string): number;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidEntityError}
-     */
-    remove(tag?: string): boolean;
-}
-
-// @ts-ignore
 export class EntityFrictionModifierComponent extends EntityComponent {
     private constructor();
     /**
@@ -5219,6 +5177,32 @@ export class EntityTamedAfterEventSignal {
     unsubscribe(callback: (arg0: EntityTamedAfterEvent) => void): void;
 }
 
+export class EntityTamedBeforeEvent {
+    private constructor();
+    cancel: boolean;
+    readonly entity: Entity;
+    readonly tamingEntity: Entity;
+}
+
+export class EntityTamedBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityTamedBeforeEvent) => void,
+        options?: EntityTamedEventFilter,
+    ): (arg0: EntityTamedBeforeEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityTamedBeforeEvent) => void): void;
+}
+
 // @ts-ignore
 export class EntityTameMountComponent extends EntityComponent {
     private constructor();
@@ -5441,6 +5425,62 @@ export class FluidContainer {
     private constructor();
     static readonly maxFillLevel = 6;
     static readonly minFillLevel = 0;
+}
+
+export class FogSettings {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getStack(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getTags(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    pop(tag?: string): string | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link FogSettingsError}
+     *
+     * {@link InvalidEntityError}
+     */
+    push(fogId: string, tag?: string): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    remove(tag?: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link FogSettingsError}
+     *
+     * {@link InvalidEntityError}
+     */
+    setStack(fogIds: string[], tag?: string): void;
 }
 
 export class GameRuleChangeAfterEvent {
@@ -6724,6 +6764,7 @@ export class Player extends Entity {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     commandPermissionLevel: CommandPermissionLevel;
+    readonly fogSettings: FogSettings;
     /**
      * @throws This property can throw when used.
      *
@@ -6764,17 +6805,17 @@ export class Player extends Entity {
     /**
      * @throws This property can throw when used.
      *
-     * {@link InvalidEntityError}
-     */
-    readonly playerPermissionLevel: PlayerPermissionLevel;
-    /**
-     * @throws This property can throw when used.
-     *
      * {@link minecraftcommon.EngineError}
      *
      * {@link InvalidEntityError}
      */
-    readonly playfabId: string;
+    readonly persistentId: string;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly playerPermissionLevel: PlayerPermissionLevel;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -6827,8 +6868,6 @@ export class Player extends Entity {
      */
     getItemCooldown(cooldownCategory: string): number;
     /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
@@ -6840,6 +6879,14 @@ export class Player extends Entity {
      * @throws This function can throw errors.
      */
     getSpawnPoint(): DimensionLocation | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     */
+    getSplitScreenSlot(): PlayerSplitScreenSlot | undefined;
     /**
      * @throws This function can throw errors.
      */
@@ -9265,6 +9312,10 @@ export class WorldBeforeEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly entityTamed: EntityTamedBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly explosion: ExplosionBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -10086,12 +10137,12 @@ export class EnchantmentTypeUnknownIdError extends Error {
 }
 
 // @ts-ignore
-export class EntityFogComponentError extends Error {
+export class EntitySpawnError extends Error {
     private constructor();
 }
 
 // @ts-ignore
-export class EntitySpawnError extends Error {
+export class FogSettingsError extends Error {
     private constructor();
 }
 

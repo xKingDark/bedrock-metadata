@@ -66,6 +66,22 @@
             "name": "minecraft:acacia_fence",
             "states": [
                 {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
+                {
                     "name": "wood_type",
                     "default_value": "acacia"
                 }
@@ -630,7 +646,24 @@
         {
             "id": 770,
             "name": "minecraft:bamboo_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.bamboo_fence.name"
         },
         {
@@ -1064,6 +1097,22 @@
             "id": 831,
             "name": "minecraft:birch_fence",
             "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
                 {
                     "name": "wood_type",
                     "default_value": "birch"
@@ -2394,7 +2443,24 @@
         {
             "id": 787,
             "name": "minecraft:cherry_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.cherry_fence.name"
         },
         {
@@ -3534,7 +3600,24 @@
         {
             "id": 511,
             "name": "minecraft:crimson_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.crimson_fence.name"
         },
         {
@@ -4085,6 +4168,22 @@
             "id": 832,
             "name": "minecraft:dark_oak_fence",
             "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
                 {
                     "name": "wood_type",
                     "default_value": "dark_oak"
@@ -7805,6 +7904,22 @@
             "name": "minecraft:jungle_fence",
             "states": [
                 {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
+                {
                     "name": "wood_type",
                     "default_value": "jungle"
                 }
@@ -9077,7 +9192,24 @@
         {
             "id": 746,
             "name": "minecraft:mangrove_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.mangrove_fence.name"
         },
         {
@@ -9690,7 +9822,24 @@
         {
             "id": 113,
             "name": "minecraft:nether_brick_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.nether_brick_fence.name"
         },
         {
@@ -9890,6 +10039,22 @@
             "id": 85,
             "name": "minecraft:oak_fence",
             "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
                 {
                     "name": "wood_type",
                     "default_value": "oak"
@@ -10556,7 +10721,24 @@
         {
             "id": 1246,
             "name": "minecraft:pale_oak_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.pale_oak_fence.name"
         },
         {
@@ -13633,6 +13815,22 @@
             "name": "minecraft:spruce_fence",
             "states": [
                 {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
+                {
                     "name": "wood_type",
                     "default_value": "spruce"
                 }
@@ -15233,7 +15431,24 @@
         {
             "id": 512,
             "name": "minecraft:warped_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.warped_fence.name"
         },
         {

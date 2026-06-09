@@ -590,6 +590,13 @@ export enum PlayerPermissionLevel {
     Custom   = 3,
 }
 
+export enum PlayerSplitScreenSlot {
+    First  = "First",
+    Fourth = "Fourth",
+    Second = "Second",
+    Third  = "Third",
+}
+
 export enum ScoreboardIdentityType {
     Entity     = "Entity",
     FakePlayer = "FakePlayer",
@@ -1227,6 +1234,14 @@ export class Block {
      * {@link LocationInUnloadedChunkError}
      */
     getLightLevel(): number;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    getParts(): Block[] | undefined;
     /**
      * @throws This function can throw errors.
      *

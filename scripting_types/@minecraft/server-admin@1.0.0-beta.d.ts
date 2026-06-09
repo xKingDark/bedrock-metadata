@@ -66,6 +66,7 @@ export class AsyncPlayerJoinBeforeEvent {
     private constructor();
     readonly name: string;
     readonly persistentId: string;
+    readonly splitScreenSlot?: minecraftserver.PlayerSplitScreenSlot;
     /**
      * @throws This function can throw errors.
      *

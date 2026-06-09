@@ -428,8 +428,163 @@
         },
         {
             "name": "minecraft:acacia_fence",
-            "states": {},
-            "hash": 3166258901
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2920631295
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1865324724
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3984716858
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 745056133
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 874365242
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1929671813
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 4105246975
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3049940404
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3684813462
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 445152737
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 387627979
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3627288704
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2552837419
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1497530848
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2987884406
+        },
+        {
+            "name": "minecraft:acacia_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4043190977
         },
         {
             "name": "minecraft:acacia_fence_gate",
@@ -7855,8 +8010,163 @@
         },
         {
             "name": "minecraft:bamboo_fence",
-            "states": {},
-            "hash": 1462261651
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 155542197
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3395202922
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1976306488
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3031613059
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3663952456
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 424291731
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1627431429
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 572124858
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1814624924
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 2869931495
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3780734473
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2725427902
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1396397641
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 341091070
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 115465692
+        },
+        {
+            "name": "minecraft:bamboo_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1170772263
         },
         {
             "name": "minecraft:bamboo_fence_gate",
@@ -14345,8 +14655,163 @@
         },
         {
             "name": "minecraft:birch_fence",
-            "states": {},
-            "hash": 3642041752
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2078406302
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3133712873
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 655016691
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3894677416
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1551882227
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 496575656
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2975271838
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4030578409
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 4214972327
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3159665756
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1238290690
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2293597261
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 509622210
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1564928781
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1834296935
+        },
+        {
+            "name": "minecraft:birch_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 778990364
         },
         {
             "name": "minecraft:birch_fence_gate",
@@ -26970,8 +27435,163 @@
         },
         {
             "name": "minecraft:cherry_fence",
-            "states": {},
-            "hash": 46432752
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2896180006
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3951486577
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1010280795
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4249941520
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2759704507
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1704397936
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2991398918
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4046705489
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1284736335
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 229429764
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3189685578
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4244992149
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1048613066
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 2103919637
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3438631119
+        },
+        {
+            "name": "minecraft:cherry_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2383324548
         },
         {
             "name": "minecraft:cherry_fence_gate",
@@ -43458,8 +44078,163 @@
         },
         {
             "name": "minecraft:crimson_fence",
-            "states": {},
-            "hash": 3464312951
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2650053665
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1594747094
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 826565140
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1881871711
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2108854420
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3164160991
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3932342945
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2877036374
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2207107800
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3262414371
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2106768597
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1051462026
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1831875077
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 776568506
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3868396104
+        },
+        {
+            "name": "minecraft:crimson_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 628735379
         },
         {
             "name": "minecraft:crimson_fence_gate",
@@ -48922,8 +49697,163 @@
         },
         {
             "name": "minecraft:dark_oak_fence",
-            "states": {},
-            "hash": 329256923
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1877417069
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 822110498
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3342319952
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 102659227
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3053973536
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 4109280107
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2839533181
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1784226610
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2955018996
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 4010325567
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3130501377
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2075194806
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2191716481
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1136409910
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2016234100
+        },
+        {
+            "name": "minecraft:dark_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3071540671
         },
         {
             "name": "minecraft:dark_oak_fence_gate",
@@ -69151,8 +70081,163 @@
         },
         {
             "name": "minecraft:jungle_fence",
-            "states": {},
-            "hash": 425194876
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3237383978
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 4292690549
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3268272303
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2212965732
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 390489647
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3630150372
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 359601322
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1414907893
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1467915507
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 412608936
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2891305118
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3946611689
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1994439582
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3049746153
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 571049971
+        },
+        {
+            "name": "minecraft:jungle_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3810710696
         },
         {
             "name": "minecraft:jungle_fence_gate",
@@ -76049,8 +77134,163 @@
         },
         {
             "name": "minecraft:mangrove_fence",
-            "states": {},
-            "hash": 3525134120
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 516429998
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1571736569
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1131883459
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 76576888
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1429834691
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 374528120
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 814381230
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1869687801
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1907843191
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 852536620
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 4049102482
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 809441757
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3707697426
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 468036701
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1566438135
+        },
+        {
+            "name": "minecraft:mangrove_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 511131564
         },
         {
             "name": "minecraft:mangrove_fence_gate",
@@ -87078,8 +88318,163 @@
         },
         {
             "name": "minecraft:nether_brick_fence",
-            "states": {},
-            "hash": 1580000185
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 446961403
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3686622128
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2204869446
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3260176017
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1818950246
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 2874256817
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 80676763
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3320337488
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2512999602
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3568306173
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2378462487
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1323155916
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2815803031
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1760496460
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2950340146
+        },
+        {
+            "name": "minecraft:nether_brick_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4005646717
         },
         {
             "name": "minecraft:nether_brick_slab",
@@ -89088,8 +90483,163 @@
         },
         {
             "name": "minecraft:oak_fence",
-            "states": {},
-            "hash": 1997655867
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 425458381
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3665119106
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1256442544
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2311749115
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2198062720
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3253369291
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 869349853
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 4109010578
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3720363220
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 480702495
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 216517857
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3456178582
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1049392737
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 4289053462
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 258270804
+        },
+        {
+            "name": "minecraft:oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1313577375
         },
         {
             "name": "minecraft:oak_hanging_sign",
@@ -96646,8 +98196,163 @@
         },
         {
             "name": "minecraft:pale_oak_fence",
-            "states": {},
-            "hash": 60668747
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 376355869
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3616016594
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 231317440
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1286624011
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 4216887184
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 977226459
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3592005805
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2536699234
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 412619556
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1467926127
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2143833201
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1088526630
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 4245759665
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3190453094
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2036432740
+        },
+        {
+            "name": "minecraft:pale_oak_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3091739311
         },
         {
             "name": "minecraft:pale_oak_fence_gate",
@@ -127335,8 +129040,163 @@
         },
         {
             "name": "minecraft:spruce_fence",
-            "states": {},
-            "hash": 1246777405
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1024275095
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 4263935820
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1158812210
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 2214118781
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 721471666
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 1776778237
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 586934551
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3826595276
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 4128929230
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 889268505
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 653938019
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3893598744
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 4145079395
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3089772824
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 3325103310
+        },
+        {
+            "name": "minecraft:spruce_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 85442585
         },
         {
             "name": "minecraft:spruce_fence_gate",
@@ -144741,8 +146601,163 @@
         },
         {
             "name": "minecraft:warped_fence",
-            "states": {},
-            "hash": 790125098
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 2878612984
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 3933919555
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2932958837
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1877652266
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3730578341
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 2675271770
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 1979184744
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": false,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3034491315
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 1676236609
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 620930038
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2309709364
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": false,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 3365015935
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": false
+            },
+            "hash": 3509372340
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": false,
+                "minecraft:connection_west": true
+            },
+            "hash": 269711615
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": false
+            },
+            "hash": 2875899585
+        },
+        {
+            "name": "minecraft:warped_fence",
+            "states": {
+                "minecraft:connection_east": true,
+                "minecraft:connection_north": true,
+                "minecraft:connection_south": true,
+                "minecraft:connection_west": true
+            },
+            "hash": 1820593014
         },
         {
             "name": "minecraft:warped_fence_gate",
