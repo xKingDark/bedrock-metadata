@@ -33,11 +33,34 @@ export class DebugCircle extends DebugShape {
     constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
+// @ts-ignore
+export class DebugCone extends DebugShape {
+    height: number;
+    numSegments: number;
+    radii: minecraftserver.Vector2;
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
+}
+
+// @ts-ignore
+export class DebugCylinder extends DebugShape {
+    height: number;
+    numSegments: number;
+    radii: minecraftserver.Vector2;
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
+}
+
 export class DebugDrawer {
     private constructor();
     addShape(shape: DebugShape, dimension?: minecraftserver.Dimension): void;
     removeAll(): void;
     removeShape(shape: DebugShape): void;
+}
+
+// @ts-ignore
+export class DebugEllipsoid extends DebugShape {
+    radii: minecraftserver.Vector3;
+    segmentsPerAxis: number;
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 // @ts-ignore
@@ -47,6 +70,14 @@ export class DebugLine extends DebugShape {
         location: minecraftserver.DimensionLocation | minecraftserver.Vector3,
         endLocation: minecraftserver.Vector3,
     );
+}
+
+// @ts-ignore
+export class DebugPyramid extends DebugShape {
+    depth?: number;
+    height: number;
+    width: number;
+    constructor(location: minecraftserver.DimensionLocation | minecraftserver.Vector3);
 }
 
 export class DebugShape {

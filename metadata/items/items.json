@@ -1418,6 +1418,12 @@
             "localization_key": "tile.chiseled_bookshelf.name"
         },
         {
+            "name": "minecraft:chiseled_cinnabar",
+            "id": -1124,
+            "max_size": 64,
+            "localization_key": "tile.chiseled_cinnabar.name"
+        },
+        {
             "name": "minecraft:chiseled_copper",
             "id": -760,
             "max_size": 64,
@@ -1472,6 +1478,12 @@
             "localization_key": "tile.stonebrick.chiseled.name"
         },
         {
+            "name": "minecraft:chiseled_sulfur",
+            "id": -1107,
+            "max_size": 64,
+            "localization_key": "tile.chiseled_sulfur.name"
+        },
+        {
             "name": "minecraft:chiseled_tuff",
             "id": -753,
             "max_size": 64,
@@ -1500,6 +1512,54 @@
             "id": 240,
             "max_size": 64,
             "localization_key": "tile.chorus_plant.name"
+        },
+        {
+            "name": "minecraft:cinnabar",
+            "id": -1109,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar.name"
+        },
+        {
+            "name": "minecraft:cinnabar_brick_slab",
+            "id": -1120,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_brick_slab.name"
+        },
+        {
+            "name": "minecraft:cinnabar_brick_stairs",
+            "id": -1122,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_brick_stairs.name"
+        },
+        {
+            "name": "minecraft:cinnabar_brick_wall",
+            "id": -1123,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_brick_wall.name"
+        },
+        {
+            "name": "minecraft:cinnabar_bricks",
+            "id": -1119,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_bricks.name"
+        },
+        {
+            "name": "minecraft:cinnabar_slab",
+            "id": -1110,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_slab.name"
+        },
+        {
+            "name": "minecraft:cinnabar_stairs",
+            "id": -1112,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_stairs.name"
+        },
+        {
+            "name": "minecraft:cinnabar_wall",
+            "id": -1113,
+            "max_size": 64,
+            "localization_key": "tile.cinnabar_wall.name"
         },
         {
             "name": "minecraft:clay",
@@ -3472,7 +3532,7 @@
         },
         {
             "name": "minecraft:end_crystal",
-            "id": 843,
+            "id": 844,
             "max_size": 64,
             "localization_key": "item.end_crystal.name"
         },
@@ -3892,7 +3952,7 @@
         },
         {
             "name": "minecraft:glow_berries",
-            "id": 844,
+            "id": 845,
             "max_size": 64,
             "localization_key": "item.glow_berries.name"
         },
@@ -5850,6 +5910,12 @@
             "localization_key": "item.record.name"
         },
         {
+            "name": "minecraft:music_disc_bounce",
+            "id": 833,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
             "name": "minecraft:music_disc_cat",
             "id": 574,
             "max_size": 1,
@@ -6932,6 +6998,30 @@
             "localization_key": "tile.polished_blackstone_wall.name"
         },
         {
+            "name": "minecraft:polished_cinnabar",
+            "id": -1114,
+            "max_size": 64,
+            "localization_key": "tile.polished_cinnabar.name"
+        },
+        {
+            "name": "minecraft:polished_cinnabar_slab",
+            "id": -1115,
+            "max_size": 64,
+            "localization_key": "tile.polished_cinnabar_slab.name"
+        },
+        {
+            "name": "minecraft:polished_cinnabar_stairs",
+            "id": -1117,
+            "max_size": 64,
+            "localization_key": "tile.polished_cinnabar_stairs.name"
+        },
+        {
+            "name": "minecraft:polished_cinnabar_wall",
+            "id": -1118,
+            "max_size": 64,
+            "localization_key": "tile.polished_cinnabar_wall.name"
+        },
+        {
             "name": "minecraft:polished_deepslate",
             "id": -383,
             "max_size": 64,
@@ -6992,6 +7082,30 @@
             "localization_key": "tile.polished_granite_stairs.name"
         },
         {
+            "name": "minecraft:polished_sulfur",
+            "id": -1097,
+            "max_size": 64,
+            "localization_key": "tile.polished_sulfur.name"
+        },
+        {
+            "name": "minecraft:polished_sulfur_slab",
+            "id": -1098,
+            "max_size": 64,
+            "localization_key": "tile.polished_sulfur_slab.name"
+        },
+        {
+            "name": "minecraft:polished_sulfur_stairs",
+            "id": -1100,
+            "max_size": 64,
+            "localization_key": "tile.polished_sulfur_stairs.name"
+        },
+        {
+            "name": "minecraft:polished_sulfur_wall",
+            "id": -1101,
+            "max_size": 64,
+            "localization_key": "tile.polished_sulfur_wall.name"
+        },
+        {
             "name": "minecraft:polished_tuff",
             "id": -748,
             "max_size": 64,
@@ -7038,6 +7152,12 @@
             "id": 309,
             "max_size": 64,
             "localization_key": "item.potato.name"
+        },
+        {
+            "name": "minecraft:potent_sulfur",
+            "id": -1108,
+            "max_size": 64,
+            "localization_key": "tile.potent_sulfur.name"
         },
         {
             "name": "minecraft:potion",
@@ -8520,6 +8640,72 @@
             "id": 417,
             "max_size": 64,
             "localization_key": "item.reeds.name"
+        },
+        {
+            "name": "minecraft:sulfur",
+            "id": -1092,
+            "max_size": 64,
+            "localization_key": "tile.sulfur.name"
+        },
+        {
+            "name": "minecraft:sulfur_brick_slab",
+            "id": -1103,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_brick_slab.name"
+        },
+        {
+            "name": "minecraft:sulfur_brick_stairs",
+            "id": -1105,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_brick_stairs.name"
+        },
+        {
+            "name": "minecraft:sulfur_brick_wall",
+            "id": -1106,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_brick_wall.name"
+        },
+        {
+            "name": "minecraft:sulfur_bricks",
+            "id": -1102,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_bricks.name"
+        },
+        {
+            "name": "minecraft:sulfur_cube_bucket",
+            "id": 794,
+            "max_size": 1,
+            "localization_key": "item.bucketSulfurCube.name"
+        },
+        {
+            "name": "minecraft:sulfur_cube_spawn_egg",
+            "id": 793,
+            "max_size": 64,
+            "localization_key": "item.spawn_egg.entity.sulfur_cube.name"
+        },
+        {
+            "name": "minecraft:sulfur_slab",
+            "id": -1093,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_slab.name"
+        },
+        {
+            "name": "minecraft:sulfur_spike",
+            "id": -1125,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_spike.name"
+        },
+        {
+            "name": "minecraft:sulfur_stairs",
+            "id": -1095,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_stairs.name"
+        },
+        {
+            "name": "minecraft:sulfur_wall",
+            "id": -1096,
+            "max_size": 64,
+            "localization_key": "tile.sulfur_wall.name"
         },
         {
             "name": "minecraft:sunflower",

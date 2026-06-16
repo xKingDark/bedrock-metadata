@@ -337,6 +337,7 @@ export declare enum KeyboardKey {
     F10              = 121,
     F11              = 122,
     F12              = 123,
+    SEMICOLON        = 186,
     COMMA            = 188,
     PERIOD           = 190,
     SLASH            = 191,
@@ -403,6 +404,13 @@ export enum LogChannel {
 
 export enum MinimapMarkerType {
     Multiplayer = 0,
+    Location    = 1,
+    Custom      = 2,
+}
+
+export enum MinimapTrackingMode {
+    FollowPlayer = 0,
+    FreeCenter   = 1,
 }
 
 export enum MinimapViewType {
@@ -432,6 +440,14 @@ export declare enum MouseActionType {
     MiddleButton = 2,
     RightButton  = 3,
     Wheel        = 4,
+}
+
+export enum MouseCursorIconType {
+    Crosshair  = "Crosshair",
+    Default    = "Default",
+    Move       = "Move",
+    NotAllowed = "NotAllowed",
+    Wait       = "Wait",
 }
 
 export declare enum MouseInputType {
@@ -493,16 +509,17 @@ export enum PlaytestSessionResult {
 }
 
 export enum PrimitiveType {
-    Text        = 0,
-    Box         = 1,
-    Line        = 2,
-    Disc        = 4,
-    AxialSphere = 5,
-    Cylinder    = 7,
-    Pyramid     = 8,
-    Ellipsoid   = 9,
-    Cuboid      = 10,
-    Cone        = 11,
+    Text          = 0,
+    Box           = 1,
+    Line          = 2,
+    Disc          = 4,
+    AxialSphere   = 5,
+    Cylinder      = 7,
+    Pyramid       = 8,
+    Ellipsoid     = 9,
+    Cuboid        = 10,
+    Cone          = 11,
+    WireframeMesh = 12,
 }
 
 export declare enum ProgressIndicatorPropertyItemVariant {
@@ -511,9 +528,10 @@ export declare enum ProgressIndicatorPropertyItemVariant {
 }
 
 export enum ProjectExportType {
-    PlayableWorld = 0,
-    ProjectBackup = 1,
-    WorldTemplate = 2,
+    PlayableWorld  = 0,
+    ProjectBackup  = 1,
+    WorldTemplate  = 2,
+    ShareableWorld = 3,
 }
 
 export declare enum PropertyItemType {
@@ -548,9 +566,18 @@ export declare enum PropertyItemType {
     TagContainer      = "editorUI:TagContainer",
 }
 
+export enum RenderPlaneGridResolution {
+    EightBlocks   = "EightBlocks",
+    FourBlocks    = "FourBlocks",
+    None          = "None",
+    OneBlock      = "OneBlock",
+    SixteenBlocks = "SixteenBlocks",
+}
+
 export declare enum RootPaneLocation {
     Drawer   = 0,
     Viewport = 1,
+    Bottom   = 2,
 }
 
 export enum SelectionVolumeEventType {
@@ -657,6 +684,7 @@ export enum ThemeSettingsColorKey {
     PrefillVolumeBorder          = "PrefillVolumeBorder",
     PrefillVolumeFill            = "PrefillVolumeFill",
     PrimaryActive                = "PrimaryActive",
+    PrimaryAttention             = "PrimaryAttention",
     PrimaryBackground1           = "PrimaryBackground1",
     PrimaryBackground2           = "PrimaryBackground2",
     PrimaryBackground3           = "PrimaryBackground3",
@@ -666,6 +694,7 @@ export enum ThemeSettingsColorKey {
     PrimaryMute                  = "PrimaryMute",
     ScrollBar                    = "ScrollBar",
     SecondaryActive              = "SecondaryActive",
+    SecondaryAttention           = "SecondaryAttention",
     SecondaryBackground1         = "SecondaryBackground1",
     SecondaryBackground2         = "SecondaryBackground2",
     SecondaryBackground3         = "SecondaryBackground3",
@@ -694,6 +723,7 @@ export enum WidgetComponentType {
     Gizmo         = "Gizmo",
     Grid          = "Grid",
     Guide         = "Guide",
+    RenderPlane   = "RenderPlane",
     RenderPrim    = "RenderPrim",
     Spline        = "Spline",
     Text          = "Text",
@@ -1493,6 +1523,7 @@ export class ExtensionContext {
     readonly cursor: Cursor;
     readonly exportManager: ExportManager;
     readonly extensionInfo: Extension;
+    readonly guidePlaneManager: GuidePlaneManager;
     readonly minimapManager: MinimapManager;
     readonly player: minecraftserver.Player;
     readonly playtest: PlaytestManager;
@@ -1553,6 +1584,68 @@ export class GraphicsSettings {
     setAll(properties: Record<string, boolean | number | string>): void;
 }
 
+export class GuidePlaneManager {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    allPlanesVisible: boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addPlane(
+        origin: minecraftserver.Vector3,
+        normal: minecraftserver.Vector3,
+        visible: boolean,
+        outlineColor: minecraftserver.RGBA,
+        fillColor: minecraftserver.RGBA,
+    ): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getPlane(planeId: string): GuidePlane | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getPlanes(): GuidePlane[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removePlane(planeId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneColors(planeId: string, outlineColor: minecraftserver.RGBA, fillColor: minecraftserver.RGBA): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneNormal(planeId: string, normal: minecraftserver.Vector3): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneOrigin(planeId: string, origin: minecraftserver.Vector3): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPlaneVisibility(planeId: string, visible: boolean): void;
+}
+
 export class IBlockPaletteItem {
     private constructor();
     getBlock(): minecraftserver.BlockType | undefined;
@@ -1611,24 +1704,59 @@ export class MinecraftEditor {
 
 export class MinimapItem {
     private constructor();
+    readonly freeCenter: minecraftserver.VectorXZ;
     readonly id: string;
     readonly isActive: boolean;
+    readonly yLevel: number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
-    addMarker(markerType: MinimapMarkerType): void;
+    addCustomMarker(iconIdentifier: string, data: MinimapMarkerData[], dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addLocationMarker(data: MinimapMarkerData[], dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addMultiplayerMarker(): void;
+    getMarkerTypes(): MinimapMarkerType[];
     /**
      * @throws This function can throw errors.
      */
     getPlayerColor(playerId: string): minecraftserver.RGBA;
+    hasCustomGroup(iconIdentifier: string): boolean;
+    hasMarkerOfType(type: MinimapMarkerType): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
-    removeMarker(markerType: MinimapMarkerType): void;
+    removeAllCustomMarkers(dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeCustomMarker(iconIdentifier: string, dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeLocationMarker(dimensionId: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeMultiplayerMarker(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1640,13 +1768,31 @@ export class MinimapItem {
      *
      * @throws This function can throw errors.
      */
+    setFreeCenter(center: minecraftserver.VectorXZ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     setSize(mapWidth: number, mapHeight: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
+    setTrackingMode(mode: MinimapTrackingMode): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     setViewType(viewType: MinimapViewType): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setYLevel(yLevel: number): void;
 }
 
 export class MinimapManager {
@@ -1656,7 +1802,12 @@ export class MinimapManager {
      *
      * @throws This function can throw errors.
      */
-    createMinimap(viewType: MinimapViewType, mapWidth: number, mapHeight: number, dataId?: string): MinimapItem;
+    createMinimap(
+        viewType: MinimapViewType,
+        mapWidth: number,
+        mapHeight: number,
+        options?: MinimapCreateOptions,
+    ): MinimapItem;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2249,6 +2400,15 @@ export class Widget {
      *
      * @throws This function can throw errors.
      */
+    addRenderPlaneComponent(
+        componentName: string,
+        options?: WidgetComponentRenderPlaneOptions,
+    ): WidgetComponentRenderPlane;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     addRenderPrimitiveComponent(
         componentName: string,
         primitiveType: 
@@ -2260,7 +2420,8 @@ export class Widget {
             | WidgetComponentRenderPrimitiveTypeDisc
             | WidgetComponentRenderPrimitiveTypeEllipsoid
             | WidgetComponentRenderPrimitiveTypeLine
-            | WidgetComponentRenderPrimitiveTypePyramid,
+            | WidgetComponentRenderPrimitiveTypePyramid
+            | WidgetComponentRenderPrimitiveTypeWireframeMesh,
         options?: WidgetComponentRenderPrimitiveOptions,
     ): WidgetComponentRenderPrimitive;
     /**
@@ -2533,6 +2694,31 @@ export class WidgetComponentGuide extends WidgetComponentBase {
 }
 
 // @ts-ignore
+export class WidgetComponentRenderPlane extends WidgetComponentBase {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    fillColor: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    gridResolution: RenderPlaneGridResolution;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    maxSizeChunks: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    normal: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    outlineColor: minecraftserver.RGBA;
+}
+
+// @ts-ignore
 export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
     private constructor();
     /**
@@ -2562,7 +2748,8 @@ export class WidgetComponentRenderPrimitive extends WidgetComponentBase {
             | WidgetComponentRenderPrimitiveTypeDisc
             | WidgetComponentRenderPrimitiveTypeEllipsoid
             | WidgetComponentRenderPrimitiveTypeLine
-            | WidgetComponentRenderPrimitiveTypePyramid,
+            | WidgetComponentRenderPrimitiveTypePyramid
+            | WidgetComponentRenderPrimitiveTypeWireframeMesh,
     ): void;
 }
 
@@ -2840,6 +3027,40 @@ export class WidgetComponentRenderPrimitiveTypePyramid extends WidgetComponentRe
         widthZ?: number,
         rotation?: minecraftserver.Vector3,
         alpha?: number,
+    );
+}
+
+// @ts-ignore
+export class WidgetComponentRenderPrimitiveTypeWireframeMesh extends WidgetComponentRenderPrimitiveTypeBase {
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    alpha?: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    center: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    color: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    meshId: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    scale?: minecraftserver.Vector3;
+    constructor(
+        center: minecraftserver.Vector3,
+        meshId: string,
+        color: minecraftserver.RGBA,
+        options?: WireframeMeshOptions,
     );
 }
 
@@ -3139,7 +3360,6 @@ export interface GameOptions {
     keepPlayerData?: boolean;
     lanVisibility?: boolean;
     limitedCrafting?: boolean;
-    locatorBar?: boolean;
     maxCommandChainLength?: number;
     mobGriefing?: boolean;
     mobLoot?: boolean;
@@ -3148,6 +3368,7 @@ export interface GameOptions {
     naturalRegeneration?: boolean;
     playerAccess?: GamePublishSetting;
     playerPermissions?: minecraftserver.PlayerPermissionLevel;
+    playerWaypoints?: minecraftserver.PlayerWaypointsMode;
     randomTickSpeed?: number;
     recipeUnlocking?: boolean;
     respawnBlocksExplode?: boolean;
@@ -3169,6 +3390,15 @@ export interface GameOptions {
     worldName?: string;
 }
 
+export interface GuidePlane {
+    fillColor: minecraftserver.RGBA;
+    normal: minecraftserver.Vector3;
+    origin: minecraftserver.Vector3;
+    outlineColor: minecraftserver.RGBA;
+    planeId: string;
+    visible: boolean;
+}
+
 export interface LocalizationEntry {
     id: string;
     props?: string[];
@@ -3179,6 +3409,22 @@ export interface LogProperties {
     player?: minecraftserver.Player;
     subMessage?: LocalizationEntry | string;
     tags?: string[];
+}
+
+export interface MinimapCreateOptions {
+    dataId?: string;
+    freeCenter?: minecraftserver.VectorXZ;
+    trackingMode?: MinimapTrackingMode;
+    yLevel?: number;
+}
+
+export interface MinimapMarkerData {
+    clickable: boolean;
+    color: minecraftserver.RGBA;
+    label: string;
+    position: minecraftserver.Vector3;
+    rotation: number;
+    tooltip: string;
 }
 
 export interface ProjectExportOptions {
@@ -3288,6 +3534,15 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {}
 
 // @ts-ignore
+export interface WidgetComponentRenderPlaneOptions extends WidgetComponentBaseOptions {
+    fillColor?: minecraftserver.RGBA;
+    gridResolution?: RenderPlaneGridResolution;
+    maxSizeChunks?: number;
+    normal?: minecraftserver.Vector3;
+    outlineColor?: minecraftserver.RGBA;
+}
+
+// @ts-ignore
 export interface WidgetComponentRenderPrimitiveOptions extends WidgetComponentBaseOptions {}
 
 // @ts-ignore
@@ -3336,6 +3591,12 @@ export interface WidgetGroupCreateOptions {
     groupSelectionMode?: WidgetGroupSelectionMode;
     showBounds?: boolean;
     visible?: boolean;
+}
+
+export interface WireframeMeshOptions {
+    alpha?: number;
+    rotation?: minecraftserver.Vector3;
+    scale?: minecraftserver.Vector3;
 }
 
 // @ts-ignore

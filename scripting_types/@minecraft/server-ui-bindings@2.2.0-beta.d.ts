@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @alpha
+ * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui-bindings", "version": "3.0.0-alpha" }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.2.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -652,7 +652,5 @@ export class PlayerLeftError extends Error {
      */
     readonly formId: string;
 }
-
-export const isAlpha = true;
 
 export const uiManager: UIManager;

@@ -70,6 +70,7 @@
         { "name": "query.eye_target_y_rotation" },
         { "name": "query.facing_target_to_range_attack" },
         { "name": "query.frame_alpha" },
+        { "name": "query.fuse_time" },
         { "name": "query.get_actor_info_id" },
         { "name": "query.get_animation_frame" },
         { "name": "query.get_default_bone_pivot" },

@@ -3839,6 +3839,10 @@ export class IPlayerSpawnAfterEventSignal {
     unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
 }
 
+export class ISerializable {
+    private constructor();
+}
+
 export class ItemCompleteUseAfterEvent {
     private constructor();
     readonly itemStack: ItemStack;
@@ -5437,7 +5441,8 @@ export class Seat {
     readonly seatRotation: number;
 }
 
-export class Structure {
+// @ts-ignore
+export class Structure extends ISerializable {
     private constructor();
     readonly id: string;
     /**

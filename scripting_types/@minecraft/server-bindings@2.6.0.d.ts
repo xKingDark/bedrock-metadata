@@ -4833,6 +4833,10 @@ export class IsBabyCondition extends LootItemCondition {
     private constructor();
 }
 
+export class ISerializable {
+    private constructor();
+}
+
 // @ts-ignore
 export class ItemBookComponent extends ItemComponent {
     private constructor();
@@ -7096,7 +7100,8 @@ export class StartupEvent {
     readonly itemComponentRegistry: ItemComponentRegistry;
 }
 
-export class Structure {
+// @ts-ignore
+export class Structure extends ISerializable {
     private constructor();
     readonly id: string;
     readonly isValid: boolean;
