@@ -5717,6 +5717,14 @@ export class ItemBlockDynamicPropertiesComponent extends ItemComponent {
     /**
      * @throws This function can throw errors.
      *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    set(key: string, value?: boolean | number | string | Vector3): void;
+    /**
+     * @throws This function can throw errors.
+     *
      * {@link InvalidItemStackError}
      */
     totalByteCount(): number;

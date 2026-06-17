@@ -6414,6 +6414,35 @@ export class PlayerButtonInputAfterEventSignal {
 }
 
 // @ts-ignore
+export class PlayerCancelBreakingBlockAfterEvent extends BlockEvent {
+    private constructor();
+    readonly blockPermutation: BlockPermutation;
+    readonly breakProgress: number;
+    readonly face: Direction;
+    readonly heldItemStack?: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerCancelBreakingBlockAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerCancelBreakingBlockAfterEvent) => void,
+        options?: PlayerBreakingBlockEventOptions,
+    ): (arg0: PlayerCancelBreakingBlockAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerCancelBreakingBlockAfterEvent) => void): void;
+}
+
+// @ts-ignore
 export class PlayerCursorInventoryComponent extends EntityComponent {
     private constructor();
     /**
@@ -6874,6 +6903,34 @@ export class PlayerSpawnAfterEventSignal {
      * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: PlayerSpawnAfterEvent) => void): void;
+}
+
+// @ts-ignore
+export class PlayerStartBreakingBlockAfterEvent extends BlockEvent {
+    private constructor();
+    readonly blockPermutation: BlockPermutation;
+    readonly face: Direction;
+    readonly heldItemStack?: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerStartBreakingBlockAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerStartBreakingBlockAfterEvent) => void,
+        options?: PlayerBreakingBlockEventOptions,
+    ): (arg0: PlayerStartBreakingBlockAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerStartBreakingBlockAfterEvent) => void): void;
 }
 
 export class PlayerSwingStartAfterEvent {
@@ -8217,6 +8274,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly playerCancelBreakingBlock: PlayerCancelBreakingBlockAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly playerDimensionChange: PlayerDimensionChangeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -8266,6 +8327,10 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerSpawn: PlayerSpawnAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly playerStartBreakingBlock: PlayerStartBreakingBlockAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -8824,6 +8889,11 @@ export interface PlayerAimAssistSettings {
     presetId: string;
     targetMode?: AimAssistTargetMode;
     viewAngle?: Vector2;
+}
+
+export interface PlayerBreakingBlockEventOptions {
+    blockFilter?: BlockFilter;
+    playerFilter?: EntityFilter;
 }
 
 export interface PlayerSoundOptions {

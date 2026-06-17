@@ -45,7 +45,7 @@
         "op": "admin",
         "packstack": "any",
         "particle": "game_directors",
-        "permission": "owner",
+        "permission": "admin",
         "place": "admin",
         "playanimation": "game_directors",
         "playsound": "game_directors",

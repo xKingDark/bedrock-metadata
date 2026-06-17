@@ -8974,7 +8974,7 @@
         {
             "name": "minecraft:underwater_tnt",
             "max_size": 64,
-            "localization_key": "tile.tnt.name"
+            "localization_key": "tile.underwater_tnt.name"
         },
         {
             "name": "minecraft:underwater_torch",

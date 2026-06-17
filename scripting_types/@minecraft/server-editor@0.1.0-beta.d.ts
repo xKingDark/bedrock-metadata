@@ -24,8 +24,7 @@ export enum Axis {
 }
 
 export declare enum BedrockEventSubscriptionCache {
-    Default    = 0,
-    Percentage = 1,
+    Block = 0,
 }
 
 export enum BlockMaskListType {
@@ -71,9 +70,9 @@ export enum ContiguousSelectionType {
 }
 
 export declare enum ContinuousActionState {
-    Button = 1,
-    Wheel  = 2,
-    Drag   = 3,
+    Consume     = 0,
+    Passthrough = 1,
+    Disabled    = 2,
 }
 
 export enum CursorControlMode {
@@ -104,6 +103,12 @@ export enum EntityOperationType {
     Delete = 1,
 }
 
+export declare enum executeLargeOperation {
+    ClientActionEvents    = "Editor::ClientActionEvents",
+    ClientUXEvents        = "Editor::ClientUXEvents",
+    ClientLifecycleEvents = "Editor::ClientLifecycle",
+}
+
 export enum ExportResult {
     ValidWorldExport            = 0,
     LevelFetchFailed            = 1,
@@ -130,8 +135,8 @@ export enum GamePublishSetting {
 }
 
 export declare enum getDefaultAllowBlockList {
-    Shrink = "Shrink",
-    Grow   = "Grow",
+    DataPicker = 0,
+    Custom     = 1,
 }
 
 export enum GraphicsSettingsProperty {
@@ -259,12 +264,14 @@ export enum ProjectExportType {
 }
 
 export declare enum registerEditorExtension {
-    ControlPanel     = 1,
-    LogPanel         = 2,
-    UpdateInfoPanel  = 3,
-    ControlHelp      = 4,
-    StructurePanel   = 5,
-    KeyboardSettings = 6,
+    Undo     = "editor:actionBarItem:undo",
+    Redo     = "editor:actionBarItem:redo",
+    Export   = "editor:actionBarItem:export",
+    Locate   = "editor:actionBarItem:locate",
+    Playtest = "editor:actionBarItem:playtest",
+    Settings = "editor:actionBarItem:settings",
+    Realms   = "editor:actionBarItem:realms",
+    Fill     = "editor:actionBarItem:fill",
 }
 
 export enum RenderPlaneGridResolution {
@@ -391,14 +398,10 @@ export enum ThemeSettingsColorKey {
 }
 
 export declare enum Vector3LimitObservableValidator {
-    Undo     = "editor:actionBarItem:undo",
-    Redo     = "editor:actionBarItem:redo",
-    Export   = "editor:actionBarItem:export",
-    Locate   = "editor:actionBarItem:locate",
-    Playtest = "editor:actionBarItem:playtest",
-    Settings = "editor:actionBarItem:settings",
-    Realms   = "editor:actionBarItem:realms",
-    Fill     = "editor:actionBarItem:fill",
+    Primary      = 0,
+    Secondary    = 1,
+    Confirmation = 2,
+    Destructive  = 3,
 }
 
 export enum WidgetCollisionType {
