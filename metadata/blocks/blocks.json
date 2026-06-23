@@ -203,6 +203,10 @@
             "name": "minecraft:acacia_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -357,6 +361,10 @@
             "id": 426,
             "name": "minecraft:andesite_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -625,6 +633,10 @@
             "name": "minecraft:bamboo_mosaic_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -697,6 +709,10 @@
             "id": 767,
             "name": "minecraft:bamboo_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -1099,6 +1115,10 @@
             "name": "minecraft:birch_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -1278,6 +1298,10 @@
             "id": 531,
             "name": "minecraft:blackstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -1557,6 +1581,10 @@
             "id": 108,
             "name": "minecraft:brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -2160,6 +2188,10 @@
             "name": "minecraft:cherry_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -2396,6 +2428,10 @@
             "name": "minecraft:cinnabar_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -2465,6 +2501,10 @@
             "id": 1367,
             "name": "minecraft:cinnabar_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -2570,6 +2610,10 @@
             "id": 636,
             "name": "minecraft:cobbled_deepslate_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -3191,6 +3235,10 @@
             "name": "minecraft:crimson_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -3280,6 +3328,10 @@
             "id": 609,
             "name": "minecraft:cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -3652,6 +3704,10 @@
             "name": "minecraft:dark_oak_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -3724,6 +3780,10 @@
             "id": 258,
             "name": "minecraft:dark_prismarine_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -4004,6 +4064,10 @@
             "name": "minecraft:deepslate_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -4121,6 +4185,10 @@
             "id": 644,
             "name": "minecraft:deepslate_tile_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -4280,6 +4348,10 @@
             "id": 425,
             "name": "minecraft:diorite_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -5163,6 +5235,10 @@
             "name": "minecraft:end_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -5428,6 +5504,10 @@
             "id": 610,
             "name": "minecraft:exposed_cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -5776,6 +5856,10 @@
             "id": 424,
             "name": "minecraft:granite_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -6688,6 +6772,10 @@
             "id": 136,
             "name": "minecraft:jungle_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -7651,6 +7739,10 @@
             "name": "minecraft:mangrove_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -7807,6 +7899,10 @@
             "name": "minecraft:mossy_cobblestone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -7870,6 +7966,10 @@
             "id": 430,
             "name": "minecraft:mossy_stone_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -7951,6 +8051,10 @@
             "id": 735,
             "name": "minecraft:mud_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -8079,6 +8183,10 @@
             "name": "minecraft:nether_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -8192,6 +8300,10 @@
             "id": 435,
             "name": "minecraft:normal_stone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -8344,6 +8456,10 @@
             "name": "minecraft:oak_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -8457,6 +8573,21 @@
                 }
             ],
             "localization_key": "tile.glazedTerracotta.orange.name"
+        },
+        {
+            "id": 1399,
+            "name": "minecraft:orange_poplar_leaves",
+            "states": [
+                {
+                    "name": "persistent_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "update_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.orange_poplar_leaves.name"
         },
         {
             "id": 868,
@@ -8646,6 +8777,10 @@
             "id": 612,
             "name": "minecraft:oxidized_cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -8941,6 +9076,10 @@
             "id": 1255,
             "name": "minecraft:pale_oak_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9278,6 +9417,10 @@
             "name": "minecraft:polished_andesite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9331,6 +9474,10 @@
             "id": 530,
             "name": "minecraft:polished_blackstone_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9428,6 +9575,10 @@
             "name": "minecraft:polished_blackstone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9497,6 +9648,10 @@
             "id": 1372,
             "name": "minecraft:polished_cinnabar_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9568,6 +9723,10 @@
             "name": "minecraft:polished_deepslate_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9638,6 +9797,10 @@
             "name": "minecraft:polished_diorite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9681,6 +9844,10 @@
             "name": "minecraft:polished_granite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9723,6 +9890,10 @@
             "id": 1355,
             "name": "minecraft:polished_sulfur_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9794,6 +9965,10 @@
             "name": "minecraft:polished_tuff_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9830,6 +10005,260 @@
                 }
             ],
             "localization_key": "tile.polished_tuff_wall.name"
+        },
+        {
+            "id": 1381,
+            "name": "minecraft:poplar_button",
+            "states": [
+                {
+                    "name": "button_pressed_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "facing_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.poplar_button.name"
+        },
+        {
+            "id": 1382,
+            "name": "minecraft:poplar_door",
+            "states": [
+                {
+                    "name": "door_hinge_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:cardinal_direction",
+                    "default_value": "south"
+                },
+                {
+                    "name": "open_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "upper_block_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.poplar_door.name"
+        },
+        {
+            "id": 1391,
+            "name": "minecraft:poplar_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.poplar_double_slab.name"
+        },
+        {
+            "id": 1383,
+            "name": "minecraft:poplar_fence",
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.poplar_fence.name"
+        },
+        {
+            "id": 1384,
+            "name": "minecraft:poplar_fence_gate",
+            "states": [
+                {
+                    "name": "in_wall_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:cardinal_direction",
+                    "default_value": "south"
+                },
+                {
+                    "name": "open_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.poplar_fence_gate.name"
+        },
+        {
+            "id": 1385,
+            "name": "minecraft:poplar_hanging_sign",
+            "states": [
+                {
+                    "name": "attached_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "facing_direction",
+                    "default_value": 0
+                },
+                {
+                    "name": "ground_sign_direction",
+                    "default_value": 0
+                },
+                {
+                    "name": "hanging",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.poplar_hanging_sign.name"
+        },
+        {
+            "id": 1387,
+            "name": "minecraft:poplar_log",
+            "states": [
+                {
+                    "name": "pillar_axis",
+                    "default_value": "y"
+                }
+            ],
+            "localization_key": "tile.poplar_log.name"
+        },
+        {
+            "id": 1388,
+            "name": "minecraft:poplar_planks",
+            "states": [],
+            "localization_key": "tile.poplar_planks.name"
+        },
+        {
+            "id": 1389,
+            "name": "minecraft:poplar_pressure_plate",
+            "states": [
+                {
+                    "name": "redstone_signal",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.poplar_pressure_plate.name"
+        },
+        {
+            "id": 1398,
+            "name": "minecraft:poplar_sapling",
+            "states": [
+                {
+                    "name": "age_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.poplar_sapling.name"
+        },
+        {
+            "id": 1402,
+            "name": "minecraft:poplar_shelf",
+            "states": [
+                {
+                    "name": "minecraft:cardinal_direction",
+                    "default_value": "south"
+                },
+                {
+                    "name": "powered_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "powered_shelf_type",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.poplar_shelf.name"
+        },
+        {
+            "id": 1390,
+            "name": "minecraft:poplar_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.poplar_slab.name"
+        },
+        {
+            "id": 1392,
+            "name": "minecraft:poplar_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.poplar_stairs.name"
+        },
+        {
+            "id": 1393,
+            "name": "minecraft:poplar_standing_sign",
+            "states": [
+                {
+                    "name": "ground_sign_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.poplar_standing_sign.name"
+        },
+        {
+            "id": 1394,
+            "name": "minecraft:poplar_trapdoor",
+            "states": [
+                {
+                    "name": "direction",
+                    "default_value": 0
+                },
+                {
+                    "name": "open_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.poplar_trapdoor.name"
+        },
+        {
+            "id": 1395,
+            "name": "minecraft:poplar_wall_sign",
+            "states": [
+                {
+                    "name": "facing_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.poplar_wall_sign.name"
+        },
+        {
+            "id": 1397,
+            "name": "minecraft:poplar_wood",
+            "states": [
+                {
+                    "name": "pillar_axis",
+                    "default_value": "y"
+                }
+            ],
+            "localization_key": "tile.poplar_wood.name"
         },
         {
             "id": 38,
@@ -9949,6 +10378,10 @@
             "name": "minecraft:prismarine_bricks_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9985,6 +10418,10 @@
             "id": 257,
             "name": "minecraft:prismarine_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10183,6 +10620,10 @@
             "name": "minecraft:purpur_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -10253,6 +10694,10 @@
             "id": 156,
             "name": "minecraft:quartz_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10398,6 +10843,10 @@
             "name": "minecraft:red_nether_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -10434,6 +10883,21 @@
                 }
             ],
             "localization_key": "tile.cobblestone_wall.red_nether_brick.name"
+        },
+        {
+            "id": 1400,
+            "name": "minecraft:red_poplar_leaves",
+            "states": [
+                {
+                    "name": "persistent_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "update_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.red_poplar_leaves.name"
         },
         {
             "id": 1204,
@@ -10473,6 +10937,10 @@
             "id": 180,
             "name": "minecraft:red_sandstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10657,6 +11125,10 @@
             "name": "minecraft:resin_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -10771,6 +11243,10 @@
             "id": 128,
             "name": "minecraft:sandstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -11043,6 +11519,10 @@
             "name": "minecraft:smooth_quartz_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11086,6 +11566,10 @@
             "name": "minecraft:smooth_red_sandstone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11128,6 +11612,10 @@
             "id": 432,
             "name": "minecraft:smooth_sandstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -11474,6 +11962,10 @@
             "name": "minecraft:spruce_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11613,6 +12105,10 @@
             "name": "minecraft:stone_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11686,6 +12182,10 @@
             "id": 67,
             "name": "minecraft:stone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -11923,6 +12423,28 @@
             "localization_key": "tile.stripped_pale_oak_wood.name"
         },
         {
+            "id": 1386,
+            "name": "minecraft:stripped_poplar_log",
+            "states": [
+                {
+                    "name": "pillar_axis",
+                    "default_value": "y"
+                }
+            ],
+            "localization_key": "tile.stripped_poplar_log.name"
+        },
+        {
+            "id": 1396,
+            "name": "minecraft:stripped_poplar_wood",
+            "states": [
+                {
+                    "name": "pillar_axis",
+                    "default_value": "y"
+                }
+            ],
+            "localization_key": "tile.stripped_poplar_wood.name"
+        },
+        {
             "id": 260,
             "name": "minecraft:stripped_spruce_log",
             "states": [
@@ -12016,6 +12538,10 @@
             "name": "minecraft:sulfur_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -12100,6 +12626,10 @@
             "id": 1350,
             "name": "minecraft:sulfur_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -12412,6 +12942,10 @@
             "name": "minecraft:tuff_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -12481,6 +13015,10 @@
             "id": 1001,
             "name": "minecraft:tuff_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -12882,6 +13420,10 @@
             "name": "minecraft:warped_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13114,6 +13656,10 @@
             "name": "minecraft:waxed_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13281,6 +13827,10 @@
             "id": 614,
             "name": "minecraft:waxed_exposed_cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -13480,6 +14030,10 @@
             "name": "minecraft:waxed_oxidized_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13663,6 +14217,10 @@
             "name": "minecraft:waxed_weathered_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13845,6 +14403,10 @@
             "id": 611,
             "name": "minecraft:weathered_cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -14142,6 +14704,21 @@
                 }
             ],
             "localization_key": "tile.glazedTerracotta.yellow.name"
+        },
+        {
+            "id": 1401,
+            "name": "minecraft:yellow_poplar_leaves",
+            "states": [
+                {
+                    "name": "persistent_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "update_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.yellow_poplar_leaves.name"
         },
         {
             "id": 871,

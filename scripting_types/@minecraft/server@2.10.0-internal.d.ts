@@ -2835,6 +2835,18 @@ export class Dimension {
      *
      * {@link minecraftcommon.EngineError}
      *
+     * {@link Error}
+     */
+    calculateClosestBiomeFromSeed(
+        pos: Vector3,
+        biomeToFind: BiomeType | string,
+        options?: BiomeSearchOptions,
+    ): Vector3 | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.InvalidArgumentError}
      *
      * {@link LocationOutOfWorldBoundariesError}
@@ -2876,14 +2888,6 @@ export class Dimension {
         block: BlockPermutation | BlockType | string,
         options?: BlockFillOptions,
     ): ListBlockVolume;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.EngineError}
-     *
-     * {@link Error}
-     */
-    findClosestBiome(pos: Vector3, biomeToFind: BiomeType | string, options?: BiomeSearchOptions): Vector3 | undefined;
     /**
      * @throws This function can throw errors.
      *
@@ -6981,7 +6985,7 @@ export class Player extends Entity {
      *
      * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
+    playSound(soundId: SoundDefinition | string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -8402,6 +8406,24 @@ export class SoundCompletedAfterEventSignal {
     unsubscribe(callback: (arg0: SoundCompletedAfterEvent) => void): void;
 }
 
+export class SoundDefinition {
+    private constructor();
+    readonly durationInfo?: SoundDefinitionDurationInfo;
+    readonly musicInfo?: SoundDefinitionMusicInfo;
+    readonly soundEventId: string;
+    readonly tags?: Record<string, string[]>;
+}
+
+export class SoundDefinitionRegistry {
+    private constructor();
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    getDefinitions(filter?: SoundDefinitionFilter): SoundDefinition[];
+}
+
 export class SoundDurationInfo {
     private constructor();
     readonly duration: number;
@@ -9024,6 +9046,7 @@ export class World {
     readonly primitiveShapesManager: PrimitiveShapesManager;
     readonly scoreboard: Scoreboard;
     readonly seed: string;
+    readonly soundDefinitionRegistry: SoundDefinitionRegistry;
     readonly structureManager: StructureManager;
     readonly tickingAreaManager: TickingAreaManager;
     /**
@@ -10044,6 +10067,27 @@ export interface ScoreboardObjectiveDisplayOptions {
 
 export interface ScriptEventMessageFilterOptions {
     namespaces: string[];
+}
+
+export interface SoundDefinitionDurationInfo {
+    duration: number;
+}
+
+export interface SoundDefinitionFilter {
+    artists?: string[];
+    genres?: string[];
+    maxDuration?: number;
+    minDuration?: number;
+    moods?: string[];
+    tags?: Record<string, string[]>;
+    titles?: string[];
+}
+
+export interface SoundDefinitionMusicInfo {
+    artist?: string;
+    genres?: string[];
+    moods?: string[];
+    title?: string;
 }
 
 export interface SpawnEntityOptions {

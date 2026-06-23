@@ -686,6 +686,13 @@
             ]
         },
         {
+            "name": "minecraft:mushrooms_for_stew",
+            "items": [
+                { "name": "minecraft:brown_mushroom" },
+                { "name": "minecraft:red_mushroom" }
+            ]
+        },
+        {
             "name": "minecraft:music_disc",
             "items": [
                 { "name": "minecraft:music_disc_11" },

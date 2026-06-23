@@ -2435,6 +2435,18 @@ export class Dimension {
      *
      * {@link minecraftcommon.EngineError}
      *
+     * {@link Error}
+     */
+    calculateClosestBiomeFromSeed(
+        pos: Vector3,
+        biomeToFind: BiomeType | string,
+        options?: BiomeSearchOptions,
+    ): Vector3 | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.InvalidArgumentError}
      *
      * {@link LocationOutOfWorldBoundariesError}
@@ -8460,6 +8472,10 @@ export interface BiomeFilter {
     excludeTags?: string[];
     includeBiomes?: string[];
     includeTags?: string[];
+}
+
+export interface BiomeSearchOptions {
+    boundingSize?: Vector3;
 }
 
 export interface BlockBoundingBox {

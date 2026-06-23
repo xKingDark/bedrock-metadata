@@ -484,6 +484,11 @@ export enum WidgetGizmoEventType {
     OriginReleased    = "OriginReleased",
 }
 
+export enum WidgetGizmoScaleMode {
+    World  = 0,
+    Screen = 1,
+}
+
 export enum WidgetGroupSelectionMode {
     Multiple = "Multiple",
     None     = "None",
@@ -3810,6 +3815,18 @@ export class WidgetComponentGizmo extends WidgetComponentBase {
      */
     normalizedOffsetOverride?: minecraftserver.Vector3;
     /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    scaleMode: WidgetGizmoScaleMode;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    screenScale: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    worldScale: number;
+    /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
@@ -4839,6 +4856,7 @@ export interface WidgetComponentBoundingBoxOptions extends WidgetComponentBaseOp
     normalizedOrigin?: minecraftserver.Vector3;
     outlineColor?: minecraftserver.RGBA;
     rotation?: minecraftserver.StructureRotation;
+    scaleMode?: WidgetGizmoScaleMode;
     showWorldIntersections?: boolean;
     stateChangeEvent?: (arg0: WidgetComponentBoundingBoxStateChangeEventParameters) => void;
     visibleHull?: boolean;
@@ -4869,6 +4887,7 @@ export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions 
     axes?: Axis;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
+    scaleMode?: WidgetGizmoScaleMode;
     stateChangeEvent?: (arg0: WidgetComponentGizmoStateChangeEventParameters) => void;
 }
 

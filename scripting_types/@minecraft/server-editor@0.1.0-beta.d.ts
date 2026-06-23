@@ -23,10 +23,6 @@ export enum Axis {
     Z    = 4,
 }
 
-export declare enum BedrockEventSubscriptionCache {
-    Block = 0,
-}
-
 export enum BlockMaskListType {
     Disabled = "Disabled",
     Mask     = "Mask",
@@ -70,9 +66,15 @@ export enum ContiguousSelectionType {
 }
 
 export declare enum ContinuousActionState {
-    Consume     = 0,
-    Passthrough = 1,
-    Disabled    = 2,
+    Press   = 1,
+    Release = 2,
+}
+
+export declare enum CoreMenuType {
+    NoArgsAction       = "NoArgsAction",
+    MouseRayCastAction = "MouseRayCastAction",
+    StatefulAction     = "StatefulAction",
+    ContinuousAction   = "ContinuousAction",
 }
 
 export enum CursorControlMode {
@@ -103,12 +105,6 @@ export enum EntityOperationType {
     Delete = 1,
 }
 
-export declare enum executeLargeOperation {
-    ClientActionEvents    = "Editor::ClientActionEvents",
-    ClientUXEvents        = "Editor::ClientUXEvents",
-    ClientLifecycleEvents = "Editor::ClientLifecycle",
-}
-
 export enum ExportResult {
     ValidWorldExport            = 0,
     LevelFetchFailed            = 1,
@@ -134,11 +130,6 @@ export enum GamePublishSetting {
     Public           = 4,
 }
 
-export declare enum getDefaultAllowBlockList {
-    DataPicker = 0,
-    Custom     = 1,
-}
-
 export enum GraphicsSettingsProperty {
     DisableBlockEntityRendering = "DisableBlockEntityRendering",
     DisableEntityRendering      = "DisableEntityRendering",
@@ -160,13 +151,6 @@ export enum InputModifier {
     Control = 4,
     Shift   = 8,
     Any     = 15,
-}
-
-export declare enum ListPaneEntryType {
-    Button = 0,
-    Bool   = 1,
-    Image  = 2,
-    Text   = 3,
 }
 
 export enum LogChannel {
@@ -263,17 +247,6 @@ export enum ProjectExportType {
     ShareableWorld = 3,
 }
 
-export declare enum registerEditorExtension {
-    Undo     = "editor:actionBarItem:undo",
-    Redo     = "editor:actionBarItem:redo",
-    Export   = "editor:actionBarItem:export",
-    Locate   = "editor:actionBarItem:locate",
-    Playtest = "editor:actionBarItem:playtest",
-    Settings = "editor:actionBarItem:settings",
-    Realms   = "editor:actionBarItem:realms",
-    Fill     = "editor:actionBarItem:fill",
-}
-
 export enum RenderPlaneGridResolution {
     EightBlocks   = "EightBlocks",
     FourBlocks    = "FourBlocks",
@@ -289,26 +262,6 @@ export enum SelectionVolumeEventType {
     Translate = 4,
     Move      = 5,
     Clear     = 6,
-}
-
-export declare enum ServerUXEventType {
-    UpdatePropertyPane             = 1,
-    DestroyPropertyPane            = 2,
-    UpdateMenu                     = 3,
-    DestroyMenu                    = 4,
-    UpdateStatusBarItem            = 5,
-    DestroyStatusBarItem           = 6,
-    UpdateModalToolOption          = 7,
-    DestroyModalToolOption         = 8,
-    BindActionToControl            = 11,
-    RemoveActionBindingFromControl = 12,
-    UpdatePropertyItem             = 13,
-    DestroyPropertyItem            = 14,
-    OnNavigateFromEditor           = 15,
-    UpdateClientPanelVisibility    = 18,
-    ActivateTutorial               = 19,
-    ModalDialogActivation          = 20,
-    ModalDialogDeactivation        = 21,
 }
 
 export enum SpeedSettingsProperty {
@@ -397,13 +350,6 @@ export enum ThemeSettingsColorKey {
     Warning                      = "Warning",
 }
 
-export declare enum Vector3LimitObservableValidator {
-    Primary      = 0,
-    Secondary    = 1,
-    Confirmation = 2,
-    Destructive  = 3,
-}
-
 export enum WidgetCollisionType {
     None   = 0,
     Radius = 1,
@@ -433,6 +379,11 @@ export enum WidgetGizmoEventType {
     OriginGrabbed     = "OriginGrabbed",
     OriginMoved       = "OriginMoved",
     OriginReleased    = "OriginReleased",
+}
+
+export enum WidgetGizmoScaleMode {
+    World  = 0,
+    Screen = 1,
 }
 
 export enum WidgetGroupSelectionMode {
@@ -2345,6 +2296,18 @@ export class WidgetComponentGizmo extends WidgetComponentBase {
      */
     normalizedOffsetOverride?: minecraftserver.Vector3;
     /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    scaleMode: WidgetGizmoScaleMode;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    screenScale: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    worldScale: number;
+    /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
@@ -3183,6 +3146,7 @@ export interface WidgetComponentBoundingBoxOptions extends WidgetComponentBaseOp
     normalizedOrigin?: minecraftserver.Vector3;
     outlineColor?: minecraftserver.RGBA;
     rotation?: minecraftserver.StructureRotation;
+    scaleMode?: WidgetGizmoScaleMode;
     showWorldIntersections?: boolean;
     stateChangeEvent?: (arg0: WidgetComponentBoundingBoxStateChangeEventParameters) => void;
     visibleHull?: boolean;
@@ -3213,6 +3177,7 @@ export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions 
     axes?: Axis;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
+    scaleMode?: WidgetGizmoScaleMode;
     stateChangeEvent?: (arg0: WidgetComponentGizmoStateChangeEventParameters) => void;
 }
 
