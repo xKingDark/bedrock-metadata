@@ -516,10 +516,7 @@ export class BlockUtilities {
      * @throws This function can throw errors.
      */
     fillVolume(
-        volume: 
-            | minecraftserver.BlockVolumeBase
-            | minecraftserver.CompoundBlockVolume
-            | RelativeVolumeListBlockVolume,
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
     ): void;
     /**
@@ -533,7 +530,7 @@ export class BlockUtilities {
      *
      * @throws This function can throw errors.
      */
-    getContiguousSelection(properties?: ContiguousSelectionProperties): minecraftserver.CompoundBlockVolume;
+    getContiguousSelection(properties?: ContiguousSelectionProperties): RelativeVolumeListBlockVolume;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -586,6 +583,71 @@ export class BlockUtilities {
         ignoreNoCollision: boolean,
         blockMask?: BlockMaskList,
     ): RelativeVolumeListBlockVolume;
+}
+
+export class BlockUtilityTasks {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fillVolume(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
+        maxBlocksPerTick?: number,
+    ): Promise<number>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    findObscuredBlocksWithinVolume(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    generateManifest(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<BlockUtilityManifest>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    replaceBlocksInSelection(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        fromBlockIdentifier: string,
+        toBlock?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
+        maxBlocksPerTick?: number,
+    ): Promise<number>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    shrinkWrapVolume(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trimVolumeToFitContents(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        retainMarqueeAfterTrimming: boolean,
+        ignoreLiquid: boolean,
+        ignoreNoCollision: boolean,
+        blockMask?: BlockMaskList,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
 }
 
 export class BrushShapeManager {
@@ -704,6 +766,10 @@ export class BrushShapeManager {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    setPendingTransaction(pendingTransaction?: PendingTransaction): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     setTerrainStrength(terrainStrength: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -778,7 +844,11 @@ export class ClipboardItem {
      *
      * @throws This function can throw errors.
      */
-    writeToWorld(location: minecraftserver.Vector3, options?: ClipboardWriteOptions): boolean;
+    writeToWorld(
+        location: minecraftserver.Vector3,
+        options?: ClipboardWriteOptions,
+        transaction?: PendingTransaction,
+    ): boolean;
 }
 
 export class ClipboardManager {
@@ -1151,6 +1221,7 @@ export class ExtensionContext {
     readonly afterEvents: ExtensionContextAfterEvents;
     readonly blockPalette: BlockPaletteManager;
     readonly blockUtilities: BlockUtilities;
+    readonly blockUtilityTasks: BlockUtilityTasks;
     readonly brushShapeManager: BrushShapeManager;
     readonly clipboardManager: ClipboardManager;
     readonly cursor: Cursor;
@@ -1494,6 +1565,72 @@ export class ModeChangeAfterEventSignal {
     unsubscribe(callback: (arg0: ModeChangeAfterEvent) => void): void;
 }
 
+export class PendingTransaction {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addEntityOperation(entity: minecraftserver.Entity, type: EntityOperationType): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addUserDefinedOperation(
+        transactionHandlerId: UserDefinedTransactionHandlerId,
+        operationData: string,
+        operationName?: string,
+    ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commitTrackedChanges(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    discard(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    discardTrackedChanges(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isValid(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    submit(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackBlockChangeArea(from: minecraftserver.Vector3, to: minecraftserver.Vector3): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackBlockChangeList(locations: minecraftserver.Vector3[]): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackBlockChangeVolume(blockVolume: minecraftserver.BlockVolumeBase): boolean;
+}
+
 export class PlaytestManager {
     private constructor();
     /**
@@ -1824,29 +1961,7 @@ export class TransactionManager {
      *
      * @throws This function can throw errors.
      */
-    addEntityOperation(entity: minecraftserver.Entity, type: EntityOperationType): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    addUserDefinedOperation(
-        transactionHandlerId: UserDefinedTransactionHandlerId,
-        operationData: string,
-        operationName?: string,
-    ): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    commitOpenTransaction(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    commitTrackedChanges(): number;
+    createPendingTransaction(name: string): PendingTransaction;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1861,30 +1976,6 @@ export class TransactionManager {
      *
      * @throws This function can throw errors.
      */
-    discardOpenTransaction(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    discardTrackedChanges(): number;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    isBusy(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    openTransaction(name: string): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
     redo(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -1892,24 +1983,6 @@ export class TransactionManager {
      * @throws This function can throw errors.
      */
     redoSize(): number;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    trackBlockChangeArea(from: minecraftserver.Vector3, to: minecraftserver.Vector3): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    trackBlockChangeList(locations: minecraftserver.Vector3[]): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    trackBlockChangeVolume(blockVolume: minecraftserver.BlockVolumeBase): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2920,6 +2993,16 @@ export class WidgetStateChangeEventData {
 export interface BlockMaskList {
     blockList: (minecraftserver.BlockPermutation | minecraftserver.BlockType | string)[];
     maskType: BlockMaskListType;
+}
+
+export interface BlockUtilityManifest {
+    entries: BlockUtilityManifestEntry[];
+    totalBlocks: number;
+}
+
+export interface BlockUtilityManifestEntry {
+    blockIdentifier: string;
+    count: number;
 }
 
 export interface ClipboardWriteOptions {

@@ -22,6 +22,7 @@ export class AllowList {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     enabled: boolean;
+    readonly entries: AllowListEntry[];
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -29,9 +30,11 @@ export class AllowList {
      *
      * {@link AllowListModificationError}
      *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
      * {@link minecraftserver.InvalidEntityError}
      */
-    add(player: minecraftserver.Player | string): void;
+    add(player: AllowListEntry | minecraftserver.Player): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -39,9 +42,11 @@ export class AllowList {
     /**
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
      * {@link minecraftserver.InvalidEntityError}
      */
-    contains(player: minecraftserver.Player | string): boolean;
+    contains(player: AllowListEntry | minecraftserver.Player): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -57,9 +62,11 @@ export class AllowList {
      *
      * {@link AllowListModificationError}
      *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
      * {@link minecraftserver.InvalidEntityError}
      */
-    remove(player: minecraftserver.Player | string): void;
+    remove(player: AllowListEntry | minecraftserver.Player): void;
 }
 
 export class AsyncPlayerJoinBeforeEvent {
@@ -188,6 +195,11 @@ export class ServerVariables {
      * This function can be called in early-execution mode.
      */
     get(name: string): unknown | undefined;
+}
+
+export interface AllowListEntry {
+    name?: string;
+    xuid?: string;
 }
 
 export interface TransferPlayerIpPortOptions {

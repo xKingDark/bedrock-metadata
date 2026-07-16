@@ -58,6 +58,12 @@ export enum CameraShakeType {
     Rotational = "Rotational",
 }
 
+export enum CloneMode {
+    Copy      = 0,
+    ForceCopy = 1,
+    Move      = 2,
+}
+
 export enum CommandPermissionLevel {
     Any           = 0,
     GameDirectors = 1,
@@ -2801,6 +2807,22 @@ export class Dimension {
         biomeToFind: BiomeType | string,
         options?: BiomeSearchOptions,
     ): Vector3 | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    cloneBlocks(
+        beginLocation: Vector3,
+        endLocation: Vector3,
+        destination: Vector3,
+        cloneMode: CloneMode,
+        filter?: BlockFilter,
+    ): void;
     /**
      * @throws This function can throw errors.
      *
@@ -7877,6 +7899,7 @@ export class PrimitiveShapesManager {
      * {@link PrimitiveShapeError}
      */
     addText(text: TextPrimitive, dimension?: Dimension): void;
+    getShapes(options?: PrimitiveShapeQueryOptions): PrimitiveShape[];
     removeAll(): void;
     removeText(text: TextPrimitive): void;
 }
@@ -8387,6 +8410,10 @@ export class SoundInstance {
     resume(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
      */
     seekTo(seconds: number): void;
     /**
@@ -9903,6 +9930,13 @@ export interface PlayerVisibilityRules extends EntityVisibilityRules {
     showHidden?: boolean;
     showSpectator?: boolean;
     showSpectatorToSpectator?: boolean;
+}
+
+export interface PrimitiveShapeQueryOptions {
+    attachedTo?: Entity;
+    location?: Vector3;
+    maxDistance?: number;
+    minDistance?: number;
 }
 
 export interface ProgressKeyFrame {
