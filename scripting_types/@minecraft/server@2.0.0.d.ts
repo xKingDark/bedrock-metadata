@@ -1785,18 +1785,6 @@ export class Dimension {
     /**
      * @throws This function can throw errors.
      *
-     * {@link minecraftcommon.ArgumentOutOfBoundsError}
-     *
-     * {@link Error}
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link UnloadedChunksError}
-     */
-    getBlocks(volume: BlockVolumeBase, filter: BlockFilter, allowUnloadedChunks?: boolean): ListBlockVolume;
-    /**
-     * @throws This function can throw errors.
-     *
      * {@link CommandError}
      *
      * {@link minecraftcommon.InvalidArgumentError}
@@ -2027,13 +2015,7 @@ export class EffectType {
 
 export class EffectTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static get(identifier: string): EffectType | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static getAll(): EffectType[];
 }
 

@@ -34,6 +34,23 @@ export enum BlockPaletteItemType {
     Probability = 1,
 }
 
+export enum BlockUtilityExtrudeDirection {
+    Down  = 0,
+    Up    = 1,
+    North = 2,
+    South = 3,
+    West  = 4,
+    East  = 5,
+}
+
+export enum BlockUtilityFloodMatchCriteria {
+    NonAir                 = 0,
+    SameBlockType          = 1,
+    Solid                  = 2,
+    Custom                 = 3,
+    SameBlockTypeAndStates = 4,
+}
+
 export enum BrushDirectionalPlacementMode {
     IgnoreCamera    = 0,
     NormalCamera    = 1,
@@ -63,18 +80,6 @@ export enum ContiguousSelectionType {
     SolidBlocks        = 2,
     AllBlocks          = 3,
     Custom             = 4,
-}
-
-export declare enum ContinuousActionState {
-    Press   = 1,
-    Release = 2,
-}
-
-export declare enum CoreMenuType {
-    NoArgsAction       = "NoArgsAction",
-    MouseRayCastAction = "MouseRayCastAction",
-    StatefulAction     = "StatefulAction",
-    ContinuousAction   = "ContinuousAction",
 }
 
 export enum CursorControlMode {
@@ -475,6 +480,11 @@ export enum ThemeSettingsColorKey {
     Warning                      = "Warning",
 }
 
+export enum TransactionProcessState {
+    Ended   = "Ended",
+    Started = "Started",
+}
+
 export enum WidgetCollisionType {
     None   = 0,
     Radius = 1,
@@ -729,6 +739,24 @@ export class BlockUtilityTasks {
      *
      * @throws This function can throw errors.
      */
+    extrude(
+        location: minecraftserver.Vector3,
+        direction?: BlockUtilityExtrudeDirection,
+        faceRadius?: number,
+        layerCount?: number,
+        isShrink?: boolean,
+        criteria?: BlockUtilityFloodMatchCriteria,
+        customBlockList?: string[],
+        maxBlocksPerTick?: number,
+        buildGeometry?: boolean,
+        tolerance?: number,
+        faceVolume?: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+    ): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     fillVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
@@ -741,6 +769,19 @@ export class BlockUtilityTasks {
      */
     findObscuredBlocksWithinVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    floodSearch(
+        location: minecraftserver.Vector3,
+        criteria?: BlockUtilityFloodMatchCriteria,
+        radius?: number,
+        customBlockList?: string[],
+        maxResultBlocks?: number,
         maxBlocksPerTick?: number,
     ): Promise<RelativeVolumeListBlockVolume>;
     /**
@@ -2092,6 +2133,18 @@ export class InternalPlayerServiceContext {
      * @remarks This function can't be called in restricted-execution mode.
      */
     runCoroutineWatchdogStressTest(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    runLongRunningTaskBurstTest(durationSeconds: number, taskCount: number, maxStaggerSeconds: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    runLongRunningTaskTest(durationSeconds: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    runLongRunningTaskTestClient(durationSeconds: number): void;
 }
 
 export class JigsawService {
@@ -2460,9 +2513,19 @@ export class PendingTransaction {
      * @throws This function can throw errors.
      */
     addUserDefinedOperation(
-        transactionHandlerId: UserDefinedTransactionHandlerId,
+        transactionHandler: UserDefinedTransactionOperationHandler,
         operationData: string,
         operationName?: string,
+    ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addVolumeListOperation(
+        operationHandler: VolumeListTransactionOperationHandler,
+        previous: RelativeVolumeListBlockVolume[],
+        current: RelativeVolumeListBlockVolume[],
     ): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -2491,7 +2554,7 @@ export class PendingTransaction {
      *
      * @throws This function can throw errors.
      */
-    submit(): void;
+    submit(transactionHandler?: TransactionHandler): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3300,6 +3363,7 @@ export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBa
      * @remarks This function can't be called in restricted-execution mode.
      */
     clear(): void;
+    clone(): RelativeVolumeListBlockVolume;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -3557,6 +3621,39 @@ export class ThemeSettings {
     updateThemeColor(id: string, key: ThemeSettingsColorKey, newColor: minecraftserver.RGBA): void;
 }
 
+export class TransactionEvent {
+    private constructor();
+    readonly error?: Error;
+    readonly isUndo: boolean;
+    readonly state: TransactionProcessState;
+}
+
+export class TransactionHandler {
+    private constructor();
+    readonly id: string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addUserDefinedOperationHandler(payloadClosure: (arg0: string) => void): UserDefinedTransactionOperationHandler;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addVolumeListOperationHandler(
+        closure: (arg0: RelativeVolumeListBlockVolume[]) => void,
+    ): VolumeListTransactionOperationHandler;
+    isValid(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unregister(): void;
+}
+
 export class TransactionManager {
     private constructor();
     /**
@@ -3565,15 +3662,6 @@ export class TransactionManager {
      * @throws This function can throw errors.
      */
     createPendingTransaction(name: string): PendingTransaction;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    createUserDefinedTransactionHandler(
-        undoClosure: (arg0: string) => void,
-        redoClosure: (arg0: string) => void,
-    ): UserDefinedTransactionHandlerId;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3591,6 +3679,12 @@ export class TransactionManager {
      *
      * @throws This function can throw errors.
      */
+    registerTransactionHandler(onEvent?: (arg0: TransactionEvent) => void): TransactionHandler;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     undo(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -3600,7 +3694,17 @@ export class TransactionManager {
     undoSize(): number;
 }
 
-export class UserDefinedTransactionHandlerId {
+export class TransactionOperationHandler {
+    private constructor();
+}
+
+// @ts-ignore
+export class UserDefinedTransactionOperationHandler extends TransactionOperationHandler {
+    private constructor();
+}
+
+// @ts-ignore
+export class VolumeListTransactionOperationHandler extends TransactionOperationHandler {
     private constructor();
 }
 

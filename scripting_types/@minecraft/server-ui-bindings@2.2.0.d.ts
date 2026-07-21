@@ -2,11 +2,10 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui", "version": "2.2.0-beta" }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.2.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -139,16 +138,6 @@ export class CustomForm {
      * {@link InvalidFormModificationError}
      */
     header(text: ObservableString | ObservableUIRawMessage | string | UIRawMessage, options?: TextOptions): CustomForm;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link InvalidFormModificationError}
-     *
-     * {@link InvalidObservableError}
-     */
-    image(src: ObservableString | string, pack: ObservableString | string, options?: ImageOptions): CustomForm;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -543,13 +532,6 @@ export interface DropdownOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
     visible?: boolean | ObservableBoolean;
-}
-
-export interface ImageOptions {
-    onClick?: () => void;
-    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
-    visible?: boolean | ObservableBoolean;
-    width?: number | ObservableNumber;
 }
 
 export interface MessageBoxResult {

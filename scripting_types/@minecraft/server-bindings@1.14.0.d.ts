@@ -1459,13 +1459,7 @@ export class EffectType {
 
 export class EffectTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static get(identifier: string): EffectType | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static getAll(): EffectType[];
 }
 

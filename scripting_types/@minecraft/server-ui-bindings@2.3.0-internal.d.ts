@@ -6,7 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui", "version": "2.2.0-internal" }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.3.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -227,33 +227,6 @@ export class CustomForm {
     ): CustomForm;
 }
 
-export class DataStore {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftserver.InvalidEntityError}
-     */
-    getProperty(player: minecraftserver.Player, dataStoreName: string, property: string): string | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftserver.InvalidEntityError}
-     *
-     * {@link InvalidPathError}
-     */
-    getPropertyPath(
-        player: minecraftserver.Player,
-        dataStoreName: string,
-        property: string,
-        path: string,
-    ): string | undefined;
-}
-
 export class FormResponse {
     private constructor();
     readonly cancelationReason?: FormCancelationReason;
@@ -296,9 +269,31 @@ export class MessageBox {
      *
      * {@link InvalidFormModificationError}
      */
+    button1WithOptions(
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: MessageBoxButtonOptions,
+    ): MessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
     button2(
         label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
         tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+    ): MessageBox;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidFormModificationError}
+     */
+    button2WithOptions(
+        label: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: MessageBoxButtonOptions,
     ): MessageBox;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -552,6 +547,7 @@ export class UIManager {
 
 export interface ButtonOptions {
     disabled?: boolean | ObservableBoolean;
+    imageDetails?: ImageDetails;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
@@ -569,7 +565,13 @@ export interface DropdownItemData {
 export interface DropdownOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
+}
+
+export interface ImageDetails {
+    imagePackId: ObservableString | string;
+    imageSrc: ObservableString | string;
 }
 
 export interface ImageOptions {
@@ -577,6 +579,11 @@ export interface ImageOptions {
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
     width?: number | ObservableNumber;
+}
+
+export interface MessageBoxButtonOptions {
+    imageDetails?: ImageDetails;
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
 }
 
 export interface MessageBoxResult {
@@ -612,7 +619,9 @@ export interface ObservableOptions {
 export interface SliderOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    fixedFormatDigits?: number | ObservableNumber;
     step?: number | ObservableNumber;
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
 
@@ -623,16 +632,19 @@ export interface SpacingOptions {
 export interface TextFieldOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
 
 export interface TextOptions {
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
 
 export interface ToggleOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
 
@@ -689,15 +701,6 @@ export class InvalidObservableError extends Error {
 }
 
 // @ts-ignore
-export class InvalidPathError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly path: string;
-}
-
-// @ts-ignore
 export class PlayerLeftError extends Error {
     private constructor();
     /**
@@ -706,7 +709,4 @@ export class PlayerLeftError extends Error {
     readonly formId: string;
 }
 
-export const testConstant = 5;
-
-export const ddui: DataStore;
 export const uiManager: UIManager;

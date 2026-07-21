@@ -107,6 +107,7 @@ export class DebugText extends DebugShape {
     backfaceVisible: boolean;
     backgroundColorOverride?: minecraftserver.RGBA;
     depthTest: boolean;
+    lineGapHeight: number;
     readonly text: minecraftserver.RawMessage | string;
     textBackfaceVisible: boolean;
     useRotation: boolean;

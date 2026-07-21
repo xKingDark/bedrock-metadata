@@ -83,6 +83,8 @@
         { "name": "query.graphics_mode_is_any" },
         { "name": "query.ground_speed" },
         { "name": "query.had_component_group" },
+        { "name": "query.has_all_biome_tags" },
+        { "name": "query.has_any_biome_tags" },
         { "name": "query.has_any_family" },
         { "name": "query.has_any_leashed_entity_of_type" },
         { "name": "query.has_armor_slot" },

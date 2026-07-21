@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @internal
+ * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server", "version": "2.10.0-internal" }
+ * { "module_name": "@minecraft/server-bindings", "version": "2.11.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -70,16 +70,6 @@ export enum CommandPermissionLevel {
     Admin         = 2,
     Host          = 3,
     Owner         = 4,
-}
-
-export enum CompoundBlockVolumeAction {
-    Add      = 0,
-    Subtract = 1,
-}
-
-export enum CompoundBlockVolumePositionRelativity {
-    Relative = 0,
-    Absolute = 1,
 }
 
 export enum ContainerRulesErrorReason {
@@ -374,39 +364,6 @@ export enum EntityInitializationCause {
     Loaded      = "Loaded",
     Spawned     = "Spawned",
     Transformed = "Transformed",
-}
-
-export enum EntitySpawnCategory {
-    Ambient                  = "Ambient",
-    Axolotls                 = "Axolotls",
-    Creature                 = "Creature",
-    Misc                     = "Misc",
-    Monster                  = "Monster",
-    UndergroundWaterCreature = "UndergroundWaterCreature",
-    WaterAmbient             = "WaterAmbient",
-    WaterCreature            = "WaterCreature",
-}
-
-export enum EntitySpawnReason {
-    Breeding        = "Breeding",
-    Bucket          = "Bucket",
-    ChunkGeneration = "ChunkGeneration",
-    Command         = "Command",
-    Conversion      = "Conversion",
-    DimensionTravel = "DimensionTravel",
-    Dispenser       = "Dispenser",
-    Event           = "Event",
-    Jockey          = "Jockey",
-    Load            = "Load",
-    MobSummoned     = "MobSummoned",
-    Natural         = "Natural",
-    Patrol          = "Patrol",
-    Reinforcement   = "Reinforcement",
-    SpawnEgg        = "SpawnEgg",
-    Spawner         = "Spawner",
-    Structure       = "Structure",
-    TrialSpawner    = "TrialSpawner",
-    Triggered       = "Triggered",
 }
 
 export enum EntitySwingSource {
@@ -2383,70 +2340,6 @@ export class Component {
     readonly typeId: string;
 }
 
-export class CompoundBlockVolume {
-    readonly capacity: number;
-    readonly items: CompoundBlockVolumeItem[];
-    readonly itemsAbsolute: CompoundBlockVolumeItem[];
-    readonly volumeCount: number;
-    constructor(origin?: Vector3);
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    clear(): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getBlockLocationIterator(): BlockLocationIterator;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getBoundingBox(): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getMax(): Vector3;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getMin(): Vector3;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getOrigin(): Vector3;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    isEmpty(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    isInside(worldLocation: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    peekLastVolume(forceRelativity?: CompoundBlockVolumePositionRelativity): CompoundBlockVolumeItem | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    popVolume(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    pushVolume(item: CompoundBlockVolumeItem): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    replaceOrAddLastVolume(item: CompoundBlockVolumeItem): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    setOrigin(position: Vector3, preserveExistingVolumes?: boolean): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    translateOrigin(delta: Vector3, preserveExistingVolumes?: boolean): void;
-}
-
 export class Container {
     private constructor();
     readonly containerRules?: ContainerRules;
@@ -3249,13 +3142,7 @@ export class EffectType {
 
 export class EffectTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static get(identifier: string): EffectType | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static getAll(): EffectType[];
 }
 
@@ -5125,25 +5012,6 @@ export class EntitySpawnAfterEventSignal {
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
 
-export class EntitySpawnCallbackArgs {
-    private constructor();
-    readonly dimensionLocation: DimensionLocation;
-    readonly spawnReason: EntitySpawnReason;
-    readonly spawnType: EntitySpawnType;
-}
-
-export class EntitySpawnType {
-    private constructor();
-    readonly entityId: string;
-    readonly height: number;
-    readonly isImmuneFire: boolean;
-    readonly isSummonable: boolean;
-    readonly spawnCategory: EntitySpawnCategory;
-    readonly width: number;
-    getSpawnAABB(position: Vector3): AABB;
-    isBlockDangerous(block: Block): boolean;
-}
-
 export class EntityStartSneakingAfterEvent {
     private constructor();
     readonly entity: Entity;
@@ -5253,7 +5121,7 @@ export class EntityTamedAfterEventSignal {
      */
     subscribe(
         callback: (arg0: EntityTamedAfterEvent) => void,
-        options?: EntityTamedEventFilter,
+        options?: EntityTamedEventOptions,
     ): (arg0: EntityTamedAfterEvent) => void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -5279,7 +5147,7 @@ export class EntityTamedBeforeEventSignal {
      */
     subscribe(
         callback: (arg0: EntityTamedBeforeEvent) => void,
-        options?: EntityTamedEventFilter,
+        options?: EntityTamedEventOptions,
     ): (arg0: EntityTamedBeforeEvent) => void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -6772,13 +6640,6 @@ export class MolangVariableMap {
      * @throws This function can throw errors.
      */
     setVector3(variableName: string, vector: Vector3): void;
-}
-
-export class ObstructionCallbackArgs {
-    private constructor();
-    readonly dimension: Dimension;
-    readonly entity: Entity;
-    readonly spawnType: EntitySpawnType;
 }
 
 export class PackSettingChangeAfterEvent {
@@ -8497,38 +8358,6 @@ export class SoundInstance {
     stop(): void;
 }
 
-export class SpawnRulesRegistry {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     *
-     * {@link SpawnRulesInvalidRegistryError}
-     */
-    registerEntitySpawnCallback(id: string, callback: (arg0: EntitySpawnCallbackArgs) => boolean): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     *
-     * {@link SpawnRulesInvalidRegistryError}
-     */
-    registerObstructionCallback(id: string, callback: (arg0: ObstructionCallbackArgs) => boolean): void;
-}
-
 // @ts-ignore
 export class SpecificEnchantFunction extends LootItemFunction {
     private constructor();
@@ -8569,12 +8398,6 @@ export class StartupEvent {
      * @remarks This property can be read in early-execution mode.
      */
     readonly itemComponentRegistry: ItemComponentRegistry;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     */
-    getSpawnRulesRegistry(): SpawnRulesRegistry;
 }
 
 // @ts-ignore
@@ -8854,6 +8677,7 @@ export class TextPrimitive extends PrimitiveShape {
     backfaceVisible: boolean;
     backgroundColorOverride?: RGBA;
     depthTest: boolean;
+    lineGapHeight: number;
     readonly text: RawMessage | string;
     textBackfaceVisible: boolean;
     useRotation: boolean;
@@ -9689,12 +9513,6 @@ export interface CameraTargetOptions {
     targetEntity: Entity;
 }
 
-export interface CompoundBlockVolumeItem {
-    action?: CompoundBlockVolumeAction;
-    locationRelativity?: CompoundBlockVolumePositionRelativity;
-    volume: BlockVolume;
-}
-
 export interface ContainerAccessSource {
     entity?: Entity;
 }
@@ -9897,7 +9715,7 @@ export interface EntitySneakingChangedEventOptions {
     entityFilter?: EntityFilter;
 }
 
-export interface EntityTamedEventFilter {
+export interface EntityTamedEventOptions {
     entityFilter?: EntityFilter;
     tamingEntityFilter?: EntityFilter;
 }
@@ -10474,11 +10292,6 @@ export class RawMessageError extends Error {
 }
 
 // @ts-ignore
-export class SpawnRulesInvalidRegistryError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
 export class TickingAreaError extends Error {
     private constructor();
     /**
@@ -10494,7 +10307,6 @@ export class UnloadedChunksError extends Error {
 
 export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
-export const isInternal = true;
 export const MoonPhaseCount = 8;
 export const TicksPerDay = 24000;
 export const TicksPerSecond = 20;

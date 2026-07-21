@@ -6,7 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-bindings", "version": "2.10.0-beta" }
+ * { "module_name": "@minecraft/server", "version": "2.11.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -70,16 +70,6 @@ export enum CommandPermissionLevel {
     Admin         = 2,
     Host          = 3,
     Owner         = 4,
-}
-
-export enum CompoundBlockVolumeAction {
-    Add      = 0,
-    Subtract = 1,
-}
-
-export enum CompoundBlockVolumePositionRelativity {
-    Relative = 0,
-    Absolute = 1,
 }
 
 export enum ContainerRulesErrorReason {
@@ -2350,70 +2340,6 @@ export class Component {
     readonly typeId: string;
 }
 
-export class CompoundBlockVolume {
-    readonly capacity: number;
-    readonly items: CompoundBlockVolumeItem[];
-    readonly itemsAbsolute: CompoundBlockVolumeItem[];
-    readonly volumeCount: number;
-    constructor(origin?: Vector3);
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    clear(): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getBlockLocationIterator(): BlockLocationIterator;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getBoundingBox(): BlockBoundingBox;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getMax(): Vector3;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getMin(): Vector3;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getOrigin(): Vector3;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    isEmpty(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    isInside(worldLocation: Vector3): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    peekLastVolume(forceRelativity?: CompoundBlockVolumePositionRelativity): CompoundBlockVolumeItem | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    popVolume(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    pushVolume(item: CompoundBlockVolumeItem): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    replaceOrAddLastVolume(item: CompoundBlockVolumeItem): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    setOrigin(position: Vector3, preserveExistingVolumes?: boolean): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    translateOrigin(delta: Vector3, preserveExistingVolumes?: boolean): void;
-}
-
 export class Container {
     private constructor();
     readonly containerRules?: ContainerRules;
@@ -3216,13 +3142,7 @@ export class EffectType {
 
 export class EffectTypes {
     private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static get(identifier: string): EffectType | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
     static getAll(): EffectType[];
 }
 
@@ -5201,7 +5121,7 @@ export class EntityTamedAfterEventSignal {
      */
     subscribe(
         callback: (arg0: EntityTamedAfterEvent) => void,
-        options?: EntityTamedEventFilter,
+        options?: EntityTamedEventOptions,
     ): (arg0: EntityTamedAfterEvent) => void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -5227,7 +5147,7 @@ export class EntityTamedBeforeEventSignal {
      */
     subscribe(
         callback: (arg0: EntityTamedBeforeEvent) => void,
-        options?: EntityTamedEventFilter,
+        options?: EntityTamedEventOptions,
     ): (arg0: EntityTamedBeforeEvent) => void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -8757,6 +8677,7 @@ export class TextPrimitive extends PrimitiveShape {
     backfaceVisible: boolean;
     backgroundColorOverride?: RGBA;
     depthTest: boolean;
+    lineGapHeight: number;
     readonly text: RawMessage | string;
     textBackfaceVisible: boolean;
     useRotation: boolean;
@@ -9592,12 +9513,6 @@ export interface CameraTargetOptions {
     targetEntity: Entity;
 }
 
-export interface CompoundBlockVolumeItem {
-    action?: CompoundBlockVolumeAction;
-    locationRelativity?: CompoundBlockVolumePositionRelativity;
-    volume: BlockVolume;
-}
-
 export interface ContainerAccessSource {
     entity?: Entity;
 }
@@ -9800,7 +9715,7 @@ export interface EntitySneakingChangedEventOptions {
     entityFilter?: EntityFilter;
 }
 
-export interface EntityTamedEventFilter {
+export interface EntityTamedEventOptions {
     entityFilter?: EntityFilter;
     tamingEntityFilter?: EntityFilter;
 }
