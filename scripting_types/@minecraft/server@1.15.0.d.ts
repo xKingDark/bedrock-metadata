@@ -1320,9 +1320,11 @@ export class Dimension {
      *
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
+    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -4112,8 +4114,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -4875,6 +4881,10 @@ export class Seat {
     readonly minRiderCount: number;
     readonly position: Vector3;
     readonly seatRotation: number;
+}
+
+export class SoundInstance {
+    private constructor();
 }
 
 // @ts-ignore

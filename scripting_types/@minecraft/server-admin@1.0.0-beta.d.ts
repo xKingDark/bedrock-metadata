@@ -22,40 +22,58 @@ export class AllowList {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     enabled: boolean;
+    readonly entries: AllowListEntry[];
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link AllowListModificationError}
      *
-     * {@link minecraftserver.InvalidEntityError}
-     */
-    add(player: minecraftserver.Player | string): void;
-    /**
-     * @throws This function can throw errors.
+     * {@link minecraftcommon.InvalidArgumentError}
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    contains(player: minecraftserver.Player | string): boolean;
+    add(player: AllowListEntry | minecraftserver.Player): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    clear(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    contains(player: AllowListEntry | minecraftserver.Player): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link AllowListFileReloadError}
      */
     reloadFile(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link AllowListModificationError}
      *
+     * {@link minecraftcommon.InvalidArgumentError}
+     *
      * {@link minecraftserver.InvalidEntityError}
      */
-    remove(player: minecraftserver.Player | string): void;
+    remove(player: AllowListEntry | minecraftserver.Player): void;
 }
 
 export class AsyncPlayerJoinBeforeEvent {
     private constructor();
     readonly name: string;
     readonly persistentId: string;
+    readonly splitScreenSlot?: minecraftserver.PlayerSplitScreenSlot;
     /**
      * @throws This function can throw errors.
      *
@@ -90,41 +108,56 @@ export class DedicatedServerUtils {
     readonly allowList: AllowList;
     readonly levelStorage: LevelStorage;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadCDNConfig(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadPermissions(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link minecraftcommon.EngineError}
      */
     reloadScriptingConfig(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     stopServer(): void;
 }
 
 export class LevelStorage {
     private constructor();
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
      */
     saveHold(): void;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
      */
     saveQuery(): LevelStorageQuerySnapshotFile[];
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
      * @throws This function can throw errors.
      *
      * {@link LevelStorageSaveStateChangeError}
@@ -162,6 +195,11 @@ export class ServerVariables {
      * This function can be called in early-execution mode.
      */
     get(name: string): unknown | undefined;
+}
+
+export interface AllowListEntry {
+    name?: string;
+    xuid?: string;
 }
 
 export interface TransferPlayerIpPortOptions {

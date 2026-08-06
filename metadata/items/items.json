@@ -2,7 +2,7 @@
     "data_items": [
         {
             "name": "minecraft:acacia_boat",
-            "id": 411,
+            "id": 382,
             "max_size": 1,
             "localization_key": "item.boat.acacia.name"
         },
@@ -14,13 +14,13 @@
         },
         {
             "name": "minecraft:acacia_chest_boat",
-            "id": 684,
+            "id": 655,
             "max_size": 1,
             "localization_key": "item.chest_boat.acacia.name"
         },
         {
             "name": "minecraft:acacia_door",
-            "id": 595,
+            "id": 566,
             "max_size": 64,
             "localization_key": "item.acacia_door.name"
         },
@@ -80,7 +80,7 @@
         },
         {
             "name": "minecraft:acacia_sign",
-            "id": 618,
+            "id": 589,
             "max_size": 16,
             "localization_key": "item.acacia_sign.name"
         },
@@ -116,7 +116,7 @@
         },
         {
             "name": "minecraft:allay_spawn_egg",
-            "id": 673,
+            "id": 644,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.allay.name"
         },
@@ -146,7 +146,7 @@
         },
         {
             "name": "minecraft:amethyst_shard",
-            "id": 666,
+            "id": 637,
             "max_size": 64,
             "localization_key": "item.amethyst_shard.name"
         },
@@ -182,7 +182,7 @@
         },
         {
             "name": "minecraft:angler_pottery_sherd",
-            "id": 699,
+            "id": 670,
             "max_size": 64,
             "localization_key": "item.angler_pottery_sherd.name"
         },
@@ -194,55 +194,55 @@
         },
         {
             "name": "minecraft:apple",
-            "id": 285,
+            "id": 880,
             "max_size": 64,
             "localization_key": "item.apple.name"
         },
         {
             "name": "minecraft:archer_pottery_sherd",
-            "id": 700,
+            "id": 671,
             "max_size": 64,
             "localization_key": "item.archer_pottery_sherd.name"
         },
         {
             "name": "minecraft:armadillo_scute",
-            "id": 746,
+            "id": 720,
             "max_size": 64,
             "localization_key": "item.armadillo_scute.name"
         },
         {
             "name": "minecraft:armadillo_spawn_egg",
-            "id": 745,
+            "id": 719,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.armadillo.name"
         },
         {
             "name": "minecraft:armor_stand",
-            "id": 591,
+            "id": 562,
             "max_size": 64,
             "localization_key": "item.armor_stand.name"
         },
         {
             "name": "minecraft:arms_up_pottery_sherd",
-            "id": 701,
+            "id": 672,
             "max_size": 64,
             "localization_key": "item.arms_up_pottery_sherd.name"
         },
         {
             "name": "minecraft:arrow",
-            "id": 332,
+            "id": 303,
             "max_size": 64,
             "localization_key": "item.arrow.name"
         },
         {
             "name": "minecraft:axolotl_bucket",
-            "id": 401,
+            "id": 372,
             "max_size": 1,
             "localization_key": "item.bucketAxolotl.name"
         },
         {
             "name": "minecraft:axolotl_spawn_egg",
-            "id": 536,
+            "id": 507,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.axolotl.name"
         },
@@ -272,7 +272,7 @@
         },
         {
             "name": "minecraft:baked_potato",
-            "id": 310,
+            "id": 281,
             "max_size": 64,
             "localization_key": "item.baked_potato.name"
         },
@@ -301,7 +301,7 @@
         },
         {
             "name": "minecraft:bamboo_chest_raft",
-            "id": 696,
+            "id": 667,
             "max_size": 1,
             "localization_key": "item.chest_boat.bamboo.name"
         },
@@ -361,7 +361,7 @@
         },
         {
             "name": "minecraft:bamboo_raft",
-            "id": 695,
+            "id": 666,
             "max_size": 1,
             "localization_key": "item.boat.bamboo.name"
         },
@@ -373,7 +373,7 @@
         },
         {
             "name": "minecraft:bamboo_sign",
-            "id": 694,
+            "id": 665,
             "max_size": 16,
             "localization_key": "item.bamboo_sign.name"
         },
@@ -397,7 +397,7 @@
         },
         {
             "name": "minecraft:banner",
-            "id": 606,
+            "id": 577,
             "max_size": 16,
             "localization_key": "item.banner.black.name"
         },
@@ -421,7 +421,7 @@
         },
         {
             "name": "minecraft:bat_spawn_egg",
-            "id": 486,
+            "id": 457,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.bat.name"
         },
@@ -433,7 +433,7 @@
         },
         {
             "name": "minecraft:bed",
-            "id": 450,
+            "id": 421,
             "max_size": 1,
             "localization_key": "item.bed.white.name"
         },
@@ -451,13 +451,13 @@
         },
         {
             "name": "minecraft:bee_spawn_egg",
-            "id": 528,
+            "id": 499,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.bee.name"
         },
         {
             "name": "minecraft:beef",
-            "id": 302,
+            "id": 273,
             "max_size": 64,
             "localization_key": "item.beef.name"
         },
@@ -469,19 +469,19 @@
         },
         {
             "name": "minecraft:beetroot",
-            "id": 314,
+            "id": 285,
             "max_size": 64,
             "localization_key": "item.beetroot.name"
         },
         {
             "name": "minecraft:beetroot_seeds",
-            "id": 324,
+            "id": 295,
             "max_size": 64,
             "localization_key": "item.beetroot_seeds.name"
         },
         {
             "name": "minecraft:beetroot_soup",
-            "id": 315,
+            "id": 286,
             "max_size": 1,
             "localization_key": "item.beetroot_soup.name"
         },
@@ -499,7 +499,7 @@
         },
         {
             "name": "minecraft:birch_boat",
-            "id": 408,
+            "id": 379,
             "max_size": 1,
             "localization_key": "item.boat.birch.name"
         },
@@ -511,13 +511,13 @@
         },
         {
             "name": "minecraft:birch_chest_boat",
-            "id": 681,
+            "id": 652,
             "max_size": 1,
             "localization_key": "item.chest_boat.birch.name"
         },
         {
             "name": "minecraft:birch_door",
-            "id": 593,
+            "id": 564,
             "max_size": 64,
             "localization_key": "item.birch_door.name"
         },
@@ -577,7 +577,7 @@
         },
         {
             "name": "minecraft:birch_sign",
-            "id": 616,
+            "id": 587,
             "max_size": 16,
             "localization_key": "item.birch_sign.name"
         },
@@ -607,7 +607,7 @@
         },
         {
             "name": "minecraft:black_bundle",
-            "id": 264,
+            "id": 859,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.black_bundle"
@@ -638,7 +638,7 @@
         },
         {
             "name": "minecraft:black_dye",
-            "id": 427,
+            "id": 398,
             "max_size": 64,
             "localization_key": "item.dye.black_new.name"
         },
@@ -650,7 +650,7 @@
         },
         {
             "name": "minecraft:black_harness",
-            "id": 756,
+            "id": 730,
             "max_size": 1,
             "localization_key": "item.black_harness.name"
         },
@@ -710,7 +710,7 @@
         },
         {
             "name": "minecraft:blade_pottery_sherd",
-            "id": 702,
+            "id": 673,
             "max_size": 64,
             "localization_key": "item.blade_pottery_sherd.name"
         },
@@ -722,19 +722,19 @@
         },
         {
             "name": "minecraft:blaze_powder",
-            "id": 462,
+            "id": 433,
             "max_size": 64,
             "localization_key": "item.blaze_powder.name"
         },
         {
             "name": "minecraft:blaze_rod",
-            "id": 455,
+            "id": 426,
             "max_size": 64,
             "localization_key": "item.blaze_rod.name"
         },
         {
             "name": "minecraft:blaze_spawn_egg",
-            "id": 489,
+            "id": 460,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.blaze.name"
         },
@@ -745,7 +745,7 @@
         },
         {
             "name": "minecraft:blue_bundle",
-            "id": 265,
+            "id": 860,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.blue_bundle"
@@ -776,13 +776,13 @@
         },
         {
             "name": "minecraft:blue_dye",
-            "id": 431,
+            "id": 402,
             "max_size": 64,
             "localization_key": "item.dye.blue_new.name"
         },
         {
             "name": "minecraft:blue_egg",
-            "id": 753,
+            "id": 727,
             "max_size": 16,
             "localization_key": "item.blue_egg.name"
         },
@@ -794,7 +794,7 @@
         },
         {
             "name": "minecraft:blue_harness",
-            "id": 757,
+            "id": 731,
             "max_size": 1,
             "localization_key": "item.blue_harness.name"
         },
@@ -842,19 +842,19 @@
         },
         {
             "name": "minecraft:bogged_spawn_egg",
-            "id": 496,
+            "id": 467,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.bogged.name"
         },
         {
             "name": "minecraft:bolt_armor_trim_smithing_template",
-            "id": 741,
+            "id": 712,
             "max_size": 64,
             "localization_key": "item.bolt_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:bone",
-            "id": 447,
+            "id": 418,
             "max_size": 64,
             "localization_key": "item.bone.name"
         },
@@ -866,13 +866,13 @@
         },
         {
             "name": "minecraft:bone_meal",
-            "id": 443,
+            "id": 414,
             "max_size": 64,
             "localization_key": "item.dye.white.name"
         },
         {
             "name": "minecraft:book",
-            "id": 419,
+            "id": 390,
             "max_size": 64,
             "localization_key": "item.book.name"
         },
@@ -890,19 +890,19 @@
         },
         {
             "name": "minecraft:bordure_indented_banner_pattern",
-            "id": 625,
+            "id": 596,
             "max_size": 1,
             "localization_key": "item.bordure_indented_banner_pattern.name"
         },
         {
             "name": "minecraft:bow",
-            "id": 331,
+            "id": 302,
             "max_size": 1,
             "localization_key": "item.bow.name"
         },
         {
             "name": "minecraft:bowl",
-            "id": 353,
+            "id": 324,
             "max_size": 64,
             "localization_key": "item.bowl.name"
         },
@@ -926,37 +926,37 @@
         },
         {
             "name": "minecraft:bread",
-            "id": 290,
+            "id": 261,
             "max_size": 64,
             "localization_key": "item.bread.name"
         },
         {
             "name": "minecraft:breeze_rod",
-            "id": 281,
+            "id": 876,
             "max_size": 64,
             "localization_key": "item.breeze_rod.name"
         },
         {
             "name": "minecraft:breeze_spawn_egg",
-            "id": 535,
+            "id": 506,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.breeze.name"
         },
         {
             "name": "minecraft:brewer_pottery_sherd",
-            "id": 703,
+            "id": 674,
             "max_size": 64,
             "localization_key": "item.brewer_pottery_sherd.name"
         },
         {
             "name": "minecraft:brewing_stand",
-            "id": 464,
+            "id": 435,
             "max_size": 64,
             "localization_key": "item.brewing_stand.name"
         },
         {
             "name": "minecraft:brick",
-            "id": 415,
+            "id": 386,
             "max_size": 64,
             "localization_key": "item.brick.name"
         },
@@ -986,7 +986,7 @@
         },
         {
             "name": "minecraft:brown_bundle",
-            "id": 266,
+            "id": 861,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.brown_bundle"
@@ -1017,13 +1017,13 @@
         },
         {
             "name": "minecraft:brown_dye",
-            "id": 430,
+            "id": 401,
             "max_size": 64,
             "localization_key": "item.dye.brown_new.name"
         },
         {
             "name": "minecraft:brown_egg",
-            "id": 754,
+            "id": 728,
             "max_size": 16,
             "localization_key": "item.brown_egg.name"
         },
@@ -1035,7 +1035,7 @@
         },
         {
             "name": "minecraft:brown_harness",
-            "id": 758,
+            "id": 732,
             "max_size": 1,
             "localization_key": "item.brown_harness.name"
         },
@@ -1083,7 +1083,7 @@
         },
         {
             "name": "minecraft:brush",
-            "id": 722,
+            "id": 693,
             "max_size": 1,
             "localization_key": "item.brush.name"
         },
@@ -1107,7 +1107,7 @@
         },
         {
             "name": "minecraft:bucket",
-            "id": 392,
+            "id": 363,
             "max_size": 16,
             "localization_key": "item.bucket.name"
         },
@@ -1119,14 +1119,14 @@
         },
         {
             "name": "minecraft:bundle",
-            "id": 267,
+            "id": 862,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.bundle"
         },
         {
             "name": "minecraft:burn_pottery_sherd",
-            "id": 704,
+            "id": 675,
             "max_size": 64,
             "localization_key": "item.burn_pottery_sherd.name"
         },
@@ -1150,7 +1150,7 @@
         },
         {
             "name": "minecraft:cake",
-            "id": 449,
+            "id": 420,
             "max_size": 64,
             "localization_key": "item.cake.name"
         },
@@ -1168,19 +1168,19 @@
         },
         {
             "name": "minecraft:camel_husk_spawn_egg",
-            "id": 698,
+            "id": 669,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.camel_husk.name"
         },
         {
             "name": "minecraft:camel_spawn_egg",
-            "id": 697,
+            "id": 668,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.camel.name"
         },
         {
             "name": "minecraft:campfire",
-            "id": 630,
+            "id": 601,
             "max_size": 64,
             "localization_key": "tile.campfire.name"
         },
@@ -1192,13 +1192,13 @@
         },
         {
             "name": "minecraft:carrot",
-            "id": 308,
+            "id": 279,
             "max_size": 64,
             "localization_key": "item.carrot.name"
         },
         {
             "name": "minecraft:carrot_on_a_stick",
-            "id": 556,
+            "id": 527,
             "max_size": 1,
             "localization_key": "item.carrotOnAStick.name"
         },
@@ -1216,19 +1216,19 @@
         },
         {
             "name": "minecraft:cat_spawn_egg",
-            "id": 522,
+            "id": 493,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.cat.name"
         },
         {
             "name": "minecraft:cauldron",
-            "id": 465,
+            "id": 436,
             "max_size": 64,
             "localization_key": "item.cauldron.name"
         },
         {
             "name": "minecraft:cave_spider_spawn_egg",
-            "id": 490,
+            "id": 461,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.cave_spider.name"
         },
@@ -1240,31 +1240,31 @@
         },
         {
             "name": "minecraft:chainmail_boots",
-            "id": 374,
+            "id": 345,
             "max_size": 1,
             "localization_key": "item.chainmail_boots.name"
         },
         {
             "name": "minecraft:chainmail_chestplate",
-            "id": 372,
+            "id": 343,
             "max_size": 1,
             "localization_key": "item.chainmail_chestplate.name"
         },
         {
             "name": "minecraft:chainmail_helmet",
-            "id": 371,
+            "id": 342,
             "max_size": 1,
             "localization_key": "item.chainmail_helmet.name"
         },
         {
             "name": "minecraft:chainmail_leggings",
-            "id": 373,
+            "id": 344,
             "max_size": 1,
             "localization_key": "item.chainmail_leggings.name"
         },
         {
             "name": "minecraft:charcoal",
-            "id": 334,
+            "id": 305,
             "max_size": 64,
             "localization_key": "item.charcoal.name"
         },
@@ -1275,7 +1275,7 @@
         },
         {
             "name": "minecraft:cherry_boat",
-            "id": 691,
+            "id": 662,
             "max_size": 1,
             "localization_key": "item.boat.cherry.name"
         },
@@ -1287,7 +1287,7 @@
         },
         {
             "name": "minecraft:cherry_chest_boat",
-            "id": 692,
+            "id": 663,
             "max_size": 1,
             "localization_key": "item.chest_boat.cherry.name"
         },
@@ -1353,7 +1353,7 @@
         },
         {
             "name": "minecraft:cherry_sign",
-            "id": 693,
+            "id": 664,
             "max_size": 16,
             "localization_key": "item.cherry_sign.name"
         },
@@ -1389,19 +1389,19 @@
         },
         {
             "name": "minecraft:chest_minecart",
-            "id": 421,
+            "id": 392,
             "max_size": 1,
             "localization_key": "item.chest_minecart.name"
         },
         {
             "name": "minecraft:chicken",
-            "id": 304,
+            "id": 275,
             "max_size": 64,
             "localization_key": "item.chicken.name"
         },
         {
             "name": "minecraft:chicken_spawn_egg",
-            "id": 468,
+            "id": 439,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.chicken.name"
         },
@@ -1503,7 +1503,7 @@
         },
         {
             "name": "minecraft:chorus_fruit",
-            "id": 597,
+            "id": 568,
             "max_size": 64,
             "localization_key": "item.chorus_fruit.name"
         },
@@ -1569,13 +1569,13 @@
         },
         {
             "name": "minecraft:clay_ball",
-            "id": 416,
+            "id": 387,
             "max_size": 64,
             "localization_key": "item.clay_ball.name"
         },
         {
             "name": "minecraft:clock",
-            "id": 425,
+            "id": 396,
             "max_size": 64,
             "localization_key": "item.clock.name"
         },
@@ -1587,7 +1587,7 @@
         },
         {
             "name": "minecraft:coal",
-            "id": 333,
+            "id": 304,
             "max_size": 64,
             "localization_key": "item.coal.name"
         },
@@ -1611,7 +1611,7 @@
         },
         {
             "name": "minecraft:coast_armor_trim_smithing_template",
-            "id": 726,
+            "id": 697,
             "max_size": 64,
             "localization_key": "item.coast_armor_trim_smithing_template.name"
         },
@@ -1659,25 +1659,25 @@
         },
         {
             "name": "minecraft:cocoa_beans",
-            "id": 444,
+            "id": 415,
             "max_size": 64,
             "localization_key": "item.dye.brown.name"
         },
         {
             "name": "minecraft:cod",
-            "id": 293,
+            "id": 264,
             "max_size": 64,
             "localization_key": "item.fish.name"
         },
         {
             "name": "minecraft:cod_bucket",
-            "id": 396,
+            "id": 367,
             "max_size": 1,
             "localization_key": "item.bucketFish.name"
         },
         {
             "name": "minecraft:cod_spawn_egg",
-            "id": 514,
+            "id": 485,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.cod.name"
         },
@@ -1709,19 +1709,19 @@
         },
         {
             "name": "minecraft:command_block_minecart",
-            "id": 602,
+            "id": 573,
             "max_size": 1,
             "localization_key": "item.command_block_minecart.name"
         },
         {
             "name": "minecraft:comparator",
-            "id": 561,
+            "id": 532,
             "max_size": 64,
             "localization_key": "item.comparator.name"
         },
         {
             "name": "minecraft:compass",
-            "id": 423,
+            "id": 394,
             "max_size": 64,
             "localization_key": "item.compass.name"
         },
@@ -1749,55 +1749,55 @@
         },
         {
             "name": "minecraft:cooked_beef",
-            "id": 303,
+            "id": 274,
             "max_size": 64,
             "localization_key": "item.cooked_beef.name"
         },
         {
             "name": "minecraft:cooked_chicken",
-            "id": 305,
+            "id": 276,
             "max_size": 64,
             "localization_key": "item.cooked_chicken.name"
         },
         {
             "name": "minecraft:cooked_cod",
-            "id": 297,
+            "id": 268,
             "max_size": 64,
             "localization_key": "item.cooked_fish.name"
         },
         {
             "name": "minecraft:cooked_mutton",
-            "id": 590,
+            "id": 561,
             "max_size": 64,
             "localization_key": "item.muttonCooked.name"
         },
         {
             "name": "minecraft:cooked_porkchop",
-            "id": 292,
+            "id": 263,
             "max_size": 64,
             "localization_key": "item.cooked_porkchop.name"
         },
         {
             "name": "minecraft:cooked_rabbit",
-            "id": 318,
+            "id": 289,
             "max_size": 64,
             "localization_key": "item.cooked_rabbit.name"
         },
         {
             "name": "minecraft:cooked_salmon",
-            "id": 298,
+            "id": 269,
             "max_size": 64,
             "localization_key": "item.cooked_salmon.name"
         },
         {
             "name": "minecraft:cookie",
-            "id": 300,
+            "id": 271,
             "max_size": 64,
             "localization_key": "item.cookie.name"
         },
         {
             "name": "minecraft:copper_axe",
-            "id": 776,
+            "id": 750,
             "max_size": 1,
             "localization_key": "item.copper_axe.name"
         },
@@ -1815,7 +1815,7 @@
         },
         {
             "name": "minecraft:copper_boots",
-            "id": 781,
+            "id": 755,
             "max_size": 1,
             "localization_key": "item.copper_boots.name"
         },
@@ -1839,7 +1839,7 @@
         },
         {
             "name": "minecraft:copper_chestplate",
-            "id": 779,
+            "id": 753,
             "max_size": 1,
             "localization_key": "item.copper_chestplate.name"
         },
@@ -1851,7 +1851,7 @@
         },
         {
             "name": "minecraft:copper_golem_spawn_egg",
-            "id": 772,
+            "id": 746,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.copper_golem.name"
         },
@@ -1869,25 +1869,25 @@
         },
         {
             "name": "minecraft:copper_helmet",
-            "id": 778,
+            "id": 752,
             "max_size": 1,
             "localization_key": "item.copper_helmet.name"
         },
         {
             "name": "minecraft:copper_hoe",
-            "id": 777,
+            "id": 751,
             "max_size": 1,
             "localization_key": "item.copper_hoe.name"
         },
         {
             "name": "minecraft:copper_horse_armor",
-            "id": 783,
+            "id": 757,
             "max_size": 1,
             "localization_key": "item.copper_horse_armor.name"
         },
         {
             "name": "minecraft:copper_ingot",
-            "id": 544,
+            "id": 515,
             "max_size": 64,
             "localization_key": "item.copper_ingot.name"
         },
@@ -1899,19 +1899,19 @@
         },
         {
             "name": "minecraft:copper_leggings",
-            "id": 780,
+            "id": 754,
             "max_size": 1,
             "localization_key": "item.copper_leggings.name"
         },
         {
             "name": "minecraft:copper_nautilus_armor",
-            "id": 787,
+            "id": 761,
             "max_size": 1,
             "localization_key": "item.copper_nautilus_armor.name"
         },
         {
             "name": "minecraft:copper_nugget",
-            "id": 782,
+            "id": 756,
             "max_size": 64,
             "localization_key": "item.copper_nugget.name"
         },
@@ -1923,25 +1923,25 @@
         },
         {
             "name": "minecraft:copper_pickaxe",
-            "id": 775,
+            "id": 749,
             "max_size": 1,
             "localization_key": "item.copper_pickaxe.name"
         },
         {
             "name": "minecraft:copper_shovel",
-            "id": 774,
+            "id": 748,
             "max_size": 1,
             "localization_key": "item.copper_shovel.name"
         },
         {
             "name": "minecraft:copper_spear",
-            "id": 257,
+            "id": 852,
             "max_size": 1,
             "localization_key": "item.copper_spear.name"
         },
         {
             "name": "minecraft:copper_sword",
-            "id": 773,
+            "id": 747,
             "max_size": 1,
             "localization_key": "item.copper_sword.name"
         },
@@ -1965,7 +1965,7 @@
         },
         {
             "name": "minecraft:cow_spawn_egg",
-            "id": 469,
+            "id": 440,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.cow.name"
         },
@@ -2019,13 +2019,13 @@
         },
         {
             "name": "minecraft:creaking_spawn_egg",
-            "id": 751,
+            "id": 725,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.creaking.name"
         },
         {
             "name": "minecraft:creeper_banner_pattern",
-            "id": 621,
+            "id": 592,
             "max_size": 1,
             "localization_key": "item.creeper_banner_pattern.name"
         },
@@ -2037,7 +2037,7 @@
         },
         {
             "name": "minecraft:creeper_spawn_egg",
-            "id": 474,
+            "id": 445,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.creeper.name"
         },
@@ -2049,7 +2049,7 @@
         },
         {
             "name": "minecraft:crimson_door",
-            "id": 659,
+            "id": 630,
             "max_size": 64,
             "localization_key": "item.crimson_door.name"
         },
@@ -2115,7 +2115,7 @@
         },
         {
             "name": "minecraft:crimson_sign",
-            "id": 657,
+            "id": 628,
             "max_size": 16,
             "localization_key": "item.crimson_sign.name"
         },
@@ -2145,7 +2145,7 @@
         },
         {
             "name": "minecraft:crossbow",
-            "id": 614,
+            "id": 585,
             "max_size": 1,
             "localization_key": "item.crossbow.name"
         },
@@ -2199,7 +2199,7 @@
         },
         {
             "name": "minecraft:cyan_bundle",
-            "id": 268,
+            "id": 863,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.cyan_bundle"
@@ -2230,7 +2230,7 @@
         },
         {
             "name": "minecraft:cyan_dye",
-            "id": 433,
+            "id": 404,
             "max_size": 64,
             "localization_key": "item.dye.cyan.name"
         },
@@ -2242,7 +2242,7 @@
         },
         {
             "name": "minecraft:cyan_harness",
-            "id": 759,
+            "id": 733,
             "max_size": 1,
             "localization_key": "item.cyan_harness.name"
         },
@@ -2290,13 +2290,13 @@
         },
         {
             "name": "minecraft:danger_pottery_sherd",
-            "id": 705,
+            "id": 676,
             "max_size": 64,
             "localization_key": "item.danger_pottery_sherd.name"
         },
         {
             "name": "minecraft:dark_oak_boat",
-            "id": 412,
+            "id": 383,
             "max_size": 1,
             "localization_key": "item.boat.big_oak.name"
         },
@@ -2308,13 +2308,13 @@
         },
         {
             "name": "minecraft:dark_oak_chest_boat",
-            "id": 685,
+            "id": 656,
             "max_size": 1,
             "localization_key": "item.chest_boat.big_oak.name"
         },
         {
             "name": "minecraft:dark_oak_door",
-            "id": 596,
+            "id": 567,
             "max_size": 64,
             "localization_key": "item.dark_oak_door.name"
         },
@@ -2374,7 +2374,7 @@
         },
         {
             "name": "minecraft:dark_oak_sign",
-            "id": 619,
+            "id": 590,
             "max_size": 16,
             "localization_key": "item.darkoak_sign.name"
         },
@@ -2644,13 +2644,13 @@
         },
         {
             "name": "minecraft:diamond",
-            "id": 335,
+            "id": 306,
             "max_size": 64,
             "localization_key": "item.diamond.name"
         },
         {
             "name": "minecraft:diamond_axe",
-            "id": 350,
+            "id": 321,
             "max_size": 1,
             "localization_key": "item.diamond_axe.name"
         },
@@ -2662,43 +2662,43 @@
         },
         {
             "name": "minecraft:diamond_boots",
-            "id": 382,
+            "id": 353,
             "max_size": 1,
             "localization_key": "item.diamond_boots.name"
         },
         {
             "name": "minecraft:diamond_chestplate",
-            "id": 380,
+            "id": 351,
             "max_size": 1,
             "localization_key": "item.diamond_chestplate.name"
         },
         {
             "name": "minecraft:diamond_helmet",
-            "id": 379,
+            "id": 350,
             "max_size": 1,
             "localization_key": "item.diamond_helmet.name"
         },
         {
             "name": "minecraft:diamond_hoe",
-            "id": 364,
+            "id": 335,
             "max_size": 1,
             "localization_key": "item.diamond_hoe.name"
         },
         {
             "name": "minecraft:diamond_horse_armor",
-            "id": 572,
+            "id": 543,
             "max_size": 1,
             "localization_key": "item.horsearmordiamond.name"
         },
         {
             "name": "minecraft:diamond_leggings",
-            "id": 381,
+            "id": 352,
             "max_size": 1,
             "localization_key": "item.diamond_leggings.name"
         },
         {
             "name": "minecraft:diamond_nautilus_armor",
-            "id": 790,
+            "id": 764,
             "max_size": 1,
             "localization_key": "item.diamond_nautilus_armor.name"
         },
@@ -2710,25 +2710,25 @@
         },
         {
             "name": "minecraft:diamond_pickaxe",
-            "id": 349,
+            "id": 320,
             "max_size": 1,
             "localization_key": "item.diamond_pickaxe.name"
         },
         {
             "name": "minecraft:diamond_shovel",
-            "id": 348,
+            "id": 319,
             "max_size": 1,
             "localization_key": "item.diamond_shovel.name"
         },
         {
             "name": "minecraft:diamond_spear",
-            "id": 258,
+            "id": 853,
             "max_size": 1,
             "localization_key": "item.diamond_spear.name"
         },
         {
             "name": "minecraft:diamond_sword",
-            "id": 347,
+            "id": 318,
             "max_size": 1,
             "localization_key": "item.diamond_sword.name"
         },
@@ -2770,7 +2770,7 @@
         },
         {
             "name": "minecraft:disc_fragment_5",
-            "id": 679,
+            "id": 650,
             "max_size": 64,
             "localization_key": "item.disc_fragment.name"
         },
@@ -2782,19 +2782,19 @@
         },
         {
             "name": "minecraft:dolphin_spawn_egg",
-            "id": 518,
+            "id": 489,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.dolphin.name"
         },
         {
             "name": "minecraft:donkey_spawn_egg",
-            "id": 499,
+            "id": 470,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.donkey.name"
         },
         {
             "name": "minecraft:dragon_breath",
-            "id": 599,
+            "id": 570,
             "max_size": 64,
             "localization_key": "item.dragon_breath.name"
         },
@@ -2818,7 +2818,7 @@
         },
         {
             "name": "minecraft:dried_kelp",
-            "id": 299,
+            "id": 270,
             "max_size": 64,
             "localization_key": "item.dried_kelp.name"
         },
@@ -2842,31 +2842,31 @@
         },
         {
             "name": "minecraft:drowned_spawn_egg",
-            "id": 517,
+            "id": 488,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.drowned.name"
         },
         {
             "name": "minecraft:dune_armor_trim_smithing_template",
-            "id": 725,
+            "id": 696,
             "max_size": 64,
             "localization_key": "item.dune_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:echo_shard",
-            "id": 689,
+            "id": 660,
             "max_size": 64,
             "localization_key": "item.echo_shard.name"
         },
         {
             "name": "minecraft:egg",
-            "id": 422,
+            "id": 393,
             "max_size": 16,
             "localization_key": "item.egg.name"
         },
         {
             "name": "minecraft:elder_guardian_spawn_egg",
-            "id": 505,
+            "id": 476,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.elder_guardian.name"
         },
@@ -3472,13 +3472,13 @@
         },
         {
             "name": "minecraft:elytra",
-            "id": 603,
+            "id": 574,
             "max_size": 1,
             "localization_key": "item.elytra.name"
         },
         {
             "name": "minecraft:emerald",
-            "id": 552,
+            "id": 523,
             "max_size": 64,
             "localization_key": "item.emerald.name"
         },
@@ -3496,19 +3496,19 @@
         },
         {
             "name": "minecraft:empty_map",
-            "id": 555,
+            "id": 526,
             "max_size": 64,
             "localization_key": "item.emptyMap.name"
         },
         {
             "name": "minecraft:enchanted_book",
-            "id": 560,
+            "id": 531,
             "max_size": 1,
             "localization_key": "item.enchanted_book.name"
         },
         {
             "name": "minecraft:enchanted_golden_apple",
-            "id": 288,
+            "id": 259,
             "max_size": 64,
             "localization_key": "item.appleEnchanted.name"
         },
@@ -3532,7 +3532,7 @@
         },
         {
             "name": "minecraft:end_crystal",
-            "id": 844,
+            "id": 849,
             "max_size": 64,
             "localization_key": "item.end_crystal.name"
         },
@@ -3574,49 +3574,49 @@
         },
         {
             "name": "minecraft:ender_dragon_spawn_egg",
-            "id": 541,
+            "id": 512,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.ender_dragon.name"
         },
         {
             "name": "minecraft:ender_eye",
-            "id": 466,
+            "id": 437,
             "max_size": 64,
             "localization_key": "item.ender_eye.name"
         },
         {
             "name": "minecraft:ender_pearl",
-            "id": 454,
+            "id": 425,
             "max_size": 16,
             "localization_key": "item.ender_pearl.name"
         },
         {
             "name": "minecraft:enderman_spawn_egg",
-            "id": 475,
+            "id": 446,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.enderman.name"
         },
         {
             "name": "minecraft:endermite_spawn_egg",
-            "id": 493,
+            "id": 464,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.endermite.name"
         },
         {
             "name": "minecraft:evoker_spawn_egg",
-            "id": 509,
+            "id": 480,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.evocation_illager.name"
         },
         {
             "name": "minecraft:experience_bottle",
-            "id": 548,
+            "id": 519,
             "max_size": 64,
             "localization_key": "item.experience_bottle.name"
         },
         {
             "name": "minecraft:explorer_pottery_sherd",
-            "id": 706,
+            "id": 677,
             "max_size": 64,
             "localization_key": "item.explorer_pottery_sherd.name"
         },
@@ -3712,7 +3712,7 @@
         },
         {
             "name": "minecraft:eye_armor_trim_smithing_template",
-            "id": 729,
+            "id": 700,
             "max_size": 64,
             "localization_key": "item.eye_armor_trim_smithing_template.name"
         },
@@ -3724,7 +3724,7 @@
         },
         {
             "name": "minecraft:feather",
-            "id": 359,
+            "id": 330,
             "max_size": 64,
             "localization_key": "item.feather.name"
         },
@@ -3736,7 +3736,7 @@
         },
         {
             "name": "minecraft:fermented_spider_eye",
-            "id": 461,
+            "id": 432,
             "max_size": 64,
             "localization_key": "item.fermented_spider_eye.name"
         },
@@ -3748,19 +3748,19 @@
         },
         {
             "name": "minecraft:field_masoned_banner_pattern",
-            "id": 624,
+            "id": 595,
             "max_size": 1,
             "localization_key": "item.field_masoned_banner_pattern.name"
         },
         {
             "name": "minecraft:filled_map",
-            "id": 452,
+            "id": 423,
             "max_size": 64,
             "localization_key": "item.map.name"
         },
         {
             "name": "minecraft:fire_charge",
-            "id": 549,
+            "id": 520,
             "max_size": 64,
             "localization_key": "item.fireball.name"
         },
@@ -3790,19 +3790,19 @@
         },
         {
             "name": "minecraft:firework_rocket",
-            "id": 558,
+            "id": 529,
             "max_size": 64,
             "localization_key": "item.fireworks.name"
         },
         {
             "name": "minecraft:firework_star",
-            "id": 559,
+            "id": 530,
             "max_size": 64,
             "localization_key": "item.fireworksCharge.name"
         },
         {
             "name": "minecraft:fishing_rod",
-            "id": 424,
+            "id": 395,
             "max_size": 1,
             "localization_key": "item.fishing_rod.name"
         },
@@ -3814,43 +3814,43 @@
         },
         {
             "name": "minecraft:flint",
-            "id": 388,
+            "id": 359,
             "max_size": 64,
             "localization_key": "item.flint.name"
         },
         {
             "name": "minecraft:flint_and_steel",
-            "id": 330,
+            "id": 301,
             "max_size": 1,
             "localization_key": "item.flint_and_steel.name"
         },
         {
             "name": "minecraft:flow_armor_trim_smithing_template",
-            "id": 740,
+            "id": 711,
             "max_size": 64,
             "localization_key": "item.flow_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:flow_banner_pattern",
-            "id": 628,
+            "id": 599,
             "max_size": 1,
             "localization_key": "item.flow_banner_pattern.name"
         },
         {
             "name": "minecraft:flow_pottery_sherd",
-            "id": 707,
+            "id": 678,
             "max_size": 64,
             "localization_key": "item.flow_pottery_sherd.name"
         },
         {
             "name": "minecraft:flower_banner_pattern",
-            "id": 620,
+            "id": 591,
             "max_size": 1,
             "localization_key": "item.flower_banner_pattern.name"
         },
         {
             "name": "minecraft:flower_pot",
-            "id": 554,
+            "id": 525,
             "max_size": 64,
             "localization_key": "item.flower_pot.name"
         },
@@ -3862,19 +3862,19 @@
         },
         {
             "name": "minecraft:fox_spawn_egg",
-            "id": 524,
+            "id": 495,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.fox.name"
         },
         {
             "name": "minecraft:frame",
-            "id": 553,
+            "id": 524,
             "max_size": 64,
             "localization_key": "item.frame.name"
         },
         {
             "name": "minecraft:friend_pottery_sherd",
-            "id": 708,
+            "id": 679,
             "max_size": 64,
             "localization_key": "item.friend_pottery_sherd.name"
         },
@@ -3886,7 +3886,7 @@
         },
         {
             "name": "minecraft:frog_spawn_egg",
-            "id": 670,
+            "id": 641,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.frog.name"
         },
@@ -3904,13 +3904,13 @@
         },
         {
             "name": "minecraft:ghast_spawn_egg",
-            "id": 487,
+            "id": 458,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.ghast.name"
         },
         {
             "name": "minecraft:ghast_tear",
-            "id": 457,
+            "id": 428,
             "max_size": 64,
             "localization_key": "item.ghast_tear.name"
         },
@@ -3928,7 +3928,7 @@
         },
         {
             "name": "minecraft:glass_bottle",
-            "id": 460,
+            "id": 431,
             "max_size": 64,
             "localization_key": "item.glass_bottle.name"
         },
@@ -3940,31 +3940,31 @@
         },
         {
             "name": "minecraft:glistering_melon_slice",
-            "id": 467,
+            "id": 438,
             "max_size": 64,
             "localization_key": "item.speckled_melon.name"
         },
         {
             "name": "minecraft:globe_banner_pattern",
-            "id": 627,
+            "id": 598,
             "max_size": 1,
             "localization_key": "item.globe_banner_pattern.name"
         },
         {
             "name": "minecraft:glow_berries",
-            "id": 845,
+            "id": 881,
             "max_size": 64,
             "localization_key": "item.glow_berries.name"
         },
         {
             "name": "minecraft:glow_frame",
-            "id": 665,
+            "id": 636,
             "max_size": 64,
             "localization_key": "item.glow_frame.name"
         },
         {
             "name": "minecraft:glow_ink_sac",
-            "id": 543,
+            "id": 514,
             "max_size": 64,
             "localization_key": "item.glow_ink_sac.name"
         },
@@ -3976,7 +3976,7 @@
         },
         {
             "name": "minecraft:glow_squid_spawn_egg",
-            "id": 538,
+            "id": 509,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.glow_squid.name"
         },
@@ -3993,19 +3993,19 @@
         },
         {
             "name": "minecraft:glowstone_dust",
-            "id": 426,
+            "id": 397,
             "max_size": 64,
             "localization_key": "item.glowstone_dust.name"
         },
         {
             "name": "minecraft:goat_horn",
-            "id": 669,
+            "id": 640,
             "max_size": 1,
             "localization_key": "item.goat_horn.name"
         },
         {
             "name": "minecraft:goat_spawn_egg",
-            "id": 537,
+            "id": 508,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.goat.name"
         },
@@ -4017,13 +4017,13 @@
         },
         {
             "name": "minecraft:gold_ingot",
-            "id": 337,
+            "id": 308,
             "max_size": 64,
             "localization_key": "item.gold_ingot.name"
         },
         {
             "name": "minecraft:gold_nugget",
-            "id": 458,
+            "id": 429,
             "max_size": 64,
             "localization_key": "item.gold_nugget.name"
         },
@@ -4035,31 +4035,31 @@
         },
         {
             "name": "minecraft:golden_apple",
-            "id": 287,
+            "id": 258,
             "max_size": 64,
             "localization_key": "item.golden_apple.name"
         },
         {
             "name": "minecraft:golden_axe",
-            "id": 357,
+            "id": 328,
             "max_size": 1,
             "localization_key": "item.golden_axe.name"
         },
         {
             "name": "minecraft:golden_boots",
-            "id": 386,
+            "id": 357,
             "max_size": 1,
             "localization_key": "item.golden_boots.name"
         },
         {
             "name": "minecraft:golden_carrot",
-            "id": 312,
+            "id": 283,
             "max_size": 64,
             "localization_key": "item.golden_carrot.name"
         },
         {
             "name": "minecraft:golden_chestplate",
-            "id": 384,
+            "id": 355,
             "max_size": 1,
             "localization_key": "item.golden_chestplate.name"
         },
@@ -4071,37 +4071,37 @@
         },
         {
             "name": "minecraft:golden_helmet",
-            "id": 383,
+            "id": 354,
             "max_size": 1,
             "localization_key": "item.golden_helmet.name"
         },
         {
             "name": "minecraft:golden_hoe",
-            "id": 365,
+            "id": 336,
             "max_size": 1,
             "localization_key": "item.golden_hoe.name"
         },
         {
             "name": "minecraft:golden_horse_armor",
-            "id": 571,
+            "id": 542,
             "max_size": 1,
             "localization_key": "item.horsearmorgold.name"
         },
         {
             "name": "minecraft:golden_leggings",
-            "id": 385,
+            "id": 356,
             "max_size": 1,
             "localization_key": "item.golden_leggings.name"
         },
         {
             "name": "minecraft:golden_nautilus_armor",
-            "id": 789,
+            "id": 763,
             "max_size": 1,
             "localization_key": "item.golden_nautilus_armor.name"
         },
         {
             "name": "minecraft:golden_pickaxe",
-            "id": 356,
+            "id": 327,
             "max_size": 1,
             "localization_key": "item.golden_pickaxe.name"
         },
@@ -4113,19 +4113,19 @@
         },
         {
             "name": "minecraft:golden_shovel",
-            "id": 355,
+            "id": 326,
             "max_size": 1,
             "localization_key": "item.golden_shovel.name"
         },
         {
             "name": "minecraft:golden_spear",
-            "id": 259,
+            "id": 854,
             "max_size": 1,
             "localization_key": "item.golden_spear.name"
         },
         {
             "name": "minecraft:golden_sword",
-            "id": 354,
+            "id": 325,
             "max_size": 1,
             "localization_key": "item.golden_sword.name"
         },
@@ -4173,7 +4173,7 @@
         },
         {
             "name": "minecraft:gray_bundle",
-            "id": 269,
+            "id": 864,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.gray_bundle"
@@ -4204,7 +4204,7 @@
         },
         {
             "name": "minecraft:gray_dye",
-            "id": 435,
+            "id": 406,
             "max_size": 64,
             "localization_key": "item.dye.gray.name"
         },
@@ -4216,7 +4216,7 @@
         },
         {
             "name": "minecraft:gray_harness",
-            "id": 760,
+            "id": 734,
             "max_size": 1,
             "localization_key": "item.gray_harness.name"
         },
@@ -4252,7 +4252,7 @@
         },
         {
             "name": "minecraft:green_bundle",
-            "id": 270,
+            "id": 865,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.green_bundle"
@@ -4283,7 +4283,7 @@
         },
         {
             "name": "minecraft:green_dye",
-            "id": 429,
+            "id": 400,
             "max_size": 64,
             "localization_key": "item.dye.green.name"
         },
@@ -4295,7 +4295,7 @@
         },
         {
             "name": "minecraft:green_harness",
-            "id": 761,
+            "id": 735,
             "max_size": 1,
             "localization_key": "item.green_harness.name"
         },
@@ -4337,25 +4337,25 @@
         },
         {
             "name": "minecraft:guardian_spawn_egg",
-            "id": 494,
+            "id": 465,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.guardian.name"
         },
         {
             "name": "minecraft:gunpowder",
-            "id": 360,
+            "id": 331,
             "max_size": 64,
             "localization_key": "item.gunpowder.name"
         },
         {
             "name": "minecraft:guster_banner_pattern",
-            "id": 629,
+            "id": 600,
             "max_size": 1,
             "localization_key": "item.guster_banner_pattern.name"
         },
         {
             "name": "minecraft:guster_pottery_sherd",
-            "id": 709,
+            "id": 680,
             "max_size": 64,
             "localization_key": "item.guster_pottery_sherd.name"
         },
@@ -4367,7 +4367,7 @@
         },
         {
             "name": "minecraft:happy_ghast_spawn_egg",
-            "id": 755,
+            "id": 729,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.happy_ghast.name"
         },
@@ -4555,19 +4555,19 @@
         },
         {
             "name": "minecraft:heart_of_the_sea",
-            "id": 610,
+            "id": 581,
             "max_size": 64,
             "localization_key": "item.heart_of_the_sea.name"
         },
         {
             "name": "minecraft:heart_pottery_sherd",
-            "id": 710,
+            "id": 681,
             "max_size": 64,
             "localization_key": "item.heart_pottery_sherd.name"
         },
         {
             "name": "minecraft:heartbreak_pottery_sherd",
-            "id": 711,
+            "id": 682,
             "max_size": 64,
             "localization_key": "item.heartbreak_pottery_sherd.name"
         },
@@ -4585,7 +4585,7 @@
         },
         {
             "name": "minecraft:hoglin_spawn_egg",
-            "id": 530,
+            "id": 501,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.hoglin.name"
         },
@@ -4597,13 +4597,13 @@
         },
         {
             "name": "minecraft:honey_bottle",
-            "id": 633,
+            "id": 604,
             "max_size": 16,
             "localization_key": "item.honey_bottle.name"
         },
         {
             "name": "minecraft:honeycomb",
-            "id": 632,
+            "id": 603,
             "max_size": 64,
             "localization_key": "item.honeycomb.name"
         },
@@ -4615,13 +4615,13 @@
         },
         {
             "name": "minecraft:hopper",
-            "id": 566,
+            "id": 537,
             "max_size": 64,
             "localization_key": "tile.hopper.name"
         },
         {
             "name": "minecraft:hopper_minecart",
-            "id": 565,
+            "id": 536,
             "max_size": 1,
             "localization_key": "item.hopper_minecart.name"
         },
@@ -4645,25 +4645,25 @@
         },
         {
             "name": "minecraft:horse_spawn_egg",
-            "id": 491,
+            "id": 462,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.horse.name"
         },
         {
             "name": "minecraft:host_armor_trim_smithing_template",
-            "id": 739,
+            "id": 710,
             "max_size": 64,
             "localization_key": "item.host_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:howl_pottery_sherd",
-            "id": 712,
+            "id": 683,
             "max_size": 64,
             "localization_key": "item.howl_pottery_sherd.name"
         },
         {
             "name": "minecraft:husk_spawn_egg",
-            "id": 497,
+            "id": 468,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.husk.name"
         },
@@ -4722,13 +4722,13 @@
         },
         {
             "name": "minecraft:ink_sac",
-            "id": 445,
+            "id": 416,
             "max_size": 64,
             "localization_key": "item.dye.black.name"
         },
         {
             "name": "minecraft:iron_axe",
-            "id": 329,
+            "id": 300,
             "max_size": 1,
             "localization_key": "item.iron_axe.name"
         },
@@ -4746,7 +4746,7 @@
         },
         {
             "name": "minecraft:iron_boots",
-            "id": 378,
+            "id": 349,
             "max_size": 1,
             "localization_key": "item.iron_boots.name"
         },
@@ -4758,61 +4758,61 @@
         },
         {
             "name": "minecraft:iron_chestplate",
-            "id": 376,
+            "id": 347,
             "max_size": 1,
             "localization_key": "item.iron_chestplate.name"
         },
         {
             "name": "minecraft:iron_door",
-            "id": 404,
+            "id": 375,
             "max_size": 64,
             "localization_key": "item.iron_door.name"
         },
         {
             "name": "minecraft:iron_golem_spawn_egg",
-            "id": 539,
+            "id": 510,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.iron_golem.name"
         },
         {
             "name": "minecraft:iron_helmet",
-            "id": 375,
+            "id": 346,
             "max_size": 1,
             "localization_key": "item.iron_helmet.name"
         },
         {
             "name": "minecraft:iron_hoe",
-            "id": 363,
+            "id": 334,
             "max_size": 1,
             "localization_key": "item.iron_hoe.name"
         },
         {
             "name": "minecraft:iron_horse_armor",
-            "id": 570,
+            "id": 541,
             "max_size": 1,
             "localization_key": "item.horsearmoriron.name"
         },
         {
             "name": "minecraft:iron_ingot",
-            "id": 336,
+            "id": 307,
             "max_size": 64,
             "localization_key": "item.iron_ingot.name"
         },
         {
             "name": "minecraft:iron_leggings",
-            "id": 377,
+            "id": 348,
             "max_size": 1,
             "localization_key": "item.iron_leggings.name"
         },
         {
             "name": "minecraft:iron_nautilus_armor",
-            "id": 788,
+            "id": 762,
             "max_size": 1,
             "localization_key": "item.iron_nautilus_armor.name"
         },
         {
             "name": "minecraft:iron_nugget",
-            "id": 608,
+            "id": 579,
             "max_size": 64,
             "localization_key": "item.iron_nugget.name"
         },
@@ -4824,25 +4824,25 @@
         },
         {
             "name": "minecraft:iron_pickaxe",
-            "id": 328,
+            "id": 299,
             "max_size": 1,
             "localization_key": "item.iron_pickaxe.name"
         },
         {
             "name": "minecraft:iron_shovel",
-            "id": 327,
+            "id": 298,
             "max_size": 1,
             "localization_key": "item.iron_shovel.name"
         },
         {
             "name": "minecraft:iron_spear",
-            "id": 260,
+            "id": 855,
             "max_size": 1,
             "localization_key": "item.iron_spear.name"
         },
         {
             "name": "minecraft:iron_sword",
-            "id": 338,
+            "id": 309,
             "max_size": 1,
             "localization_key": "item.iron_sword.name"
         },
@@ -4866,7 +4866,7 @@
         },
         {
             "name": "minecraft:jungle_boat",
-            "id": 409,
+            "id": 380,
             "max_size": 1,
             "localization_key": "item.boat.jungle.name"
         },
@@ -4878,13 +4878,13 @@
         },
         {
             "name": "minecraft:jungle_chest_boat",
-            "id": 682,
+            "id": 653,
             "max_size": 1,
             "localization_key": "item.chest_boat.jungle.name"
         },
         {
             "name": "minecraft:jungle_door",
-            "id": 594,
+            "id": 565,
             "max_size": 64,
             "localization_key": "item.jungle_door.name"
         },
@@ -4944,7 +4944,7 @@
         },
         {
             "name": "minecraft:jungle_sign",
-            "id": 617,
+            "id": 588,
             "max_size": 16,
             "localization_key": "item.jungle_sign.name"
         },
@@ -4974,7 +4974,7 @@
         },
         {
             "name": "minecraft:kelp",
-            "id": 414,
+            "id": 385,
             "max_size": 64,
             "localization_key": "item.kelp.name"
         },
@@ -5003,7 +5003,7 @@
         },
         {
             "name": "minecraft:lapis_lazuli",
-            "id": 446,
+            "id": 417,
             "max_size": 64,
             "localization_key": "item.dye.blue.name"
         },
@@ -5027,13 +5027,13 @@
         },
         {
             "name": "minecraft:lava_bucket",
-            "id": 395,
+            "id": 366,
             "max_size": 1,
             "localization_key": "item.bucketLava.name"
         },
         {
             "name": "minecraft:lead",
-            "id": 586,
+            "id": 557,
             "max_size": 64,
             "localization_key": "item.lead.name"
         },
@@ -5045,37 +5045,37 @@
         },
         {
             "name": "minecraft:leather",
-            "id": 413,
+            "id": 384,
             "max_size": 64,
             "localization_key": "item.leather.name"
         },
         {
             "name": "minecraft:leather_boots",
-            "id": 370,
+            "id": 341,
             "max_size": 1,
             "localization_key": "item.leather_boots.name"
         },
         {
             "name": "minecraft:leather_chestplate",
-            "id": 368,
+            "id": 339,
             "max_size": 1,
             "localization_key": "item.leather_chestplate.name"
         },
         {
             "name": "minecraft:leather_helmet",
-            "id": 367,
+            "id": 338,
             "max_size": 1,
             "localization_key": "item.leather_helmet.name"
         },
         {
             "name": "minecraft:leather_horse_armor",
-            "id": 569,
+            "id": 540,
             "max_size": 1,
             "localization_key": "item.horsearmorleather.name"
         },
         {
             "name": "minecraft:leather_leggings",
-            "id": 369,
+            "id": 340,
             "max_size": 1,
             "localization_key": "item.leather_leggings.name"
         },
@@ -5189,7 +5189,7 @@
         },
         {
             "name": "minecraft:light_blue_bundle",
-            "id": 271,
+            "id": 866,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_blue_bundle"
@@ -5220,7 +5220,7 @@
         },
         {
             "name": "minecraft:light_blue_dye",
-            "id": 439,
+            "id": 410,
             "max_size": 64,
             "localization_key": "item.dye.lightBlue.name"
         },
@@ -5232,7 +5232,7 @@
         },
         {
             "name": "minecraft:light_blue_harness",
-            "id": 762,
+            "id": 736,
             "max_size": 1,
             "localization_key": "item.light_blue_harness.name"
         },
@@ -5268,7 +5268,7 @@
         },
         {
             "name": "minecraft:light_gray_bundle",
-            "id": 272,
+            "id": 867,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_gray_bundle"
@@ -5299,13 +5299,13 @@
         },
         {
             "name": "minecraft:light_gray_dye",
-            "id": 434,
+            "id": 405,
             "max_size": 64,
             "localization_key": "item.dye.silver.name"
         },
         {
             "name": "minecraft:light_gray_harness",
-            "id": 763,
+            "id": 737,
             "max_size": 1,
             "localization_key": "item.light_gray_harness.name"
         },
@@ -5365,7 +5365,7 @@
         },
         {
             "name": "minecraft:lime_bundle",
-            "id": 273,
+            "id": 868,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.lime_bundle"
@@ -5396,7 +5396,7 @@
         },
         {
             "name": "minecraft:lime_dye",
-            "id": 437,
+            "id": 408,
             "max_size": 64,
             "localization_key": "item.dye.lime.name"
         },
@@ -5408,7 +5408,7 @@
         },
         {
             "name": "minecraft:lime_harness",
-            "id": 764,
+            "id": 738,
             "max_size": 1,
             "localization_key": "item.lime_harness.name"
         },
@@ -5444,7 +5444,7 @@
         },
         {
             "name": "minecraft:lingering_potion",
-            "id": 601,
+            "id": 572,
             "max_size": 1,
             "localization_key": "%potion.emptyPotion.linger.name"
         },
@@ -5456,7 +5456,7 @@
         },
         {
             "name": "minecraft:llama_spawn_egg",
-            "id": 507,
+            "id": 478,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.llama.name"
         },
@@ -5468,7 +5468,7 @@
         },
         {
             "name": "minecraft:lodestone_compass",
-            "id": 645,
+            "id": 616,
             "max_size": 64,
             "localization_key": "item.lodestonecompass.name"
         },
@@ -5480,13 +5480,13 @@
         },
         {
             "name": "minecraft:mace",
-            "id": 351,
+            "id": 322,
             "max_size": 1,
             "localization_key": "item.mace.name"
         },
         {
             "name": "minecraft:magenta_bundle",
-            "id": 274,
+            "id": 869,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.magenta_bundle"
@@ -5517,7 +5517,7 @@
         },
         {
             "name": "minecraft:magenta_dye",
-            "id": 440,
+            "id": 411,
             "max_size": 64,
             "localization_key": "item.dye.magenta.name"
         },
@@ -5529,7 +5529,7 @@
         },
         {
             "name": "minecraft:magenta_harness",
-            "id": 765,
+            "id": 739,
             "max_size": 1,
             "localization_key": "item.magenta_harness.name"
         },
@@ -5571,19 +5571,19 @@
         },
         {
             "name": "minecraft:magma_cream",
-            "id": 463,
+            "id": 434,
             "max_size": 64,
             "localization_key": "item.magma_cream.name"
         },
         {
             "name": "minecraft:magma_cube_spawn_egg",
-            "id": 488,
+            "id": 459,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.magma_cube.name"
         },
         {
             "name": "minecraft:mangrove_boat",
-            "id": 677,
+            "id": 648,
             "max_size": 1,
             "localization_key": "item.boat.mangrove.name"
         },
@@ -5595,13 +5595,13 @@
         },
         {
             "name": "minecraft:mangrove_chest_boat",
-            "id": 686,
+            "id": 657,
             "max_size": 1,
             "localization_key": "item.chest_boat.mangrove.name"
         },
         {
             "name": "minecraft:mangrove_door",
-            "id": 675,
+            "id": 646,
             "max_size": 64,
             "localization_key": "item.mangrove_door.name"
         },
@@ -5667,7 +5667,7 @@
         },
         {
             "name": "minecraft:mangrove_sign",
-            "id": 676,
+            "id": 647,
             "max_size": 16,
             "localization_key": "item.mangrove_sign.name"
         },
@@ -5719,31 +5719,31 @@
         },
         {
             "name": "minecraft:melon_seeds",
-            "id": 322,
+            "id": 293,
             "max_size": 64,
             "localization_key": "item.melon_seeds.name"
         },
         {
             "name": "minecraft:melon_slice",
-            "id": 301,
+            "id": 272,
             "max_size": 64,
             "localization_key": "item.melon.name"
         },
         {
             "name": "minecraft:milk_bucket",
-            "id": 393,
+            "id": 364,
             "max_size": 1,
             "localization_key": "item.milk.name"
         },
         {
             "name": "minecraft:minecart",
-            "id": 402,
+            "id": 373,
             "max_size": 1,
             "localization_key": "item.minecart.name"
         },
         {
             "name": "minecraft:miner_pottery_sherd",
-            "id": 713,
+            "id": 684,
             "max_size": 64,
             "localization_key": "item.miner_pottery_sherd.name"
         },
@@ -5755,13 +5755,13 @@
         },
         {
             "name": "minecraft:mojang_banner_pattern",
-            "id": 623,
+            "id": 594,
             "max_size": 1,
             "localization_key": "item.mojang_banner_pattern.name"
         },
         {
             "name": "minecraft:mooshroom_spawn_egg",
-            "id": 473,
+            "id": 444,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.mooshroom.name"
         },
@@ -5827,7 +5827,7 @@
         },
         {
             "name": "minecraft:mourner_pottery_sherd",
-            "id": 714,
+            "id": 685,
             "max_size": 64,
             "localization_key": "item.mourner_pottery_sherd.name"
         },
@@ -5869,7 +5869,7 @@
         },
         {
             "name": "minecraft:mule_spawn_egg",
-            "id": 500,
+            "id": 471,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.mule.name"
         },
@@ -5881,145 +5881,145 @@
         },
         {
             "name": "minecraft:mushroom_stew",
-            "id": 289,
+            "id": 260,
             "max_size": 1,
             "localization_key": "item.mushroom_stew.name"
         },
         {
             "name": "minecraft:music_disc_11",
-            "id": 583,
+            "id": 554,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_13",
-            "id": 573,
+            "id": 544,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_5",
-            "id": 678,
+            "id": 649,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_blocks",
-            "id": 575,
+            "id": 546,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_bounce",
-            "id": 833,
+            "id": 835,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_cat",
-            "id": 574,
+            "id": 545,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_chirp",
-            "id": 576,
+            "id": 547,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_creator",
-            "id": 828,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_creator_music_box",
-            "id": 829,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_far",
-            "id": 577,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_lava_chicken",
-            "id": 832,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_mall",
-            "id": 578,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_mellohi",
-            "id": 579,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_otherside",
-            "id": 668,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_pigstep",
-            "id": 662,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_precipice",
             "id": 830,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
-            "name": "minecraft:music_disc_relic",
-            "id": 742,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_stal",
-            "id": 580,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_strad",
-            "id": 581,
-            "max_size": 1,
-            "localization_key": "item.record.name"
-        },
-        {
-            "name": "minecraft:music_disc_tears",
+            "name": "minecraft:music_disc_creator_music_box",
             "id": 831,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
+            "name": "minecraft:music_disc_far",
+            "id": 548,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_lava_chicken",
+            "id": 834,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_mall",
+            "id": 549,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_mellohi",
+            "id": 550,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_otherside",
+            "id": 639,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_pigstep",
+            "id": 633,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_precipice",
+            "id": 832,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_relic",
+            "id": 713,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_stal",
+            "id": 551,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_strad",
+            "id": 552,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
+            "name": "minecraft:music_disc_tears",
+            "id": 833,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
             "name": "minecraft:music_disc_wait",
-            "id": 584,
+            "id": 555,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_ward",
-            "id": 582,
+            "id": 553,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:mutton",
-            "id": 589,
+            "id": 560,
             "max_size": 64,
             "localization_key": "item.muttonRaw.name"
         },
@@ -6031,19 +6031,19 @@
         },
         {
             "name": "minecraft:name_tag",
-            "id": 587,
+            "id": 558,
             "max_size": 64,
             "localization_key": "item.name_tag.name"
         },
         {
             "name": "minecraft:nautilus_shell",
-            "id": 609,
+            "id": 580,
             "max_size": 64,
             "localization_key": "item.nautilus_shell.name"
         },
         {
             "name": "minecraft:nautilus_spawn_egg",
-            "id": 784,
+            "id": 758,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.nautilus.name"
         },
@@ -6085,19 +6085,19 @@
         },
         {
             "name": "minecraft:nether_sprouts",
-            "id": 663,
+            "id": 634,
             "max_size": 64,
             "localization_key": "tile.nether_sprouts.name"
         },
         {
             "name": "minecraft:nether_star",
-            "id": 557,
+            "id": 528,
             "max_size": 64,
             "localization_key": "item.netherStar.name"
         },
         {
             "name": "minecraft:nether_wart",
-            "id": 323,
+            "id": 294,
             "max_size": 64,
             "localization_key": "item.nether_wart.name"
         },
@@ -6109,13 +6109,13 @@
         },
         {
             "name": "minecraft:netherbrick",
-            "id": 562,
+            "id": 533,
             "max_size": 64,
             "localization_key": "item.netherbrick.name"
         },
         {
             "name": "minecraft:netherite_axe",
-            "id": 649,
+            "id": 620,
             "max_size": 1,
             "localization_key": "item.netherite_axe.name"
         },
@@ -6127,85 +6127,85 @@
         },
         {
             "name": "minecraft:netherite_boots",
-            "id": 655,
+            "id": 626,
             "max_size": 1,
             "localization_key": "item.netherite_boots.name"
         },
         {
             "name": "minecraft:netherite_chestplate",
-            "id": 653,
+            "id": 624,
             "max_size": 1,
             "localization_key": "item.netherite_chestplate.name"
         },
         {
             "name": "minecraft:netherite_helmet",
-            "id": 652,
+            "id": 623,
             "max_size": 1,
             "localization_key": "item.netherite_helmet.name"
         },
         {
             "name": "minecraft:netherite_hoe",
-            "id": 650,
+            "id": 621,
             "max_size": 1,
             "localization_key": "item.netherite_hoe.name"
         },
         {
             "name": "minecraft:netherite_horse_armor",
-            "id": 792,
+            "id": 766,
             "max_size": 1,
             "localization_key": "item.netherite_horse_armor.name"
         },
         {
             "name": "minecraft:netherite_ingot",
-            "id": 651,
+            "id": 622,
             "max_size": 64,
             "localization_key": "item.netherite_ingot.name"
         },
         {
             "name": "minecraft:netherite_leggings",
-            "id": 654,
+            "id": 625,
             "max_size": 1,
             "localization_key": "item.netherite_leggings.name"
         },
         {
             "name": "minecraft:netherite_nautilus_armor",
-            "id": 791,
+            "id": 765,
             "max_size": 1,
             "localization_key": "item.netherite_nautilus_armor.name"
         },
         {
             "name": "minecraft:netherite_pickaxe",
-            "id": 648,
+            "id": 619,
             "max_size": 1,
             "localization_key": "item.netherite_pickaxe.name"
         },
         {
             "name": "minecraft:netherite_scrap",
-            "id": 656,
+            "id": 627,
             "max_size": 64,
             "localization_key": "item.netherite_scrap.name"
         },
         {
             "name": "minecraft:netherite_shovel",
-            "id": 647,
+            "id": 618,
             "max_size": 1,
             "localization_key": "item.netherite_shovel.name"
         },
         {
             "name": "minecraft:netherite_spear",
-            "id": 261,
+            "id": 856,
             "max_size": 1,
             "localization_key": "item.netherite_spear.name"
         },
         {
             "name": "minecraft:netherite_sword",
-            "id": 646,
+            "id": 617,
             "max_size": 1,
             "localization_key": "item.netherite_sword.name"
         },
         {
             "name": "minecraft:netherite_upgrade_smithing_template",
-            "id": 723,
+            "id": 694,
             "max_size": 64,
             "localization_key": "item.netherite_upgrade_smithing_template.name"
         },
@@ -6235,13 +6235,13 @@
         },
         {
             "name": "minecraft:oak_boat",
-            "id": 407,
+            "id": 378,
             "max_size": 1,
             "localization_key": "item.boat.oak.name"
         },
         {
             "name": "minecraft:oak_chest_boat",
-            "id": 680,
+            "id": 651,
             "max_size": 1,
             "localization_key": "item.chest_boat.oak.name"
         },
@@ -6289,7 +6289,7 @@
         },
         {
             "name": "minecraft:oak_sign",
-            "id": 390,
+            "id": 361,
             "max_size": 16,
             "localization_key": "item.sign.name"
         },
@@ -6325,7 +6325,7 @@
         },
         {
             "name": "minecraft:ocelot_spawn_egg",
-            "id": 484,
+            "id": 455,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.ocelot.name"
         },
@@ -6337,13 +6337,13 @@
         },
         {
             "name": "minecraft:ominous_bottle",
-            "id": 634,
+            "id": 605,
             "max_size": 64,
             "localization_key": "item.ominous_bottle.name"
         },
         {
             "name": "minecraft:ominous_trial_key",
-            "id": 282,
+            "id": 877,
             "max_size": 64,
             "localization_key": "item.ominous_trial_key.name"
         },
@@ -6355,7 +6355,7 @@
         },
         {
             "name": "minecraft:orange_bundle",
-            "id": 275,
+            "id": 870,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.orange_bundle"
@@ -6386,7 +6386,7 @@
         },
         {
             "name": "minecraft:orange_dye",
-            "id": 441,
+            "id": 412,
             "max_size": 64,
             "localization_key": "item.dye.orange.name"
         },
@@ -6398,7 +6398,7 @@
         },
         {
             "name": "minecraft:orange_harness",
-            "id": 766,
+            "id": 740,
             "max_size": 1,
             "localization_key": "item.orange_harness.name"
         },
@@ -6548,7 +6548,7 @@
         },
         {
             "name": "minecraft:painting",
-            "id": 389,
+            "id": 360,
             "max_size": 64,
             "localization_key": "item.painting.name"
         },
@@ -6572,7 +6572,7 @@
         },
         {
             "name": "minecraft:pale_oak_boat",
-            "id": 748,
+            "id": 722,
             "max_size": 1,
             "localization_key": "item.boat.pale_oak.name"
         },
@@ -6584,7 +6584,7 @@
         },
         {
             "name": "minecraft:pale_oak_chest_boat",
-            "id": 749,
+            "id": 723,
             "max_size": 1,
             "localization_key": "item.chest_boat.pale_oak.name"
         },
@@ -6650,7 +6650,7 @@
         },
         {
             "name": "minecraft:pale_oak_sign",
-            "id": 750,
+            "id": 724,
             "max_size": 16,
             "localization_key": "item.pale_oak_sign.name"
         },
@@ -6680,25 +6680,25 @@
         },
         {
             "name": "minecraft:panda_spawn_egg",
-            "id": 523,
+            "id": 494,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.panda.name"
         },
         {
             "name": "minecraft:paper",
-            "id": 418,
+            "id": 389,
             "max_size": 64,
             "localization_key": "item.paper.name"
         },
         {
             "name": "minecraft:parched_spawn_egg",
-            "id": 786,
+            "id": 760,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.parched.name"
         },
         {
             "name": "minecraft:parrot_spawn_egg",
-            "id": 512,
+            "id": 483,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.parrot.name"
         },
@@ -6722,31 +6722,31 @@
         },
         {
             "name": "minecraft:phantom_membrane",
-            "id": 613,
+            "id": 584,
             "max_size": 64,
             "localization_key": "item.phantom_membrane.name"
         },
         {
             "name": "minecraft:phantom_spawn_egg",
-            "id": 520,
+            "id": 491,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.phantom.name"
         },
         {
             "name": "minecraft:pig_spawn_egg",
-            "id": 470,
+            "id": 441,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.pig.name"
         },
         {
             "name": "minecraft:piglin_banner_pattern",
-            "id": 626,
+            "id": 597,
             "max_size": 1,
             "localization_key": "item.piglin_banner_pattern.name"
         },
         {
             "name": "minecraft:piglin_brute_spawn_egg",
-            "id": 533,
+            "id": 504,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.piglin_brute.name"
         },
@@ -6758,19 +6758,19 @@
         },
         {
             "name": "minecraft:piglin_spawn_egg",
-            "id": 531,
+            "id": 502,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.piglin.name"
         },
         {
             "name": "minecraft:pillager_spawn_egg",
-            "id": 525,
+            "id": 496,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.pillager.name"
         },
         {
             "name": "minecraft:pink_bundle",
-            "id": 276,
+            "id": 871,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.pink_bundle"
@@ -6801,7 +6801,7 @@
         },
         {
             "name": "minecraft:pink_dye",
-            "id": 436,
+            "id": 407,
             "max_size": 64,
             "localization_key": "item.dye.pink.name"
         },
@@ -6813,7 +6813,7 @@
         },
         {
             "name": "minecraft:pink_harness",
-            "id": 767,
+            "id": 741,
             "max_size": 1,
             "localization_key": "item.pink_harness.name"
         },
@@ -6873,7 +6873,7 @@
         },
         {
             "name": "minecraft:pitcher_pod",
-            "id": 326,
+            "id": 297,
             "max_size": 64,
             "localization_key": "item.pitcher_pod.name"
         },
@@ -6885,7 +6885,7 @@
         },
         {
             "name": "minecraft:plenty_pottery_sherd",
-            "id": 715,
+            "id": 686,
             "max_size": 64,
             "localization_key": "item.plenty_pottery_sherd.name"
         },
@@ -6903,13 +6903,13 @@
         },
         {
             "name": "minecraft:poisonous_potato",
-            "id": 311,
+            "id": 282,
             "max_size": 64,
             "localization_key": "item.poisonous_potato.name"
         },
         {
             "name": "minecraft:polar_bear_spawn_egg",
-            "id": 506,
+            "id": 477,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.polar_bear.name"
         },
@@ -7131,7 +7131,7 @@
         },
         {
             "name": "minecraft:popped_chorus_fruit",
-            "id": 598,
+            "id": 569,
             "max_size": 64,
             "localization_key": "item.chorus_fruit_popped.name"
         },
@@ -7143,13 +7143,13 @@
         },
         {
             "name": "minecraft:porkchop",
-            "id": 291,
+            "id": 262,
             "max_size": 64,
             "localization_key": "item.porkchop.name"
         },
         {
             "name": "minecraft:potato",
-            "id": 309,
+            "id": 280,
             "max_size": 64,
             "localization_key": "item.potato.name"
         },
@@ -7161,13 +7161,13 @@
         },
         {
             "name": "minecraft:potion",
-            "id": 459,
+            "id": 430,
             "max_size": 1,
             "localization_key": "%potion.emptyPotion.name"
         },
         {
             "name": "minecraft:powder_snow_bucket",
-            "id": 400,
+            "id": 371,
             "max_size": 1,
             "localization_key": "item.bucketPowderSnow.name"
         },
@@ -7197,13 +7197,13 @@
         },
         {
             "name": "minecraft:prismarine_crystals",
-            "id": 588,
+            "id": 559,
             "max_size": 64,
             "localization_key": "item.prismarine_crystals.name"
         },
         {
             "name": "minecraft:prismarine_shard",
-            "id": 604,
+            "id": 575,
             "max_size": 64,
             "localization_key": "item.prismarine_shard.name"
         },
@@ -7227,25 +7227,25 @@
         },
         {
             "name": "minecraft:prize_pottery_sherd",
-            "id": 716,
+            "id": 687,
             "max_size": 64,
             "localization_key": "item.prize_pottery_sherd.name"
         },
         {
             "name": "minecraft:pufferfish",
-            "id": 296,
+            "id": 267,
             "max_size": 64,
             "localization_key": "item.pufferfish.name"
         },
         {
             "name": "minecraft:pufferfish_bucket",
-            "id": 399,
+            "id": 370,
             "max_size": 1,
             "localization_key": "item.bucketPuffer.name"
         },
         {
             "name": "minecraft:pufferfish_spawn_egg",
-            "id": 515,
+            "id": 486,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.pufferfish.name"
         },
@@ -7257,19 +7257,19 @@
         },
         {
             "name": "minecraft:pumpkin_pie",
-            "id": 313,
+            "id": 284,
             "max_size": 64,
             "localization_key": "item.pumpkin_pie.name"
         },
         {
             "name": "minecraft:pumpkin_seeds",
-            "id": 321,
+            "id": 292,
             "max_size": 64,
             "localization_key": "item.pumpkin_seeds.name"
         },
         {
             "name": "minecraft:purple_bundle",
-            "id": 277,
+            "id": 872,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.purple_bundle"
@@ -7300,7 +7300,7 @@
         },
         {
             "name": "minecraft:purple_dye",
-            "id": 432,
+            "id": 403,
             "max_size": 64,
             "localization_key": "item.dye.purple.name"
         },
@@ -7312,7 +7312,7 @@
         },
         {
             "name": "minecraft:purple_harness",
-            "id": 768,
+            "id": 742,
             "max_size": 1,
             "localization_key": "item.purple_harness.name"
         },
@@ -7372,7 +7372,7 @@
         },
         {
             "name": "minecraft:quartz",
-            "id": 563,
+            "id": 534,
             "max_size": 64,
             "localization_key": "item.quartz.name"
         },
@@ -7414,31 +7414,31 @@
         },
         {
             "name": "minecraft:rabbit",
-            "id": 317,
+            "id": 288,
             "max_size": 64,
             "localization_key": "item.rabbit.name"
         },
         {
             "name": "minecraft:rabbit_foot",
-            "id": 567,
+            "id": 538,
             "max_size": 64,
             "localization_key": "item.rabbit_foot.name"
         },
         {
             "name": "minecraft:rabbit_hide",
-            "id": 568,
+            "id": 539,
             "max_size": 64,
             "localization_key": "item.rabbit_hide.name"
         },
         {
             "name": "minecraft:rabbit_spawn_egg",
-            "id": 492,
+            "id": 463,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.rabbit.name"
         },
         {
             "name": "minecraft:rabbit_stew",
-            "id": 319,
+            "id": 290,
             "max_size": 1,
             "localization_key": "item.rabbit_stew.name"
         },
@@ -7450,7 +7450,7 @@
         },
         {
             "name": "minecraft:raiser_armor_trim_smithing_template",
-            "id": 737,
+            "id": 708,
             "max_size": 64,
             "localization_key": "item.raiser_armor_trim_smithing_template.name"
         },
@@ -7461,13 +7461,13 @@
         },
         {
             "name": "minecraft:ravager_spawn_egg",
-            "id": 527,
+            "id": 498,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.ravager.name"
         },
         {
             "name": "minecraft:raw_copper",
-            "id": 547,
+            "id": 518,
             "max_size": 64,
             "localization_key": "item.raw_copper.name"
         },
@@ -7479,7 +7479,7 @@
         },
         {
             "name": "minecraft:raw_gold",
-            "id": 546,
+            "id": 517,
             "max_size": 64,
             "localization_key": "item.raw_gold.name"
         },
@@ -7491,7 +7491,7 @@
         },
         {
             "name": "minecraft:raw_iron",
-            "id": 545,
+            "id": 516,
             "max_size": 64,
             "localization_key": "item.raw_iron.name"
         },
@@ -7503,13 +7503,13 @@
         },
         {
             "name": "minecraft:recovery_compass",
-            "id": 688,
+            "id": 659,
             "max_size": 64,
             "localization_key": "item.recovery_compass.name"
         },
         {
             "name": "minecraft:red_bundle",
-            "id": 278,
+            "id": 873,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.red_bundle"
@@ -7540,7 +7540,7 @@
         },
         {
             "name": "minecraft:red_dye",
-            "id": 428,
+            "id": 399,
             "max_size": 64,
             "localization_key": "item.dye.red.name"
         },
@@ -7552,7 +7552,7 @@
         },
         {
             "name": "minecraft:red_harness",
-            "id": 769,
+            "id": 743,
             "max_size": 1,
             "localization_key": "item.red_harness.name"
         },
@@ -7660,7 +7660,7 @@
         },
         {
             "name": "minecraft:redstone",
-            "id": 405,
+            "id": 376,
             "max_size": 64,
             "localization_key": "item.redstone.name"
         },
@@ -7696,7 +7696,7 @@
         },
         {
             "name": "minecraft:repeater",
-            "id": 451,
+            "id": 422,
             "max_size": 64,
             "localization_key": "item.repeater.name"
         },
@@ -7714,7 +7714,7 @@
         },
         {
             "name": "minecraft:resin_brick",
-            "id": 752,
+            "id": 726,
             "max_size": 64,
             "localization_key": "item.resin_brick.name"
         },
@@ -7756,7 +7756,7 @@
         },
         {
             "name": "minecraft:rib_armor_trim_smithing_template",
-            "id": 733,
+            "id": 704,
             "max_size": 64,
             "localization_key": "item.rib_armor_trim_smithing_template.name"
         },
@@ -7768,31 +7768,31 @@
         },
         {
             "name": "minecraft:rotten_flesh",
-            "id": 306,
+            "id": 277,
             "max_size": 64,
             "localization_key": "item.rotten_flesh.name"
         },
         {
             "name": "minecraft:saddle",
-            "id": 403,
+            "id": 374,
             "max_size": 1,
             "localization_key": "item.saddle.name"
         },
         {
             "name": "minecraft:salmon",
-            "id": 294,
+            "id": 265,
             "max_size": 64,
             "localization_key": "item.salmon.name"
         },
         {
             "name": "minecraft:salmon_bucket",
-            "id": 397,
+            "id": 368,
             "max_size": 1,
             "localization_key": "item.bucketSalmon.name"
         },
         {
             "name": "minecraft:salmon_spawn_egg",
-            "id": 516,
+            "id": 487,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.salmon.name"
         },
@@ -7834,7 +7834,7 @@
         },
         {
             "name": "minecraft:scrape_pottery_sherd",
-            "id": 717,
+            "id": 688,
             "max_size": 64,
             "localization_key": "item.scrape_pottery_sherd.name"
         },
@@ -7888,43 +7888,43 @@
         },
         {
             "name": "minecraft:sentry_armor_trim_smithing_template",
-            "id": 724,
+            "id": 695,
             "max_size": 64,
             "localization_key": "item.sentry_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:shaper_armor_trim_smithing_template",
-            "id": 738,
+            "id": 709,
             "max_size": 64,
             "localization_key": "item.shaper_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:sheaf_pottery_sherd",
-            "id": 718,
+            "id": 689,
             "max_size": 64,
             "localization_key": "item.sheaf_pottery_sherd.name"
         },
         {
             "name": "minecraft:shears",
-            "id": 453,
+            "id": 424,
             "max_size": 1,
             "localization_key": "item.shears.name"
         },
         {
             "name": "minecraft:sheep_spawn_egg",
-            "id": 471,
+            "id": 442,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.sheep.name"
         },
         {
             "name": "minecraft:shelter_pottery_sherd",
-            "id": 719,
+            "id": 690,
             "max_size": 64,
             "localization_key": "item.shelter_pottery_sherd.name"
         },
         {
             "name": "minecraft:shield",
-            "id": 387,
+            "id": 358,
             "max_size": 1,
             "localization_key": "item.shield.name"
         },
@@ -7948,19 +7948,19 @@
         },
         {
             "name": "minecraft:shulker_shell",
-            "id": 605,
+            "id": 576,
             "max_size": 64,
             "localization_key": "item.shulker_shell.name"
         },
         {
             "name": "minecraft:shulker_spawn_egg",
-            "id": 503,
+            "id": 474,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.shulker.name"
         },
         {
             "name": "minecraft:silence_armor_trim_smithing_template",
-            "id": 735,
+            "id": 706,
             "max_size": 64,
             "localization_key": "item.silence_armor_trim_smithing_template.name"
         },
@@ -7972,13 +7972,13 @@
         },
         {
             "name": "minecraft:silverfish_spawn_egg",
-            "id": 476,
+            "id": 447,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.silverfish.name"
         },
         {
             "name": "minecraft:skeleton_horse_spawn_egg",
-            "id": 501,
+            "id": 472,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.skeleton_horse.name"
         },
@@ -7990,19 +7990,19 @@
         },
         {
             "name": "minecraft:skeleton_spawn_egg",
-            "id": 477,
+            "id": 448,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.skeleton.name"
         },
         {
             "name": "minecraft:skull_banner_pattern",
-            "id": 622,
+            "id": 593,
             "max_size": 1,
             "localization_key": "item.skull_banner_pattern.name"
         },
         {
             "name": "minecraft:skull_pottery_sherd",
-            "id": 720,
+            "id": 691,
             "max_size": 64,
             "localization_key": "item.skull_pottery_sherd.name"
         },
@@ -8014,13 +8014,13 @@
         },
         {
             "name": "minecraft:slime_ball",
-            "id": 420,
+            "id": 391,
             "max_size": 64,
             "localization_key": "item.slime_ball.name"
         },
         {
             "name": "minecraft:slime_spawn_egg",
-            "id": 478,
+            "id": 449,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.slime.name"
         },
@@ -8128,19 +8128,19 @@
         },
         {
             "name": "minecraft:sniffer_spawn_egg",
-            "id": 534,
+            "id": 505,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.sniffer.name"
         },
         {
             "name": "minecraft:snort_pottery_sherd",
-            "id": 721,
+            "id": 692,
             "max_size": 64,
             "localization_key": "item.snort_pottery_sherd.name"
         },
         {
             "name": "minecraft:snout_armor_trim_smithing_template",
-            "id": 732,
+            "id": 703,
             "max_size": 64,
             "localization_key": "item.snout_armor_trim_smithing_template.name"
         },
@@ -8152,7 +8152,7 @@
         },
         {
             "name": "minecraft:snow_golem_spawn_egg",
-            "id": 540,
+            "id": 511,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.snow_golem.name"
         },
@@ -8164,13 +8164,13 @@
         },
         {
             "name": "minecraft:snowball",
-            "id": 406,
+            "id": 377,
             "max_size": 16,
             "localization_key": "item.snowball.name"
         },
         {
             "name": "minecraft:soul_campfire",
-            "id": 664,
+            "id": 635,
             "max_size": 64,
             "localization_key": "tile.soul_campfire.name"
         },
@@ -8205,25 +8205,25 @@
         },
         {
             "name": "minecraft:spider_eye",
-            "id": 307,
+            "id": 278,
             "max_size": 64,
             "localization_key": "item.spider_eye.name"
         },
         {
             "name": "minecraft:spider_spawn_egg",
-            "id": 479,
+            "id": 450,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.spider.name"
         },
         {
             "name": "minecraft:spire_armor_trim_smithing_template",
-            "id": 734,
+            "id": 705,
             "max_size": 64,
             "localization_key": "item.spire_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:splash_potion",
-            "id": 600,
+            "id": 571,
             "max_size": 1,
             "localization_key": "%potion.emptyPotion.splash.name"
         },
@@ -8241,7 +8241,7 @@
         },
         {
             "name": "minecraft:spruce_boat",
-            "id": 410,
+            "id": 381,
             "max_size": 1,
             "localization_key": "item.boat.spruce.name"
         },
@@ -8253,13 +8253,13 @@
         },
         {
             "name": "minecraft:spruce_chest_boat",
-            "id": 683,
+            "id": 654,
             "max_size": 1,
             "localization_key": "item.chest_boat.spruce.name"
         },
         {
             "name": "minecraft:spruce_door",
-            "id": 592,
+            "id": 563,
             "max_size": 64,
             "localization_key": "item.spruce_door.name"
         },
@@ -8319,7 +8319,7 @@
         },
         {
             "name": "minecraft:spruce_sign",
-            "id": 615,
+            "id": 586,
             "max_size": 16,
             "localization_key": "item.spruce_sign.name"
         },
@@ -8349,19 +8349,19 @@
         },
         {
             "name": "minecraft:spyglass",
-            "id": 667,
+            "id": 638,
             "max_size": 1,
             "localization_key": "item.spyglass.name"
         },
         {
             "name": "minecraft:squid_spawn_egg",
-            "id": 483,
+            "id": 454,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.squid.name"
         },
         {
             "name": "minecraft:stick",
-            "id": 352,
+            "id": 323,
             "max_size": 64,
             "localization_key": "item.stick.name"
         },
@@ -8379,7 +8379,7 @@
         },
         {
             "name": "minecraft:stone_axe",
-            "id": 346,
+            "id": 317,
             "max_size": 1,
             "localization_key": "item.stone_axe.name"
         },
@@ -8415,13 +8415,13 @@
         },
         {
             "name": "minecraft:stone_hoe",
-            "id": 362,
+            "id": 333,
             "max_size": 1,
             "localization_key": "item.stone_hoe.name"
         },
         {
             "name": "minecraft:stone_pickaxe",
-            "id": 345,
+            "id": 316,
             "max_size": 1,
             "localization_key": "item.stone_pickaxe.name"
         },
@@ -8433,13 +8433,13 @@
         },
         {
             "name": "minecraft:stone_shovel",
-            "id": 344,
+            "id": 315,
             "max_size": 1,
             "localization_key": "item.stone_shovel.name"
         },
         {
             "name": "minecraft:stone_spear",
-            "id": 262,
+            "id": 857,
             "max_size": 1,
             "localization_key": "item.stone_spear.name"
         },
@@ -8451,7 +8451,7 @@
         },
         {
             "name": "minecraft:stone_sword",
-            "id": 343,
+            "id": 314,
             "max_size": 1,
             "localization_key": "item.stone_sword.name"
         },
@@ -8463,19 +8463,19 @@
         },
         {
             "name": "minecraft:stray_spawn_egg",
-            "id": 495,
+            "id": 466,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.stray.name"
         },
         {
             "name": "minecraft:strider_spawn_egg",
-            "id": 529,
+            "id": 500,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.strider.name"
         },
         {
             "name": "minecraft:string",
-            "id": 358,
+            "id": 329,
             "max_size": 64,
             "localization_key": "item.string.name"
         },
@@ -8631,13 +8631,13 @@
         },
         {
             "name": "minecraft:sugar",
-            "id": 448,
+            "id": 419,
             "max_size": 64,
             "localization_key": "item.sugar.name"
         },
         {
             "name": "minecraft:sugar_cane",
-            "id": 417,
+            "id": 388,
             "max_size": 64,
             "localization_key": "item.reeds.name"
         },
@@ -8673,13 +8673,13 @@
         },
         {
             "name": "minecraft:sulfur_cube_bucket",
-            "id": 794,
+            "id": 768,
             "max_size": 1,
             "localization_key": "item.bucketSulfurCube.name"
         },
         {
             "name": "minecraft:sulfur_cube_spawn_egg",
-            "id": 793,
+            "id": 767,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.sulfur_cube.name"
         },
@@ -8727,25 +8727,25 @@
         },
         {
             "name": "minecraft:suspicious_stew",
-            "id": 631,
+            "id": 602,
             "max_size": 1,
             "localization_key": "item.suspicious_stew.name"
         },
         {
             "name": "minecraft:sweet_berries",
-            "id": 316,
+            "id": 287,
             "max_size": 64,
             "localization_key": "item.sweet_berries.name"
         },
         {
             "name": "minecraft:tadpole_bucket",
-            "id": 672,
+            "id": 643,
             "max_size": 1,
             "localization_key": "item.bucketTadpole.name"
         },
         {
             "name": "minecraft:tadpole_spawn_egg",
-            "id": 671,
+            "id": 642,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.tadpole.name"
         },
@@ -8769,7 +8769,7 @@
         },
         {
             "name": "minecraft:tide_armor_trim_smithing_template",
-            "id": 731,
+            "id": 702,
             "max_size": 64,
             "localization_key": "item.tide_armor_trim_smithing_template.name"
         },
@@ -8787,7 +8787,7 @@
         },
         {
             "name": "minecraft:tnt_minecart",
-            "id": 564,
+            "id": 535,
             "max_size": 1,
             "localization_key": "item.tnt_minecart.name"
         },
@@ -8805,19 +8805,19 @@
         },
         {
             "name": "minecraft:torchflower_seeds",
-            "id": 325,
+            "id": 296,
             "max_size": 64,
             "localization_key": "item.torchflower_seeds.name"
         },
         {
             "name": "minecraft:totem_of_undying",
-            "id": 607,
+            "id": 578,
             "max_size": 1,
             "localization_key": "item.totem.name"
         },
         {
             "name": "minecraft:trader_llama_spawn_egg",
-            "id": 690,
+            "id": 661,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.trader_llama.name"
         },
@@ -8835,7 +8835,7 @@
         },
         {
             "name": "minecraft:trial_key",
-            "id": 283,
+            "id": 878,
             "max_size": 64,
             "localization_key": "item.trial_key.name"
         },
@@ -8847,7 +8847,7 @@
         },
         {
             "name": "minecraft:trident",
-            "id": 585,
+            "id": 556,
             "max_size": 1,
             "localization_key": "item.trident.name"
         },
@@ -8859,19 +8859,19 @@
         },
         {
             "name": "minecraft:tropical_fish",
-            "id": 295,
+            "id": 266,
             "max_size": 64,
             "localization_key": "item.clownfish.name"
         },
         {
             "name": "minecraft:tropical_fish_bucket",
-            "id": 398,
+            "id": 369,
             "max_size": 1,
             "localization_key": "item.bucketTropical.name"
         },
         {
             "name": "minecraft:tropical_fish_spawn_egg",
-            "id": 513,
+            "id": 484,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.tropicalfish.name"
         },
@@ -8949,19 +8949,19 @@
         },
         {
             "name": "minecraft:turtle_helmet",
-            "id": 612,
+            "id": 583,
             "max_size": 1,
             "localization_key": "item.turtle_helmet.name"
         },
         {
             "name": "minecraft:turtle_scute",
-            "id": 611,
+            "id": 582,
             "max_size": 64,
             "localization_key": "item.turtle_shell_piece.name"
         },
         {
             "name": "minecraft:turtle_spawn_egg",
-            "id": 519,
+            "id": 490,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.turtle.name"
         },
@@ -9001,25 +9001,25 @@
         },
         {
             "name": "minecraft:vex_armor_trim_smithing_template",
-            "id": 730,
+            "id": 701,
             "max_size": 64,
             "localization_key": "item.vex_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:vex_spawn_egg",
-            "id": 510,
+            "id": 481,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.vex.name"
         },
         {
             "name": "minecraft:villager_spawn_egg",
-            "id": 482,
+            "id": 453,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.villager_v2.name"
         },
         {
             "name": "minecraft:vindicator_spawn_egg",
-            "id": 508,
+            "id": 479,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.vindicator.name"
         },
@@ -9031,19 +9031,19 @@
         },
         {
             "name": "minecraft:wandering_trader_spawn_egg",
-            "id": 526,
+            "id": 497,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.wandering_trader.name"
         },
         {
             "name": "minecraft:ward_armor_trim_smithing_template",
-            "id": 728,
+            "id": 699,
             "max_size": 64,
             "localization_key": "item.ward_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:warden_spawn_egg",
-            "id": 674,
+            "id": 645,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.warden.name"
         },
@@ -9055,7 +9055,7 @@
         },
         {
             "name": "minecraft:warped_door",
-            "id": 660,
+            "id": 631,
             "max_size": 64,
             "localization_key": "item.warped_door.name"
         },
@@ -9079,7 +9079,7 @@
         },
         {
             "name": "minecraft:warped_fungus_on_a_stick",
-            "id": 661,
+            "id": 632,
             "max_size": 1,
             "localization_key": "item.warped_fungus_on_a_stick.name"
         },
@@ -9127,7 +9127,7 @@
         },
         {
             "name": "minecraft:warped_sign",
-            "id": 658,
+            "id": 629,
             "max_size": 16,
             "localization_key": "item.warped_sign.name"
         },
@@ -9163,7 +9163,7 @@
         },
         {
             "name": "minecraft:water_bucket",
-            "id": 394,
+            "id": 365,
             "max_size": 1,
             "localization_key": "item.bucketWater.name"
         },
@@ -9535,7 +9535,7 @@
         },
         {
             "name": "minecraft:wayfinder_armor_trim_smithing_template",
-            "id": 736,
+            "id": 707,
             "max_size": 64,
             "localization_key": "item.wayfinder_armor_trim_smithing_template.name"
         },
@@ -9649,19 +9649,19 @@
         },
         {
             "name": "minecraft:wheat",
-            "id": 366,
+            "id": 337,
             "max_size": 64,
             "localization_key": "item.wheat.name"
         },
         {
             "name": "minecraft:wheat_seeds",
-            "id": 320,
+            "id": 291,
             "max_size": 64,
             "localization_key": "item.wheat_seeds.name"
         },
         {
             "name": "minecraft:white_bundle",
-            "id": 279,
+            "id": 874,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.white_bundle"
@@ -9692,7 +9692,7 @@
         },
         {
             "name": "minecraft:white_dye",
-            "id": 442,
+            "id": 413,
             "max_size": 64,
             "localization_key": "item.dye.white_new.name"
         },
@@ -9704,7 +9704,7 @@
         },
         {
             "name": "minecraft:white_harness",
-            "id": 770,
+            "id": 744,
             "max_size": 1,
             "localization_key": "item.white_harness.name"
         },
@@ -9746,7 +9746,7 @@
         },
         {
             "name": "minecraft:wild_armor_trim_smithing_template",
-            "id": 727,
+            "id": 698,
             "max_size": 64,
             "localization_key": "item.wild_armor_trim_smithing_template.name"
         },
@@ -9758,13 +9758,13 @@
         },
         {
             "name": "minecraft:wind_charge",
-            "id": 284,
+            "id": 879,
             "max_size": 64,
             "localization_key": "item.wind_charge.name"
         },
         {
             "name": "minecraft:witch_spawn_egg",
-            "id": 485,
+            "id": 456,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.witch.name"
         },
@@ -9782,32 +9782,32 @@
         },
         {
             "name": "minecraft:wither_skeleton_spawn_egg",
-            "id": 498,
+            "id": 469,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.wither_skeleton.name"
         },
         {
             "name": "minecraft:wither_spawn_egg",
-            "id": 542,
+            "id": 513,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.wither.name"
         },
         {
             "name": "minecraft:wolf_armor",
-            "id": 747,
+            "id": 721,
             "max_size": 1,
             "default_color": "#ffffff",
             "localization_key": "item.wolf_armor.name"
         },
         {
             "name": "minecraft:wolf_spawn_egg",
-            "id": 472,
+            "id": 443,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.wolf.name"
         },
         {
             "name": "minecraft:wooden_axe",
-            "id": 342,
+            "id": 313,
             "max_size": 1,
             "localization_key": "item.wooden_axe.name"
         },
@@ -9819,19 +9819,19 @@
         },
         {
             "name": "minecraft:wooden_door",
-            "id": 391,
+            "id": 362,
             "max_size": 64,
             "localization_key": "item.wooden_door.name"
         },
         {
             "name": "minecraft:wooden_hoe",
-            "id": 361,
+            "id": 332,
             "max_size": 1,
             "localization_key": "item.wooden_hoe.name"
         },
         {
             "name": "minecraft:wooden_pickaxe",
-            "id": 341,
+            "id": 312,
             "max_size": 1,
             "localization_key": "item.wooden_pickaxe.name"
         },
@@ -9843,31 +9843,31 @@
         },
         {
             "name": "minecraft:wooden_shovel",
-            "id": 340,
+            "id": 311,
             "max_size": 1,
             "localization_key": "item.wooden_shovel.name"
         },
         {
             "name": "minecraft:wooden_spear",
-            "id": 263,
+            "id": 858,
             "max_size": 1,
             "localization_key": "item.wooden_spear.name"
         },
         {
             "name": "minecraft:wooden_sword",
-            "id": 339,
+            "id": 310,
             "max_size": 1,
             "localization_key": "item.wooden_sword.name"
         },
         {
             "name": "minecraft:writable_book",
-            "id": 550,
+            "id": 521,
             "max_size": 1,
             "localization_key": "item.writable_book.name"
         },
         {
             "name": "minecraft:yellow_bundle",
-            "id": 280,
+            "id": 875,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.yellow_bundle"
@@ -9898,7 +9898,7 @@
         },
         {
             "name": "minecraft:yellow_dye",
-            "id": 438,
+            "id": 409,
             "max_size": 64,
             "localization_key": "item.dye.yellow.name"
         },
@@ -9910,7 +9910,7 @@
         },
         {
             "name": "minecraft:yellow_harness",
-            "id": 771,
+            "id": 745,
             "max_size": 1,
             "localization_key": "item.yellow_harness.name"
         },
@@ -9946,7 +9946,7 @@
         },
         {
             "name": "minecraft:zoglin_spawn_egg",
-            "id": 532,
+            "id": 503,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zoglin.name"
         },
@@ -9958,31 +9958,31 @@
         },
         {
             "name": "minecraft:zombie_horse_spawn_egg",
-            "id": 502,
+            "id": 473,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zombie_horse.name"
         },
         {
             "name": "minecraft:zombie_nautilus_spawn_egg",
-            "id": 785,
+            "id": 759,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zombie_nautilus.name"
         },
         {
             "name": "minecraft:zombie_pigman_spawn_egg",
-            "id": 481,
+            "id": 452,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zombie_pigman.name"
         },
         {
             "name": "minecraft:zombie_spawn_egg",
-            "id": 480,
+            "id": 451,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zombie.name"
         },
         {
             "name": "minecraft:zombie_villager_spawn_egg",
-            "id": 511,
+            "id": 482,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zombie_villager_v2.name"
         }

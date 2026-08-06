@@ -686,6 +686,13 @@
             ]
         },
         {
+            "name": "minecraft:mushrooms_for_stew",
+            "items": [
+                { "name": "minecraft:brown_mushroom" },
+                { "name": "minecraft:red_mushroom" }
+            ]
+        },
+        {
             "name": "minecraft:music_disc",
             "items": [
                 { "name": "minecraft:music_disc_11" },
@@ -1194,7 +1201,6 @@
                 { "name": "minecraft:mud_bricks" },
                 { "name": "minecraft:nether_brick" },
                 { "name": "minecraft:netherrack" },
-                { "name": "minecraft:observer" },
                 { "name": "minecraft:obsidian" },
                 { "name": "minecraft:orange_concrete" },
                 { "name": "minecraft:orange_glazed_terracotta" },
@@ -1228,7 +1234,6 @@
                 { "name": "minecraft:red_nether_brick" },
                 { "name": "minecraft:red_sandstone" },
                 { "name": "minecraft:red_terracotta" },
-                { "name": "minecraft:redstone_lamp" },
                 { "name": "minecraft:redstone_ore" },
                 { "name": "minecraft:sandstone" },
                 { "name": "minecraft:sea_lantern" },

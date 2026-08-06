@@ -93611,6 +93611,38 @@
             "hash": 1089197811
         },
         {
+            "name": "minecraft:orange_poplar_leaves",
+            "states": {
+                "persistent_bit": false,
+                "update_bit": false
+            },
+            "hash": 3276109443
+        },
+        {
+            "name": "minecraft:orange_poplar_leaves",
+            "states": {
+                "persistent_bit": false,
+                "update_bit": true
+            },
+            "hash": 2220802872
+        },
+        {
+            "name": "minecraft:orange_poplar_leaves",
+            "states": {
+                "persistent_bit": true,
+                "update_bit": false
+            },
+            "hash": 4282607088
+        },
+        {
+            "name": "minecraft:orange_poplar_leaves",
+            "states": {
+                "persistent_bit": true,
+                "update_bit": true
+            },
+            "hash": 1042946363
+        },
+        {
             "name": "minecraft:orange_shulker_box",
             "states": {},
             "hash": 2563968618
@@ -113884,6 +113916,5162 @@
             "hash": 1952671040
         },
         {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": false,
+                "facing_direction": 0
+            },
+            "hash": 600872696
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": false,
+                "facing_direction": 1
+            },
+            "hash": 539397873
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": false,
+                "facing_direction": 2
+            },
+            "hash": 477923050
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": false,
+                "facing_direction": 3
+            },
+            "hash": 416448227
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": false,
+                "facing_direction": 4
+            },
+            "hash": 354973404
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": false,
+                "facing_direction": 5
+            },
+            "hash": 293498581
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": true,
+                "facing_direction": 0
+            },
+            "hash": 3212019093
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": true,
+                "facing_direction": 1
+            },
+            "hash": 3273493916
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": true,
+                "facing_direction": 2
+            },
+            "hash": 3089069447
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": true,
+                "facing_direction": 3
+            },
+            "hash": 3150544270
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": true,
+                "facing_direction": 4
+            },
+            "hash": 3457918385
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "states": {
+                "button_pressed_bit": true,
+                "facing_direction": 5
+            },
+            "hash": 3519393208
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 1550144044
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 2605450615
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 3558579049
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 2503272478
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 1244262781
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 188956210
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 2709749168
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 3765055739
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 746740010
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 1802046581
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 107866127
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 3347526852
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 4145520023
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 3090213452
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 4289544114
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 1049883389
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 3288727429
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 2233420858
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 4224578168
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 984917443
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 2849900126
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 3905206697
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 686089139
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 3925749864
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 2955332483
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 1900025912
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 2279298094
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 3334604665
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": false,
+                "upper_block_bit": false
+            },
+            "hash": 4141413240
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": false,
+                "upper_block_bit": true
+            },
+            "hash": 901752515
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": true,
+                "upper_block_bit": false
+            },
+            "hash": 3205562501
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "states": {
+                "door_hinge_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": true,
+                "upper_block_bit": true
+            },
+            "hash": 2150255930
+        },
+        {
+            "name": "minecraft:poplar_double_slab",
+            "states": { "minecraft:vertical_half": "bottom" },
+            "hash": 3979407077
+        },
+        {
+            "name": "minecraft:poplar_double_slab",
+            "states": { "minecraft:vertical_half": "top" },
+            "hash": 431215410
+        },
+        {
+            "name": "minecraft:poplar_fence",
+            "states": {},
+            "hash": 477233997
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": false
+            },
+            "hash": 954811320
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": true
+            },
+            "hash": 2010117891
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": false
+            },
+            "hash": 2233055515
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": true
+            },
+            "hash": 1177748944
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": false
+            },
+            "hash": 975554042
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": true
+            },
+            "hash": 2030860613
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": false
+            },
+            "hash": 2422466393
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": true
+            },
+            "hash": 1367159822
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": false
+            },
+            "hash": 628247775
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "open_bit": true
+            },
+            "hash": 3867908500
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": false
+            },
+            "hash": 850218894
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "open_bit": true
+            },
+            "hash": 1905525465
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": false
+            },
+            "hash": 375263337
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "open_bit": true
+            },
+            "hash": 3614924062
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": false
+            },
+            "hash": 2620538484
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "states": {
+                "in_wall_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "open_bit": true
+            },
+            "hash": 3675845055
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 1540685478
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 2595992049
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 3624120137
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 2568813566
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 617840460
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 1673147031
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 1598625199
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 543318628
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 4289995914
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 1050335189
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 1847970093
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 792663522
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 2830176896
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 3885483467
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 2082785219
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 1027478648
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 3963287182
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 723626457
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 4180217137
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 3124910566
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 3849186932
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 609526207
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 206354007
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 3446014732
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 276268274
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 1331574845
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 857818197
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 4097478922
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 3997388744
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 757728019
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 1173688299
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 0,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 118381728
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 1109730709
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 54424138
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 747171634
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 1802478205
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 1743135531
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 687828960
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 3506970632
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 267309907
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 1741698929
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 686392358
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 3947335118
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 707674393
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 53713047
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 3293373772
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 1612136116
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 2667442687
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1886638957
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 831332386
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 2176111050
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 3231417621
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 2460922627
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 1405616056
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 3667488704
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 427827979
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 801670025
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 4041330750
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 2664961510
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 3720268081
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 227070959
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 3466731684
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 1255261068
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 1,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 2310567639
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 1344376480
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 2399683051
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 982492899
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 4222153624
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 2072022442
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 3127329013
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 3025088845
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 1969782274
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 3812515436
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 572854711
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 1555139279
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 499832708
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 2774116550
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 3829423121
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 552426345
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 3792087070
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1147404776
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 2202711347
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 3771302923
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 2715996352
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 2682573074
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 3737879645
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 592622453
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 3832283178
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 2151834260
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 3207140831
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 1025074039
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 4264734764
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 845438638
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 1900745209
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 273426769
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 2,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 3513087494
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 2170416751
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 1115110180
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 3198606860
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 4253913431
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 2745015817
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 1689709246
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 313340006
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 1368646577
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 109301123
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 3348961848
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 1315867200
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 2371173771
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 3829984749
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 2774678178
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 4119456842
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 879796117
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1997058839
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 941752268
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 3555481908
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 315821183
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 3685044721
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 2629738150
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 1595713614
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 2651020185
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 3686481323
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 2631174752
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 1155349128
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 2210655699
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 3053076501
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 1997769930
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 2690517426
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 3,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 3745823997
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 1488143154
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 2543449725
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 1850702229
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 795395658
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 4247942152
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 1008281427
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 2484107051
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 1428800480
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 393339342
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 1448645913
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 2482670449
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 1427363878
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 2353107636
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 3408414207
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 794684567
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 4034345292
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 2917082570
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 3972389141
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 2627610477
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 1572303906
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 113492928
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 1168799499
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 3201894147
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 2146587576
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 3405933030
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 166272305
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 1542641545
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 487334974
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 1996232588
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 3051539159
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 968042479
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 4,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 4207703204
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 559221601
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 3798882326
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 1923874750
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 2979181321
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 1778344391
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 723037820
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 1272511716
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 2327818287
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 2180574213
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 1125267642
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 788105890
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 1843412461
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 2910717851
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 1855411280
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 2095590712
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 3150897283
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 3322316601
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 2267010030
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 3090131350
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 4145437921
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 399226527
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 3638887252
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 367314492
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 1422621063
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 1928104413
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 872797842
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 3556719290
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 317058565
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 553007987
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 3792668712
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 3832703856
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": false,
+                "facing_direction": 5,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 593043131
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 3930275897
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 2874969326
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 3698090646
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 458429921
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 1007185823
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 4246846548
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 975273788
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 2030580359
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 2536063709
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 1480757138
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 4164678586
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 925017861
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 1160967283
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 105660712
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 145695856
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 1201002427
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1167180897
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 111874326
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 2531834046
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 3587140617
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 2386303687
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 1330997116
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 1880471012
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 2935777583
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 2788533509
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 1733226938
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 1396065186
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 2451371757
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 3518677147
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 2463370576
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 2703550008
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 0,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 3758856579
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 3559850602
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 320189877
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 2695136781
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 1639830210
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 2842362208
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 3897668779
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 2094970531
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 1039663960
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 810540166
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 1865846737
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 2308575529
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 1253268958
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 631601964
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 1686908535
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 293238159
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 3532898884
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1555669458
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 2610976029
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 3935784757
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 2880478186
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 2038057384
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 3093363955
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 2077167307
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 1021860736
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 370331502
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 1425638073
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 375709201
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 3615369926
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 457698644
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 1513005215
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 3725021239
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 1,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 2669714668
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 2550305667
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 1494999096
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 3756871744
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 517211019
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 1976021997
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 920715426
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 2265494090
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 3320800661
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 316453999
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 3556114724
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 1344644108
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 2399950679
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 891053065
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 4130713790
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 2754344550
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 3809651121
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1832518571
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 777212000
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 3596353672
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 356692947
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 1199113749
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 143807178
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 836554674
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 1891861245
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 143096087
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 3382756812
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 1701519156
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 2756825727
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 1831081969
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 775775398
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 4036718158
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 2,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 797057433
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 1064618916
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 2119925487
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 4277834119
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 3222527548
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 4048013950
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 808353225
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 1051312673
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 4290973398
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 2684649464
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 3739956035
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 3247496283
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 2192189712
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 4040083810
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 800423085
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 560766917
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 3800427642
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1702511868
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 2757818439
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 2208889951
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 1153583380
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 2902480982
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 3957787553
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 635545337
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 3875206062
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 3150345008
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 4205651579
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 3330519859
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 2275213288
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 1715202170
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 2770508741
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 3160949917
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 3,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 2105643346
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 477866253
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 3717526978
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 1342580074
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 2397886645
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 4172667299
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 3117360728
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 625091680
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 1680398251
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 91305001
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 3330965726
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 2888236934
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 3943543505
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 2370934927
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 1315628356
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 2709298732
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 3764605303
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 1718514229
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 663207658
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 3633366226
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 393705501
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 4154864075
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 3099557504
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 4115754152
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 876093427
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 2453405969
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 1398099398
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 2448028270
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 3503334841
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 1507750711
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 452444140
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 2535395412
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 4,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 3590701983
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 0,
+                "hanging": false
+            },
+            "hash": 3771485022
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 0,
+                "hanging": true
+            },
+            "hash": 531824297
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 1,
+                "hanging": false
+            },
+            "hash": 3849146369
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 1,
+                "hanging": true
+            },
+            "hash": 2793839798
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 2,
+                "hanging": false
+            },
+            "hash": 3120121988
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 2,
+                "hanging": true
+            },
+            "hash": 4175428559
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 3,
+                "hanging": false
+            },
+            "hash": 773301863
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 3,
+                "hanging": true
+            },
+            "hash": 4012962588
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 4,
+                "hanging": false
+            },
+            "hash": 2645873730
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 4,
+                "hanging": true
+            },
+            "hash": 3701180301
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 5,
+                "hanging": false
+            },
+            "hash": 2817737381
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 5,
+                "hanging": true
+            },
+            "hash": 1762430810
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 6,
+                "hanging": false
+            },
+            "hash": 1675947480
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 6,
+                "hanging": true
+            },
+            "hash": 2731254051
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 7,
+                "hanging": false
+            },
+            "hash": 2382373179
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 7,
+                "hanging": true
+            },
+            "hash": 1327066608
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 8,
+                "hanging": false
+            },
+            "hash": 864484150
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 8,
+                "hanging": true
+            },
+            "hash": 1919790721
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 9,
+                "hanging": false
+            },
+            "hash": 2317274073
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 9,
+                "hanging": true
+            },
+            "hash": 1261967502
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 10,
+                "hanging": false
+            },
+            "hash": 2914908636
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 10,
+                "hanging": true
+            },
+            "hash": 3970215207
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 11,
+                "hanging": false
+            },
+            "hash": 4264393023
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 11,
+                "hanging": true
+            },
+            "hash": 3209086452
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 12,
+                "hanging": false
+            },
+            "hash": 918052442
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 12,
+                "hanging": true
+            },
+            "hash": 1973359013
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 13,
+                "hanging": false
+            },
+            "hash": 2363800189
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 13,
+                "hanging": true
+            },
+            "hash": 1308493618
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 14,
+                "hanging": false
+            },
+            "hash": 921038352
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 14,
+                "hanging": true
+            },
+            "hash": 1976344923
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 15,
+                "hanging": false
+            },
+            "hash": 2410775827
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "states": {
+                "attached_bit": true,
+                "facing_direction": 5,
+                "ground_sign_direction": 15,
+                "hanging": true
+            },
+            "hash": 1355469256
+        },
+        {
+            "name": "minecraft:poplar_log",
+            "states": { "pillar_axis": "y" },
+            "hash": 391599337
+        },
+        {
+            "name": "minecraft:poplar_log",
+            "states": { "pillar_axis": "x" },
+            "hash": 3631260062
+        },
+        {
+            "name": "minecraft:poplar_log",
+            "states": { "pillar_axis": "z" },
+            "hash": 1520646920
+        },
+        {
+            "name": "minecraft:poplar_planks",
+            "states": {},
+            "hash": 1414931100
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 0 },
+            "hash": 563991224
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 1 },
+            "hash": 502516401
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 2 },
+            "hash": 441041578
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 3 },
+            "hash": 379566755
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 4 },
+            "hash": 318091932
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 5 },
+            "hash": 256617109
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 6 },
+            "hash": 195142286
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 7 },
+            "hash": 133667463
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 8 },
+            "hash": 1055789808
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 9 },
+            "hash": 994314985
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 10 },
+            "hash": 932840162
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 11 },
+            "hash": 871365339
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 12 },
+            "hash": 809890516
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 13 },
+            "hash": 748415693
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 14 },
+            "hash": 686940870
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "states": { "redstone_signal": 15 },
+            "hash": 625466047
+        },
+        {
+            "name": "minecraft:poplar_sapling",
+            "states": { "age_bit": false },
+            "hash": 4227199909
+        },
+        {
+            "name": "minecraft:poplar_sapling",
+            "states": { "age_bit": true },
+            "hash": 3171893338
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": false,
+                "powered_shelf_type": 0
+            },
+            "hash": 1343894540
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": false,
+                "powered_shelf_type": 1
+            },
+            "hash": 1282419717
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": false,
+                "powered_shelf_type": 2
+            },
+            "hash": 1220944894
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": false,
+                "powered_shelf_type": 3
+            },
+            "hash": 1159470071
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": true,
+                "powered_shelf_type": 0
+            },
+            "hash": 352363717
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": true,
+                "powered_shelf_type": 1
+            },
+            "hash": 413838540
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": true,
+                "powered_shelf_type": 2
+            },
+            "hash": 229414071
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "south",
+                "powered_bit": true,
+                "powered_shelf_type": 3
+            },
+            "hash": 290888894
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": false,
+                "powered_shelf_type": 0
+            },
+            "hash": 2708106263
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": false,
+                "powered_shelf_type": 1
+            },
+            "hash": 2769581086
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": false,
+                "powered_shelf_type": 2
+            },
+            "hash": 2831055909
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": false,
+                "powered_shelf_type": 3
+            },
+            "hash": 2892530732
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": true,
+                "powered_shelf_type": 0
+            },
+            "hash": 1473687286
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": true,
+                "powered_shelf_type": 1
+            },
+            "hash": 1412212463
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": true,
+                "powered_shelf_type": 2
+            },
+            "hash": 1596636932
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "west",
+                "powered_bit": true,
+                "powered_shelf_type": 3
+            },
+            "hash": 1535162109
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": false,
+                "powered_shelf_type": 0
+            },
+            "hash": 2546063198
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": false,
+                "powered_shelf_type": 1
+            },
+            "hash": 2484588375
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": false,
+                "powered_shelf_type": 2
+            },
+            "hash": 2669012844
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": false,
+                "powered_shelf_type": 3
+            },
+            "hash": 2607538021
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": true,
+                "powered_shelf_type": 0
+            },
+            "hash": 2409104927
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": true,
+                "powered_shelf_type": 1
+            },
+            "hash": 2470579750
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": true,
+                "powered_shelf_type": 2
+            },
+            "hash": 2532054573
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "north",
+                "powered_bit": true,
+                "powered_shelf_type": 3
+            },
+            "hash": 2593529396
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": false,
+                "powered_shelf_type": 0
+            },
+            "hash": 3121775637
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": false,
+                "powered_shelf_type": 1
+            },
+            "hash": 3183250460
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": false,
+                "powered_shelf_type": 2
+            },
+            "hash": 2998825991
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": false,
+                "powered_shelf_type": 3
+            },
+            "hash": 3060300814
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": true,
+                "powered_shelf_type": 0
+            },
+            "hash": 2410181148
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": true,
+                "powered_shelf_type": 1
+            },
+            "hash": 2348706325
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": true,
+                "powered_shelf_type": 2
+            },
+            "hash": 2287231502
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "states": {
+                "minecraft:cardinal_direction": "east",
+                "powered_bit": true,
+                "powered_shelf_type": 3
+            },
+            "hash": 2225756679
+        },
+        {
+            "name": "minecraft:poplar_slab",
+            "states": { "minecraft:vertical_half": "bottom" },
+            "hash": 681695894
+        },
+        {
+            "name": "minecraft:poplar_slab",
+            "states": { "minecraft:vertical_half": "top" },
+            "hash": 2334941375
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+            },
+            "hash": 2162365091
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+            },
+            "hash": 2223839914
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+            },
+            "hash": 2285314737
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+            },
+            "hash": 2346789560
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+            },
+            "hash": 4177453382
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+            },
+            "hash": 4115978559
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+            },
+            "hash": 5435732
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+            },
+            "hash": 4238928205
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 0 },
+            "hash": 802179001
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 1 },
+            "hash": 863653824
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 2 },
+            "hash": 679229355
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 3 },
+            "hash": 740704178
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 4 },
+            "hash": 556279709
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 5 },
+            "hash": 617754532
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 6 },
+            "hash": 433330063
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 7 },
+            "hash": 494804886
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 8 },
+            "hash": 310380417
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 9 },
+            "hash": 371855240
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 10 },
+            "hash": 187430771
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 11 },
+            "hash": 248905594
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 12 },
+            "hash": 64481125
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 13 },
+            "hash": 125955948
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 14 },
+            "hash": 4236498775
+        },
+        {
+            "name": "minecraft:poplar_standing_sign",
+            "states": { "ground_sign_direction": 15 },
+            "hash": 3006302
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 0,
+                "open_bit": false,
+                "upside_down_bit": false
+            },
+            "hash": 638475673
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 0,
+                "open_bit": false,
+                "upside_down_bit": true
+            },
+            "hash": 3878136398
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 0,
+                "open_bit": true,
+                "upside_down_bit": false
+            },
+            "hash": 2144996872
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 0,
+                "open_bit": true,
+                "upside_down_bit": true
+            },
+            "hash": 3200303443
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 1,
+                "open_bit": false,
+                "upside_down_bit": false
+            },
+            "hash": 1350528986
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 1,
+                "open_bit": false,
+                "upside_down_bit": true
+            },
+            "hash": 2405835557
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 1,
+                "open_bit": true,
+                "upside_down_bit": false
+            },
+            "hash": 4240534795
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 1,
+                "open_bit": true,
+                "upside_down_bit": true
+            },
+            "hash": 3185228224
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 2,
+                "open_bit": false,
+                "upside_down_bit": false
+            },
+            "hash": 2465338599
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 2,
+                "open_bit": false,
+                "upside_down_bit": true
+            },
+            "hash": 1410032028
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 2,
+                "open_bit": true,
+                "upside_down_bit": false
+            },
+            "hash": 1288350118
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 2,
+                "open_bit": true,
+                "upside_down_bit": true
+            },
+            "hash": 2343656689
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 3,
+                "open_bit": false,
+                "upside_down_bit": false
+            },
+            "hash": 220428808
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 3,
+                "open_bit": false,
+                "upside_down_bit": true
+            },
+            "hash": 1275735379
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 3,
+                "open_bit": true,
+                "upside_down_bit": false
+            },
+            "hash": 3008874905
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "states": {
+                "direction": 3,
+                "open_bit": true,
+                "upside_down_bit": true
+            },
+            "hash": 1953568334
+        },
+        {
+            "name": "minecraft:poplar_wall_sign",
+            "states": { "facing_direction": 0 },
+            "hash": 4168389203
+        },
+        {
+            "name": "minecraft:poplar_wall_sign",
+            "states": { "facing_direction": 1 },
+            "hash": 4229864026
+        },
+        {
+            "name": "minecraft:poplar_wall_sign",
+            "states": { "facing_direction": 2 },
+            "hash": 4291338849
+        },
+        {
+            "name": "minecraft:poplar_wall_sign",
+            "states": { "facing_direction": 3 },
+            "hash": 57846376
+        },
+        {
+            "name": "minecraft:poplar_wall_sign",
+            "states": { "facing_direction": 4 },
+            "hash": 3922489911
+        },
+        {
+            "name": "minecraft:poplar_wall_sign",
+            "states": { "facing_direction": 5 },
+            "hash": 3983964734
+        },
+        {
+            "name": "minecraft:poplar_wood",
+            "states": { "pillar_axis": "y" },
+            "hash": 1689899121
+        },
+        {
+            "name": "minecraft:poplar_wood",
+            "states": { "pillar_axis": "x" },
+            "hash": 634592550
+        },
+        {
+            "name": "minecraft:poplar_wood",
+            "states": { "pillar_axis": "z" },
+            "hash": 2818946704
+        },
+        {
             "name": "minecraft:poppy",
             "states": {},
             "hash": 3417975282
@@ -119130,6 +124318,38 @@
                 "wall_post_bit": true
             },
             "hash": 2290426765
+        },
+        {
+            "name": "minecraft:red_poplar_leaves",
+            "states": {
+                "persistent_bit": false,
+                "update_bit": false
+            },
+            "hash": 435385347
+        },
+        {
+            "name": "minecraft:red_poplar_leaves",
+            "states": {
+                "persistent_bit": false,
+                "update_bit": true
+            },
+            "hash": 3675046072
+        },
+        {
+            "name": "minecraft:red_poplar_leaves",
+            "states": {
+                "persistent_bit": true,
+                "update_bit": false
+            },
+            "hash": 1441882992
+        },
+        {
+            "name": "minecraft:red_poplar_leaves",
+            "states": {
+                "persistent_bit": true,
+                "update_bit": true
+            },
+            "hash": 2497189563
         },
         {
             "name": "minecraft:red_sand",
@@ -134457,6 +139677,150 @@
             "hash": 68585626
         },
         {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "occupied_bit": false
+            },
+            "hash": 1601900097
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "south",
+                "occupied_bit": true
+            },
+            "hash": 546593526
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "occupied_bit": false
+            },
+            "hash": 1188747900
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "west",
+                "occupied_bit": true
+            },
+            "hash": 2244054471
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "occupied_bit": false
+            },
+            "hash": 1139635883
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "north",
+                "occupied_bit": true
+            },
+            "hash": 84329312
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "occupied_bit": false
+            },
+            "hash": 3464473378
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": false,
+                "minecraft:cardinal_direction": "east",
+                "occupied_bit": true
+            },
+            "hash": 224812653
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "occupied_bit": false
+            },
+            "hash": 1033695406
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "south",
+                "occupied_bit": true
+            },
+            "hash": 2089001977
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "occupied_bit": false
+            },
+            "hash": 4243024065
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "west",
+                "occupied_bit": true
+            },
+            "hash": 3187717494
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "occupied_bit": false
+            },
+            "hash": 3270186664
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "north",
+                "occupied_bit": true
+            },
+            "hash": 30525939
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "occupied_bit": false
+            },
+            "hash": 1622035975
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "states": {
+                "head_piece_bit": true,
+                "minecraft:cardinal_direction": "east",
+                "occupied_bit": true
+            },
+            "hash": 566729404
+        },
+        {
             "name": "minecraft:stripped_acacia_log",
             "states": { "pillar_axis": "y" },
             "hash": 1367858272
@@ -134740,6 +140104,36 @@
             "name": "minecraft:stripped_pale_oak_wood",
             "states": { "pillar_axis": "z" },
             "hash": 3025212393
+        },
+        {
+            "name": "minecraft:stripped_poplar_log",
+            "states": { "pillar_axis": "y" },
+            "hash": 1192710024
+        },
+        {
+            "name": "minecraft:stripped_poplar_log",
+            "states": { "pillar_axis": "x" },
+            "hash": 2248016595
+        },
+        {
+            "name": "minecraft:stripped_poplar_log",
+            "states": { "pillar_axis": "z" },
+            "hash": 63662441
+        },
+        {
+            "name": "minecraft:stripped_poplar_wood",
+            "states": { "pillar_axis": "y" },
+            "hash": 303175278
+        },
+        {
+            "name": "minecraft:stripped_poplar_wood",
+            "states": { "pillar_axis": "x" },
+            "hash": 1358481849
+        },
+        {
+            "name": "minecraft:stripped_poplar_wood",
+            "states": { "pillar_axis": "z" },
+            "hash": 3542836003
         },
         {
             "name": "minecraft:stripped_spruce_log",
@@ -154628,6 +160022,38 @@
             "name": "minecraft:yellow_glazed_terracotta",
             "states": { "facing_direction": 5 },
             "hash": 4116406201
+        },
+        {
+            "name": "minecraft:yellow_poplar_leaves",
+            "states": {
+                "persistent_bit": false,
+                "update_bit": false
+            },
+            "hash": 3594920933
+        },
+        {
+            "name": "minecraft:yellow_poplar_leaves",
+            "states": {
+                "persistent_bit": false,
+                "update_bit": true
+            },
+            "hash": 2539614362
+        },
+        {
+            "name": "minecraft:yellow_poplar_leaves",
+            "states": {
+                "persistent_bit": true,
+                "update_bit": false
+            },
+            "hash": 2767626026
+        },
+        {
+            "name": "minecraft:yellow_poplar_leaves",
+            "states": {
+                "persistent_bit": true,
+                "update_bit": true
+            },
+            "hash": 3822932597
         },
         {
             "name": "minecraft:yellow_shulker_box",

@@ -11,13 +11,6 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
-export declare enum ActionTypes {
-    NoArgsAction       = "NoArgsAction",
-    MouseRayCastAction = "MouseRayCastAction",
-    StatefulAction     = "StatefulAction",
-    ContinuousAction   = "ContinuousAction",
-}
-
 export enum AudioSettingsProperty {
     AreSoundsMuted = "AreSoundsMuted",
     IsMusicMuted   = "IsMusicMuted",
@@ -39,16 +32,6 @@ export enum BlockMaskListType {
 export enum BlockPaletteItemType {
     Simple      = 0,
     Probability = 1,
-}
-
-export declare enum BlockTableOperationType {
-    Deselect = "deselect",
-    Replace  = "replace",
-}
-
-export declare enum BoolPropertyItemVariant {
-    Checkbox     = 0,
-    ToggleSwitch = 1,
 }
 
 export enum BrushDirectionalPlacementMode {
@@ -74,36 +57,6 @@ export enum BrushElevationMode {
     Lower = 1,
 }
 
-export declare enum ButtonVariant {
-    Primary      = 0,
-    Secondary    = 1,
-    Confirmation = 2,
-    Destructive  = 3,
-}
-
-export declare enum CollectionTreeEntryItemType {
-    String   = 0,
-    Number   = 1,
-    Dropdown = 2,
-}
-
-export declare enum CollectionTreeSortType {
-    AtoZ = 0,
-    ZtoA = 1,
-}
-
-export declare enum ColorPickerPropertyItemVariant {
-    Default  = 0,
-    Inline   = 1,
-    Expanded = 2,
-}
-
-export declare enum ComboBoxPropertyItemDataType {
-    Custom = 0,
-    Block  = 1,
-    Entity = 2,
-}
-
 export enum ContiguousSelectionType {
     SameBlock          = 0,
     SameBlockAndStates = 1,
@@ -113,44 +66,15 @@ export enum ContiguousSelectionType {
 }
 
 export declare enum ContinuousActionState {
-    Begin  = 0,
-    Repeat = 1,
-    End    = 2,
-}
-
-export declare enum CoreActionBarItemType {
-    Undo     = "editor:actionBarItem:undo",
-    Redo     = "editor:actionBarItem:redo",
-    Export   = "editor:actionBarItem:export",
-    Locate   = "editor:actionBarItem:locate",
-    Playtest = "editor:actionBarItem:playtest",
-    Settings = "editor:actionBarItem:settings",
-    Realms   = "editor:actionBarItem:realms",
-    Fill     = "editor:actionBarItem:fill",
-}
-
-export declare enum CoreBrushShapeType {
-    SingleBlock = "editor:brushShape:singleBlock",
-    Cuboid      = "editor:brushShape:cuboid",
-    Ellipsoid   = "editor:brushShape:ellipsoid",
-    Cone        = "editor:brushShape:cone",
-    Cylinder    = "editor:brushShape:cylinder",
-    Pyramid     = "editor:brushShape:pyramid",
-    Star        = "editor:brushShape:star",
+    Press   = 1,
+    Release = 2,
 }
 
 export declare enum CoreMenuType {
-    File         = "editor:menu:file",
-    Edit         = "editor:menu:edit",
-    Extensions   = "editor:menu:extensions",
-    View         = "editor:menu:view",
-    WorldOptions = "editor:menu:worldOptions",
-    Experimental = "editor:menu:experimental",
-    Help         = "editor:menu:help",
-}
-
-export declare enum CoreModalDialogType {
-    DataPicker = 0,
+    NoArgsAction       = "NoArgsAction",
+    MouseRayCastAction = "MouseRayCastAction",
+    StatefulAction     = "StatefulAction",
+    ContinuousAction   = "ContinuousAction",
 }
 
 export enum CursorControlMode {
@@ -165,30 +89,15 @@ export enum CursorTargetMode {
     Face  = 1,
 }
 
-export declare enum DataPickerModalDialogVariant {
-    Block = 0,
-}
-
 export enum DaylightCycle {
     Normal    = 0,
     AlwaysDay = 1,
     LockTime  = 2,
 }
 
-export declare enum EditorInputContext {
-    GlobalEditor   = "global.editor",
-    GlobalToolMode = "global.toolMode",
-    Viewport       = "local.toolMode.viewport",
-}
-
 export enum EditorMode {
     Crosshair = "Crosshair",
     Tool      = "Tool",
-}
-
-export declare enum EditorServerEventType {
-    ServerActionEvents = "Editor::ServerActionEvents",
-    ServerUXEvents     = "Editor::ServerUXEvents",
 }
 
 export enum EntityOperationType {
@@ -235,13 +144,6 @@ export enum GraphicsSettingsProperty {
     ShowToastNotifications      = "ShowToastNotifications",
 }
 
-export declare enum ImageResourceType {
-    Default   = 0,
-    Block     = 1,
-    Icon      = 2,
-    Structure = 3,
-}
-
 export enum InputModifier {
     Unused  = 0,
     None    = 1,
@@ -249,151 +151,6 @@ export enum InputModifier {
     Control = 4,
     Shift   = 8,
     Any     = 15,
-}
-
-export declare enum KeyboardKey {
-    UNDEFINED        = 0,
-    BACKSPACE        = 8,
-    TAB              = 9,
-    ENTER            = 13,
-    SHIFT            = 16,
-    CTRL             = 17,
-    ALT              = 18,
-    CAPS_LOCK        = 20,
-    ESCAPE           = 27,
-    SPACE            = 32,
-    PAGE_UP          = 33,
-    PAGE_DOWN        = 34,
-    END              = 35,
-    HOME             = 36,
-    LEFT             = 37,
-    UP               = 38,
-    RIGHT            = 39,
-    DOWN             = 40,
-    PRINT_SCREEN     = 44,
-    INSERT           = 45,
-    DELETE           = 46,
-    KEY_0            = 48,
-    KEY_1            = 49,
-    KEY_2            = 50,
-    KEY_3            = 51,
-    KEY_4            = 52,
-    KEY_5            = 53,
-    KEY_6            = 54,
-    KEY_7            = 55,
-    KEY_8            = 56,
-    KEY_9            = 57,
-    KEY_A            = 65,
-    KEY_B            = 66,
-    KEY_C            = 67,
-    KEY_D            = 68,
-    KEY_E            = 69,
-    KEY_F            = 70,
-    KEY_G            = 71,
-    KEY_H            = 72,
-    KEY_I            = 73,
-    KEY_J            = 74,
-    KEY_K            = 75,
-    KEY_L            = 76,
-    KEY_M            = 77,
-    KEY_N            = 78,
-    KEY_O            = 79,
-    KEY_P            = 80,
-    KEY_Q            = 81,
-    KEY_R            = 82,
-    KEY_S            = 83,
-    KEY_T            = 84,
-    KEY_U            = 85,
-    KEY_V            = 86,
-    KEY_W            = 87,
-    KEY_X            = 88,
-    KEY_Y            = 89,
-    KEY_Z            = 90,
-    NUMPAD_0         = 96,
-    NUMPAD_1         = 97,
-    NUMPAD_2         = 98,
-    NUMPAD_3         = 99,
-    NUMPAD_4         = 100,
-    NUMPAD_5         = 101,
-    NUMPAD_6         = 102,
-    NUMPAD_7         = 103,
-    NUMPAD_8         = 104,
-    NUMPAD_9         = 105,
-    NUMPAD_MULTIPLY  = 106,
-    NUMPAD_ADD       = 107,
-    NUMPAD_SEPARATOR = 108,
-    NUMPAD_SUBTRACT  = 109,
-    NUMPAD_DECIMAL   = 110,
-    NUMPAD_DIVIDE    = 111,
-    F1               = 112,
-    F2               = 113,
-    F3               = 114,
-    F4               = 115,
-    F5               = 116,
-    F6               = 117,
-    F7               = 118,
-    F8               = 119,
-    F9               = 120,
-    F10              = 121,
-    F11              = 122,
-    F12              = 123,
-    SEMICOLON        = 186,
-    COMMA            = 188,
-    PERIOD           = 190,
-    SLASH            = 191,
-    BACK_QUOTE       = 192,
-    BRACKET_OPEN     = 219,
-    BACK_SLASH       = 220,
-    BRACKET_CLOSE    = 221,
-    QUOTE            = 222,
-}
-
-export declare enum KeyProcessingState {
-    Consume     = 0,
-    Passthrough = 1,
-    Disabled    = 2,
-}
-
-export declare enum LayoutAlignment {
-    Start  = 0,
-    Center = 1,
-    End    = 2,
-}
-
-export declare enum LayoutFlex {
-    Shrink = "Shrink",
-    Grow   = "Grow",
-}
-
-export declare enum LayoutSizeType {
-    Default    = 0,
-    Percentage = 1,
-}
-
-export declare enum ListPaneEntryType {
-    Button = 0,
-    Bool   = 1,
-    Image  = 2,
-    Text   = 3,
-}
-
-export declare enum ListPaneSlotVariant {
-    Primary   = 0,
-    Secondary = 1,
-    Muted     = 2,
-}
-
-export declare enum ListPaneViewSortType {
-    Default = 0,
-    AtoZ    = 1,
-    ZtoA    = 2,
-}
-
-export declare enum ListViewControlFilterFlags {
-    None = 0,
-    Name = 1,
-    Tag  = 2,
-    All  = 3,
 }
 
 export enum LogChannel {
@@ -418,28 +175,10 @@ export enum MinimapViewType {
     CustomBiomeView = 1,
 }
 
-export declare enum ModalDialogResponseType {
-    Confirm = "confirm",
-    Dismiss = "dismiss",
-    Error   = "error",
-}
-
-export declare enum ModalDialogType {
-    DataPicker = 0,
-    Custom     = 1,
-}
-
 export enum MouseActionCategory {
     Button = 1,
     Wheel  = 2,
     Drag   = 3,
-}
-
-export declare enum MouseActionType {
-    LeftButton   = 1,
-    MiddleButton = 2,
-    RightButton  = 3,
-    Wheel        = 4,
 }
 
 export enum MouseCursorIconType {
@@ -448,21 +187,6 @@ export enum MouseCursorIconType {
     Move       = "Move",
     NotAllowed = "NotAllowed",
     Wait       = "Wait",
-}
-
-export declare enum MouseInputType {
-    ButtonDown = 1,
-    ButtonUp   = 2,
-    WheelIn    = 3,
-    WheelOut   = 4,
-    DragStart  = 5,
-    Drag       = 6,
-    DragEnd    = 7,
-}
-
-export declare enum NumberPropertyItemVariant {
-    InputField          = 0,
-    InputFieldAndSlider = 1,
 }
 
 export enum PaintCompletionState {
@@ -478,12 +202,6 @@ export enum PaintMode {
     Roughen        = 3,
     Flatten        = 4,
     Elevation      = 5,
-}
-
-export declare enum PaneLayoutType {
-    Vertical   = 0,
-    Horizontal = 1,
-    Wrapping   = 2,
 }
 
 export enum Plane {
@@ -522,48 +240,11 @@ export enum PrimitiveType {
     WireframeMesh = 12,
 }
 
-export declare enum ProgressIndicatorPropertyItemVariant {
-    Spinner     = 0,
-    ProgressBar = 1,
-}
-
 export enum ProjectExportType {
     PlayableWorld  = 0,
     ProjectBackup  = 1,
     WorldTemplate  = 2,
     ShareableWorld = 3,
-}
-
-export declare enum PropertyItemType {
-    BlockList         = "editorUI:BlockList",
-    BlockTable        = "editorUI:BlockTable",
-    Boolean           = "editorUI:Boolean",
-    Button            = "editorUI:Button",
-    ButtonPane        = "editorUI:ButtonPane",
-    CollectionTree    = "editorUI:CollectionTree",
-    ColorPicker       = "editorUI:ColorPicker",
-    ComboBox          = "editorUI:ComboBox",
-    DataTable         = "editorUI:DataTable",
-    Divider           = "editorUI:Divider",
-    Dropdown          = "editorUI:Dropdown",
-    Image             = "editorUI:Image",
-    Link              = "editorUI:Link",
-    ListPane          = "editorUI:ListPane",
-    Menu              = "editorUI:Menu",
-    Number            = "editorUI:Number",
-    ProgressIndicator = "editorUI:ProgressIndicator",
-    String            = "editorUI:String",
-    ProxyPane         = "editorUI:ProxyPane",
-    SubPane           = "editorUI:SubPane",
-    Text              = "editorUI:Text",
-    ToggleGroup       = "editorUI:ToggleGroup",
-    Vector2           = "editorUI:Vector2",
-    Vector3           = "editorUI:Vector3",
-    ColorTimeline     = "editorUI:ColorTimeline",
-    NumberTimeline    = "editorUI:NumberTimeline",
-    Vector3Timeline   = "editorUI:Vector3Timeline",
-    Minimap           = "editorUI:Minimap",
-    TagContainer      = "editorUI:TagContainer",
 }
 
 export enum RenderPlaneGridResolution {
@@ -572,12 +253,6 @@ export enum RenderPlaneGridResolution {
     None          = "None",
     OneBlock      = "OneBlock",
     SixteenBlocks = "SixteenBlocks",
-}
-
-export declare enum RootPaneLocation {
-    Drawer   = 0,
-    Viewport = 1,
-    Bottom   = 2,
 }
 
 export enum SelectionVolumeEventType {
@@ -589,26 +264,6 @@ export enum SelectionVolumeEventType {
     Clear     = 6,
 }
 
-export declare enum ServerUXEventType {
-    UpdatePropertyPane             = 1,
-    DestroyPropertyPane            = 2,
-    UpdateMenu                     = 3,
-    DestroyMenu                    = 4,
-    UpdateStatusBarItem            = 5,
-    DestroyStatusBarItem           = 6,
-    UpdateModalToolOption          = 7,
-    DestroyModalToolOption         = 8,
-    BindActionToControl            = 11,
-    RemoveActionBindingFromControl = 12,
-    UpdatePropertyItem             = 13,
-    DestroyPropertyItem            = 14,
-    OnNavigateFromEditor           = 15,
-    UpdateClientPanelVisibility    = 18,
-    ActivateTutorial               = 19,
-    ModalDialogActivation          = 20,
-    ModalDialogDeactivation        = 21,
-}
-
 export enum SpeedSettingsProperty {
     FlySpeedMultiplier = "FlySpeedMultiplier",
 }
@@ -618,26 +273,11 @@ export enum SplineType {
     Hermite = 1,
 }
 
-export declare enum StatusBarAlignment {
-    Right = 0,
-    Left  = 1,
-}
-
 export enum StructureSource {
     BehaviorPack  = 0,
     EditorProject = 1,
     File          = 2,
     Level         = 3,
-}
-
-export declare enum TagContainerActionType {
-    TagAdded   = 0,
-    TagRemoved = 1,
-}
-
-export declare enum TagContainerVariant {
-    Primary  = 0,
-    Inverted = 1,
 }
 
 export enum ThemeSettingsColorKey {
@@ -739,6 +379,11 @@ export enum WidgetGizmoEventType {
     OriginGrabbed     = "OriginGrabbed",
     OriginMoved       = "OriginMoved",
     OriginReleased    = "OriginReleased",
+}
+
+export enum WidgetGizmoScaleMode {
+    World  = 0,
+    Screen = 1,
 }
 
 export enum WidgetGroupSelectionMode {
@@ -883,10 +528,7 @@ export class BlockUtilities {
      * @throws This function can throw errors.
      */
     fillVolume(
-        volume: 
-            | minecraftserver.BlockVolumeBase
-            | minecraftserver.CompoundBlockVolume
-            | RelativeVolumeListBlockVolume,
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
     ): void;
     /**
@@ -900,7 +542,7 @@ export class BlockUtilities {
      *
      * @throws This function can throw errors.
      */
-    getContiguousSelection(properties?: ContiguousSelectionProperties): minecraftserver.CompoundBlockVolume;
+    getContiguousSelection(properties?: ContiguousSelectionProperties): RelativeVolumeListBlockVolume;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -953,6 +595,71 @@ export class BlockUtilities {
         ignoreNoCollision: boolean,
         blockMask?: BlockMaskList,
     ): RelativeVolumeListBlockVolume;
+}
+
+export class BlockUtilityTasks {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fillVolume(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
+        maxBlocksPerTick?: number,
+    ): Promise<number>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    findObscuredBlocksWithinVolume(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    generateManifest(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<BlockUtilityManifest>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    replaceBlocksInSelection(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        fromBlockIdentifier: string,
+        toBlock?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
+        maxBlocksPerTick?: number,
+    ): Promise<number>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    shrinkWrapVolume(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trimVolumeToFitContents(
+        volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
+        retainMarqueeAfterTrimming: boolean,
+        ignoreLiquid: boolean,
+        ignoreNoCollision: boolean,
+        blockMask?: BlockMaskList,
+        maxBlocksPerTick?: number,
+    ): Promise<RelativeVolumeListBlockVolume>;
 }
 
 export class BrushShapeManager {
@@ -1071,6 +778,10 @@ export class BrushShapeManager {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    setPendingTransaction(pendingTransaction?: PendingTransaction): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     setTerrainStrength(terrainStrength: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -1145,7 +856,11 @@ export class ClipboardItem {
      *
      * @throws This function can throw errors.
      */
-    writeToWorld(location: minecraftserver.Vector3, options?: ClipboardWriteOptions): boolean;
+    writeToWorld(
+        location: minecraftserver.Vector3,
+        options?: ClipboardWriteOptions,
+        transaction?: PendingTransaction,
+    ): boolean;
 }
 
 export class ClipboardManager {
@@ -1518,6 +1233,7 @@ export class ExtensionContext {
     readonly afterEvents: ExtensionContextAfterEvents;
     readonly blockPalette: BlockPaletteManager;
     readonly blockUtilities: BlockUtilities;
+    readonly blockUtilityTasks: BlockUtilityTasks;
     readonly brushShapeManager: BrushShapeManager;
     readonly clipboardManager: ClipboardManager;
     readonly cursor: Cursor;
@@ -1861,6 +1577,72 @@ export class ModeChangeAfterEventSignal {
     unsubscribe(callback: (arg0: ModeChangeAfterEvent) => void): void;
 }
 
+export class PendingTransaction {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addEntityOperation(entity: minecraftserver.Entity, type: EntityOperationType): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addUserDefinedOperation(
+        transactionHandlerId: UserDefinedTransactionHandlerId,
+        operationData: string,
+        operationName?: string,
+    ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commitTrackedChanges(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    discard(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    discardTrackedChanges(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isValid(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    submit(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackBlockChangeArea(from: minecraftserver.Vector3, to: minecraftserver.Vector3): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackBlockChangeList(locations: minecraftserver.Vector3[]): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackBlockChangeVolume(blockVolume: minecraftserver.BlockVolumeBase): boolean;
+}
+
 export class PlaytestManager {
     private constructor();
     /**
@@ -2191,29 +1973,7 @@ export class TransactionManager {
      *
      * @throws This function can throw errors.
      */
-    addEntityOperation(entity: minecraftserver.Entity, type: EntityOperationType): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    addUserDefinedOperation(
-        transactionHandlerId: UserDefinedTransactionHandlerId,
-        operationData: string,
-        operationName?: string,
-    ): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    commitOpenTransaction(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    commitTrackedChanges(): number;
+    createPendingTransaction(name: string): PendingTransaction;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2228,30 +1988,6 @@ export class TransactionManager {
      *
      * @throws This function can throw errors.
      */
-    discardOpenTransaction(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    discardTrackedChanges(): number;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    isBusy(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    openTransaction(name: string): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
     redo(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -2259,24 +1995,6 @@ export class TransactionManager {
      * @throws This function can throw errors.
      */
     redoSize(): number;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    trackBlockChangeArea(from: minecraftserver.Vector3, to: minecraftserver.Vector3): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    trackBlockChangeList(locations: minecraftserver.Vector3[]): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    trackBlockChangeVolume(blockVolume: minecraftserver.BlockVolumeBase): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2650,6 +2368,18 @@ export class WidgetComponentGizmo extends WidgetComponentBase {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     normalizedOffsetOverride?: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    scaleMode: WidgetGizmoScaleMode;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    screenScale: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    worldScale: number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3277,6 +3007,16 @@ export interface BlockMaskList {
     maskType: BlockMaskListType;
 }
 
+export interface BlockUtilityManifest {
+    entries: BlockUtilityManifestEntry[];
+    totalBlocks: number;
+}
+
+export interface BlockUtilityManifestEntry {
+    blockIdentifier: string;
+    count: number;
+}
+
 export interface ClipboardWriteOptions {
     excludeAirBlocks?: boolean;
     mirror?: minecraftserver.StructureMirrorAxis;
@@ -3489,6 +3229,7 @@ export interface WidgetComponentBoundingBoxOptions extends WidgetComponentBaseOp
     normalizedOrigin?: minecraftserver.Vector3;
     outlineColor?: minecraftserver.RGBA;
     rotation?: minecraftserver.StructureRotation;
+    scaleMode?: WidgetGizmoScaleMode;
     showWorldIntersections?: boolean;
     stateChangeEvent?: (arg0: WidgetComponentBoundingBoxStateChangeEventParameters) => void;
     visibleHull?: boolean;
@@ -3519,6 +3260,7 @@ export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions 
     axes?: Axis;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
+    scaleMode?: WidgetGizmoScaleMode;
     stateChangeEvent?: (arg0: WidgetComponentGizmoStateChangeEventParameters) => void;
 }
 

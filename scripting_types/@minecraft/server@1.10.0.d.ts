@@ -2855,8 +2855,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3435,6 +3439,10 @@ export class ScriptEventCommandMessageAfterEventSignal {
      * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ScriptEventCommandMessageAfterEvent) => void): void;
+}
+
+export class SoundInstance {
+    private constructor();
 }
 
 // @ts-ignore

@@ -2492,7 +2492,11 @@ export class Dimension {
     /**
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
      * {@link Error}
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
      *
      * {@link UnloadedChunksError}
      */
@@ -2574,9 +2578,11 @@ export class Dimension {
      *
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
+    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2892,6 +2898,14 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     readonly location: Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    nameplateDepthTested: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    nameplateRenderDistance: number;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -6188,8 +6202,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -7424,6 +7442,10 @@ export class ShutdownEvent {
 
 // @ts-ignore
 export class SmeltItemFunction extends LootItemFunction {
+    private constructor();
+}
+
+export class SoundInstance {
     private constructor();
 }
 

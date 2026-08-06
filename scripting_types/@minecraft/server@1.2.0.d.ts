@@ -724,8 +724,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): void;
+    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @throws This function can throw errors.
      *
@@ -734,6 +738,10 @@ export class Player extends Entity {
      * {@link RawMessageError}
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
+}
+
+export class SoundInstance {
+    private constructor();
 }
 
 export class System {

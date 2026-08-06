@@ -692,25 +692,11 @@
         },
         {
             "name": "minecraft:sixteen_way_rotation",
-            "type": "string",
-            "values": [
-                { "value": "down" },
-                { "value": "up" },
-                { "value": "north" },
-                { "value": "south" },
-                { "value": "west" },
-                { "value": "east" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" },
-                { "value": "down" }
-            ]
+            "type": "number",
+            "values": {
+                "min": 0,
+                "max": 15
+            }
         },
         {
             "name": "minecraft:vertical_half",
