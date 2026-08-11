@@ -493,6 +493,8 @@ export class Entity {
      *
      * @throws This function can throw errors.
      *
+     * {@link Error}
+     *
      * {@link InvalidEntityError}
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
@@ -502,6 +504,8 @@ export class Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link Error}
      *
      * {@link InvalidEntityError}
      *
@@ -1015,7 +1019,7 @@ export class Player extends Entity {
      *
      * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
+    playSound(soundId: SoundDefinition | string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @throws This function can throw errors.
      *
@@ -1062,6 +1066,10 @@ export class PlayerSpawnAfterEvent {
 
 // @ts-ignore
 export class PlayerSpawnAfterEventSignal extends IPlayerSpawnAfterEventSignal {
+    private constructor();
+}
+
+export class SoundDefinition {
     private constructor();
 }
 

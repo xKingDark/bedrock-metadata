@@ -15,6 +15,7 @@ export enum AimAssistTargetMode {
 }
 
 export enum BlockComponentTypes {
+    DynamicProperties         = "minecraft:dynamic_properties",
     FluidContainer            = "minecraft:fluid_container",
     Instrument                = "minecraft:instrument_sound",
     Inventory                 = "minecraft:inventory",
@@ -491,15 +492,16 @@ export enum InputPermissionCategory {
 }
 
 export enum ItemComponentTypes {
-    Book        = "minecraft:book",
-    Compostable = "minecraft:compostable",
-    Cooldown    = "minecraft:cooldown",
-    Durability  = "minecraft:durability",
-    Dyeable     = "minecraft:dyeable",
-    Enchantable = "minecraft:enchantable",
-    Food        = "minecraft:food",
-    Inventory   = "minecraft:inventory",
-    Potion      = "minecraft:potion",
+    BlockDynamicProperties = "minecraft:block_actor_dynamic_properties",
+    Book                   = "minecraft:book",
+    Compostable            = "minecraft:compostable",
+    Cooldown               = "minecraft:cooldown",
+    Durability             = "minecraft:durability",
+    Dyeable                = "minecraft:dyeable",
+    Enchantable            = "minecraft:enchantable",
+    Food                   = "minecraft:food",
+    Inventory              = "minecraft:inventory",
+    Potion                 = "minecraft:potion",
 }
 
 export enum ItemLockMode {
@@ -696,6 +698,7 @@ export type BlockComponentReturnType<T extends string> =
         : BlockComponent;
 
 export type BlockComponentTypeMap = {
+    dynamic_properties: BlockDynamicPropertiesComponent;
     fluid_container: BlockFluidContainerComponent;
     instrument_sound: BlockInstrumentComponent;
     inventory: BlockInventoryComponent;
@@ -706,6 +709,7 @@ export type BlockComponentTypeMap = {
     record_player: BlockRecordPlayerComponent;
     redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
+    "minecraft:dynamic_properties": BlockDynamicPropertiesComponent;
     "minecraft:fluid_container": BlockFluidContainerComponent;
     "minecraft:instrument_sound": BlockInstrumentComponent;
     "minecraft:inventory": BlockInventoryComponent;
@@ -868,6 +872,7 @@ export type ItemComponentReturnType<T extends string> =
         : ItemComponent;
 
 export type ItemComponentTypeMap = {
+    block_actor_dynamic_properties: ItemBlockDynamicPropertiesComponent;
     book: ItemBookComponent;
     compostable: ItemCompostableComponent;
     cooldown: ItemCooldownComponent;
@@ -877,6 +882,7 @@ export type ItemComponentTypeMap = {
     food: ItemFoodComponent;
     inventory: ItemInventoryComponent;
     potion: ItemPotionComponent;
+    "minecraft:block_actor_dynamic_properties": ItemBlockDynamicPropertiesComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -1576,6 +1582,50 @@ export class BlockContainerOpenedAfterEventSignal {
 export class BlockCustomComponentInstance extends BlockComponent {
     private constructor();
     readonly customComponentParameters: CustomComponentParameters;
+}
+
+// @ts-ignore
+export class BlockDynamicPropertiesComponent extends BlockComponent {
+    private constructor();
+    static readonly componentId = "minecraft:dynamic_properties";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    get(key: string): boolean | number | string | Vector3 | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    set(key: string, value?: boolean | number | string | Vector3): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    totalByteCount(): number;
 }
 
 export class BlockEvent {
@@ -3352,6 +3402,8 @@ export class Entity {
      *
      * @throws This function can throw errors.
      *
+     * {@link Error}
+     *
      * {@link InvalidEntityError}
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
@@ -3371,6 +3423,8 @@ export class Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link Error}
      *
      * {@link InvalidEntityError}
      *
@@ -4704,6 +4758,54 @@ export class EntitySpawnAfterEventSignal {
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
 
+export class EntityStartSneakingAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+}
+
+export class EntityStartSneakingAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityStartSneakingAfterEvent) => void,
+        options?: EntitySneakingChangedEventOptions,
+    ): (arg0: EntityStartSneakingAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityStartSneakingAfterEvent) => void): void;
+}
+
+export class EntityStopSneakingAfterEvent {
+    private constructor();
+    readonly entity: Entity;
+}
+
+export class EntityStopSneakingAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: EntityStopSneakingAfterEvent) => void,
+        options?: EntitySneakingChangedEventOptions,
+    ): (arg0: EntityStopSneakingAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: EntityStopSneakingAfterEvent) => void): void;
+}
+
 // @ts-ignore
 export class EntityStrengthComponent extends EntityComponent {
     private constructor();
@@ -5025,6 +5127,62 @@ export class FluidContainer {
     static readonly minFillLevel = 0;
 }
 
+export class FogSettings {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getStack(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    getTags(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    pop(tag?: string): string | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link FogSettingsError}
+     *
+     * {@link InvalidEntityError}
+     */
+    push(fogId: string, tag?: string): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    remove(tag?: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link FogSettingsError}
+     *
+     * {@link InvalidEntityError}
+     */
+    setStack(fogIds: string[], tag?: string): void;
+}
+
 export class GameRuleChangeAfterEvent {
     private constructor();
     readonly rule: GameRule;
@@ -5238,6 +5396,34 @@ export class IsBabyCondition extends LootItemCondition {
 
 export class ISerializable {
     private constructor();
+}
+
+// @ts-ignore
+export class ItemBlockDynamicPropertiesComponent extends ItemComponent {
+    private constructor();
+    static readonly componentId = "minecraft:block_actor_dynamic_properties";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    get(key: string): boolean | number | string | Vector3 | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    set(key: string, value?: boolean | number | string | Vector3): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidItemStackError}
+     */
+    totalByteCount(): number;
 }
 
 // @ts-ignore
@@ -6235,6 +6421,7 @@ export class Player extends Entity {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     commandPermissionLevel: CommandPermissionLevel;
+    readonly fogSettings: FogSettings;
     /**
      * @throws This property can throw when used.
      *
@@ -6346,7 +6533,7 @@ export class Player extends Entity {
      *
      * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
+    playSound(soundId: SoundDefinition | string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -7662,6 +7849,24 @@ export class SoundCompletedAfterEventSignal {
     unsubscribe(callback: (arg0: SoundCompletedAfterEvent) => void): void;
 }
 
+export class SoundDefinition {
+    private constructor();
+    readonly durationInfo?: SoundDefinitionDurationInfo;
+    readonly musicInfo?: SoundDefinitionMusicInfo;
+    readonly soundEventId: string;
+    readonly tags?: Record<string, string[]>;
+}
+
+export class SoundDefinitionRegistry {
+    private constructor();
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.InvalidArgumentError}
+     */
+    getDefinitions(filter?: SoundDefinitionFilter): SoundDefinition[];
+}
+
 export class SoundDurationInfo {
     private constructor();
     readonly duration: number;
@@ -8192,6 +8397,7 @@ export class World {
     readonly primitiveShapesManager: PrimitiveShapesManager;
     readonly scoreboard: Scoreboard;
     readonly seed: string;
+    readonly soundDefinitionRegistry: SoundDefinitionRegistry;
     readonly structureManager: StructureManager;
     readonly tickingAreaManager: TickingAreaManager;
     clearDynamicProperties(): void;
@@ -8224,7 +8430,7 @@ export class World {
     /**
      * @remarks This function can be called in early-execution mode.
      */
-    getPackSettings(): Record<string, boolean | number | string>;
+    getPackSettings(): Record<string, string[] | boolean | number | string>;
     /**
      * @throws This function can throw errors.
      *
@@ -8374,6 +8580,14 @@ export class WorldAfterEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly entitySpawn: EntitySpawnAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityStartSneaking: EntityStartSneakingAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly entityStopSneaking: EntityStopSneakingAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -8967,6 +9181,10 @@ export interface EntityRaycastOptions extends EntityFilter {
     maxDistance?: number;
 }
 
+export interface EntitySneakingChangedEventOptions {
+    entityFilter?: EntityFilter;
+}
+
 export interface EntityTamedEventOptions {
     entityFilter?: EntityFilter;
     tamingEntityFilter?: EntityFilter;
@@ -9165,6 +9383,27 @@ export interface ScriptEventMessageFilterOptions {
     namespaces: string[];
 }
 
+export interface SoundDefinitionDurationInfo {
+    duration: number;
+}
+
+export interface SoundDefinitionFilter {
+    artists?: string[];
+    genres?: string[];
+    maxDuration?: number;
+    minDuration?: number;
+    moods?: string[];
+    tags?: Record<string, string[]>;
+    titles?: string[];
+}
+
+export interface SoundDefinitionMusicInfo {
+    artist?: string;
+    genres?: string[];
+    moods?: string[];
+    title?: string;
+}
+
 export interface SpawnEntityOptions {
     initialPersistence?: boolean;
     initialRotation?: number;
@@ -9198,6 +9437,7 @@ export interface TeleportOptions {
     checkForBlocks?: boolean;
     dimension?: Dimension;
     facingLocation?: Vector3;
+    forceProvidedPositionOnDimensionChange?: boolean;
     keepVelocity?: boolean;
     rotation?: Vector2;
 }
@@ -9370,6 +9610,11 @@ export class EnchantmentTypeUnknownIdError extends Error {
 
 // @ts-ignore
 export class EntitySpawnError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class FogSettingsError extends Error {
     private constructor();
 }
 

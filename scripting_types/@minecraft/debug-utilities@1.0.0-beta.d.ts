@@ -11,6 +11,23 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
+export enum DiagnosticsChartDisplayType {
+    LineChart        = 0,
+    StackedLineChart = 1,
+    StackedBarChart  = 2,
+}
+
+export enum DiagnosticsErrorReason {
+    AlreadyRegistered = "AlreadyRegistered",
+    InvalidData       = "InvalidData",
+    InvalidName       = "InvalidName",
+}
+
+export enum DiagnosticsTableDisplayType {
+    Table            = 0,
+    MultiColumnTable = 1,
+}
+
 // @ts-ignore
 export class DebugArrow extends DebugLine {
     headLength: number;
@@ -125,6 +142,64 @@ export class DebugText extends DebugShape {
     setText(text: minecraftserver.RawMessage | string): void;
 }
 
+export class DiagnosticsManager {
+    private constructor();
+    readonly tabs: DiagnosticsTab[];
+    addTab(tab: DiagnosticsTab): void;
+    containsTab(tab: DiagnosticsTab): boolean;
+    containsView(view: DiagnosticsView): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DiagnosticsError}
+     */
+    createTab(tabName: string): DiagnosticsTab;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DiagnosticsError}
+     */
+    createView(statName: string, options?: DiagnosticsChartViewOptions | DiagnosticsTableViewOptions): DiagnosticsView;
+    removeTab(tab: DiagnosticsTab): void;
+}
+
+export class DiagnosticsTab {
+    private constructor();
+    readonly tabName: string;
+    readonly views: DiagnosticsView[];
+    addView(view: DiagnosticsView): void;
+    containsView(view: DiagnosticsView): boolean;
+    removeView(view: DiagnosticsView): void;
+}
+
+export class DiagnosticsView {
+    private constructor();
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link DiagnosticsError}
+     */
+    pushStats(stats: DiagnosticsStat[]): void;
+}
+
+export interface DiagnosticsChartViewOptions {
+    chartType: DiagnosticsChartDisplayType;
+    targetValue?: number;
+    tickRange?: number;
+    yAxisLabel?: string;
+}
+
+export interface DiagnosticsStat {
+    name: string;
+    values?: (number | string)[];
+}
+
+export interface DiagnosticsTableViewOptions {
+    keyLabel?: string;
+    tableType: DiagnosticsTableDisplayType;
+    valueLabels?: string[];
+}
+
 export interface HandleCounts {
     handleCounts: Record<string, number>;
     name: string;
@@ -159,6 +234,15 @@ export interface RuntimeStats {
     stringSize: number;
 }
 
+// @ts-ignore
+export class DiagnosticsError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: DiagnosticsErrorReason;
+}
+
 export function collectPluginStats(): PluginStats;
 
 export function collectRuntimeStats(): RuntimeStats;
@@ -169,3 +253,4 @@ export function collectRuntimeStats(): RuntimeStats;
 export function disableWatchdogTimingWarnings(disable: boolean): void;
 
 export const debugDrawer: DebugDrawer;
+export const diagnosticsManager: DiagnosticsManager;

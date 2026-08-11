@@ -916,6 +916,8 @@ export class Entity {
      *
      * @throws This function can throw errors.
      *
+     * {@link Error}
+     *
      * {@link InvalidEntityError}
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
@@ -935,6 +937,8 @@ export class Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link Error}
      *
      * {@link InvalidEntityError}
      *
@@ -2088,7 +2092,7 @@ export class Player extends Entity {
      *
      * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
+    playSound(soundId: SoundDefinition | string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2655,6 +2659,10 @@ export class ScriptEventCommandMessageAfterEventSignal {
      * This function can be called in early-execution mode.
      */
     unsubscribe(callback: (arg0: ScriptEventCommandMessageAfterEvent) => void): void;
+}
+
+export class SoundDefinition {
+    private constructor();
 }
 
 export class SoundInstance {

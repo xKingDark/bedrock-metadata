@@ -34,7 +34,7 @@ export class AllowList {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    add(player: AllowListEntry | minecraftserver.Player): void;
+    add(playerDetails: AllowListEntryNameInfo | minecraftserver.Player, ignorePlayerLimit?: boolean): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -46,7 +46,7 @@ export class AllowList {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    contains(player: AllowListEntry | minecraftserver.Player): boolean;
+    contains(playerDetails: AllowListEntryNameInfo | minecraftserver.Player): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -66,7 +66,7 @@ export class AllowList {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    remove(player: AllowListEntry | minecraftserver.Player): void;
+    remove(playerDetails: AllowListEntryNameInfo | minecraftserver.Player): void;
 }
 
 export class AsyncPlayerJoinBeforeEvent {
@@ -198,6 +198,12 @@ export class ServerVariables {
 }
 
 export interface AllowListEntry {
+    ignoresPlayerLimit: boolean;
+    name?: string;
+    xuid?: string;
+}
+
+export interface AllowListEntryNameInfo {
     name?: string;
     xuid?: string;
 }

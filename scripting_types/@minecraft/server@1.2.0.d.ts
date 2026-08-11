@@ -729,7 +729,7 @@ export class Player extends Entity {
      *
      * {@link Error}
      */
-    playSound(soundId: string, soundOptions?: PlayerSoundOptions): SoundInstance;
+    playSound(soundId: SoundDefinition | string, soundOptions?: PlayerSoundOptions): SoundInstance;
     /**
      * @throws This function can throw errors.
      *
@@ -738,6 +738,10 @@ export class Player extends Entity {
      * {@link RawMessageError}
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
+}
+
+export class SoundDefinition {
+    private constructor();
 }
 
 export class SoundInstance {

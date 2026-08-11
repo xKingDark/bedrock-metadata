@@ -14,7 +14,7 @@
         },
         {
             "name": "minecraft:acacia_chest_boat",
-            "id": 655,
+            "id": 657,
             "max_size": 1,
             "localization_key": "item.chest_boat.acacia.name"
         },
@@ -116,7 +116,7 @@
         },
         {
             "name": "minecraft:allay_spawn_egg",
-            "id": 644,
+            "id": 646,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.allay.name"
         },
@@ -146,7 +146,7 @@
         },
         {
             "name": "minecraft:amethyst_shard",
-            "id": 637,
+            "id": 639,
             "max_size": 64,
             "localization_key": "item.amethyst_shard.name"
         },
@@ -182,7 +182,7 @@
         },
         {
             "name": "minecraft:angler_pottery_sherd",
-            "id": 670,
+            "id": 672,
             "max_size": 64,
             "localization_key": "item.angler_pottery_sherd.name"
         },
@@ -194,25 +194,25 @@
         },
         {
             "name": "minecraft:apple",
-            "id": 880,
+            "id": 882,
             "max_size": 64,
             "localization_key": "item.apple.name"
         },
         {
             "name": "minecraft:archer_pottery_sherd",
-            "id": 671,
+            "id": 673,
             "max_size": 64,
             "localization_key": "item.archer_pottery_sherd.name"
         },
         {
             "name": "minecraft:armadillo_scute",
-            "id": 720,
+            "id": 722,
             "max_size": 64,
             "localization_key": "item.armadillo_scute.name"
         },
         {
             "name": "minecraft:armadillo_spawn_egg",
-            "id": 719,
+            "id": 721,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.armadillo.name"
         },
@@ -224,7 +224,7 @@
         },
         {
             "name": "minecraft:arms_up_pottery_sherd",
-            "id": 672,
+            "id": 674,
             "max_size": 64,
             "localization_key": "item.arms_up_pottery_sherd.name"
         },
@@ -301,7 +301,7 @@
         },
         {
             "name": "minecraft:bamboo_chest_raft",
-            "id": 667,
+            "id": 669,
             "max_size": 1,
             "localization_key": "item.chest_boat.bamboo.name"
         },
@@ -361,7 +361,7 @@
         },
         {
             "name": "minecraft:bamboo_raft",
-            "id": 666,
+            "id": 668,
             "max_size": 1,
             "localization_key": "item.boat.bamboo.name"
         },
@@ -373,7 +373,7 @@
         },
         {
             "name": "minecraft:bamboo_sign",
-            "id": 665,
+            "id": 667,
             "max_size": 16,
             "localization_key": "item.bamboo_sign.name"
         },
@@ -511,7 +511,7 @@
         },
         {
             "name": "minecraft:birch_chest_boat",
-            "id": 652,
+            "id": 654,
             "max_size": 1,
             "localization_key": "item.chest_boat.birch.name"
         },
@@ -607,7 +607,7 @@
         },
         {
             "name": "minecraft:black_bundle",
-            "id": 859,
+            "id": 861,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.black_bundle"
@@ -637,6 +637,24 @@
             "localization_key": "tile.concretePowder.black.name"
         },
         {
+            "name": "minecraft:black_concrete_slab",
+            "id": -1218,
+            "max_size": 64,
+            "localization_key": "tile.black_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:black_concrete_stairs",
+            "id": -1214,
+            "max_size": 64,
+            "localization_key": "tile.black_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:black_cushion",
+            "id": 775,
+            "max_size": 16,
+            "localization_key": "item.cushion.black.name"
+        },
+        {
             "name": "minecraft:black_dye",
             "id": 398,
             "max_size": 64,
@@ -650,7 +668,7 @@
         },
         {
             "name": "minecraft:black_harness",
-            "id": 730,
+            "id": 732,
             "max_size": 1,
             "localization_key": "item.black_harness.name"
         },
@@ -685,6 +703,18 @@
             "localization_key": "tile.wool.black.name"
         },
         {
+            "name": "minecraft:black_wool_slab",
+            "id": -1168,
+            "max_size": 64,
+            "localization_key": "tile.black_wool_slab.name"
+        },
+        {
+            "name": "minecraft:black_wool_stairs",
+            "id": -1164,
+            "max_size": 64,
+            "localization_key": "tile.black_wool_stairs.name"
+        },
+        {
             "name": "minecraft:blackstone",
             "id": -273,
             "max_size": 64,
@@ -710,7 +740,7 @@
         },
         {
             "name": "minecraft:blade_pottery_sherd",
-            "id": 673,
+            "id": 675,
             "max_size": 64,
             "localization_key": "item.blade_pottery_sherd.name"
         },
@@ -745,7 +775,7 @@
         },
         {
             "name": "minecraft:blue_bundle",
-            "id": 860,
+            "id": 862,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.blue_bundle"
@@ -775,6 +805,24 @@
             "localization_key": "tile.concretePowder.blue.name"
         },
         {
+            "name": "minecraft:blue_concrete_slab",
+            "id": -1227,
+            "max_size": 64,
+            "localization_key": "tile.blue_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:blue_concrete_stairs",
+            "id": -1201,
+            "max_size": 64,
+            "localization_key": "tile.blue_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:blue_cushion",
+            "id": 776,
+            "max_size": 16,
+            "localization_key": "item.cushion.blue.name"
+        },
+        {
             "name": "minecraft:blue_dye",
             "id": 402,
             "max_size": 64,
@@ -782,7 +830,7 @@
         },
         {
             "name": "minecraft:blue_egg",
-            "id": 727,
+            "id": 729,
             "max_size": 16,
             "localization_key": "item.blue_egg.name"
         },
@@ -794,7 +842,7 @@
         },
         {
             "name": "minecraft:blue_harness",
-            "id": 731,
+            "id": 733,
             "max_size": 1,
             "localization_key": "item.blue_harness.name"
         },
@@ -841,6 +889,18 @@
             "localization_key": "tile.wool.blue.name"
         },
         {
+            "name": "minecraft:blue_wool_slab",
+            "id": -1177,
+            "max_size": 64,
+            "localization_key": "tile.blue_wool_slab.name"
+        },
+        {
+            "name": "minecraft:blue_wool_stairs",
+            "id": -1151,
+            "max_size": 64,
+            "localization_key": "tile.blue_wool_stairs.name"
+        },
+        {
             "name": "minecraft:bogged_spawn_egg",
             "id": 467,
             "max_size": 64,
@@ -848,7 +908,7 @@
         },
         {
             "name": "minecraft:bolt_armor_trim_smithing_template",
-            "id": 712,
+            "id": 714,
             "max_size": 64,
             "localization_key": "item.bolt_armor_trim_smithing_template.name"
         },
@@ -932,7 +992,7 @@
         },
         {
             "name": "minecraft:breeze_rod",
-            "id": 876,
+            "id": 878,
             "max_size": 64,
             "localization_key": "item.breeze_rod.name"
         },
@@ -944,7 +1004,7 @@
         },
         {
             "name": "minecraft:brewer_pottery_sherd",
-            "id": 674,
+            "id": 676,
             "max_size": 64,
             "localization_key": "item.brewer_pottery_sherd.name"
         },
@@ -986,7 +1046,7 @@
         },
         {
             "name": "minecraft:brown_bundle",
-            "id": 861,
+            "id": 863,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.brown_bundle"
@@ -1016,6 +1076,24 @@
             "localization_key": "tile.concretePowder.brown.name"
         },
         {
+            "name": "minecraft:brown_concrete_slab",
+            "id": -1219,
+            "max_size": 64,
+            "localization_key": "tile.brown_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:brown_concrete_stairs",
+            "id": -1213,
+            "max_size": 64,
+            "localization_key": "tile.brown_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:brown_cushion",
+            "id": 777,
+            "max_size": 16,
+            "localization_key": "item.cushion.brown.name"
+        },
+        {
             "name": "minecraft:brown_dye",
             "id": 401,
             "max_size": 64,
@@ -1023,7 +1101,7 @@
         },
         {
             "name": "minecraft:brown_egg",
-            "id": 728,
+            "id": 730,
             "max_size": 16,
             "localization_key": "item.brown_egg.name"
         },
@@ -1035,7 +1113,7 @@
         },
         {
             "name": "minecraft:brown_harness",
-            "id": 732,
+            "id": 734,
             "max_size": 1,
             "localization_key": "item.brown_harness.name"
         },
@@ -1082,8 +1160,20 @@
             "localization_key": "tile.wool.brown.name"
         },
         {
+            "name": "minecraft:brown_wool_slab",
+            "id": -1169,
+            "max_size": 64,
+            "localization_key": "tile.brown_wool_slab.name"
+        },
+        {
+            "name": "minecraft:brown_wool_stairs",
+            "id": -1163,
+            "max_size": 64,
+            "localization_key": "tile.brown_wool_stairs.name"
+        },
+        {
             "name": "minecraft:brush",
-            "id": 693,
+            "id": 695,
             "max_size": 1,
             "localization_key": "item.brush.name"
         },
@@ -1119,14 +1209,14 @@
         },
         {
             "name": "minecraft:bundle",
-            "id": 862,
+            "id": 864,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.bundle"
         },
         {
             "name": "minecraft:burn_pottery_sherd",
-            "id": 675,
+            "id": 677,
             "max_size": 64,
             "localization_key": "item.burn_pottery_sherd.name"
         },
@@ -1168,13 +1258,13 @@
         },
         {
             "name": "minecraft:camel_husk_spawn_egg",
-            "id": 669,
+            "id": 671,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.camel_husk.name"
         },
         {
             "name": "minecraft:camel_spawn_egg",
-            "id": 668,
+            "id": 670,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.camel.name"
         },
@@ -1275,7 +1365,7 @@
         },
         {
             "name": "minecraft:cherry_boat",
-            "id": 662,
+            "id": 664,
             "max_size": 1,
             "localization_key": "item.boat.cherry.name"
         },
@@ -1287,7 +1377,7 @@
         },
         {
             "name": "minecraft:cherry_chest_boat",
-            "id": 663,
+            "id": 665,
             "max_size": 1,
             "localization_key": "item.chest_boat.cherry.name"
         },
@@ -1353,7 +1443,7 @@
         },
         {
             "name": "minecraft:cherry_sign",
-            "id": 664,
+            "id": 666,
             "max_size": 16,
             "localization_key": "item.cherry_sign.name"
         },
@@ -1611,7 +1701,7 @@
         },
         {
             "name": "minecraft:coast_armor_trim_smithing_template",
-            "id": 697,
+            "id": 699,
             "max_size": 64,
             "localization_key": "item.coast_armor_trim_smithing_template.name"
         },
@@ -1797,7 +1887,7 @@
         },
         {
             "name": "minecraft:copper_axe",
-            "id": 750,
+            "id": 752,
             "max_size": 1,
             "localization_key": "item.copper_axe.name"
         },
@@ -1815,7 +1905,7 @@
         },
         {
             "name": "minecraft:copper_boots",
-            "id": 755,
+            "id": 757,
             "max_size": 1,
             "localization_key": "item.copper_boots.name"
         },
@@ -1839,7 +1929,7 @@
         },
         {
             "name": "minecraft:copper_chestplate",
-            "id": 753,
+            "id": 755,
             "max_size": 1,
             "localization_key": "item.copper_chestplate.name"
         },
@@ -1851,7 +1941,7 @@
         },
         {
             "name": "minecraft:copper_golem_spawn_egg",
-            "id": 746,
+            "id": 748,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.copper_golem.name"
         },
@@ -1869,19 +1959,19 @@
         },
         {
             "name": "minecraft:copper_helmet",
-            "id": 752,
+            "id": 754,
             "max_size": 1,
             "localization_key": "item.copper_helmet.name"
         },
         {
             "name": "minecraft:copper_hoe",
-            "id": 751,
+            "id": 753,
             "max_size": 1,
             "localization_key": "item.copper_hoe.name"
         },
         {
             "name": "minecraft:copper_horse_armor",
-            "id": 757,
+            "id": 759,
             "max_size": 1,
             "localization_key": "item.copper_horse_armor.name"
         },
@@ -1899,19 +1989,19 @@
         },
         {
             "name": "minecraft:copper_leggings",
-            "id": 754,
+            "id": 756,
             "max_size": 1,
             "localization_key": "item.copper_leggings.name"
         },
         {
             "name": "minecraft:copper_nautilus_armor",
-            "id": 761,
+            "id": 763,
             "max_size": 1,
             "localization_key": "item.copper_nautilus_armor.name"
         },
         {
             "name": "minecraft:copper_nugget",
-            "id": 756,
+            "id": 758,
             "max_size": 64,
             "localization_key": "item.copper_nugget.name"
         },
@@ -1923,25 +2013,25 @@
         },
         {
             "name": "minecraft:copper_pickaxe",
-            "id": 749,
+            "id": 751,
             "max_size": 1,
             "localization_key": "item.copper_pickaxe.name"
         },
         {
             "name": "minecraft:copper_shovel",
-            "id": 748,
+            "id": 750,
             "max_size": 1,
             "localization_key": "item.copper_shovel.name"
         },
         {
             "name": "minecraft:copper_spear",
-            "id": 852,
+            "id": 854,
             "max_size": 1,
             "localization_key": "item.copper_spear.name"
         },
         {
             "name": "minecraft:copper_sword",
-            "id": 747,
+            "id": 749,
             "max_size": 1,
             "localization_key": "item.copper_sword.name"
         },
@@ -2019,7 +2109,7 @@
         },
         {
             "name": "minecraft:creaking_spawn_egg",
-            "id": 725,
+            "id": 727,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.creaking.name"
         },
@@ -2049,7 +2139,7 @@
         },
         {
             "name": "minecraft:crimson_door",
-            "id": 630,
+            "id": 632,
             "max_size": 64,
             "localization_key": "item.crimson_door.name"
         },
@@ -2115,7 +2205,7 @@
         },
         {
             "name": "minecraft:crimson_sign",
-            "id": 628,
+            "id": 630,
             "max_size": 16,
             "localization_key": "item.crimson_sign.name"
         },
@@ -2199,7 +2289,7 @@
         },
         {
             "name": "minecraft:cyan_bundle",
-            "id": 863,
+            "id": 865,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.cyan_bundle"
@@ -2229,6 +2319,24 @@
             "localization_key": "tile.concretePowder.cyan.name"
         },
         {
+            "name": "minecraft:cyan_concrete_slab",
+            "id": -1225,
+            "max_size": 64,
+            "localization_key": "tile.cyan_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:cyan_concrete_stairs",
+            "id": -1210,
+            "max_size": 64,
+            "localization_key": "tile.cyan_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:cyan_cushion",
+            "id": 778,
+            "max_size": 16,
+            "localization_key": "item.cushion.cyan.name"
+        },
+        {
             "name": "minecraft:cyan_dye",
             "id": 404,
             "max_size": 64,
@@ -2242,7 +2350,7 @@
         },
         {
             "name": "minecraft:cyan_harness",
-            "id": 733,
+            "id": 735,
             "max_size": 1,
             "localization_key": "item.cyan_harness.name"
         },
@@ -2277,6 +2385,18 @@
             "localization_key": "tile.wool.cyan.name"
         },
         {
+            "name": "minecraft:cyan_wool_slab",
+            "id": -1175,
+            "max_size": 64,
+            "localization_key": "tile.cyan_wool_slab.name"
+        },
+        {
+            "name": "minecraft:cyan_wool_stairs",
+            "id": -1160,
+            "max_size": 64,
+            "localization_key": "tile.cyan_wool_stairs.name"
+        },
+        {
             "name": "minecraft:damaged_anvil",
             "id": -960,
             "max_size": 64,
@@ -2290,7 +2410,7 @@
         },
         {
             "name": "minecraft:danger_pottery_sherd",
-            "id": 676,
+            "id": 678,
             "max_size": 64,
             "localization_key": "item.danger_pottery_sherd.name"
         },
@@ -2308,7 +2428,7 @@
         },
         {
             "name": "minecraft:dark_oak_chest_boat",
-            "id": 656,
+            "id": 658,
             "max_size": 1,
             "localization_key": "item.chest_boat.big_oak.name"
         },
@@ -2698,7 +2818,7 @@
         },
         {
             "name": "minecraft:diamond_nautilus_armor",
-            "id": 764,
+            "id": 766,
             "max_size": 1,
             "localization_key": "item.diamond_nautilus_armor.name"
         },
@@ -2722,7 +2842,7 @@
         },
         {
             "name": "minecraft:diamond_spear",
-            "id": 853,
+            "id": 855,
             "max_size": 1,
             "localization_key": "item.diamond_spear.name"
         },
@@ -2770,7 +2890,7 @@
         },
         {
             "name": "minecraft:disc_fragment_5",
-            "id": 650,
+            "id": 652,
             "max_size": 64,
             "localization_key": "item.disc_fragment.name"
         },
@@ -2848,13 +2968,13 @@
         },
         {
             "name": "minecraft:dune_armor_trim_smithing_template",
-            "id": 696,
+            "id": 698,
             "max_size": 64,
             "localization_key": "item.dune_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:echo_shard",
-            "id": 660,
+            "id": 662,
             "max_size": 64,
             "localization_key": "item.echo_shard.name"
         },
@@ -3532,7 +3652,7 @@
         },
         {
             "name": "minecraft:end_crystal",
-            "id": 849,
+            "id": 851,
             "max_size": 64,
             "localization_key": "item.end_crystal.name"
         },
@@ -3616,7 +3736,7 @@
         },
         {
             "name": "minecraft:explorer_pottery_sherd",
-            "id": 677,
+            "id": 679,
             "max_size": 64,
             "localization_key": "item.explorer_pottery_sherd.name"
         },
@@ -3712,7 +3832,7 @@
         },
         {
             "name": "minecraft:eye_armor_trim_smithing_template",
-            "id": 700,
+            "id": 702,
             "max_size": 64,
             "localization_key": "item.eye_armor_trim_smithing_template.name"
         },
@@ -3826,7 +3946,7 @@
         },
         {
             "name": "minecraft:flow_armor_trim_smithing_template",
-            "id": 711,
+            "id": 713,
             "max_size": 64,
             "localization_key": "item.flow_armor_trim_smithing_template.name"
         },
@@ -3838,7 +3958,7 @@
         },
         {
             "name": "minecraft:flow_pottery_sherd",
-            "id": 678,
+            "id": 680,
             "max_size": 64,
             "localization_key": "item.flow_pottery_sherd.name"
         },
@@ -3874,7 +3994,7 @@
         },
         {
             "name": "minecraft:friend_pottery_sherd",
-            "id": 679,
+            "id": 681,
             "max_size": 64,
             "localization_key": "item.friend_pottery_sherd.name"
         },
@@ -3886,7 +4006,7 @@
         },
         {
             "name": "minecraft:frog_spawn_egg",
-            "id": 641,
+            "id": 643,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.frog.name"
         },
@@ -3952,13 +4072,13 @@
         },
         {
             "name": "minecraft:glow_berries",
-            "id": 881,
+            "id": 883,
             "max_size": 64,
             "localization_key": "item.glow_berries.name"
         },
         {
             "name": "minecraft:glow_frame",
-            "id": 636,
+            "id": 638,
             "max_size": 64,
             "localization_key": "item.glow_frame.name"
         },
@@ -3999,7 +4119,7 @@
         },
         {
             "name": "minecraft:goat_horn",
-            "id": 640,
+            "id": 642,
             "max_size": 1,
             "localization_key": "item.goat_horn.name"
         },
@@ -4095,7 +4215,7 @@
         },
         {
             "name": "minecraft:golden_nautilus_armor",
-            "id": 763,
+            "id": 765,
             "max_size": 1,
             "localization_key": "item.golden_nautilus_armor.name"
         },
@@ -4119,7 +4239,7 @@
         },
         {
             "name": "minecraft:golden_spear",
-            "id": 854,
+            "id": 856,
             "max_size": 1,
             "localization_key": "item.golden_spear.name"
         },
@@ -4173,7 +4293,7 @@
         },
         {
             "name": "minecraft:gray_bundle",
-            "id": 864,
+            "id": 866,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.gray_bundle"
@@ -4203,6 +4323,24 @@
             "localization_key": "tile.concretePowder.gray.name"
         },
         {
+            "name": "minecraft:gray_concrete_slab",
+            "id": -1217,
+            "max_size": 64,
+            "localization_key": "tile.gray_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:gray_concrete_stairs",
+            "id": -1208,
+            "max_size": 64,
+            "localization_key": "tile.gray_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:gray_cushion",
+            "id": 779,
+            "max_size": 16,
+            "localization_key": "item.cushion.gray.name"
+        },
+        {
             "name": "minecraft:gray_dye",
             "id": 406,
             "max_size": 64,
@@ -4216,7 +4354,7 @@
         },
         {
             "name": "minecraft:gray_harness",
-            "id": 734,
+            "id": 736,
             "max_size": 1,
             "localization_key": "item.gray_harness.name"
         },
@@ -4251,8 +4389,20 @@
             "localization_key": "tile.wool.gray.name"
         },
         {
+            "name": "minecraft:gray_wool_slab",
+            "id": -1167,
+            "max_size": 64,
+            "localization_key": "tile.gray_wool_slab.name"
+        },
+        {
+            "name": "minecraft:gray_wool_stairs",
+            "id": -1158,
+            "max_size": 64,
+            "localization_key": "tile.gray_wool_stairs.name"
+        },
+        {
             "name": "minecraft:green_bundle",
-            "id": 865,
+            "id": 867,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.green_bundle"
@@ -4282,6 +4432,24 @@
             "localization_key": "tile.concretePowder.green.name"
         },
         {
+            "name": "minecraft:green_concrete_slab",
+            "id": -1224,
+            "max_size": 64,
+            "localization_key": "tile.green_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:green_concrete_stairs",
+            "id": -1212,
+            "max_size": 64,
+            "localization_key": "tile.green_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:green_cushion",
+            "id": 780,
+            "max_size": 16,
+            "localization_key": "item.cushion.green.name"
+        },
+        {
             "name": "minecraft:green_dye",
             "id": 400,
             "max_size": 64,
@@ -4295,7 +4463,7 @@
         },
         {
             "name": "minecraft:green_harness",
-            "id": 735,
+            "id": 737,
             "max_size": 1,
             "localization_key": "item.green_harness.name"
         },
@@ -4330,6 +4498,18 @@
             "localization_key": "tile.wool.green.name"
         },
         {
+            "name": "minecraft:green_wool_slab",
+            "id": -1174,
+            "max_size": 64,
+            "localization_key": "tile.green_wool_slab.name"
+        },
+        {
+            "name": "minecraft:green_wool_stairs",
+            "id": -1162,
+            "max_size": 64,
+            "localization_key": "tile.green_wool_stairs.name"
+        },
+        {
             "name": "minecraft:grindstone",
             "id": -195,
             "max_size": 64,
@@ -4355,7 +4535,7 @@
         },
         {
             "name": "minecraft:guster_pottery_sherd",
-            "id": 680,
+            "id": 682,
             "max_size": 64,
             "localization_key": "item.guster_pottery_sherd.name"
         },
@@ -4367,7 +4547,7 @@
         },
         {
             "name": "minecraft:happy_ghast_spawn_egg",
-            "id": 729,
+            "id": 731,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.happy_ghast.name"
         },
@@ -4561,13 +4741,13 @@
         },
         {
             "name": "minecraft:heart_pottery_sherd",
-            "id": 681,
+            "id": 683,
             "max_size": 64,
             "localization_key": "item.heart_pottery_sherd.name"
         },
         {
             "name": "minecraft:heartbreak_pottery_sherd",
-            "id": 682,
+            "id": 684,
             "max_size": 64,
             "localization_key": "item.heartbreak_pottery_sherd.name"
         },
@@ -4651,13 +4831,13 @@
         },
         {
             "name": "minecraft:host_armor_trim_smithing_template",
-            "id": 710,
+            "id": 712,
             "max_size": 64,
             "localization_key": "item.host_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:howl_pottery_sherd",
-            "id": 683,
+            "id": 685,
             "max_size": 64,
             "localization_key": "item.howl_pottery_sherd.name"
         },
@@ -4806,7 +4986,7 @@
         },
         {
             "name": "minecraft:iron_nautilus_armor",
-            "id": 762,
+            "id": 764,
             "max_size": 1,
             "localization_key": "item.iron_nautilus_armor.name"
         },
@@ -4836,7 +5016,7 @@
         },
         {
             "name": "minecraft:iron_spear",
-            "id": 855,
+            "id": 857,
             "max_size": 1,
             "localization_key": "item.iron_spear.name"
         },
@@ -4878,7 +5058,7 @@
         },
         {
             "name": "minecraft:jungle_chest_boat",
-            "id": 653,
+            "id": 655,
             "max_size": 1,
             "localization_key": "item.chest_boat.jungle.name"
         },
@@ -5189,7 +5369,7 @@
         },
         {
             "name": "minecraft:light_blue_bundle",
-            "id": 866,
+            "id": 868,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_blue_bundle"
@@ -5219,6 +5399,24 @@
             "localization_key": "tile.concretePowder.lightBlue.name"
         },
         {
+            "name": "minecraft:light_blue_concrete_slab",
+            "id": -1226,
+            "max_size": 64,
+            "localization_key": "tile.light_blue_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:light_blue_concrete_stairs",
+            "id": -1204,
+            "max_size": 64,
+            "localization_key": "tile.light_blue_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:light_blue_cushion",
+            "id": 781,
+            "max_size": 16,
+            "localization_key": "item.cushion.lightBlue.name"
+        },
+        {
             "name": "minecraft:light_blue_dye",
             "id": 410,
             "max_size": 64,
@@ -5232,7 +5430,7 @@
         },
         {
             "name": "minecraft:light_blue_harness",
-            "id": 736,
+            "id": 738,
             "max_size": 1,
             "localization_key": "item.light_blue_harness.name"
         },
@@ -5267,8 +5465,20 @@
             "localization_key": "tile.wool.lightBlue.name"
         },
         {
+            "name": "minecraft:light_blue_wool_slab",
+            "id": -1176,
+            "max_size": 64,
+            "localization_key": "tile.light_blue_wool_slab.name"
+        },
+        {
+            "name": "minecraft:light_blue_wool_stairs",
+            "id": -1154,
+            "max_size": 64,
+            "localization_key": "tile.light_blue_wool_stairs.name"
+        },
+        {
             "name": "minecraft:light_gray_bundle",
-            "id": 867,
+            "id": 869,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_gray_bundle"
@@ -5298,6 +5508,24 @@
             "localization_key": "tile.concretePowder.silver.name"
         },
         {
+            "name": "minecraft:light_gray_concrete_slab",
+            "id": -1216,
+            "max_size": 64,
+            "localization_key": "tile.light_gray_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:light_gray_concrete_stairs",
+            "id": -1209,
+            "max_size": 64,
+            "localization_key": "tile.light_gray_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:light_gray_cushion",
+            "id": 782,
+            "max_size": 16,
+            "localization_key": "item.cushion.silver.name"
+        },
+        {
             "name": "minecraft:light_gray_dye",
             "id": 405,
             "max_size": 64,
@@ -5305,7 +5533,7 @@
         },
         {
             "name": "minecraft:light_gray_harness",
-            "id": 737,
+            "id": 739,
             "max_size": 1,
             "localization_key": "item.light_gray_harness.name"
         },
@@ -5340,6 +5568,18 @@
             "localization_key": "tile.wool.silver.name"
         },
         {
+            "name": "minecraft:light_gray_wool_slab",
+            "id": -1166,
+            "max_size": 64,
+            "localization_key": "tile.light_gray_wool_slab.name"
+        },
+        {
+            "name": "minecraft:light_gray_wool_stairs",
+            "id": -1159,
+            "max_size": 64,
+            "localization_key": "tile.light_gray_wool_stairs.name"
+        },
+        {
             "name": "minecraft:light_weighted_pressure_plate",
             "id": 147,
             "max_size": 64,
@@ -5365,7 +5605,7 @@
         },
         {
             "name": "minecraft:lime_bundle",
-            "id": 868,
+            "id": 870,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.lime_bundle"
@@ -5395,6 +5635,24 @@
             "localization_key": "tile.concretePowder.lime.name"
         },
         {
+            "name": "minecraft:lime_concrete_slab",
+            "id": -1223,
+            "max_size": 64,
+            "localization_key": "tile.lime_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:lime_concrete_stairs",
+            "id": -1206,
+            "max_size": 64,
+            "localization_key": "tile.lime_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:lime_cushion",
+            "id": 783,
+            "max_size": 16,
+            "localization_key": "item.cushion.lime.name"
+        },
+        {
             "name": "minecraft:lime_dye",
             "id": 408,
             "max_size": 64,
@@ -5408,7 +5666,7 @@
         },
         {
             "name": "minecraft:lime_harness",
-            "id": 738,
+            "id": 740,
             "max_size": 1,
             "localization_key": "item.lime_harness.name"
         },
@@ -5443,6 +5701,18 @@
             "localization_key": "tile.wool.lime.name"
         },
         {
+            "name": "minecraft:lime_wool_slab",
+            "id": -1173,
+            "max_size": 64,
+            "localization_key": "tile.lime_wool_slab.name"
+        },
+        {
+            "name": "minecraft:lime_wool_stairs",
+            "id": -1156,
+            "max_size": 64,
+            "localization_key": "tile.lime_wool_stairs.name"
+        },
+        {
             "name": "minecraft:lingering_potion",
             "id": 572,
             "max_size": 1,
@@ -5468,7 +5738,7 @@
         },
         {
             "name": "minecraft:lodestone_compass",
-            "id": 616,
+            "id": 618,
             "max_size": 64,
             "localization_key": "item.lodestonecompass.name"
         },
@@ -5486,7 +5756,7 @@
         },
         {
             "name": "minecraft:magenta_bundle",
-            "id": 869,
+            "id": 871,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.magenta_bundle"
@@ -5516,6 +5786,24 @@
             "localization_key": "tile.concretePowder.magenta.name"
         },
         {
+            "name": "minecraft:magenta_concrete_slab",
+            "id": -1229,
+            "max_size": 64,
+            "localization_key": "tile.magenta_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:magenta_concrete_stairs",
+            "id": -1203,
+            "max_size": 64,
+            "localization_key": "tile.magenta_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:magenta_cushion",
+            "id": 784,
+            "max_size": 16,
+            "localization_key": "item.cushion.magenta.name"
+        },
+        {
             "name": "minecraft:magenta_dye",
             "id": 411,
             "max_size": 64,
@@ -5529,7 +5817,7 @@
         },
         {
             "name": "minecraft:magenta_harness",
-            "id": 739,
+            "id": 741,
             "max_size": 1,
             "localization_key": "item.magenta_harness.name"
         },
@@ -5564,6 +5852,18 @@
             "localization_key": "tile.wool.magenta.name"
         },
         {
+            "name": "minecraft:magenta_wool_slab",
+            "id": -1179,
+            "max_size": 64,
+            "localization_key": "tile.magenta_wool_slab.name"
+        },
+        {
+            "name": "minecraft:magenta_wool_stairs",
+            "id": -1153,
+            "max_size": 64,
+            "localization_key": "tile.magenta_wool_stairs.name"
+        },
+        {
             "name": "minecraft:magma",
             "id": 213,
             "max_size": 64,
@@ -5583,7 +5883,7 @@
         },
         {
             "name": "minecraft:mangrove_boat",
-            "id": 648,
+            "id": 650,
             "max_size": 1,
             "localization_key": "item.boat.mangrove.name"
         },
@@ -5595,13 +5895,13 @@
         },
         {
             "name": "minecraft:mangrove_chest_boat",
-            "id": 657,
+            "id": 659,
             "max_size": 1,
             "localization_key": "item.chest_boat.mangrove.name"
         },
         {
             "name": "minecraft:mangrove_door",
-            "id": 646,
+            "id": 648,
             "max_size": 64,
             "localization_key": "item.mangrove_door.name"
         },
@@ -5667,7 +5967,7 @@
         },
         {
             "name": "minecraft:mangrove_sign",
-            "id": 647,
+            "id": 649,
             "max_size": 16,
             "localization_key": "item.mangrove_sign.name"
         },
@@ -5743,7 +6043,7 @@
         },
         {
             "name": "minecraft:miner_pottery_sherd",
-            "id": 684,
+            "id": 686,
             "max_size": 64,
             "localization_key": "item.miner_pottery_sherd.name"
         },
@@ -5827,7 +6127,7 @@
         },
         {
             "name": "minecraft:mourner_pottery_sherd",
-            "id": 685,
+            "id": 687,
             "max_size": 64,
             "localization_key": "item.mourner_pottery_sherd.name"
         },
@@ -5899,7 +6199,7 @@
         },
         {
             "name": "minecraft:music_disc_5",
-            "id": 649,
+            "id": 651,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
@@ -5911,7 +6211,7 @@
         },
         {
             "name": "minecraft:music_disc_bounce",
-            "id": 835,
+            "id": 837,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
@@ -5929,13 +6229,13 @@
         },
         {
             "name": "minecraft:music_disc_creator",
-            "id": 830,
+            "id": 832,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_creator_music_box",
-            "id": 831,
+            "id": 833,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
@@ -5947,7 +6247,7 @@
         },
         {
             "name": "minecraft:music_disc_lava_chicken",
-            "id": 834,
+            "id": 836,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
@@ -5965,25 +6265,25 @@
         },
         {
             "name": "minecraft:music_disc_otherside",
-            "id": 639,
+            "id": 641,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_pigstep",
-            "id": 633,
+            "id": 635,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_precipice",
-            "id": 832,
+            "id": 834,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
         {
             "name": "minecraft:music_disc_relic",
-            "id": 713,
+            "id": 715,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
@@ -6001,7 +6301,7 @@
         },
         {
             "name": "minecraft:music_disc_tears",
-            "id": 833,
+            "id": 835,
             "max_size": 1,
             "localization_key": "item.record.name"
         },
@@ -6043,7 +6343,7 @@
         },
         {
             "name": "minecraft:nautilus_spawn_egg",
-            "id": 758,
+            "id": 760,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.nautilus.name"
         },
@@ -6085,7 +6385,7 @@
         },
         {
             "name": "minecraft:nether_sprouts",
-            "id": 634,
+            "id": 636,
             "max_size": 64,
             "localization_key": "tile.nether_sprouts.name"
         },
@@ -6115,7 +6415,7 @@
         },
         {
             "name": "minecraft:netherite_axe",
-            "id": 620,
+            "id": 622,
             "max_size": 1,
             "localization_key": "item.netherite_axe.name"
         },
@@ -6127,85 +6427,85 @@
         },
         {
             "name": "minecraft:netherite_boots",
-            "id": 626,
+            "id": 628,
             "max_size": 1,
             "localization_key": "item.netherite_boots.name"
         },
         {
             "name": "minecraft:netherite_chestplate",
-            "id": 624,
+            "id": 626,
             "max_size": 1,
             "localization_key": "item.netherite_chestplate.name"
         },
         {
             "name": "minecraft:netherite_helmet",
-            "id": 623,
+            "id": 625,
             "max_size": 1,
             "localization_key": "item.netherite_helmet.name"
         },
         {
             "name": "minecraft:netherite_hoe",
-            "id": 621,
+            "id": 623,
             "max_size": 1,
             "localization_key": "item.netherite_hoe.name"
         },
         {
             "name": "minecraft:netherite_horse_armor",
-            "id": 766,
+            "id": 768,
             "max_size": 1,
             "localization_key": "item.netherite_horse_armor.name"
         },
         {
             "name": "minecraft:netherite_ingot",
-            "id": 622,
+            "id": 624,
             "max_size": 64,
             "localization_key": "item.netherite_ingot.name"
         },
         {
             "name": "minecraft:netherite_leggings",
-            "id": 625,
+            "id": 627,
             "max_size": 1,
             "localization_key": "item.netherite_leggings.name"
         },
         {
             "name": "minecraft:netherite_nautilus_armor",
-            "id": 765,
+            "id": 767,
             "max_size": 1,
             "localization_key": "item.netherite_nautilus_armor.name"
         },
         {
             "name": "minecraft:netherite_pickaxe",
-            "id": 619,
+            "id": 621,
             "max_size": 1,
             "localization_key": "item.netherite_pickaxe.name"
         },
         {
             "name": "minecraft:netherite_scrap",
-            "id": 627,
+            "id": 629,
             "max_size": 64,
             "localization_key": "item.netherite_scrap.name"
         },
         {
             "name": "minecraft:netherite_shovel",
-            "id": 618,
+            "id": 620,
             "max_size": 1,
             "localization_key": "item.netherite_shovel.name"
         },
         {
             "name": "minecraft:netherite_spear",
-            "id": 856,
+            "id": 858,
             "max_size": 1,
             "localization_key": "item.netherite_spear.name"
         },
         {
             "name": "minecraft:netherite_sword",
-            "id": 617,
+            "id": 619,
             "max_size": 1,
             "localization_key": "item.netherite_sword.name"
         },
         {
             "name": "minecraft:netherite_upgrade_smithing_template",
-            "id": 694,
+            "id": 696,
             "max_size": 64,
             "localization_key": "item.netherite_upgrade_smithing_template.name"
         },
@@ -6241,7 +6541,7 @@
         },
         {
             "name": "minecraft:oak_chest_boat",
-            "id": 651,
+            "id": 653,
             "max_size": 1,
             "localization_key": "item.chest_boat.oak.name"
         },
@@ -6343,7 +6643,7 @@
         },
         {
             "name": "minecraft:ominous_trial_key",
-            "id": 877,
+            "id": 879,
             "max_size": 64,
             "localization_key": "item.ominous_trial_key.name"
         },
@@ -6355,7 +6655,7 @@
         },
         {
             "name": "minecraft:orange_bundle",
-            "id": 870,
+            "id": 872,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.orange_bundle"
@@ -6385,6 +6685,24 @@
             "localization_key": "tile.concretePowder.orange.name"
         },
         {
+            "name": "minecraft:orange_concrete_slab",
+            "id": -1221,
+            "max_size": 64,
+            "localization_key": "tile.orange_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:orange_concrete_stairs",
+            "id": -1202,
+            "max_size": 64,
+            "localization_key": "tile.orange_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:orange_cushion",
+            "id": 785,
+            "max_size": 16,
+            "localization_key": "item.cushion.orange.name"
+        },
+        {
             "name": "minecraft:orange_dye",
             "id": 412,
             "max_size": 64,
@@ -6398,9 +6716,15 @@
         },
         {
             "name": "minecraft:orange_harness",
-            "id": 740,
+            "id": 742,
             "max_size": 1,
             "localization_key": "item.orange_harness.name"
+        },
+        {
+            "name": "minecraft:orange_poplar_leaves",
+            "id": -1144,
+            "max_size": 64,
+            "localization_key": "tile.orange_poplar_leaves.name"
         },
         {
             "name": "minecraft:orange_shulker_box",
@@ -6437,6 +6761,18 @@
             "id": -557,
             "max_size": 64,
             "localization_key": "tile.wool.orange.name"
+        },
+        {
+            "name": "minecraft:orange_wool_slab",
+            "id": -1171,
+            "max_size": 64,
+            "localization_key": "tile.orange_wool_slab.name"
+        },
+        {
+            "name": "minecraft:orange_wool_stairs",
+            "id": -1152,
+            "max_size": 64,
+            "localization_key": "tile.orange_wool_stairs.name"
         },
         {
             "name": "minecraft:oxeye_daisy",
@@ -6572,7 +6908,7 @@
         },
         {
             "name": "minecraft:pale_oak_boat",
-            "id": 722,
+            "id": 724,
             "max_size": 1,
             "localization_key": "item.boat.pale_oak.name"
         },
@@ -6584,7 +6920,7 @@
         },
         {
             "name": "minecraft:pale_oak_chest_boat",
-            "id": 723,
+            "id": 725,
             "max_size": 1,
             "localization_key": "item.chest_boat.pale_oak.name"
         },
@@ -6650,7 +6986,7 @@
         },
         {
             "name": "minecraft:pale_oak_sign",
-            "id": 724,
+            "id": 726,
             "max_size": 16,
             "localization_key": "item.pale_oak_sign.name"
         },
@@ -6692,7 +7028,7 @@
         },
         {
             "name": "minecraft:parched_spawn_egg",
-            "id": 760,
+            "id": 762,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.parched.name"
         },
@@ -6770,7 +7106,7 @@
         },
         {
             "name": "minecraft:pink_bundle",
-            "id": 871,
+            "id": 873,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.pink_bundle"
@@ -6800,6 +7136,24 @@
             "localization_key": "tile.concretePowder.pink.name"
         },
         {
+            "name": "minecraft:pink_concrete_slab",
+            "id": -1230,
+            "max_size": 64,
+            "localization_key": "tile.pink_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:pink_concrete_stairs",
+            "id": -1207,
+            "max_size": 64,
+            "localization_key": "tile.pink_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:pink_cushion",
+            "id": 786,
+            "max_size": 16,
+            "localization_key": "item.cushion.pink.name"
+        },
+        {
             "name": "minecraft:pink_dye",
             "id": 407,
             "max_size": 64,
@@ -6813,7 +7167,7 @@
         },
         {
             "name": "minecraft:pink_harness",
-            "id": 741,
+            "id": 743,
             "max_size": 1,
             "localization_key": "item.pink_harness.name"
         },
@@ -6860,6 +7214,18 @@
             "localization_key": "tile.wool.pink.name"
         },
         {
+            "name": "minecraft:pink_wool_slab",
+            "id": -1180,
+            "max_size": 64,
+            "localization_key": "tile.pink_wool_slab.name"
+        },
+        {
+            "name": "minecraft:pink_wool_stairs",
+            "id": -1157,
+            "max_size": 64,
+            "localization_key": "tile.pink_wool_stairs.name"
+        },
+        {
             "name": "minecraft:piston",
             "id": 33,
             "max_size": 64,
@@ -6885,7 +7251,7 @@
         },
         {
             "name": "minecraft:plenty_pottery_sherd",
-            "id": 686,
+            "id": 688,
             "max_size": 64,
             "localization_key": "item.plenty_pottery_sherd.name"
         },
@@ -7130,6 +7496,108 @@
             "localization_key": "tile.polished_tuff_wall.name"
         },
         {
+            "name": "minecraft:poplar_boat",
+            "id": 771,
+            "max_size": 1,
+            "localization_key": "item.boat.poplar.name"
+        },
+        {
+            "name": "minecraft:poplar_button",
+            "id": -1126,
+            "max_size": 64,
+            "localization_key": "tile.poplar_button.name"
+        },
+        {
+            "name": "minecraft:poplar_chest_boat",
+            "id": 772,
+            "max_size": 1,
+            "localization_key": "item.chest_boat.poplar.name"
+        },
+        {
+            "name": "minecraft:poplar_door",
+            "id": -1127,
+            "max_size": 64,
+            "localization_key": "item.poplar_door.name"
+        },
+        {
+            "name": "minecraft:poplar_fence",
+            "id": -1128,
+            "max_size": 64,
+            "localization_key": "tile.poplar_fence.name"
+        },
+        {
+            "name": "minecraft:poplar_fence_gate",
+            "id": -1129,
+            "max_size": 64,
+            "localization_key": "tile.poplar_fence_gate.name"
+        },
+        {
+            "name": "minecraft:poplar_hanging_sign",
+            "id": -1130,
+            "max_size": 16,
+            "localization_key": "item.poplar_hanging_sign.name"
+        },
+        {
+            "name": "minecraft:poplar_log",
+            "id": -1132,
+            "max_size": 64,
+            "localization_key": "tile.poplar_log.name"
+        },
+        {
+            "name": "minecraft:poplar_planks",
+            "id": -1133,
+            "max_size": 64,
+            "localization_key": "tile.poplar_planks.name"
+        },
+        {
+            "name": "minecraft:poplar_pressure_plate",
+            "id": -1134,
+            "max_size": 64,
+            "localization_key": "tile.poplar_pressure_plate.name"
+        },
+        {
+            "name": "minecraft:poplar_sapling",
+            "id": -1143,
+            "max_size": 64,
+            "localization_key": "tile.poplar_sapling.name"
+        },
+        {
+            "name": "minecraft:poplar_shelf",
+            "id": -1147,
+            "max_size": 64,
+            "localization_key": "tile.poplar_shelf.name"
+        },
+        {
+            "name": "minecraft:poplar_sign",
+            "id": 773,
+            "max_size": 16,
+            "localization_key": "item.poplar_sign.name"
+        },
+        {
+            "name": "minecraft:poplar_slab",
+            "id": -1135,
+            "max_size": 64,
+            "localization_key": "tile.poplar_slab.name"
+        },
+        {
+            "name": "minecraft:poplar_stairs",
+            "id": -1137,
+            "max_size": 64,
+            "localization_key": "tile.poplar_stairs.name"
+        },
+        {
+            "name": "minecraft:poplar_trapdoor",
+            "id": -1139,
+            "max_size": 64,
+            "localization_key": "tile.poplar_trapdoor.name"
+        },
+        {
+            "name": "minecraft:poplar_wood",
+            "id": -1142,
+            "max_size": 64,
+            "localization_key": "tile.poplar_wood.name"
+        },
+        {
             "name": "minecraft:popped_chorus_fruit",
             "id": 569,
             "max_size": 64,
@@ -7227,7 +7695,7 @@
         },
         {
             "name": "minecraft:prize_pottery_sherd",
-            "id": 687,
+            "id": 689,
             "max_size": 64,
             "localization_key": "item.prize_pottery_sherd.name"
         },
@@ -7269,7 +7737,7 @@
         },
         {
             "name": "minecraft:purple_bundle",
-            "id": 872,
+            "id": 874,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.purple_bundle"
@@ -7299,6 +7767,24 @@
             "localization_key": "tile.concretePowder.purple.name"
         },
         {
+            "name": "minecraft:purple_concrete_slab",
+            "id": -1228,
+            "max_size": 64,
+            "localization_key": "tile.purple_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:purple_concrete_stairs",
+            "id": -1211,
+            "max_size": 64,
+            "localization_key": "tile.purple_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:purple_cushion",
+            "id": 787,
+            "max_size": 16,
+            "localization_key": "item.cushion.purple.name"
+        },
+        {
             "name": "minecraft:purple_dye",
             "id": 403,
             "max_size": 64,
@@ -7312,7 +7798,7 @@
         },
         {
             "name": "minecraft:purple_harness",
-            "id": 742,
+            "id": 744,
             "max_size": 1,
             "localization_key": "item.purple_harness.name"
         },
@@ -7345,6 +7831,18 @@
             "id": -564,
             "max_size": 64,
             "localization_key": "tile.wool.purple.name"
+        },
+        {
+            "name": "minecraft:purple_wool_slab",
+            "id": -1178,
+            "max_size": 64,
+            "localization_key": "tile.purple_wool_slab.name"
+        },
+        {
+            "name": "minecraft:purple_wool_stairs",
+            "id": -1161,
+            "max_size": 64,
+            "localization_key": "tile.purple_wool_stairs.name"
         },
         {
             "name": "minecraft:purpur_block",
@@ -7450,7 +7948,7 @@
         },
         {
             "name": "minecraft:raiser_armor_trim_smithing_template",
-            "id": 708,
+            "id": 710,
             "max_size": 64,
             "localization_key": "item.raiser_armor_trim_smithing_template.name"
         },
@@ -7503,13 +8001,13 @@
         },
         {
             "name": "minecraft:recovery_compass",
-            "id": 659,
+            "id": 661,
             "max_size": 64,
             "localization_key": "item.recovery_compass.name"
         },
         {
             "name": "minecraft:red_bundle",
-            "id": 873,
+            "id": 875,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.red_bundle"
@@ -7539,6 +8037,24 @@
             "localization_key": "tile.concretePowder.red.name"
         },
         {
+            "name": "minecraft:red_concrete_slab",
+            "id": -1220,
+            "max_size": 64,
+            "localization_key": "tile.red_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:red_concrete_stairs",
+            "id": -1199,
+            "max_size": 64,
+            "localization_key": "tile.red_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:red_cushion",
+            "id": 788,
+            "max_size": 16,
+            "localization_key": "item.cushion.red.name"
+        },
+        {
             "name": "minecraft:red_dye",
             "id": 399,
             "max_size": 64,
@@ -7552,7 +8068,7 @@
         },
         {
             "name": "minecraft:red_harness",
-            "id": 743,
+            "id": 745,
             "max_size": 1,
             "localization_key": "item.red_harness.name"
         },
@@ -7593,6 +8109,12 @@
             "localization_key": "tile.cobblestone_wall.red_nether_brick.name"
         },
         {
+            "name": "minecraft:red_poplar_leaves",
+            "id": -1145,
+            "max_size": 64,
+            "localization_key": "tile.red_poplar_leaves.name"
+        },
+        {
             "name": "minecraft:red_sand",
             "id": -949,
             "max_size": 64,
@@ -7621,6 +8143,12 @@
             "id": -982,
             "max_size": 64,
             "localization_key": "tile.cobblestone_wall.red_sandstone.name"
+        },
+        {
+            "name": "minecraft:red_shrub",
+            "id": 852,
+            "max_size": 64,
+            "localization_key": "tile.red_shrub.name"
         },
         {
             "name": "minecraft:red_shulker_box",
@@ -7657,6 +8185,18 @@
             "id": -556,
             "max_size": 64,
             "localization_key": "tile.wool.red.name"
+        },
+        {
+            "name": "minecraft:red_wool_slab",
+            "id": -1170,
+            "max_size": 64,
+            "localization_key": "tile.red_wool_slab.name"
+        },
+        {
+            "name": "minecraft:red_wool_stairs",
+            "id": -1149,
+            "max_size": 64,
+            "localization_key": "tile.red_wool_stairs.name"
         },
         {
             "name": "minecraft:redstone",
@@ -7714,7 +8254,7 @@
         },
         {
             "name": "minecraft:resin_brick",
-            "id": 726,
+            "id": 728,
             "max_size": 64,
             "localization_key": "item.resin_brick.name"
         },
@@ -7756,7 +8296,7 @@
         },
         {
             "name": "minecraft:rib_armor_trim_smithing_template",
-            "id": 704,
+            "id": 706,
             "max_size": 64,
             "localization_key": "item.rib_armor_trim_smithing_template.name"
         },
@@ -7834,7 +8374,7 @@
         },
         {
             "name": "minecraft:scrape_pottery_sherd",
-            "id": 688,
+            "id": 690,
             "max_size": 64,
             "localization_key": "item.scrape_pottery_sherd.name"
         },
@@ -7888,19 +8428,19 @@
         },
         {
             "name": "minecraft:sentry_armor_trim_smithing_template",
-            "id": 695,
+            "id": 697,
             "max_size": 64,
             "localization_key": "item.sentry_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:shaper_armor_trim_smithing_template",
-            "id": 709,
+            "id": 711,
             "max_size": 64,
             "localization_key": "item.shaper_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:sheaf_pottery_sherd",
-            "id": 689,
+            "id": 691,
             "max_size": 64,
             "localization_key": "item.sheaf_pottery_sherd.name"
         },
@@ -7917,8 +8457,14 @@
             "localization_key": "item.spawn_egg.entity.sheep.name"
         },
         {
+            "name": "minecraft:shelf_mushroom",
+            "id": 853,
+            "max_size": 64,
+            "localization_key": "tile.shelf_mushroom.name"
+        },
+        {
             "name": "minecraft:shelter_pottery_sherd",
-            "id": 690,
+            "id": 692,
             "max_size": 64,
             "localization_key": "item.shelter_pottery_sherd.name"
         },
@@ -7960,7 +8506,7 @@
         },
         {
             "name": "minecraft:silence_armor_trim_smithing_template",
-            "id": 706,
+            "id": 708,
             "max_size": 64,
             "localization_key": "item.silence_armor_trim_smithing_template.name"
         },
@@ -8002,7 +8548,7 @@
         },
         {
             "name": "minecraft:skull_pottery_sherd",
-            "id": 691,
+            "id": 693,
             "max_size": 64,
             "localization_key": "item.skull_pottery_sherd.name"
         },
@@ -8134,13 +8680,13 @@
         },
         {
             "name": "minecraft:snort_pottery_sherd",
-            "id": 692,
+            "id": 694,
             "max_size": 64,
             "localization_key": "item.snort_pottery_sherd.name"
         },
         {
             "name": "minecraft:snout_armor_trim_smithing_template",
-            "id": 703,
+            "id": 705,
             "max_size": 64,
             "localization_key": "item.snout_armor_trim_smithing_template.name"
         },
@@ -8170,7 +8716,7 @@
         },
         {
             "name": "minecraft:soul_campfire",
-            "id": 635,
+            "id": 637,
             "max_size": 64,
             "localization_key": "tile.soul_campfire.name"
         },
@@ -8217,7 +8763,7 @@
         },
         {
             "name": "minecraft:spire_armor_trim_smithing_template",
-            "id": 705,
+            "id": 707,
             "max_size": 64,
             "localization_key": "item.spire_armor_trim_smithing_template.name"
         },
@@ -8253,7 +8799,7 @@
         },
         {
             "name": "minecraft:spruce_chest_boat",
-            "id": 654,
+            "id": 656,
             "max_size": 1,
             "localization_key": "item.chest_boat.spruce.name"
         },
@@ -8349,7 +8895,7 @@
         },
         {
             "name": "minecraft:spyglass",
-            "id": 638,
+            "id": 640,
             "max_size": 1,
             "localization_key": "item.spyglass.name"
         },
@@ -8439,7 +8985,7 @@
         },
         {
             "name": "minecraft:stone_spear",
-            "id": 857,
+            "id": 859,
             "max_size": 1,
             "localization_key": "item.stone_spear.name"
         },
@@ -8460,6 +9006,12 @@
             "id": -197,
             "max_size": 64,
             "localization_key": "tile.stonecutter_block.name"
+        },
+        {
+            "name": "minecraft:straw_bed",
+            "id": 774,
+            "max_size": 16,
+            "localization_key": "item.straw_bed.name"
         },
         {
             "name": "minecraft:stray_spawn_egg",
@@ -8594,6 +9146,18 @@
             "localization_key": "tile.stripped_pale_oak_wood.name"
         },
         {
+            "name": "minecraft:stripped_poplar_log",
+            "id": -1131,
+            "max_size": 64,
+            "localization_key": "tile.stripped_poplar_log.name"
+        },
+        {
+            "name": "minecraft:stripped_poplar_wood",
+            "id": -1141,
+            "max_size": 64,
+            "localization_key": "tile.stripped_poplar_wood.name"
+        },
+        {
             "name": "minecraft:stripped_spruce_log",
             "id": -5,
             "max_size": 64,
@@ -8673,13 +9237,13 @@
         },
         {
             "name": "minecraft:sulfur_cube_bucket",
-            "id": 768,
+            "id": 770,
             "max_size": 1,
             "localization_key": "item.bucketSulfurCube.name"
         },
         {
             "name": "minecraft:sulfur_cube_spawn_egg",
-            "id": 767,
+            "id": 769,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.sulfur_cube.name"
         },
@@ -8739,13 +9303,13 @@
         },
         {
             "name": "minecraft:tadpole_bucket",
-            "id": 643,
+            "id": 645,
             "max_size": 1,
             "localization_key": "item.bucketTadpole.name"
         },
         {
             "name": "minecraft:tadpole_spawn_egg",
-            "id": 642,
+            "id": 644,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.tadpole.name"
         },
@@ -8769,7 +9333,7 @@
         },
         {
             "name": "minecraft:tide_armor_trim_smithing_template",
-            "id": 702,
+            "id": 704,
             "max_size": 64,
             "localization_key": "item.tide_armor_trim_smithing_template.name"
         },
@@ -8817,7 +9381,7 @@
         },
         {
             "name": "minecraft:trader_llama_spawn_egg",
-            "id": 661,
+            "id": 663,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.trader_llama.name"
         },
@@ -8835,7 +9399,7 @@
         },
         {
             "name": "minecraft:trial_key",
-            "id": 878,
+            "id": 880,
             "max_size": 64,
             "localization_key": "item.trial_key.name"
         },
@@ -9001,7 +9565,7 @@
         },
         {
             "name": "minecraft:vex_armor_trim_smithing_template",
-            "id": 701,
+            "id": 703,
             "max_size": 64,
             "localization_key": "item.vex_armor_trim_smithing_template.name"
         },
@@ -9037,13 +9601,13 @@
         },
         {
             "name": "minecraft:ward_armor_trim_smithing_template",
-            "id": 699,
+            "id": 701,
             "max_size": 64,
             "localization_key": "item.ward_armor_trim_smithing_template.name"
         },
         {
             "name": "minecraft:warden_spawn_egg",
-            "id": 645,
+            "id": 647,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.warden.name"
         },
@@ -9055,7 +9619,7 @@
         },
         {
             "name": "minecraft:warped_door",
-            "id": 631,
+            "id": 633,
             "max_size": 64,
             "localization_key": "item.warped_door.name"
         },
@@ -9079,7 +9643,7 @@
         },
         {
             "name": "minecraft:warped_fungus_on_a_stick",
-            "id": 632,
+            "id": 634,
             "max_size": 1,
             "localization_key": "item.warped_fungus_on_a_stick.name"
         },
@@ -9127,7 +9691,7 @@
         },
         {
             "name": "minecraft:warped_sign",
-            "id": 629,
+            "id": 631,
             "max_size": 16,
             "localization_key": "item.warped_sign.name"
         },
@@ -9535,7 +10099,7 @@
         },
         {
             "name": "minecraft:wayfinder_armor_trim_smithing_template",
-            "id": 707,
+            "id": 709,
             "max_size": 64,
             "localization_key": "item.wayfinder_armor_trim_smithing_template.name"
         },
@@ -9661,7 +10225,7 @@
         },
         {
             "name": "minecraft:white_bundle",
-            "id": 874,
+            "id": 876,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.white_bundle"
@@ -9691,6 +10255,24 @@
             "localization_key": "tile.concretePowder.white.name"
         },
         {
+            "name": "minecraft:white_concrete_slab",
+            "id": -1215,
+            "max_size": 64,
+            "localization_key": "tile.white_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:white_concrete_stairs",
+            "id": -1200,
+            "max_size": 64,
+            "localization_key": "tile.white_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:white_cushion",
+            "id": 789,
+            "max_size": 16,
+            "localization_key": "item.cushion.white.name"
+        },
+        {
             "name": "minecraft:white_dye",
             "id": 413,
             "max_size": 64,
@@ -9704,7 +10286,7 @@
         },
         {
             "name": "minecraft:white_harness",
-            "id": 744,
+            "id": 746,
             "max_size": 1,
             "localization_key": "item.white_harness.name"
         },
@@ -9745,8 +10327,20 @@
             "localization_key": "tile.wool.white.name"
         },
         {
+            "name": "minecraft:white_wool_slab",
+            "id": -1165,
+            "max_size": 64,
+            "localization_key": "tile.white_wool_slab.name"
+        },
+        {
+            "name": "minecraft:white_wool_stairs",
+            "id": -1150,
+            "max_size": 64,
+            "localization_key": "tile.white_wool_stairs.name"
+        },
+        {
             "name": "minecraft:wild_armor_trim_smithing_template",
-            "id": 698,
+            "id": 700,
             "max_size": 64,
             "localization_key": "item.wild_armor_trim_smithing_template.name"
         },
@@ -9758,7 +10352,7 @@
         },
         {
             "name": "minecraft:wind_charge",
-            "id": 879,
+            "id": 881,
             "max_size": 64,
             "localization_key": "item.wind_charge.name"
         },
@@ -9794,7 +10388,7 @@
         },
         {
             "name": "minecraft:wolf_armor",
-            "id": 721,
+            "id": 723,
             "max_size": 1,
             "default_color": "#ffffff",
             "localization_key": "item.wolf_armor.name"
@@ -9849,7 +10443,7 @@
         },
         {
             "name": "minecraft:wooden_spear",
-            "id": 858,
+            "id": 860,
             "max_size": 1,
             "localization_key": "item.wooden_spear.name"
         },
@@ -9867,7 +10461,7 @@
         },
         {
             "name": "minecraft:yellow_bundle",
-            "id": 875,
+            "id": 877,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.yellow_bundle"
@@ -9897,6 +10491,24 @@
             "localization_key": "tile.concretePowder.yellow.name"
         },
         {
+            "name": "minecraft:yellow_concrete_slab",
+            "id": -1222,
+            "max_size": 64,
+            "localization_key": "tile.yellow_concrete_slab.name"
+        },
+        {
+            "name": "minecraft:yellow_concrete_stairs",
+            "id": -1205,
+            "max_size": 64,
+            "localization_key": "tile.yellow_concrete_stairs.name"
+        },
+        {
+            "name": "minecraft:yellow_cushion",
+            "id": 790,
+            "max_size": 16,
+            "localization_key": "item.cushion.yellow.name"
+        },
+        {
             "name": "minecraft:yellow_dye",
             "id": 409,
             "max_size": 64,
@@ -9910,9 +10522,15 @@
         },
         {
             "name": "minecraft:yellow_harness",
-            "id": 745,
+            "id": 747,
             "max_size": 1,
             "localization_key": "item.yellow_harness.name"
+        },
+        {
+            "name": "minecraft:yellow_poplar_leaves",
+            "id": -1146,
+            "max_size": 64,
+            "localization_key": "tile.yellow_poplar_leaves.name"
         },
         {
             "name": "minecraft:yellow_shulker_box",
@@ -9945,6 +10563,18 @@
             "localization_key": "tile.wool.yellow.name"
         },
         {
+            "name": "minecraft:yellow_wool_slab",
+            "id": -1172,
+            "max_size": 64,
+            "localization_key": "tile.yellow_wool_slab.name"
+        },
+        {
+            "name": "minecraft:yellow_wool_stairs",
+            "id": -1155,
+            "max_size": 64,
+            "localization_key": "tile.yellow_wool_stairs.name"
+        },
+        {
             "name": "minecraft:zoglin_spawn_egg",
             "id": 503,
             "max_size": 64,
@@ -9964,7 +10594,7 @@
         },
         {
             "name": "minecraft:zombie_nautilus_spawn_egg",
-            "id": 759,
+            "id": 761,
             "max_size": 64,
             "localization_key": "item.spawn_egg.entity.zombie_nautilus.name"
         },

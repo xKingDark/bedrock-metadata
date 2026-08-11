@@ -65,6 +65,7 @@
         "script": "admin",
         "scriptevent": "game_directors",
         "sendshowstoreoffer": "owner",
+        "serveridentity": "owner",
         "setblock": "game_directors",
         "setmaxplayers": "host",
         "setworldspawn": "game_directors",

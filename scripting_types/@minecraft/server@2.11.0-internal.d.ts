@@ -654,6 +654,12 @@ export enum PlayerWaypointsMode {
     Off      = "Off",
 }
 
+export enum PoiBlockOccupancyFilter {
+    Any        = "Any",
+    Full       = "Full",
+    HasVacancy = "HasVacancy",
+}
+
 export enum ScoreboardIdentityType {
     Entity     = "Entity",
     FakePlayer = "FakePlayer",
@@ -2335,7 +2341,7 @@ export class ChatSendBeforeEvent {
     cancel: boolean;
     readonly message: string;
     readonly sender: Player;
-    readonly targets?: Player[];
+    targets?: Player[];
 }
 
 export class ChatSendBeforeEventSignal {
@@ -2762,6 +2768,7 @@ export class Dimension {
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
     readonly localizationKey: string;
+    readonly poiManager: PoiManager;
     /**
      * @throws This function can throw errors.
      *
@@ -3667,6 +3674,8 @@ export class Entity {
      *
      * @throws This function can throw errors.
      *
+     * {@link Error}
+     *
      * {@link InvalidEntityError}
      *
      * {@link minecraftcommon.UnsupportedFunctionalityError}
@@ -3686,6 +3695,8 @@ export class Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link Error}
      *
      * {@link InvalidEntityError}
      *
@@ -6704,7 +6715,7 @@ export class ObstructionCallbackArgs {
 export class PackSettingChangeAfterEvent {
     private constructor();
     readonly settingName: string;
-    readonly settingValue: boolean | number | string;
+    readonly settingValue: string[] | boolean | number | string;
 }
 
 export class PackSettingChangeAfterEventSignal {
@@ -7774,6 +7785,89 @@ export class PlayerWaypoint extends EntityWaypoint {
     );
 }
 
+export class PoiBlockInstance {
+    private constructor();
+    readonly position: Vector3;
+    readonly tickets: number;
+    readonly "type": PoiBlockType;
+}
+
+export class PoiBlockManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    addTemporary(position: Vector3, poi: PoiBlockType | string | number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    at(position: Vector3): PoiBlockType | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    exists(position: Vector3, filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInRange(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+        occupancyFilter?: PoiBlockOccupancyFilter,
+    ): PoiBlockInstance[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInRangeSorted(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+        occupancyFilter?: PoiBlockOccupancyFilter,
+    ): PoiDistancePair[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInSquare(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+        occupancyFilter?: PoiBlockOccupancyFilter,
+    ): PoiBlockInstance[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    release(center: Vector3): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    take(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+    ): Vector3 | undefined;
+}
+
+export class PoiBlockType {
+    private constructor();
+    readonly id: number;
+    readonly name: string;
+    readonly tickets: number;
+    readonly usableRange: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    equals(other: PoiBlockType): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    has(tag: string): boolean;
+}
+
+export class PoiManager {
+    private constructor();
+    readonly blocks: PoiBlockManager;
+}
+
 export class PotionDeliveryType {
     private constructor();
     readonly id: string;
@@ -8490,6 +8584,10 @@ export class StartupEvent {
      */
     readonly itemComponentRegistry: ItemComponentRegistry;
     /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly worldClockRegistry: WorldClockRegistry;
+    /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * This function can be called in early-execution mode.
@@ -9012,6 +9110,12 @@ export class World {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     getAllPlayers(): Player[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockNotFoundError}
+     */
+    getClock(name: string): WorldClock;
     getDay(): number;
     getDefaultSpawnLocation(): Vector3;
     getDifficulty(): Difficulty;
@@ -9031,7 +9135,7 @@ export class World {
     /**
      * @remarks This function can be called in early-execution mode.
      */
-    getPackSettings(): Record<string, boolean | number | string>;
+    getPackSettings(): Record<string, string[] | boolean | number | string>;
     /**
      * @throws This function can throw errors.
      *
@@ -9433,6 +9537,35 @@ export class WorldBeforeEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly weatherChange: WeatherChangeBeforeEventSignal;
+}
+
+export class WorldClock {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    isPaused: boolean;
+    readonly name: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    time: number;
+}
+
+export class WorldClockRegistry {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockInvalidRegistryError}
+     *
+     * {@link WorldClockRegistrationError}
+     *
+     * {@link WorldClockReloadNewWorldClockError}
+     */
+    registerClock(name: string): void;
 }
 
 export class WorldLoadAfterEvent {
@@ -9953,6 +10086,19 @@ export interface PlayerVisibilityRules extends EntityVisibilityRules {
     showSpectatorToSpectator?: boolean;
 }
 
+export interface PoiDistancePair {
+    distance: number;
+    poi: PoiBlockInstance;
+}
+
+export interface PoiNameFilter {
+    name: string;
+}
+
+export interface PoiTagFilter {
+    tags: string[];
+}
+
 export interface PrimitiveShapeQueryOptions {
     attachedTo?: Entity;
     location?: Vector3;
@@ -10072,6 +10218,7 @@ export interface TeleportOptions {
     checkForBlocks?: boolean;
     dimension?: Dimension;
     facingLocation?: Vector3;
+    forceProvidedPositionOnDimensionChange?: boolean;
     keepVelocity?: boolean;
     rotation?: Vector2;
 }
@@ -10124,6 +10271,7 @@ export interface WaypointTextureSelector {
 }
 
 export interface WorldSoundOptions {
+    isBroadcast?: boolean;
     loopCount?: number;
     pitch?: number;
     volume?: number;
@@ -10404,6 +10552,26 @@ export class TickingAreaError extends Error {
 
 // @ts-ignore
 export class UnloadedChunksError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockInvalidRegistryError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockNotFoundError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockRegistrationError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockReloadNewWorldClockError extends Error {
     private constructor();
 }
 

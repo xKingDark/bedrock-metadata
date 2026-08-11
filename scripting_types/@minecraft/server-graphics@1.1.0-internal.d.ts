@@ -6,7 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-graphics", "version": "1.0.0-internal" }
+ * { "module_name": "@minecraft/server-graphics", "version": "1.1.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

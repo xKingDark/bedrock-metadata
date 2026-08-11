@@ -626,7 +626,7 @@ export class BlockUtilityTasks {
         buildGeometry?: boolean,
         tolerance?: number,
         faceVolume?: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -636,7 +636,7 @@ export class BlockUtilityTasks {
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
         maxBlocksPerTick?: number,
-    ): Promise<number>;
+    ): NumberTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -645,7 +645,7 @@ export class BlockUtilityTasks {
     findObscuredBlocksWithinVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -658,7 +658,8 @@ export class BlockUtilityTasks {
         customBlockList?: string[],
         maxResultBlocks?: number,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+        directionMask?: number,
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -667,7 +668,7 @@ export class BlockUtilityTasks {
     generateManifest(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         maxBlocksPerTick?: number,
-    ): Promise<BlockUtilityManifest>;
+    ): ManifestTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -678,7 +679,7 @@ export class BlockUtilityTasks {
         fromBlockIdentifier: string,
         toBlock?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
         maxBlocksPerTick?: number,
-    ): Promise<number>;
+    ): NumberTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -687,7 +688,7 @@ export class BlockUtilityTasks {
     shrinkWrapVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -700,7 +701,7 @@ export class BlockUtilityTasks {
         ignoreNoCollision: boolean,
         blockMask?: BlockMaskList,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
 }
 
 export class BrushShapeManager {
@@ -1444,6 +1445,12 @@ export class Logger {
     warning(message: LocalizationEntry | string, properties?: LogProperties): void;
 }
 
+// @ts-ignore
+export class ManifestTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<BlockUtilityManifest>;
+}
+
 export class MinecraftEditor {
     private constructor();
     /**
@@ -1618,6 +1625,12 @@ export class ModeChangeAfterEventSignal {
     unsubscribe(callback: (arg0: ModeChangeAfterEvent) => void): void;
 }
 
+// @ts-ignore
+export class NumberTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<number>;
+}
+
 export class PendingTransaction {
     private constructor();
     /**
@@ -1633,7 +1646,8 @@ export class PendingTransaction {
      */
     addUserDefinedOperation(
         transactionHandler: UserDefinedTransactionOperationHandler,
-        operationData: string,
+        prevData: string,
+        currentData: string,
         operationName?: string,
     ): void;
     /**
@@ -1975,6 +1989,16 @@ export class SpeedSettings {
     setAll(properties: Record<string, number>): void;
 }
 
+export class TaskPromiseBase {
+    private constructor();
+    readonly cancelled: boolean;
+    readonly progress: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    cancel(): void;
+}
+
 export class ThemeSettings {
     private constructor();
     /**
@@ -2101,8 +2125,20 @@ export class UserDefinedTransactionOperationHandler extends TransactionOperation
 }
 
 // @ts-ignore
+export class VoidTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<void>;
+}
+
+// @ts-ignore
 export class VolumeListTransactionOperationHandler extends TransactionOperationHandler {
     private constructor();
+}
+
+// @ts-ignore
+export class VolumeTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<RelativeVolumeListBlockVolume>;
 }
 
 export class Widget {
@@ -3445,6 +3481,11 @@ export class InvalidWidgetError extends Error {
 
 // @ts-ignore
 export class InvalidWidgetGroupError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class TaskCancelledError extends Error {
     private constructor();
 }
 

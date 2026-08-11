@@ -12,6 +12,7 @@
                 { "name": "minecraft:cold_taiga" },
                 { "name": "minecraft:cold_taiga_hills" },
                 { "name": "minecraft:cold_taiga_mutated" },
+                { "name": "minecraft:dappled_forest" },
                 { "name": "minecraft:extreme_hills" },
                 { "name": "minecraft:extreme_hills_edge" },
                 { "name": "minecraft:extreme_hills_mutated" },
@@ -129,6 +130,12 @@
             ]
         },
         {
+            "name": "dappled_forest",
+            "items": [
+                { "name": "minecraft:dappled_forest" }
+            ]
+        },
+        {
             "name": "deep",
             "items": [
                 { "name": "minecraft:deep_cold_ocean" },
@@ -208,6 +215,7 @@
                 { "name": "minecraft:cold_taiga" },
                 { "name": "minecraft:cold_taiga_hills" },
                 { "name": "minecraft:cold_taiga_mutated" },
+                { "name": "minecraft:dappled_forest" },
                 { "name": "minecraft:extreme_hills_plus_trees" },
                 { "name": "minecraft:extreme_hills_plus_trees_mutated" },
                 { "name": "minecraft:forest" },
@@ -248,6 +256,29 @@
             "name": "grove",
             "items": [
                 { "name": "minecraft:grove" }
+            ]
+        },
+        {
+            "name": "has_structure_abandoned_camp",
+            "items": [
+                { "name": "minecraft:bamboo_jungle" },
+                { "name": "minecraft:birch_forest" },
+                { "name": "minecraft:birch_forest_mutated" },
+                { "name": "minecraft:cherry_grove" },
+                { "name": "minecraft:cold_taiga" },
+                { "name": "minecraft:dappled_forest" },
+                { "name": "minecraft:extreme_hills_plus_trees" },
+                { "name": "minecraft:flower_forest" },
+                { "name": "minecraft:forest" },
+                { "name": "minecraft:jungle_edge" },
+                { "name": "minecraft:meadow" },
+                { "name": "minecraft:mega_taiga" },
+                { "name": "minecraft:mesa_plateau_stone" },
+                { "name": "minecraft:pale_garden" },
+                { "name": "minecraft:redwood_taiga_mutated" },
+                { "name": "minecraft:savanna" },
+                { "name": "minecraft:swampland" },
+                { "name": "minecraft:taiga" }
             ]
         },
         {
@@ -391,6 +422,7 @@
                 { "name": "minecraft:cold_taiga" },
                 { "name": "minecraft:cold_taiga_hills" },
                 { "name": "minecraft:cold_taiga_mutated" },
+                { "name": "minecraft:dappled_forest" },
                 { "name": "minecraft:deep_cold_ocean" },
                 { "name": "minecraft:deep_frozen_ocean" },
                 { "name": "minecraft:deep_lukewarm_ocean" },
@@ -537,6 +569,12 @@
             ]
         },
         {
+            "name": "oak_forest",
+            "items": [
+                { "name": "minecraft:forest" }
+            ]
+        },
+        {
             "name": "ocean",
             "items": [
                 { "name": "minecraft:cold_ocean" },
@@ -565,6 +603,7 @@
                 { "name": "minecraft:cold_ocean" },
                 { "name": "minecraft:cold_taiga" },
                 { "name": "minecraft:cold_taiga_hills" },
+                { "name": "minecraft:dappled_forest" },
                 { "name": "minecraft:deep_cold_ocean" },
                 { "name": "minecraft:deep_dark" },
                 { "name": "minecraft:deep_frozen_ocean" },
@@ -786,6 +825,7 @@
                 { "name": "minecraft:cold_taiga" },
                 { "name": "minecraft:cold_taiga_hills" },
                 { "name": "minecraft:cold_taiga_mutated" },
+                { "name": "minecraft:dappled_forest" },
                 { "name": "minecraft:deep_cold_ocean" },
                 { "name": "minecraft:deep_dark" },
                 { "name": "minecraft:deep_frozen_ocean" },
@@ -1053,6 +1093,15 @@
                 { "name": "minecraft:taiga" },
                 { "name": "minecraft:taiga_hills" },
                 { "name": "minecraft:taiga_mutated" }
+            ]
+        },
+        {
+            "name": "temperate_ocean",
+            "items": [
+                { "name": "minecraft:deep_lukewarm_ocean" },
+                { "name": "minecraft:deep_warm_ocean" },
+                { "name": "minecraft:lukewarm_ocean" },
+                { "name": "minecraft:warm_ocean" }
             ]
         },
         {

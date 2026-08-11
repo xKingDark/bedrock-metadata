@@ -751,7 +751,7 @@ export class BlockUtilityTasks {
         buildGeometry?: boolean,
         tolerance?: number,
         faceVolume?: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -761,7 +761,7 @@ export class BlockUtilityTasks {
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         block?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
         maxBlocksPerTick?: number,
-    ): Promise<number>;
+    ): NumberTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -770,7 +770,7 @@ export class BlockUtilityTasks {
     findObscuredBlocksWithinVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -783,7 +783,8 @@ export class BlockUtilityTasks {
         customBlockList?: string[],
         maxResultBlocks?: number,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+        directionMask?: number,
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -792,7 +793,7 @@ export class BlockUtilityTasks {
     generateManifest(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         maxBlocksPerTick?: number,
-    ): Promise<BlockUtilityManifest>;
+    ): ManifestTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -803,7 +804,7 @@ export class BlockUtilityTasks {
         fromBlockIdentifier: string,
         toBlock?: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
         maxBlocksPerTick?: number,
-    ): Promise<number>;
+    ): NumberTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -812,7 +813,7 @@ export class BlockUtilityTasks {
     shrinkWrapVolume(
         volume: minecraftserver.BlockVolumeBase | RelativeVolumeListBlockVolume,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -825,7 +826,7 @@ export class BlockUtilityTasks {
         ignoreNoCollision: boolean,
         blockMask?: BlockMaskList,
         maxBlocksPerTick?: number,
-    ): Promise<RelativeVolumeListBlockVolume>;
+    ): VolumeTaskPromise;
 }
 
 export class BrushShapeManager {
@@ -969,6 +970,76 @@ export class ClientFilesystem {
      * @throws This function can throw errors.
      */
     chooseFile(options: FileSelectorOptions): Promise<string>;
+}
+
+export class ClientInteractiveTools {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    activateExtrude(options: ExtrudeInteractiveToolOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    activateSmartFill(options: SmartFillInteractiveToolOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    applyExtrude(result: ExtrudeInteractiveToolResult): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commitExtrude(target: minecraftserver.Vector3, face: number): Promise<ExtrudeInteractiveToolResult>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commitSmartFill(target: minecraftserver.Vector3, face: number): Promise<RelativeVolumeListBlockVolume>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    deactivate(): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    resume(): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    supportsExtrude(): Promise<boolean>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    supportsSmartFill(): Promise<boolean>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateExtrude(options: ExtrudeInteractiveToolOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateSmartFill(options: SmartFillInteractiveToolOptions): Promise<void>;
 }
 
 export class ClipboardChangeAfterEvent {
@@ -1864,6 +1935,11 @@ export class ExtensionContextAfterEvents {
     readonly SelectionChange: SelectionChangeAfterEventSignal;
 }
 
+export class ExtrudeInteractiveToolResult {
+    private constructor();
+    readonly affectedVolume: RelativeVolumeListBlockVolume;
+}
+
 export class FeatureFlagManager {
     private constructor();
     readonly isHost: boolean;
@@ -2119,6 +2195,7 @@ export class InternalPersistenceManager {
 export class InternalPlayerServiceContext {
     private constructor();
     readonly clientFilesystem: ClientFilesystem;
+    readonly clientInteractiveTools: ClientInteractiveTools;
     readonly dataStore: DataStore;
     readonly dataTransfer: DataTransferManager;
     readonly featureFlags: FeatureFlagManager;
@@ -2132,15 +2209,15 @@ export class InternalPlayerServiceContext {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
-    runCoroutineWatchdogStressTest(): void;
+    runCoroutineWatchdogStressTest(): VoidTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
-    runLongRunningTaskBurstTest(durationSeconds: number, taskCount: number, maxStaggerSeconds: number): void;
+    runLongRunningTaskBurstTest(durationSeconds: number, taskCount: number, maxStaggerSeconds: number): VoidTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
-    runLongRunningTaskTest(durationSeconds: number): void;
+    runLongRunningTaskTest(durationSeconds: number): VoidTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -2232,6 +2309,12 @@ export class Logger {
      * @throws This function can throw errors.
      */
     warning(message: LocalizationEntry | string, properties?: LogProperties): void;
+}
+
+// @ts-ignore
+export class ManifestTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<BlockUtilityManifest>;
 }
 
 export class MeshCacheManager {
@@ -2329,6 +2412,7 @@ export class MinecraftEditorInternal {
     registerExtension(
         extensionName: string,
         activationFunction: (arg0: ExtensionContext) => void,
+        sessionLifecycleFunction: (arg0: ExtensionContext) => void,
         shutdownFunction: (arg0: ExtensionContext) => void,
         options?: ExtensionOptionalParameters,
     ): Extension;
@@ -2499,6 +2583,12 @@ export class ModeChangeAfterEventSignal {
     unsubscribe(callback: (arg0: ModeChangeAfterEvent) => void): void;
 }
 
+// @ts-ignore
+export class NumberTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<number>;
+}
+
 export class PendingTransaction {
     private constructor();
     /**
@@ -2514,7 +2604,8 @@ export class PendingTransaction {
      */
     addUserDefinedOperation(
         transactionHandler: UserDefinedTransactionOperationHandler,
-        operationData: string,
+        prevData: string,
+        currentData: string,
         operationName?: string,
     ): void;
     /**
@@ -2657,6 +2748,7 @@ export class PersistenceGroupItem {
 
 export class PlayerProjectRegionManager {
     private constructor();
+    collectMetrics(): ProjectRegionGlobalMetrics;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2824,6 +2916,16 @@ export class PrefabManager {
      */
     getTemplate(searchMetadata_or_fullyQualifiedName: PrefabTemplateMetadata | string): PrefabTemplate;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    getTemplateInstances(templateOrMetadata: PrefabTemplate | PrefabTemplateMetadata): PrefabTemplateInstanceLocation[];
+    /**
      * @throws This function can throw errors.
      *
      * {@link PrefabServiceError}
@@ -2881,6 +2983,12 @@ export class PrefabTemplate {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     notes: string;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     */
+    readonly size: minecraftserver.Vector3;
     /**
      * @throws This property can throw when used.
      *
@@ -3578,6 +3686,16 @@ export class SpeedSettings {
     setAll(properties: Record<string, number>): void;
 }
 
+export class TaskPromiseBase {
+    private constructor();
+    readonly cancelled: boolean;
+    readonly progress: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    cancel(): void;
+}
+
 export class ThemeSettings {
     private constructor();
     /**
@@ -3704,8 +3822,20 @@ export class UserDefinedTransactionOperationHandler extends TransactionOperation
 }
 
 // @ts-ignore
+export class VoidTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<void>;
+}
+
+// @ts-ignore
 export class VolumeListTransactionOperationHandler extends TransactionOperationHandler {
     private constructor();
+}
+
+// @ts-ignore
+export class VolumeTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<RelativeVolumeListBlockVolume>;
 }
 
 export class Widget {
@@ -4833,6 +4963,15 @@ export interface ExtensionOptionalParameters {
     toolGroupId?: string;
 }
 
+export interface ExtrudeInteractiveToolOptions {
+    criteria: BlockUtilityFloodMatchCriteria;
+    customBlockList: string[];
+    faceSize: number;
+    isShrink: boolean;
+    layerCount: number;
+    tolerance: number;
+}
+
 export interface FileSelectorOptions {
     extensions: string[];
     maxFileSize: number;
@@ -4966,8 +5105,14 @@ export interface MeshLoadOptions {
     maxTriangleCount?: number;
 }
 
+export interface MeshPlacementBlockMapping {
+    blockType: string;
+    colorEntryId: string;
+}
+
 export interface MeshPlacementOptions {
     blockType: string;
+    colorBlockMappings?: MeshPlacementBlockMapping[];
     location: minecraftserver.Vector3;
     requestId?: string;
     rotation: minecraftserver.Vector3;
@@ -5038,6 +5183,11 @@ export interface PrefabTemplateCreateInstanceOptions {
     rotation?: minecraftserver.StructureRotation;
 }
 
+export interface PrefabTemplateInstanceLocation {
+    instance: PrefabTemplateInstance;
+    location: minecraftserver.Vector3;
+}
+
 export interface PrefabTemplateMetadata {
     description: string;
     displayName: string;
@@ -5066,6 +5216,21 @@ export interface ProjectRegionExtents {
     z: minecraftcommon.NumberRange;
 }
 
+export interface ProjectRegionGlobalMetrics {
+    availableChunkCount: number;
+    availableUniqueChunkCount: number;
+    chunkCount: number;
+    loadedAvailableChunkCount: number;
+    loadedChunkCount: number;
+    loadedRegionCount: number;
+    playerMetrics: ProjectRegionPlayerMetrics[];
+    regionCount: number;
+    tickingAvailableChunkCount: number;
+    tickingChunkCount: number;
+    tickingRegionCount: number;
+    uniqueChunkCount: number;
+}
+
 export interface ProjectRegionManagerChunkProcessingState {
     chunksProcessed: number;
     isCompleted: boolean;
@@ -5075,6 +5240,22 @@ export interface ProjectRegionOptions {
     availabilityMode?: ProjectRegionAvailabilityMode;
     extentX: minecraftcommon.NumberRange;
     extentZ: minecraftcommon.NumberRange;
+}
+
+export interface ProjectRegionPlayerMetrics {
+    availableChunkCount: number;
+    availableUniqueChunkCount: number;
+    chunkCount: number;
+    loadedAvailableChunkCount: number;
+    loadedChunkCount: number;
+    loadedRegionCount: number;
+    playerId: string;
+    playerName: string;
+    regionCount: number;
+    tickingAvailableChunkCount: number;
+    tickingChunkCount: number;
+    tickingRegionCount: number;
+    uniqueChunkCount: number;
 }
 
 export interface QuickExtrudeProperties {
@@ -5100,6 +5281,12 @@ export interface SelectionManifestData {
 export interface SelectionManifestEntry {
     blockIdentifier: string;
     count: number;
+}
+
+export interface SmartFillInteractiveToolOptions {
+    limitToSelection: boolean;
+    onlyFillExposedSurface: boolean;
+    radius: number;
 }
 
 export interface WeightedBlock {
@@ -5315,6 +5502,11 @@ export class PrefabTemplateExists extends Error {
 
 // @ts-ignore
 export class PrefabTemplateNotFound extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class TaskCancelledError extends Error {
     private constructor();
 }
 

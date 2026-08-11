@@ -101,6 +101,7 @@
         { "name": "query.has_property" },
         { "name": "query.has_rider" },
         { "name": "query.has_target" },
+        { "name": "query.head_is_in_water" },
         { "name": "query.head_roll_angle" },
         { "name": "query.head_x_rotation" },
         { "name": "query.head_y_rotation" },

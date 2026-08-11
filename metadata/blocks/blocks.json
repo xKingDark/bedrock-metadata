@@ -52,7 +52,24 @@
         {
             "id": 830,
             "name": "minecraft:acacia_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.acaciaFence.name"
         },
         {
@@ -185,6 +202,10 @@
             "id": 163,
             "name": "minecraft:acacia_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -340,6 +361,10 @@
             "id": 426,
             "name": "minecraft:andesite_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -513,7 +538,24 @@
         {
             "id": 770,
             "name": "minecraft:bamboo_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.bamboo_fence.name"
         },
         {
@@ -591,6 +633,10 @@
             "name": "minecraft:bamboo_mosaic_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -663,6 +709,10 @@
             "id": 767,
             "name": "minecraft:bamboo_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -914,7 +964,24 @@
         {
             "id": 831,
             "name": "minecraft:birch_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.birchFence.name"
         },
         {
@@ -1048,6 +1115,10 @@
             "name": "minecraft:birch_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -1149,10 +1220,51 @@
             "localization_key": "tile.concrete.black.name"
         },
         {
+            "id": 1489,
+            "name": "minecraft:black_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.black_concrete_double_slab.name"
+        },
+        {
             "id": 978,
             "name": "minecraft:black_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.black.name"
+        },
+        {
+            "id": 1473,
+            "name": "minecraft:black_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.black_concrete_slab.name"
+        },
+        {
+            "id": 1469,
+            "name": "minecraft:black_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.black_concrete_stairs.name"
         },
         {
             "id": 235,
@@ -1180,7 +1292,24 @@
         {
             "id": 912,
             "name": "minecraft:black_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.black.name"
         },
         {
@@ -1194,6 +1323,47 @@
             "name": "minecraft:black_wool",
             "states": [],
             "localization_key": "tile.wool.black.name"
+        },
+        {
+            "id": 1439,
+            "name": "minecraft:black_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.black_wool_double_slab.name"
+        },
+        {
+            "id": 1423,
+            "name": "minecraft:black_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.black_wool_slab.name"
+        },
+        {
+            "id": 1419,
+            "name": "minecraft:black_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.black_wool_stairs.name"
         },
         {
             "id": 528,
@@ -1227,6 +1397,10 @@
             "id": 531,
             "name": "minecraft:blackstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -1315,10 +1489,51 @@
             "localization_key": "tile.concrete.blue.name"
         },
         {
+            "id": 1498,
+            "name": "minecraft:blue_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.blue_concrete_double_slab.name"
+        },
+        {
             "id": 974,
             "name": "minecraft:blue_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.blue.name"
+        },
+        {
+            "id": 1482,
+            "name": "minecraft:blue_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.blue_concrete_slab.name"
+        },
+        {
+            "id": 1456,
+            "name": "minecraft:blue_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.blue_concrete_stairs.name"
         },
         {
             "id": 231,
@@ -1358,7 +1573,24 @@
         {
             "id": 908,
             "name": "minecraft:blue_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.blue.name"
         },
         {
@@ -1372,6 +1604,47 @@
             "name": "minecraft:blue_wool",
             "states": [],
             "localization_key": "tile.wool.blue.name"
+        },
+        {
+            "id": 1448,
+            "name": "minecraft:blue_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.blue_wool_double_slab.name"
+        },
+        {
+            "id": 1432,
+            "name": "minecraft:blue_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.blue_wool_slab.name"
+        },
+        {
+            "id": 1406,
+            "name": "minecraft:blue_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.blue_wool_stairs.name"
         },
         {
             "id": 216,
@@ -1507,6 +1780,10 @@
             "name": "minecraft:brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -1583,10 +1860,51 @@
             "localization_key": "tile.concrete.brown.name"
         },
         {
+            "id": 1490,
+            "name": "minecraft:brown_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.brown_concrete_double_slab.name"
+        },
+        {
             "id": 975,
             "name": "minecraft:brown_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.brown.name"
+        },
+        {
+            "id": 1474,
+            "name": "minecraft:brown_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.brown_concrete_slab.name"
+        },
+        {
+            "id": 1468,
+            "name": "minecraft:brown_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.brown_concrete_stairs.name"
         },
         {
             "id": 232,
@@ -1631,7 +1949,24 @@
         {
             "id": 909,
             "name": "minecraft:brown_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.brown.name"
         },
         {
@@ -1645,6 +1980,47 @@
             "name": "minecraft:brown_wool",
             "states": [],
             "localization_key": "tile.wool.brown.name"
+        },
+        {
+            "id": 1440,
+            "name": "minecraft:brown_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.brown_wool_double_slab.name"
+        },
+        {
+            "id": 1424,
+            "name": "minecraft:brown_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.brown_wool_slab.name"
+        },
+        {
+            "id": 1418,
+            "name": "minecraft:brown_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.brown_wool_stairs.name"
         },
         {
             "id": 415,
@@ -1958,7 +2334,24 @@
         {
             "id": 787,
             "name": "minecraft:cherry_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.cherry_fence.name"
         },
         {
@@ -2091,6 +2484,10 @@
             "id": 796,
             "name": "minecraft:cherry_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -2292,7 +2689,32 @@
         {
             "id": 240,
             "name": "minecraft:chorus_plant",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_down",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_up",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.chorus_plant.name"
         },
         {
@@ -2327,6 +2749,10 @@
             "id": 1377,
             "name": "minecraft:cinnabar_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -2397,6 +2823,10 @@
             "id": 1367,
             "name": "minecraft:cinnabar_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -2502,6 +2932,10 @@
             "id": 636,
             "name": "minecraft:cobbled_deepslate_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -2704,7 +3138,24 @@
         {
             "id": 1321,
             "name": "minecraft:copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.copper_bars.name"
         },
         {
@@ -2980,7 +3431,24 @@
         {
             "id": 511,
             "name": "minecraft:crimson_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.crimson_fence.name"
         },
         {
@@ -3106,6 +3574,10 @@
             "name": "minecraft:crimson_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -3195,6 +3667,10 @@
             "id": 609,
             "name": "minecraft:cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -3301,10 +3777,51 @@
             "localization_key": "tile.concrete.cyan.name"
         },
         {
+            "id": 1496,
+            "name": "minecraft:cyan_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cyan_concrete_double_slab.name"
+        },
+        {
             "id": 972,
             "name": "minecraft:cyan_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.cyan.name"
+        },
+        {
+            "id": 1480,
+            "name": "minecraft:cyan_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cyan_concrete_slab.name"
+        },
+        {
+            "id": 1465,
+            "name": "minecraft:cyan_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.cyan_concrete_stairs.name"
         },
         {
             "id": 229,
@@ -3332,7 +3849,24 @@
         {
             "id": 906,
             "name": "minecraft:cyan_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.cyan.name"
         },
         {
@@ -3346,6 +3880,47 @@
             "name": "minecraft:cyan_wool",
             "states": [],
             "localization_key": "tile.wool.cyan.name"
+        },
+        {
+            "id": 1446,
+            "name": "minecraft:cyan_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cyan_wool_double_slab.name"
+        },
+        {
+            "id": 1430,
+            "name": "minecraft:cyan_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.cyan_wool_slab.name"
+        },
+        {
+            "id": 1415,
+            "name": "minecraft:cyan_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.cyan_wool_stairs.name"
         },
         {
             "id": 1215,
@@ -3416,7 +3991,24 @@
         {
             "id": 832,
             "name": "minecraft:dark_oak_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.darkOakFence.name"
         },
         {
@@ -3550,6 +4142,10 @@
             "name": "minecraft:dark_oak_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -3622,6 +4218,10 @@
             "id": 258,
             "name": "minecraft:dark_prismarine_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -3902,6 +4502,10 @@
             "name": "minecraft:deepslate_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -4019,6 +4623,10 @@
             "id": 644,
             "name": "minecraft:deepslate_tile_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -4178,6 +4786,10 @@
             "id": 425,
             "name": "minecraft:diorite_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -5061,6 +5673,10 @@
             "name": "minecraft:end_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -5195,7 +5811,24 @@
         {
             "id": 1322,
             "name": "minecraft:exposed_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.exposed_copper_bars.name"
         },
         {
@@ -5327,6 +5960,10 @@
             "name": "minecraft:exposed_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -5406,6 +6043,30 @@
                 {
                     "name": "age",
                     "default_value": 0
+                },
+                {
+                    "name": "minecraft:connection_down",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_up",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
                 }
             ],
             "localization_key": "tile.fire.name"
@@ -5561,7 +6222,24 @@
         {
             "id": 102,
             "name": "minecraft:glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.glass_pane.name"
         },
         {
@@ -5675,6 +6353,10 @@
             "name": "minecraft:granite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -5769,10 +6451,51 @@
             "localization_key": "tile.concrete.gray.name"
         },
         {
+            "id": 1488,
+            "name": "minecraft:gray_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.gray_concrete_double_slab.name"
+        },
+        {
             "id": 970,
             "name": "minecraft:gray_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.gray.name"
+        },
+        {
+            "id": 1472,
+            "name": "minecraft:gray_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.gray_concrete_slab.name"
+        },
+        {
+            "id": 1463,
+            "name": "minecraft:gray_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.gray_concrete_stairs.name"
         },
         {
             "id": 227,
@@ -5800,7 +6523,24 @@
         {
             "id": 904,
             "name": "minecraft:gray_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.gray.name"
         },
         {
@@ -5814,6 +6554,47 @@
             "name": "minecraft:gray_wool",
             "states": [],
             "localization_key": "tile.wool.gray.name"
+        },
+        {
+            "id": 1438,
+            "name": "minecraft:gray_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.gray_wool_double_slab.name"
+        },
+        {
+            "id": 1422,
+            "name": "minecraft:gray_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.gray_wool_slab.name"
+        },
+        {
+            "id": 1413,
+            "name": "minecraft:gray_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.gray_wool_stairs.name"
         },
         {
             "id": 681,
@@ -5854,10 +6635,51 @@
             "localization_key": "tile.concrete.green.name"
         },
         {
+            "id": 1495,
+            "name": "minecraft:green_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.green_concrete_double_slab.name"
+        },
+        {
             "id": 976,
             "name": "minecraft:green_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.green.name"
+        },
+        {
+            "id": 1479,
+            "name": "minecraft:green_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.green_concrete_slab.name"
+        },
+        {
+            "id": 1467,
+            "name": "minecraft:green_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.green_concrete_stairs.name"
         },
         {
             "id": 233,
@@ -5885,7 +6707,24 @@
         {
             "id": 910,
             "name": "minecraft:green_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.green.name"
         },
         {
@@ -5899,6 +6738,47 @@
             "name": "minecraft:green_wool",
             "states": [],
             "localization_key": "tile.wool.green.name"
+        },
+        {
+            "id": 1445,
+            "name": "minecraft:green_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.green_wool_double_slab.name"
+        },
+        {
+            "id": 1429,
+            "name": "minecraft:green_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.green_wool_slab.name"
+        },
+        {
+            "id": 1417,
+            "name": "minecraft:green_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.green_wool_stairs.name"
         },
         {
             "id": 450,
@@ -5930,7 +6810,24 @@
         {
             "id": 927,
             "name": "minecraft:hard_black_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.black.name"
         },
         {
@@ -5942,7 +6839,24 @@
         {
             "id": 923,
             "name": "minecraft:hard_blue_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.blue.name"
         },
         {
@@ -5954,7 +6868,24 @@
         {
             "id": 924,
             "name": "minecraft:hard_brown_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.brown.name"
         },
         {
@@ -5966,7 +6897,24 @@
         {
             "id": 921,
             "name": "minecraft:hard_cyan_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.cyan.name"
         },
         {
@@ -5978,7 +6926,24 @@
         {
             "id": 190,
             "name": "minecraft:hard_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_glass_pane.name"
         },
         {
@@ -5990,7 +6955,24 @@
         {
             "id": 919,
             "name": "minecraft:hard_gray_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.gray.name"
         },
         {
@@ -6002,7 +6984,24 @@
         {
             "id": 925,
             "name": "minecraft:hard_green_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.green.name"
         },
         {
@@ -6014,7 +7013,24 @@
         {
             "id": 915,
             "name": "minecraft:hard_light_blue_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.light_blue.name"
         },
         {
@@ -6026,7 +7042,24 @@
         {
             "id": 920,
             "name": "minecraft:hard_light_gray_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.silver.name"
         },
         {
@@ -6038,7 +7071,24 @@
         {
             "id": 917,
             "name": "minecraft:hard_lime_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.lime.name"
         },
         {
@@ -6050,7 +7100,24 @@
         {
             "id": 914,
             "name": "minecraft:hard_magenta_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.magenta.name"
         },
         {
@@ -6062,7 +7129,24 @@
         {
             "id": 913,
             "name": "minecraft:hard_orange_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.orange.name"
         },
         {
@@ -6074,7 +7158,24 @@
         {
             "id": 918,
             "name": "minecraft:hard_pink_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.pink.name"
         },
         {
@@ -6086,7 +7187,24 @@
         {
             "id": 922,
             "name": "minecraft:hard_purple_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.purple.name"
         },
         {
@@ -6098,7 +7216,24 @@
         {
             "id": 926,
             "name": "minecraft:hard_red_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.red.name"
         },
         {
@@ -6110,7 +7245,24 @@
         {
             "id": 191,
             "name": "minecraft:hard_white_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.white.name"
         },
         {
@@ -6122,7 +7274,24 @@
         {
             "id": 916,
             "name": "minecraft:hard_yellow_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.hard_stained_glass_pane.yellow.name"
         },
         {
@@ -6295,7 +7464,24 @@
         {
             "id": 101,
             "name": "minecraft:iron_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.iron_bars.name"
         },
         {
@@ -6436,7 +7622,24 @@
         {
             "id": 833,
             "name": "minecraft:jungle_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.jungleFence.name"
         },
         {
@@ -6569,6 +7772,10 @@
             "id": 136,
             "name": "minecraft:jungle_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -6901,10 +8108,51 @@
             "localization_key": "tile.concrete.lightBlue.name"
         },
         {
+            "id": 1497,
+            "name": "minecraft:light_blue_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_blue_concrete_double_slab.name"
+        },
+        {
             "id": 966,
             "name": "minecraft:light_blue_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.lightBlue.name"
+        },
+        {
+            "id": 1481,
+            "name": "minecraft:light_blue_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_blue_concrete_slab.name"
+        },
+        {
+            "id": 1459,
+            "name": "minecraft:light_blue_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.light_blue_concrete_stairs.name"
         },
         {
             "id": 223,
@@ -6932,7 +8180,24 @@
         {
             "id": 900,
             "name": "minecraft:light_blue_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.light_blue.name"
         },
         {
@@ -6946,6 +8211,47 @@
             "name": "minecraft:light_blue_wool",
             "states": [],
             "localization_key": "tile.wool.lightBlue.name"
+        },
+        {
+            "id": 1447,
+            "name": "minecraft:light_blue_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_blue_wool_double_slab.name"
+        },
+        {
+            "id": 1431,
+            "name": "minecraft:light_blue_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_blue_wool_slab.name"
+        },
+        {
+            "id": 1409,
+            "name": "minecraft:light_blue_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.light_blue_wool_stairs.name"
         },
         {
             "id": 676,
@@ -6986,10 +8292,51 @@
             "localization_key": "tile.concrete.silver.name"
         },
         {
+            "id": 1487,
+            "name": "minecraft:light_gray_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_gray_concrete_double_slab.name"
+        },
+        {
             "id": 971,
             "name": "minecraft:light_gray_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.silver.name"
+        },
+        {
+            "id": 1471,
+            "name": "minecraft:light_gray_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_gray_concrete_slab.name"
+        },
+        {
+            "id": 1464,
+            "name": "minecraft:light_gray_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.light_gray_concrete_stairs.name"
         },
         {
             "id": 875,
@@ -7006,7 +8353,24 @@
         {
             "id": 905,
             "name": "minecraft:light_gray_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.silver.name"
         },
         {
@@ -7020,6 +8384,47 @@
             "name": "minecraft:light_gray_wool",
             "states": [],
             "localization_key": "tile.wool.silver.name"
+        },
+        {
+            "id": 1437,
+            "name": "minecraft:light_gray_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_gray_wool_double_slab.name"
+        },
+        {
+            "id": 1421,
+            "name": "minecraft:light_gray_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.light_gray_wool_slab.name"
+        },
+        {
+            "id": 1414,
+            "name": "minecraft:light_gray_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.light_gray_wool_stairs.name"
         },
         {
             "id": 147,
@@ -7103,10 +8508,51 @@
             "localization_key": "tile.concrete.lime.name"
         },
         {
+            "id": 1494,
+            "name": "minecraft:lime_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.lime_concrete_double_slab.name"
+        },
+        {
             "id": 968,
             "name": "minecraft:lime_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.lime.name"
+        },
+        {
+            "id": 1478,
+            "name": "minecraft:lime_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.lime_concrete_slab.name"
+        },
+        {
+            "id": 1461,
+            "name": "minecraft:lime_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.lime_concrete_stairs.name"
         },
         {
             "id": 225,
@@ -7134,7 +8580,24 @@
         {
             "id": 902,
             "name": "minecraft:lime_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.lime.name"
         },
         {
@@ -7148,6 +8611,47 @@
             "name": "minecraft:lime_wool",
             "states": [],
             "localization_key": "tile.wool.lime.name"
+        },
+        {
+            "id": 1444,
+            "name": "minecraft:lime_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.lime_wool_double_slab.name"
+        },
+        {
+            "id": 1428,
+            "name": "minecraft:lime_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.lime_wool_slab.name"
+        },
+        {
+            "id": 1411,
+            "name": "minecraft:lime_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.lime_wool_stairs.name"
         },
         {
             "id": 469,
@@ -7267,10 +8771,51 @@
             "localization_key": "tile.concrete.magenta.name"
         },
         {
+            "id": 1500,
+            "name": "minecraft:magenta_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.magenta_concrete_double_slab.name"
+        },
+        {
             "id": 965,
             "name": "minecraft:magenta_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.magenta.name"
+        },
+        {
+            "id": 1484,
+            "name": "minecraft:magenta_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.magenta_concrete_slab.name"
+        },
+        {
+            "id": 1458,
+            "name": "minecraft:magenta_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.magenta_concrete_stairs.name"
         },
         {
             "id": 222,
@@ -7298,7 +8843,24 @@
         {
             "id": 899,
             "name": "minecraft:magenta_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.magenta.name"
         },
         {
@@ -7312,6 +8874,47 @@
             "name": "minecraft:magenta_wool",
             "states": [],
             "localization_key": "tile.wool.magenta.name"
+        },
+        {
+            "id": 1450,
+            "name": "minecraft:magenta_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.magenta_wool_double_slab.name"
+        },
+        {
+            "id": 1434,
+            "name": "minecraft:magenta_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.magenta_wool_slab.name"
+        },
+        {
+            "id": 1408,
+            "name": "minecraft:magenta_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.magenta_wool_stairs.name"
         },
         {
             "id": 213,
@@ -7371,7 +8974,24 @@
         {
             "id": 746,
             "name": "minecraft:mangrove_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.mangrove_fence.name"
         },
         {
@@ -7514,6 +9134,10 @@
             "id": 743,
             "name": "minecraft:mangrove_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -7671,6 +9295,10 @@
             "name": "minecraft:mossy_cobblestone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -7734,6 +9362,10 @@
             "id": 430,
             "name": "minecraft:mossy_stone_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -7815,6 +9447,10 @@
             "id": 735,
             "name": "minecraft:mud_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -7907,7 +9543,24 @@
         {
             "id": 113,
             "name": "minecraft:nether_brick_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.nether_brick_fence.name"
         },
         {
@@ -7925,6 +9578,10 @@
             "id": 114,
             "name": "minecraft:nether_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -8040,6 +9697,10 @@
             "name": "minecraft:normal_stone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -8070,7 +9731,24 @@
         {
             "id": 85,
             "name": "minecraft:oak_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.fence.name"
         },
         {
@@ -8174,6 +9852,10 @@
             "name": "minecraft:oak_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -8272,10 +9954,51 @@
             "localization_key": "tile.concrete.orange.name"
         },
         {
+            "id": 1492,
+            "name": "minecraft:orange_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.orange_concrete_double_slab.name"
+        },
+        {
             "id": 964,
             "name": "minecraft:orange_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.orange.name"
+        },
+        {
+            "id": 1476,
+            "name": "minecraft:orange_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.orange_concrete_slab.name"
+        },
+        {
+            "id": 1457,
+            "name": "minecraft:orange_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.orange_concrete_stairs.name"
         },
         {
             "id": 221,
@@ -8318,7 +10041,24 @@
         {
             "id": 898,
             "name": "minecraft:orange_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.orange.name"
         },
         {
@@ -8338,6 +10078,47 @@
             "name": "minecraft:orange_wool",
             "states": [],
             "localization_key": "tile.wool.orange.name"
+        },
+        {
+            "id": 1442,
+            "name": "minecraft:orange_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.orange_wool_double_slab.name"
+        },
+        {
+            "id": 1426,
+            "name": "minecraft:orange_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.orange_wool_slab.name"
+        },
+        {
+            "id": 1407,
+            "name": "minecraft:orange_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.orange_wool_stairs.name"
         },
         {
             "id": 1092,
@@ -8360,7 +10141,24 @@
         {
             "id": 1324,
             "name": "minecraft:oxidized_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.oxidized_copper_bars.name"
         },
         {
@@ -8491,6 +10289,10 @@
             "id": 612,
             "name": "minecraft:oxidized_cut_copper_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -8636,7 +10438,24 @@
         {
             "id": 1246,
             "name": "minecraft:pale_oak_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.pale_oak_fence.name"
         },
         {
@@ -8769,6 +10588,10 @@
             "id": 1255,
             "name": "minecraft:pale_oak_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -8926,10 +10749,51 @@
             "localization_key": "tile.concrete.pink.name"
         },
         {
+            "id": 1501,
+            "name": "minecraft:pink_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.pink_concrete_double_slab.name"
+        },
+        {
             "id": 969,
             "name": "minecraft:pink_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.pink.name"
+        },
+        {
+            "id": 1485,
+            "name": "minecraft:pink_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.pink_concrete_slab.name"
+        },
+        {
+            "id": 1462,
+            "name": "minecraft:pink_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.pink_concrete_stairs.name"
         },
         {
             "id": 226,
@@ -8972,7 +10836,24 @@
         {
             "id": 903,
             "name": "minecraft:pink_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.pink.name"
         },
         {
@@ -8992,6 +10873,47 @@
             "name": "minecraft:pink_wool",
             "states": [],
             "localization_key": "tile.wool.pink.name"
+        },
+        {
+            "id": 1451,
+            "name": "minecraft:pink_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.pink_wool_double_slab.name"
+        },
+        {
+            "id": 1435,
+            "name": "minecraft:pink_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.pink_wool_slab.name"
+        },
+        {
+            "id": 1412,
+            "name": "minecraft:pink_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.pink_wool_stairs.name"
         },
         {
             "id": 33,
@@ -9106,6 +11028,10 @@
             "name": "minecraft:polished_andesite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9159,6 +11085,10 @@
             "id": 530,
             "name": "minecraft:polished_blackstone_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9256,6 +11186,10 @@
             "name": "minecraft:polished_blackstone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9325,6 +11259,10 @@
             "id": 1372,
             "name": "minecraft:polished_cinnabar_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9396,6 +11334,10 @@
             "name": "minecraft:polished_deepslate_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9466,6 +11408,10 @@
             "name": "minecraft:polished_diorite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9509,6 +11455,10 @@
             "name": "minecraft:polished_granite_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -9551,6 +11501,10 @@
             "id": 1355,
             "name": "minecraft:polished_sulfur_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9621,6 +11575,10 @@
             "id": 1006,
             "name": "minecraft:polished_tuff_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -9711,7 +11669,24 @@
         {
             "id": 1383,
             "name": "minecraft:poplar_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.poplar_fence.name"
         },
         {
@@ -9829,6 +11804,10 @@
             "id": 1392,
             "name": "minecraft:poplar_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10010,6 +11989,10 @@
             "name": "minecraft:prismarine_bricks_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -10046,6 +12029,10 @@
             "id": 257,
             "name": "minecraft:prismarine_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10149,10 +12136,51 @@
             "localization_key": "tile.concrete.purple.name"
         },
         {
+            "id": 1499,
+            "name": "minecraft:purple_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.purple_concrete_double_slab.name"
+        },
+        {
             "id": 973,
             "name": "minecraft:purple_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.purple.name"
+        },
+        {
+            "id": 1483,
+            "name": "minecraft:purple_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.purple_concrete_slab.name"
+        },
+        {
+            "id": 1466,
+            "name": "minecraft:purple_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.purple_concrete_stairs.name"
         },
         {
             "id": 219,
@@ -10180,7 +12208,24 @@
         {
             "id": 907,
             "name": "minecraft:purple_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.purple.name"
         },
         {
@@ -10194,6 +12239,47 @@
             "name": "minecraft:purple_wool",
             "states": [],
             "localization_key": "tile.wool.purple.name"
+        },
+        {
+            "id": 1449,
+            "name": "minecraft:purple_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.purple_wool_double_slab.name"
+        },
+        {
+            "id": 1433,
+            "name": "minecraft:purple_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.purple_wool_slab.name"
+        },
+        {
+            "id": 1416,
+            "name": "minecraft:purple_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.purple_wool_stairs.name"
         },
         {
             "id": 201,
@@ -10243,6 +12329,10 @@
             "id": 203,
             "name": "minecraft:purpur_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10314,6 +12404,10 @@
             "id": 156,
             "name": "minecraft:quartz_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10393,10 +12487,51 @@
             "localization_key": "tile.concrete.red.name"
         },
         {
+            "id": 1491,
+            "name": "minecraft:red_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.red_concrete_double_slab.name"
+        },
+        {
             "id": 977,
             "name": "minecraft:red_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.red.name"
+        },
+        {
+            "id": 1475,
+            "name": "minecraft:red_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.red_concrete_slab.name"
+        },
+        {
+            "id": 1454,
+            "name": "minecraft:red_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.red_concrete_stairs.name"
         },
         {
             "id": 234,
@@ -10458,6 +12593,10 @@
             "id": 439,
             "name": "minecraft:red_nether_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10550,6 +12689,10 @@
             "name": "minecraft:red_sandstone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -10588,6 +12731,12 @@
             "localization_key": "tile.cobblestone_wall.red_sandstone.name"
         },
         {
+            "id": 1403,
+            "name": "minecraft:red_shrub",
+            "states": [],
+            "localization_key": "tile.red_shrub.name"
+        },
+        {
             "id": 881,
             "name": "minecraft:red_shulker_box",
             "states": [],
@@ -10602,7 +12751,24 @@
         {
             "id": 911,
             "name": "minecraft:red_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.red.name"
         },
         {
@@ -10622,6 +12788,47 @@
             "name": "minecraft:red_wool",
             "states": [],
             "localization_key": "tile.wool.red.name"
+        },
+        {
+            "id": 1441,
+            "name": "minecraft:red_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.red_wool_double_slab.name"
+        },
+        {
+            "id": 1425,
+            "name": "minecraft:red_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.red_wool_slab.name"
+        },
+        {
+            "id": 1404,
+            "name": "minecraft:red_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.red_wool_stairs.name"
         },
         {
             "id": 152,
@@ -10732,6 +12939,10 @@
             "id": 1271,
             "name": "minecraft:resin_brick_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10847,6 +13058,10 @@
             "id": 128,
             "name": "minecraft:sandstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -10987,6 +13202,25 @@
             "localization_key": "tile.seagrass.seagrass.name"
         },
         {
+            "id": 1452,
+            "name": "minecraft:shelf_mushroom",
+            "states": [
+                {
+                    "name": "growth",
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 1
+                    }
+                },
+                {
+                    "name": "minecraft:cardinal_direction",
+                    "default_value": "south"
+                }
+            ],
+            "localization_key": "tile.shelf_mushroom.name"
+        },
+        {
             "id": 1283,
             "name": "minecraft:short_dry_grass",
             "states": [],
@@ -11119,6 +13353,10 @@
             "name": "minecraft:smooth_quartz_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11162,6 +13400,10 @@
             "name": "minecraft:smooth_red_sandstone_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11204,6 +13446,10 @@
             "id": 432,
             "name": "minecraft:smooth_sandstone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -11399,7 +13645,24 @@
         {
             "id": 834,
             "name": "minecraft:spruce_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.spruceFence.name"
         },
         {
@@ -11532,6 +13795,10 @@
             "id": 134,
             "name": "minecraft:spruce_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -11672,6 +13939,10 @@
             "name": "minecraft:stone_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -11745,6 +14016,10 @@
             "id": 67,
             "name": "minecraft:stone_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -12116,6 +14391,10 @@
             "name": "minecraft:sulfur_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -12200,6 +14479,10 @@
             "id": 1350,
             "name": "minecraft:sulfur_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -12416,6 +14699,22 @@
                     "default_value": false
                 },
                 {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                },
+                {
                     "name": "powered_bit",
                     "default_value": false
                 },
@@ -12512,6 +14811,10 @@
             "name": "minecraft:tuff_brick_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -12581,6 +14884,10 @@
             "id": 1001,
             "name": "minecraft:tuff_stairs",
             "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
                 {
                     "name": "upside_down_bit",
                     "default_value": false
@@ -12839,7 +15146,24 @@
         {
             "id": 512,
             "name": "minecraft:warped_fence",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.warped_fence.name"
         },
         {
@@ -12965,6 +15289,10 @@
             "name": "minecraft:warped_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13065,7 +15393,24 @@
         {
             "id": 1325,
             "name": "minecraft:waxed_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.waxed_copper_bars.name"
         },
         {
@@ -13197,6 +15542,10 @@
             "name": "minecraft:waxed_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13233,7 +15582,24 @@
         {
             "id": 1326,
             "name": "minecraft:waxed_exposed_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.waxed_exposed_copper_bars.name"
         },
         {
@@ -13365,6 +15731,10 @@
             "name": "minecraft:waxed_exposed_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13431,7 +15801,24 @@
         {
             "id": 1328,
             "name": "minecraft:waxed_oxidized_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.waxed_oxidized_copper_bars.name"
         },
         {
@@ -13563,6 +15950,10 @@
             "name": "minecraft:waxed_oxidized_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13614,7 +16005,24 @@
         {
             "id": 1327,
             "name": "minecraft:waxed_weathered_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.waxed_weathered_copper_bars.name"
         },
         {
@@ -13746,6 +16154,10 @@
             "name": "minecraft:waxed_weathered_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -13797,7 +16209,24 @@
         {
             "id": 1323,
             "name": "minecraft:weathered_copper_bars",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.weathered_copper_bars.name"
         },
         {
@@ -13929,6 +16358,10 @@
             "name": "minecraft:weathered_cut_copper_stairs",
             "states": [
                 {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
                     "name": "upside_down_bit",
                     "default_value": false
                 },
@@ -14038,10 +16471,51 @@
             "localization_key": "tile.concrete.white.name"
         },
         {
+            "id": 1486,
+            "name": "minecraft:white_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.white_concrete_double_slab.name"
+        },
+        {
             "id": 237,
             "name": "minecraft:white_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.white.name"
+        },
+        {
+            "id": 1470,
+            "name": "minecraft:white_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.white_concrete_slab.name"
+        },
+        {
+            "id": 1455,
+            "name": "minecraft:white_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.white_concrete_stairs.name"
         },
         {
             "id": 220,
@@ -14069,7 +16543,24 @@
         {
             "id": 160,
             "name": "minecraft:white_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.white.name"
         },
         {
@@ -14089,6 +16580,47 @@
             "name": "minecraft:white_wool",
             "states": [],
             "localization_key": "tile.wool.white.name"
+        },
+        {
+            "id": 1436,
+            "name": "minecraft:white_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.white_wool_double_slab.name"
+        },
+        {
+            "id": 1420,
+            "name": "minecraft:white_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.white_wool_slab.name"
+        },
+        {
+            "id": 1405,
+            "name": "minecraft:white_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.white_wool_stairs.name"
         },
         {
             "id": 1279,
@@ -14210,10 +16742,51 @@
             "localization_key": "tile.concrete.yellow.name"
         },
         {
+            "id": 1493,
+            "name": "minecraft:yellow_concrete_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.yellow_concrete_double_slab.name"
+        },
+        {
             "id": 967,
             "name": "minecraft:yellow_concrete_powder",
             "states": [],
             "localization_key": "tile.concretePowder.yellow.name"
+        },
+        {
+            "id": 1477,
+            "name": "minecraft:yellow_concrete_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.yellow_concrete_slab.name"
+        },
+        {
+            "id": 1460,
+            "name": "minecraft:yellow_concrete_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.yellow_concrete_stairs.name"
         },
         {
             "id": 224,
@@ -14256,7 +16829,24 @@
         {
             "id": 901,
             "name": "minecraft:yellow_stained_glass_pane",
-            "states": [],
+            "states": [
+                {
+                    "name": "minecraft:connection_east",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_north",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_south",
+                    "default_value": false
+                },
+                {
+                    "name": "minecraft:connection_west",
+                    "default_value": false
+                }
+            ],
             "localization_key": "tile.stained_glass_pane.yellow.name"
         },
         {
@@ -14270,6 +16860,47 @@
             "name": "minecraft:yellow_wool",
             "states": [],
             "localization_key": "tile.wool.yellow.name"
+        },
+        {
+            "id": 1443,
+            "name": "minecraft:yellow_wool_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.yellow_wool_double_slab.name"
+        },
+        {
+            "id": 1427,
+            "name": "minecraft:yellow_wool_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.yellow_wool_slab.name"
+        },
+        {
+            "id": 1410,
+            "name": "minecraft:yellow_wool_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.yellow_wool_stairs.name"
         },
         {
             "id": 1221,
