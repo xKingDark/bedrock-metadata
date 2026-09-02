@@ -40,7 +40,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-beta" },
                                 { "version": "2.0.0" },
                                 { "version": "1.17.0" }
                             ]
@@ -98,7 +98,7 @@
                     ]
                 },
                 {
-                    "name": "2.11.0-internal",
+                    "name": "2.12.0-internal",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -111,13 +111,13 @@
                             "name": "@minecraft/server-bindings",
                             "uuid": "0196a2fa-8fb5-79a7-b29e-ce3cbc644f82",
                             "versions": [
-                                { "version": "2.11.0-internal" }
+                                { "version": "2.12.0-internal" }
                             ]
                         }
                     ]
                 },
                 {
-                    "name": "2.11.0-beta",
+                    "name": "2.12.0-beta",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -130,7 +130,26 @@
                             "name": "@minecraft/server-bindings",
                             "uuid": "0196a2fa-8fb5-79a7-b29e-ce3cbc644f82",
                             "versions": [
-                                { "version": "2.11.0-beta" }
+                                { "version": "2.12.0-beta" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2.11.0",
+                    "dependencies": [
+                        {
+                            "name": "@minecraft/common",
+                            "uuid": "77ec12b4-1b2b-4c98-8d34-d1cd63f849d5",
+                            "versions": [
+                                { "version": "1.2.0" }
+                            ]
+                        },
+                        {
+                            "name": "@minecraft/server-bindings",
+                            "uuid": "0196a2fa-8fb5-79a7-b29e-ce3cbc644f82",
+                            "versions": [
+                                { "version": "2.11.0" }
                             ]
                         }
                     ]
@@ -769,7 +788,7 @@
                     ]
                 },
                 {
-                    "name": "2.11.0-internal",
+                    "name": "2.12.0-internal",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -781,7 +800,19 @@
                     ]
                 },
                 {
-                    "name": "2.11.0-beta",
+                    "name": "2.12.0-beta",
+                    "dependencies": [
+                        {
+                            "name": "@minecraft/common",
+                            "uuid": "77ec12b4-1b2b-4c98-8d34-d1cd63f849d5",
+                            "versions": [
+                                { "version": "1.2.0" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2.11.0",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -1196,8 +1227,8 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" },
-                                { "version": "2.11.0-beta" }
+                                { "version": "2.12.0-internal" },
+                                { "version": "2.12.0-beta" }
                             ]
                         },
                         {
@@ -1230,7 +1261,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" }
+                                { "version": "2.12.0-beta" }
                             ]
                         },
                         {
@@ -1269,8 +1300,8 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" },
-                                { "version": "2.11.0-beta" }
+                                { "version": "2.12.0-internal" },
+                                { "version": "2.12.0-beta" }
                             ]
                         }
                     ]
@@ -1289,7 +1320,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" }
+                                { "version": "2.12.0-beta" }
                             ]
                         }
                     ]
@@ -1314,8 +1345,8 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" },
-                                { "version": "2.11.0-beta" }
+                                { "version": "2.12.0-internal" },
+                                { "version": "2.12.0-beta" }
                             ]
                         },
                         {
@@ -1367,7 +1398,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" },
+                                { "version": "2.12.0-internal" },
                                 { "version": "1.17.0" }
                             ]
                         }
@@ -1387,7 +1418,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-beta" },
                                 { "version": "2.0.0" },
                                 { "version": "1.17.0" }
                             ]
@@ -1433,8 +1464,8 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" },
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-internal" },
+                                { "version": "2.12.0-beta" },
                                 { "version": "2.0.0" },
                                 { "version": "1.17.0" }
                             ]
@@ -1455,7 +1486,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-beta" },
                                 { "version": "2.0.0" },
                                 { "version": "1.17.0" }
                             ]
@@ -1554,7 +1585,7 @@
                     ]
                 },
                 {
-                    "name": "2.3.0-internal",
+                    "name": "2.4.0-internal",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -1567,14 +1598,14 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" }
+                                { "version": "2.12.0-internal" }
                             ]
                         },
                         {
                             "name": "@minecraft/server-ui-bindings",
                             "uuid": "ceded7ee-4d9d-4bcc-badf-0ecddb8e238a",
                             "versions": [
-                                { "version": "2.3.0-internal" }
+                                { "version": "2.4.0-internal" }
                             ]
                         },
                         {
@@ -1587,7 +1618,7 @@
                     ]
                 },
                 {
-                    "name": "2.3.0-beta",
+                    "name": "2.4.0-beta",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -1600,7 +1631,7 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-beta" },
                                 { "version": "2.0.0" }
                             ]
                         },
@@ -1608,7 +1639,40 @@
                             "name": "@minecraft/server-ui-bindings",
                             "uuid": "ceded7ee-4d9d-4bcc-badf-0ecddb8e238a",
                             "versions": [
-                                { "version": "2.3.0-beta" }
+                                { "version": "2.4.0-beta" }
+                            ]
+                        },
+                        {
+                            "name": "@minecraft/server-ui-private-bindings",
+                            "uuid": "8a5eed43-cadf-4465-9ba8-35c0760ea32e",
+                            "versions": [
+                                { "version": "0.1.0-internal" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2.3.0",
+                    "dependencies": [
+                        {
+                            "name": "@minecraft/common",
+                            "uuid": "77ec12b4-1b2b-4c98-8d34-d1cd63f849d5",
+                            "versions": [
+                                { "version": "1.0.0" }
+                            ]
+                        },
+                        {
+                            "name": "@minecraft/server",
+                            "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+                            "versions": [
+                                { "version": "2.0.0" }
+                            ]
+                        },
+                        {
+                            "name": "@minecraft/server-ui-bindings",
+                            "uuid": "ceded7ee-4d9d-4bcc-badf-0ecddb8e238a",
+                            "versions": [
+                                { "version": "2.3.0" }
                             ]
                         },
                         {
@@ -1877,7 +1941,7 @@
                     ]
                 },
                 {
-                    "name": "2.3.0-internal",
+                    "name": "2.4.0-internal",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -1890,13 +1954,13 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-internal" }
+                                { "version": "2.12.0-internal" }
                             ]
                         }
                     ]
                 },
                 {
-                    "name": "2.3.0-beta",
+                    "name": "2.4.0-beta",
                     "dependencies": [
                         {
                             "name": "@minecraft/common",
@@ -1909,7 +1973,26 @@
                             "name": "@minecraft/server",
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-beta" },
+                                { "version": "2.0.0" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2.3.0",
+                    "dependencies": [
+                        {
+                            "name": "@minecraft/common",
+                            "uuid": "77ec12b4-1b2b-4c98-8d34-d1cd63f849d5",
+                            "versions": [
+                                { "version": "1.0.0" }
+                            ]
+                        },
+                        {
+                            "name": "@minecraft/server",
+                            "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+                            "versions": [
                                 { "version": "2.0.0" }
                             ]
                         }
@@ -2088,8 +2171,8 @@
                             "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
                             "versions": [
                                 { "version": "3.0.0-alpha" },
-                                { "version": "2.11.0-internal" },
-                                { "version": "2.11.0-beta" },
+                                { "version": "2.12.0-internal" },
+                                { "version": "2.12.0-beta" },
                                 { "version": "2.0.0" },
                                 { "version": "1.0.0" },
                                 { "version": "0.1.0" }
@@ -2100,8 +2183,8 @@
                             "uuid": "ceded7ee-4d9d-4bcc-badf-0ecddb8e238a",
                             "versions": [
                                 { "version": "3.0.0-alpha" },
-                                { "version": "2.3.0-internal" },
-                                { "version": "2.3.0-beta" },
+                                { "version": "2.4.0-internal" },
+                                { "version": "2.4.0-beta" },
                                 { "version": "2.0.0" },
                                 { "version": "1.0.0" },
                                 { "version": "0.1.0" }

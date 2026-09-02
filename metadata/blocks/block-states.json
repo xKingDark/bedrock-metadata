@@ -983,12 +983,48 @@
             }
         },
         {
+            "name": "redstone_east",
+            "type": "string",
+            "values": [
+                { "value": "none" },
+                { "value": "side" },
+                { "value": "up" }
+            ]
+        },
+        {
+            "name": "redstone_north",
+            "type": "string",
+            "values": [
+                { "value": "none" },
+                { "value": "side" },
+                { "value": "up" }
+            ]
+        },
+        {
             "name": "redstone_signal",
             "type": "number",
             "values": {
                 "min": 0,
                 "max": 15
             }
+        },
+        {
+            "name": "redstone_south",
+            "type": "string",
+            "values": [
+                { "value": "none" },
+                { "value": "side" },
+                { "value": "up" }
+            ]
+        },
+        {
+            "name": "redstone_west",
+            "type": "string",
+            "values": [
+                { "value": "none" },
+                { "value": "side" },
+                { "value": "up" }
+            ]
         },
         {
             "name": "rehydration_level",

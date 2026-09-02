@@ -5,7 +5,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server", "version": "2.10.0" }
+ * { "module_name": "@minecraft/server", "version": "2.11.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -2820,6 +2820,16 @@ export class Dimension {
      * {@link LocationOutOfWorldBoundariesError}
      */
     spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    spawnXp(location: Vector3, amount: number): void;
 }
 
 export class DimensionRegistry {
@@ -8227,6 +8237,7 @@ export class TextPrimitive extends PrimitiveShape {
     backfaceVisible: boolean;
     backgroundColorOverride?: RGBA;
     depthTest: boolean;
+    lineGapHeight: number;
     readonly text: RawMessage | string;
     textBackfaceVisible: boolean;
     useRotation: boolean;

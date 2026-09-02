@@ -11,6 +11,31 @@
  */
 import * as minecraftcommon from "@minecraft/common";
 import * as minecraftserver from "@minecraft/server";
+export enum AnnotationAnchorOrientation {
+    TopLeft      = 0,
+    TopCenter    = 1,
+    TopRight     = 2,
+    CenterLeft   = 3,
+    Center       = 4,
+    CenterRight  = 5,
+    BottomLeft   = 6,
+    BottomCenter = 7,
+    BottomRight  = 8,
+}
+
+export enum AnnotationFacing {
+    Camera = 0,
+    Manual = 1,
+}
+
+export enum AnnotationType {
+    Invalid      = 0,
+    Drawing      = 1,
+    Image        = 2,
+    Text         = 3,
+    CommentBlock = 4,
+}
+
 export enum AudioSettingsProperty {
     AreSoundsMuted = "AreSoundsMuted",
     IsMusicMuted   = "IsMusicMuted",
@@ -148,6 +173,12 @@ export enum FlattenMode {
     Up   = 2,
 }
 
+export enum FloodOperation {
+    None  = 0,
+    Raise = 1,
+    Lower = 2,
+}
+
 export enum GamePublishSetting {
     NoMultiPlay      = 0,
     InviteOnly       = 1,
@@ -175,12 +206,14 @@ export enum GeneralInputBindingPriority {
 
 export enum GraphicsSettingsProperty {
     DisableBlockEntityRendering = "DisableBlockEntityRendering",
+    DisableCloudRendering       = "DisableCloudRendering",
     DisableEntityRendering      = "DisableEntityRendering",
     DisableParticleRendering    = "DisableParticleRendering",
     DisableTerrainRendering     = "DisableTerrainRendering",
     DisableWeatherRendering     = "DisableWeatherRendering",
     GraphicsMode                = "GraphicsMode",
     NightVision                 = "NightVision",
+    ShowChat                    = "ShowChat",
     ShowChunkBoundaries         = "ShowChunkBoundaries",
     ShowCompass                 = "ShowCompass",
     ShowInvisibleBlocks         = "ShowInvisibleBlocks",
@@ -231,16 +264,17 @@ export enum MeshLoadError {
 }
 
 export enum MeshPlacementError {
-    Cancelled           = "cancelled",
-    CommitInProgress    = "commit-in-progress",
-    GridAxisExceeded    = "grid-axis-exceeded",
-    GridVolumeExceeded  = "grid-volume-exceeded",
-    InvalidBlockType    = "invalid-block-type",
-    InvalidParameters   = "invalid-parameters",
-    NoBlocks            = "no-blocks",
-    NoTransaction       = "no-transaction",
-    PlayerUnavailable   = "player-unavailable",
-    VoxelizationTimeout = "voxelization-timeout",
+    BatchedPlacementFailure = "batched-placement-failure",
+    Cancelled               = "cancelled",
+    CommitInProgress        = "commit-in-progress",
+    GridAxisExceeded        = "grid-axis-exceeded",
+    GridVolumeExceeded      = "grid-volume-exceeded",
+    InvalidBlockType        = "invalid-block-type",
+    InvalidParameters       = "invalid-parameters",
+    NoBlocks                = "no-blocks",
+    NoTransaction           = "no-transaction",
+    PlayerUnavailable       = "player-unavailable",
+    VoxelizationTimeout     = "voxelization-timeout",
 }
 
 export enum MinimapMarkerType {
@@ -541,6 +575,76 @@ export enum WorldGeneratorType {
     Void      = "Void",
 }
 
+export class AnnotationInstance {
+    private constructor();
+    readonly isValid: boolean;
+    readonly metadata: AnnotationMetadata;
+}
+
+export class AnnotationManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    createTextAnnotation(
+        dimension: minecraftserver.Dimension,
+        location: minecraftserver.Vector3,
+        settings?: TextAnnotationSettings,
+    ): AnnotationMetadata | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    deleteAnnotation(id: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    deleteAnnotations(ids: string[]): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getAllMetadata(): AnnotationMetadata[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInstance(id: string): AnnotationInstance | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getMetadata(id: string): AnnotationMetadata | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    hasInstance(id: string): boolean;
+}
+
+export class AnnotationMetadata {
+    private constructor();
+    readonly dimension: string;
+    readonly id: string;
+    readonly isValid: boolean;
+    readonly location: minecraftserver.Vector3;
+    readonly name: string;
+    readonly tags: string[];
+    readonly "type": AnnotationType;
+    readonly visible: boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setLocation(location: minecraftserver.Vector3): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setName(name: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setTags(tags: string[]): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setVisible(visible: boolean): void;
+}
+
 export class AudioSettings {
     private constructor();
     get(property: AudioSettingsProperty): boolean | number | undefined;
@@ -698,6 +802,15 @@ export class BlockUtilities {
     getFacePreviewSelection(properties?: QuickExtrudeProperties): minecraftserver.ListBlockVolume;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    isHighPriorityFillBlock(
+        block: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
+        location: minecraftserver.Vector3,
+    ): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isLocationInsideCurrentDimensionBounds(
         locationOrVolumeOrBounds: 
@@ -732,8 +845,87 @@ export class BlockUtilities {
     ): RelativeVolumeListBlockVolume;
 }
 
+export class BlockUtilityShapeVolumeOptionsCone {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsCuboid {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsCylinder {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsEllipsoid {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsPyramid {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
 export class BlockUtilityTasks {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createShapeVolume(
+        options: 
+            | BlockUtilityShapeVolumeOptionsCone
+            | BlockUtilityShapeVolumeOptionsCuboid
+            | BlockUtilityShapeVolumeOptionsCylinder
+            | BlockUtilityShapeVolumeOptionsEllipsoid
+            | BlockUtilityShapeVolumeOptionsPyramid,
+        maxBlocksPerTick?: number,
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1979,6 +2171,64 @@ export class FeatureFlagManager {
     setFlag(name: string, value: boolean): void;
 }
 
+export class FloodResult {
+    private constructor();
+    readonly blockCount: number;
+    readonly blockLimitReached: boolean;
+    readonly loweringWater: boolean;
+    readonly max: minecraftserver.Vector3;
+    readonly min: minecraftserver.Vector3;
+    readonly operation: FloodOperation;
+    readonly targetLocation: minecraftserver.Vector3;
+    readonly valid: boolean;
+}
+
+// @ts-ignore
+export class FloodResultTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<FloodResult>;
+}
+
+export class FloodSession {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    apply(
+        result: FloodResult,
+        applyLava: boolean,
+        allowTruncatedResult: boolean,
+        transactionName: string,
+        maxBlocksPerTick?: number,
+    ): VoidTaskPromise;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    calculate(
+        targetLocation: minecraftserver.Vector3,
+        currentWaterLevel: number,
+        maxBlocksPerTick?: number,
+    ): FloodResultTaskPromise;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    dispose(): void;
+}
+
+export class FloodTools {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createSession(location: minecraftserver.Vector3): FloodSession;
+}
+
 export class GraphicsSettings {
     private constructor();
     get(property: GraphicsSettingsProperty): boolean | number | string | undefined;
@@ -2194,11 +2444,13 @@ export class InternalPersistenceManager {
 
 export class InternalPlayerServiceContext {
     private constructor();
+    readonly annotationManager: AnnotationManager;
     readonly clientFilesystem: ClientFilesystem;
     readonly clientInteractiveTools: ClientInteractiveTools;
     readonly dataStore: DataStore;
     readonly dataTransfer: DataTransferManager;
     readonly featureFlags: FeatureFlagManager;
+    readonly floodTool: FloodTools;
     readonly input: InputService;
     readonly internalPersistenceManager: InternalPersistenceManager;
     readonly jigsawService: JigsawService;
@@ -2553,13 +2805,13 @@ export class MinimapManager {
      *
      * @throws This function can throw errors.
      */
-    setVanillaBiomeColorMap(colorMap: Record<string, minecraftserver.RGB>): void;
+    setVanillaBiomeColorMap(minimapId: string, colorMap: Record<string, minecraftserver.RGB>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
-    updateVanillaColorMap(biomeType: minecraftserver.BiomeType, color: minecraftserver.RGB): void;
+    updateVanillaColorMap(minimapId: string, biomeType: minecraftserver.BiomeType, color: minecraftserver.RGB): void;
 }
 
 export class ModeChangeAfterEvent {
@@ -2804,9 +3056,60 @@ export class PrefabInstanceInteractionEvent {
     readonly instance: PrefabTemplateInstance;
 }
 
+export class PrefabInstanceTransactionOperation {
+    constructor(prefabManager: PrefabManager, pendingTransaction: PendingTransaction);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addCreateOperation(
+        operationHandler: PrefabInstanceTransactionOperationHandler,
+        instance: PrefabTemplateInstance,
+    ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addDeleteOperation(
+        operationHandler: PrefabInstanceTransactionOperationHandler,
+        instance: PrefabTemplateInstance,
+    ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addOperationHandler(
+        transactionHandler: TransactionHandler,
+        closure: (arg0: string, arg1: string) => void,
+    ): PrefabInstanceTransactionOperationHandler;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackChange(operationHandler: PrefabInstanceTransactionOperationHandler, instance: PrefabTemplateInstance): boolean;
+}
+
+// @ts-ignore
+export class PrefabInstanceTransactionOperationHandler extends TransactionOperationHandler {
+    private constructor();
+}
+
 export class PrefabManager {
     private constructor();
     readonly instanceInteractionEvents: PrefabServiceInstanceInteractionEvent;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addPrefabInstanceOperationHandler(
+        transactionHandler: TransactionHandler,
+        closure: (arg0: string, arg1: string) => void,
+    ): PrefabInstanceTransactionOperationHandler;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2901,6 +3204,14 @@ export class PrefabManager {
      * {@link PrefabServiceError}
      */
     endCapturingMouseClicks(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabServiceError}
+     */
+    getInstanceById(instanceId: string): PrefabTemplateInstance | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3093,6 +3404,12 @@ export class PrefabTemplate {
 export class PrefabTemplateInstance {
     private constructor();
     /**
+     * @throws This property can throw when used.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     */
+    readonly id: string;
+    /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceMirror: minecraftserver.StructureMirrorAxis;
@@ -3100,6 +3417,7 @@ export class PrefabTemplateInstance {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     instanceRotation: minecraftserver.StructureRotation;
+    readonly isValid: boolean;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -3130,6 +3448,12 @@ export class PrefabTemplateInstance {
      * {@link PrefabServiceError}
      */
     getTemplate(): PrefabTemplate;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     */
+    getWorldBounds(): PrefabTemplateInstanceBounds;
 }
 
 export class PrefabTemplateInstanceStructure {
@@ -4827,6 +5151,12 @@ export class WidgetStateChangeEventData {
     readonly widget: Widget;
 }
 
+export interface AnnotationSettings {
+    name?: string;
+    tags?: string[];
+    visible?: boolean;
+}
+
 export interface BindingCategoryInfo {
     label: string;
     order: number;
@@ -5071,6 +5401,7 @@ export interface LocalizationEntry {
 }
 
 export interface LogProperties {
+    alert?: boolean;
     channelMask?: LogChannel;
     player?: minecraftserver.Player;
     subMessage?: LocalizationEntry | string;
@@ -5183,6 +5514,11 @@ export interface PrefabTemplateCreateInstanceOptions {
     rotation?: minecraftserver.StructureRotation;
 }
 
+export interface PrefabTemplateInstanceBounds {
+    max: minecraftserver.Vector3;
+    min: minecraftserver.Vector3;
+}
+
 export interface PrefabTemplateInstanceLocation {
     instance: PrefabTemplateInstance;
     location: minecraftserver.Vector3;
@@ -5287,6 +5623,19 @@ export interface SmartFillInteractiveToolOptions {
     limitToSelection: boolean;
     onlyFillExposedSurface: boolean;
     radius: number;
+}
+
+// @ts-ignore
+export interface TextAnnotationSettings extends AnnotationSettings {
+    anchorOrientation?: AnnotationAnchorOrientation;
+    body?: string;
+    bodyTextColor?: minecraftserver.RGBA;
+    facing?: AnnotationFacing;
+    showBody?: boolean;
+    showTitle?: boolean;
+    titleColor?: minecraftserver.RGBA;
+    titleTextSize?: number;
+    widthLimit?: number;
 }
 
 export interface WeightedBlock {

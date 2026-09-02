@@ -6045,10 +6045,6 @@
                     "default_value": 0
                 },
                 {
-                    "name": "minecraft:connection_down",
-                    "default_value": false
-                },
-                {
                     "name": "minecraft:connection_east",
                     "default_value": false
                 },
@@ -12864,8 +12860,24 @@
             "name": "minecraft:redstone_wire",
             "states": [
                 {
+                    "name": "redstone_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "redstone_north",
+                    "default_value": "none"
+                },
+                {
                     "name": "redstone_signal",
                     "default_value": 0
+                },
+                {
+                    "name": "redstone_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "redstone_west",
+                    "default_value": "none"
                 }
             ],
             "localization_key": "tile.redstone_wire.name"

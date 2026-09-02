@@ -137,12 +137,14 @@ export enum GamePublishSetting {
 
 export enum GraphicsSettingsProperty {
     DisableBlockEntityRendering = "DisableBlockEntityRendering",
+    DisableCloudRendering       = "DisableCloudRendering",
     DisableEntityRendering      = "DisableEntityRendering",
     DisableParticleRendering    = "DisableParticleRendering",
     DisableTerrainRendering     = "DisableTerrainRendering",
     DisableWeatherRendering     = "DisableWeatherRendering",
     GraphicsMode                = "GraphicsMode",
     NightVision                 = "NightVision",
+    ShowChat                    = "ShowChat",
     ShowChunkBoundaries         = "ShowChunkBoundaries",
     ShowCompass                 = "ShowCompass",
     ShowInvisibleBlocks         = "ShowInvisibleBlocks",
@@ -573,6 +575,15 @@ export class BlockUtilities {
     getFacePreviewSelection(properties?: QuickExtrudeProperties): minecraftserver.ListBlockVolume;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    isHighPriorityFillBlock(
+        block: minecraftserver.BlockPermutation | minecraftserver.BlockType | string,
+        location: minecraftserver.Vector3,
+    ): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
      */
     isLocationInsideCurrentDimensionBounds(
         locationOrVolumeOrBounds: 
@@ -607,8 +618,87 @@ export class BlockUtilities {
     ): RelativeVolumeListBlockVolume;
 }
 
+export class BlockUtilityShapeVolumeOptionsCone {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsCuboid {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsCylinder {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsEllipsoid {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
+export class BlockUtilityShapeVolumeOptionsPyramid {
+    constructor(
+        width: number,
+        height: number,
+        depth: number,
+        rotX?: number,
+        rotY?: number,
+        rotZ?: number,
+        isHollow?: boolean,
+        thickness?: number,
+    );
+}
+
 export class BlockUtilityTasks {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createShapeVolume(
+        options: 
+            | BlockUtilityShapeVolumeOptionsCone
+            | BlockUtilityShapeVolumeOptionsCuboid
+            | BlockUtilityShapeVolumeOptionsCylinder
+            | BlockUtilityShapeVolumeOptionsEllipsoid
+            | BlockUtilityShapeVolumeOptionsPyramid,
+        maxBlocksPerTick?: number,
+    ): VolumeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1595,13 +1685,13 @@ export class MinimapManager {
      *
      * @throws This function can throw errors.
      */
-    setVanillaBiomeColorMap(colorMap: Record<string, minecraftserver.RGB>): void;
+    setVanillaBiomeColorMap(minimapId: string, colorMap: Record<string, minecraftserver.RGB>): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
      */
-    updateVanillaColorMap(biomeType: minecraftserver.BiomeType, color: minecraftserver.RGB): void;
+    updateVanillaColorMap(minimapId: string, biomeType: minecraftserver.BiomeType, color: minecraftserver.RGB): void;
 }
 
 export class ModeChangeAfterEvent {
@@ -3273,6 +3363,7 @@ export interface LocalizationEntry {
 }
 
 export interface LogProperties {
+    alert?: boolean;
     channelMask?: LogChannel;
     player?: minecraftserver.Player;
     subMessage?: LocalizationEntry | string;

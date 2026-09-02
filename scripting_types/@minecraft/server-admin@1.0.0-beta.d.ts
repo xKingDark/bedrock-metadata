@@ -141,28 +141,16 @@ export class LevelStorage {
     private constructor();
     /**
      * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link LevelStorageSaveStateChangeError}
      */
-    saveHold(): void;
+    saveHold(): Promise<void>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link LevelStorageSaveStateChangeError}
      */
-    saveQuery(): LevelStorageQuerySnapshotFile[];
+    saveQuery(): Promise<LevelStorageQuerySnapshotFile[]>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link LevelStorageSaveStateChangeError}
      */
-    saveResume(): void;
+    saveResume(): Promise<void>;
 }
 
 export class LevelStorageQuerySnapshotFile {
