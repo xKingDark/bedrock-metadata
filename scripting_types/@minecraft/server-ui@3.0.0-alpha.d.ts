@@ -166,6 +166,14 @@ export class CustomForm {
      *
      * @throws This function can throw errors.
      *
+     * {@link InvalidFormModificationError}
+     */
+    multiButtonRow(buttons: ButtonData[], options?: MultiButtonRowOptions): CustomForm;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
      * {@link minecraftcommon.EngineError}
      *
      * {@link FormVisibilityError}
@@ -545,6 +553,12 @@ export class UIManager {
     closeAllForms(player: minecraftserver.Player): void;
 }
 
+export interface ButtonData {
+    label: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
+    onClick: () => void;
+    options?: ButtonOptions;
+}
+
 export interface ButtonOptions {
     disabled?: boolean | ObservableBoolean;
     imageDetails?: ImageDetails;
@@ -610,6 +624,10 @@ export interface ModalFormDataTextFieldOptions {
 export interface ModalFormDataToggleOptions {
     defaultValue?: boolean;
     tooltip?: minecraftserver.RawMessage | string;
+}
+
+export interface MultiButtonRowOptions {
+    visible?: boolean | ObservableBoolean;
 }
 
 export interface ObservableOptions {

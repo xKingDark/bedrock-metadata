@@ -278,6 +278,7 @@
         },
         {
             "name": "minecraft:balloon",
+            "id": 614,
             "max_size": 64,
             "localization_key": "item.balloon.white.name"
         },
@@ -770,6 +771,7 @@
         },
         {
             "name": "minecraft:bleach",
+            "id": 612,
             "max_size": 64,
             "localization_key": "item.bleach.name"
         },
@@ -1823,11 +1825,13 @@
         },
         {
             "name": "minecraft:compound",
+            "id": 610,
             "max_size": 64,
             "localization_key": "item.compound.salt.name"
         },
         {
             "name": "minecraft:compound_creator",
+            "id": 238,
             "max_size": 64,
             "localization_key": "tile.compoundcreator.name"
         },
@@ -2992,601 +2996,721 @@
         },
         {
             "name": "minecraft:element_0",
+            "id": 36,
             "max_size": 64,
             "localization_key": "tile.element.unknown.name"
         },
         {
             "name": "minecraft:element_1",
+            "id": -12,
             "max_size": 64,
             "localization_key": "tile.element.h.name"
         },
         {
             "name": "minecraft:element_10",
+            "id": -21,
             "max_size": 64,
             "localization_key": "tile.element.ne.name"
         },
         {
             "name": "minecraft:element_100",
+            "id": -111,
             "max_size": 64,
             "localization_key": "tile.element.fm.name"
         },
         {
             "name": "minecraft:element_101",
+            "id": -112,
             "max_size": 64,
             "localization_key": "tile.element.md.name"
         },
         {
             "name": "minecraft:element_102",
+            "id": -113,
             "max_size": 64,
             "localization_key": "tile.element.no.name"
         },
         {
             "name": "minecraft:element_103",
+            "id": -114,
             "max_size": 64,
             "localization_key": "tile.element.lr.name"
         },
         {
             "name": "minecraft:element_104",
+            "id": -115,
             "max_size": 64,
             "localization_key": "tile.element.rf.name"
         },
         {
             "name": "minecraft:element_105",
+            "id": -116,
             "max_size": 64,
             "localization_key": "tile.element.db.name"
         },
         {
             "name": "minecraft:element_106",
+            "id": -117,
             "max_size": 64,
             "localization_key": "tile.element.sg.name"
         },
         {
             "name": "minecraft:element_107",
+            "id": -118,
             "max_size": 64,
             "localization_key": "tile.element.bh.name"
         },
         {
             "name": "minecraft:element_108",
+            "id": -119,
             "max_size": 64,
             "localization_key": "tile.element.hs.name"
         },
         {
             "name": "minecraft:element_109",
+            "id": -120,
             "max_size": 64,
             "localization_key": "tile.element.mt.name"
         },
         {
             "name": "minecraft:element_11",
+            "id": -22,
             "max_size": 64,
             "localization_key": "tile.element.na.name"
         },
         {
             "name": "minecraft:element_110",
+            "id": -121,
             "max_size": 64,
             "localization_key": "tile.element.ds.name"
         },
         {
             "name": "minecraft:element_111",
+            "id": -122,
             "max_size": 64,
             "localization_key": "tile.element.rg.name"
         },
         {
             "name": "minecraft:element_112",
+            "id": -123,
             "max_size": 64,
             "localization_key": "tile.element.cn.name"
         },
         {
             "name": "minecraft:element_113",
+            "id": -124,
             "max_size": 64,
             "localization_key": "tile.element.nh.name"
         },
         {
             "name": "minecraft:element_114",
+            "id": -125,
             "max_size": 64,
             "localization_key": "tile.element.fl.name"
         },
         {
             "name": "minecraft:element_115",
+            "id": -126,
             "max_size": 64,
             "localization_key": "tile.element.mc.name"
         },
         {
             "name": "minecraft:element_116",
+            "id": -127,
             "max_size": 64,
             "localization_key": "tile.element.lv.name"
         },
         {
             "name": "minecraft:element_117",
+            "id": -128,
             "max_size": 64,
             "localization_key": "tile.element.ts.name"
         },
         {
             "name": "minecraft:element_118",
+            "id": -129,
             "max_size": 64,
             "localization_key": "tile.element.og.name"
         },
         {
             "name": "minecraft:element_12",
+            "id": -23,
             "max_size": 64,
             "localization_key": "tile.element.mg.name"
         },
         {
             "name": "minecraft:element_13",
+            "id": -24,
             "max_size": 64,
             "localization_key": "tile.element.al.name"
         },
         {
             "name": "minecraft:element_14",
+            "id": -25,
             "max_size": 64,
             "localization_key": "tile.element.si.name"
         },
         {
             "name": "minecraft:element_15",
+            "id": -26,
             "max_size": 64,
             "localization_key": "tile.element.p.name"
         },
         {
             "name": "minecraft:element_16",
+            "id": -27,
             "max_size": 64,
             "localization_key": "tile.element.s.name"
         },
         {
             "name": "minecraft:element_17",
+            "id": -28,
             "max_size": 64,
             "localization_key": "tile.element.cl.name"
         },
         {
             "name": "minecraft:element_18",
+            "id": -29,
             "max_size": 64,
             "localization_key": "tile.element.ar.name"
         },
         {
             "name": "minecraft:element_19",
+            "id": -30,
             "max_size": 64,
             "localization_key": "tile.element.k.name"
         },
         {
             "name": "minecraft:element_2",
+            "id": -13,
             "max_size": 64,
             "localization_key": "tile.element.he.name"
         },
         {
             "name": "minecraft:element_20",
+            "id": -31,
             "max_size": 64,
             "localization_key": "tile.element.ca.name"
         },
         {
             "name": "minecraft:element_21",
+            "id": -32,
             "max_size": 64,
             "localization_key": "tile.element.sc.name"
         },
         {
             "name": "minecraft:element_22",
+            "id": -33,
             "max_size": 64,
             "localization_key": "tile.element.ti.name"
         },
         {
             "name": "minecraft:element_23",
+            "id": -34,
             "max_size": 64,
             "localization_key": "tile.element.v.name"
         },
         {
             "name": "minecraft:element_24",
+            "id": -35,
             "max_size": 64,
             "localization_key": "tile.element.cr.name"
         },
         {
             "name": "minecraft:element_25",
+            "id": -36,
             "max_size": 64,
             "localization_key": "tile.element.mn.name"
         },
         {
             "name": "minecraft:element_26",
+            "id": -37,
             "max_size": 64,
             "localization_key": "tile.element.fe.name"
         },
         {
             "name": "minecraft:element_27",
+            "id": -38,
             "max_size": 64,
             "localization_key": "tile.element.co.name"
         },
         {
             "name": "minecraft:element_28",
+            "id": -39,
             "max_size": 64,
             "localization_key": "tile.element.ni.name"
         },
         {
             "name": "minecraft:element_29",
+            "id": -40,
             "max_size": 64,
             "localization_key": "tile.element.cu.name"
         },
         {
             "name": "minecraft:element_3",
+            "id": -14,
             "max_size": 64,
             "localization_key": "tile.element.li.name"
         },
         {
             "name": "minecraft:element_30",
+            "id": -41,
             "max_size": 64,
             "localization_key": "tile.element.zn.name"
         },
         {
             "name": "minecraft:element_31",
+            "id": -42,
             "max_size": 64,
             "localization_key": "tile.element.ga.name"
         },
         {
             "name": "minecraft:element_32",
+            "id": -43,
             "max_size": 64,
             "localization_key": "tile.element.ge.name"
         },
         {
             "name": "minecraft:element_33",
+            "id": -44,
             "max_size": 64,
             "localization_key": "tile.element.as.name"
         },
         {
             "name": "minecraft:element_34",
+            "id": -45,
             "max_size": 64,
             "localization_key": "tile.element.se.name"
         },
         {
             "name": "minecraft:element_35",
+            "id": -46,
             "max_size": 64,
             "localization_key": "tile.element.br.name"
         },
         {
             "name": "minecraft:element_36",
+            "id": -47,
             "max_size": 64,
             "localization_key": "tile.element.kr.name"
         },
         {
             "name": "minecraft:element_37",
+            "id": -48,
             "max_size": 64,
             "localization_key": "tile.element.rb.name"
         },
         {
             "name": "minecraft:element_38",
+            "id": -49,
             "max_size": 64,
             "localization_key": "tile.element.sr.name"
         },
         {
             "name": "minecraft:element_39",
+            "id": -50,
             "max_size": 64,
             "localization_key": "tile.element.y.name"
         },
         {
             "name": "minecraft:element_4",
+            "id": -15,
             "max_size": 64,
             "localization_key": "tile.element.be.name"
         },
         {
             "name": "minecraft:element_40",
+            "id": -51,
             "max_size": 64,
             "localization_key": "tile.element.zr.name"
         },
         {
             "name": "minecraft:element_41",
+            "id": -52,
             "max_size": 64,
             "localization_key": "tile.element.nb.name"
         },
         {
             "name": "minecraft:element_42",
+            "id": -53,
             "max_size": 64,
             "localization_key": "tile.element.mo.name"
         },
         {
             "name": "minecraft:element_43",
+            "id": -54,
             "max_size": 64,
             "localization_key": "tile.element.tc.name"
         },
         {
             "name": "minecraft:element_44",
+            "id": -55,
             "max_size": 64,
             "localization_key": "tile.element.ru.name"
         },
         {
             "name": "minecraft:element_45",
+            "id": -56,
             "max_size": 64,
             "localization_key": "tile.element.rh.name"
         },
         {
             "name": "minecraft:element_46",
+            "id": -57,
             "max_size": 64,
             "localization_key": "tile.element.pd.name"
         },
         {
             "name": "minecraft:element_47",
+            "id": -58,
             "max_size": 64,
             "localization_key": "tile.element.ag.name"
         },
         {
             "name": "minecraft:element_48",
+            "id": -59,
             "max_size": 64,
             "localization_key": "tile.element.cd.name"
         },
         {
             "name": "minecraft:element_49",
+            "id": -60,
             "max_size": 64,
             "localization_key": "tile.element.in.name"
         },
         {
             "name": "minecraft:element_5",
+            "id": -16,
             "max_size": 64,
             "localization_key": "tile.element.b.name"
         },
         {
             "name": "minecraft:element_50",
+            "id": -61,
             "max_size": 64,
             "localization_key": "tile.element.sn.name"
         },
         {
             "name": "minecraft:element_51",
+            "id": -62,
             "max_size": 64,
             "localization_key": "tile.element.sb.name"
         },
         {
             "name": "minecraft:element_52",
+            "id": -63,
             "max_size": 64,
             "localization_key": "tile.element.te.name"
         },
         {
             "name": "minecraft:element_53",
+            "id": -64,
             "max_size": 64,
             "localization_key": "tile.element.i.name"
         },
         {
             "name": "minecraft:element_54",
+            "id": -65,
             "max_size": 64,
             "localization_key": "tile.element.xe.name"
         },
         {
             "name": "minecraft:element_55",
+            "id": -66,
             "max_size": 64,
             "localization_key": "tile.element.cs.name"
         },
         {
             "name": "minecraft:element_56",
+            "id": -67,
             "max_size": 64,
             "localization_key": "tile.element.ba.name"
         },
         {
             "name": "minecraft:element_57",
+            "id": -68,
             "max_size": 64,
             "localization_key": "tile.element.la.name"
         },
         {
             "name": "minecraft:element_58",
+            "id": -69,
             "max_size": 64,
             "localization_key": "tile.element.ce.name"
         },
         {
             "name": "minecraft:element_59",
+            "id": -70,
             "max_size": 64,
             "localization_key": "tile.element.pr.name"
         },
         {
             "name": "minecraft:element_6",
+            "id": -17,
             "max_size": 64,
             "localization_key": "tile.element.c.name"
         },
         {
             "name": "minecraft:element_60",
+            "id": -71,
             "max_size": 64,
             "localization_key": "tile.element.nd.name"
         },
         {
             "name": "minecraft:element_61",
+            "id": -72,
             "max_size": 64,
             "localization_key": "tile.element.pm.name"
         },
         {
             "name": "minecraft:element_62",
+            "id": -73,
             "max_size": 64,
             "localization_key": "tile.element.sm.name"
         },
         {
             "name": "minecraft:element_63",
+            "id": -74,
             "max_size": 64,
             "localization_key": "tile.element.eu.name"
         },
         {
             "name": "minecraft:element_64",
+            "id": -75,
             "max_size": 64,
             "localization_key": "tile.element.gd.name"
         },
         {
             "name": "minecraft:element_65",
+            "id": -76,
             "max_size": 64,
             "localization_key": "tile.element.tb.name"
         },
         {
             "name": "minecraft:element_66",
+            "id": -77,
             "max_size": 64,
             "localization_key": "tile.element.dy.name"
         },
         {
             "name": "minecraft:element_67",
+            "id": -78,
             "max_size": 64,
             "localization_key": "tile.element.ho.name"
         },
         {
             "name": "minecraft:element_68",
+            "id": -79,
             "max_size": 64,
             "localization_key": "tile.element.er.name"
         },
         {
             "name": "minecraft:element_69",
+            "id": -80,
             "max_size": 64,
             "localization_key": "tile.element.tm.name"
         },
         {
             "name": "minecraft:element_7",
+            "id": -18,
             "max_size": 64,
             "localization_key": "tile.element.n.name"
         },
         {
             "name": "minecraft:element_70",
+            "id": -81,
             "max_size": 64,
             "localization_key": "tile.element.yb.name"
         },
         {
             "name": "minecraft:element_71",
+            "id": -82,
             "max_size": 64,
             "localization_key": "tile.element.lu.name"
         },
         {
             "name": "minecraft:element_72",
+            "id": -83,
             "max_size": 64,
             "localization_key": "tile.element.hf.name"
         },
         {
             "name": "minecraft:element_73",
+            "id": -84,
             "max_size": 64,
             "localization_key": "tile.element.ta.name"
         },
         {
             "name": "minecraft:element_74",
+            "id": -85,
             "max_size": 64,
             "localization_key": "tile.element.w.name"
         },
         {
             "name": "minecraft:element_75",
+            "id": -86,
             "max_size": 64,
             "localization_key": "tile.element.re.name"
         },
         {
             "name": "minecraft:element_76",
+            "id": -87,
             "max_size": 64,
             "localization_key": "tile.element.os.name"
         },
         {
             "name": "minecraft:element_77",
+            "id": -88,
             "max_size": 64,
             "localization_key": "tile.element.ir.name"
         },
         {
             "name": "minecraft:element_78",
+            "id": -89,
             "max_size": 64,
             "localization_key": "tile.element.pt.name"
         },
         {
             "name": "minecraft:element_79",
+            "id": -90,
             "max_size": 64,
             "localization_key": "tile.element.au.name"
         },
         {
             "name": "minecraft:element_8",
+            "id": -19,
             "max_size": 64,
             "localization_key": "tile.element.o.name"
         },
         {
             "name": "minecraft:element_80",
+            "id": -91,
             "max_size": 64,
             "localization_key": "tile.element.hg.name"
         },
         {
             "name": "minecraft:element_81",
+            "id": -92,
             "max_size": 64,
             "localization_key": "tile.element.tl.name"
         },
         {
             "name": "minecraft:element_82",
+            "id": -93,
             "max_size": 64,
             "localization_key": "tile.element.pb.name"
         },
         {
             "name": "minecraft:element_83",
+            "id": -94,
             "max_size": 64,
             "localization_key": "tile.element.bi.name"
         },
         {
             "name": "minecraft:element_84",
+            "id": -95,
             "max_size": 64,
             "localization_key": "tile.element.po.name"
         },
         {
             "name": "minecraft:element_85",
+            "id": -96,
             "max_size": 64,
             "localization_key": "tile.element.at.name"
         },
         {
             "name": "minecraft:element_86",
+            "id": -97,
             "max_size": 64,
             "localization_key": "tile.element.rn.name"
         },
         {
             "name": "minecraft:element_87",
+            "id": -98,
             "max_size": 64,
             "localization_key": "tile.element.fr.name"
         },
         {
             "name": "minecraft:element_88",
+            "id": -99,
             "max_size": 64,
             "localization_key": "tile.element.ra.name"
         },
         {
             "name": "minecraft:element_89",
+            "id": -100,
             "max_size": 64,
             "localization_key": "tile.element.ac.name"
         },
         {
             "name": "minecraft:element_9",
+            "id": -20,
             "max_size": 64,
             "localization_key": "tile.element.f.name"
         },
         {
             "name": "minecraft:element_90",
+            "id": -101,
             "max_size": 64,
             "localization_key": "tile.element.th.name"
         },
         {
             "name": "minecraft:element_91",
+            "id": -102,
             "max_size": 64,
             "localization_key": "tile.element.pa.name"
         },
         {
             "name": "minecraft:element_92",
+            "id": -103,
             "max_size": 64,
             "localization_key": "tile.element.u.name"
         },
         {
             "name": "minecraft:element_93",
+            "id": -104,
             "max_size": 64,
             "localization_key": "tile.element.np.name"
         },
         {
             "name": "minecraft:element_94",
+            "id": -105,
             "max_size": 64,
             "localization_key": "tile.element.pu.name"
         },
         {
             "name": "minecraft:element_95",
+            "id": -106,
             "max_size": 64,
             "localization_key": "tile.element.am.name"
         },
         {
             "name": "minecraft:element_96",
+            "id": -107,
             "max_size": 64,
             "localization_key": "tile.element.cm.name"
         },
         {
             "name": "minecraft:element_97",
+            "id": -108,
             "max_size": 64,
             "localization_key": "tile.element.bk.name"
         },
         {
             "name": "minecraft:element_98",
+            "id": -109,
             "max_size": 64,
             "localization_key": "tile.element.cf.name"
         },
         {
             "name": "minecraft:element_99",
+            "id": -110,
             "max_size": 64,
             "localization_key": "tile.element.es.name"
         },
         {
             "name": "minecraft:element_constructor",
+            "id": -987,
             "max_size": 64,
             "localization_key": "tile.elementconstructor.name"
         },
@@ -4102,6 +4226,7 @@
         },
         {
             "name": "minecraft:glow_stick",
+            "id": 617,
             "max_size": 1,
             "localization_key": "item.glow_stick.black.name"
         },
@@ -4855,6 +4980,7 @@
         },
         {
             "name": "minecraft:ice_bomb",
+            "id": 611,
             "max_size": 16,
             "localization_key": "item.ice_bomb.name"
         },
@@ -5160,6 +5286,7 @@
         },
         {
             "name": "minecraft:lab_table",
+            "id": -988,
             "max_size": 64,
             "localization_key": "tile.labtable.name"
         },
@@ -5997,11 +6124,13 @@
         },
         {
             "name": "minecraft:material_reducer",
+            "id": -986,
             "max_size": 64,
             "localization_key": "tile.materialreducer.name"
         },
         {
             "name": "minecraft:medicine",
+            "id": 615,
             "max_size": 1,
             "localization_key": "item.medicine.blindness.name"
         },
@@ -7954,6 +8083,7 @@
         },
         {
             "name": "minecraft:rapid_fertilizer",
+            "id": 613,
             "max_size": 64,
             "localization_key": "item.rapid_fertilizer.name"
         },
@@ -8746,6 +8876,7 @@
         },
         {
             "name": "minecraft:sparkler",
+            "id": 616,
             "max_size": 1,
             "localization_key": "item.sparkler.black.name"
         },
@@ -9537,6 +9668,7 @@
         },
         {
             "name": "minecraft:underwater_tnt",
+            "id": -985,
             "max_size": 64,
             "localization_key": "tile.underwater_tnt.name"
         },
