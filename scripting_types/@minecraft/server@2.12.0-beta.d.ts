@@ -1361,6 +1361,14 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
+    hasScheduledNamedTick(eventName: string): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
     hasTag(tag: string): boolean;
     /**
      * @throws This function can throw errors.
@@ -1416,6 +1424,28 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     offset(offset: Vector3): Block | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    removeScheduledNamedTick(eventName: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    scheduleNamedTick(eventName: string, tickDelay: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1559,6 +1589,12 @@ export class BlockComponentEntityFallOnEvent extends BlockEvent {
     private constructor();
     readonly entity?: Entity;
     readonly fallDistance: number;
+}
+
+// @ts-ignore
+export class BlockComponentNamedTickEvent extends BlockEvent {
+    private constructor();
+    isName(eventName: string): boolean;
 }
 
 // @ts-ignore
@@ -7953,8 +7989,10 @@ export class PrimitiveShape {
     private constructor();
     attachedTo?: Entity;
     color: RGBA;
+    defaultVisibleToAll: boolean;
     readonly dimension: Dimension;
     readonly hasDuration: boolean;
+    hiddenFrom: Player[];
     readonly location: Vector3;
     maximumRenderDistance?: number;
     rotation: Vector3;
@@ -9851,6 +9889,7 @@ export interface BlockCustomComponent {
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
+    onNamedTick?: (arg0: BlockComponentNamedTickEvent, arg1: CustomComponentParameters) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
     onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;

@@ -7919,6 +7919,34 @@ export class SoundInstance {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    fade(duration: number, targetVolume: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    pause(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    resume(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     */
+    seekTo(seconds: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setPitch(pitch: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setVolume(volume: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     stop(): void;
 }
 
@@ -9343,6 +9371,7 @@ export interface PlayerBreakingBlockEventOptions {
 
 export interface PlayerSoundOptions {
     location?: Vector3;
+    loopCount?: number;
     pitch?: number;
     volume?: number;
 }
@@ -9532,6 +9561,7 @@ export interface WaypointTextureSelector {
 
 export interface WorldSoundOptions {
     isBroadcast?: boolean;
+    loopCount?: number;
     pitch?: number;
     volume?: number;
 }

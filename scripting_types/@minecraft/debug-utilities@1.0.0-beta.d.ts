@@ -101,8 +101,10 @@ export class DebugShape {
     private constructor();
     attachedTo?: minecraftserver.Entity;
     color: minecraftserver.RGBA;
+    defaultVisibleToAll: boolean;
     readonly dimension: minecraftserver.Dimension;
     readonly hasDuration: boolean;
+    hiddenFrom: minecraftserver.Player[];
     readonly location: minecraftserver.Vector3;
     maximumRenderDistance?: number;
     rotation: minecraftserver.Vector3;

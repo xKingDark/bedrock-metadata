@@ -358,8 +358,9 @@ export enum PlaytestSessionResult {
 }
 
 export enum PrefabInstanceInteractionEventType {
-    Clicked = "Clicked",
-    Moved   = "Moved",
+    Clicked      = "Clicked",
+    Moved        = "Moved",
+    MoveRejected = "MoveRejected",
 }
 
 export enum PrefabSource {
@@ -550,6 +551,13 @@ export enum WidgetGizmoEventType {
     OriginReleased    = "OriginReleased",
 }
 
+export enum WidgetGizmoRotationEventType {
+    Cancelled = "Cancelled",
+    Grabbed   = "Grabbed",
+    Moved     = "Moved",
+    Released  = "Released",
+}
+
 export enum WidgetGizmoScaleMode {
     World  = 0,
     Screen = 1,
@@ -559,6 +567,17 @@ export enum WidgetGroupSelectionMode {
     Multiple = "Multiple",
     None     = "None",
     Single   = "Single",
+}
+
+export enum WidgetGuideSensorDirection {
+    None      = 0,
+    PositiveY = 1,
+    NegativeY = 2,
+    PositiveZ = 4,
+    NegativeZ = 8,
+    PositiveX = 16,
+    NegativeX = 32,
+    All       = 63,
 }
 
 export enum WidgetMouseButtonActionType {
@@ -1177,6 +1196,12 @@ export class ClientInteractiveTools {
      *
      * @throws This function can throw errors.
      */
+    activateFlood(targetLocation: minecraftserver.Vector3, options: FloodInteractiveToolOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     activateSmartFill(options: SmartFillInteractiveToolOptions): Promise<void>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -1219,6 +1244,12 @@ export class ClientInteractiveTools {
      *
      * @throws This function can throw errors.
      */
+    supportsFlood(): Promise<boolean>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     supportsSmartFill(): Promise<boolean>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -1226,6 +1257,12 @@ export class ClientInteractiveTools {
      * @throws This function can throw errors.
      */
     updateExtrude(options: ExtrudeInteractiveToolOptions): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    updateFlood(targetLocation: minecraftserver.Vector3, options: FloodInteractiveToolOptions): Promise<void>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2215,6 +2252,12 @@ export class FloodSession {
     ): FloodResultTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    commit(targetLocation: minecraftserver.Vector3, currentWaterLevel: number): Promise<FloodResult>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
      */
     dispose(): void;
 }
@@ -3051,7 +3094,10 @@ export class PlaytestManager {
 
 export class PrefabInstanceInteractionEvent {
     private constructor();
-    readonly eventData: PrefabInstanceInteractionEventClicked | PrefabInstanceInteractionEventMoved;
+    readonly eventData: 
+        | PrefabInstanceInteractionEventClicked
+        | PrefabInstanceInteractionEventMoved
+        | PrefabInstanceInteractionEventMoveRejected;
     readonly eventType: PrefabInstanceInteractionEventType;
     readonly instance: PrefabTemplateInstance;
 }
@@ -3252,6 +3298,48 @@ export class PrefabManager {
      * {@link PrefabServiceError}
      */
     selectInstance(instance: PrefabTemplateInstance, append: boolean): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabServiceError}
+     */
+    validateInstancePlacement(
+        templateOrMetadata: PrefabTemplate | PrefabTemplateMetadata,
+        location: minecraftserver.Vector3,
+        options?: ValidateInstancePlacementOptions,
+    ): PrefabPlacementValidation;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    validatePlacedInstanceBounds(instance: PrefabTemplateInstance): PrefabPlacementValidation;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidInstance}
+     *
+     * {@link PrefabServiceError}
+     */
+    validatePlacedInstanceBoundsAt(
+        instance: PrefabTemplateInstance,
+        location: minecraftserver.Vector3,
+        options?: PrefabTemplateCreateInstanceOptions,
+    ): PrefabPlacementValidation;
 }
 
 export class PrefabServiceInstanceInteractionEvent {
@@ -3387,6 +3475,16 @@ export class PrefabTemplate {
      * {@link PrefabTemplateExists}
      */
     setName(newName: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link PrefabErrorInvalidTemplate}
+     *
+     * {@link PrefabErrorInvalidTemplateStructure}
+     */
+    setStructureOrder(structureIds: string[]): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -4518,6 +4616,10 @@ export class WidgetComponentGizmo extends WidgetComponentBase {
      */
     normalizedOffsetOverride?: minecraftserver.Vector3;
     /**
+     * @throws This property can throw when used.
+     */
+    readonly rotation: WidgetGizmoRotation;
+    /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
     scaleMode: WidgetGizmoScaleMode;
@@ -5067,6 +5169,42 @@ export class WidgetComponentVolumeOutline extends WidgetComponentBase {
     ): void;
 }
 
+export class WidgetGizmoRotation {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    preferredRingRadius: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotationAxes: Axis;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotationOriginOffset: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    visualStepDegrees: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setStateChangeEvent(eventFunction?: (arg0: WidgetGizmoRotationEvent) => void): void;
+}
+
+export class WidgetGizmoRotationEvent {
+    private constructor();
+    readonly axis: Axis;
+    readonly component: WidgetComponentGizmo;
+    readonly deltaDegrees: number;
+    readonly eventType: WidgetGizmoRotationEventType;
+    readonly totalDegrees: number;
+    readonly widget: Widget;
+}
+
 export class WidgetGroup {
     private constructor();
     /**
@@ -5308,6 +5446,12 @@ export interface FileSelectorOptions {
     title?: string;
 }
 
+export interface FloodInteractiveToolOptions {
+    allowTruncatedResult: boolean;
+    applyLava: boolean;
+    currentLevel: number;
+}
+
 export interface GameOptions {
     bedsWork?: boolean;
     bonusChest?: boolean;
@@ -5496,6 +5640,18 @@ export interface PrefabInstanceInteractionEventMoved {
     location: minecraftserver.Vector3;
 }
 
+export interface PrefabInstanceInteractionEventMoveRejected {
+    attemptedLocation: minecraftserver.Vector3;
+    authoritativeLocation: minecraftserver.Vector3;
+    conflictingInstanceIds: string[];
+}
+
+export interface PrefabPlacementValidation {
+    bounds: PrefabTemplateInstanceBounds;
+    conflictingInstanceIds: string[];
+    valid: boolean;
+}
+
 export interface PrefabServiceCreateTemplateOptions {
     description?: string;
     displayName?: string;
@@ -5638,6 +5794,15 @@ export interface TextAnnotationSettings extends AnnotationSettings {
     widthLimit?: number;
 }
 
+export interface ValidateInstancePlacementOptions {
+    excludedInstanceId?: string;
+    options?: PrefabTemplateCreateInstanceOptions;
+}
+
+export interface ValidatePlacedInstanceBoundsOptions {
+    options?: PrefabTemplateCreateInstanceOptions;
+}
+
 export interface WeightedBlock {
     block: minecraftserver.BlockType;
     weight: number;
@@ -5696,6 +5861,7 @@ export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions 
     axes?: Axis;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
+    rotationAxes?: Axis;
     scaleMode?: WidgetGizmoScaleMode;
     stateChangeEvent?: (arg0: WidgetComponentGizmoStateChangeEventParameters) => void;
 }
@@ -5709,7 +5875,9 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 }
 
 // @ts-ignore
-export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {}
+export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {
+    directions?: WidgetGuideSensorDirection;
+}
 
 // @ts-ignore
 export interface WidgetComponentRenderPlaneOptions extends WidgetComponentBaseOptions {

@@ -393,6 +393,13 @@ export enum WidgetGizmoEventType {
     OriginReleased    = "OriginReleased",
 }
 
+export enum WidgetGizmoRotationEventType {
+    Cancelled = "Cancelled",
+    Grabbed   = "Grabbed",
+    Moved     = "Moved",
+    Released  = "Released",
+}
+
 export enum WidgetGizmoScaleMode {
     World  = 0,
     Screen = 1,
@@ -402,6 +409,17 @@ export enum WidgetGroupSelectionMode {
     Multiple = "Multiple",
     None     = "None",
     Single   = "Single",
+}
+
+export enum WidgetGuideSensorDirection {
+    None      = 0,
+    PositiveY = 1,
+    NegativeY = 2,
+    PositiveZ = 4,
+    NegativeZ = 8,
+    PositiveX = 16,
+    NegativeX = 32,
+    All       = 63,
 }
 
 export enum WidgetMouseButtonActionType {
@@ -2587,6 +2605,10 @@ export class WidgetComponentGizmo extends WidgetComponentBase {
      */
     normalizedOffsetOverride?: minecraftserver.Vector3;
     /**
+     * @throws This property can throw when used.
+     */
+    readonly rotation: WidgetGizmoRotation;
+    /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
     scaleMode: WidgetGizmoScaleMode;
@@ -3136,6 +3158,42 @@ export class WidgetComponentVolumeOutline extends WidgetComponentBase {
     ): void;
 }
 
+export class WidgetGizmoRotation {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    preferredRingRadius: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotationAxes: Axis;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotationOriginOffset: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    visualStepDegrees: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setStateChangeEvent(eventFunction?: (arg0: WidgetGizmoRotationEvent) => void): void;
+}
+
+export class WidgetGizmoRotationEvent {
+    private constructor();
+    readonly axis: Axis;
+    readonly component: WidgetComponentGizmo;
+    readonly deltaDegrees: number;
+    readonly eventType: WidgetGizmoRotationEventType;
+    readonly totalDegrees: number;
+    readonly widget: Widget;
+}
+
 export class WidgetGroup {
     private constructor();
     /**
@@ -3479,6 +3537,7 @@ export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions 
     axes?: Axis;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
+    rotationAxes?: Axis;
     scaleMode?: WidgetGizmoScaleMode;
     stateChangeEvent?: (arg0: WidgetComponentGizmoStateChangeEventParameters) => void;
 }
@@ -3492,7 +3551,9 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 }
 
 // @ts-ignore
-export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {}
+export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {
+    directions?: WidgetGuideSensorDirection;
+}
 
 // @ts-ignore
 export interface WidgetComponentRenderPlaneOptions extends WidgetComponentBaseOptions {
