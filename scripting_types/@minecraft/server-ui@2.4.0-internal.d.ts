@@ -75,6 +75,7 @@ export class CustomForm {
     constructor(
         player: minecraftserver.Player,
         title: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: CustomFormOptions,
     );
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -286,7 +287,10 @@ export class MessageBox {
      *
      * {@link InvalidFormModificationError}
      */
-    body(body: ObservableString | ObservableUIRawMessage | string | UIRawMessage): MessageBox;
+    body(
+        body: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: MessageBoxBodyOptions,
+    ): MessageBox;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -601,11 +605,17 @@ export interface ButtonData {
 export interface ButtonOptions {
     disabled?: boolean | ObservableBoolean;
     imageDetails?: ImageDetails;
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
 
+export interface CustomFormOptions {
+    styleId?: ObservableString | string;
+}
+
 export interface DividerOptions {
+    styleId?: ObservableString | string;
     visible?: boolean | ObservableBoolean;
 }
 
@@ -618,6 +628,7 @@ export interface DropdownItemData {
 export interface DropdownOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
@@ -634,13 +645,19 @@ export interface ImageOptions {
     width?: number | ObservableNumber;
 }
 
+export interface MessageBoxBodyOptions {
+    styleId?: ObservableString | string;
+}
+
 export interface MessageBoxButtonOptions {
     imageDetails?: ImageDetails;
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
 }
 
 export interface MessageBoxOptions {
     showHorizontalButtons: boolean;
+    styleId?: ObservableString | string;
 }
 
 export interface MessageBoxResult {
@@ -670,6 +687,7 @@ export interface ModalFormDataToggleOptions {
 }
 
 export interface MultiButtonRowOptions {
+    styleId?: ObservableString | string;
     visible?: boolean | ObservableBoolean;
 }
 
@@ -682,6 +700,7 @@ export interface SliderOptions {
     disabled?: boolean | ObservableBoolean;
     fixedFormatDigits?: number | ObservableNumber;
     step?: number | ObservableNumber;
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
@@ -693,11 +712,13 @@ export interface SpacingOptions {
 export interface TextFieldOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
 
 export interface TextOptions {
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }
@@ -705,6 +726,7 @@ export interface TextOptions {
 export interface ToggleOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
+    styleId?: ObservableString | string;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;
 }

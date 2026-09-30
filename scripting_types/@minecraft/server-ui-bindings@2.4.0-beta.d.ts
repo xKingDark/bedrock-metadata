@@ -75,6 +75,7 @@ export class CustomForm {
     constructor(
         player: minecraftserver.Player,
         title: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: CustomFormOptions,
     );
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -259,7 +260,10 @@ export class MessageBox {
      *
      * {@link InvalidFormModificationError}
      */
-    body(body: ObservableString | ObservableUIRawMessage | string | UIRawMessage): MessageBox;
+    body(
+        body: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: MessageBoxBodyOptions,
+    ): MessageBox;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -578,6 +582,8 @@ export interface ButtonOptions {
     visible?: boolean | ObservableBoolean;
 }
 
+export interface CustomFormOptions {}
+
 export interface DividerOptions {
     visible?: boolean | ObservableBoolean;
 }
@@ -606,6 +612,8 @@ export interface ImageOptions {
     visible?: boolean | ObservableBoolean;
     width?: number | ObservableNumber;
 }
+
+export interface MessageBoxBodyOptions {}
 
 export interface MessageBoxButtonOptions {
     imageDetails?: ImageDetails;

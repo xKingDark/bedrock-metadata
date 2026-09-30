@@ -4841,6 +4841,17 @@
             "localization_key": "tile.dirt_with_roots.name"
         },
         {
+            "id": 1506,
+            "name": "minecraft:disc_press",
+            "states": [
+                {
+                    "name": "minecraft:cardinal_direction",
+                    "default_value": "south"
+                }
+            ],
+            "localization_key": "tile.disc_press.name"
+        },
+        {
             "id": 23,
             "name": "minecraft:dispenser",
             "states": [
@@ -7394,6 +7405,36 @@
             "name": "minecraft:ice",
             "states": [],
             "localization_key": "tile.ice.name"
+        },
+        {
+            "id": 1503,
+            "name": "minecraft:ice_crystal",
+            "states": [
+                {
+                    "name": "minecraft:block_face",
+                    "default_value": "up"
+                }
+            ],
+            "localization_key": "tile.ice_crystal.name"
+        },
+        {
+            "id": 1502,
+            "name": "minecraft:icicle",
+            "states": [
+                {
+                    "name": "attached_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "dripstone_thickness",
+                    "default_value": "tip"
+                },
+                {
+                    "name": "hanging",
+                    "default_value": true
+                }
+            ],
+            "localization_key": "tile.icicle.name"
         },
         {
             "id": 1117,

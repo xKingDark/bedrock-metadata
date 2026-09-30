@@ -70797,6 +70797,26 @@
             "hash": 985900240
         },
         {
+            "name": "minecraft:disc_press",
+            "states": { "minecraft:cardinal_direction": "south" },
+            "hash": 2735751685
+        },
+        {
+            "name": "minecraft:disc_press",
+            "states": { "minecraft:cardinal_direction": "west" },
+            "hash": 1012603982
+        },
+        {
+            "name": "minecraft:disc_press",
+            "states": { "minecraft:cardinal_direction": "north" },
+            "hash": 2593596903
+        },
+        {
+            "name": "minecraft:disc_press",
+            "states": { "minecraft:cardinal_direction": "east" },
+            "hash": 452703276
+        },
+        {
             "name": "minecraft:dispenser",
             "states": {
                 "facing_direction": 0,
@@ -90534,6 +90554,216 @@
             "name": "minecraft:ice",
             "states": {},
             "hash": 107547877
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "states": { "minecraft:block_face": "down" },
+            "hash": 2398089602
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "states": { "minecraft:block_face": "up" },
+            "hash": 1179756793
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "states": { "minecraft:block_face": "north" },
+            "hash": 2671452834
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "states": { "minecraft:block_face": "south" },
+            "hash": 1897054036
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "states": { "minecraft:block_face": "west" },
+            "hash": 3906966905
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "states": { "minecraft:block_face": "east" },
+            "hash": 1799341547
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "tip",
+                "hanging": false
+            },
+            "hash": 3445030839
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "tip",
+                "hanging": true
+            },
+            "hash": 2389724268
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "frustum",
+                "hanging": false
+            },
+            "hash": 382764210
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "frustum",
+                "hanging": true
+            },
+            "hash": 1438070781
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "middle",
+                "hanging": false
+            },
+            "hash": 2690644584
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "middle",
+                "hanging": true
+            },
+            "hash": 3745951155
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "base",
+                "hanging": false
+            },
+            "hash": 3433428306
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "base",
+                "hanging": true
+            },
+            "hash": 193767581
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "merge",
+                "hanging": false
+            },
+            "hash": 338914646
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": false,
+                "dripstone_thickness": "merge",
+                "hanging": true
+            },
+            "hash": 1394221217
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "tip",
+                "hanging": false
+            },
+            "hash": 1136461200
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "tip",
+                "hanging": true
+            },
+            "hash": 2191767771
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "frustum",
+                "hanging": false
+            },
+            "hash": 3066457621
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "frustum",
+                "hanging": true
+            },
+            "hash": 2011151050
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "middle",
+                "hanging": false
+            },
+            "hash": 3416867065
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "middle",
+                "hanging": true
+            },
+            "hash": 2361560494
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "base",
+                "hanging": false
+            },
+            "hash": 1195472863
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "base",
+                "hanging": true
+            },
+            "hash": 140166292
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "merge",
+                "hanging": false
+            },
+            "hash": 3951921669
+        },
+        {
+            "name": "minecraft:icicle",
+            "states": {
+                "attached_bit": true,
+                "dripstone_thickness": "merge",
+                "hanging": true
+            },
+            "hash": 2896615098
         },
         {
             "name": "minecraft:infested_chiseled_stone_bricks",

@@ -4160,6 +4160,18 @@ export class EntityIsStunnedComponent extends EntityComponent {
 // @ts-ignore
 export class EntityIsTamedComponent extends EntityComponent {
     private constructor();
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly tamedToPlayer?: Player;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
+    readonly tamedToPlayerId?: string;
     static readonly componentId = "minecraft:is_tamed";
 }
 
@@ -7990,6 +8002,10 @@ export class StartupEvent {
      * @remarks This property can be read in early-execution mode.
      */
     readonly itemComponentRegistry: ItemComponentRegistry;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly worldClockRegistry: WorldClockRegistry;
 }
 
 // @ts-ignore
@@ -8338,6 +8354,23 @@ export class TickingAreaManager {
     removeTickingArea(identifier: string | TickingArea): void;
 }
 
+export class TimeMarker {
+    private constructor();
+    readonly name: string;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link WorldClockInvalidTimeMarkerError}
+     */
+    readonly period?: number;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link WorldClockInvalidTimeMarkerError}
+     */
+    readonly time: number;
+}
+
 export class Trigger {
     eventName: string;
     constructor(eventName: string);
@@ -8473,6 +8506,12 @@ export class World {
      * {@link minecraftcommon.InvalidArgumentError}
      */
     getAllPlayers(): Player[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockNotFoundError}
+     */
+    getClock(name: string): WorldClock;
     getDay(): number;
     getDefaultSpawnLocation(): Vector3;
     getDifficulty(): Difficulty;
@@ -8809,6 +8848,22 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly worldClockOnPaused: WorldClockOnPausedAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly worldClockOnResumed: WorldClockOnResumedAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly worldClockOnTimeMarker: WorldClockOnTimeMarkerAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly worldClockOnTimeModified: WorldClockOnTimeModifiedAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly worldLoad: WorldLoadAfterEventSignal;
 }
 
@@ -8870,6 +8925,209 @@ export class WorldBeforeEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly weatherChange: WeatherChangeBeforeEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly worldClockOnRestart: WorldClockOnRestartBeforeEventSignal;
+}
+
+export class WorldClock {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    isPaused: boolean;
+    readonly name: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    time: number;
+    readonly timeMarkers: TimeMarker[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockAddTimeMarkerError}
+     */
+    addTimeMarker(timeMarkerOptions: TimeMarkerOptions): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockRemoveMinecraftTimeMarkerError}
+     *
+     * {@link WorldClockTimeMarkerNotFoundError}
+     */
+    removeTimeMarker(timeMarker: string | TimeMarker): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockRewindError}
+     *
+     * {@link WorldClockTimeMarkerNotFoundError}
+     */
+    rewindTo(timeMarker: string | TimeMarker): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockTimeMarkerNotFoundError}
+     */
+    set(timeMarker: string | TimeMarker): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockTimeMarkerNotFoundError}
+     */
+    skipTo(timeMarker: string | TimeMarker): void;
+}
+
+export class WorldClockOnPausedAfterEvent {
+    private constructor();
+    readonly clock: WorldClock;
+}
+
+export class WorldClockOnPausedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: WorldClockOnPausedAfterEvent) => void,
+        options?: WorldClockEventOptions,
+    ): (arg0: WorldClockOnPausedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WorldClockOnPausedAfterEvent) => void): void;
+}
+
+export class WorldClockOnRestartBeforeEvent {
+    private constructor();
+    cancel: boolean;
+    readonly clock: WorldClock;
+    newTime: number;
+}
+
+export class WorldClockOnRestartBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: WorldClockOnRestartBeforeEvent) => void,
+        options?: WorldClockEventOptions,
+    ): (arg0: WorldClockOnRestartBeforeEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WorldClockOnRestartBeforeEvent) => void): void;
+}
+
+export class WorldClockOnResumedAfterEvent {
+    private constructor();
+    readonly clock: WorldClock;
+}
+
+export class WorldClockOnResumedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: WorldClockOnResumedAfterEvent) => void,
+        options?: WorldClockEventOptions,
+    ): (arg0: WorldClockOnResumedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WorldClockOnResumedAfterEvent) => void): void;
+}
+
+export class WorldClockOnTimeMarkerAfterEvent {
+    private constructor();
+    readonly clock: WorldClock;
+    readonly timeMarker: TimeMarker;
+}
+
+export class WorldClockOnTimeMarkerAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: WorldClockOnTimeMarkerAfterEvent) => void,
+        options?: WorldClockTimeMarkerEventOptions,
+    ): (arg0: WorldClockOnTimeMarkerAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WorldClockOnTimeMarkerAfterEvent) => void): void;
+}
+
+export class WorldClockOnTimeModifiedAfterEvent {
+    private constructor();
+    readonly clock: WorldClock;
+}
+
+export class WorldClockOnTimeModifiedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: WorldClockOnTimeModifiedAfterEvent) => void,
+        options?: WorldClockEventOptions,
+    ): (arg0: WorldClockOnTimeModifiedAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: WorldClockOnTimeModifiedAfterEvent) => void): void;
+}
+
+export class WorldClockRegistry {
+    private constructor();
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link WorldClockInvalidRegistryError}
+     *
+     * {@link WorldClockRegistrationError}
+     *
+     * {@link WorldClockReloadNewWorldClockError}
+     *
+     * {@link WorldClockReloadTimeMarkerError}
+     */
+    registerClock(name: string, registrationOptions?: WorldClockRegistrationOptions): void;
 }
 
 export class WorldLoadAfterEvent {
@@ -9526,6 +9784,12 @@ export interface TickingAreaOptions {
     to: Vector3;
 }
 
+export interface TimeMarkerOptions {
+    name: string;
+    period?: number;
+    time: number;
+}
+
 export interface TitleDisplayOptions {
     fadeInDuration: number;
     fadeOutDuration: number;
@@ -9557,6 +9821,19 @@ export interface WaypointTextureBounds {
 
 export interface WaypointTextureSelector {
     textureBoundsList: WaypointTextureBounds[];
+}
+
+export interface WorldClockEventOptions {
+    clock: string;
+}
+
+export interface WorldClockRegistrationOptions {
+    timeMarkers?: TimeMarkerOptions[];
+}
+
+export interface WorldClockTimeMarkerEventOptions {
+    clock: string;
+    timeMarker?: string;
 }
 
 export interface WorldSoundOptions {
@@ -9836,6 +10113,56 @@ export class TickingAreaError extends Error {
 
 // @ts-ignore
 export class UnloadedChunksError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockAddTimeMarkerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockInvalidRegistryError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockInvalidTimeMarkerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockNotFoundError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockRegistrationError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockReloadNewWorldClockError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockReloadTimeMarkerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockRemoveMinecraftTimeMarkerError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockRewindError extends Error {
+    private constructor();
+}
+
+// @ts-ignore
+export class WorldClockTimeMarkerNotFoundError extends Error {
     private constructor();
 }
 

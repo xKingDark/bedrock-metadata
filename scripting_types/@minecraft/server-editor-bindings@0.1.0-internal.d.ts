@@ -110,17 +110,6 @@ export enum EntityOperationType {
     Delete = 1,
 }
 
-export enum ExportResult {
-    ValidWorldExport            = 0,
-    LevelFetchFailed            = 1,
-    FileArchiverFetchFailed     = 2,
-    ProjectConverterFetchFailed = 3,
-    PlayerNotFound              = 4,
-    WorldExportFailed           = 5,
-    WorldExportBusy             = 6,
-    EditorSystemFailure         = 7,
-}
-
 export enum FlattenMode {
     Both = 0,
     Down = 1,
@@ -216,21 +205,6 @@ export enum Plane {
     XY   = 1,
     XZ   = 2,
     YZ   = 4,
-}
-
-export enum PlaytestSessionResult {
-    OK                   = 0,
-    InvalidSessionHandle = 1,
-    SessionInfoNotFound  = 2,
-    TooManyPlayers       = 3,
-    WorldExportFailed    = 4,
-    WorldExportBusy      = 5,
-    UnsupportedScenario  = 6,
-    EditorSystemFailure  = 7,
-    InvalidLevelId       = 8,
-    PlayerNotFound       = 9,
-    ResponseTimeout      = 10,
-    UnspecifiedError     = 11,
 }
 
 export enum PrimitiveType {
@@ -1344,32 +1318,6 @@ export class EditorStructureManager {
     searchStructures(options?: EditorStructureSearchOptions): EditorStructure[];
 }
 
-export class ExportManager {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    beginExportProject(options: GameOptions): Promise<ExportResult>;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    canExportProject(): boolean;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    getGameOptions(useDefault?: boolean): GameOptions;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getGameVersion(): string;
-}
-
 export class Extension {
     private constructor();
     readonly defaultToolGroupId: string;
@@ -1387,12 +1335,10 @@ export class ExtensionContext {
     readonly brushShapeManager: BrushShapeManager;
     readonly clipboardManager: ClipboardManager;
     readonly cursor: Cursor;
-    readonly exportManager: ExportManager;
     readonly extensionInfo: Extension;
     readonly guidePlaneManager: GuidePlaneManager;
     readonly minimapManager: MinimapManager;
     readonly player: minecraftserver.Player;
-    readonly playtest: PlaytestManager;
     readonly selectionManager: SelectionManager;
     readonly settings: SettingsManager;
     readonly structureManager: EditorStructureManager;
@@ -1814,22 +1760,6 @@ export class PendingTransaction {
      * @throws This function can throw errors.
      */
     trackBlockChangeVolume(blockVolume: minecraftserver.BlockVolumeBase): boolean;
-}
-
-export class PlaytestManager {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    beginPlaytest(options: GameOptions): Promise<PlaytestSessionResult>;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     */
-    getPlaytestSessionAvailability(): PlaytestSessionResult;
 }
 
 // @ts-ignore

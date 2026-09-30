@@ -850,6 +850,8 @@
                 { "name": "minecraft:hopper" },
                 { "name": "minecraft:horn_coral_block" },
                 { "name": "minecraft:ice" },
+                { "name": "minecraft:ice_crystal" },
+                { "name": "minecraft:icicle" },
                 { "name": "minecraft:infested_chiseled_stone_bricks" },
                 { "name": "minecraft:infested_cobblestone" },
                 { "name": "minecraft:infested_cracked_stone_bricks" },

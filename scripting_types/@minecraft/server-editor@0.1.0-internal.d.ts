@@ -634,6 +634,14 @@ export class AnnotationManager {
      * @remarks This function can't be called in restricted-execution mode.
      */
     hasInstance(id: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    leaseInstance(id: string): Promise<LeasedAnnotationInstance>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setShowAnnotations(showAnnotations: boolean): void;
 }
 
 export class AnnotationMetadata {
@@ -1717,9 +1725,34 @@ export class DataStoreModalToolActivationChangedEventSignal {
     unsubscribe(callback: (arg0: DataStoreModalToolActivationChangedEvent) => void): void;
 }
 
+export class DataStoreModalToolChangeRequestedEvent {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    cancel: boolean;
+    readonly nextToolId?: string;
+    readonly previousToolId?: string;
+}
+
+export class DataStoreModalToolChangeRequestedEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    subscribe(
+        callback: (arg0: DataStoreModalToolChangeRequestedEvent) => void,
+    ): (arg0: DataStoreModalToolChangeRequestedEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    unsubscribe(callback: (arg0: DataStoreModalToolChangeRequestedEvent) => void): void;
+}
+
 export class DataStoreModalToolContainer {
     private constructor();
     readonly toolActivationChanged: DataStoreModalToolActivationChangedEventSignal;
+    readonly toolChangeRequested: DataStoreModalToolChangeRequestedEventSignal;
     getSelectedTool(): string | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -2119,12 +2152,10 @@ export class ExtensionContext {
     readonly brushShapeManager: BrushShapeManager;
     readonly clipboardManager: ClipboardManager;
     readonly cursor: Cursor;
-    readonly exportManager: ExportManager;
     readonly extensionInfo: Extension;
     readonly guidePlaneManager: GuidePlaneManager;
     readonly minimapManager: MinimapManager;
     readonly player: minecraftserver.Player;
-    readonly playtest: PlaytestManager;
     readonly selectionManager: SelectionManager;
     readonly settings: SettingsManager;
     readonly structureManager: EditorStructureManager;
@@ -2492,12 +2523,14 @@ export class InternalPlayerServiceContext {
     readonly clientInteractiveTools: ClientInteractiveTools;
     readonly dataStore: DataStore;
     readonly dataTransfer: DataTransferManager;
+    readonly exportManager: ExportManager;
     readonly featureFlags: FeatureFlagManager;
     readonly floodTool: FloodTools;
     readonly input: InputService;
     readonly internalPersistenceManager: InternalPersistenceManager;
     readonly jigsawService: JigsawService;
     readonly meshCacheManager: MeshCacheManager;
+    readonly playtest: PlaytestManager;
     readonly prefabManager: PrefabManager;
     readonly realmsService: RealmsService;
     readonly regionManager: PlayerProjectRegionManager;
@@ -2576,6 +2609,15 @@ export class JigsawService {
         structureSetData: EditorRegistryFile[],
         templatePoolData: EditorRegistryFile[],
     ): Promise<string[]>;
+}
+
+export class LeasedAnnotationInstance {
+    private constructor();
+    readonly instance: AnnotationInstance;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    dispose(): void;
 }
 
 export class Logger {
@@ -4118,6 +4160,47 @@ export class TaskPromiseBase {
     cancel(): void;
 }
 
+// @ts-ignore
+export class TextAnnotationInstance extends AnnotationInstance {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    anchorOrientation: AnnotationAnchorOrientation;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    body: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    bodyTextColor: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    facing: AnnotationFacing;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    showBody: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    showTitle: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    titleColor: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    titleTextSize: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    widthLimit: number;
+}
+
 export class ThemeSettings {
     private constructor();
     /**
@@ -5403,6 +5486,7 @@ export interface EditorJigsawSection {
 
 export interface EditorRealmsWorld {
     id: string;
+    isPro: boolean;
     name: string;
 }
 
@@ -5449,7 +5533,10 @@ export interface FileSelectorOptions {
 export interface FloodInteractiveToolOptions {
     allowTruncatedResult: boolean;
     applyLava: boolean;
+    cliffDetection?: boolean;
+    cliffDetectionDepth?: number;
     currentLevel: number;
+    selectionVolume?: minecraftserver.BlockVolumeBase;
 }
 
 export interface GameOptions {

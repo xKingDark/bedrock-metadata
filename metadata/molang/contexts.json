@@ -1,7 +1,12 @@
 {
     "data_items": [
+        { "name": "context.all_animations_finished" },
+        { "name": "context.any_animation_finished" },
         { "name": "context.block_face" },
         { "name": "context.cardinal_block_face_placed_on" },
-        { "name": "context.other" }
+        { "name": "context.is_hidden" },
+        { "name": "context.move_distance" },
+        { "name": "context.other" },
+        { "name": "context.state_time" }
     ]
 }
