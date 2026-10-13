@@ -385,6 +385,12 @@ export enum WidgetGroupSelectionMode {
     Single   = "Single",
 }
 
+export enum WidgetGuideSensorBlockFilter {
+    Any        = 0,
+    Collidable = 1,
+    FullBlocks = 2,
+}
+
 export enum WidgetGuideSensorDirection {
     None      = 0,
     PositiveY = 1,
@@ -798,7 +804,7 @@ export class BrushShapeManager {
      *
      * @throws This function can throw errors.
      */
-    beginPainting(onComplete: (arg0: PaintCompletionState) => void): void;
+    beginPainting(onComplete: (arg0: PaintCompletionState) => void, pendingTransaction?: PendingTransaction): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -912,7 +918,7 @@ export class BrushShapeManager {
      *
      * @throws This function can throw errors.
      */
-    singlePaint(onComplete: (arg0: PaintCompletionState) => void): void;
+    singlePaint(onComplete: (arg0: PaintCompletionState) => void, pendingTransaction?: PendingTransaction): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -3465,6 +3471,7 @@ export interface WidgetComponentEntityOptions extends WidgetComponentBaseOptions
 // @ts-ignore
 export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions {
     axes?: Axis;
+    constrainToBlockCenters?: boolean;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
     rotationAxes?: Axis;
@@ -3482,6 +3489,7 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 
 // @ts-ignore
 export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {
+    blockFilter?: WidgetGuideSensorBlockFilter;
     directions?: WidgetGuideSensorDirection;
 }
 

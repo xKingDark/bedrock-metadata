@@ -236,6 +236,43 @@ export class CustomForm {
     ): CustomForm;
 }
 
+export class Form {
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    constructor(player: minecraftserver.Player, id: string);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link FormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    hide(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isShowing(): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link FormVisibilityError}
+     *
+     * {@link minecraftserver.InvalidEntityError}
+     */
+    show(): Promise<void>;
+}
+
 export class FormResponse {
     private constructor();
     readonly cancelationReason?: FormCancelationReason;
@@ -585,6 +622,7 @@ export interface ButtonOptions {
 
 export interface CustomFormOptions {
     styleId?: ObservableString | string;
+    topCloseButtonVisible?: boolean | ObservableBoolean;
 }
 
 export interface DividerOptions {

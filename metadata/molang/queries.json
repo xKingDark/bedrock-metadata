@@ -164,6 +164,7 @@
         { "name": "query.is_item_name_any" },
         { "name": "query.is_jump_goal_jumping" },
         { "name": "query.is_jumping" },
+        { "name": "query.is_laying" },
         { "name": "query.is_laying_down" },
         { "name": "query.is_laying_egg" },
         { "name": "query.is_leashed" },

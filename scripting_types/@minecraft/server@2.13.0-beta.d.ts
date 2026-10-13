@@ -2,11 +2,11 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @internal
+ * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-bindings", "version": "2.12.0-internal" }
+ * { "module_name": "@minecraft/server", "version": "2.13.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -370,39 +370,6 @@ export enum EntityInitializationCause {
     Transformed = "Transformed",
 }
 
-export enum EntitySpawnCategory {
-    Ambient                  = "Ambient",
-    Axolotls                 = "Axolotls",
-    Creature                 = "Creature",
-    Misc                     = "Misc",
-    Monster                  = "Monster",
-    UndergroundWaterCreature = "UndergroundWaterCreature",
-    WaterAmbient             = "WaterAmbient",
-    WaterCreature            = "WaterCreature",
-}
-
-export enum EntitySpawnReason {
-    Breeding        = "Breeding",
-    Bucket          = "Bucket",
-    ChunkGeneration = "ChunkGeneration",
-    Command         = "Command",
-    Conversion      = "Conversion",
-    DimensionTravel = "DimensionTravel",
-    Dispenser       = "Dispenser",
-    Event           = "Event",
-    Jockey          = "Jockey",
-    Load            = "Load",
-    MobSummoned     = "MobSummoned",
-    Natural         = "Natural",
-    Patrol          = "Patrol",
-    Reinforcement   = "Reinforcement",
-    SpawnEgg        = "SpawnEgg",
-    Spawner         = "Spawner",
-    Structure       = "Structure",
-    TrialSpawner    = "TrialSpawner",
-    Triggered       = "Triggered",
-}
-
 export enum EntitySwingSource {
     Attack    = "Attack",
     Build     = "Build",
@@ -541,6 +508,7 @@ export enum InputPermissionCategory {
 
 export enum ItemComponentTypes {
     BlockDynamicProperties = "minecraft:block_actor_dynamic_properties",
+    BlockEntityStorage     = "minecraft:block_entity_storage",
     Book                   = "minecraft:book",
     Compostable            = "minecraft:compostable",
     Cooldown               = "minecraft:cooldown",
@@ -626,6 +594,12 @@ export enum PaletteColor {
     Green     = 13,
     Red       = 14,
     Black     = 15,
+}
+
+export enum PassengerOfBlockEmoteType {
+    Laying   = "Laying",
+    Riding   = "Riding",
+    Standing = "Standing",
 }
 
 export enum PlatformType {
@@ -947,6 +921,7 @@ export type ItemComponentReturnType<T extends string> =
 
 export type ItemComponentTypeMap = {
     block_actor_dynamic_properties: ItemBlockDynamicPropertiesComponent;
+    block_entity_storage: ItemBlockEntityStorageComponent;
     book: ItemBookComponent;
     compostable: ItemCompostableComponent;
     cooldown: ItemCooldownComponent;
@@ -957,6 +932,7 @@ export type ItemComponentTypeMap = {
     inventory: ItemInventoryComponent;
     potion: ItemPotionComponent;
     "minecraft:block_actor_dynamic_properties": ItemBlockDynamicPropertiesComponent;
+    "minecraft:block_entity_storage": ItemBlockEntityStorageComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -1319,6 +1295,14 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
+    getAllScheduledNamedTicks(): ScheduledNamedTick[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
     getComponent<T extends string>(componentId: T): BlockComponentReturnType<T> | undefined;
     /**
      * @throws This function can throw errors.
@@ -1370,6 +1354,14 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     getRedstonePower(): number | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    getScheduledNamedTickCount(): number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1475,7 +1467,7 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
-    removeScheduledNamedTick(eventName: string): void;
+    removeScheduledNamedTicks(eventName: string): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1636,7 +1628,8 @@ export class BlockComponentEntityFallOnEvent extends BlockEvent {
 // @ts-ignore
 export class BlockComponentNamedTickEvent extends BlockEvent {
     private constructor();
-    isName(eventName: string): boolean;
+    readonly name: string;
+    isMine(): boolean;
 }
 
 // @ts-ignore
@@ -2531,6 +2524,7 @@ export class Camera {
 export class CarryOverBlockEntityDataFunction extends LootItemFunction {
     private constructor();
     readonly dynamicProperties: boolean;
+    readonly entityStorage: boolean;
 }
 
 export class CatmullRomSpline {
@@ -2929,6 +2923,8 @@ export class CustomCommandRegistry {
      * {@link minecraftcommon.EngineError}
      *
      * {@link NamespaceNameError}
+     *
+     * {@link RawMessageError}
      */
     registerCommand(
         customCommand: CustomCommand,
@@ -2946,6 +2942,8 @@ export class CustomCommandRegistry {
      * {@link minecraftcommon.EngineError}
      *
      * {@link NamespaceNameError}
+     *
+     * {@link RawMessageError}
      */
     registerEnum(name: string, values: string[]): void;
 }
@@ -3498,6 +3496,12 @@ export class Entity {
      *
      * {@link InvalidEntityError}
      */
+    readonly isPassengerOfBlock: boolean;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link InvalidEntityError}
+     */
     readonly isSleeping: boolean;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
@@ -3896,6 +3900,28 @@ export class Entity {
      * {@link InvalidEntityError}
      */
     setRotation(rotation: Vector2): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    startPassengerOfBlock(
+        blockPosition: Vector3,
+        offset: Vector3,
+        rotation: number,
+        rotationLimit: number,
+        emote: PassengerOfBlockEmoteType,
+    ): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    stopPassengerOfBlock(): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -5295,25 +5321,6 @@ export class EntitySpawnAfterEventSignal {
     unsubscribe(callback: (arg0: EntitySpawnAfterEvent) => void): void;
 }
 
-export class EntitySpawnCallbackArgs {
-    private constructor();
-    readonly dimensionLocation: DimensionLocation;
-    readonly spawnReason: EntitySpawnReason;
-    readonly spawnType: EntitySpawnType;
-}
-
-export class EntitySpawnType {
-    private constructor();
-    readonly entityId: string;
-    readonly height: number;
-    readonly isImmuneFire: boolean;
-    readonly isSummonable: boolean;
-    readonly spawnCategory: EntitySpawnCategory;
-    readonly width: number;
-    getSpawnAABB(position: Vector3): AABB;
-    isBlockDangerous(block: Block): boolean;
-}
-
 export class EntityStartSneakingAfterEvent {
     private constructor();
     readonly entity: Entity;
@@ -5984,6 +5991,66 @@ export class ItemBlockDynamicPropertiesComponent extends ItemComponent {
      * {@link InvalidItemStackError}
      */
     totalByteCount(): number;
+}
+
+// @ts-ignore
+export class ItemBlockEntityStorageComponent extends ItemComponent {
+    private constructor();
+    static readonly componentId = "minecraft:block_entity_storage";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    getEntities(): BlockEntityStorageInfo[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    release(entityId: string, location: DimensionLocation): Entity;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    size(): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    store(entity: Entity): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    transfer(entityId: string, targetBlock: Block): void;
 }
 
 // @ts-ignore
@@ -6944,13 +7011,6 @@ export class MolangVariableMap {
     setVector3(variableName: string, vector: Vector3): void;
 }
 
-export class ObstructionCallbackArgs {
-    private constructor();
-    readonly dimension: Dimension;
-    readonly entity: Entity;
-    readonly spawnType: EntitySpawnType;
-}
-
 export class PackSettingChangeAfterEvent {
     private constructor();
     readonly settingName: string;
@@ -7166,8 +7226,12 @@ export class Player extends Entity {
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playMusic(trackId: string, musicOptions?: MusicOptions): void;
+    playMusic(trackId: SoundDefinition | string, musicOptions?: MusicOptions): SoundInstance | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -8904,38 +8968,6 @@ export class SoundInstance {
     stop(): void;
 }
 
-export class SpawnRulesRegistry {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     *
-     * {@link SpawnRulesInvalidRegistryError}
-     */
-    registerEntitySpawnCallback(id: string, callback: (arg0: EntitySpawnCallbackArgs) => boolean): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftcommon.InvalidArgumentError}
-     *
-     * {@link NamespaceNameError}
-     *
-     * {@link SpawnRulesInvalidRegistryError}
-     */
-    registerObstructionCallback(id: string, callback: (arg0: ObstructionCallbackArgs) => boolean): void;
-}
-
 // @ts-ignore
 export class SpecificEnchantFunction extends LootItemFunction {
     private constructor();
@@ -8980,12 +9012,6 @@ export class StartupEvent {
      * @remarks This property can be read in early-execution mode.
      */
     readonly worldClockRegistry: WorldClockRegistry;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     */
-    getSpawnRulesRegistry(): SpawnRulesRegistry;
 }
 
 // @ts-ignore
@@ -9560,9 +9586,11 @@ export class World {
      *
      * @throws This function can throw errors.
      *
+     * {@link minecraftcommon.EngineError}
+     *
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playMusic(trackId: string, musicOptions?: MusicOptions): void;
+    playMusic(trackId: SoundDefinition | string, musicOptions?: MusicOptions): SoundInstance | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -10395,7 +10423,7 @@ export interface CustomCommandParameter {
 }
 
 export interface CustomCommandResult {
-    message?: string;
+    message?: RawMessage | string;
     status: CustomCommandStatus;
 }
 
@@ -10786,6 +10814,11 @@ export interface RotationKeyFrame {
     easingFunc?: EasingType;
     rotation: Vector3;
     timeSeconds: number;
+}
+
+export interface ScheduledNamedTick {
+    eventName: string;
+    tickDelay: number;
 }
 
 export interface ScoreboardObjectiveDisplayOptions {
@@ -11198,11 +11231,6 @@ export class RawMessageError extends Error {
 }
 
 // @ts-ignore
-export class SpawnRulesInvalidRegistryError extends Error {
-    private constructor();
-}
-
-// @ts-ignore
 export class TickingAreaError extends Error {
     private constructor();
     /**
@@ -11268,7 +11296,6 @@ export class WorldClockTimeMarkerNotFoundError extends Error {
 
 export const HudElementsCount = 13;
 export const HudVisibilityCount = 2;
-export const isInternal = true;
 export const MoonPhaseCount = 8;
 export const TicksPerDay = 24000;
 export const TicksPerSecond = 20;

@@ -28,6 +28,11 @@ export enum AnnotationFacing {
     Manual = 1,
 }
 
+export enum AnnotationInteractionMode {
+    None    = 0,
+    Drawing = 1,
+}
+
 export enum AnnotationType {
     Invalid      = 0,
     Drawing      = 1,
@@ -569,6 +574,12 @@ export enum WidgetGroupSelectionMode {
     Single   = "Single",
 }
 
+export enum WidgetGuideSensorBlockFilter {
+    Any        = 0,
+    Collidable = 1,
+    FullBlocks = 2,
+}
+
 export enum WidgetGuideSensorDirection {
     None      = 0,
     PositiveY = 1,
@@ -596,12 +607,27 @@ export enum WorldGeneratorType {
 
 export class AnnotationInstance {
     private constructor();
+    readonly isLocked: boolean;
     readonly isValid: boolean;
     readonly metadata: AnnotationMetadata;
 }
 
 export class AnnotationManager {
     private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    acquireAnnotationLock(id: string, lockId?: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    createCommentEntityAnnotation(
+        dimension: minecraftserver.Dimension,
+        location: minecraftserver.Vector3,
+        settings?: AnnotationSettings,
+    ): AnnotationMetadata | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -613,11 +639,11 @@ export class AnnotationManager {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
-    deleteAnnotation(id: string): void;
+    deleteAnnotation(id: string): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
-    deleteAnnotations(ids: string[]): void;
+    deleteAnnotations(ids: string[]): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -629,7 +655,15 @@ export class AnnotationManager {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    getInteractionMode(): AnnotationInteractionMode;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     getMetadata(id: string): AnnotationMetadata | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getPlayerVisibleAnnotations(): string[];
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -637,17 +671,47 @@ export class AnnotationManager {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    isAnnotationLocked(id: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isAnnotationLockedByMe(id: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    isAnnotationVisible(id: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     leaseInstance(id: string): Promise<LeasedAnnotationInstance>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
+    releaseAnnotationLock(id: string, lockId?: string): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setDrawingDistanceScalingEnabled(enabled: boolean): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    setInteractionMode(mode: AnnotationInteractionMode): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
     setShowAnnotations(showAnnotations: boolean): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    updateDrawingSettings(settings: AnnotationDrawingSettings): void;
 }
 
 export class AnnotationMetadata {
     private constructor();
+    readonly creationDate: number;
     readonly dimension: string;
     readonly id: string;
+    readonly isLocked: boolean;
     readonly isValid: boolean;
     readonly location: minecraftserver.Vector3;
     readonly name: string;
@@ -1060,7 +1124,7 @@ export class BrushShapeManager {
      *
      * @throws This function can throw errors.
      */
-    beginPainting(onComplete: (arg0: PaintCompletionState) => void): void;
+    beginPainting(onComplete: (arg0: PaintCompletionState) => void, pendingTransaction?: PendingTransaction): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -1174,7 +1238,7 @@ export class BrushShapeManager {
      *
      * @throws This function can throw errors.
      */
-    singlePaint(onComplete: (arg0: PaintCompletionState) => void): void;
+    singlePaint(onComplete: (arg0: PaintCompletionState) => void, pendingTransaction?: PendingTransaction): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -5372,6 +5436,11 @@ export class WidgetStateChangeEventData {
     readonly widget: Widget;
 }
 
+export interface AnnotationDrawingSettings {
+    color: minecraftserver.RGBA;
+    thickness: number;
+}
+
 export interface AnnotationSettings {
     name?: string;
     tags?: string[];
@@ -5946,6 +6015,7 @@ export interface WidgetComponentEntityOptions extends WidgetComponentBaseOptions
 // @ts-ignore
 export interface WidgetComponentGizmoOptions extends WidgetComponentBaseOptions {
     axes?: Axis;
+    constrainToBlockCenters?: boolean;
     enablePlanes?: boolean;
     normalizedAutoOffset?: minecraftserver.Vector3;
     rotationAxes?: Axis;
@@ -5963,6 +6033,7 @@ export interface WidgetComponentGridOptions extends WidgetComponentBaseOptions {
 
 // @ts-ignore
 export interface WidgetComponentGuideOptions extends WidgetComponentBaseOptions {
+    blockFilter?: WidgetGuideSensorBlockFilter;
     directions?: WidgetGuideSensorDirection;
 }
 

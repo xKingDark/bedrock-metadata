@@ -1822,6 +1822,21 @@
             "localization_key": "tile.cobblestone_wall.brick.name"
         },
         {
+            "id": 1504,
+            "name": "minecraft:brittle_ice",
+            "states": [
+                {
+                    "name": "age",
+                    "default_value": 0,
+                    "values": {
+                        "min": 0,
+                        "max": 3
+                    }
+                }
+            ],
+            "localization_key": "tile.brittle_ice.name"
+        },
+        {
             "id": 680,
             "name": "minecraft:brown_candle",
             "states": [
@@ -4839,17 +4854,6 @@
             "name": "minecraft:dirt_with_roots",
             "states": [],
             "localization_key": "tile.dirt_with_roots.name"
-        },
-        {
-            "id": 1506,
-            "name": "minecraft:disc_press",
-            "states": [
-                {
-                    "name": "minecraft:cardinal_direction",
-                    "default_value": "south"
-                }
-            ],
-            "localization_key": "tile.disc_press.name"
         },
         {
             "id": 23,
@@ -11977,6 +11981,10 @@
             "name": "minecraft:powered_repeater",
             "states": [
                 {
+                    "name": "locked",
+                    "default_value": false
+                },
+                {
                     "name": "minecraft:cardinal_direction",
                     "default_value": "south"
                 },
@@ -13157,6 +13165,10 @@
             "id": 420,
             "name": "minecraft:scaffolding",
             "states": [
+                {
+                    "name": "bottom",
+                    "default_value": false
+                },
                 {
                     "name": "stability",
                     "default_value": 0
@@ -15073,6 +15085,10 @@
             "id": 93,
             "name": "minecraft:unpowered_repeater",
             "states": [
+                {
+                    "name": "locked",
+                    "default_value": false
+                },
                 {
                     "name": "minecraft:cardinal_direction",
                     "default_value": "south"

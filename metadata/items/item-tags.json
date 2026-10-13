@@ -480,6 +480,13 @@
             ]
         },
         {
+            "name": "minecraft:is_pickaxe_item_destructible",
+            "items": [
+                { "name": "minecraft:ice_crystal" },
+                { "name": "minecraft:icicle" }
+            ]
+        },
+        {
             "name": "minecraft:is_shears",
             "items": [
                 { "name": "minecraft:shears" }
@@ -855,6 +862,7 @@
                 { "name": "minecraft:evoker_spawn_egg" },
                 { "name": "minecraft:fox_spawn_egg" },
                 { "name": "minecraft:frog_spawn_egg" },
+                { "name": "minecraft:frostbite_spawn_egg" },
                 { "name": "minecraft:ghast_spawn_egg" },
                 { "name": "minecraft:glow_squid_spawn_egg" },
                 { "name": "minecraft:goat_spawn_egg" },

@@ -662,6 +662,7 @@
                 { "name": "minecraft:brick_slab" },
                 { "name": "minecraft:brick_stairs" },
                 { "name": "minecraft:brick_wall" },
+                { "name": "minecraft:brittle_ice" },
                 { "name": "minecraft:brown_concrete" },
                 { "name": "minecraft:brown_concrete_double_slab" },
                 { "name": "minecraft:brown_concrete_slab" },

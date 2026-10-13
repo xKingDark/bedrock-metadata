@@ -2261,6 +2261,8 @@ export class CustomCommandRegistry {
      * {@link minecraftcommon.EngineError}
      *
      * {@link NamespaceNameError}
+     *
+     * {@link RawMessageError}
      */
     registerCommand(
         customCommand: CustomCommand,
@@ -2278,6 +2280,8 @@ export class CustomCommandRegistry {
      * {@link minecraftcommon.EngineError}
      *
      * {@link NamespaceNameError}
+     *
+     * {@link RawMessageError}
      */
     registerEnum(name: string, values: string[]): void;
 }

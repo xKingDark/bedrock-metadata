@@ -101,6 +101,7 @@
             "items": [
                 { "name": "minecraft:deep_dark" },
                 { "name": "minecraft:dripstone_caves" },
+                { "name": "minecraft:ice_caves" },
                 { "name": "minecraft:lush_caves" },
                 { "name": "minecraft:sulfur_caves" }
             ]
@@ -324,6 +325,12 @@
             ]
         },
         {
+            "name": "hosted_ores",
+            "items": [
+                { "name": "minecraft:ice_caves" }
+            ]
+        },
+        {
             "name": "ice",
             "items": [
                 { "name": "minecraft:ice_mountains" },
@@ -331,10 +338,22 @@
             ]
         },
         {
+            "name": "ice_caves",
+            "items": [
+                { "name": "minecraft:ice_caves" }
+            ]
+        },
+        {
             "name": "ice_plains",
             "items": [
                 { "name": "minecraft:ice_plains" },
                 { "name": "minecraft:ice_plains_spikes" }
+            ]
+        },
+        {
+            "name": "intrusive_deposits",
+            "items": [
+                { "name": "minecraft:ice_caves" }
             ]
         },
         {
@@ -443,6 +462,7 @@
                 { "name": "minecraft:frozen_ocean" },
                 { "name": "minecraft:frozen_peaks" },
                 { "name": "minecraft:grove" },
+                { "name": "minecraft:ice_caves" },
                 { "name": "minecraft:ice_plains_spikes" },
                 { "name": "minecraft:jagged_peaks" },
                 { "name": "minecraft:jungle" },
@@ -563,6 +583,24 @@
             ]
         },
         {
+            "name": "no_dirt",
+            "items": [
+                { "name": "minecraft:ice_caves" }
+            ]
+        },
+        {
+            "name": "no_glow_lichen",
+            "items": [
+                { "name": "minecraft:ice_caves" }
+            ]
+        },
+        {
+            "name": "no_granite",
+            "items": [
+                { "name": "minecraft:ice_caves" }
+            ]
+        },
+        {
             "name": "no_legacy_worldgen",
             "items": [
                 { "name": "minecraft:roofed_forest" }
@@ -625,6 +663,7 @@
                 { "name": "minecraft:frozen_peaks" },
                 { "name": "minecraft:frozen_river" },
                 { "name": "minecraft:grove" },
+                { "name": "minecraft:ice_caves" },
                 { "name": "minecraft:ice_mountains" },
                 { "name": "minecraft:ice_plains" },
                 { "name": "minecraft:ice_plains_spikes" },

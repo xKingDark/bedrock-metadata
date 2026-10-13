@@ -29528,6 +29528,26 @@
             "hash": 202466701
         },
         {
+            "name": "minecraft:brittle_ice",
+            "states": { "age": 0 },
+            "hash": 3818012801
+        },
+        {
+            "name": "minecraft:brittle_ice",
+            "states": { "age": 1 },
+            "hash": 3879487624
+        },
+        {
+            "name": "minecraft:brittle_ice",
+            "states": { "age": 2 },
+            "hash": 3695063155
+        },
+        {
+            "name": "minecraft:brittle_ice",
+            "states": { "age": 3 },
+            "hash": 3756537978
+        },
+        {
             "name": "minecraft:brown_candle",
             "states": {
                 "candles": 0,
@@ -70795,26 +70815,6 @@
             "name": "minecraft:dirt_with_roots",
             "states": {},
             "hash": 985900240
-        },
-        {
-            "name": "minecraft:disc_press",
-            "states": { "minecraft:cardinal_direction": "south" },
-            "hash": 2735751685
-        },
-        {
-            "name": "minecraft:disc_press",
-            "states": { "minecraft:cardinal_direction": "west" },
-            "hash": 1012603982
-        },
-        {
-            "name": "minecraft:disc_press",
-            "states": { "minecraft:cardinal_direction": "north" },
-            "hash": 2593596903
-        },
-        {
-            "name": "minecraft:disc_press",
-            "states": { "minecraft:cardinal_direction": "east" },
-            "hash": 452703276
         },
         {
             "name": "minecraft:dispenser",
@@ -154751,130 +154751,290 @@
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 0
             },
-            "hash": 1435483390
+            "hash": 3183996689
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 1
             },
-            "hash": 1374008567
+            "hash": 3245471512
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 2
             },
-            "hash": 1558433036
+            "hash": 3061047043
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 3
             },
-            "hash": 1496958213
+            "hash": 3122521866
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 0
             },
-            "hash": 1442205399
+            "hash": 4187173374
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 1
             },
-            "hash": 1503680222
+            "hash": 4125698551
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 2
             },
-            "hash": 1565155045
+            "hash": 15155724
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 3
             },
-            "hash": 1626629868
+            "hash": 4248648197
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 0
             },
-            "hash": 2672127236
+            "hash": 158221763
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 1
             },
-            "hash": 2610652413
+            "hash": 219696586
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 2
             },
-            "hash": 2549177590
+            "hash": 281171409
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 3
             },
-            "hash": 2487702767
+            "hash": 342646232
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 0
             },
-            "hash": 3998651489
+            "hash": 283204028
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 1
             },
-            "hash": 4060126312
+            "hash": 221729205
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 2
             },
-            "hash": 3875701843
+            "hash": 160254382
         },
         {
             "name": "minecraft:powered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 3
             },
-            "hash": 3937176666
+            "hash": 98779559
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 0
+            },
+            "hash": 548148520
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 1
+            },
+            "hash": 486673697
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 2
+            },
+            "hash": 425198874
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 3
+            },
+            "hash": 363724051
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 0
+            },
+            "hash": 1240540493
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 1
+            },
+            "hash": 1302015316
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 2
+            },
+            "hash": 1117590847
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 3
+            },
+            "hash": 1179065670
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 0
+            },
+            "hash": 1549842474
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 1
+            },
+            "hash": 1488367651
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 2
+            },
+            "hash": 1672792120
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 3
+            },
+            "hash": 1611317297
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 0
+            },
+            "hash": 1120628131
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 1
+            },
+            "hash": 1182102954
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 2
+            },
+            "hash": 1243577777
+        },
+        {
+            "name": "minecraft:powered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 3
+            },
+            "hash": 1305052600
         },
         {
             "name": "minecraft:prismarine",
@@ -184500,130 +184660,290 @@
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 0,
                 "stability_check": false
             },
-            "hash": 2498125071
+            "hash": 418442961
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 0,
                 "stability_check": true
             },
-            "hash": 1442818500
+            "hash": 3658103686
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 1,
                 "stability_check": false
             },
-            "hash": 3119082376
+            "hash": 2802670682
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 1,
                 "stability_check": true
             },
-            "hash": 4174388947
+            "hash": 3857977253
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 2,
                 "stability_check": false
             },
-            "hash": 3389478825
+            "hash": 1741988791
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 2,
                 "stability_check": true
             },
-            "hash": 2334172254
+            "hash": 686682220
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 3,
                 "stability_check": false
             },
-            "hash": 1006940914
+            "hash": 2345207024
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 3,
                 "stability_check": true
             },
-            "hash": 2062247485
+            "hash": 3400513595
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 4,
                 "stability_check": false
             },
-            "hash": 1186940507
+            "hash": 2448288221
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 4,
                 "stability_check": true
             },
-            "hash": 131633936
+            "hash": 1392981650
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 5,
                 "stability_check": false
             },
-            "hash": 2248292420
+            "hash": 1106819974
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 5,
                 "stability_check": true
             },
-            "hash": 3303598991
+            "hash": 2162126545
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 6,
                 "stability_check": false
             },
-            "hash": 1681806037
+            "hash": 1357110403
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 6,
                 "stability_check": true
             },
-            "hash": 626499466
+            "hash": 301803832
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 7,
                 "stability_check": false
             },
-            "hash": 1384186846
+            "hash": 1010164844
         },
         {
             "name": "minecraft:scaffolding",
             "states": {
+                "bottom": false,
                 "stability": 7,
                 "stability_check": true
             },
-            "hash": 2439493417
+            "hash": 2065471415
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 0,
+                "stability_check": false
+            },
+            "hash": 2951130836
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 0,
+                "stability_check": true
+            },
+            "hash": 4006437407
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 1,
+                "stability_check": false
+            },
+            "hash": 3824543211
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 1,
+                "stability_check": true
+            },
+            "hash": 2769236640
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 2,
+                "stability_check": false
+            },
+            "hash": 3086393454
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 2,
+                "stability_check": true
+            },
+            "hash": 4141700025
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 3,
+                "stability_check": false
+            },
+            "hash": 3791514917
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 3,
+                "stability_check": true
+            },
+            "hash": 2736208346
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 4,
+                "stability_check": false
+            },
+            "hash": 3880508248
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 4,
+                "stability_check": true
+            },
+            "hash": 640847523
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 5,
+                "stability_check": false
+            },
+            "hash": 3905241439
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 5,
+                "stability_check": true
+            },
+            "hash": 2849934868
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 6,
+                "stability_check": false
+            },
+            "hash": 875078210
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 6,
+                "stability_check": true
+            },
+            "hash": 1930384781
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 7,
+                "stability_check": false
+            },
+            "hash": 3178790905
+        },
+        {
+            "name": "minecraft:scaffolding",
+            "states": {
+                "bottom": true,
+                "stability": 7,
+                "stability_check": true
+            },
+            "hash": 2123484334
         },
         {
             "name": "minecraft:sculk",
@@ -209564,130 +209884,290 @@
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 0
             },
-            "hash": 669018815
+            "hash": 3866289516
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 1
             },
-            "hash": 730493638
+            "hash": 3804814693
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 2
             },
-            "hash": 791968461
+            "hash": 3743339870
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "south",
                 "repeater_delay": 3
             },
-            "hash": 853443284
+            "hash": 3681865047
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 0
             },
-            "hash": 4067202120
+            "hash": 2380935369
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 1
             },
-            "hash": 4005727297
+            "hash": 2442410192
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 2
             },
-            "hash": 3944252474
+            "hash": 2257985723
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "west",
                 "repeater_delay": 3
             },
-            "hash": 3882777651
+            "hash": 2319460546
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 0
             },
-            "hash": 1771579365
+            "hash": 537649086
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 1
             },
-            "hash": 1833054188
+            "hash": 476174263
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 2
             },
-            "hash": 1648629719
+            "hash": 660598732
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "north",
                 "repeater_delay": 3
             },
-            "hash": 1710104542
+            "hash": 599123909
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 0
             },
-            "hash": 1251242258
+            "hash": 3085208919
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 1
             },
-            "hash": 1189767435
+            "hash": 3146683742
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 2
             },
-            "hash": 1374191904
+            "hash": 3208158565
         },
         {
             "name": "minecraft:unpowered_repeater",
             "states": {
+                "locked": false,
                 "minecraft:cardinal_direction": "east",
                 "repeater_delay": 3
             },
-            "hash": 1312717081
+            "hash": 3269633388
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 0
+            },
+            "hash": 1466236357
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 1
+            },
+            "hash": 1527711180
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 2
+            },
+            "hash": 1343286711
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "south",
+                "repeater_delay": 3
+            },
+            "hash": 1404761534
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 0
+            },
+            "hash": 2333386970
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 1
+            },
+            "hash": 2271912147
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 2
+            },
+            "hash": 2456336616
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "west",
+                "repeater_delay": 3
+            },
+            "hash": 2394861793
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 0
+            },
+            "hash": 1138354983
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 1
+            },
+            "hash": 1199829806
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 2
+            },
+            "hash": 1261304629
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "north",
+                "repeater_delay": 3
+            },
+            "hash": 1322779452
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 0
+            },
+            "hash": 45067472
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 1
+            },
+            "hash": 4278559945
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 2
+            },
+            "hash": 4217085122
+        },
+        {
+            "name": "minecraft:unpowered_repeater",
+            "states": {
+                "locked": true,
+                "minecraft:cardinal_direction": "east",
+                "repeater_delay": 3
+            },
+            "hash": 4155610299
         },
         {
             "name": "minecraft:vault",

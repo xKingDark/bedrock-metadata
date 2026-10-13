@@ -1045,6 +1045,12 @@
             "localization_key": "tile.cobblestone_wall.brick.name"
         },
         {
+            "name": "minecraft:brittle_ice",
+            "id": -1249,
+            "max_size": 64,
+            "localization_key": "tile.brittle_ice.name"
+        },
+        {
             "name": "minecraft:brown_bundle",
             "id": 867,
             "max_size": 1,
@@ -4011,6 +4017,12 @@
             "localization_key": "item.spawn_egg.entity.frog.name"
         },
         {
+            "name": "minecraft:frostbite_spawn_egg",
+            "id": 791,
+            "max_size": 64,
+            "localization_key": "item.spawn_egg.entity.frostbite.name"
+        },
+        {
             "name": "minecraft:frosted_ice",
             "id": 207,
             "max_size": 64,
@@ -4854,9 +4866,27 @@
             "localization_key": "tile.ice.name"
         },
         {
+            "name": "minecraft:ice_ball",
+            "id": 853,
+            "max_size": 16,
+            "localization_key": "item.ice_ball.name"
+        },
+        {
             "name": "minecraft:ice_bomb",
             "max_size": 16,
             "localization_key": "item.ice_bomb.name"
+        },
+        {
+            "name": "minecraft:ice_crystal",
+            "id": 854,
+            "max_size": 64,
+            "localization_key": "tile.ice_crystal.name"
+        },
+        {
+            "name": "minecraft:icicle",
+            "id": 855,
+            "max_size": 64,
+            "localization_key": "tile.icicle.name"
         },
         {
             "name": "minecraft:infested_chiseled_stone_bricks",

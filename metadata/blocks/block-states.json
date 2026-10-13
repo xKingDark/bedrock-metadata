@@ -118,6 +118,14 @@
             }
         },
         {
+            "name": "bottom",
+            "type": "boolean",
+            "values": [
+                { "value": false },
+                { "value": true }
+            ]
+        },
+        {
             "name": "brewing_stand_slot_a_bit",
             "type": "boolean",
             "values": [
@@ -599,6 +607,14 @@
         },
         {
             "name": "lit",
+            "type": "boolean",
+            "values": [
+                { "value": false },
+                { "value": true }
+            ]
+        },
+        {
+            "name": "locked",
             "type": "boolean",
             "values": [
                 { "value": false },

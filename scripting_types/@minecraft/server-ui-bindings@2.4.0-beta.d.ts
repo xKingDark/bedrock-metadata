@@ -582,7 +582,9 @@ export interface ButtonOptions {
     visible?: boolean | ObservableBoolean;
 }
 
-export interface CustomFormOptions {}
+export interface CustomFormOptions {
+    topCloseButtonVisible?: boolean | ObservableBoolean;
+}
 
 export interface DividerOptions {
     visible?: boolean | ObservableBoolean;
