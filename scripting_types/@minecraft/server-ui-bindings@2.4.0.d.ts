@@ -2,11 +2,10 @@
 // Project: https://github.com/xKingDark/bedrock-metadata
 // Definitions by: xKingDark <https://github.com/xKingDark>
 /**
- * @beta
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui-bindings", "version": "2.4.0-beta" }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.4.0" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";
@@ -75,7 +74,6 @@ export class CustomForm {
     constructor(
         player: minecraftserver.Player,
         title: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
-        options?: CustomFormOptions,
     );
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -260,10 +258,7 @@ export class MessageBox {
      *
      * {@link InvalidFormModificationError}
      */
-    body(
-        body: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
-        options?: MessageBoxBodyOptions,
-    ): MessageBox;
+    body(body: ObservableString | ObservableUIRawMessage | string | UIRawMessage): MessageBox;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -582,10 +577,6 @@ export interface ButtonOptions {
     visible?: boolean | ObservableBoolean;
 }
 
-export interface CustomFormOptions {
-    topCloseButtonVisible?: boolean | ObservableBoolean;
-}
-
 export interface DividerOptions {
     visible?: boolean | ObservableBoolean;
 }
@@ -614,8 +605,6 @@ export interface ImageOptions {
     visible?: boolean | ObservableBoolean;
     width?: number | ObservableNumber;
 }
-
-export interface MessageBoxBodyOptions {}
 
 export interface MessageBoxButtonOptions {
     imageDetails?: ImageDetails;
@@ -663,7 +652,6 @@ export interface ObservableOptions {
 export interface SliderOptions {
     description?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     disabled?: boolean | ObservableBoolean;
-    fixedFormatDigits?: number | ObservableNumber;
     step?: number | ObservableNumber;
     tooltip?: ObservableString | ObservableUIRawMessage | string | UIRawMessage;
     visible?: boolean | ObservableBoolean;

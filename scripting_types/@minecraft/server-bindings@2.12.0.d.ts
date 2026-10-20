@@ -478,6 +478,7 @@ export enum InputButton {
 
 export enum InputMode {
     Gamepad          = "Gamepad",
+    GamepadAndMouse  = "GamepadAndMouse",
     KeyboardAndMouse = "KeyboardAndMouse",
     MotionController = "MotionController",
     Touch            = "Touch",
@@ -498,7 +499,7 @@ export enum InputPermissionCategory {
 }
 
 export enum ItemComponentTypes {
-    BlockDynamicProperties = "minecraft:block_actor_dynamic_properties",
+    BlockDynamicProperties = "minecraft:block_dynamic_properties",
     Book                   = "minecraft:book",
     Compostable            = "minecraft:compostable",
     Cooldown               = "minecraft:cooldown",
@@ -609,6 +610,12 @@ export enum PlayerSplitScreenSlot {
     Fourth = "Fourth",
     Second = "Second",
     Third  = "Third",
+}
+
+export enum PoiBlockOccupancyFilter {
+    Any        = "Any",
+    Full       = "Full",
+    HasVacancy = "HasVacancy",
 }
 
 export enum ScoreboardIdentityType {
@@ -878,7 +885,7 @@ export type ItemComponentReturnType<T extends string> =
         : ItemComponent;
 
 export type ItemComponentTypeMap = {
-    block_actor_dynamic_properties: ItemBlockDynamicPropertiesComponent;
+    block_dynamic_properties: ItemBlockDynamicPropertiesComponent;
     book: ItemBookComponent;
     compostable: ItemCompostableComponent;
     cooldown: ItemCooldownComponent;
@@ -888,7 +895,7 @@ export type ItemComponentTypeMap = {
     food: ItemFoodComponent;
     inventory: ItemInventoryComponent;
     potion: ItemPotionComponent;
-    "minecraft:block_actor_dynamic_properties": ItemBlockDynamicPropertiesComponent;
+    "minecraft:block_dynamic_properties": ItemBlockDynamicPropertiesComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -2556,6 +2563,7 @@ export class Dimension {
     readonly heightRange: minecraftcommon.NumberRange;
     readonly id: string;
     readonly localizationKey: string;
+    readonly poiManager: PoiManager;
     /**
      * @throws This function can throw errors.
      *
@@ -2649,11 +2657,11 @@ export class Dimension {
     /**
      * @throws This function can throw errors.
      */
-    getBlockAbove(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
+    getBlockAbove(location: Vector3, options?: BlockSearchOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
-    getBlockBelow(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
+    getBlockBelow(location: Vector3, options?: BlockSearchOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
@@ -5449,7 +5457,7 @@ export class ISerializable {
 // @ts-ignore
 export class ItemBlockDynamicPropertiesComponent extends ItemComponent {
     private constructor();
-    static readonly componentId = "minecraft:block_actor_dynamic_properties";
+    static readonly componentId = "minecraft:block_dynamic_properties";
     /**
      * @throws This function can throw errors.
      *
@@ -7341,6 +7349,89 @@ export class PlayerWaypoint extends EntityWaypoint {
     );
 }
 
+export class PoiBlockInstance {
+    private constructor();
+    readonly position: Vector3;
+    readonly tickets: number;
+    readonly "type": PoiBlockType;
+}
+
+export class PoiBlockManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    addTemporary(position: Vector3, poi: PoiBlockType | string | number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    at(position: Vector3): PoiBlockType | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    exists(position: Vector3, filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInRange(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+        occupancyFilter?: PoiBlockOccupancyFilter,
+    ): PoiBlockInstance[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInRangeSorted(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+        occupancyFilter?: PoiBlockOccupancyFilter,
+    ): PoiDistancePair[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getInSquare(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+        occupancyFilter?: PoiBlockOccupancyFilter,
+    ): PoiBlockInstance[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    release(center: Vector3): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    take(
+        filter: (arg0: PoiBlockType) => boolean | PoiNameFilter | PoiTagFilter,
+        center: Vector3,
+        blockRadius: number,
+    ): Vector3 | undefined;
+}
+
+export class PoiBlockType {
+    private constructor();
+    readonly id: number;
+    readonly name: string;
+    readonly tickets: number;
+    readonly usableRange: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    equals(other: PoiBlockType): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    hasTag(tag: string): boolean;
+}
+
+export class PoiManager {
+    private constructor();
+    readonly blocks: PoiBlockManager;
+}
+
 export class PotionDeliveryType {
     private constructor();
     readonly id: string;
@@ -7429,8 +7520,10 @@ export class PrimitiveShape {
     private constructor();
     attachedTo?: Entity;
     color: RGBA;
+    defaultVisibleToAll: boolean;
     readonly dimension: Dimension;
     readonly hasDuration: boolean;
+    hiddenFrom: Player[];
     readonly location: Vector3;
     maximumRenderDistance?: number;
     rotation: Vector3;
@@ -9249,6 +9342,13 @@ export interface BlockRaycastOptions extends BlockFilter {
     maxDistance?: number;
 }
 
+// @ts-ignore
+export interface BlockSearchOptions extends BlockFilter {
+    includeLiquidBlocks?: boolean;
+    includePassableBlocks?: boolean;
+    maxDistance?: number;
+}
+
 export interface CameraAttachOptions {
     entity: Entity;
     locator: EntityAttachPoint;
@@ -9648,6 +9748,19 @@ export interface PlayerVisibilityRules extends EntityVisibilityRules {
     showHidden?: boolean;
     showSpectator?: boolean;
     showSpectatorToSpectator?: boolean;
+}
+
+export interface PoiDistancePair {
+    distance: number;
+    poi: PoiBlockInstance;
+}
+
+export interface PoiNameFilter {
+    name: string;
+}
+
+export interface PoiTagFilter {
+    tags: string[];
 }
 
 export interface PrimitiveShapeQueryOptions {

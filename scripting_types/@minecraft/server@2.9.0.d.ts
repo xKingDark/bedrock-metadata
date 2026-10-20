@@ -2511,11 +2511,11 @@ export class Dimension {
     /**
      * @throws This function can throw errors.
      */
-    getBlockAbove(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
+    getBlockAbove(location: Vector3, options?: BlockSearchOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
-    getBlockBelow(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
+    getBlockBelow(location: Vector3, options?: BlockSearchOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
@@ -8535,6 +8535,13 @@ export interface BlockRaycastHit {
 
 // @ts-ignore
 export interface BlockRaycastOptions extends BlockFilter {
+    includeLiquidBlocks?: boolean;
+    includePassableBlocks?: boolean;
+    maxDistance?: number;
+}
+
+// @ts-ignore
+export interface BlockSearchOptions extends BlockFilter {
     includeLiquidBlocks?: boolean;
     includePassableBlocks?: boolean;
     maxDistance?: number;

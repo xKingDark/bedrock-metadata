@@ -125411,6 +125411,2178 @@
             "hash": 445316843
         },
         {
+            "name": "minecraft:packed_ice_bricks",
+            "states": {},
+            "hash": 36199663
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_chiseled",
+            "states": {},
+            "hash": 3384810398
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_double_slab",
+            "states": { "minecraft:vertical_half": "bottom" },
+            "hash": 4141463399
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_double_slab",
+            "states": { "minecraft:vertical_half": "top" },
+            "hash": 2860930584
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_slab",
+            "states": { "minecraft:vertical_half": "bottom" },
+            "hash": 3785644664
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_slab",
+            "states": { "minecraft:vertical_half": "top" },
+            "hash": 978116709
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+            },
+            "hash": 1706147455
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+            },
+            "hash": 1767622278
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+            },
+            "hash": 1829097101
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+            },
+            "hash": 1890571924
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+            },
+            "hash": 1052540594
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+            },
+            "hash": 991065771
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+            },
+            "hash": 1175490240
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "none",
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+            },
+            "hash": 1114015417
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+            },
+            "hash": 2904816427
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+            },
+            "hash": 2966291250
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+            },
+            "hash": 3027766073
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+            },
+            "hash": 3089240896
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+            },
+            "hash": 56979662
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+            },
+            "hash": 4290472135
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+            },
+            "hash": 179929308
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+            },
+            "hash": 118454485
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+            },
+            "hash": 2890630219
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+            },
+            "hash": 2952105042
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+            },
+            "hash": 3013579865
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+            },
+            "hash": 3075054688
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+            },
+            "hash": 308362862
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+            },
+            "hash": 246888039
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+            },
+            "hash": 431312508
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "inner_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+            },
+            "hash": 369837685
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+            },
+            "hash": 2196395574
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+            },
+            "hash": 2134920751
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+            },
+            "hash": 2319345220
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+            },
+            "hash": 2257870397
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+            },
+            "hash": 3084854355
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+            },
+            "hash": 3146329178
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+            },
+            "hash": 3207804001
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_left",
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+            },
+            "hash": 3269278824
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+            },
+            "hash": 4086011264
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+            },
+            "hash": 4024536441
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+            },
+            "hash": 3963061618
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+            },
+            "hash": 3901586795
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+            },
+            "hash": 3133982429
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+            },
+            "hash": 3195457252
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+            },
+            "hash": 3011032783
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": {
+                "minecraft:corner": "outer_right",
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+            },
+            "hash": 3072507606
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3410391778
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 170731053
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3461402153
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2406095582
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3816342201
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2761035630
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 4045413343
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 2990106772
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 2867893322
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 3923199893
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 2192106300
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3247412871
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3397937641
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 2342631070
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1724461832
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2779768403
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3075408090
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 4130714661
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1517050821
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 461744250
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1164175516
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2219482087
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 2051238398
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3106544969
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3491369630
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 251708905
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3318814957
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2263508386
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3213574365
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2158267794
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 51403230
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 1106709801
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 2561884973
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1506578402
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 1627791133
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 572484562
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1684827943
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 629521372
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 2240178834
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 3295485405
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 1778674516
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2833981087
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 2153302676
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 3208609247
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1128151255
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 72844684
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 117582287
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3357243012
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 847190060
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 1902496631
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 2469539855
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1414233284
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3318042967
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "none",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2262736396
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3723224651
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 2667918080
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3072218670
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 4127525241
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 964741680
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2020048251
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3822540736
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 582880011
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 2182041691
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1126735120
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 4197106003
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3141799432
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 646293720
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 1701600291
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3950938419
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2895631848
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 2123048283
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 1067741712
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3136383766
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 4191690337
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1198377413
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 143070842
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 4106739973
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3051433402
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 908205291
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 4147866016
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 253344590
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1308651161
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 173738576
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 1229045147
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1139450469
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 84143898
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 330412092
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1385718663
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3870053278
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 630392553
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3404148182
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 164487457
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 618152069
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 3857812794
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 2159925701
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 1104619130
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1633701035
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 578394464
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1149479182
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2204785753
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 47161360
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 1102467931
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3528262693
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 2472956122
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3661838076
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 422177351
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 2690086238
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "short",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3745392809
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1621028185
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 565721614
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 4264350328
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1024689603
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 55024810
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 1110331381
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1863633722
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 2918940293
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3986579649
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2931273078
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3233348097
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2178041526
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 769479290
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 1824785861
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 20908033
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 3260568758
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 1358489153
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "none",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 303182582
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 2261697136
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 3317003707
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 2691010955
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 1635704384
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3737969443
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2682662872
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 798051417
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 4037712142
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 3317194616
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 77533891
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3527015338
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 287354613
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 3896893707
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 2841587136
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1579425518
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2634732089
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3720857584
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "short",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 481196859
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 2063015928
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 3118322499
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 293758803
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 3533419528
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 3663903099
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "none",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2608596528
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 1731549409
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 676242838
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 1020597024
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 2075903595
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 2676298626
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "short",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 3731605197
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": false
+            },
+            "hash": 2247206563
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "none",
+                "wall_post_bit": true
+            },
+            "hash": 1191899992
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": false
+            },
+            "hash": 4014685126
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "short",
+                "wall_post_bit": true
+            },
+            "hash": 775024401
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": false
+            },
+            "hash": 1303501496
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": {
+                "wall_connection_type_east": "tall",
+                "wall_connection_type_north": "tall",
+                "wall_connection_type_south": "tall",
+                "wall_connection_type_west": "tall",
+                "wall_post_bit": true
+            },
+            "hash": 2358808067
+        },
+        {
             "name": "minecraft:packed_mud",
             "states": {},
             "hash": 4070731732

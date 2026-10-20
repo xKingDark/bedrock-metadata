@@ -6,7 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui", "version": "2.4.0-internal" }
+ * { "module_name": "@minecraft/server-ui", "version": "2.5.0-internal" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

@@ -10378,6 +10378,86 @@
             "localization_key": "tile.packed_ice.name"
         },
         {
+            "id": 1505,
+            "name": "minecraft:packed_ice_bricks",
+            "states": [],
+            "localization_key": "tile.packed_ice_bricks.name"
+        },
+        {
+            "id": 1513,
+            "name": "minecraft:packed_ice_bricks_chiseled",
+            "states": [],
+            "localization_key": "tile.packed_ice_bricks_chiseled.name"
+        },
+        {
+            "id": 1515,
+            "name": "minecraft:packed_ice_bricks_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.packed_ice_bricks_double_slab.name"
+        },
+        {
+            "id": 1511,
+            "name": "minecraft:packed_ice_bricks_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.packed_ice_bricks_slab.name"
+        },
+        {
+            "id": 1512,
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.packed_ice_bricks_stairs.name"
+        },
+        {
+            "id": 1514,
+            "name": "minecraft:packed_ice_bricks_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.packed_ice_bricks_wall.name"
+        },
+        {
             "id": 732,
             "name": "minecraft:packed_mud",
             "states": [],

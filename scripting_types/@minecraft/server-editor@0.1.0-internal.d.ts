@@ -3198,6 +3198,12 @@ export class PlaytestManager {
     getPlaytestSessionAvailability(): PlaytestSessionResult;
 }
 
+// @ts-ignore
+export class PrefabBakeTaskPromise extends TaskPromiseBase {
+    private constructor();
+    readonly promise: Promise<PrefabBakeResult>;
+}
+
 export class PrefabInstanceInteractionEvent {
     private constructor();
     readonly eventData: 
@@ -3262,6 +3268,18 @@ export class PrefabManager {
         transactionHandler: TransactionHandler,
         closure: (arg0: string, arg1: string) => void,
     ): PrefabInstanceTransactionOperationHandler;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    bakeAllInstances(): PrefabBakeTaskPromise;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    bakeInstances(instances: PrefabTemplateInstance[]): PrefabBakeTaskPromise;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3356,6 +3374,7 @@ export class PrefabManager {
      * {@link PrefabServiceError}
      */
     endCapturingMouseClicks(): void;
+    getChangeRevision(): number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3394,6 +3413,7 @@ export class PrefabManager {
      * {@link PrefabServiceError}
      */
     getTemplateList(): PrefabTemplateMetadata[];
+    isBakeInProgress(): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3626,16 +3646,6 @@ export class PrefabTemplateInstance {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     location: minecraftserver.Vector3;
-    /**
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link PrefabErrorInvalidInstance}
-     *
-     * {@link PrefabServiceError}
-     */
-    bakeInstance(): void;
     /**
      * @throws This function can throw errors.
      *
@@ -4242,7 +4252,15 @@ export class TextAnnotationInstance extends AnnotationInstance {
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
+    bodyTextSize: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
     facing: AnnotationFacing;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotation?: minecraftserver.Vector3;
     /**
      * @remarks This property can't be edited in restricted-execution mode.
      */
@@ -5786,6 +5804,13 @@ export interface PersistenceQueryGroupOptions {
     version?: number;
 }
 
+export interface PrefabBakeResult {
+    baked: number;
+    failed: number;
+    skipped: number;
+    total: number;
+}
+
 export interface PrefabInstanceInteractionEventClicked {
     altPressed: boolean;
     ctrlPressed: boolean;
@@ -5837,9 +5862,11 @@ export interface PrefabTemplateInstanceLocation {
 }
 
 export interface PrefabTemplateMetadata {
+    creationTime: number;
     description: string;
     displayName: string;
     instanceReferenceCount: number;
+    modifiedTime: number;
     name: string;
     notes: string;
     readOnly: boolean;
@@ -5942,7 +5969,9 @@ export interface TextAnnotationSettings extends AnnotationSettings {
     anchorOrientation?: AnnotationAnchorOrientation;
     body?: string;
     bodyTextColor?: minecraftserver.RGBA;
+    bodyTextSize?: number;
     facing?: AnnotationFacing;
+    rotation?: minecraftserver.Vector3;
     showBody?: boolean;
     showTitle?: boolean;
     titleColor?: minecraftserver.RGBA;

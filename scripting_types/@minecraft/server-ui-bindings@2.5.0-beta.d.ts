@@ -6,7 +6,7 @@
  * @packageDocumentation
  * Manifest Details
  * ```json
- * { "module_name": "@minecraft/server-ui", "version": "2.4.0-beta" }
+ * { "module_name": "@minecraft/server-ui-bindings", "version": "2.5.0-beta" }
  * ```
  */
 import * as minecraftcommon from "@minecraft/common";

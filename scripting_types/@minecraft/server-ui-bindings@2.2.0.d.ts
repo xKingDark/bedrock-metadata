@@ -241,6 +241,7 @@ export class MessageBox {
     constructor(
         player: minecraftserver.Player,
         title: ObservableString | ObservableUIRawMessage | string | UIRawMessage,
+        options?: MessageBoxOptions,
     );
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -550,6 +551,8 @@ export interface ImageOptions {
     visible?: boolean | ObservableBoolean;
     width?: number | ObservableNumber;
 }
+
+export interface MessageBoxOptions {}
 
 export interface MessageBoxResult {
     closeReason: DataDrivenScreenClosedReason;

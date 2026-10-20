@@ -6907,6 +6907,36 @@
             "localization_key": "tile.packed_ice.name"
         },
         {
+            "name": "minecraft:packed_ice_bricks",
+            "id": -1250,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_bricks.name"
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_chiseled",
+            "id": -1258,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_bricks_chiseled.name"
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_slab",
+            "id": -1256,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_bricks_slab.name"
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_stairs",
+            "id": -1257,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_bricks_stairs.name"
+        },
+        {
+            "name": "minecraft:packed_ice_bricks_wall",
+            "id": -1259,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_bricks_wall.name"
+        },
+        {
             "name": "minecraft:packed_mud",
             "id": -477,
             "max_size": 64,

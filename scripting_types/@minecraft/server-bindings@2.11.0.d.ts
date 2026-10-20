@@ -498,7 +498,7 @@ export enum InputPermissionCategory {
 }
 
 export enum ItemComponentTypes {
-    BlockDynamicProperties = "minecraft:block_actor_dynamic_properties",
+    BlockDynamicProperties = "minecraft:block_dynamic_properties",
     Book                   = "minecraft:book",
     Compostable            = "minecraft:compostable",
     Cooldown               = "minecraft:cooldown",
@@ -878,7 +878,7 @@ export type ItemComponentReturnType<T extends string> =
         : ItemComponent;
 
 export type ItemComponentTypeMap = {
-    block_actor_dynamic_properties: ItemBlockDynamicPropertiesComponent;
+    block_dynamic_properties: ItemBlockDynamicPropertiesComponent;
     book: ItemBookComponent;
     compostable: ItemCompostableComponent;
     cooldown: ItemCooldownComponent;
@@ -888,7 +888,7 @@ export type ItemComponentTypeMap = {
     food: ItemFoodComponent;
     inventory: ItemInventoryComponent;
     potion: ItemPotionComponent;
-    "minecraft:block_actor_dynamic_properties": ItemBlockDynamicPropertiesComponent;
+    "minecraft:block_dynamic_properties": ItemBlockDynamicPropertiesComponent;
     "minecraft:book": ItemBookComponent;
     "minecraft:compostable": ItemCompostableComponent;
     "minecraft:cooldown": ItemCooldownComponent;
@@ -2649,11 +2649,11 @@ export class Dimension {
     /**
      * @throws This function can throw errors.
      */
-    getBlockAbove(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
+    getBlockAbove(location: Vector3, options?: BlockSearchOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
-    getBlockBelow(location: Vector3, options?: BlockRaycastOptions): Block | undefined;
+    getBlockBelow(location: Vector3, options?: BlockSearchOptions): Block | undefined;
     /**
      * @throws This function can throw errors.
      */
@@ -5449,7 +5449,7 @@ export class ISerializable {
 // @ts-ignore
 export class ItemBlockDynamicPropertiesComponent extends ItemComponent {
     private constructor();
-    static readonly componentId = "minecraft:block_actor_dynamic_properties";
+    static readonly componentId = "minecraft:block_dynamic_properties";
     /**
      * @throws This function can throw errors.
      *
@@ -9244,6 +9244,13 @@ export interface BlockRaycastHit {
 
 // @ts-ignore
 export interface BlockRaycastOptions extends BlockFilter {
+    includeLiquidBlocks?: boolean;
+    includePassableBlocks?: boolean;
+    maxDistance?: number;
+}
+
+// @ts-ignore
+export interface BlockSearchOptions extends BlockFilter {
     includeLiquidBlocks?: boolean;
     includePassableBlocks?: boolean;
     maxDistance?: number;
