@@ -21,6 +21,7 @@ export enum BlockComponentTypes {
     FluidContainer            = "minecraft:fluid_container",
     Instrument                = "minecraft:instrument_sound",
     Inventory                 = "minecraft:inventory",
+    ItemFrame                 = "minecraft:item_frame",
     MapColor                  = "minecraft:map_color",
     Movable                   = "minecraft:movable",
     Piston                    = "minecraft:piston",
@@ -520,6 +521,17 @@ export enum ItemComponentTypes {
     Potion                 = "minecraft:potion",
 }
 
+export enum ItemFrameRotation {
+    Clockwise135 = "Clockwise135",
+    Clockwise180 = "Clockwise180",
+    Clockwise225 = "Clockwise225",
+    Clockwise270 = "Clockwise270",
+    Clockwise315 = "Clockwise315",
+    Clockwise45  = "Clockwise45",
+    Clockwise90  = "Clockwise90",
+    None         = "None",
+}
+
 export enum ItemLockMode {
     inventory = "inventory",
     none      = "none",
@@ -606,6 +618,13 @@ export enum PlatformType {
     Console = "Console",
     Desktop = "Desktop",
     Mobile  = "Mobile",
+}
+
+export enum PlayerDimensionChangeSource {
+    PlayerRespawn   = "PlayerRespawn",
+    Portal          = "Portal",
+    TeleportCommand = "TeleportCommand",
+    Unknown         = "Unknown",
 }
 
 export enum PlayerInventoryType {
@@ -741,6 +760,7 @@ export type BlockComponentTypeMap = {
     fluid_container: BlockFluidContainerComponent;
     instrument_sound: BlockInstrumentComponent;
     inventory: BlockInventoryComponent;
+    item_frame: BlockItemFrameComponent;
     map_color: BlockMapColorComponent;
     movable: BlockMovableComponent;
     piston: BlockPistonComponent;
@@ -756,6 +776,7 @@ export type BlockComponentTypeMap = {
     "minecraft:fluid_container": BlockFluidContainerComponent;
     "minecraft:instrument_sound": BlockInstrumentComponent;
     "minecraft:inventory": BlockInventoryComponent;
+    "minecraft:item_frame": BlockItemFrameComponent;
     "minecraft:map_color": BlockMapColorComponent;
     "minecraft:movable": BlockMovableComponent;
     "minecraft:piston": BlockPistonComponent;
@@ -1852,6 +1873,20 @@ export class BlockEntityStorageComponent extends BlockComponent {
      */
     release(entityId: string): Entity;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    remove(entityId: string): void;
+    /**
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -1877,6 +1912,18 @@ export class BlockEntityStorageComponent extends BlockComponent {
      * {@link LocationOutOfWorldBoundariesError}
      */
     store(entity: Entity): string;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    totalSize(): number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2002,6 +2049,48 @@ export class BlockInventoryComponent extends BlockComponent {
      */
     readonly container?: Container;
     static readonly componentId = "minecraft:inventory";
+}
+
+// @ts-ignore
+export class BlockItemFrameComponent extends BlockComponent {
+    private constructor();
+    static readonly componentId = "minecraft:item_frame";
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    dropFramedItem(): void;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getFramedItem(): ItemStack | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getRotation(): ItemFrameRotation;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    setFramedItem(itemStack?: ItemStack): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    setRotation(rotation: ItemFrameRotation): void;
 }
 
 export class BlockLocationIterator implements Iterable<Vector3> {
@@ -6023,6 +6112,16 @@ export class ItemBlockEntityStorageComponent extends ItemComponent {
      */
     release(entityId: string, location: DimensionLocation): Entity;
     /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    remove(entityId: string): void;
+    /**
      * @throws This function can throw errors.
      *
      * {@link Error}
@@ -6040,6 +6139,14 @@ export class ItemBlockEntityStorageComponent extends ItemComponent {
      * {@link InvalidItemStackError}
      */
     store(entity: Entity): string;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link InvalidItemStackError}
+     */
+    totalSize(): number;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -6257,6 +6364,13 @@ export class ItemComponentRegistry {
      * {@link NamespaceNameError}
      */
     registerCustomComponent(name: string, itemCustomComponent: ItemCustomComponent): void;
+}
+
+export class ItemComponentReleaseUseEvent {
+    private constructor();
+    readonly itemStack: ItemStack;
+    readonly remainingUseDuration: number;
+    readonly source: Player;
 }
 
 export class ItemComponentUseEvent {
@@ -7579,6 +7693,7 @@ export class PlayerDimensionChangeAfterEvent {
     readonly fromDimension: Dimension;
     readonly fromLocation: Vector3;
     readonly player: Player;
+    readonly source: PlayerDimensionChangeSource;
     readonly toDimension: Dimension;
     readonly toLocation: Vector3;
 }
@@ -8271,6 +8386,29 @@ export class PoiBlockType {
 export class PoiManager {
     private constructor();
     readonly blocks: PoiBlockManager;
+}
+
+export class PortalActivateAfterEvent {
+    private constructor();
+    readonly dimension: Dimension;
+    readonly location: Vector3;
+    readonly player?: Player;
+}
+
+export class PortalActivateAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: PortalActivateAfterEvent) => void): (arg0: PortalActivateAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PortalActivateAfterEvent) => void): void;
 }
 
 export class PotionDeliveryType {
@@ -9889,6 +10027,10 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly portalActivate: PortalActivateAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly pressurePlatePop: PressurePlatePopAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -10247,8 +10389,10 @@ export interface AnimationOptions {
 
 export interface BiomeFilter {
     excludeBiomes?: string[];
+    excludeNamespaces?: string[];
     excludeTags?: string[];
     includeBiomes?: string[];
+    includeNamespaces?: string[];
     includeTags?: string[];
 }
 
@@ -10300,9 +10444,11 @@ export interface BlockFillOptions {
 }
 
 export interface BlockFilter {
+    excludeNamespaces?: string[];
     excludePermutations?: BlockPermutation[];
     excludeTags?: string[];
     excludeTypes?: string[];
+    includeNamespaces?: string[];
     includePermutations?: BlockPermutation[];
     includeTags?: string[];
     includeTypes?: string[];
@@ -10507,6 +10653,7 @@ export interface EntityFilter {
     excludeFamilies?: string[];
     excludeGameModes?: GameMode[];
     excludeNames?: string[];
+    excludeNamespaces?: string[];
     excludeTags?: string[];
     excludeTypes?: string[];
     families?: string[];
@@ -10518,6 +10665,7 @@ export interface EntityFilter {
     minLevel?: number;
     minVerticalRotation?: number;
     name?: string;
+    namespaces?: string[];
     propertyOptions?: EntityQueryPropertyOptions[];
     scoreOptions?: EntityQueryScoreOptions[];
     tags?: string[];
@@ -10668,6 +10816,7 @@ export interface ItemCustomComponent {
     onConsume?: (arg0: ItemComponentConsumeEvent, arg1: CustomComponentParameters) => void;
     onHitEntity?: (arg0: ItemComponentHitEntityEvent, arg1: CustomComponentParameters) => void;
     onMineBlock?: (arg0: ItemComponentMineBlockEvent, arg1: CustomComponentParameters) => void;
+    onReleaseUse?: (arg0: ItemComponentReleaseUseEvent, arg1: CustomComponentParameters) => void;
     onUse?: (arg0: ItemComponentUseEvent, arg1: CustomComponentParameters) => void;
     onUseOn?: (arg0: ItemComponentUseOnEvent, arg1: CustomComponentParameters) => void;
 }

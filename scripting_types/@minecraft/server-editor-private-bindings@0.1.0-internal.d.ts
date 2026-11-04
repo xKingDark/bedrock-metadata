@@ -31,14 +31,19 @@ export enum AnnotationFacing {
 export enum AnnotationInteractionMode {
     None    = 0,
     Drawing = 1,
+    Erasing = 2,
+}
+
+export enum AnnotationNoteType {
+    Csv  = "Csv",
+    Text = "Text",
 }
 
 export enum AnnotationType {
-    Invalid      = 0,
-    Drawing      = 1,
-    Image        = 2,
-    Text         = 3,
-    CommentBlock = 4,
+    Invalid       = 0,
+    Drawing       = 1,
+    Text          = 3,
+    CommentEntity = 4,
 }
 
 export enum AudioSettingsProperty {
@@ -605,6 +610,25 @@ export enum WorldGeneratorType {
     Void      = "Void",
 }
 
+export class AnnotationDrawingInteractionSettings {
+    readonly mode: AnnotationInteractionMode;
+    readonly target?: string;
+    constructor(target?: string);
+}
+
+export class AnnotationDrawInteractionResult {
+    private constructor();
+    readonly annotationId: string;
+    readonly isCreation: boolean;
+    readonly isSuccess: boolean;
+}
+
+export class AnnotationErasingInteractionSettings {
+    readonly mode: AnnotationInteractionMode;
+    readonly target?: string;
+    constructor(target?: string);
+}
+
 export class AnnotationInstance {
     private constructor();
     readonly isLocked: boolean;
@@ -622,11 +646,26 @@ export class AnnotationManager {
     acquireAnnotationLock(id: string, lockId?: string): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    beginDrawingInteraction(
+        targetOrCreateSettings: DrawingAnnotationCreateSettings | string,
+        startPosition: minecraftserver.Vector3,
+        callback: (arg0: AnnotationDrawInteractionResult) => void,
+        segmentSettings: DrawingAnnotationSegmentSettings,
+    ): number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    cancelDrawingStroke(): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
      */
     createCommentEntityAnnotation(
         dimension: minecraftserver.Dimension,
         location: minecraftserver.Vector3,
-        settings?: AnnotationSettings,
+        settings?: CommentEntityAnnotationSettings,
     ): AnnotationMetadata | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -644,6 +683,14 @@ export class AnnotationManager {
      * @remarks This function can't be called in restricted-execution mode.
      */
     deleteAnnotations(ids: string[]): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    endDrawingInteraction(requestId: number): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    exportAnnotationNotes(ids: string[], file: SaveFileHandle, format: AnnotationNoteType): Promise<void>;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -695,15 +742,13 @@ export class AnnotationManager {
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
-    setInteractionMode(mode: AnnotationInteractionMode): void;
+    setInteractionSettings(
+        settings?: AnnotationDrawingInteractionSettings | AnnotationErasingInteractionSettings,
+    ): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
     setShowAnnotations(showAnnotations: boolean): void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     */
-    updateDrawingSettings(settings: AnnotationDrawingSettings): void;
 }
 
 export class AnnotationMetadata {
@@ -1253,6 +1298,12 @@ export class ClientFilesystem {
      * @throws This function can throw errors.
      */
     chooseFile(options: FileSelectorOptions): Promise<string>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    chooseSaveFile(options: FileSelectorOptions): Promise<SaveFileHandle>;
 }
 
 export class ClientInteractiveTools {
@@ -1423,6 +1474,55 @@ export class ClipboardManager {
      * @throws This function can throw errors.
      */
     create(): ClipboardItem;
+}
+
+// @ts-ignore
+export class CommentEntityAnnotationInstance extends AnnotationInstance {
+    private constructor();
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    anchorOrientation: AnnotationAnchorOrientation;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    body: string;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    bodyTextColor: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    bodyTextSize: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    facing: AnnotationFacing;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    rotation?: minecraftserver.Vector3;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    showBody: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    showTitle: boolean;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    titleColor: minecraftserver.RGBA;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    titleTextSize: number;
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    widthLimit: number;
 }
 
 export class CurrentThemeChangeAfterEvent {
@@ -2014,6 +2114,33 @@ export class DataTransferRequestResponse {
     readonly schema: string;
 }
 
+// @ts-ignore
+export class DrawingAnnotationInstance extends AnnotationInstance {
+    private constructor();
+    readonly lineSegments: DrawingAnnotationLineSegment[];
+    /**
+     * @remarks This property can't be edited in restricted-execution mode.
+     */
+    notes: string;
+    readonly originOffset: minecraftserver.Vector3;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    addLineSegment(segment: DrawingAnnotationLineSegment): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    getBlockBounds(): minecraftserver.BlockBoundingBox | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    removeLineSegment(segmentIndex: number): boolean;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    updateLineSegment(segmentIndex: number, settings: DrawingAnnotationLineSegmentSettings): boolean;
+}
+
 export class EditorConstants {
     private constructor();
     readonly maxBlockVolume: number;
@@ -2269,10 +2396,8 @@ export class FeatureFlagManager {
     readonly isHost: boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
      */
-    getFlag(name: string): boolean;
+    getFlag(name: string): boolean | undefined;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -4047,6 +4172,15 @@ export class RelativeVolumeListBlockVolume extends minecraftserver.BlockVolumeBa
     translate(offset: minecraftserver.Vector3): void;
 }
 
+export class SaveFileHandle {
+    private constructor();
+    readonly path: string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    write(contents: string): Promise<void>;
+}
+
 export class SelectionChangeAfterEventSignal {
     private constructor();
     /**
@@ -5454,11 +5588,6 @@ export class WidgetStateChangeEventData {
     readonly widget: Widget;
 }
 
-export interface AnnotationDrawingSettings {
-    color: minecraftserver.RGBA;
-    thickness: number;
-}
-
 export interface AnnotationSettings {
     name?: string;
     tags?: string[];
@@ -5498,6 +5627,21 @@ export interface ClipboardWriteOptions {
     normalizedOrigin?: minecraftserver.Vector3;
     offset?: minecraftserver.Vector3;
     rotation?: minecraftserver.StructureRotation;
+}
+
+// @ts-ignore
+export interface CommentEntityAnnotationSettings extends AnnotationSettings {
+    anchorOrientation?: AnnotationAnchorOrientation;
+    body?: string;
+    bodyTextColor?: minecraftserver.RGBA;
+    bodyTextSize?: number;
+    facing?: AnnotationFacing;
+    rotation?: minecraftserver.Vector3;
+    showBody?: boolean;
+    showTitle?: boolean;
+    titleColor?: minecraftserver.RGBA;
+    titleTextSize?: number;
+    widthLimit?: number;
 }
 
 export interface ContiguousSelectionProperties {
@@ -5564,6 +5708,33 @@ export interface DataTransferSendDataOptions {
     lockToBiome?: boolean;
 }
 
+// @ts-ignore
+export interface DrawingAnnotationCreateSettings extends AnnotationSettings {
+    notes?: string;
+}
+
+export interface DrawingAnnotationLineSegment {
+    color: minecraftserver.RGBA;
+    lineWeight: number;
+    points: minecraftserver.Vector3[];
+}
+
+export interface DrawingAnnotationLineSegmentSettings {
+    color: minecraftserver.RGBA;
+    lineWeight: number;
+}
+
+export interface DrawingAnnotationSegmentSettings {
+    color: minecraftserver.RGBA;
+    lineWeight: number;
+}
+
+// @ts-ignore
+export interface DrawingAnnotationSettings extends AnnotationSettings {
+    lineSegments: DrawingAnnotationLineSegment[];
+    notes?: string;
+}
+
 export interface EditorJigsawSection {
     bounds: minecraftserver.BlockBoundingBox;
     offset: minecraftserver.Vector3;
@@ -5612,6 +5783,7 @@ export interface ExtrudeInteractiveToolOptions {
 }
 
 export interface FileSelectorOptions {
+    defaultFileName?: string;
     extensions: string[];
     maxFileSize: number;
     title?: string;

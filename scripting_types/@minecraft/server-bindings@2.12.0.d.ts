@@ -26,6 +26,7 @@ export enum BlockComponentTypes {
     RecordPlayer              = "minecraft:record_player",
     RedstoneProducer          = "minecraft:redstone_producer",
     Sign                      = "minecraft:sign",
+    VibrationProperties       = "minecraft:vibration_properties",
 }
 
 export enum BlockPistonState {
@@ -722,6 +723,7 @@ export type BlockComponentTypeMap = {
     record_player: BlockRecordPlayerComponent;
     redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
+    vibration_properties: BlockVibrationPropertiesComponent;
     "minecraft:dynamic_properties": BlockDynamicPropertiesComponent;
     "minecraft:fluid_container": BlockFluidContainerComponent;
     "minecraft:instrument_sound": BlockInstrumentComponent;
@@ -733,6 +735,7 @@ export type BlockComponentTypeMap = {
     "minecraft:record_player": BlockRecordPlayerComponent;
     "minecraft:redstone_producer": BlockRedstoneProducerComponent;
     "minecraft:sign": BlockSignComponent;
+    "minecraft:vibration_properties": BlockVibrationPropertiesComponent;
 }
 
 export type EntityComponentReturnType<T extends string> =
@@ -1234,6 +1237,14 @@ export class Block {
      *
      * {@link LocationOutOfWorldBoundariesError}
      */
+    getAllScheduledNamedTicks(): ScheduledNamedTick[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
     getComponent<T extends string>(componentId: T): BlockComponentReturnType<T> | undefined;
     /**
      * @throws This function can throw errors.
@@ -1278,6 +1289,14 @@ export class Block {
      */
     getRedstonePower(): number | undefined;
     /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    getScheduledNamedTickCount(): number;
+    /**
      * @remarks This function can't be called in restricted-execution mode.
      *
      * @throws This function can throw errors.
@@ -1303,6 +1322,14 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     hasComponent(componentId: string): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    hasScheduledNamedTick(eventName: string): boolean;
     /**
      * @throws This function can throw errors.
      *
@@ -1365,6 +1392,28 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     offset(offset: Vector3): Block | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    removeScheduledNamedTicks(eventName: string): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    scheduleNamedTick(eventName: string, tickDelay: number): void;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -1450,6 +1499,19 @@ export class BlockComponentEntityFallOnEvent extends BlockEvent {
     private constructor();
     readonly entity?: Entity;
     readonly fallDistance: number;
+}
+
+// @ts-ignore
+export class BlockComponentNamedTickEvent extends BlockEvent {
+    private constructor();
+    readonly name: string;
+    isMine(): boolean;
+}
+
+// @ts-ignore
+export class BlockComponentNeighborChangedAfterEvent extends BlockEvent {
+    private constructor();
+    getChanges(): NeighborChange[];
 }
 
 // @ts-ignore
@@ -2007,6 +2069,28 @@ export class BlockTypes {
     private constructor();
     static get(typeName: string): BlockType | undefined;
     static getAll(): BlockType[];
+}
+
+// @ts-ignore
+export class BlockVibrationPropertiesComponent extends BlockComponent {
+    private constructor();
+    static readonly componentId = "minecraft:vibration_properties";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    getCanDampenVibrations(): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    getCanOccludeVibrations(): boolean;
 }
 
 // @ts-ignore
@@ -9287,6 +9371,11 @@ export interface BlockCustomComponent {
     onBreak?: (arg0: BlockComponentBlockBreakEvent, arg1: CustomComponentParameters) => void;
     onEntity?: (arg0: BlockComponentEntityEvent, arg1: CustomComponentParameters) => void;
     onEntityFallOn?: (arg0: BlockComponentEntityFallOnEvent, arg1: CustomComponentParameters) => void;
+    onNamedTick?: (arg0: BlockComponentNamedTickEvent, arg1: CustomComponentParameters) => void;
+    onNeighborChanged?: (
+        arg0: BlockComponentNeighborChangedAfterEvent,
+        arg1: CustomComponentParameters,
+    ) => void;
     onPlace?: (arg0: BlockComponentOnPlaceEvent, arg1: CustomComponentParameters) => void;
     onPlayerBreak?: (arg0: BlockComponentPlayerBreakEvent, arg1: CustomComponentParameters) => void;
     onPlayerInteract?: (arg0: BlockComponentPlayerInteractEvent, arg1: CustomComponentParameters) => void;
@@ -9707,6 +9796,12 @@ export interface MusicOptions {
     volume?: number;
 }
 
+export interface NeighborChange {
+    blockPermutation: BlockPermutation;
+    direction: Direction;
+    previousPermutation: BlockPermutation;
+}
+
 export interface NotEqualsComparison {
     notEquals: boolean | number | string;
 }
@@ -9817,6 +9912,11 @@ export interface RotationKeyFrame {
     easingFunc?: EasingType;
     rotation: Vector3;
     timeSeconds: number;
+}
+
+export interface ScheduledNamedTick {
+    eventName: string;
+    tickDelay: number;
 }
 
 export interface ScoreboardObjectiveDisplayOptions {

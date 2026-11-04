@@ -727,6 +727,7 @@
                 { "name": "minecraft:music_disc_creator" },
                 { "name": "minecraft:music_disc_creator_music_box" },
                 { "name": "minecraft:music_disc_far" },
+                { "name": "minecraft:music_disc_flurry" },
                 { "name": "minecraft:music_disc_lava_chicken" },
                 { "name": "minecraft:music_disc_mall" },
                 { "name": "minecraft:music_disc_mellohi" },
@@ -1031,6 +1032,12 @@
             ]
         },
         {
+            "name": "minecraft:sulfur_cube_archetype_cold",
+            "items": [
+                { "name": "minecraft:blue_ice" }
+            ]
+        },
+        {
             "name": "minecraft:sulfur_cube_archetype_explosive",
             "items": [
                 { "name": "minecraft:tnt" }
@@ -1070,11 +1077,11 @@
         {
             "name": "minecraft:sulfur_cube_archetype_fast_sliding",
             "items": [
-                { "name": "minecraft:blue_ice" },
+                { "name": "minecraft:chiseled_packed_ice" },
                 { "name": "minecraft:packed_ice" },
                 { "name": "minecraft:packed_ice_bricks" },
-                { "name": "minecraft:packed_ice_bricks_chiseled" },
-                { "name": "minecraft:snow" }
+                { "name": "minecraft:snow" },
+                { "name": "minecraft:snow_bricks" }
             ]
         },
         {
@@ -1161,6 +1168,7 @@
                 { "name": "minecraft:brown_glazed_terracotta" },
                 { "name": "minecraft:brown_terracotta" },
                 { "name": "minecraft:calcite" },
+                { "name": "minecraft:calcite_pillar" },
                 { "name": "minecraft:chiseled_cinnabar" },
                 { "name": "minecraft:chiseled_deepslate" },
                 { "name": "minecraft:chiseled_nether_bricks" },
@@ -1245,6 +1253,8 @@
                 { "name": "minecraft:polished_basalt" },
                 { "name": "minecraft:polished_blackstone" },
                 { "name": "minecraft:polished_blackstone_bricks" },
+                { "name": "minecraft:polished_calcite" },
+                { "name": "minecraft:polished_calcite_bricks" },
                 { "name": "minecraft:polished_cinnabar" },
                 { "name": "minecraft:polished_deepslate" },
                 { "name": "minecraft:polished_diorite" },

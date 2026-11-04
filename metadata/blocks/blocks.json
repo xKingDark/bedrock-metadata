@@ -2129,6 +2129,85 @@
             "localization_key": "tile.calcite.name"
         },
         {
+            "id": 1523,
+            "name": "minecraft:calcite_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.calcite_double_slab.name"
+        },
+        {
+            "id": 1525,
+            "name": "minecraft:calcite_pillar",
+            "states": [
+                {
+                    "name": "pillar_axis",
+                    "default_value": "y"
+                }
+            ],
+            "localization_key": "tile.calcite_pillar.name"
+        },
+        {
+            "id": 1522,
+            "name": "minecraft:calcite_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.calcite_slab.name"
+        },
+        {
+            "id": 1521,
+            "name": "minecraft:calcite_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.calcite_stairs.name"
+        },
+        {
+            "id": 1524,
+            "name": "minecraft:calcite_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.calcite_wall.name"
+        },
+        {
             "id": 835,
             "name": "minecraft:calibrated_sculk_sensor",
             "states": [
@@ -2628,6 +2707,12 @@
             "localization_key": "tile.chiseled_nether_bricks.name"
         },
         {
+            "id": 1513,
+            "name": "minecraft:chiseled_packed_ice",
+            "states": [],
+            "localization_key": "tile.chiseled_packed_ice.name"
+        },
+        {
             "id": 534,
             "name": "minecraft:chiseled_polished_blackstone",
             "states": [],
@@ -2661,6 +2746,12 @@
             "name": "minecraft:chiseled_sandstone",
             "states": [],
             "localization_key": "tile.sandstone.chiseled.name"
+        },
+        {
+            "id": 1536,
+            "name": "minecraft:chiseled_soulshale",
+            "states": [],
+            "localization_key": "tile.chiseled_soulshale.name"
         },
         {
             "id": 1125,
@@ -10378,42 +10469,30 @@
             "localization_key": "tile.packed_ice.name"
         },
         {
-            "id": 1505,
-            "name": "minecraft:packed_ice_bricks",
-            "states": [],
-            "localization_key": "tile.packed_ice_bricks.name"
-        },
-        {
-            "id": 1513,
-            "name": "minecraft:packed_ice_bricks_chiseled",
-            "states": [],
-            "localization_key": "tile.packed_ice_bricks_chiseled.name"
-        },
-        {
             "id": 1515,
-            "name": "minecraft:packed_ice_bricks_double_slab",
+            "name": "minecraft:packed_ice_brick_double_slab",
             "states": [
                 {
                     "name": "minecraft:vertical_half",
                     "default_value": "bottom"
                 }
             ],
-            "localization_key": "tile.packed_ice_bricks_double_slab.name"
+            "localization_key": "tile.packed_ice_brick_double_slab.name"
         },
         {
             "id": 1511,
-            "name": "minecraft:packed_ice_bricks_slab",
+            "name": "minecraft:packed_ice_brick_slab",
             "states": [
                 {
                     "name": "minecraft:vertical_half",
                     "default_value": "bottom"
                 }
             ],
-            "localization_key": "tile.packed_ice_bricks_slab.name"
+            "localization_key": "tile.packed_ice_brick_slab.name"
         },
         {
             "id": 1512,
-            "name": "minecraft:packed_ice_bricks_stairs",
+            "name": "minecraft:packed_ice_brick_stairs",
             "states": [
                 {
                     "name": "minecraft:corner",
@@ -10428,11 +10507,11 @@
                     "default_value": 0
                 }
             ],
-            "localization_key": "tile.packed_ice_bricks_stairs.name"
+            "localization_key": "tile.packed_ice_brick_stairs.name"
         },
         {
             "id": 1514,
-            "name": "minecraft:packed_ice_bricks_wall",
+            "name": "minecraft:packed_ice_brick_wall",
             "states": [
                 {
                     "name": "wall_connection_type_east",
@@ -10455,7 +10534,13 @@
                     "default_value": false
                 }
             ],
-            "localization_key": "tile.packed_ice_bricks_wall.name"
+            "localization_key": "tile.packed_ice_brick_wall.name"
+        },
+        {
+            "id": 1505,
+            "name": "minecraft:packed_ice_bricks",
+            "states": [],
+            "localization_key": "tile.packed_ice_bricks.name"
         },
         {
             "id": 732,
@@ -11347,6 +11432,154 @@
                 }
             ],
             "localization_key": "tile.polished_blackstone_wall.name"
+        },
+        {
+            "id": 1530,
+            "name": "minecraft:polished_calcite",
+            "states": [],
+            "localization_key": "tile.polished_calcite.name"
+        },
+        {
+            "id": 1533,
+            "name": "minecraft:polished_calcite_brick_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_calcite_brick_double_slab.name"
+        },
+        {
+            "id": 1532,
+            "name": "minecraft:polished_calcite_brick_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_calcite_brick_slab.name"
+        },
+        {
+            "id": 1531,
+            "name": "minecraft:polished_calcite_brick_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.polished_calcite_brick_stairs.name"
+        },
+        {
+            "id": 1534,
+            "name": "minecraft:polished_calcite_brick_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.polished_calcite_brick_wall.name"
+        },
+        {
+            "id": 1535,
+            "name": "minecraft:polished_calcite_bricks",
+            "states": [],
+            "localization_key": "tile.polished_calcite_bricks.name"
+        },
+        {
+            "id": 1528,
+            "name": "minecraft:polished_calcite_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_calcite_double_slab.name"
+        },
+        {
+            "id": 1527,
+            "name": "minecraft:polished_calcite_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.polished_calcite_slab.name"
+        },
+        {
+            "id": 1526,
+            "name": "minecraft:polished_calcite_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.polished_calcite_stairs.name"
+        },
+        {
+            "id": 1529,
+            "name": "minecraft:polished_calcite_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.polished_calcite_wall.name"
         },
         {
             "id": 1369,
@@ -13650,6 +13883,80 @@
             "name": "minecraft:snow",
             "states": [],
             "localization_key": "tile.snow.name"
+        },
+        {
+            "id": 1519,
+            "name": "minecraft:snow_brick_double_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.snow_brick_double_slab.name"
+        },
+        {
+            "id": 1518,
+            "name": "minecraft:snow_brick_slab",
+            "states": [
+                {
+                    "name": "minecraft:vertical_half",
+                    "default_value": "bottom"
+                }
+            ],
+            "localization_key": "tile.snow_brick_slab.name"
+        },
+        {
+            "id": 1517,
+            "name": "minecraft:snow_brick_stairs",
+            "states": [
+                {
+                    "name": "minecraft:corner",
+                    "default_value": "none"
+                },
+                {
+                    "name": "upside_down_bit",
+                    "default_value": false
+                },
+                {
+                    "name": "weirdo_direction",
+                    "default_value": 0
+                }
+            ],
+            "localization_key": "tile.snow_brick_stairs.name"
+        },
+        {
+            "id": 1520,
+            "name": "minecraft:snow_brick_wall",
+            "states": [
+                {
+                    "name": "wall_connection_type_east",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_north",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_south",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_connection_type_west",
+                    "default_value": "none"
+                },
+                {
+                    "name": "wall_post_bit",
+                    "default_value": false
+                }
+            ],
+            "localization_key": "tile.snow_brick_wall.name"
+        },
+        {
+            "id": 1516,
+            "name": "minecraft:snow_bricks",
+            "states": [],
+            "localization_key": "tile.snow_bricks.name"
         },
         {
             "id": 78,

@@ -245,22 +245,7 @@ export class DataStore {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    getProperty(player: minecraftserver.Player, dataStoreName: string, property: string): string | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftserver.InvalidEntityError}
-     *
-     * {@link InvalidPathError}
-     */
-    getPropertyPath(
-        player: minecraftserver.Player,
-        dataStoreName: string,
-        property: string,
-        path: string,
-    ): string | undefined;
+    getVariable(player: minecraftserver.Player, variableName: string): boolean | number | string | undefined;
 }
 
 export class Form {
@@ -650,6 +635,7 @@ export interface ButtonOptions {
 export interface CustomFormOptions {
     styleId?: ObservableString | string;
     topCloseButtonVisible?: boolean | ObservableBoolean;
+    useNewUI?: boolean;
 }
 
 export interface DividerOptions {
@@ -819,15 +805,6 @@ export class InvalidFormModificationError extends Error {
 // @ts-ignore
 export class InvalidObservableError extends Error {
     private constructor();
-}
-
-// @ts-ignore
-export class InvalidPathError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly path: string;
 }
 
 // @ts-ignore

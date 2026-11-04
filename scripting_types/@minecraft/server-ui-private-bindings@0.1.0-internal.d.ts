@@ -20,31 +20,7 @@ export class DataStore {
      *
      * {@link minecraftserver.InvalidEntityError}
      */
-    getProperty(player: minecraftserver.Player, dataStoreName: string, property: string): string | undefined;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * @throws This function can throw errors.
-     *
-     * {@link minecraftserver.InvalidEntityError}
-     *
-     * {@link InvalidPathError}
-     */
-    getPropertyPath(
-        player: minecraftserver.Player,
-        dataStoreName: string,
-        property: string,
-        path: string,
-    ): string | undefined;
-}
-
-// @ts-ignore
-export class InvalidPathError extends Error {
-    private constructor();
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly path: string;
+    getVariable(player: minecraftserver.Player, variableName: string): boolean | number | string | undefined;
 }
 
 export const testConstant = 5;

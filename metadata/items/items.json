@@ -194,7 +194,7 @@
         },
         {
             "name": "minecraft:apple",
-            "id": 886,
+            "id": 887,
             "max_size": 64,
             "localization_key": "item.apple.name"
         },
@@ -607,7 +607,7 @@
         },
         {
             "name": "minecraft:black_bundle",
-            "id": 865,
+            "id": 866,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.black_bundle"
@@ -775,7 +775,7 @@
         },
         {
             "name": "minecraft:blue_bundle",
-            "id": 866,
+            "id": 867,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.blue_bundle"
@@ -992,7 +992,7 @@
         },
         {
             "name": "minecraft:breeze_rod",
-            "id": 882,
+            "id": 883,
             "max_size": 64,
             "localization_key": "item.breeze_rod.name"
         },
@@ -1052,7 +1052,7 @@
         },
         {
             "name": "minecraft:brown_bundle",
-            "id": 867,
+            "id": 868,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.brown_bundle"
@@ -1215,7 +1215,7 @@
         },
         {
             "name": "minecraft:bundle",
-            "id": 868,
+            "id": 869,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.bundle"
@@ -1255,6 +1255,30 @@
             "id": -326,
             "max_size": 64,
             "localization_key": "tile.calcite.name"
+        },
+        {
+            "name": "minecraft:calcite_pillar",
+            "id": -1270,
+            "max_size": 64,
+            "localization_key": "tile.calcite_pillar.name"
+        },
+        {
+            "name": "minecraft:calcite_slab",
+            "id": -1267,
+            "max_size": 64,
+            "localization_key": "tile.calcite_slab.name"
+        },
+        {
+            "name": "minecraft:calcite_stairs",
+            "id": -1266,
+            "max_size": 64,
+            "localization_key": "tile.calcite_stairs.name"
+        },
+        {
+            "name": "minecraft:calcite_wall",
+            "id": -1269,
+            "max_size": 64,
+            "localization_key": "tile.calcite_wall.name"
         },
         {
             "name": "minecraft:calibrated_sculk_sensor",
@@ -1536,6 +1560,12 @@
             "id": -302,
             "max_size": 64,
             "localization_key": "tile.chiseled_nether_bricks.name"
+        },
+        {
+            "name": "minecraft:chiseled_packed_ice",
+            "id": -1258,
+            "max_size": 64,
+            "localization_key": "tile.chiseled_packed_ice.name"
         },
         {
             "name": "minecraft:chiseled_polished_blackstone",
@@ -2031,7 +2061,7 @@
         },
         {
             "name": "minecraft:copper_spear",
-            "id": 858,
+            "id": 859,
             "max_size": 1,
             "localization_key": "item.copper_spear.name"
         },
@@ -2295,7 +2325,7 @@
         },
         {
             "name": "minecraft:cyan_bundle",
-            "id": 869,
+            "id": 870,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.cyan_bundle"
@@ -2848,7 +2878,7 @@
         },
         {
             "name": "minecraft:diamond_spear",
-            "id": 859,
+            "id": 860,
             "max_size": 1,
             "localization_key": "item.diamond_spear.name"
         },
@@ -3658,7 +3688,7 @@
         },
         {
             "name": "minecraft:end_crystal",
-            "id": 852,
+            "id": 853,
             "max_size": 64,
             "localization_key": "item.end_crystal.name"
         },
@@ -4084,7 +4114,7 @@
         },
         {
             "name": "minecraft:glow_berries",
-            "id": 887,
+            "id": 888,
             "max_size": 64,
             "localization_key": "item.glow_berries.name"
         },
@@ -4251,7 +4281,7 @@
         },
         {
             "name": "minecraft:golden_spear",
-            "id": 860,
+            "id": 861,
             "max_size": 1,
             "localization_key": "item.golden_spear.name"
         },
@@ -4305,7 +4335,7 @@
         },
         {
             "name": "minecraft:gray_bundle",
-            "id": 870,
+            "id": 871,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.gray_bundle"
@@ -4414,7 +4444,7 @@
         },
         {
             "name": "minecraft:green_bundle",
-            "id": 871,
+            "id": 872,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.green_bundle"
@@ -4867,7 +4897,7 @@
         },
         {
             "name": "minecraft:ice_ball",
-            "id": 853,
+            "id": 854,
             "max_size": 16,
             "localization_key": "item.ice_ball.name"
         },
@@ -4878,13 +4908,13 @@
         },
         {
             "name": "minecraft:ice_crystal",
-            "id": 854,
+            "id": 855,
             "max_size": 64,
             "localization_key": "tile.ice_crystal.name"
         },
         {
             "name": "minecraft:icicle",
-            "id": 855,
+            "id": 856,
             "max_size": 64,
             "localization_key": "tile.icicle.name"
         },
@@ -5046,7 +5076,7 @@
         },
         {
             "name": "minecraft:iron_spear",
-            "id": 861,
+            "id": 862,
             "max_size": 1,
             "localization_key": "item.iron_spear.name"
         },
@@ -5399,7 +5429,7 @@
         },
         {
             "name": "minecraft:light_blue_bundle",
-            "id": 872,
+            "id": 873,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_blue_bundle"
@@ -5508,7 +5538,7 @@
         },
         {
             "name": "minecraft:light_gray_bundle",
-            "id": 873,
+            "id": 874,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_gray_bundle"
@@ -5635,7 +5665,7 @@
         },
         {
             "name": "minecraft:lime_bundle",
-            "id": 874,
+            "id": 875,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.lime_bundle"
@@ -5786,7 +5816,7 @@
         },
         {
             "name": "minecraft:magenta_bundle",
-            "id": 875,
+            "id": 876,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.magenta_bundle"
@@ -6276,6 +6306,12 @@
             "localization_key": "item.record.name"
         },
         {
+            "name": "minecraft:music_disc_flurry",
+            "id": 839,
+            "max_size": 1,
+            "localization_key": "item.record.name"
+        },
+        {
             "name": "minecraft:music_disc_lava_chicken",
             "id": 837,
             "max_size": 1,
@@ -6523,7 +6559,7 @@
         },
         {
             "name": "minecraft:netherite_spear",
-            "id": 862,
+            "id": 863,
             "max_size": 1,
             "localization_key": "item.netherite_spear.name"
         },
@@ -6673,7 +6709,7 @@
         },
         {
             "name": "minecraft:ominous_trial_key",
-            "id": 883,
+            "id": 884,
             "max_size": 64,
             "localization_key": "item.ominous_trial_key.name"
         },
@@ -6685,7 +6721,7 @@
         },
         {
             "name": "minecraft:orange_bundle",
-            "id": 876,
+            "id": 877,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.orange_bundle"
@@ -6907,34 +6943,28 @@
             "localization_key": "tile.packed_ice.name"
         },
         {
+            "name": "minecraft:packed_ice_brick_slab",
+            "id": -1256,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_brick_slab.name"
+        },
+        {
+            "name": "minecraft:packed_ice_brick_stairs",
+            "id": -1257,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_brick_stairs.name"
+        },
+        {
+            "name": "minecraft:packed_ice_brick_wall",
+            "id": -1259,
+            "max_size": 64,
+            "localization_key": "tile.packed_ice_brick_wall.name"
+        },
+        {
             "name": "minecraft:packed_ice_bricks",
             "id": -1250,
             "max_size": 64,
             "localization_key": "tile.packed_ice_bricks.name"
-        },
-        {
-            "name": "minecraft:packed_ice_bricks_chiseled",
-            "id": -1258,
-            "max_size": 64,
-            "localization_key": "tile.packed_ice_bricks_chiseled.name"
-        },
-        {
-            "name": "minecraft:packed_ice_bricks_slab",
-            "id": -1256,
-            "max_size": 64,
-            "localization_key": "tile.packed_ice_bricks_slab.name"
-        },
-        {
-            "name": "minecraft:packed_ice_bricks_stairs",
-            "id": -1257,
-            "max_size": 64,
-            "localization_key": "tile.packed_ice_bricks_stairs.name"
-        },
-        {
-            "name": "minecraft:packed_ice_bricks_wall",
-            "id": -1259,
-            "max_size": 64,
-            "localization_key": "tile.packed_ice_bricks_wall.name"
         },
         {
             "name": "minecraft:packed_mud",
@@ -7166,7 +7196,7 @@
         },
         {
             "name": "minecraft:pink_bundle",
-            "id": 877,
+            "id": 878,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.pink_bundle"
@@ -7422,6 +7452,54 @@
             "id": -297,
             "max_size": 64,
             "localization_key": "tile.polished_blackstone_wall.name"
+        },
+        {
+            "name": "minecraft:polished_calcite",
+            "id": -1275,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_brick_slab",
+            "id": -1277,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_brick_slab.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_brick_stairs",
+            "id": -1276,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_brick_stairs.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_brick_wall",
+            "id": -1279,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_brick_wall.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_bricks",
+            "id": -1280,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_bricks.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_slab",
+            "id": -1272,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_slab.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_stairs",
+            "id": -1271,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_stairs.name"
+        },
+        {
+            "name": "minecraft:polished_calcite_wall",
+            "id": -1274,
+            "max_size": 64,
+            "localization_key": "tile.polished_calcite_wall.name"
         },
         {
             "name": "minecraft:polished_cinnabar",
@@ -7797,7 +7875,7 @@
         },
         {
             "name": "minecraft:purple_bundle",
-            "id": 878,
+            "id": 879,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.purple_bundle"
@@ -8067,7 +8145,7 @@
         },
         {
             "name": "minecraft:red_bundle",
-            "id": 879,
+            "id": 880,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.red_bundle"
@@ -8206,7 +8284,7 @@
         },
         {
             "name": "minecraft:red_shrub",
-            "id": 856,
+            "id": 857,
             "max_size": 64,
             "localization_key": "tile.red_shrub.name"
         },
@@ -8518,7 +8596,7 @@
         },
         {
             "name": "minecraft:shelf_mushroom",
-            "id": 857,
+            "id": 858,
             "max_size": 64,
             "localization_key": "tile.shelf_mushroom.name"
         },
@@ -8755,6 +8833,30 @@
             "id": 80,
             "max_size": 64,
             "localization_key": "tile.snow.name"
+        },
+        {
+            "name": "minecraft:snow_brick_slab",
+            "id": -1263,
+            "max_size": 64,
+            "localization_key": "tile.snow_brick_slab.name"
+        },
+        {
+            "name": "minecraft:snow_brick_stairs",
+            "id": -1262,
+            "max_size": 64,
+            "localization_key": "tile.snow_brick_stairs.name"
+        },
+        {
+            "name": "minecraft:snow_brick_wall",
+            "id": -1265,
+            "max_size": 64,
+            "localization_key": "tile.snow_brick_wall.name"
+        },
+        {
+            "name": "minecraft:snow_bricks",
+            "id": -1261,
+            "max_size": 64,
+            "localization_key": "tile.snow_bricks.name"
         },
         {
             "name": "minecraft:snow_golem_spawn_egg",
@@ -9045,7 +9147,7 @@
         },
         {
             "name": "minecraft:stone_spear",
-            "id": 863,
+            "id": 864,
             "max_size": 1,
             "localization_key": "item.stone_spear.name"
         },
@@ -9459,7 +9561,7 @@
         },
         {
             "name": "minecraft:trial_key",
-            "id": 884,
+            "id": 885,
             "max_size": 64,
             "localization_key": "item.trial_key.name"
         },
@@ -10285,7 +10387,7 @@
         },
         {
             "name": "minecraft:white_bundle",
-            "id": 880,
+            "id": 881,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.white_bundle"
@@ -10412,7 +10514,7 @@
         },
         {
             "name": "minecraft:wind_charge",
-            "id": 885,
+            "id": 886,
             "max_size": 64,
             "localization_key": "item.wind_charge.name"
         },
@@ -10503,7 +10605,7 @@
         },
         {
             "name": "minecraft:wooden_spear",
-            "id": 864,
+            "id": 865,
             "max_size": 1,
             "localization_key": "item.wooden_spear.name"
         },
@@ -10521,7 +10623,7 @@
         },
         {
             "name": "minecraft:yellow_bundle",
-            "id": 881,
+            "id": 882,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.yellow_bundle"

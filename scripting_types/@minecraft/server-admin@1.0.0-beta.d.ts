@@ -205,6 +205,16 @@ export interface TransferPlayerNetherNetOptions {
     netherNetId: string;
 }
 
+export interface TransferPlayerUIOptions {
+    bodyText?: minecraftserver.RawMessage | string;
+    bodyVisible?: boolean;
+    cancelButtonDelaySeconds?: number;
+    cancelButtonText?: minecraftserver.RawMessage | string;
+    cancelButtonVisible?: boolean;
+    titleText?: minecraftserver.RawMessage | string;
+    titleVisible?: boolean;
+}
+
 // @ts-ignore
 export class AllowListFileReloadError extends Error {
     private constructor();
@@ -287,10 +297,19 @@ export function opPlayer(player: minecraftserver.Player): void;
  * @remarks This function can't be called in restricted-execution mode.
  *
  * @throws This function can throw errors.
+ *
+ * {@link minecraftcommon.ArgumentOutOfBoundsError}
+ *
+ * {@link minecraftcommon.EngineError}
+ *
+ * {@link minecraftcommon.InvalidArgumentError}
+ *
+ * {@link minecraftserver.RawMessageError}
  */
 export function transferPlayer(
     player: minecraftserver.Player,
     options: TransferPlayerIpPortOptions | TransferPlayerNetherNetOptions,
+    UIOptions?: TransferPlayerUIOptions,
 ): void;
 
 export const beforeEvents: AdminBeforeEvents;
