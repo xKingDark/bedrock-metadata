@@ -1,9 +1,11 @@
 {
     "data_items": [
         { "name": "context.all_animations_finished" },
+        { "name": "context.anim_time" },
         { "name": "context.any_animation_finished" },
         { "name": "context.block_face" },
         { "name": "context.cardinal_block_face_placed_on" },
+        { "name": "context.delta_time" },
         { "name": "context.is_emoting" },
         { "name": "context.is_hidden" },
         { "name": "context.is_sleeping" },

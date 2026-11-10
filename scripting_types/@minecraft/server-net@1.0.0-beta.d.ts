@@ -329,6 +329,8 @@ export enum PacketId {
     UpdateSoftEnumPacket                         = "UpdateSoftEnumPacket",
     UpdateSubChunkBlocksPacket                   = "UpdateSubChunkBlocksPacket",
     UpdateTradePacket                            = "UpdateTradePacket",
+    VirtualContainerClosePacket                  = "VirtualContainerClosePacket",
+    VirtualContainerOpenPacket                   = "VirtualContainerOpenPacket",
     VoxelShapesPacket                            = "VoxelShapesPacket",
 }
 

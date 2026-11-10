@@ -16,6 +16,7 @@ export enum AimAssistTargetMode {
 }
 
 export enum BlockComponentTypes {
+    ClimbableProperties       = "minecraft:climbable",
     DynamicProperties         = "minecraft:dynamic_properties",
     EntityStorage             = "minecraft:entity_storage",
     FluidContainer            = "minecraft:fluid_container",
@@ -732,6 +733,24 @@ export enum TintMethod {
     Water            = "Water",
 }
 
+export enum VirtualContainerCloseReason {
+    PlayerClosed     = "PlayerClosed",
+    PlayerDied       = "PlayerDied",
+    PlayerLeft       = "PlayerLeft",
+    PlayerSpectating = "PlayerSpectating",
+    ServerClosed     = "ServerClosed",
+    UserBusy         = "UserBusy",
+}
+
+export enum VirtualContainerOpenErrorReason {
+    ContainerScreenOpen   = "ContainerScreenOpen",
+    PlayerDead            = "PlayerDead",
+    PlayerNotReady        = "PlayerNotReady",
+    PlayerSleeping        = "PlayerSleeping",
+    PlayerSpectating      = "PlayerSpectating",
+    PreviousScreenClosing = "PreviousScreenClosing",
+}
+
 export enum WatchdogTerminateReason {
     Hang          = "Hang",
     StackOverflow = "StackOverflow",
@@ -756,6 +775,7 @@ export type BlockComponentReturnType<T extends string> =
         : BlockComponent;
 
 export type BlockComponentTypeMap = {
+    climbable: BlockClimbablePropertiesComponent;
     dynamic_properties: BlockDynamicPropertiesComponent;
     entity_storage: BlockEntityStorageComponent;
     fluid_container: BlockFluidContainerComponent;
@@ -772,6 +792,7 @@ export type BlockComponentTypeMap = {
     redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
     vibration_properties: BlockVibrationPropertiesComponent;
+    "minecraft:climbable": BlockClimbablePropertiesComponent;
     "minecraft:dynamic_properties": BlockDynamicPropertiesComponent;
     "minecraft:entity_storage": BlockEntityStorageComponent;
     "minecraft:fluid_container": BlockFluidContainerComponent;
@@ -1610,6 +1631,28 @@ export class BlockBoundingBoxUtils {
      * @remarks This function can't be called in restricted-execution mode.
      */
     static translate(box: BlockBoundingBox, delta: Vector3): BlockBoundingBox;
+}
+
+// @ts-ignore
+export class BlockClimbablePropertiesComponent extends BlockComponent {
+    private constructor();
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    readonly canClimb: boolean;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    readonly canHoldPositionWhileSneaking: boolean;
+    static readonly componentId = "minecraft:climbable";
 }
 
 // @ts-ignore
@@ -3288,7 +3331,7 @@ export class Dimension {
      *
      * {@link minecraftcommon.PropertyOutOfBoundsError}
      */
-    playSound(soundId: string, location: Vector3, soundOptions?: WorldSoundOptions): SoundInstance;
+    playSound(soundId: string, location: Entity | Vector3, soundOptions?: WorldSoundOptions): SoundInstance;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -8016,33 +8059,6 @@ export class PlayerInventoryItemChangeAfterEventSignal {
     unsubscribe(callback: (arg0: PlayerInventoryItemChangeAfterEvent) => void): void;
 }
 
-export class PlayerItemAttackEntityBeforeEvent {
-    private constructor();
-    readonly aimDirection?: Vector3;
-    cancel: boolean;
-    readonly itemStack?: ItemStack;
-    readonly player: Player;
-    readonly target: Entity;
-}
-
-export class PlayerItemAttackEntityBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     */
-    subscribe(
-        callback: (arg0: PlayerItemAttackEntityBeforeEvent) => void,
-    ): (arg0: PlayerItemAttackEntityBeforeEvent) => void;
-    /**
-     * @remarks This function can't be called in restricted-execution mode.
-     *
-     * This function can be called in early-execution mode.
-     */
-    unsubscribe(callback: (arg0: PlayerItemAttackEntityBeforeEvent) => void): void;
-}
-
 export class PlayerJoinAfterEvent {
     private constructor();
     readonly playerId: string;
@@ -9069,6 +9085,7 @@ export class SoundDurationInfo {
 
 export class SoundInstance {
     private constructor();
+    readonly attachedEntity?: Entity;
     readonly durationInfo?: SoundDurationInfo;
     readonly id: string;
     readonly recipient?: Player;
@@ -9548,6 +9565,100 @@ export class TripWireTripAfterEventSignal {
     unsubscribe(callback: (arg0: TripWireTripAfterEvent) => void): void;
 }
 
+// @ts-ignore
+export class VirtualContainer extends Container {
+    private constructor();
+    readonly title: string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidEntityError}
+     */
+    close(player?: Player): number;
+    getViewers(): Player[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     *
+     * {@link VirtualContainerOpenError}
+     */
+    open(player: Player): void;
+}
+
+export class VirtualContainerCloseAfterEvent {
+    private constructor();
+    readonly container: VirtualContainer;
+    readonly items: (ItemStack | undefined)[];
+    readonly player: Player;
+    readonly reason: VirtualContainerCloseReason;
+}
+
+export class VirtualContainerCloseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: VirtualContainerCloseAfterEvent) => void,
+        options?: VirtualContainerEventOptions,
+    ): (arg0: VirtualContainerCloseAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: VirtualContainerCloseAfterEvent) => void): void;
+}
+
+export class VirtualContainerItemChangeAfterEvent {
+    private constructor();
+    readonly beforeItemStack?: ItemStack;
+    readonly container: VirtualContainer;
+    readonly itemStack?: ItemStack;
+    readonly player: Player;
+    readonly slot: number;
+}
+
+export class VirtualContainerItemChangeAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: VirtualContainerItemChangeAfterEvent) => void,
+        options?: VirtualContainerEventOptions,
+    ): (arg0: VirtualContainerItemChangeAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: VirtualContainerItemChangeAfterEvent) => void): void;
+}
+
+export class VirtualContainerManager {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.PropertyOutOfBoundsError}
+     */
+    create(options: VirtualContainerOptions): VirtualContainer;
+}
+
 export class WatchdogTerminateBeforeEvent {
     private constructor();
     cancel: boolean;
@@ -9670,6 +9781,7 @@ export class World {
     readonly soundDefinitionRegistry: SoundDefinitionRegistry;
     readonly structureManager: StructureManager;
     readonly tickingAreaManager: TickingAreaManager;
+    readonly virtualContainerManager: VirtualContainerManager;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -10057,6 +10169,14 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly virtualContainerClose: VirtualContainerCloseAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly virtualContainerItemChange: VirtualContainerItemChangeAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly weatherChange: WeatherChangeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -10134,10 +10254,6 @@ export class WorldBeforeEvents {
      * @remarks This property can be read in early-execution mode.
      */
     readonly playerInteractWithEntity: PlayerInteractWithEntityBeforeEventSignal;
-    /**
-     * @remarks This property can be read in early-execution mode.
-     */
-    readonly playerItemAttackEntity: PlayerItemAttackEntityBeforeEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
      */
@@ -11091,6 +11207,15 @@ export interface VectorXZ {
     z: number;
 }
 
+export interface VirtualContainerEventOptions {
+    containers?: VirtualContainer[];
+}
+
+export interface VirtualContainerOptions {
+    size: number;
+    title?: string;
+}
+
 export interface WaypointTextureBounds {
     lowerBound: number;
     texture: CustomTexture | WaypointTexture;
@@ -11401,6 +11526,15 @@ export class TickingAreaError extends Error {
 // @ts-ignore
 export class UnloadedChunksError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class VirtualContainerOpenError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly reason: VirtualContainerOpenErrorReason;
 }
 
 // @ts-ignore

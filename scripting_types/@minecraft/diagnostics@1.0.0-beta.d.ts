@@ -52,6 +52,14 @@ export class Sentry {
      *
      * {@link SentryUninitializedError}
      */
+    getContexts(): Record<string, Record<string, boolean | number | string>>;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link SentryUninitializedError}
+     */
     getTags(): Record<string, string>;
     /**
      * @remarks This function can be called in early-execution mode.
@@ -71,6 +79,14 @@ export class Sentry {
      * {@link SentryUninitializedError}
      */
     removeTag(name: string): void;
+    /**
+     * @remarks This function can be called in early-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link SentryUninitializedError}
+     */
+    setContext(name: string, context?: Record<string, boolean | number | string>): void;
 }
 
 export interface SentryCaptureContext {

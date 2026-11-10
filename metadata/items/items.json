@@ -194,7 +194,7 @@
         },
         {
             "name": "minecraft:apple",
-            "id": 887,
+            "id": 888,
             "max_size": 64,
             "localization_key": "item.apple.name"
         },
@@ -607,7 +607,7 @@
         },
         {
             "name": "minecraft:black_bundle",
-            "id": 866,
+            "id": 867,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.black_bundle"
@@ -676,6 +676,7 @@
             "name": "minecraft:black_shulker_box",
             "id": -627,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxBlack.name"
         },
         {
@@ -775,7 +776,7 @@
         },
         {
             "name": "minecraft:blue_bundle",
-            "id": 867,
+            "id": 868,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.blue_bundle"
@@ -862,6 +863,7 @@
             "name": "minecraft:blue_shulker_box",
             "id": -623,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxBlue.name"
         },
         {
@@ -992,7 +994,7 @@
         },
         {
             "name": "minecraft:breeze_rod",
-            "id": 883,
+            "id": 884,
             "max_size": 64,
             "localization_key": "item.breeze_rod.name"
         },
@@ -1052,7 +1054,7 @@
         },
         {
             "name": "minecraft:brown_bundle",
-            "id": 868,
+            "id": 869,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.brown_bundle"
@@ -1139,6 +1141,7 @@
             "name": "minecraft:brown_shulker_box",
             "id": -624,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxBrown.name"
         },
         {
@@ -1215,7 +1218,7 @@
         },
         {
             "name": "minecraft:bundle",
-            "id": 869,
+            "id": 870,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.bundle"
@@ -1596,6 +1599,12 @@
             "id": -944,
             "max_size": 64,
             "localization_key": "tile.sandstone.chiseled.name"
+        },
+        {
+            "name": "minecraft:chiseled_soulshale",
+            "id": -1281,
+            "max_size": 64,
+            "localization_key": "tile.chiseled_soulshale.name"
         },
         {
             "name": "minecraft:chiseled_stone_bricks",
@@ -2061,7 +2070,7 @@
         },
         {
             "name": "minecraft:copper_spear",
-            "id": 859,
+            "id": 860,
             "max_size": 1,
             "localization_key": "item.copper_spear.name"
         },
@@ -2325,7 +2334,7 @@
         },
         {
             "name": "minecraft:cyan_bundle",
-            "id": 870,
+            "id": 871,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.cyan_bundle"
@@ -2394,6 +2403,7 @@
             "name": "minecraft:cyan_shulker_box",
             "id": -621,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxCyan.name"
         },
         {
@@ -2878,7 +2888,7 @@
         },
         {
             "name": "minecraft:diamond_spear",
-            "id": 860,
+            "id": 861,
             "max_size": 1,
             "localization_key": "item.diamond_spear.name"
         },
@@ -4114,7 +4124,7 @@
         },
         {
             "name": "minecraft:glow_berries",
-            "id": 888,
+            "id": 889,
             "max_size": 64,
             "localization_key": "item.glow_berries.name"
         },
@@ -4281,7 +4291,7 @@
         },
         {
             "name": "minecraft:golden_spear",
-            "id": 861,
+            "id": 862,
             "max_size": 1,
             "localization_key": "item.golden_spear.name"
         },
@@ -4335,7 +4345,7 @@
         },
         {
             "name": "minecraft:gray_bundle",
-            "id": 871,
+            "id": 872,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.gray_bundle"
@@ -4404,6 +4414,7 @@
             "name": "minecraft:gray_shulker_box",
             "id": -619,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxGray.name"
         },
         {
@@ -4444,7 +4455,7 @@
         },
         {
             "name": "minecraft:green_bundle",
-            "id": 872,
+            "id": 873,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.green_bundle"
@@ -4513,6 +4524,7 @@
             "name": "minecraft:green_shulker_box",
             "id": -625,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxGreen.name"
         },
         {
@@ -4897,7 +4909,7 @@
         },
         {
             "name": "minecraft:ice_ball",
-            "id": 854,
+            "id": 855,
             "max_size": 16,
             "localization_key": "item.ice_ball.name"
         },
@@ -4908,13 +4920,13 @@
         },
         {
             "name": "minecraft:ice_crystal",
-            "id": 855,
+            "id": 856,
             "max_size": 64,
             "localization_key": "tile.ice_crystal.name"
         },
         {
             "name": "minecraft:icicle",
-            "id": 856,
+            "id": 857,
             "max_size": 64,
             "localization_key": "tile.icicle.name"
         },
@@ -5076,7 +5088,7 @@
         },
         {
             "name": "minecraft:iron_spear",
-            "id": 862,
+            "id": 863,
             "max_size": 1,
             "localization_key": "item.iron_spear.name"
         },
@@ -5429,7 +5441,7 @@
         },
         {
             "name": "minecraft:light_blue_bundle",
-            "id": 873,
+            "id": 874,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_blue_bundle"
@@ -5498,6 +5510,7 @@
             "name": "minecraft:light_blue_shulker_box",
             "id": -615,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxLightBlue.name"
         },
         {
@@ -5538,7 +5551,7 @@
         },
         {
             "name": "minecraft:light_gray_bundle",
-            "id": 874,
+            "id": 875,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.light_gray_bundle"
@@ -5601,6 +5614,7 @@
             "name": "minecraft:light_gray_shulker_box",
             "id": -620,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxSilver.name"
         },
         {
@@ -5665,7 +5679,7 @@
         },
         {
             "name": "minecraft:lime_bundle",
-            "id": 875,
+            "id": 876,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.lime_bundle"
@@ -5734,6 +5748,7 @@
             "name": "minecraft:lime_shulker_box",
             "id": -617,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxLime.name"
         },
         {
@@ -5816,7 +5831,7 @@
         },
         {
             "name": "minecraft:magenta_bundle",
-            "id": 876,
+            "id": 877,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.magenta_bundle"
@@ -5885,6 +5900,7 @@
             "name": "minecraft:magenta_shulker_box",
             "id": -614,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxMagenta.name"
         },
         {
@@ -6559,7 +6575,7 @@
         },
         {
             "name": "minecraft:netherite_spear",
-            "id": 863,
+            "id": 864,
             "max_size": 1,
             "localization_key": "item.netherite_spear.name"
         },
@@ -6709,7 +6725,7 @@
         },
         {
             "name": "minecraft:ominous_trial_key",
-            "id": 884,
+            "id": 885,
             "max_size": 64,
             "localization_key": "item.ominous_trial_key.name"
         },
@@ -6721,7 +6737,7 @@
         },
         {
             "name": "minecraft:orange_bundle",
-            "id": 877,
+            "id": 878,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.orange_bundle"
@@ -6796,6 +6812,7 @@
             "name": "minecraft:orange_shulker_box",
             "id": -613,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxOrange.name"
         },
         {
@@ -7196,7 +7213,7 @@
         },
         {
             "name": "minecraft:pink_bundle",
-            "id": 878,
+            "id": 879,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.pink_bundle"
@@ -7271,6 +7288,7 @@
             "name": "minecraft:pink_shulker_box",
             "id": -618,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxPink.name"
         },
         {
@@ -7875,7 +7893,7 @@
         },
         {
             "name": "minecraft:purple_bundle",
-            "id": 879,
+            "id": 880,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.purple_bundle"
@@ -7944,6 +7962,7 @@
             "name": "minecraft:purple_shulker_box",
             "id": -622,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxPurple.name"
         },
         {
@@ -8145,7 +8164,7 @@
         },
         {
             "name": "minecraft:red_bundle",
-            "id": 880,
+            "id": 881,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.red_bundle"
@@ -8284,7 +8303,7 @@
         },
         {
             "name": "minecraft:red_shrub",
-            "id": 857,
+            "id": 858,
             "max_size": 64,
             "localization_key": "tile.red_shrub.name"
         },
@@ -8292,6 +8311,7 @@
             "name": "minecraft:red_shulker_box",
             "id": -626,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxRed.name"
         },
         {
@@ -8596,7 +8616,7 @@
         },
         {
             "name": "minecraft:shelf_mushroom",
-            "id": 858,
+            "id": 859,
             "max_size": 64,
             "localization_key": "tile.shelf_mushroom.name"
         },
@@ -9147,7 +9167,7 @@
         },
         {
             "name": "minecraft:stone_spear",
-            "id": 864,
+            "id": 865,
             "max_size": 1,
             "localization_key": "item.stone_spear.name"
         },
@@ -9561,7 +9581,7 @@
         },
         {
             "name": "minecraft:trial_key",
-            "id": 885,
+            "id": 886,
             "max_size": 64,
             "localization_key": "item.trial_key.name"
         },
@@ -9711,6 +9731,7 @@
             "name": "minecraft:undyed_shulker_box",
             "id": 205,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBox.name"
         },
         {
@@ -10387,7 +10408,7 @@
         },
         {
             "name": "minecraft:white_bundle",
-            "id": 881,
+            "id": 882,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.white_bundle"
@@ -10456,6 +10477,7 @@
             "name": "minecraft:white_shulker_box",
             "id": 218,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxWhite.name"
         },
         {
@@ -10514,7 +10536,7 @@
         },
         {
             "name": "minecraft:wind_charge",
-            "id": 886,
+            "id": 887,
             "max_size": 64,
             "localization_key": "item.wind_charge.name"
         },
@@ -10605,7 +10627,7 @@
         },
         {
             "name": "minecraft:wooden_spear",
-            "id": 865,
+            "id": 866,
             "max_size": 1,
             "localization_key": "item.wooden_spear.name"
         },
@@ -10623,7 +10645,7 @@
         },
         {
             "name": "minecraft:yellow_bundle",
-            "id": 882,
+            "id": 883,
             "max_size": 1,
             "container_size": 64,
             "localization_key": "item.yellow_bundle"
@@ -10698,6 +10720,7 @@
             "name": "minecraft:yellow_shulker_box",
             "id": -616,
             "max_size": 1,
+            "container_size": 27,
             "localization_key": "tile.shulkerBoxYellow.name"
         },
         {

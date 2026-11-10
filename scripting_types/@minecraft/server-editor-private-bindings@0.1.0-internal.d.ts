@@ -39,6 +39,13 @@ export enum AnnotationNoteType {
     Text = "Text",
 }
 
+export enum AnnotationTransactionPayloadType {
+    Everything = 0,
+    Location   = 1,
+    Visibility = 2,
+    Tags       = 3,
+}
+
 export enum AnnotationType {
     Invalid       = 0,
     Drawing       = 1,
@@ -124,6 +131,11 @@ export enum CursorControlMode {
     Fixed            = 3,
 }
 
+export enum CursorPrecisionMode {
+    Block = 0,
+    Point = 1,
+}
+
 export enum CursorTargetMode {
     Block = 0,
     Face  = 1,
@@ -133,6 +145,17 @@ export enum DaylightCycle {
     Normal    = 0,
     AlwaysDay = 1,
     LockTime  = 2,
+}
+
+export enum DirectionAxisLock {
+    None = 0,
+    X    = 1,
+    Y    = 2,
+    XY   = 3,
+    Z    = 4,
+    XZ   = 5,
+    YZ   = 6,
+    XYZ  = 7,
 }
 
 export enum EditorMode {
@@ -779,6 +802,16 @@ export class AnnotationMetadata {
      * @remarks This function can't be called in restricted-execution mode.
      */
     setVisible(visible: boolean): void;
+}
+
+export class AnnotationTransactionOperation {
+    constructor(annotationManager: AnnotationManager, pendingTransaction: PendingTransaction);
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    trackAnnotationChange(payload: AnnotationTransactionPayloadType, annotationIds?: string[]): boolean;
 }
 
 export class AudioSettings {
@@ -1589,6 +1622,12 @@ export class Cursor {
      *
      * @throws This function can throw errors.
      */
+    getCollisionPoint(): minecraftserver.Vector3;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
     getDefaultProperties(): CursorProperties;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -2122,7 +2161,6 @@ export class DrawingAnnotationInstance extends AnnotationInstance {
      * @remarks This property can't be edited in restricted-execution mode.
      */
     notes: string;
-    readonly originOffset: minecraftserver.Vector3;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -2414,6 +2452,12 @@ export class FeatureFlagManager {
      * @remarks This function can't be called in restricted-execution mode.
      */
     getFlagNames(): string[];
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    isFlagReadOnly(name: string): boolean;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -2723,6 +2767,7 @@ export class InternalPlayerServiceContext {
     readonly prefabManager: PrefabManager;
     readonly realmsService: RealmsService;
     readonly regionManager: PlayerProjectRegionManager;
+    readonly studioBridge: StudioBridgeEditSessionManager;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      */
@@ -2900,6 +2945,7 @@ export class MinecraftEditorInternal {
     private constructor();
     readonly customDimensionManager: CustomDimensionManager;
     readonly isNewLevel: boolean;
+    readonly isRealmsServer: boolean;
     readonly regionManager: ProjectRegionManager;
     /**
      * @remarks This function can't be called in restricted-execution mode.
@@ -4358,6 +4404,57 @@ export class SpeedSettings {
     setAll(properties: Record<string, number>): void;
 }
 
+export class StudioBridgeEditSession {
+    private constructor();
+    readonly id: string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    cancel(): Promise<void>;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    submit(): Promise<void>;
+}
+
+export class StudioBridgeEditSessionManager {
+    private constructor();
+    readonly sessionStarted: StudioBridgeEditSessionStartedEventSignal;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getSessionId(): string;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    isSessionActive(): boolean;
+}
+
+export class StudioBridgeEditSessionStartedEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    subscribe(callback: (arg0: StudioBridgeEditSession) => void): (arg0: StudioBridgeEditSession) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     */
+    unsubscribe(callback: (arg0: StudioBridgeEditSession) => void): void;
+}
+
+// @ts-ignore
+export class StudioBridgeStructureEditSession extends StudioBridgeEditSession {
+    private constructor();
+}
+
 export class TaskPromiseBase {
     private constructor();
     readonly cancelled: boolean;
@@ -5662,9 +5759,12 @@ export interface CursorPosition {
 
 export interface CursorProperties {
     controlMode?: CursorControlMode;
+    directionAxisLock?: DirectionAxisLock;
     fillColor?: minecraftserver.RGBA;
     fixedModeDistance?: number;
+    offset?: minecraftserver.Vector3;
     outlineColor?: minecraftserver.RGBA;
+    precisionMode?: CursorPrecisionMode;
     projectThroughLiquid?: boolean;
     targetMode?: CursorTargetMode;
     visible?: boolean;
@@ -5822,6 +5922,7 @@ export interface GameOptions {
     hardcore?: boolean;
     immediateRespawn?: boolean;
     insomnia?: boolean;
+    keepAnnotations?: boolean;
     keepInventory?: boolean;
     keepPlayerData?: boolean;
     lanVisibility?: boolean;

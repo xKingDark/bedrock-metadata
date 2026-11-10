@@ -89,6 +89,11 @@ export enum CursorControlMode {
     Fixed            = 3,
 }
 
+export enum CursorPrecisionMode {
+    Block = 0,
+    Point = 1,
+}
+
 export enum CursorTargetMode {
     Block = 0,
     Face  = 1,
@@ -98,6 +103,17 @@ export enum DaylightCycle {
     Normal    = 0,
     AlwaysDay = 1,
     LockTime  = 2,
+}
+
+export enum DirectionAxisLock {
+    None = 0,
+    X    = 1,
+    Y    = 2,
+    XY   = 3,
+    Z    = 4,
+    XZ   = 5,
+    YZ   = 6,
+    XYZ  = 7,
 }
 
 export enum EditorMode {
@@ -1066,6 +1082,12 @@ export class Cursor {
      * @throws This property can throw when used.
      */
     readonly maxViewBlockDistance: number;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     */
+    getCollisionPoint(): minecraftserver.Vector3;
     /**
      * @remarks This function can't be called in restricted-execution mode.
      *
@@ -3255,9 +3277,12 @@ export interface CursorPosition {
 
 export interface CursorProperties {
     controlMode?: CursorControlMode;
+    directionAxisLock?: DirectionAxisLock;
     fillColor?: minecraftserver.RGBA;
     fixedModeDistance?: number;
+    offset?: minecraftserver.Vector3;
     outlineColor?: minecraftserver.RGBA;
+    precisionMode?: CursorPrecisionMode;
     projectThroughLiquid?: boolean;
     targetMode?: CursorTargetMode;
     visible?: boolean;
@@ -3308,6 +3333,7 @@ export interface GameOptions {
     hardcore?: boolean;
     immediateRespawn?: boolean;
     insomnia?: boolean;
+    keepAnnotations?: boolean;
     keepInventory?: boolean;
     keepPlayerData?: boolean;
     lanVisibility?: boolean;

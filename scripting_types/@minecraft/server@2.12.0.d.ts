@@ -23,6 +23,8 @@ export enum BlockComponentTypes {
     Movable                   = "minecraft:movable",
     Piston                    = "minecraft:piston",
     PrecipitationInteractions = "minecraft:precipitation_interactions",
+    RecipeCrafting            = "minecraft:recipe_crafting",
+    RecipeProcessing          = "minecraft:recipe_processing",
     RecordPlayer              = "minecraft:record_player",
     RedstoneProducer          = "minecraft:redstone_producer",
     Sign                      = "minecraft:sign",
@@ -720,6 +722,8 @@ export type BlockComponentTypeMap = {
     movable: BlockMovableComponent;
     piston: BlockPistonComponent;
     precipitation_interactions: BlockPrecipitationInteractionsComponent;
+    recipe_crafting: BlockRecipeCraftingComponent;
+    recipe_processing: BlockRecipeProcessingComponent;
     record_player: BlockRecordPlayerComponent;
     redstone_producer: BlockRedstoneProducerComponent;
     sign: BlockSignComponent;
@@ -732,6 +736,8 @@ export type BlockComponentTypeMap = {
     "minecraft:movable": BlockMovableComponent;
     "minecraft:piston": BlockPistonComponent;
     "minecraft:precipitation_interactions": BlockPrecipitationInteractionsComponent;
+    "minecraft:recipe_crafting": BlockRecipeCraftingComponent;
+    "minecraft:recipe_processing": BlockRecipeProcessingComponent;
     "minecraft:record_player": BlockRecordPlayerComponent;
     "minecraft:redstone_producer": BlockRedstoneProducerComponent;
     "minecraft:sign": BlockSignComponent;
@@ -1943,6 +1949,79 @@ export class BlockPrecipitationInteractionsComponent extends BlockComponent {
      * {@link LocationOutOfWorldBoundariesError}
      */
     obstructsRain(): boolean;
+}
+
+// @ts-ignore
+export class BlockRecipeCraftingComponent extends BlockComponent {
+    private constructor();
+    readonly players: Player[];
+    static readonly componentId = "minecraft:recipe_crafting";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidEntityError}
+     */
+    getCraftingContext(player: Player): RecipeCraftingContext | undefined;
+}
+
+// @ts-ignore
+export class BlockRecipeProcessingComponent extends BlockComponent {
+    private constructor();
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    readonly inputSlotCount: number;
+    static readonly componentId = "minecraft:recipe_processing";
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getInputItem(slot: number): ItemStack | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link minecraftcommon.UnsupportedFunctionalityError}
+     */
+    getInputSlotEnabled(slot: number): boolean;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    getOutputItem(): ItemStack | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link InvalidBlockComponentError}
+     */
+    setInputItem(slot: number, item?: ItemStack): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link InvalidBlockComponentError}
+     *
+     * {@link minecraftcommon.UnsupportedFunctionalityError}
+     */
+    setInputSlotEnabled(slot: number, enabled: boolean): void;
 }
 
 // @ts-ignore
@@ -6893,6 +6972,32 @@ export class PlayerCancelBreakingBlockAfterEventSignal {
     unsubscribe(callback: (arg0: PlayerCancelBreakingBlockAfterEvent) => void): void;
 }
 
+export class PlayerCraftRecipeAfterEvent {
+    private constructor();
+    readonly block?: Block;
+    readonly itemStack?: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerCraftRecipeAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerCraftRecipeAfterEvent) => void,
+        options?: PlayerCraftRecipeEventOptions,
+    ): (arg0: PlayerCraftRecipeAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerCraftRecipeAfterEvent) => void): void;
+}
+
 // @ts-ignore
 export class PlayerCursorInventoryComponent extends EntityComponent {
     private constructor();
@@ -6907,6 +7012,52 @@ export class PlayerCursorInventoryComponent extends EntityComponent {
      * @throws This function can throw errors.
      */
     clear(): void;
+}
+
+export class PlayerCursorItemGrabAfterEvent {
+    private constructor();
+    readonly item: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerCursorItemGrabAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(callback: (arg0: PlayerCursorItemGrabAfterEvent) => void): (arg0: PlayerCursorItemGrabAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerCursorItemGrabAfterEvent) => void): void;
+}
+
+export class PlayerCursorItemReleaseAfterEvent {
+    private constructor();
+    readonly item: ItemStack;
+    readonly player: Player;
+}
+
+export class PlayerCursorItemReleaseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    subscribe(
+        callback: (arg0: PlayerCursorItemReleaseAfterEvent) => void,
+    ): (arg0: PlayerCursorItemReleaseAfterEvent) => void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * This function can be called in early-execution mode.
+     */
+    unsubscribe(callback: (arg0: PlayerCursorItemReleaseAfterEvent) => void): void;
 }
 
 export class PlayerDimensionChangeAfterEvent {
@@ -7734,6 +7885,59 @@ export class RandomDyeFunction extends LootItemFunction {
 export class RandomRegionalDifficultyChanceCondition extends LootItemCondition {
     private constructor();
     readonly maxChance: number;
+}
+
+export class RecipeCraftingContext {
+    private constructor();
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    readonly inputSlotCount: number;
+    readonly isValid: boolean;
+    /**
+     * @throws This property can throw when used.
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    readonly validRecipes: string[];
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getInputItem(slot: number): ItemStack | undefined;
+    /**
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    getOutputItem(): ItemStack | undefined;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.ArgumentOutOfBoundsError}
+     *
+     * {@link minecraftcommon.EngineError}
+     */
+    setInputItem(slot: number, item?: ItemStack): void;
+    /**
+     * @remarks This function can't be called in restricted-execution mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link InvalidRecipeError}
+     */
+    setSelectedRecipe(recipeId: string): void;
 }
 
 export class Scoreboard {
@@ -8937,6 +9141,18 @@ export class WorldAfterEvents {
     /**
      * @remarks This property can be read in early-execution mode.
      */
+    readonly playerCraftRecipe: PlayerCraftRecipeAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly playerCursorItemGrab: PlayerCursorItemGrabAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly playerCursorItemRelease: PlayerCursorItemReleaseAfterEventSignal;
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
     readonly playerDimensionChange: PlayerDimensionChangeAfterEventSignal;
     /**
      * @remarks This property can be read in early-execution mode.
@@ -9826,6 +10042,12 @@ export interface PlayerBreakingBlockEventOptions {
     playerFilter?: EntityFilter;
 }
 
+export interface PlayerCraftRecipeEventOptions {
+    blockFilter?: BlockFilter;
+    itemFilter?: ItemFilter;
+    playerFilter?: EntityFilter;
+}
+
 export interface PlayerSoundOptions {
     location?: Vector3;
     loopCount?: number;
@@ -10239,6 +10461,15 @@ export class InvalidPotionDeliveryTypeError extends Error {
 // @ts-ignore
 export class InvalidPotionEffectTypeError extends Error {
     private constructor();
+}
+
+// @ts-ignore
+export class InvalidRecipeError extends Error {
+    private constructor();
+    /**
+     * @remarks This property can be read in early-execution mode.
+     */
+    readonly recipeId: string;
 }
 
 // @ts-ignore
